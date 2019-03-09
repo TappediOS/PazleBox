@@ -20,6 +20,8 @@
 		BF2674EF2227B6A3003D370F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2674ED2227B6A3003D370F /* Main.storyboard */; };
 		BF2674F12227B6A4003D370F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2674F02227B6A4003D370F /* Assets.xcassets */; };
 		BF2674F42227B6A4003D370F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2674F22227B6A4003D370F /* LaunchScreen.storyboard */; };
+		BFFA2A7B22336D760023BB71 /* SpriteKitEasingSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */; };
+		BFFA2A7D22336D760023BB71 /* TapticEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFA2A7C22336D760023BB71 /* TapticEngine.framework */; };
 		C568DD1EF47C3315C5F1E752 /* Pods_PazleBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E806537451A9DDED852EEBA6 /* Pods_PazleBox.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		BF2674F02227B6A4003D370F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF2674F32227B6A4003D370F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF2674F52227B6A4003D370F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpriteKitEasingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFFA2A7C22336D760023BB71 /* TapticEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TapticEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E806537451A9DDED852EEBA6 /* Pods_PazleBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PazleBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -49,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFFA2A7B22336D760023BB71 /* SpriteKitEasingSwift.framework in Frameworks */,
+				BFFA2A7D22336D760023BB71 /* TapticEngine.framework in Frameworks */,
 				C568DD1EF47C3315C5F1E752 /* Pods_PazleBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,6 +137,8 @@
 		F18F91965E347613F23DE2B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */,
+				BFFA2A7C22336D760023BB71 /* TapticEngine.framework */,
 				E806537451A9DDED852EEBA6 /* Pods_PazleBox.framework */,
 			);
 			name = Frameworks;
