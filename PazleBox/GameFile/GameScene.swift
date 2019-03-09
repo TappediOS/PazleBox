@@ -11,12 +11,15 @@ import GameplayKit
 
 class GameScene: SKScene {
 
+   let AllStage = AllStageInfo()
+   
+   
     override func sceneDidLoad() {
 
          self.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 0)
       
   
-        
+      
       
       
     }

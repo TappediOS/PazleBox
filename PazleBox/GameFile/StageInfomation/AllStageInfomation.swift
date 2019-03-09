@@ -11,10 +11,16 @@ import Foundation
 
 class AllStageInfo {
    
-   //var Easy
+   var EasyStage = Easy()
    //var Normal
    
    init() {
+      SetEasyStage()
+   }
+   
+   public func SetEasyStage() {
+      
+      
       
    }
 }
