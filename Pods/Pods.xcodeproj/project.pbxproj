@@ -7,136 +7,79 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02D8DE4A59D29A7B75E3103B606AA648 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */; };
-		1A4A45E68061EC78F456ADB5CDCD44E1 /* SpriteKitEasingSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CA164181E5FD58F4EAE6E7CE9B6292 /* SpriteKitEasingSwift-dummy.m */; };
-		46E0C7095878E13E3CF976E01932C2C1 /* Pods-PazleBox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 515C4D5035691DFC73F2B455523C6FF2 /* Pods-PazleBox-dummy.m */; };
-		63B329A9526C3521833AA2C5D9B9D5B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF2A2B0720AE923C22BED3192888BE0 /* UIKit.framework */; };
-		7610E47C695BAE540D2068AC2CE0BB43 /* SKEase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6038A577C788E931A639D6255FD0041 /* SKEase.swift */; };
-		776BAA0E39A59B9F5821C85739B610CB /* TapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C04EB4071514865BD8A4A8F41A1522 /* TapticEngine.swift */; };
-		8BA54407A7615D2E7207256F1B9F21CC /* TapticEngine-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137E16AAAA43DD6B7D5EFD330423A89 /* TapticEngine-dummy.m */; };
-		9EA923B317F408F85A96BEDD82CA89F7 /* easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F793814C6AF758165E2F94DDBFED6B /* easing.swift */; };
-		AECB7CE4C7692A72D560B7D6575C8C08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */; };
-		BE94D2184EAD3DD6998105E99EEBA80B /* Pods-PazleBox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A03E3E526AF2DE0CEFF2759B1965924 /* Pods-PazleBox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C828EAC1477D8C54715BBF94E5EB990C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */; };
-		D61A22BAD4AED463B16FA490495151AE /* TapticEngine-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 27253AAAE4564BBD07D2CF0DEDE8510F /* TapticEngine-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E42C599F5F55220B600717D16F44CF73 /* SpriteKitEasingSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D023E713F1A47CB941964032534B6157 /* SpriteKitEasingSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FFDEB1B610BBCF3B2EDF1376906BDE51 /* EasingDeclarations.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE234186566FBC741AAFD6BC02AB6FB5 /* EasingDeclarations.swift */; };
+		15335AD1B3DA30C263618626C39064E2 /* SpriteKitEasingSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DA98AC72A67C3FE62706F4C7532BDEA /* SpriteKitEasingSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		237B5F642F8327D4020ECF75D44FBE2F /* EasingDeclarations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C298476AAB1A84DE2A2E84D36A758CB2 /* EasingDeclarations.swift */; };
+		54AED987D2D99A94E58FE0A0B5149832 /* Pods-PazleBox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 515C4D5035691DFC73F2B455523C6FF2 /* Pods-PazleBox-dummy.m */; };
+		58B59FD1DF43E03239F875C2660BE6BE /* easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8605D03F9F016B9CBF215689ED36E43 /* easing.swift */; };
+		896CCFB144996C691393AD241B7CCDF5 /* SKEase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689567FB0081A09E9BAD235D3DD0B931 /* SKEase.swift */; };
+		B2C998C22AE9EBD9393C330C9397D805 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		B40EEFC05BDBDFC495F723C32A4CEF66 /* Pods-PazleBox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A03E3E526AF2DE0CEFF2759B1965924 /* Pods-PazleBox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B949103262D30EF7DE0219C40B4E1DF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		D6F47564AEEA6AA7CEE9340448140B03 /* SpriteKitEasingSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 270C06B1D2700A617904F119FB0CCCEE /* SpriteKitEasingSwift-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C9D4DD80B6E5DC2183985E4EF91416B5 /* PBXContainerItemProxy */ = {
+		360C9449F8AEFC1FA66084B27D1BE702 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F4F993A2461BB1D37E9D149E5F6890E9;
-			remoteInfo = TapticEngine;
-		};
-		D06FE9518AF1C2D6A02C08D8D3E36E76 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D70C4BD2AFBB1EFAD25765B0D352C927;
+			remoteGlobalIDString = CB1879754213C21A248E8C72130B1619;
 			remoteInfo = SpriteKitEasingSwift;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0137E16AAAA43DD6B7D5EFD330423A89 /* TapticEngine-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TapticEngine-dummy.m"; sourceTree = "<group>"; };
+		04DA99CC8DE6E495685CCBC0CFB5F02F /* SpriteKitEasingSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SpriteKitEasingSwift.modulemap; sourceTree = "<group>"; };
+		05C413A1AC7CEACE45C11A3FF7ECC6CC /* SpriteKitEasingSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SpriteKitEasingSwift-prefix.pch"; sourceTree = "<group>"; };
+		14110C55EC13776CCF20CC5CF5AC3388 /* SpriteKitEasingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SpriteKitEasingSwift.framework; path = SpriteKitEasingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A03E3E526AF2DE0CEFF2759B1965924 /* Pods-PazleBox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PazleBox-umbrella.h"; sourceTree = "<group>"; };
 		1D419967C796F972E7BC67E869036357 /* Pods-PazleBox-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PazleBox-frameworks.sh"; sourceTree = "<group>"; };
-		27253AAAE4564BBD07D2CF0DEDE8510F /* TapticEngine-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TapticEngine-umbrella.h"; sourceTree = "<group>"; };
-		37E78E54F5FA6B60A92EC2A61C51D0F9 /* TapticEngine-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TapticEngine-Info.plist"; sourceTree = "<group>"; };
-		40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		26A44759E9572756507808F92B218DC8 /* SpriteKitEasingSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SpriteKitEasingSwift.xcconfig; sourceTree = "<group>"; };
+		270C06B1D2700A617904F119FB0CCCEE /* SpriteKitEasingSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SpriteKitEasingSwift-dummy.m"; sourceTree = "<group>"; };
+		4DA98AC72A67C3FE62706F4C7532BDEA /* SpriteKitEasingSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SpriteKitEasingSwift-umbrella.h"; sourceTree = "<group>"; };
 		515C4D5035691DFC73F2B455523C6FF2 /* Pods-PazleBox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PazleBox-dummy.m"; sourceTree = "<group>"; };
-		55CA164181E5FD58F4EAE6E7CE9B6292 /* SpriteKitEasingSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SpriteKitEasingSwift-dummy.m"; sourceTree = "<group>"; };
 		5B23D28E70F7E7A6604042BCC6745A6D /* Pods-PazleBox-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PazleBox-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5E882CF9BE33AE5E6890FABE6CF976A1 /* Pods-PazleBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PazleBox.debug.xcconfig"; sourceTree = "<group>"; };
-		64A166CEC5EDDB80234B0A67FDAA2459 /* SpriteKitEasingSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SpriteKitEasingSwift.xcconfig; sourceTree = "<group>"; };
-		65465096F7EB2CA3351439ED2F366C41 /* TapticEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TapticEngine.framework; path = TapticEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		67C04EB4071514865BD8A4A8F41A1522 /* TapticEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TapticEngine.swift; path = Sources/TapticEngine/TapticEngine.swift; sourceTree = "<group>"; };
-		83E9BB33520B47CD98C287EC7A8785DA /* TapticEngine.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TapticEngine.modulemap; sourceTree = "<group>"; };
-		897038E33FCD410B569B5485A1F456CE /* SpriteKitEasingSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SpriteKitEasingSwift-Info.plist"; sourceTree = "<group>"; };
-		97806DA907E36BE9763464F260E277A0 /* SpriteKitEasingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SpriteKitEasingSwift.framework; path = SpriteKitEasingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		689567FB0081A09E9BAD235D3DD0B931 /* SKEase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SKEase.swift; path = SpriteKitEasingSwift/Classes/SKEase.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AE234186566FBC741AAFD6BC02AB6FB5 /* EasingDeclarations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasingDeclarations.swift; path = SpriteKitEasingSwift/Classes/EasingDeclarations.swift; sourceTree = "<group>"; };
+		A8605D03F9F016B9CBF215689ED36E43 /* easing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = easing.swift; path = SpriteKitEasingSwift/Classes/easing.swift; sourceTree = "<group>"; };
 		B7DCA6BA5790E8DFE7E500A072300B6B /* Pods-PazleBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PazleBox.release.xcconfig"; sourceTree = "<group>"; };
-		C633E084E5166CDDF6C16C780DD180A1 /* SpriteKitEasingSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SpriteKitEasingSwift-prefix.pch"; sourceTree = "<group>"; };
-		CA68F5E1FA74CE464FDBF88356139E51 /* Pods_PazleBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PazleBox.framework; path = "Pods-PazleBox.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C298476AAB1A84DE2A2E84D36A758CB2 /* EasingDeclarations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasingDeclarations.swift; path = SpriteKitEasingSwift/Classes/EasingDeclarations.swift; sourceTree = "<group>"; };
+		CA2E49642BC55EAD75669A76E25B804E /* Pods_PazleBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PazleBox.framework; path = "Pods-PazleBox.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA980C5F3EDD9A7AF9B701471E5DD101 /* Pods-PazleBox-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PazleBox-acknowledgements.plist"; sourceTree = "<group>"; };
-		D023E713F1A47CB941964032534B6157 /* SpriteKitEasingSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SpriteKitEasingSwift-umbrella.h"; sourceTree = "<group>"; };
-		D1F793814C6AF758165E2F94DDBFED6B /* easing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = easing.swift; path = SpriteKitEasingSwift/Classes/easing.swift; sourceTree = "<group>"; };
-		D59F628253FD2F073FDDD34F6F1D14E4 /* SpriteKitEasingSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SpriteKitEasingSwift.modulemap; sourceTree = "<group>"; };
+		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DA5A491687CDE06295513481A2C3AA22 /* Pods-PazleBox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PazleBox.modulemap"; sourceTree = "<group>"; };
-		E185CA10E1576945CD43712A02B6EEBF /* TapticEngine-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TapticEngine-prefix.pch"; sourceTree = "<group>"; };
 		E5CF683E4A8072CF5D2194A5F2379662 /* Pods-PazleBox-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PazleBox-Info.plist"; sourceTree = "<group>"; };
-		ECF2A2B0720AE923C22BED3192888BE0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		F6038A577C788E931A639D6255FD0041 /* SKEase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SKEase.swift; path = SpriteKitEasingSwift/Classes/SKEase.swift; sourceTree = "<group>"; };
-		FE8301BF393EF985031747049EE31E2F /* TapticEngine.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TapticEngine.xcconfig; sourceTree = "<group>"; };
+		F4361EBDEB7E15D5DB008AD0B426D181 /* SpriteKitEasingSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SpriteKitEasingSwift-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8E6E2CB7883A856465C23A93ECBDDD49 /* Frameworks */ = {
+		8C20ABFB408A050B724184F436BCEED7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AECB7CE4C7692A72D560B7D6575C8C08 /* Foundation.framework in Frameworks */,
-				63B329A9526C3521833AA2C5D9B9D5B2 /* UIKit.framework in Frameworks */,
+				B2C998C22AE9EBD9393C330C9397D805 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		948AB90264F8B2220B83D0DFCF13D4D1 /* Frameworks */ = {
+		FACD0B171978CC37966813A87CA3F499 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C828EAC1477D8C54715BBF94E5EB990C /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C7EE55DBF0EBFF641E119FE43D123ED3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				02D8DE4A59D29A7B75E3103B606AA648 /* Foundation.framework in Frameworks */,
+				B949103262D30EF7DE0219C40B4E1DF7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+		21F35B54D239B13961B0A018C9163C2C /* SpriteKitEasingSwift */ = {
 			isa = PBXGroup;
 			children = (
-				E169A450ED27AC725DF52953F66D11E0 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		22D3DC7C721089A1F13589A4970079B2 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				316CB118539A885204D4B68546AEE0A6 /* SpriteKitEasingSwift */,
-				30270DADF3173129F38BFA21F1F1DAD8 /* TapticEngine */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		30270DADF3173129F38BFA21F1F1DAD8 /* TapticEngine */ = {
-			isa = PBXGroup;
-			children = (
-				67C04EB4071514865BD8A4A8F41A1522 /* TapticEngine.swift */,
-				DF3FDEBEE6B2883E9BC0B099B0F4DFEF /* Support Files */,
-			);
-			name = TapticEngine;
-			path = TapticEngine;
-			sourceTree = "<group>";
-		};
-		316CB118539A885204D4B68546AEE0A6 /* SpriteKitEasingSwift */ = {
-			isa = PBXGroup;
-			children = (
-				D1F793814C6AF758165E2F94DDBFED6B /* easing.swift */,
-				AE234186566FBC741AAFD6BC02AB6FB5 /* EasingDeclarations.swift */,
-				F6038A577C788E931A639D6255FD0041 /* SKEase.swift */,
-				56F8CE71CF8BA6DA943A2A0036AA8BF6 /* Support Files */,
+				A8605D03F9F016B9CBF215689ED36E43 /* easing.swift */,
+				C298476AAB1A84DE2A2E84D36A758CB2 /* EasingDeclarations.swift */,
+				689567FB0081A09E9BAD235D3DD0B931 /* SKEase.swift */,
+				AB0DDA4444DAB90C8A35CCDF39BAAAE4 /* Support Files */,
 			);
 			name = SpriteKitEasingSwift;
 			path = SpriteKitEasingSwift;
@@ -150,18 +93,21 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		56F8CE71CF8BA6DA943A2A0036AA8BF6 /* Support Files */ = {
+		58F51C03D83588CC4CB1642EDD2D70DD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D59F628253FD2F073FDDD34F6F1D14E4 /* SpriteKitEasingSwift.modulemap */,
-				64A166CEC5EDDB80234B0A67FDAA2459 /* SpriteKitEasingSwift.xcconfig */,
-				55CA164181E5FD58F4EAE6E7CE9B6292 /* SpriteKitEasingSwift-dummy.m */,
-				897038E33FCD410B569B5485A1F456CE /* SpriteKitEasingSwift-Info.plist */,
-				C633E084E5166CDDF6C16C780DD180A1 /* SpriteKitEasingSwift-prefix.pch */,
-				D023E713F1A47CB941964032534B6157 /* SpriteKitEasingSwift-umbrella.h */,
+				CA2E49642BC55EAD75669A76E25B804E /* Pods_PazleBox.framework */,
+				14110C55EC13776CCF20CC5CF5AC3388 /* SpriteKitEasingSwift.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SpriteKitEasingSwift";
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E655E413EBA5A1301D29ECCAE665A93 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				21F35B54D239B13961B0A018C9163C2C /* SpriteKitEasingSwift */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		8B83CA2E8954FCC547289ED42CFD6F88 /* Pods-PazleBox */ = {
@@ -181,108 +127,96 @@
 			path = "Target Support Files/Pods-PazleBox";
 			sourceTree = "<group>";
 		};
-		C8E801B581FED2E21BFBBAEA9E0386D7 /* Products */ = {
+		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				CA68F5E1FA74CE464FDBF88356139E51 /* Pods_PazleBox.framework */,
-				97806DA907E36BE9763464F260E277A0 /* SpriteKitEasingSwift.framework */,
-				65465096F7EB2CA3351439ED2F366C41 /* TapticEngine.framework */,
+				CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */,
 			);
-			name = Products;
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		AB0DDA4444DAB90C8A35CCDF39BAAAE4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				04DA99CC8DE6E495685CCBC0CFB5F02F /* SpriteKitEasingSwift.modulemap */,
+				26A44759E9572756507808F92B218DC8 /* SpriteKitEasingSwift.xcconfig */,
+				270C06B1D2700A617904F119FB0CCCEE /* SpriteKitEasingSwift-dummy.m */,
+				F4361EBDEB7E15D5DB008AD0B426D181 /* SpriteKitEasingSwift-Info.plist */,
+				05C413A1AC7CEACE45C11A3FF7ECC6CC /* SpriteKitEasingSwift-prefix.pch */,
+				4DA98AC72A67C3FE62706F4C7532BDEA /* SpriteKitEasingSwift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SpriteKitEasingSwift";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				22D3DC7C721089A1F13589A4970079B2 /* Pods */,
-				C8E801B581FED2E21BFBBAEA9E0386D7 /* Products */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				6E655E413EBA5A1301D29ECCAE665A93 /* Pods */,
+				58F51C03D83588CC4CB1642EDD2D70DD /* Products */,
 				48EB24869787141FDC904A4FEA25D5CF /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		DF3FDEBEE6B2883E9BC0B099B0F4DFEF /* Support Files */ = {
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				83E9BB33520B47CD98C287EC7A8785DA /* TapticEngine.modulemap */,
-				FE8301BF393EF985031747049EE31E2F /* TapticEngine.xcconfig */,
-				0137E16AAAA43DD6B7D5EFD330423A89 /* TapticEngine-dummy.m */,
-				37E78E54F5FA6B60A92EC2A61C51D0F9 /* TapticEngine-Info.plist */,
-				E185CA10E1576945CD43712A02B6EEBF /* TapticEngine-prefix.pch */,
-				27253AAAE4564BBD07D2CF0DEDE8510F /* TapticEngine-umbrella.h */,
+				9B055D0CFEA43187E72B03DED11F5662 /* iOS */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/TapticEngine";
-			sourceTree = "<group>";
-		};
-		E169A450ED27AC725DF52953F66D11E0 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */,
-				ECF2A2B0720AE923C22BED3192888BE0 /* UIKit.framework */,
-			);
-			name = iOS;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		41C232331D819ED00DBA7760AC58AAFD /* Headers */ = {
+		A6B718F2C9546CEE1B0DCCE2F0342E05 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D61A22BAD4AED463B16FA490495151AE /* TapticEngine-umbrella.h in Headers */,
+				15335AD1B3DA30C263618626C39064E2 /* SpriteKitEasingSwift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AE0E9463FBF95F56B4FCD46218B0C249 /* Headers */ = {
+		A9E08150FB8A5BD3AF7E8D0960593D20 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE94D2184EAD3DD6998105E99EEBA80B /* Pods-PazleBox-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9556A1BA8E91EF69AF6D0E0F164CE62 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E42C599F5F55220B600717D16F44CF73 /* SpriteKitEasingSwift-umbrella.h in Headers */,
+				B40EEFC05BDBDFC495F723C32A4CEF66 /* Pods-PazleBox-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2A3D6ED7B4FEFBBB600B645CC34FBB28 /* Pods-PazleBox */ = {
+		92FAF6E511C978B9085A325F9A9A4E80 /* Pods-PazleBox */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E32F5B02D77D77BFF4032BD9A4618604 /* Build configuration list for PBXNativeTarget "Pods-PazleBox" */;
+			buildConfigurationList = EF575909B03D2DAC5A423C3E28D6622A /* Build configuration list for PBXNativeTarget "Pods-PazleBox" */;
 			buildPhases = (
-				AE0E9463FBF95F56B4FCD46218B0C249 /* Headers */,
-				CED4CEA77226FFFD55A5B14A3E7E3429 /* Sources */,
-				948AB90264F8B2220B83D0DFCF13D4D1 /* Frameworks */,
-				DF3476E255956AFD61C19DB7C331EFE8 /* Resources */,
+				A9E08150FB8A5BD3AF7E8D0960593D20 /* Headers */,
+				0C77E016289113A9552DD1018D41DA81 /* Sources */,
+				FACD0B171978CC37966813A87CA3F499 /* Frameworks */,
+				2F20A4198B97088FFCB1E05549F1F98E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				80F79AB60E5B54E5EE467A07538F14E0 /* PBXTargetDependency */,
-				D1C79A24058880EF0093F2C5A34F81C8 /* PBXTargetDependency */,
+				F5016AF30120B3C83E89CC899EA621DF /* PBXTargetDependency */,
 			);
 			name = "Pods-PazleBox";
 			productName = "Pods-PazleBox";
-			productReference = CA68F5E1FA74CE464FDBF88356139E51 /* Pods_PazleBox.framework */;
+			productReference = CA2E49642BC55EAD75669A76E25B804E /* Pods_PazleBox.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D70C4BD2AFBB1EFAD25765B0D352C927 /* SpriteKitEasingSwift */ = {
+		CB1879754213C21A248E8C72130B1619 /* SpriteKitEasingSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 74831DC79917FA9E689BFEA98051FB5B /* Build configuration list for PBXNativeTarget "SpriteKitEasingSwift" */;
+			buildConfigurationList = 9F586AE801BDC57B50AA2159DA6A6D03 /* Build configuration list for PBXNativeTarget "SpriteKitEasingSwift" */;
 			buildPhases = (
-				E9556A1BA8E91EF69AF6D0E0F164CE62 /* Headers */,
-				1CED65FCE32EB68BC951319E3EBE6481 /* Sources */,
-				C7EE55DBF0EBFF641E119FE43D123ED3 /* Frameworks */,
-				B53A63EAA97227F6C87B19BE4EAAE093 /* Resources */,
+				A6B718F2C9546CEE1B0DCCE2F0342E05 /* Headers */,
+				0F184EB3686F2A23045399784C436B34 /* Sources */,
+				8C20ABFB408A050B724184F436BCEED7 /* Frameworks */,
+				9D9BA1DB4A94090FEEED5B74EC61291E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -290,25 +224,7 @@
 			);
 			name = SpriteKitEasingSwift;
 			productName = SpriteKitEasingSwift;
-			productReference = 97806DA907E36BE9763464F260E277A0 /* SpriteKitEasingSwift.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		F4F993A2461BB1D37E9D149E5F6890E9 /* TapticEngine */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7ADE621989FCD847F1842F4423EAF71A /* Build configuration list for PBXNativeTarget "TapticEngine" */;
-			buildPhases = (
-				41C232331D819ED00DBA7760AC58AAFD /* Headers */,
-				0E7ADB38DC97119488A463F27C531034 /* Sources */,
-				8E6E2CB7883A856465C23A93ECBDDD49 /* Frameworks */,
-				A9C4A90885D7E9018DED5DB25AC979D5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TapticEngine;
-			productName = TapticEngine;
-			productReference = 65465096F7EB2CA3351439ED2F366C41 /* TapticEngine.framework */;
+			productReference = 14110C55EC13776CCF20CC5CF5AC3388 /* SpriteKitEasingSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -328,33 +244,25 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = C8E801B581FED2E21BFBBAEA9E0386D7 /* Products */;
+			productRefGroup = 58F51C03D83588CC4CB1642EDD2D70DD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2A3D6ED7B4FEFBBB600B645CC34FBB28 /* Pods-PazleBox */,
-				D70C4BD2AFBB1EFAD25765B0D352C927 /* SpriteKitEasingSwift */,
-				F4F993A2461BB1D37E9D149E5F6890E9 /* TapticEngine */,
+				92FAF6E511C978B9085A325F9A9A4E80 /* Pods-PazleBox */,
+				CB1879754213C21A248E8C72130B1619 /* SpriteKitEasingSwift */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A9C4A90885D7E9018DED5DB25AC979D5 /* Resources */ = {
+		2F20A4198B97088FFCB1E05549F1F98E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B53A63EAA97227F6C87B19BE4EAAE093 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF3476E255956AFD61C19DB7C331EFE8 /* Resources */ = {
+		9D9BA1DB4A94090FEEED5B74EC61291E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -364,125 +272,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0E7ADB38DC97119488A463F27C531034 /* Sources */ = {
+		0C77E016289113A9552DD1018D41DA81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BA54407A7615D2E7207256F1B9F21CC /* TapticEngine-dummy.m in Sources */,
-				776BAA0E39A59B9F5821C85739B610CB /* TapticEngine.swift in Sources */,
+				54AED987D2D99A94E58FE0A0B5149832 /* Pods-PazleBox-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1CED65FCE32EB68BC951319E3EBE6481 /* Sources */ = {
+		0F184EB3686F2A23045399784C436B34 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EA923B317F408F85A96BEDD82CA89F7 /* easing.swift in Sources */,
-				FFDEB1B610BBCF3B2EDF1376906BDE51 /* EasingDeclarations.swift in Sources */,
-				7610E47C695BAE540D2068AC2CE0BB43 /* SKEase.swift in Sources */,
-				1A4A45E68061EC78F456ADB5CDCD44E1 /* SpriteKitEasingSwift-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CED4CEA77226FFFD55A5B14A3E7E3429 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				46E0C7095878E13E3CF976E01932C2C1 /* Pods-PazleBox-dummy.m in Sources */,
+				58B59FD1DF43E03239F875C2660BE6BE /* easing.swift in Sources */,
+				237B5F642F8327D4020ECF75D44FBE2F /* EasingDeclarations.swift in Sources */,
+				896CCFB144996C691393AD241B7CCDF5 /* SKEase.swift in Sources */,
+				D6F47564AEEA6AA7CEE9340448140B03 /* SpriteKitEasingSwift-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		80F79AB60E5B54E5EE467A07538F14E0 /* PBXTargetDependency */ = {
+		F5016AF30120B3C83E89CC899EA621DF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SpriteKitEasingSwift;
-			target = D70C4BD2AFBB1EFAD25765B0D352C927 /* SpriteKitEasingSwift */;
-			targetProxy = D06FE9518AF1C2D6A02C08D8D3E36E76 /* PBXContainerItemProxy */;
-		};
-		D1C79A24058880EF0093F2C5A34F81C8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TapticEngine;
-			target = F4F993A2461BB1D37E9D149E5F6890E9 /* TapticEngine */;
-			targetProxy = C9D4DD80B6E5DC2183985E4EF91416B5 /* PBXContainerItemProxy */;
+			target = CB1879754213C21A248E8C72130B1619 /* SpriteKitEasingSwift */;
+			targetProxy = 360C9449F8AEFC1FA66084B27D1BE702 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		04C7D55DC2DBDC60F2755E23DE859624 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE8301BF393EF985031747049EE31E2F /* TapticEngine.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TapticEngine/TapticEngine-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TapticEngine/TapticEngine-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/TapticEngine/TapticEngine.modulemap";
-				PRODUCT_MODULE_NAME = TapticEngine;
-				PRODUCT_NAME = TapticEngine;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		061C1F415A173E1369833ED7A21A4EA4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B7DCA6BA5790E8DFE7E500A072300B6B /* Pods-PazleBox.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-PazleBox/Pods-PazleBox-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PazleBox/Pods-PazleBox.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		07488D4657FB0A78086563621D425F8A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -547,7 +367,7 @@
 			};
 			name = Debug;
 		};
-		78340CFEA51A65D51358842BFCBC4257 /* Debug */ = {
+		2621268E5BDB4324CA11B0AA3CF2C724 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5E882CF9BE33AE5E6890FABE6CF976A1 /* Pods-PazleBox.debug.xcconfig */;
 			buildSettings = {
@@ -584,10 +404,11 @@
 			};
 			name = Debug;
 		};
-		7AC88C77BB59F5051BE2F551877B777B /* Release */ = {
+		4A3EAE1B9602F8A9B818DEB2F0486175 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE8301BF393EF985031747049EE31E2F /* TapticEngine.xcconfig */;
+			baseConfigurationReference = B7DCA6BA5790E8DFE7E500A072300B6B /* Pods-PazleBox.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -597,8 +418,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TapticEngine/TapticEngine-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TapticEngine/TapticEngine-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-PazleBox/Pods-PazleBox-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -606,13 +426,15 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/TapticEngine/TapticEngine.modulemap";
-				PRODUCT_MODULE_NAME = TapticEngine;
-				PRODUCT_NAME = TapticEngine;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PazleBox/Pods-PazleBox.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -680,9 +502,9 @@
 			};
 			name = Release;
 		};
-		D460D91C37F4107F3AD8915DC21EDFA2 /* Release */ = {
+		B51AAB82CEA168E2A5ED0D30261984A1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64A166CEC5EDDB80234B0A67FDAA2459 /* SpriteKitEasingSwift.xcconfig */;
+			baseConfigurationReference = 26A44759E9572756507808F92B218DC8 /* SpriteKitEasingSwift.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -716,9 +538,9 @@
 			};
 			name = Release;
 		};
-		E3D852512C2A69DD4894DB44E2AB8CDC /* Debug */ = {
+		BC7B50E7EB2516E513DDAF5016400358 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64A166CEC5EDDB80234B0A67FDAA2459 /* SpriteKitEasingSwift.xcconfig */;
+			baseConfigurationReference = 26A44759E9572756507808F92B218DC8 /* SpriteKitEasingSwift.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -763,29 +585,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74831DC79917FA9E689BFEA98051FB5B /* Build configuration list for PBXNativeTarget "SpriteKitEasingSwift" */ = {
+		9F586AE801BDC57B50AA2159DA6A6D03 /* Build configuration list for PBXNativeTarget "SpriteKitEasingSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E3D852512C2A69DD4894DB44E2AB8CDC /* Debug */,
-				D460D91C37F4107F3AD8915DC21EDFA2 /* Release */,
+				BC7B50E7EB2516E513DDAF5016400358 /* Debug */,
+				B51AAB82CEA168E2A5ED0D30261984A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7ADE621989FCD847F1842F4423EAF71A /* Build configuration list for PBXNativeTarget "TapticEngine" */ = {
+		EF575909B03D2DAC5A423C3E28D6622A /* Build configuration list for PBXNativeTarget "Pods-PazleBox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				04C7D55DC2DBDC60F2755E23DE859624 /* Debug */,
-				7AC88C77BB59F5051BE2F551877B777B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E32F5B02D77D77BFF4032BD9A4618604 /* Build configuration list for PBXNativeTarget "Pods-PazleBox" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				78340CFEA51A65D51358842BFCBC4257 /* Debug */,
-				061C1F415A173E1369833ED7A21A4EA4 /* Release */,
+				2621268E5BDB4324CA11B0AA3CF2C724 /* Debug */,
+				4A3EAE1B9602F8A9B818DEB2F0486175 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
