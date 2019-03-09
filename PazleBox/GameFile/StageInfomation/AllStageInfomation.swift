@@ -11,8 +11,8 @@ import Foundation
 
 class AllStageInfo {
    
-   var Easy
-   var Normal
+   //var Easy
+   //var Normal
    
    init() {
       

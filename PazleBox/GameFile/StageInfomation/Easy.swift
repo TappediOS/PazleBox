@@ -25,14 +25,14 @@ class Easy {
       InitE3()
    }
    
-   public func getEasyStage() -> [Contents] {
+   public func getEasyStage()  {
       
-      var ReturnStage:Contents = []
-      
-      ReturnStage.append(contentsOf: E1)
-      ReturnStage.append(contentsOf: E2)
-      ReturnStage.append(contentsOf: E3)
-      
-      return ReturnStage
+//      var ReturnStage:Contents = []
+//
+//      ReturnStage.append(contentsOf: E1)
+//      ReturnStage.append(contentsOf: E2)
+//      ReturnStage.append(contentsOf: E3)
+//
+//      return ReturnStage
    }
 }
