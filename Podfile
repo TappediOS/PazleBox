@@ -8,4 +8,9 @@ target 'PazleBox' do
  pod 'SpriteKitEasingSwift'
 
 
+ pod 'Firebase/Core'
+ pod 'Firebase/AdMob'
+ pod 'Crashlytics'
+
+
 end
