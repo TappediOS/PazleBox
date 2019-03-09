@@ -1,3 +1,20 @@
-PODFILE CHECKSUM: c5f386da66263f996addc1e5339b8d8c5603e392
+PODS:
+  - SpriteKitEasingSwift (0.14)
+  - TapticEngine (1.2.0)
+
+DEPENDENCIES:
+  - SpriteKitEasingSwift
+  - TapticEngine
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SpriteKitEasingSwift
+    - TapticEngine
+
+SPEC CHECKSUMS:
+  SpriteKitEasingSwift: d389a59f5531399b69cc9c31f52c2e279c813688
+  TapticEngine: ed6f5b4a2e9aa46d4e8fa69a72a7a0b6719bf8ac
+
+PODFILE CHECKSUM: b9f1ed92c2db866999b2c28098036e72d13d597c
 
 COCOAPODS: 1.6.0

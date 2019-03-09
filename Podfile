@@ -5,7 +5,8 @@ target 'PazleBox' do
 
  use_frameworks!
  
-
+ pod 'SpriteKitEasingSwift'
+ pod 'TapticEngine'
 
 
 end
