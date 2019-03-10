@@ -12,7 +12,8 @@ import Foundation
 class AllStageInfo {
    
    var EasyStage = Easy()
-   //var Normal
+   var NormalStage = Normal()
+   var HardStage = Hard()
    
    init() {
       SetEasyStage()

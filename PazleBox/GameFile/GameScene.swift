@@ -11,18 +11,44 @@ import GameplayKit
 
 class GameScene: SKScene {
 
+   
+   
    let AllStage = AllStageInfo()
+   let Stage = HoldStage()
    
    
     override func sceneDidLoad() {
 
-         self.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 0)
+      self.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 0)
       
-  
+      //ビューの長さを取得
+      let ViewSizeX = self.scene?.frame.width
+      let ViewSizeY = self.scene?.frame.height
+      
+      InitStageSize(SizeX: ViewSizeX, SizeY: ViewSizeY)
+      SetStage()
       
       
       
     }
+   
+   private func InitStageSize(SizeX: CGFloat?, SizeY: CGFloat?){
+      if let X = SizeX {
+         Stage.SetStageSizeX(SizeX: X)
+      }else{
+         fatalError("ビューの横を初期化できませんでした。")
+      }
+      
+      if let Y = SizeY {
+         Stage.SetStageSizeY(SizeY: Y)
+      }else{
+         fatalError("ビューの縦を初期化できませんでした。")
+      }
+   }
+   
+   private func SetStage(){
+      Stage.GStage = AllStage.EasyStage.E1
+   }
     
     
     func touchDown(atPoint pos : CGPoint) {

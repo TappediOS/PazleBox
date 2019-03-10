@@ -23,6 +23,13 @@
 		BFFA2A7B22336D760023BB71 /* SpriteKitEasingSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */; };
 		BFFA2A7F223372520023BB71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFFA2A7E223372520023BB71 /* GoogleService-Info.plist */; };
 		BFFA2A81223380720023BB71 /* EasyGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A80223380720023BB71 /* EasyGet.swift */; };
+		BFFA2A86223383B60023BB71 /* Normal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A85223383B60023BB71 /* Normal.swift */; };
+		BFFA2A88223384120023BB71 /* NormalCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A87223384120023BB71 /* NormalCreate.swift */; };
+		BFFA2A8A223384420023BB71 /* Hard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A89223384420023BB71 /* Hard.swift */; };
+		BFFA2A8C223384D80023BB71 /* HardCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A8B223384D80023BB71 /* HardCreate.swift */; };
+		BFFA2A8E2234CC5F0023BB71 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A8D2234CC5F0023BB71 /* Tile.swift */; };
+		BFFA2A912234CF010023BB71 /* NullTile.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFA2A902234CF010023BB71 /* NullTile.png */; };
+		BFFA2A992234D9D30023BB71 /* BaseTile.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFA2A982234D9D30023BB71 /* BaseTile.png */; };
 		C568DD1EF47C3315C5F1E752 /* Pods_PazleBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E806537451A9DDED852EEBA6 /* Pods_PazleBox.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +55,13 @@
 		BFFA2A7C22336D760023BB71 /* TapticEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TapticEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA2A7E223372520023BB71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		BFFA2A80223380720023BB71 /* EasyGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyGet.swift; sourceTree = "<group>"; };
+		BFFA2A85223383B60023BB71 /* Normal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Normal.swift; sourceTree = "<group>"; };
+		BFFA2A87223384120023BB71 /* NormalCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalCreate.swift; sourceTree = "<group>"; };
+		BFFA2A89223384420023BB71 /* Hard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hard.swift; sourceTree = "<group>"; };
+		BFFA2A8B223384D80023BB71 /* HardCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardCreate.swift; sourceTree = "<group>"; };
+		BFFA2A8D2234CC5F0023BB71 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		BFFA2A902234CF010023BB71 /* NullTile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NullTile.png; sourceTree = "<group>"; };
+		BFFA2A982234D9D30023BB71 /* BaseTile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BaseTile.png; sourceTree = "<group>"; };
 		E806537451A9DDED852EEBA6 /* Pods_PazleBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PazleBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,8 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				BF1FF2B02231204F0047ED23 /* StageInfomation */,
+				BFFA2A8F2234CEED0023BB71 /* TilePick */,
 				BF2674E32227B6A3003D370F /* AppDelegate.swift */,
 				BF2674E92227B6A3003D370F /* GameScene.swift */,
+				BFFA2A8D2234CC5F0023BB71 /* Tile.swift */,
 				BF2674EB2227B6A3003D370F /* GameViewController.swift */,
 				BF1FF2AC22311CE60047ED23 /* Stage.swift */,
 				BF1FF2AE22311FD40047ED23 /* StageContents.swift */,
@@ -99,7 +115,9 @@
 			isa = PBXGroup;
 			children = (
 				BF1FF2B1223120650047ED23 /* AllStageInfomation.swift */,
-				BFFA2A82223380760023BB71 /* Easy */,
+				BFFA2A82223380760023BB71 /* EasyStage */,
+				BFFA2A83223383680023BB71 /* NormalStage */,
+				BFFA2A84223383750023BB71 /* HardStage */,
 			);
 			path = StageInfomation;
 			sourceTree = "<group>";
@@ -136,14 +154,41 @@
 			path = PazleBox;
 			sourceTree = "<group>";
 		};
-		BFFA2A82223380760023BB71 /* Easy */ = {
+		BFFA2A82223380760023BB71 /* EasyStage */ = {
 			isa = PBXGroup;
 			children = (
 				BF1FF2B3223121BF0047ED23 /* Easy.swift */,
 				BFFA2A80223380720023BB71 /* EasyGet.swift */,
 				BF1FF2B5223122C80047ED23 /* EasyCreate.swift */,
 			);
-			path = Easy;
+			path = EasyStage;
+			sourceTree = "<group>";
+		};
+		BFFA2A83223383680023BB71 /* NormalStage */ = {
+			isa = PBXGroup;
+			children = (
+				BFFA2A85223383B60023BB71 /* Normal.swift */,
+				BFFA2A87223384120023BB71 /* NormalCreate.swift */,
+			);
+			path = NormalStage;
+			sourceTree = "<group>";
+		};
+		BFFA2A84223383750023BB71 /* HardStage */ = {
+			isa = PBXGroup;
+			children = (
+				BFFA2A89223384420023BB71 /* Hard.swift */,
+				BFFA2A8B223384D80023BB71 /* HardCreate.swift */,
+			);
+			path = HardStage;
+			sourceTree = "<group>";
+		};
+		BFFA2A8F2234CEED0023BB71 /* TilePick */ = {
+			isa = PBXGroup;
+			children = (
+				BFFA2A982234D9D30023BB71 /* BaseTile.png */,
+				BFFA2A902234CF010023BB71 /* NullTile.png */,
+			);
+			path = TilePick;
 			sourceTree = "<group>";
 		};
 		F18F91965E347613F23DE2B0 /* Frameworks */ = {
@@ -217,12 +262,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFFA2A912234CF010023BB71 /* NullTile.png in Resources */,
 				BF2674EF2227B6A3003D370F /* Main.storyboard in Resources */,
 				BF2674E62227B6A3003D370F /* GameScene.sks in Resources */,
 				BF2674F12227B6A4003D370F /* Assets.xcassets in Resources */,
 				BF2674F42227B6A4003D370F /* LaunchScreen.storyboard in Resources */,
 				BF2674E82227B6A3003D370F /* Actions.sks in Resources */,
 				BFFA2A7F223372520023BB71 /* GoogleService-Info.plist in Resources */,
+				BFFA2A992234D9D30023BB71 /* BaseTile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,12 +351,17 @@
 				BF1FF2B2223120650047ED23 /* AllStageInfomation.swift in Sources */,
 				BF1FF2B6223122C80047ED23 /* EasyCreate.swift in Sources */,
 				BF1FF2AF22311FD40047ED23 /* StageContents.swift in Sources */,
+				BFFA2A8E2234CC5F0023BB71 /* Tile.swift in Sources */,
 				BF1FF2B4223121BF0047ED23 /* Easy.swift in Sources */,
+				BFFA2A8A223384420023BB71 /* Hard.swift in Sources */,
 				BF2674EA2227B6A3003D370F /* GameScene.swift in Sources */,
 				BF2674EC2227B6A3003D370F /* GameViewController.swift in Sources */,
+				BFFA2A8C223384D80023BB71 /* HardCreate.swift in Sources */,
+				BFFA2A86223383B60023BB71 /* Normal.swift in Sources */,
 				BF1FF2AD22311CE60047ED23 /* Stage.swift in Sources */,
 				BF2674E42227B6A3003D370F /* AppDelegate.swift in Sources */,
 				BFFA2A81223380720023BB71 /* EasyGet.swift in Sources */,
+				BFFA2A88223384120023BB71 /* NormalCreate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
