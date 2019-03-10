@@ -12,7 +12,17 @@ import Foundation
 class puzzle {
 
    
-   var pAllPosi: [[Int]]
+   var pAllPosi: [[Int]] = Array()
+   
+   init(PazzleX: Int, PazzleY: Int){
+      
+      for x in 0 ... PazzleX - 1{
+         for y in 0 ... PazzleY - 1 {
+            pAllPosi[x][y] = 0
+         }
+      }
+      
+   }
    
    
 }
