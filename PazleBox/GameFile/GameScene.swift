@@ -16,6 +16,8 @@ class GameScene: SKScene {
    let AllStage = AllStageInfo()
    let Stage = HoldStage()
    
+   var Puzzl = puzzle()
+   
    
     override func sceneDidLoad() {
       
@@ -33,9 +35,15 @@ class GameScene: SKScene {
       
       ShowTile()
       
+      puzzleInit()
+      
       
       
     }
+   
+   private func puzzleInit() {
+      Puzzl.InitPazzle(PazzleX: 3, PazzleY: 2, CustomNum: 1)
+   }
    
    private func ShowTile(){
       

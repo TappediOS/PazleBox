@@ -66,8 +66,8 @@ class GameTile: SKSpriteNode {
          break;
       }
       
-      
-      super.init(texture: texture, color: UIColor.black, size: CGSize(width: CGFloat(TileWide), height: CGFloat(TileWide)))
+      let NodeSize = CGSize(width: CGFloat(TileWide), height: CGFloat(TileWide))
+      super.init(texture: texture, color: UIColor.black, size: NodeSize)
       
       //ノードがタッチできる状態にする。
       self.isUserInteractionEnabled = true
