@@ -14,7 +14,7 @@ class HoldStage {
    
    //Stage 9 * 12
    public var GStage: [[Contents]]
-   public var Tile: [[GameTile]]?
+   public var Tile: GameTile?
    
    private var ViewX: Int = 0
    private var ViewY: Int = 0
@@ -39,27 +39,23 @@ class HoldStage {
       
       
       InitStage()
-      InitTile()
    }
    
-   private func InitTile() {
+   public func getAllTile(x: Int, y: Int) -> SKSpriteNode {
+      return InitTile(x: x, y: y)
+   }
+   
+   private func InitTile(x: Int, y: Int) -> SKSpriteNode{
       
-      for x in 0 ... 8 {
-         for y in 0 ... 11 {
-            
-            switch GStage[x][y] {
-               
-            case .In:
-               Tile?[x][y] = GameTile(TilePosiX: x, TilePosiY: y, TileCont: .In, ViewX: ViewX, ViewY: ViewY)
-               break
-            case .Out:
-               Tile?[x][y] = GameTile(TilePosiX: x, TilePosiY: y, TileCont: .Out, ViewX: ViewX, ViewY: ViewY)
-               break
-               
-            default:
-               break
-            }
-         }
+      switch GStage[x][y] {
+      case .In:
+         return GameTile(TilePosiX: x, TilePosiY: y, TileCont: .In, ViewX: ViewX, ViewY: ViewY)
+      case .Out:
+         return GameTile(TilePosiX: x, TilePosiY: y, TileCont: .Out, ViewX: ViewX, ViewY: ViewY)
+      case .Put:
+         return GameTile(TilePosiX: x, TilePosiY: y, TileCont: .Put, ViewX: ViewX, ViewY: ViewY)
+      case .NotPut:
+         return GameTile(TilePosiX: x, TilePosiY: y, TileCont: .NotPut, ViewX: ViewX, ViewY: ViewY)
       }
    }
    

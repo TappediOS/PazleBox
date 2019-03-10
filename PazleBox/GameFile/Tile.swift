@@ -29,11 +29,14 @@ class GameTile: SKSpriteNode {
    init(TilePosiX: Int, TilePosiY: Int, TileCont: Contents, ViewX: Int, ViewY: Int) {
       
       
+      
+      
+      
       let TileWide = ViewX / 10
       let Intarnal = TileWide / 10
       
-      let x1 = Intarnal * TilePosiX + TileWide * (TilePosiX - 1)
-      let y1 = -ViewY * 3 / 8 + Intarnal * TilePosiY + TileWide * (TilePosiY - 1)
+      let x1 = -ViewX / 2 + Intarnal * TilePosiY + TileWide * (TilePosiY - 1)
+      let y1 = -ViewY * 3 / 8 + Intarnal * TilePosiX + TileWide * (TilePosiX - 1)
       
       let texture: SKTexture
       
@@ -59,7 +62,7 @@ class GameTile: SKSpriteNode {
       }
       
       
-      super.init(texture: texture, color: UIColor.black, size: CGSize(width: CGFloat(ViewX / 10), height: CGFloat(ViewX / 5)))
+      super.init(texture: texture, color: UIColor.black, size: CGSize(width: CGFloat(TileWide), height: CGFloat(TileWide)))
       
       //ノードがタッチできる状態にする。
       self.isUserInteractionEnabled = true
@@ -90,5 +93,48 @@ class GameTile: SKSpriteNode {
          fatalError("BallNumber is NOT 1...4")
          break;
       }
+   }
+   
+   
+   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      
+      
+    
+      
+     // print("--- Tile info ---")
+      //print("ball posi is [\(self.PositionX)][\(self.PositionY)]")
+      
+      
+      if let TouchStartPoint = touches.first?.location(in: self) {
+         self.TouchBegan = TouchStartPoint
+         //print("touch Start Point = \(self.TouchBegan)")
+      }else{
+         print("タッチ離したとき、Nilでした。")
+      }
+      
+      return
+   }
+   
+   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+   
+      
+      if let TouchEndPoint = touches.first?.location(in: self) {
+         var TmpPoint = TouchEndPoint
+         TmpPoint.x = TmpPoint.x - self.TouchBegan.x
+         TmpPoint.y = TmpPoint.y - self.TouchBegan.y
+         //print("touch End Point = \(TouchEndPoint)")
+//         if LengthOfTwoPoint(Start: TouchBegan, End: TouchEndPoint) == false {
+//            return
+//         }
+         return
+      }else{
+         print("タッチ離したあと、Nilでした。")
+         return
+      }
+      
+      
+   }
+   
+   override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
    }
 }

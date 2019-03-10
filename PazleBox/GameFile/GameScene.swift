@@ -28,9 +28,20 @@ class GameScene: SKScene {
       InitStageSize(SizeX: ViewSizeX, SizeY: ViewSizeY)
       SetStage()
       
+      ShowTile()
+      
       
       
     }
+   
+   private func ShowTile(){
+      
+      for x in 0 ... 11 {
+         for y in 0 ... 8 {
+            addChild(Stage.getAllTile(x: x, y: y))
+         }
+      }
+   }
    
    private func InitStageSize(SizeX: CGFloat?, SizeY: CGFloat?){
       if let X = SizeX {
