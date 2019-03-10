@@ -20,6 +20,7 @@
 		BF2674EF2227B6A3003D370F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2674ED2227B6A3003D370F /* Main.storyboard */; };
 		BF2674F12227B6A4003D370F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2674F02227B6A4003D370F /* Assets.xcassets */; };
 		BF2674F42227B6A4003D370F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2674F22227B6A4003D370F /* LaunchScreen.storyboard */; };
+		BF46109022352423006F3DF1 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46108F22352423006F3DF1 /* Puzzle.swift */; };
 		BFFA2A7B22336D760023BB71 /* SpriteKitEasingSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */; };
 		BFFA2A7F223372520023BB71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFFA2A7E223372520023BB71 /* GoogleService-Info.plist */; };
 		BFFA2A81223380720023BB71 /* EasyGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A80223380720023BB71 /* EasyGet.swift */; };
@@ -51,6 +52,7 @@
 		BF2674F02227B6A4003D370F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF2674F32227B6A4003D370F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF2674F52227B6A4003D370F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF46108F22352423006F3DF1 /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
 		BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpriteKitEasingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA2A7C22336D760023BB71 /* TapticEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TapticEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA2A7E223372520023BB71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -106,6 +108,7 @@
 				BFFA2A8D2234CC5F0023BB71 /* Tile.swift */,
 				BF2674EB2227B6A3003D370F /* GameViewController.swift */,
 				BF1FF2AC22311CE60047ED23 /* Stage.swift */,
+				BF46108F22352423006F3DF1 /* Puzzle.swift */,
 				BF1FF2AE22311FD40047ED23 /* StageContents.swift */,
 			);
 			path = GameFile;
@@ -348,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF46109022352423006F3DF1 /* Puzzle.swift in Sources */,
 				BF1FF2B2223120650047ED23 /* AllStageInfomation.swift in Sources */,
 				BF1FF2B6223122C80047ED23 /* EasyCreate.swift in Sources */,
 				BF1FF2AF22311FD40047ED23 /* StageContents.swift in Sources */,

@@ -33,6 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       
       //--------------------FIREBASE-----------------------//
 
+      
+      self.window?.backgroundColor = UIColor.white
+      
 
       return true
    }

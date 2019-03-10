@@ -18,6 +18,9 @@ class GameScene: SKScene {
    
    
     override func sceneDidLoad() {
+      
+   
+
 
       self.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 0)
       
@@ -63,7 +66,7 @@ class GameScene: SKScene {
     
     
     func touchDown(atPoint pos : CGPoint) {
-     
+      print("Tap Point is \(pos)")
     }
     
     func touchMoved(toPoint pos : CGPoint) {
@@ -75,7 +78,7 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-
+      for t in touches { self.touchDown(atPoint: t.location(in: self)) }
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { self.touchMoved(toPoint: t.location(in: self)) }

@@ -35,7 +35,12 @@ class GameTile: SKSpriteNode {
       let TileWide = ViewX / 10
       let Intarnal = TileWide / 10
       
-      let x1 = -ViewX / 2 + Intarnal * TilePosiY + TileWide * (TilePosiY - 1)
+      let PosiIntarnal = Intarnal + Intarnal * TilePosiY
+      let PositionWide = TileWide * TilePosiY
+      let TileHalfWide = TileWide / 2
+      let ViewHalf = -ViewX / 2
+      
+      let x1 = ViewHalf + PosiIntarnal + PositionWide + TileHalfWide
       let y1 = -ViewY * 3 / 8 + Intarnal * TilePosiX + TileWide * (TilePosiX - 1)
       
       let texture: SKTexture
