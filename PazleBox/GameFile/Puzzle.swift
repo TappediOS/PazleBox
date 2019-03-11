@@ -19,6 +19,7 @@ class puzzle: SKSpriteNode {
    public var TouchBegan: CGPoint
    
    
+   
    /// クラスの初期化
    ///
    /// - Parameters:
@@ -27,25 +28,25 @@ class puzzle: SKSpriteNode {
    ///   - BallColor: ボールの番号(画像)
    ///   - ViewX: 使用しているデバイスのWideを表す。
    ///   - ViewY: 使用しているデバイスのheightを表す
-   init(PPosiX: Int, PPosiY: Int, CustNum: Int, ViewX: Int, ViewY: Int) {
+   init(PX: Int, PY: Int, CustNum: Int, ViewX: Int, ViewY: Int) {
       
       
       
-      let PWide = ViewX / 10
-      let Intarnal = PWide / 10
+      let PFound = ViewX / 10 + (ViewX / 100) 
       
-      let PosiIntarnal = Intarnal + Intarnal * PPosiY
-      let PositionWide = PWide * PPosiY
-      let TileHalfWide = PWide / 2
+      let PWide = PFound * PX
+      let PHight = PFound * PY
+      
+      let PHalfWide = PWide / 2
       let ViewHalf = -ViewX / 2
       
-      let x1 = ViewHalf + PosiIntarnal + PositionWide + TileHalfWide
-      let y1 = -ViewY * 3 / 8 + Intarnal * PPosiX + PWide * (PPosiX - 1)
+      let x1 = ViewHalf + PWide + PHalfWide
+      let y1 = -ViewY * 3 / 8 + PX + PHight * (PX - 1)
       
       let texture: SKTexture
       
-      self.PositionX = PPosiX
-      self.PositionY = PPosiY
+      self.PositionX = PX
+      self.PositionY = PY
       self.TouchBegan = CGPoint(x: 0, y: 0)
       
       
@@ -54,7 +55,7 @@ class puzzle: SKSpriteNode {
          texture = SKTexture(imageNamed: "BaseTile.png")
          
          break
-      case 1:
+      case 2:
          texture = SKTexture(imageNamed: "NullTile.png")
          
          break
@@ -78,11 +79,6 @@ class puzzle: SKSpriteNode {
    
    func InitPazzle(PazzleX: Int, PazzleY: Int, CustomNum: Int){
       
-      for x in 0 ... PazzleX - 1{
-         for y in 0 ... PazzleY - 1 {
-            pAllPosi[x][y] = 0
-         }
-      }
       
       self.pAllPosi = [[1, 1, 1],
                        [0, 0, 1]]
@@ -112,49 +108,42 @@ class puzzle: SKSpriteNode {
       }
    }
    
+
    
+  
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-      
-      
-      
-      
-      // print("--- Tile info ---")
-      //print("ball posi is [\(self.PositionX)][\(self.PositionY)]")
-      
-      
-      if let TouchStartPoint = touches.first?.location(in: self) {
-         self.TouchBegan = TouchStartPoint
-         //print("touch Start Point = \(self.TouchBegan)")
-      }else{
-         print("タッチ離したとき、Nilでした。")
-      }
-      
-      return
+     
    }
-   
-   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-      
-      
-      if let TouchEndPoint = touches.first?.location(in: self) {
-         var TmpPoint = TouchEndPoint
-         TmpPoint.x = TmpPoint.x - self.TouchBegan.x
-         TmpPoint.y = TmpPoint.y - self.TouchBegan.y
-         //print("touch End Point = \(TouchEndPoint)")
-         //         if LengthOfTwoPoint(Start: TouchBegan, End: TouchEndPoint) == false {
-         //            return
-         //         }
-         return
-      }else{
-         print("タッチ離したあと、Nilでした。")
-         return
-      }
-      
-      
-   }
-   
    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+     
+      // タッチイベントを取得
+      let touchEvent = touches.first!
+      
+      // ドラッグ前の座標, Swift 1.2 から
+      let preDx = touchEvent.previousLocation(in: self).x
+      let preDy = touchEvent.previousLocation(in: self).y
+      
+      // ドラッグ後の座標
+      let newDx = touchEvent.location(in: self).x
+      let newDy = touchEvent.location(in: self).y
+      
+      // ドラッグしたx座標の移動距離
+      let dx = newDx - preDx
+      print("x:\(dx)")
+      
+      // ドラッグしたy座標の移動距離
+      let dy = newDy - preDy
+      print("y:\(dy)")
+      
+      self.position.x += dx
+      self.position.y += dy
+      
    }
-   
-   
-   
+   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+     
+   }
+   override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+     
+   }
+
 }

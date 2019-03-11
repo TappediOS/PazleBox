@@ -16,12 +16,11 @@ class GameScene: SKScene {
    let AllStage = AllStageInfo()
    let Stage = HoldStage()
    
-   var Puzzl = puzzle()
+   var Puzzle: puzzle?
    
+ 
    
     override func sceneDidLoad() {
-      
-   
 
 
       self.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 0)
@@ -35,14 +34,14 @@ class GameScene: SKScene {
       
       ShowTile()
       
+      Puzzle = puzzle(PX: 3, PY: 2, CustNum: 1, ViewX: Int(ViewSizeX!), ViewY: Int(ViewSizeY!))
       puzzleInit()
-      
-      
       
     }
    
    private func puzzleInit() {
-      Puzzl.InitPazzle(PazzleX: 3, PazzleY: 2, CustomNum: 1)
+      Puzzle!.InitPazzle(PazzleX: 3, PazzleY: 2, CustomNum: 1)
+      addChild(Puzzle!)
    }
    
    private func ShowTile(){
@@ -72,32 +71,32 @@ class GameScene: SKScene {
       Stage.GStage = AllStage.EasyStage.E1
    }
     
-    
-    func touchDown(atPoint pos : CGPoint) {
-      print("Tap Point is \(pos)")
-    }
-    
-    func touchMoved(toPoint pos : CGPoint) {
-  
-    }
-    
-    func touchUp(atPoint pos : CGPoint) {
-    
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-      for t in touches { self.touchDown(atPoint: t.location(in: self)) }
-    }
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
-    }
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    override func update(_ currentTime: TimeInterval) {
-   
-    }
+//    
+//    func touchDown(atPoint pos : CGPoint) {
+//      print("Tap Point is \(pos)")
+//    }
+//    
+//    func touchMoved(toPoint pos : CGPoint) {
+//  
+//    }
+//    
+//    func touchUp(atPoint pos : CGPoint) {
+//    
+//    }
+//    
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//      for t in touches { self.touchDown(atPoint: t.location(in: self)) }
+//    }
+//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
+//    }
+//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+//    }
+//    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+//    }
+//    override func update(_ currentTime: TimeInterval) {
+//   
+//    }
 }
