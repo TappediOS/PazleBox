@@ -9,19 +9,12 @@
 import UIKit
 import SpriteKit
 import GameplayKit
-import Crashlytics
 
 class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
       
-      
-      
-      
-      
-      
-        
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
         if let scene = GKScene(fileNamed: "GameScene") {
@@ -55,26 +48,9 @@ class GameViewController: UIViewController {
                 // Present the scene
                 if let view = self.view as! SKView? {
 
-                  view.backgroundColor = UIColor.white.withAlphaComponent(1)
-                  self.view.backgroundColor = UIColor.white.withAlphaComponent(1)
-                  
-            
-                  
-                  
-                  
-                  
-                  
-                  print("背景色：\(String(describing: view.backgroundColor))")
-                  print("背景色：\(String(describing: self.view.backgroundColor))")
-                  
+   
                     view.presentScene(sceneNode)
-                  
-                  print(self.view.frame.width)
-                  print(self.view.frame.height)
-                  
-                  print(view.frame)
-                  print(sceneNode.frame)
-                    
+      
                     view.ignoresSiblingOrder = true
                
                     

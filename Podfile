@@ -9,7 +9,6 @@ target 'PazleBox' do
 
 
  pod 'Firebase/Core'
- pod 'Firebase/AdMob'
  pod 'Crashlytics'
 
 

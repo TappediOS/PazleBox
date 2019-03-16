@@ -48,6 +48,8 @@ class GameTile: SKSpriteNode {
       self.PositionX = TilePosiX
       self.PositionY = TilePosiY
       self.TouchBegan = CGPoint(x: 0, y: 0)
+      
+      
 
      
       switch TileCont {
@@ -73,6 +75,8 @@ class GameTile: SKSpriteNode {
       self.isUserInteractionEnabled = true
       //ポジションの設定。
       self.position = CGPoint(x: x1, y: y1)
+      
+      self.zPosition = 0
       
       
    }
@@ -104,6 +108,7 @@ class GameTile: SKSpriteNode {
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       
       
+      print("私は(\(self.PositionX), \(self.PositionY))で，POSIは(\(self.position.x), \(self.position.y))")
     
       
      // print("--- Tile info ---")

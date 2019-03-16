@@ -42,6 +42,7 @@ class GameScene: SKScene {
    private func puzzleInit() {
       Puzzle!.InitPazzle(PazzleX: 3, PazzleY: 2, CustomNum: 1)
       addChild(Puzzle!)
+      addChild(Puzzle!.GetAlhpaNode())
    }
    
    private func ShowTile(){

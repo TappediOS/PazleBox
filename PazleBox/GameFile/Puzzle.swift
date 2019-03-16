@@ -18,6 +18,11 @@ class puzzle: SKSpriteNode {
    public var PositionY: Int
    public var TouchBegan: CGPoint
    
+   private var AlphaNode = SKSpriteNode()
+   
+   var Warux: CGFloat
+   
+   var Tilep: TilePosi
    
    
    /// クラスの初期化
@@ -31,8 +36,10 @@ class puzzle: SKSpriteNode {
    init(PX: Int, PY: Int, CustNum: Int, ViewX: Int, ViewY: Int) {
       
       
+      let PFound = ViewX / 10 + (ViewX / 100)
       
-      let PFound = ViewX / 10 + (ViewX / 100) 
+      Warux = CGFloat(PFound)
+      self.Tilep = TilePosi(ViewX: ViewX, ViewY: ViewY)
       
       let PWide = PFound * PX
       let PHight = PFound * PY
@@ -74,7 +81,21 @@ class puzzle: SKSpriteNode {
       //ポジションの設定。
       self.position = CGPoint(x: x1, y: y1)
       
+      self.zPosition = 2
       
+      AlphaNode = SKSpriteNode(texture: texture, color: UIColor.black, size: NodeSize)
+      
+      AlphaNode.position = self.position
+      AlphaNode.zPosition = 1
+      
+      AlphaNode.alpha = 0.5
+      
+      
+      
+   }
+   
+   func GetAlhpaNode() -> SKSpriteNode {
+      return self.AlphaNode
    }
    
    func InitPazzle(PazzleX: Int, PazzleY: Int, CustomNum: Int){
@@ -109,6 +130,18 @@ class puzzle: SKSpriteNode {
    }
    
 
+   func UpdateAlphaNodePosi() {
+      let Selfx = self.position.x
+      let Selfy = self.position.y
+      
+      print(Selfy / Warux)
+      self.AlphaNode.position.x = Tilep.GetAlphasXPosi(AlPosiX: Selfx / Warux)
+      self.AlphaNode.position.y = Tilep.GetAlphasYPosi(AlPosiY: Selfy / Warux)
+   }
+   
+   func UpdateSelfPosi(){
+      self.position = AlphaNode.position
+   }
    
   
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -129,18 +162,22 @@ class puzzle: SKSpriteNode {
       
       // ドラッグしたx座標の移動距離
       let dx = newDx - preDx
-      print("x:\(dx)")
       
       // ドラッグしたy座標の移動距離
       let dy = newDy - preDy
-      print("y:\(dy)")
       
       self.position.x += dx
       self.position.y += dy
       
+      //print("\(self.position.x), \(self.position.y)")
+      
+      UpdateAlphaNodePosi()
+      
    }
    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
      
+      
+      UpdateSelfPosi()
    }
    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
      
