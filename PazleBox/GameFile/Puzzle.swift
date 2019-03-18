@@ -20,7 +20,7 @@ class puzzle: SKSpriteNode {
    
    private var AlphaNode = SKSpriteNode()
    
-   var Warux: CGFloat
+   var SerchPlace: CGFloat
    
    var Tilep: TilePosi
    
@@ -38,7 +38,7 @@ class puzzle: SKSpriteNode {
       
       let PFound = ViewX / 10 + (ViewX / 100)
       
-      Warux = CGFloat(PFound)
+      SerchPlace = CGFloat(PFound)
       self.Tilep = TilePosi(ViewX: ViewX, ViewY: ViewY)
       
       let PWide = PFound * PX
@@ -134,9 +134,9 @@ class puzzle: SKSpriteNode {
       let Selfx = self.position.x
       let Selfy = self.position.y
       
-      print(Selfy / Warux)
-      self.AlphaNode.position.x = Tilep.GetAlphasXPosi(AlPosiX: Selfx / Warux)
-      self.AlphaNode.position.y = Tilep.GetAlphasYPosi(AlPosiY: Selfy / Warux)
+      //print(Selfy / SerchPlace)
+      self.AlphaNode.position.x = Tilep.GetAlphasXPosi(AlPosiX: Selfx / SerchPlace)
+      self.AlphaNode.position.y = Tilep.GetAlphasYPosi(AlPosiY: Selfy / SerchPlace)
    }
    
    func UpdateSelfPosi(){
@@ -152,25 +152,19 @@ class puzzle: SKSpriteNode {
       // タッチイベントを取得
       let touchEvent = touches.first!
       
-      // ドラッグ前の座標, Swift 1.2 から
-      let preDx = touchEvent.previousLocation(in: self).x
-      let preDy = touchEvent.previousLocation(in: self).y
+      let PreviewXPoint = touchEvent.previousLocation(in: self).x
+      let PreviewYPoint = touchEvent.previousLocation(in: self).y
       
-      // ドラッグ後の座標
-      let newDx = touchEvent.location(in: self).x
-      let newDy = touchEvent.location(in: self).y
+      let AfterXPoint = touchEvent.location(in: self).x
+      let AfterYPoint = touchEvent.location(in: self).y
       
-      // ドラッグしたx座標の移動距離
-      let dx = newDx - preDx
+      let Dx = AfterXPoint - PreviewXPoint
+      let Dy = AfterYPoint - PreviewYPoint
       
-      // ドラッグしたy座標の移動距離
-      let dy = newDy - preDy
-      
-      self.position.x += dx
-      self.position.y += dy
+      self.position.x += Dx
+      self.position.y += Dy
       
       //print("\(self.position.x), \(self.position.y)")
-      
       UpdateAlphaNodePosi()
       
    }
