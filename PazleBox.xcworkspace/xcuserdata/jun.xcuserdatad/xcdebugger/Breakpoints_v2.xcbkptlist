@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/GameScene.swift"
-            timestampString = "574590120.209288"
+            timestampString = "574595901.844044"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "SetStage()"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "InitStageSize(SizeX:SizeY:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/GameScene.swift"
-            timestampString = "574590120.210021"
+            timestampString = "574595901.8444771"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "ShowTile()"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "AddPuzzle()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/GetTilePOSITION.swift"
-            timestampString = "574590120.2105449"
+            timestampString = "574595901.844793"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
@@ -74,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/Puzzle.swift"
-            timestampString = "574590120.210754"
+            timestampString = "574595901.844854"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "init(PX:PY:CustNum:ViewX:ViewY:)"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "init(PX:PY:CustNum:ViewX:ViewY:TextureName:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,13 +90,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/GameScene.swift"
-            timestampString = "574590120.21087"
+            timestampString = "574595901.844916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "MovedTileCatchNotification(notification:)"
-            landmarkType = "7">
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "GameScene"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -106,12 +106,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/GameScene.swift"
-            timestampString = "574590120.211395"
+            timestampString = "574595901.845186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "MovedTileCatchNotification(notification:)"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "GameDecision()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

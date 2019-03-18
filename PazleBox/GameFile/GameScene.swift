@@ -15,12 +15,14 @@ class GameScene: SKScene {
    let AllStage = AllStageInfo()
    let Stage = HoldStage()
    
+   var CheckedStage: [[Contents]] = Array()
+   
    var Puzzle1: puzzle?
    var Puzzle2: puzzle?
    var Puzzle3: puzzle?
    var Puzzle4: puzzle?
 
- 
+   var PuzzleBox = Array<Any>()
    
     override func sceneDidLoad() {
 
@@ -38,10 +40,16 @@ class GameScene: SKScene {
       
       InitPuzzle(SizeX: ViewSizeX, SizeY: ViewSizeY)
       puzzleInit()
+      AddPuzzle()
       
+      CrearCheckedStage()
       
       InitNotification()
     }
+   
+   private func CrearCheckedStage() {
+      CheckedStage = AllStage.Checked
+   }
    
    private func InitNotification() {
       NotificationCenter.default.addObserver(self, selector: #selector(MovedTileCatchNotification(notification:)), name: .TileMoved, object: nil)
@@ -70,6 +78,15 @@ class GameScene: SKScene {
       addChild(Puzzle4!.GetAlhpaNode())
    }
    
+   private func AddPuzzle() {
+       PuzzleBox.append(Puzzle1!)
+       PuzzleBox.append(Puzzle2!)
+       PuzzleBox.append(Puzzle3!)
+       PuzzleBox.append(Puzzle4!)
+      
+      
+   }
+   
    private func ShowTile(){
       
       for x in 0 ... 11 {
@@ -94,12 +111,52 @@ class GameScene: SKScene {
    }
    
    private func SetStage(){
+      //FIXME:- ココの右辺は変数にするのがいいかも
       Stage.GStage = AllStage.EasyStage.E1
+   }
+   
+   private func FinishGame() {
+      print("game Set")
+   }
+   
+   private func GameCheck() -> Bool {
+      
+      if Stage.GStage.elementsEqual(CheckedStage) {
+         return true
+      }
+      
+      return false
+   }
+   
+   private func CheckedStageFill(StageObject: [String : Any]) {
+      
+   }
+   
+   private func GameDecision() {
+      
+      let Object = Puzzle1?.GetOfInfomation()
+      
+      for Puzzle in PuzzleBox {
+         let PuzzleInfo = (Puzzle as! puzzle).GetOfInfomation()
+         CheckedStageFill(StageObject: PuzzleInfo)
+      }
+      
+      if GameCheck() == true {
+         FinishGame()
+      }
+      
+      CrearCheckedStage()
+      return
+      
+      
    }
    
    //MARK:- 通知を受け取る関数郡
    @objc func MovedTileCatchNotification(notification: Notification) -> Void {
       print("--- Move notification ---")
+      
+      
+      GameDecision()
       
       if let userInfo = notification.userInfo {
          let PosiX = userInfo["PX"] as! Int
@@ -107,8 +164,8 @@ class GameScene: SKScene {
          let PArry = userInfo["PArry"] as! NSArray
          print("PosiX = \(PosiX)")
          print("PosiY = \(PosiY)")
-         //print("PArry = \(PArry[0])\n\(PArry[1])")
-         //GameSound.PlaySounds(BallNumber: AllBall[SentedX][SentedY - 1].SelfNumber)
+         
+         //PositionCheck()
       }else{
          print("通知受け取ったけど、中身nilやった。")
       }

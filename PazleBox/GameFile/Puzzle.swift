@@ -16,6 +16,8 @@ class puzzle: SKSpriteNode {
    
    public var CenterX: Int
    public var CenterY: Int
+   public var OneTimeBackPosiX: Int = 0
+   public var OneTimeBackPosiY: Int = 0
    public var TouchBegan: CGPoint
    
    private var AlphaNode = SKSpriteNode()
@@ -67,6 +69,7 @@ class puzzle: SKSpriteNode {
       switch CustNum {
       case 1:
          texture = SKTexture(imageNamed: TextureName)
+         texture.filteringMode = .nearest
          
          break
       case 2:
@@ -153,17 +156,34 @@ class puzzle: SKSpriteNode {
       NotificationCenter.default.post(name: .TileMoved, object: nil, userInfo: SentObject)
    }
    
-   
+   public func GetOfInfomation() -> [String : Any] {
+      
+      let AllInfomation: [String : Any] = ["PX": self.CenterX as Int,
+                                        "PY": self.CenterY as Int,
+                                        "PArry": self.pAllPosi as Array]
+      
+      return AllInfomation
+      
+   }
    
    //MARK:- ノードの場所を更新する
    func UpdateAlphaNodePosi() {
       let Selfx = self.position.x
       let Selfy = self.position.y
       
+      let BeforeCenterX = self.CenterX
+      let BeforeCenterY = self.CenterY
+      
       //print(Selfy / SerchPlace)
       self.CenterX = Tilep.GetAlphasXPosi(AlPosiX: Selfx / SerchPlace)
       self.CenterY = Tilep.GetAlphasYPosi(AlPosiY: Selfy / SerchPlace)
       self.AlphaNode.position = Tilep.GetAnyPostionXY(xpoint: self.CenterX, ypoint: self.CenterY)
+      
+      
+      if self.CenterX != BeforeCenterX || self.CenterY != BeforeCenterY {
+         OneTimeBackPosiX = BeforeCenterX
+         OneTimeBackPosiY = BeforeCenterY
+      }
       
       print("selfX = \(CenterX) selfY = \(CenterY)")
    }
@@ -176,7 +196,7 @@ class puzzle: SKSpriteNode {
    
    //MARK:- タッチイベント
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-     
+     self.zPosition += 1
    }
    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
      
@@ -201,6 +221,7 @@ class puzzle: SKSpriteNode {
    }
    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
      
+      self.zPosition -= 1
       UpdateSelfPosi()
       FinishMoveTilePOSTMotification()
    }

@@ -18,6 +18,8 @@ class GameTile: SKSpriteNode {
    public var TouchBegan: CGPoint
    
    
+   
+   
    /// クラスの初期化
    ///
    /// - Parameters:
