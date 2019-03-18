@@ -10,14 +10,16 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
-
    
    
    let AllStage = AllStageInfo()
    let Stage = HoldStage()
    
-   var Puzzle: puzzle?
-   
+   var Puzzle1: puzzle?
+   var Puzzle2: puzzle?
+   var Puzzle3: puzzle?
+   var Puzzle4: puzzle?
+
  
    
     override func sceneDidLoad() {
@@ -34,15 +36,38 @@ class GameScene: SKScene {
       
       ShowTile()
       
-      Puzzle = puzzle(PX: 3, PY: 2, CustNum: 1, ViewX: Int(ViewSizeX!), ViewY: Int(ViewSizeY!))
+      InitPuzzle(SizeX: ViewSizeX, SizeY: ViewSizeY)
       puzzleInit()
       
+      
+      InitNotification()
     }
    
+   private func InitNotification() {
+      NotificationCenter.default.addObserver(self, selector: #selector(MovedTileCatchNotification(notification:)), name: .TileMoved, object: nil)
+   }
+   
+   private func InitPuzzle(SizeX: CGFloat?, SizeY: CGFloat?){
+      Puzzle1 = puzzle(PX: 3, PY: 2, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), TextureName: "P32.png")
+      Puzzle2 = puzzle(PX: 2, PY: 3, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), TextureName: "P23.png")
+      Puzzle3 = puzzle(PX: 2, PY: 3, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), TextureName: "P232.png")
+      Puzzle4 = puzzle(PX: 2, PY: 3, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), TextureName: "P233.png")
+   }
+   
    private func puzzleInit() {
-      Puzzle!.InitPazzle(PazzleX: 3, PazzleY: 2, CustomNum: 1)
-      addChild(Puzzle!)
-      addChild(Puzzle!.GetAlhpaNode())
+      Puzzle1!.InitPazzle(PazzleX: 3, PazzleY: 2, CustomNum: 1)
+      Puzzle2!.InitPazzle(PazzleX: 2, PazzleY: 3, CustomNum: 1)
+      Puzzle3!.InitPazzle(PazzleX: 2, PazzleY: 3, CustomNum: 1)
+      Puzzle4!.InitPazzle(PazzleX: 2, PazzleY: 3, CustomNum: 1)
+   
+      addChild(Puzzle1!)
+      addChild(Puzzle1!.GetAlhpaNode())
+      addChild(Puzzle2!)
+      addChild(Puzzle2!.GetAlhpaNode())
+      addChild(Puzzle3!)
+      addChild(Puzzle3!.GetAlhpaNode())
+      addChild(Puzzle4!)
+      addChild(Puzzle4!.GetAlhpaNode())
    }
    
    private func ShowTile(){
@@ -70,6 +95,25 @@ class GameScene: SKScene {
    
    private func SetStage(){
       Stage.GStage = AllStage.EasyStage.E1
+   }
+   
+   //MARK:- 通知を受け取る関数郡
+   @objc func MovedTileCatchNotification(notification: Notification) -> Void {
+      print("--- Move notification ---")
+      
+      if let userInfo = notification.userInfo {
+         let PosiX = userInfo["PX"] as! Int
+         let PosiY = userInfo["PY"] as! Int
+         let PArry = userInfo["PArry"] as! NSArray
+         print("PosiX = \(PosiX)")
+         print("PosiY = \(PosiY)")
+         //print("PArry = \(PArry[0])\n\(PArry[1])")
+         //GameSound.PlaySounds(BallNumber: AllBall[SentedX][SentedY - 1].SelfNumber)
+      }else{
+         print("通知受け取ったけど、中身nilやった。")
+      }
+      
+      return
    }
     
 //    

@@ -22,6 +22,14 @@
 		BF2674F42227B6A4003D370F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2674F22227B6A4003D370F /* LaunchScreen.storyboard */; };
 		BF46109022352423006F3DF1 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46108F22352423006F3DF1 /* Puzzle.swift */; };
 		BF519C69223CCBDE0087A4AC /* GetTilePOSITION.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */; };
+		BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C6A223F58920087A4AC /* ExNotification.swift */; };
+		BF519C6D223F84510087A4AC /* P321.png in Resources */ = {isa = PBXBuildFile; fileRef = BF519C6C223F84510087A4AC /* P321.png */; };
+		BF519C72223F86B20087A4AC /* P21.png in Resources */ = {isa = PBXBuildFile; fileRef = BF519C6E223F86AF0087A4AC /* P21.png */; };
+		BF519C73223F86B20087A4AC /* P12.png in Resources */ = {isa = PBXBuildFile; fileRef = BF519C6F223F86B00087A4AC /* P12.png */; };
+		BF519C74223F86B20087A4AC /* P32.png in Resources */ = {isa = PBXBuildFile; fileRef = BF519C70223F86B10087A4AC /* P32.png */; };
+		BF519C75223F86B20087A4AC /* P23.png in Resources */ = {isa = PBXBuildFile; fileRef = BF519C71223F86B20087A4AC /* P23.png */; };
+		BF519C78223F8C4C0087A4AC /* P232.png in Resources */ = {isa = PBXBuildFile; fileRef = BF519C76223F8C4A0087A4AC /* P232.png */; };
+		BF519C79223F8C4C0087A4AC /* P233.png in Resources */ = {isa = PBXBuildFile; fileRef = BF519C77223F8C4C0087A4AC /* P233.png */; };
 		BFFA2A7B22336D760023BB71 /* SpriteKitEasingSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */; };
 		BFFA2A7F223372520023BB71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFFA2A7E223372520023BB71 /* GoogleService-Info.plist */; };
 		BFFA2A81223380720023BB71 /* EasyGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A80223380720023BB71 /* EasyGet.swift */; };
@@ -55,6 +63,14 @@
 		BF2674F52227B6A4003D370F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF46108F22352423006F3DF1 /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
 		BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTilePOSITION.swift; sourceTree = "<group>"; };
+		BF519C6A223F58920087A4AC /* ExNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNotification.swift; sourceTree = "<group>"; };
+		BF519C6C223F84510087A4AC /* P321.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = P321.png; sourceTree = "<group>"; };
+		BF519C6E223F86AF0087A4AC /* P21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = P21.png; sourceTree = "<group>"; };
+		BF519C6F223F86B00087A4AC /* P12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = P12.png; sourceTree = "<group>"; };
+		BF519C70223F86B10087A4AC /* P32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = P32.png; sourceTree = "<group>"; };
+		BF519C71223F86B20087A4AC /* P23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = P23.png; sourceTree = "<group>"; };
+		BF519C76223F8C4A0087A4AC /* P232.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = P232.png; sourceTree = "<group>"; };
+		BF519C77223F8C4C0087A4AC /* P233.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = P233.png; sourceTree = "<group>"; };
 		BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpriteKitEasingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA2A7C22336D760023BB71 /* TapticEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TapticEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA2A7E223372520023BB71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -105,6 +121,15 @@
 			children = (
 				BF1FF2B02231204F0047ED23 /* StageInfomation */,
 				BFFA2A8F2234CEED0023BB71 /* TilePick */,
+				BFFA2A982234D9D30023BB71 /* BaseTile.png */,
+				BF519C6C223F84510087A4AC /* P321.png */,
+				BF519C70223F86B10087A4AC /* P32.png */,
+				BF519C6F223F86B00087A4AC /* P12.png */,
+				BF519C76223F8C4A0087A4AC /* P232.png */,
+				BF519C77223F8C4C0087A4AC /* P233.png */,
+				BF519C6E223F86AF0087A4AC /* P21.png */,
+				BF519C71223F86B20087A4AC /* P23.png */,
+				BFFA2A902234CF010023BB71 /* NullTile.png */,
 				BF2674E32227B6A3003D370F /* AppDelegate.swift */,
 				BFFA2A8D2234CC5F0023BB71 /* Tile.swift */,
 				BF2674EB2227B6A3003D370F /* GameViewController.swift */,
@@ -112,6 +137,7 @@
 				BF1FF2AC22311CE60047ED23 /* Stage.swift */,
 				BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */,
 				BF46108F22352423006F3DF1 /* Puzzle.swift */,
+				BF519C6A223F58920087A4AC /* ExNotification.swift */,
 				BF1FF2AE22311FD40047ED23 /* StageContents.swift */,
 			);
 			path = GameFile;
@@ -191,8 +217,6 @@
 		BFFA2A8F2234CEED0023BB71 /* TilePick */ = {
 			isa = PBXGroup;
 			children = (
-				BFFA2A982234D9D30023BB71 /* BaseTile.png */,
-				BFFA2A902234CF010023BB71 /* NullTile.png */,
 			);
 			path = TilePick;
 			sourceTree = "<group>";
@@ -269,13 +293,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFFA2A912234CF010023BB71 /* NullTile.png in Resources */,
+				BF519C74223F86B20087A4AC /* P32.png in Resources */,
 				BF2674EF2227B6A3003D370F /* Main.storyboard in Resources */,
 				BF2674E62227B6A3003D370F /* GameScene.sks in Resources */,
 				BF2674F12227B6A4003D370F /* Assets.xcassets in Resources */,
 				BF2674F42227B6A4003D370F /* LaunchScreen.storyboard in Resources */,
+				BF519C78223F8C4C0087A4AC /* P232.png in Resources */,
 				BF2674E82227B6A3003D370F /* Actions.sks in Resources */,
 				BFFA2A7F223372520023BB71 /* GoogleService-Info.plist in Resources */,
+				BF519C6D223F84510087A4AC /* P321.png in Resources */,
+				BF519C73223F86B20087A4AC /* P12.png in Resources */,
+				BF519C72223F86B20087A4AC /* P21.png in Resources */,
 				BFFA2A992234D9D30023BB71 /* BaseTile.png in Resources */,
+				BF519C79223F8C4C0087A4AC /* P233.png in Resources */,
+				BF519C75223F86B20087A4AC /* P23.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +400,7 @@
 				BF1FF2AD22311CE60047ED23 /* Stage.swift in Sources */,
 				BF2674E42227B6A3003D370F /* AppDelegate.swift in Sources */,
 				BFFA2A81223380720023BB71 /* EasyGet.swift in Sources */,
+				BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */,
 				BFFA2A88223384120023BB71 /* NormalCreate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

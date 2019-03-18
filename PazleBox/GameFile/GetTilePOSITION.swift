@@ -54,63 +54,67 @@ class TilePosi {
       }
    }
    
+   public func GetAnyPostionXY(xpoint: Int, ypoint:Int) -> CGPoint {
+      return CGPoint(x: X[xpoint], y: Y[ypoint])
+   }
+   
    //let y1 = -ViewY * 3 / 8 + Intarnal * TilePosiX + TileWide * (TilePosiX - 1)
    
-   public func GetAlphasXPosi(AlPosiX: CGFloat) -> CGFloat {
+   public func GetAlphasXPosi(AlPosiX: CGFloat) -> Int {
       
       
       switch AlPosiX {
       case let x where x <= -3.5:
-         return X[0]
+         return 0
       case -3.5 ..< -2.5:
-         return X[1]
+         return 1
       case -2.5 ..< -1.5:
-         return X[2]
+         return 2
       case -1.5 ..< -0.5:
-         return X[3]
+         return 3
       case -0.5 ..< 0.5:
-         return X[4]
+         return 4
       case 0.5 ..< 1.5:
-         return X[5]
+         return 5
       case 1.5 ..< 2.5:
-         return X[6]
+         return 6
       case 2.5 ..< 3.5:
-         return X[7]
+         return 7
       case let x where x >= 3.5:
-         return X[8]
+         return 8
       default:
          fatalError()
       }
    }
    
-   public func GetAlphasYPosi(AlPosiY: CGFloat) -> CGFloat {
+   public func GetAlphasYPosi(AlPosiY: CGFloat) -> Int {
       
       
       switch AlPosiY {
       case let y where y <= -6.5:
-         return Y[0]
+         return 0
       case -6.5 ..< -5.5:
-         return Y[1]
+         return 1
       case -5.5 ..< -4.5:
-         return Y[2]
+         return 2
       case -4.5 ..< -3.5:
-         return Y[3]
+         return 3
       case -3.5 ..< -2.5:
-         return Y[4]
+         return 4
       case -2.5 ..< -1.5:
-         return Y[5]
+         return 5
       case -1.5 ..< -0.5:
-         return Y[6]
+         return 6
       case -0.5 ..< 0.5:
-         return Y[7]
+         return 7
       case 0.5 ..< 1.5:
-         return Y[8]
+         return 8
       case 1.5 ..< 2.5:
-         return Y[9]
+         return 9
       case 2.5 ..< 3.5:
-         return Y[10]
+         return 10
       case let x where x >= 3.5:
-         return Y[11]
+         return 11
       default:
          fatalError()
       }
