@@ -12,18 +12,18 @@ extension Easy {
    
    public func InitE1(){
       
-      E1 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+      E1 = [[.In, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+            [.In, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+            [.In, .In, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+            [.Out, .Out, .Out, .Out, .Out, .Out, .In, .In, .Out],
+            [.Out, .Out, .Out, .Out, .Out, .Out, .In, .Out, .Out],
+            [.Out, .Out, .Out, .Out, .Out, .Out, .In, .In, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .In, .In, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .In, .In, .In, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .In, .In, .Out, .In, .Out, .Out, .In, .Out],
-            [.Out, .In, .In, .Out, .In, .Out, .Out, .In, .Out],
-            [.Out, .In, .In, .Out, .In, .Out, .Out, .Out, .Out],
-            [.Out, .In, .In, .Out, .In, .Out, .Out, .Out, .Out],
-            [.Out, .In, .In, .Out, .In, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out,.In, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+            [.Out, .Out, .Out, .In, .In, .Out, .Out, .Out, .Out],
+            [.Out, .Out, .Out, .In, .In, .Out, .Out, .Out, .Out],
+            [.Out, .Out, .Out, .Out, .In, .Out, .Out, .Out, .Out],
+            [.Out, .Out, .In, .Out, .Out, .Out, .Out, .Out, .Out],
+            [.In, .In, .In, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
    public func InitE2(){

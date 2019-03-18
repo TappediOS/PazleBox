@@ -25,7 +25,7 @@ class PArry {
               [.In, .In],]
       
       p232 = [[.Out, .In],
-              [.In, .Out],
+              [.In, .In],
               [.In, .In],]
       
       p233 = [[.In, .In],
