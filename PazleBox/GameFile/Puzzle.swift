@@ -61,11 +61,11 @@ class puzzle: SKSpriteNode {
       self.CenterX = PX - 1
       self.CenterY = PY - 1
       
-      let PHalfWide = PazzleWideSize / 2
-      let ViewHalf = -ViewX / 2
+      //let PHalfWide = PazzleWideSize / 2
+      //let ViewHalf = -ViewX / 2
       
-      let x1 = ViewHalf + PazzleWideSize + PHalfWide
-      let y1 = -ViewY * 3 / 8 + PX + PazzleHightSize * (PX - 1)
+      //let x1 = ViewHalf + PazzleWideSize + PHalfWide
+      //let y1 = -ViewY * 3 / 8 + PX + PazzleHightSize * (PX - 1)
       
       let texture: SKTexture
       
