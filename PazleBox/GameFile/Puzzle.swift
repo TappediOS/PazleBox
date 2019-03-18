@@ -12,7 +12,11 @@ import SpriteKit
 class puzzle: SKSpriteNode {
 
    
-   var pAllPosi: [[Int]] = Array()
+   var pAllPosi: [[Contents]] = Array()
+   var SerchpAllPosi = PArry()
+   
+   public var PuzzleWide = 0
+   public var PuzzleHight = 0
    
    public var CenterX: Int
    public var CenterY: Int
@@ -27,6 +31,7 @@ class puzzle: SKSpriteNode {
    
    var Tilep: TilePosi
    
+
    
    /// クラスの初期化
    ///
@@ -39,6 +44,8 @@ class puzzle: SKSpriteNode {
    init(PX: Int, PY: Int, CustNum: Int, ViewX: Int, ViewY: Int, TextureName: String) {
       
       print("node \(PX) * \(PY)")
+      self.PuzzleWide = PX
+      self.PuzzleHight = PY
       
       let PazzleSizeFound = ViewX / 10 + (ViewX / 100)
       
@@ -112,8 +119,8 @@ class puzzle: SKSpriteNode {
    
    //MARK:- 初期化
    func InitPazzle(PazzleX: Int, PazzleY: Int, CustomNum: Int){
-      self.pAllPosi = [[1, 1, 1],
-                       [0, 0, 1]]
+
+      self.pAllPosi = SerchpAllPosi.GerPArry(TextureName: self.texture!.name) 
    }
    
    
@@ -158,9 +165,11 @@ class puzzle: SKSpriteNode {
    
    public func GetOfInfomation() -> [String : Any] {
       
-      let AllInfomation: [String : Any] = ["PX": self.CenterX as Int,
-                                        "PY": self.CenterY as Int,
-                                        "PArry": self.pAllPosi as Array]
+      let AllInfomation: [String : Any] = ["StartPointX": self.CenterX as Int,
+                                           "StartPointY": self.CenterY as Int,
+                                           "PuzzleWide": self.PuzzleWide as Int,
+                                           "PuzzleHight": self.PuzzleHight as Int,
+                                           "PArry": self.pAllPosi as Array]
       
       return AllInfomation
       
@@ -185,7 +194,7 @@ class puzzle: SKSpriteNode {
          OneTimeBackPosiY = BeforeCenterY
       }
       
-      print("selfX = \(CenterX) selfY = \(CenterY)")
+      //print("selfX = \(CenterX) selfY = \(CenterY)")
    }
    
    func UpdateSelfPosi(){

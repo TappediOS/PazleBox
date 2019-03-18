@@ -56,10 +56,10 @@ class GameScene: SKScene {
    }
    
    private func InitPuzzle(SizeX: CGFloat?, SizeY: CGFloat?){
-      Puzzle1 = puzzle(PX: 3, PY: 2, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), TextureName: "P32.png")
-      Puzzle2 = puzzle(PX: 2, PY: 3, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), TextureName: "P23.png")
-      Puzzle3 = puzzle(PX: 2, PY: 3, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), TextureName: "P232.png")
-      Puzzle4 = puzzle(PX: 2, PY: 3, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), TextureName: "P233.png")
+      Puzzle1 = puzzle(PX: 3, PY: 2, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), TextureName: "P321")
+      Puzzle2 = puzzle(PX: 2, PY: 3, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), TextureName: "P231")
+      Puzzle3 = puzzle(PX: 2, PY: 3, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), TextureName: "P232")
+      Puzzle4 = puzzle(PX: 2, PY: 3, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), TextureName: "P233")
    }
    
    private func puzzleInit() {
@@ -119,7 +119,41 @@ class GameScene: SKScene {
       print("game Set")
    }
    
+   private func ShowCheckStage() {
+      for x in 0 ... 11 {
+         print()
+         for y in 0 ... 8 {
+            if CheckedStage[x][y] == .Out {
+               print("\(CheckedStage[x][y]) ", terminator: "")
+            }else{
+               print("\(CheckedStage[x][y])  ", terminator: "")
+            }
+         }
+      }
+      print()
+      print()
+   }
+   
+   private func ShowStage(){
+      for x in 0 ... 11 {
+         print()
+         for y in 0 ... 8 {
+            if Stage.GStage[x][y] == .Out {
+               print("\(Stage.GStage[x][y]) ", terminator: "")
+            }else{
+               print("\(Stage.GStage[x][y])  ", terminator: "")
+            }
+         }
+      }
+      print()
+   }
+   
    private func GameCheck() -> Bool {
+      
+      //ShowStage()
+      //ShowCheckStage()
+      
+      
       
       if Stage.GStage.elementsEqual(CheckedStage) {
          return true
@@ -130,11 +164,32 @@ class GameScene: SKScene {
    
    private func CheckedStageFill(StageObject: [String : Any]) {
       
+      // 配列やからインクリメント
+      let StartX = StageObject["StartPointX"] as! Int
+      let StartY = StageObject["StartPointY"] as! Int
+      
+      let PuzzleWide = StageObject["PuzzleWide"] as! Int
+      let PuzzleHight = StageObject["PuzzleHight"] as! Int
+      let PArry = StageObject["PArry"] as! [[Contents]]
+      
+      let EndPointX = StartX + (PuzzleWide - 1)
+      let EndPointY = StartY + (PuzzleHight - 1)
+      
+      if EndPointX >= 9 || EndPointY >= 12 {
+         return
+      }
+      
+      for x in StartX ... EndPointX {
+         for y in StartY ... EndPointY {
+            CheckedStage[y][x] = PArry[y - StartY][x - StartX]
+         }
+      }
+      
+      
    }
    
    private func GameDecision() {
       
-      let Object = Puzzle1?.GetOfInfomation()
       
       for Puzzle in PuzzleBox {
          let PuzzleInfo = (Puzzle as! puzzle).GetOfInfomation()
@@ -159,11 +214,11 @@ class GameScene: SKScene {
       GameDecision()
       
       if let userInfo = notification.userInfo {
-         let PosiX = userInfo["PX"] as! Int
-         let PosiY = userInfo["PY"] as! Int
-         let PArry = userInfo["PArry"] as! NSArray
-         print("PosiX = \(PosiX)")
-         print("PosiY = \(PosiY)")
+         //let PosiX = userInfo["PX"] as! Int
+         //let PosiY = userInfo["PY"] as! Int
+         //let PArry = userInfo["PArry"] as! NSArray
+         //print("PosiX = \(PosiX)")
+         //print("PosiY = \(PosiY)")
          
          //PositionCheck()
       }else{
