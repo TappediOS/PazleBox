@@ -18,14 +18,20 @@ class puzzle: SKSpriteNode {
    public var PuzzleWide = 0
    public var PuzzleHight = 0
    
-   public var CenterX: Int
-   public var CenterY: Int
+   public var CenterX: Int = 0
+   public var CenterY: Int = 0
    public var OneTimeBackPosiX: Int = 0
    public var OneTimeBackPosiY: Int = 0
+   
+   private var BeforeCenterX: Int = 0
+   private var BeforeCenterY: Int = 0
+   
    public var TouchBegan: CGPoint
    
    private var PuzzleStyle: String
    private var PuzzleColor: String
+   private var BirthDayNum: Int
+   
    
    private var AlphaNode = SKSpriteNode()
    
@@ -34,20 +40,20 @@ class puzzle: SKSpriteNode {
    
    var Tilep: TilePosi
    
-
    
-   /// クラスの初期化
+   /// 初期化
    ///
    /// - Parameters:
-   ///   - PPosiX: X座標
-   ///   - PPosiY: Y座標
-   ///   - BallColor: ボールの番号(画像)
-   ///   - ViewX: 使用しているデバイスのWideを表す。
-   ///   - ViewY: 使用しているデバイスのheightを表す
+   ///   - PX: パズルの横幅
+   ///   - PY: パズルの縦幅
+   ///   - CustNum: 使ってない←
+   ///   - ViewX: 画面サイズwide
+   ///   - ViewY: 画面サイズheight
+   ///   - PuzzleStyle: パズルの形
+   ///   - PuzzleColor: パズルの色
    init(PX: Int, PY: Int, CustNum: Int, ViewX: Int, ViewY: Int, PuzzleStyle: String, PuzzleColor: String) {
       
-      let TextureName = PuzzleStyle + PuzzleColor
-      //print("TextName = \(TextureName)")
+      self.BirthDayNum = CustNum
       
       self.PuzzleStyle = PuzzleStyle
       self.PuzzleColor = PuzzleColor
@@ -57,50 +63,38 @@ class puzzle: SKSpriteNode {
       
       let PazzleSizeFound = ViewX / 10 + (ViewX / 100)
       
-      
+      //MARK: 移動後の座標提供者の初期化
       SerchPlace = CGFloat(PazzleSizeFound)
       self.Tilep = TilePosi(ViewX: ViewX, ViewY: ViewY)
       
       let PazzleWideSize = PazzleSizeFound * PX
       let PazzleHightSize = PazzleSizeFound * PY
-      
-      
-      
-      self.CenterX = PX - 1
-      self.CenterY = PY - 1
-      
-      //let PHalfWide = PazzleWideSize / 2
-      //let ViewHalf = -ViewX / 2
-      
-      //let x1 = ViewHalf + PazzleWideSize + PHalfWide
-      //let y1 = -ViewY * 3 / 8 + PX + PazzleHightSize * (PX - 1)
-      
-      
-      
-
+   
+   
+      //FIXME: 使ってない
       self.TouchBegan = CGPoint(x: 0, y: 0)
       
+      //MARK: 画像の初期化
       let texture: SKTexture
-      
+      let TextureName = PuzzleStyle + PuzzleColor
       texture = SKTexture(imageNamed: TextureName)
-      
       texture.filteringMode = .nearest
       
-      print(texture)
-      
       let NodeSize = CGSize(width: CGFloat(PazzleWideSize), height: CGFloat(PazzleHightSize))
+      
       super.init(texture: texture, color: UIColor.black, size: NodeSize)
       
       //print("anchor: \(CGPoint(x: 1 / (PX * 2), y: 1 - ( 1 / (PY * 2) )))")
-      
+      //MARK: アンカーの設定。
       let Anchor = CGPoint(x: 1 / CGFloat(PX * 2), y: 1 - 1 / CGFloat(PY * 2) )
       self.anchorPoint = Anchor
       //ノードがタッチできる状態にする。
       self.isUserInteractionEnabled = true
       //ポジションの設定。
-      //self.position = CGPoint(x: x1, y: y1)
+      self.CenterX = PX - 1
+      self.CenterY = PY - 1
       self.position = Tilep.GetAnyPostionXY(xpoint: self.CenterX, ypoint: self.CenterY)
-      
+      //FIXME:- これは多さによって変えるべきである。
       self.zPosition = 2
       
       AlphaNode = SKSpriteNode(texture: texture, color: UIColor.black, size: NodeSize)
@@ -108,16 +102,19 @@ class puzzle: SKSpriteNode {
       AlphaNode.anchorPoint = Anchor
       AlphaNode.position = self.position
       AlphaNode.zPosition = 1
+      AlphaNode.isUserInteractionEnabled = false
       
       AlphaNode.alpha = 0.5
-      
-      
-      
    }
    
    //MARK:- 初期化
-   func InitPazzle(PazzleX: Int, PazzleY: Int, CustomNum: Int){
-
+   func InitPazzle(PositionX: Int, PositionY: Int, CustomNum: Int){
+      //場所を決める
+      self.CenterX = PositionX
+      self.CenterY = PositionY
+      self.position = Tilep.GetAnyPostionXY(xpoint: self.CenterX, ypoint: self.CenterY)
+      self.AlphaNode.position = self.position
+      //MARK: 配列にここで入れる
       self.pAllPosi = SerchpAllPosi.GerPArry(PuzzleStyle: self.PuzzleStyle)
    }
    
@@ -131,31 +128,11 @@ class puzzle: SKSpriteNode {
       return self.AlphaNode
    }
 
-   private func SelectTexture(TileCon: Contents) {
-      //ここで画像を選択。
-      switch TileCon {
-      case .In:
-         texture = SKTexture(imageNamed: "BaseTile.png")
-         
-         break
-      case .Out:
-         texture = SKTexture(imageNamed: "NullTile.png")
-         
-         break
-         
-      default:
-         print("BallNumber is \(TileCon)")
-         fatalError("BallNumber is NOT 1...4")
-         break;
-      }
-   }
-   
    //MARK:- 通知を送信
+   //FIXME:- もしかしたら，SentObjectいらんかも
    private func FinishMoveTilePOSTMotification() {
       
-      let SentObject: [String : Any] = ["PX": self.CenterX as Int,
-                                        "PY": self.CenterY as Int,
-                                        "PArry": self.pAllPosi as Array]
+      let SentObject: [String : Any] = ["BirthDay": self.BirthDayNum as Int]
       
       print("")
       NotificationCenter.default.post(name: .TileMoved, object: nil, userInfo: SentObject)
@@ -186,24 +163,42 @@ class puzzle: SKSpriteNode {
       self.CenterY = Tilep.GetAlphasYPosi(AlPosiY: Selfy / SerchPlace)
       self.AlphaNode.position = Tilep.GetAnyPostionXY(xpoint: self.CenterX, ypoint: self.CenterY)
       
-      
+      //前回の場所と今回の場所に変化があったら，前回の場所を保存
       if self.CenterX != BeforeCenterX || self.CenterY != BeforeCenterY {
          OneTimeBackPosiX = BeforeCenterX
          OneTimeBackPosiY = BeforeCenterY
       }
-      
-      //print("selfX = \(CenterX) selfY = \(CenterY)")
    }
    
-   func UpdateSelfPosi(){
+   public func ReBackNodePosition() {
+      
+      self.CenterX = BeforeCenterX
+      self.CenterY = BeforeCenterY
+      
+      let BeforePoint = Tilep.GetAnyPostionXY(xpoint: self.CenterX, ypoint: self.CenterY)
+      
+      self.position = BeforePoint
+      self.AlphaNode.position = BeforePoint
+   }
+   
+   private func UpdateSelfPosi(){
       self.position = AlphaNode.position
    }
    
-  
+   private func SaveSelfPosition() {
+      self.BeforeCenterX = self.CenterX
+      self.BeforeCenterY = self.CenterY
+   }
+   
+   public func GetBirthDayNum() -> Int{
+      return self.BirthDayNum
+   }
    
    //MARK:- タッチイベント
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
      self.zPosition += 1
+      
+      SaveSelfPosition()
    }
    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
      
@@ -232,8 +227,8 @@ class puzzle: SKSpriteNode {
       UpdateSelfPosi()
       FinishMoveTilePOSTMotification()
    }
+   
    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
      
    }
-
 }

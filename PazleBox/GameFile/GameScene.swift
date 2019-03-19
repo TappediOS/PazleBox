@@ -26,12 +26,11 @@ class GameScene: SKScene {
    
     override func sceneDidLoad() {
 
-
-      self.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 0)
-      
       //ビューの長さを取得
       let ViewSizeX = self.scene?.frame.width
       let ViewSizeY = self.scene?.frame.height
+
+      InitBackGroundColor()
       
       InitStageSize(SizeX: ViewSizeX, SizeY: ViewSizeY)
       SetStage()
@@ -58,22 +57,23 @@ class GameScene: SKScene {
    }
    
    //MARK: パズルを初期化する。
-   //Px Py に1片の長さをTextureNameに画像名を入れる
+   //Px Py に1片の長さを入れる
    private func InitPuzzle(SizeX: CGFloat?, SizeY: CGFloat?){
-      Puzzle1 = puzzle(PX: 3, PY: 2, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "32p1", PuzzleColor: "Red")
+      Puzzle1 = puzzle(PX: 3, PY: 2, CustNum: 0, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "32p1", PuzzleColor: "Red")
       Puzzle2 = puzzle(PX: 2, PY: 3, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "23p1", PuzzleColor: "Green")
-      Puzzle3 = puzzle(PX: 2, PY: 3, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "23p2", PuzzleColor: "Red")
-      Puzzle4 = puzzle(PX: 2, PY: 3, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "23p2", PuzzleColor: "Red")
+      Puzzle3 = puzzle(PX: 2, PY: 3, CustNum: 2, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "23p2", PuzzleColor: "Blue")
+      Puzzle4 = puzzle(PX: 2, PY: 3, CustNum: 3, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "23p2", PuzzleColor: "Red")
    }
    
    
    private func puzzleInit() {
       //ココの引数は特に使ってない。場所の位置変更で使ってもいいかも。
       //pAllArryの初期化をしてるね。
-      Puzzle1!.InitPazzle(PazzleX: 3, PazzleY: 2, CustomNum: 1)
-      Puzzle2!.InitPazzle(PazzleX: 2, PazzleY: 3, CustomNum: 1)
-      Puzzle3!.InitPazzle(PazzleX: 2, PazzleY: 3, CustomNum: 1)
-      Puzzle4!.InitPazzle(PazzleX: 2, PazzleY: 3, CustomNum: 1)
+      //
+      Puzzle1!.InitPazzle(PositionX: 2, PositionY: 3, CustomNum: 1)
+      Puzzle2!.InitPazzle(PositionX: 4, PositionY: 5, CustomNum: 1)
+      Puzzle3!.InitPazzle(PositionX: 2, PositionY: 10, CustomNum: 1)
+      Puzzle4!.InitPazzle(PositionX: 6, PositionY: 10, CustomNum: 1)
    
       addChild(Puzzle1!)
       addChild(Puzzle1!.GetAlhpaNode())
@@ -91,6 +91,10 @@ class GameScene: SKScene {
        PuzzleBox.append(Puzzle2!)
        PuzzleBox.append(Puzzle3!)
        PuzzleBox.append(Puzzle4!)
+   }
+   
+   private func InitBackGroundColor() {
+      self.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 0)
    }
    
    //MARK: 背景のタイルを表示してる。
@@ -228,7 +232,11 @@ class GameScene: SKScene {
       for x in LeftUpX ... RightDownX {
          for y in RightDownY ... LeftUpY {
             let ReverseY = (LeftUpY - y) + RightDownY
-            CheckedStage[ReverseY][x] = PArry[y - RightDownY][x - LeftUpX]
+            
+            //.OutなのにFillしたら，もし先客が.In入れてても塗りつぶしてしまう。
+            if PArry[y - RightDownY][x - LeftUpX] == .In {
+               CheckedStage[ReverseY][x] = PArry[y - RightDownY][x - LeftUpX]
+            }
          }
       }
       
@@ -252,24 +260,147 @@ class GameScene: SKScene {
       return
    }
    
+   private func CheckdPuzzleFillSentPazzle(StageObject: [String : Any]) -> Bool {
+      
+      let StartX = StageObject["StartPointX"] as! Int
+      let StartY = StageObject["StartPointY"] as! Int
+      
+      let PuzzleWide = StageObject["PuzzleWide"] as! Int
+      let PuzzleHight = StageObject["PuzzleHight"] as! Int
+      let PArry = StageObject["PArry"] as! [[Contents]]
+      
+      let LeftUpX = StartX
+      let LeftUpY = StartY
+      
+      let RightUpX = StartX + (PuzzleWide - 1)
+      let RightUpY = StartY
+      
+      let LeftDownX = StartX
+      let LeftDownY = StartY - (PuzzleHight - 1)
+      
+      let RightDownX = StartX + (PuzzleWide - 1)
+      let RightDownY = StartY - (PuzzleHight - 1)
+      
+      //はみ出てたらさようなら。
+      if CheckLeftUp(x: LeftUpX, y: LeftUpY) == false || CheckLeftDown(x: LeftDownX, y: LeftDownY) == false {
+         return false
+      }
+      
+      if CheckRightUp(x: RightUpX, y: RightUpY) == false || CheckRightDown(x: RightDownX, y: RightDownY) == false {
+         return false
+      }
+      
+      for x in LeftUpX ... RightDownX {
+         for y in RightDownY ... LeftUpY {
+            let ReverseY = (LeftUpY - y) + RightDownY
+               CheckedStage[ReverseY][x] = PArry[y - RightDownY][x - LeftUpX]
+         }
+      }
+      
+      return true
+   }
+   
+   private func SentCheckedStageFill(StageObject: [String : Any]) -> Bool {
+      
+      let StartX = StageObject["StartPointX"] as! Int
+      let StartY = StageObject["StartPointY"] as! Int
+      
+      let PuzzleWide = StageObject["PuzzleWide"] as! Int
+      let PuzzleHight = StageObject["PuzzleHight"] as! Int
+      let PArry = StageObject["PArry"] as! [[Contents]]
+      
+      let LeftUpX = StartX
+      let LeftUpY = StartY
+      
+      let RightUpX = StartX + (PuzzleWide - 1)
+      let RightUpY = StartY
+      
+      let LeftDownX = StartX
+      let LeftDownY = StartY - (PuzzleHight - 1)
+      
+      let RightDownX = StartX + (PuzzleWide - 1)
+      let RightDownY = StartY - (PuzzleHight - 1)
+      
+      
+      //FIXME:- はみ出している可能性0？
+//      //はみ出てたらさようなら。
+//      if CheckLeftUp(x: LeftUpX, y: LeftUpY) == false || CheckLeftDown(x: LeftDownX, y: LeftDownY) == false {
+//         return false
+//      }
+//
+//      if CheckRightUp(x: RightUpX, y: RightUpY) == false || CheckRightDown(x: RightDownX, y: RightDownY) == false {
+//         return false
+//      }
+      
+      for x in LeftUpX ... RightDownX {
+         for y in RightDownY ... LeftUpY {
+            let ReverseY = (LeftUpY - y) + RightDownY
+            if CheckedStage[ReverseY][x] == .In && PArry[y - RightDownY][x - LeftUpX] == .In {
+               return true
+            }
+         }
+      }
+      
+      return false
+   }
+   
+   private func OverRapped(BirthDay: Int) -> Bool {
+      
+      let SentPazzle: puzzle = PuzzleBox[BirthDay] as! puzzle
+      let SentPuzzleInfo = SentPazzle.GetOfInfomation()
+      
+      //はみ出てたらそもそもアウト
+      if CheckdPuzzleFillSentPazzle(StageObject: SentPuzzleInfo) == false {
+         return true
+      }
+      
+      for Puzzle in PuzzleBox {
+         
+         if (Puzzle as! puzzle) == SentPazzle {
+            print("かぶった。番号-> \((Puzzle as! puzzle).GetBirthDayNum())")
+            continue
+         }
+         
+         let PuzzleInfo = (Puzzle as! puzzle).GetOfInfomation()
+         
+         //かぶってたらReturn true
+         if SentCheckedStageFill(StageObject: PuzzleInfo) == true {
+            return true
+         }
+      }
+      
+      // 被りなし。
+      return false
+      
+   }
+   
    //MARK:- 通知を受け取る関数郡
    @objc func MovedTileCatchNotification(notification: Notification) -> Void {
       print("--- Move notification ---")
       
-      //ゲーム判定へ。
-      GameDecision()
       
-//      if let userInfo = notification.userInfo {
-//         //let PosiX = userInfo["PX"] as! Int
-//         //let PosiY = userInfo["PY"] as! Int
-//         //let PArry = userInfo["PArry"] as! NSArray
-//         //print("PosiX = \(PosiX)")
-//         //print("PosiY = \(PosiY)")
-//
-//         //PositionCheck()
-//      }else{
-//         print("通知受け取ったけど、中身nilやった。")
-//      }
+      CrearCheckedStage()
+      
+      
+      if let userInfo = notification.userInfo {
+         let SentNum = userInfo["BirthDay"] as! Int
+         print("送信者番号: \(SentNum)")
+         
+         if OverRapped(BirthDay: SentNum) == true {
+            (PuzzleBox[SentNum] as! puzzle).ReBackNodePosition()
+            CrearCheckedStage()
+            return
+         }
+         
+         CrearCheckedStage()
+         
+         //ゲーム判定へ。
+         GameDecision()
+         
+         
+      }else{
+         print("通知受け取ったけど、中身nilやった。")
+      }
       
       return
    }

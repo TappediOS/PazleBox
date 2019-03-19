@@ -110,7 +110,7 @@ class GameTile: SKSpriteNode {
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       
       
-      print("私は(\(self.PositionX), \(self.PositionY))で，POSIは(\(self.position.x), \(self.position.y))")
+      //print("私は(\(self.PositionX), \(self.PositionY))で，POSIは(\(self.position.x), \(self.position.y))")
     
       
      // print("--- Tile info ---")
