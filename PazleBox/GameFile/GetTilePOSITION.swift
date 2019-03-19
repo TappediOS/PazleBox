@@ -41,7 +41,7 @@ class TilePosi {
       for y in 1 ... 12 {
          let SetY = (-self.ViewY * 3 / 8) + Intarnal * (y - 1) + FoundX * (y - 2)
          Y.append(CGFloat(SetY))
-         print("Y[\(y - 1)] = \(Y[y - 1])")
+         //print("Y[\(y - 1)] = \(Y[y - 1])")
       }
    }
    
@@ -50,7 +50,7 @@ class TilePosi {
       for x in 1 ... 9 {
          let SetX = FoundX * (x - 1) + Intarnal * x + HalfView + FoundX / 2
          X.append(CGFloat(SetX))
-         print("X[\(x - 1)] = \(X[x - 1])")
+         //print("X[\(x - 1)] = \(X[x - 1])")
       }
    }
    

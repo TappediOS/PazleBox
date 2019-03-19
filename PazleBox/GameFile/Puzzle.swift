@@ -24,6 +24,9 @@ class puzzle: SKSpriteNode {
    public var OneTimeBackPosiY: Int = 0
    public var TouchBegan: CGPoint
    
+   private var PuzzleStyle: String
+   private var PuzzleColor: String
+   
    private var AlphaNode = SKSpriteNode()
    
    //割って場所を特定する
@@ -41,9 +44,14 @@ class puzzle: SKSpriteNode {
    ///   - BallColor: ボールの番号(画像)
    ///   - ViewX: 使用しているデバイスのWideを表す。
    ///   - ViewY: 使用しているデバイスのheightを表す
-   init(PX: Int, PY: Int, CustNum: Int, ViewX: Int, ViewY: Int, TextureName: String) {
+   init(PX: Int, PY: Int, CustNum: Int, ViewX: Int, ViewY: Int, PuzzleStyle: String, PuzzleColor: String) {
       
-      print("node \(PX) * \(PY)")
+      let TextureName = PuzzleStyle + PuzzleColor
+      //print("TextName = \(TextureName)")
+      
+      self.PuzzleStyle = PuzzleStyle
+      self.PuzzleColor = PuzzleColor
+      
       self.PuzzleWide = PX
       self.PuzzleHight = PY
       
@@ -67,28 +75,18 @@ class puzzle: SKSpriteNode {
       //let x1 = ViewHalf + PazzleWideSize + PHalfWide
       //let y1 = -ViewY * 3 / 8 + PX + PazzleHightSize * (PX - 1)
       
-      let texture: SKTexture
+      
       
 
       self.TouchBegan = CGPoint(x: 0, y: 0)
       
+      let texture: SKTexture
       
-      switch CustNum {
-      case 1:
-         texture = SKTexture(imageNamed: TextureName)
-         texture.filteringMode = .nearest
-         
-         break
-      case 2:
-         texture = SKTexture(imageNamed: "NullTile.png")
-         
-         break
-         
-      default:
-         print("BallNumber is \(CustNum)")
-         fatalError("BallNumber is NOT 1...4")
-         break;
-      }
+      texture = SKTexture(imageNamed: TextureName)
+      
+      texture.filteringMode = .nearest
+      
+      print(texture)
       
       let NodeSize = CGSize(width: CGFloat(PazzleWideSize), height: CGFloat(PazzleHightSize))
       super.init(texture: texture, color: UIColor.black, size: NodeSize)
@@ -120,7 +118,7 @@ class puzzle: SKSpriteNode {
    //MARK:- 初期化
    func InitPazzle(PazzleX: Int, PazzleY: Int, CustomNum: Int){
 
-      self.pAllPosi = SerchpAllPosi.GerPArry(TextureName: self.texture!.name) 
+      self.pAllPosi = SerchpAllPosi.GerPArry(PuzzleStyle: self.PuzzleStyle)
    }
    
    

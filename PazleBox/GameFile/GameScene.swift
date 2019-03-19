@@ -60,10 +60,10 @@ class GameScene: SKScene {
    //MARK: パズルを初期化する。
    //Px Py に1片の長さをTextureNameに画像名を入れる
    private func InitPuzzle(SizeX: CGFloat?, SizeY: CGFloat?){
-      Puzzle1 = puzzle(PX: 3, PY: 2, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), TextureName: "P321")
-      Puzzle2 = puzzle(PX: 2, PY: 3, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), TextureName: "P231")
-      Puzzle3 = puzzle(PX: 2, PY: 3, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), TextureName: "P232")
-      Puzzle4 = puzzle(PX: 2, PY: 3, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), TextureName: "P233")
+      Puzzle1 = puzzle(PX: 3, PY: 2, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "32p1", PuzzleColor: "Red")
+      Puzzle2 = puzzle(PX: 2, PY: 3, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "23p1", PuzzleColor: "Green")
+      Puzzle3 = puzzle(PX: 2, PY: 3, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "23p2", PuzzleColor: "Red")
+      Puzzle4 = puzzle(PX: 2, PY: 3, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "23p2", PuzzleColor: "Red")
    }
    
    

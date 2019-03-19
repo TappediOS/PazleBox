@@ -56,7 +56,7 @@ class GameTile: SKSpriteNode {
      
       switch TileCont {
       case .In:
-         texture = SKTexture(imageNamed: "BaseTile.png")
+         texture = SKTexture(imageNamed: "BaseTile")
          
          break
       case .Out:

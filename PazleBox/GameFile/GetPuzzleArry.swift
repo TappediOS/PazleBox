@@ -11,44 +11,58 @@ import Foundation
 
 class PArry {
    
-   var p231: [[Contents]] = Array()
-   var p232: [[Contents]] = Array()
-   var p233: [[Contents]] = Array()
+   var p23p1: [[Contents]] = Array()
+   var p23p2: [[Contents]] = Array()
    
+   var p32p1: [[Contents]] = Array()
+   var p32p2: [[Contents]] = Array()
+   var p32p3: [[Contents]] = Array()
    
-   var p321: [[Contents]] = Array()
    
    init() {
       
-      p231 = [[.In, .In],
-              [.In, .Out],
-              [.In, .In],]
+      p23p1 = [[.In, .In],
+               [.In, .In],
+               [.In, .In],]
       
-      p232 = [[.Out, .In],
-              [.In, .In],
-              [.In, .In],]
+      p23p1 = [[.In, .In],
+               [.In, .Out],
+               [.In, .Out],]
       
-      p233 = [[.In, .In],
-              [.In, .Out],
-              [.In, .Out],]
+      p23p2 = [[.In, .Out],
+               [.In, .Out],
+               [.In, .In],]
       
-      p321 = [[.In, .In, .In],
-              [.Out, .Out, .In]]
+      
+      p32p1 = [[.In, .Out, .Out],
+               [.In, .In, .In]]
+      
+      p32p2 = [[.Out, .Out, .In],
+               [.In, .In, .In]]
+      
+      p32p3 = [[.In, .In, .In],
+               [.Out, .Out, .In]]
+      
+
    }
    
-   public func GerPArry(TextureName: String) -> [[Contents]] {
+   public func GerPArry(PuzzleStyle: String) -> [[Contents]] {
       
-      switch TextureName {
-      case "P231":
-         return p231
-      case "P232":
-         return p232
-      case "P233":
-         return p233
-      case "P321":
-         return p321
+      print(PuzzleStyle)
+      
+      switch PuzzleStyle {
+      case "23p1":
+         return p23p1
+      case "23p2":
+         return p23p2
+      case "32p1":
+         return p32p1
+      case "32p2":
+         return p32p2
+      case "32p3":
+         return p32p3
       default:
-         return p231
+         fatalError("PuzzleStyle = \(PuzzleStyle)")
       }
    }
 }
