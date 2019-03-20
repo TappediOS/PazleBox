@@ -43,6 +43,7 @@ class puzzle: SKSpriteNode {
    
    
    var MoveMyself = true
+   
    var PuzzleSizeWide: Int
    /// 初期化
    ///
@@ -102,7 +103,7 @@ class puzzle: SKSpriteNode {
       self.CenterY = PY - 1
       self.position = Tilep.GetAnyPostionXY(xpoint: self.CenterX, ypoint: self.CenterY)
       //FIXME:- これは多さによって変えるべきである。
-      self.zPosition = 2
+      self.zPosition = 5
       
       AlphaNode = SKSpriteNode(texture: texture, color: UIColor.black, size: NodeSize)
       
@@ -111,7 +112,7 @@ class puzzle: SKSpriteNode {
       AlphaNode.zPosition = 1
       AlphaNode.isUserInteractionEnabled = false
       
-      AlphaNode.alpha = 0.5
+      AlphaNode.alpha = 0.55
    }
    
    //MARK:- 初期化
@@ -155,6 +156,34 @@ class puzzle: SKSpriteNode {
       
       return AllInfomation
       
+   }
+   
+   private func PuzzleTouchStartPostNotification(touches: Set<UITouch>, X: Int, Y: Int) {
+      
+      print("わたし \(self.BirthDayNum)が透明部を触ったことを通知します。")
+      print("タップした座標: \(String(describing: touches.first?.location(in: self)))")
+      
+      let TouchPoint: CGPoint = touches.first!.location(in: self)
+      
+      let SentObject: [String : Any] = ["BirthDay": self.BirthDayNum as Int,
+                                        "TapPosi": TouchPoint as CGPoint,
+                                        "X": X as Int,
+                                        "Y": Y as Int]
+      
+      print("")
+      NotificationCenter.default.post(name: .PuzzleTouchStart, object: nil, userInfo: SentObject)
+      
+   }
+   
+   private func PuzzleTouchMovedPostNotification(Dx: CGFloat, Dy: CGFloat) {
+      let SentObject: [String : Any] = ["Dx": Dx as CGFloat,
+                                        "Dy": Dy as CGFloat]
+      
+      NotificationCenter.default.post(name: .PuzzleTouchMoved, object: nil, userInfo: SentObject)
+   }
+   
+   private func PuzzleTouchEndedPostNotification() {
+      NotificationCenter.default.post(name: .PuzzleTouchEnded, object: nil, userInfo: nil)
    }
    
    //MARK:- ノードの場所を更新する
@@ -201,57 +230,6 @@ class puzzle: SKSpriteNode {
       return self.BirthDayNum
    }
    
-   private func PuzzleTouchStartPostNotification(touches: Set<UITouch>, X: Int, Y: Int) {
-      
-      print("わたし \(self.BirthDayNum)が透明部を触ったことを通知します。")
-      print("タップした座標: \(String(describing: touches.first?.location(in: self)))")
-      
-      let TouchPoint: CGPoint = touches.first!.location(in: self)
-      
-      let SentObject: [String : Any] = ["BirthDay": self.BirthDayNum as Int,
-                                        "TapPosi": TouchPoint as CGPoint,
-                                        "X": X as Int,
-                                        "Y": Y as Int]
-      
-      print("")
-      NotificationCenter.default.post(name: .PuzzleTouchStart, object: nil, userInfo: SentObject)
-      
-   }
-   
-   private func PuzzleTouchMovedPostNotification(Dx: CGFloat, Dy: CGFloat) {
-      
-
-      let SentObject: [String : Any] = ["Dx": Dx as CGFloat,
-                                        "Dy": Dy as CGFloat]
-      
-      NotificationCenter.default.post(name: .PuzzleTouchMoved, object: nil, userInfo: SentObject)
-      
-   }
-   
-   private func PuzzleTouchEndedPostNotification() {
-      
-      NotificationCenter.default.post(name: .PuzzleTouchEnded, object: nil, userInfo: nil)
-      
-   }
-   
-   public func SelfTouchMoved(Dx: CGFloat, Dy: CGFloat){
-      guard MoveMyself == true else {
-         return
-      }
-      
-      
-      self.position.x += Dx
-      self.position.y += Dy
-      
-      UpdateAlphaNodePosi()
-   }
-   
-   public func SelfTouchEnded(){
-      
-      UpdateSelfPosi()
-      FinishMoveTilePOSTMotification()
-   }
-   
    public func ChangeTRUEMoveMyself() {
       self.MoveMyself = true
    }
@@ -267,8 +245,37 @@ class puzzle: SKSpriteNode {
       return false
    }
    
+   //MARK:- 自前のタッチイベント
+   public func SelfTouchBegan(){
+      self.zPosition += 2
+      SaveSelfPosition()
+   }
+   
+   
+   public func SelfTouchMoved(Dx: CGFloat, Dy: CGFloat){
+      guard MoveMyself == true else {
+         return
+      }
+      
+      self.position.x += Dx
+      self.position.y += Dy
+      
+      UpdateAlphaNodePosi()
+   }
+   
+   public func SelfTouchEnded(){
+      
+      self.zPosition -= 2
+      UpdateSelfPosi()
+      FinishMoveTilePOSTMotification()
+   }
+   
+   
+   
    //MARK:- タッチイベント
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      
+      self.zPosition += 2
       
       //CGFloat(PuzzleSizeWide) / 2  は 左上に揃えるためにしてる
       let TapPosiX = touches.first!.location(in: self).x + CGFloat(PuzzleSizeWide) / 2
@@ -279,7 +286,6 @@ class puzzle: SKSpriteNode {
 
       print("TapPosi = (\(TapPosiX), \(TapPosiY))")
       print("Posi    = (\(PosiX), \(PosiY))")
-      
       
       if TouchPointIsAlpha(X: PosiX, Y: PosiY) == true {
          MoveMyself = false
@@ -292,9 +298,7 @@ class puzzle: SKSpriteNode {
    }
    
    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-      
-      
-     
+
       // タッチイベントを取得
       let touchEvent = touches.first!
       let PreviewXPoint = touchEvent.previousLocation(in: self).x
@@ -306,13 +310,13 @@ class puzzle: SKSpriteNode {
       let Dx = AfterXPoint - PreviewXPoint
       let Dy = AfterYPoint - PreviewYPoint
       
-      self.position.x += Dx
-      self.position.y += Dy
-      
-       guard MoveMyself == true else {
+      guard MoveMyself == true else {
          PuzzleTouchMovedPostNotification(Dx: Dx, Dy: Dy)
          return
       }
+   
+      self.position.x += Dx
+      self.position.y += Dy
       
       //print("\(self.position.x), \(self.position.y)")
       UpdateAlphaNodePosi()
@@ -320,16 +324,16 @@ class puzzle: SKSpriteNode {
    }
    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
       
+      self.zPosition -= 2
+      
       guard MoveMyself == true else {
          PuzzleTouchEndedPostNotification()
          return
       }
-     
+      
       UpdateSelfPosi()
       FinishMoveTilePOSTMotification()
    }
-   
-   
    
    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
      

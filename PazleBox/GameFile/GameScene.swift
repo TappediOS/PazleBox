@@ -33,9 +33,6 @@ class GameScene: SKScene {
    let Debug = false
    
     override func sceneDidLoad() {
-      
-      self.isUserInteractionEnabled = true
-      self.view?.isUserInteractionEnabled = true
 
       //ビューの長さを取得
       let ViewSizeX = self.scene?.frame.width
@@ -55,11 +52,6 @@ class GameScene: SKScene {
       CrearCheckedStage()
       
       InitNotification()
-      
-      let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(handleTap(_:)))
-      self.view?.addGestureRecognizer(tapGesture)
-      
-      self.zPosition = 10
     }
    
    //MARK:- チェックする配列を初期化する
@@ -382,16 +374,68 @@ class GameScene: SKScene {
             return true
          }
       }
-      
       // 被りなし。
       return false
+   }
+   
+   
+   //MARK:- 送信された座標に他のパズル(.In)があるかどうかを判定。
+   private func PuzzleAwayyy(AwayX: Int, AwayY: Int, Puzzle: puzzle) -> Bool {
       
+      if AwayX > 0 { return true }
+      if AwayY < 0 { return true }
+      
+      let PuzzleWide = Puzzle.PuzzleWide
+      let PuzzleHight = Puzzle.PuzzleHight
+      
+      if PuzzleWide + AwayX  <= 0 { return true }
+      if PuzzleHight - AwayY <= 0 { return true }
+      
+      return false
+   }
+   
+   private func ExsitsPuzzle(SerchX: Int, SerchY: Int, SentNum: Int) -> Bool {
+      
+      for Puzzle in PuzzleBox {
+         
+         //送信者と一致したらcontinue
+         if Puzzle as! puzzle == (PuzzleBox[SentNum] as! puzzle){
+            print("Puzzle:\((Puzzle as! puzzle).GetBirthDayNum()) は送信者やからパス")
+            continue
+         }
+         
+         //上下左右にどれだけ離れてる。右が正，上が正
+         let AwayNumX = (Puzzle as! puzzle).CenterX - SerchX
+         let AwayNumY = (Puzzle as! puzzle).CenterY - SerchY
+         
+         print("AwayNum: (\(AwayNumX), \(AwayNumY))")
+         
+         //離れすぎてたらcontinue
+         if PuzzleAwayyy(AwayX: AwayNumX, AwayY: AwayNumY, Puzzle: Puzzle as! puzzle) == true {
+            print("Puzzle:\((Puzzle as! puzzle).GetBirthDayNum()) 離れすぎ")
+            continue
+         }
+         
+         //配列の座標に変換
+         let x = -AwayNumX
+         let y = AwayNumY
+         
+         //一致してたら，そいつの番号を保存してTRUEを返す。
+         if (Puzzle as! puzzle).pAllPosi[y][x] == .In {
+            ShouldMoveNodeNum = (Puzzle as! puzzle).GetBirthDayNum()
+            print(".Inでした。こいつ動かします。")
+            return true
+         }else{
+            print("あったけど .Out やったわ")
+         }
+      }
+      
+      return false
    }
    
    //MARK:- 通知を受け取る関数郡
    @objc func MovedTileCatchNotification(notification: Notification) -> Void {
       print("--- Move notification ---")
-      
       
       CrearCheckedStage()
       
@@ -419,70 +463,6 @@ class GameScene: SKScene {
       return
    }
    
-   private func PuzzleAwayyy(AwayX: Int, AwayY: Int, Puzzle: puzzle) -> Bool {
-      
-      if AwayX > 0 {
-         return true
-      }
-      
-      if AwayY < 0 {
-         return true
-      }
-      
-      let PuzzleWide = Puzzle.PuzzleWide
-      let PuzzleHight = Puzzle.PuzzleHight
-      
-      if PuzzleWide + AwayX <= 0 {
-         return true
-      }
-      
-      
-      if PuzzleHight - AwayY <= 0 {
-         return true
-      }
-      
-      
-      
-      return false
-      
-      
-   }
-   
-   private func ExsitsPuzzle(SerchX: Int, SerchY: Int, SentNum: Int) -> Bool {
-      
-      for Puzzle in PuzzleBox {
-         if Puzzle as! puzzle == (PuzzleBox[SentNum] as! puzzle){
-            print("Puzzle:\((Puzzle as! puzzle).GetBirthDayNum()) は送信者やからパス")
-            continue
-         }
-         
-         let AwayNumX = (Puzzle as! puzzle).CenterX - SerchX
-         let AwayNumY = (Puzzle as! puzzle).CenterY - SerchY
-         
-         print("AwayNum: (\(AwayNumX), \(AwayNumY))")
-         
-         //離れすぎ
-         if PuzzleAwayyy(AwayX: AwayNumX, AwayY: AwayNumY, Puzzle: Puzzle as! puzzle) == true {
-            print("Puzzle:\((Puzzle as! puzzle).GetBirthDayNum()) 離れすぎ")
-            continue
-         }
-         
-         let x = -AwayNumX
-         let y = AwayNumY
-         
-         if (Puzzle as! puzzle).pAllPosi[y][x] == .In {
-            ShouldMoveNodeNum = (Puzzle as! puzzle).GetBirthDayNum()
-            print(".Inでした。こいつ動かします。")
-            return true
-         }else{
-            print("あったけど .Out やったわ")
-         }
-      }
-      
-      return false
-      
-   }
-   
    @objc func PuzzleTouchStartCatchNotification(notification: Notification) -> Void {
       print("--- Alpha Tap notification ---")
       
@@ -505,6 +485,7 @@ class GameScene: SKScene {
             DontMoveNodeNum = (PuzzleBox[SentNum] as! puzzle).GetBirthDayNum()
             print("SoudlNum = \(ShouldMoveNodeNum)")
             print("DontNum  = \(DontMoveNodeNum)")
+            (PuzzleBox[ShouldMoveNodeNum] as! puzzle).SelfTouchBegan()
          }else{
             (PuzzleBox[SentNum] as! puzzle).ChangeTRUEMoveMyself()
             return
@@ -535,63 +516,35 @@ class GameScene: SKScene {
       ShouldMovedNode.SelfTouchEnded()
       
       DontMoveNode.ChangeTRUEMoveMyself()
-      
-      
    }
    
    
-   //MARK:- ヒットテスト
+   //MARK:- タッチイベント
+//    func touchDown(atPoint pos : CGPoint) {
+//
+//    }
+//
+//    func touchMoved(toPoint pos : CGPoint) {
+//
+//    }
+//
+//    func touchUp(atPoint pos : CGPoint) {
+//
+//    }
+//
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//
+//    }
+//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+//
+//    }
+//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+//
+//    }
+//    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+//    }
    
-   @objc func handleTap(_ gestureRecognize: UIGestureRecognizer) {
-      
-      
-   }
-    
-   
-    func touchDown(atPoint pos : CGPoint) {
-      
-      
-    }
-   
-    func touchMoved(toPoint pos : CGPoint) {
-  
-    }
-   
-    func touchUp(atPoint pos : CGPoint) {
-      
-    }
-   
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-      
-      print("sasasa")
-      for t in touches {
-         
-         
-         let p = touches.first!.location(in: self)
-         
-         //let HitTest = self.view?.hitTest(<#T##point: CGPoint##CGPoint#>, with: <#T##UIEvent?#>)
-        // self.touchDown(atPoint: t.location(in: self))
-         
-      }
-      
-    }
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches {
-         //self.touchMoved(toPoint: t.location(in: self))
-         
-         
-      }
-    }
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches {
-         
-         //self.touchUp(atPoint: t.location(in: self))
-         
-      }
-    }
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
     override func update(_ currentTime: TimeInterval) {
    
     }
