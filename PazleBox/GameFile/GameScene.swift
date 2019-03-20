@@ -52,6 +52,11 @@ class GameScene: SKScene {
       CrearCheckedStage()
       
       InitNotification()
+      
+      let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(handleTap(_:)))
+      self.view?.addGestureRecognizer(tapGesture)
+      
+      self.zPosition = 10
     }
    
    //MARK:- チェックする配列を初期化する
@@ -62,6 +67,7 @@ class GameScene: SKScene {
    //MARK:- 初期化
    private func InitNotification() {
       NotificationCenter.default.addObserver(self, selector: #selector(MovedTileCatchNotification(notification:)), name: .TileMoved, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(PuzzleTouchStartCatchNotification(notification:)), name: .PuzzleTouchStart, object: nil)
    }
    
    //MARK: パズルを初期化する。
@@ -332,25 +338,8 @@ class GameScene: SKScene {
       let LeftUpX = StartX
       let LeftUpY = StartY
       
-      let RightUpX = StartX + (PuzzleWide - 1)
-      let RightUpY = StartY
-      
-      let LeftDownX = StartX
-      let LeftDownY = StartY - (PuzzleHight - 1)
-      
       let RightDownX = StartX + (PuzzleWide - 1)
       let RightDownY = StartY - (PuzzleHight - 1)
-      
-      
-      //FIXME:- はみ出している可能性0？
-//      //はみ出てたらさようなら。
-//      if CheckLeftUp(x: LeftUpX, y: LeftUpY) == false || CheckLeftDown(x: LeftDownX, y: LeftDownY) == false {
-//         return false
-//      }
-//
-//      if CheckRightUp(x: RightUpX, y: RightUpY) == false || CheckRightDown(x: RightDownX, y: RightDownY) == false {
-//         return false
-//      }
       
       for x in LeftUpX ... RightDownX {
          for y in RightDownY ... LeftUpY {
@@ -425,10 +414,123 @@ class GameScene: SKScene {
       return
    }
    
+   private func PuzzleAwayyy(AwayX: Int, AwayY: Int, Puzzle: puzzle) -> Bool {
+      
+      if AwayX > 0 {
+         return true
+      }
+      
+      if AwayY < 0 {
+         return true
+      }
+      
+      let PuzzleWide = Puzzle.PuzzleWide
+      let PuzzleHight = Puzzle.PuzzleHight
+      
+      if PuzzleWide + AwayX <= 0 {
+         return true
+      }
+      
+      
+      if PuzzleHight - AwayY <= 0 {
+         return true
+      }
+      
+      
+      
+      return false
+      
+      
+   }
+   
+   private func ExsitsPuzzle(SerchX: Int, SerchY: Int, SentNum: Int) -> Bool {
+      
+      for Puzzle in PuzzleBox {
+         if Puzzle as! puzzle == (PuzzleBox[SentNum] as! puzzle){
+            print("Puzzle:\((Puzzle as! puzzle).GetBirthDayNum()) は送信者やからパス")
+            continue
+         }
+         
+         let AwayNumX = (Puzzle as! puzzle).CenterX - SerchX
+         let AwayNumY = (Puzzle as! puzzle).CenterY - SerchY
+         
+         print("AwayNum: (\(AwayNumX), \(AwayNumY))")
+         
+         //離れすぎ
+         if PuzzleAwayyy(AwayX: AwayNumX, AwayY: AwayNumY, Puzzle: Puzzle as! puzzle) == true {
+            print("Puzzle:\((Puzzle as! puzzle).GetBirthDayNum()) 離れすぎ")
+            continue
+         }
+         
+         let x = -AwayNumX
+         let y = AwayNumY
+         
+         if (Puzzle as! puzzle).pAllPosi[y][x] == .In {
+            print(".Inでした。こいつ動かします。")
+            return true
+         }else{
+            print("あったけど .Out やったわ")
+         }
+      }
+      
+      return false
+      
+   }
+   
+   @objc func PuzzleTouchStartCatchNotification(notification: Notification) -> Void {
+      print("--- Alpha Tap notification ---")
+      
+      
+      if let userInfo = notification.userInfo {
+         let SentNum = userInfo["BirthDay"] as! Int
+         let TapPosi = userInfo["TapPosi"] as! CGPoint
+         let X = userInfo["X"] as! Int
+         let Y = userInfo["Y"] as! Int
+         print("送信者番号: \(SentNum)")
+         print("タップした座標: \(TapPosi)")
+         
+         let SerchX = (PuzzleBox[SentNum] as! puzzle).CenterX + X
+         let SerchY = (PuzzleBox[SentNum] as! puzzle).CenterY - Y
+         
+         print("SerchPoint: (\(SerchX), \(SerchY))")
+         
+         if ExsitsPuzzle(SerchX: SerchX, SerchY: SerchY, SentNum: SentNum) == true {
+            print("存在してたよ！")
+            //MoveExsitPuzzle()
+         }else{
+            (PuzzleBox[SentNum] as! puzzle).ChangeTRUEMoveMyself()
+            return
+         }
+         
+   
+    
+         
+      }else{
+         print("通知受け取ったけど、中身nilやった。")
+      }
+      
+      return
+   }
+   
    
    //MARK:- ヒットテスト
    
-   
+   @objc func handleTap(_ gestureRecognize: UIGestureRecognizer) {
+      // retrieve the SCNView
+      let SceneView = self.view
+      
+
+      
+      // check what nodes are tapped
+      let p = gestureRecognize.location(in: SceneView)
+      
+      
+      let HitTest = self.view?.hitTest(p, with: nil)
+      
+      
+      
+      
+   }
     
    
     func touchDown(atPoint pos : CGPoint) {
@@ -441,18 +543,36 @@ class GameScene: SKScene {
     }
    
     func touchUp(atPoint pos : CGPoint) {
-      print("touchup")
+      
     }
    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-      for t in touches { self.touchDown(atPoint: t.location(in: self)) }
+      
+      print("sasasa")
+      for t in touches {
+         
+         
+         let p = touches.first!.location(in: self)
+         
+         //let HitTest = self.view?.hitTest(<#T##point: CGPoint##CGPoint#>, with: <#T##UIEvent?#>)
+        // self.touchDown(atPoint: t.location(in: self))
+         
+      }
       
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
+        for t in touches {
+         //self.touchMoved(toPoint: t.location(in: self))
+         
+         
+      }
     }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+        for t in touches {
+         
+         //self.touchUp(atPoint: t.location(in: self))
+         
+      }
     }
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { self.touchUp(atPoint: t.location(in: self)) }

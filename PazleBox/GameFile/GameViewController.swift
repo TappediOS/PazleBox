@@ -46,6 +46,8 @@ class GameViewController: UIViewController {
       
                     view.ignoresSiblingOrder = true
                
+                  view.showsDrawCount = true
+                  view.showsQuadCount = true
                     
                     view.showsFPS = true
                     view.showsNodeCount = true

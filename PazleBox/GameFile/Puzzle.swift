@@ -42,6 +42,8 @@ class puzzle: SKSpriteNode {
    var Tilep: TilePosi
    
    
+   var MoveMyself = true
+   var PuzzleSizeWide: Int
    /// 初期化
    ///
    /// - Parameters:
@@ -63,6 +65,8 @@ class puzzle: SKSpriteNode {
       self.PuzzleHight = PY
       
       let PazzleSizeFound = ViewX / 10 + (ViewX / 100)
+      
+      self.PuzzleSizeWide = PazzleSizeFound
       
       //MARK: 移動後の座標提供者の初期化
       SerchPlace = CGFloat(PazzleSizeFound)
@@ -197,14 +201,66 @@ class puzzle: SKSpriteNode {
       return self.BirthDayNum
    }
    
+   private func PuzzleTouchStartPostNotification(touches: Set<UITouch>, X: Int, Y: Int) {
+      
+      print("わたし \(self.BirthDayNum)が透明部を触ったことを通知します。")
+      print("タップした座標: \(String(describing: touches.first?.location(in: self)))")
+      
+      let TouchPoint: CGPoint = touches.first!.location(in: self)
+      
+      let SentObject: [String : Any] = ["BirthDay": self.BirthDayNum as Int,
+                                        "TapPosi": TouchPoint as CGPoint,
+                                        "X": X as Int,
+                                        "Y": Y as Int]
+      
+      print("")
+      NotificationCenter.default.post(name: .PuzzleTouchStart, object: nil, userInfo: SentObject)
+      
+   }
+   
+   public func ChangeTRUEMoveMyself() {
+      self.MoveMyself = true
+   }
+   
+   private func TouchPointIsAlpha(X: Int, Y: Int) -> Bool {
+      
+      
+      if self.pAllPosi[Y][X] == .Out {
+         print("透明部分をタップしました。")
+         return true
+      }
+      
+      return false
+   }
+   
    //MARK:- タッチイベント
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-      print("Puzzle Touch Began!")
+      
+      //CGFloat(PuzzleSizeWide) / 2  は 左上に揃えるためにしてる
+      let TapPosiX = touches.first!.location(in: self).x + CGFloat(PuzzleSizeWide) / 2
+      let TapPosiY = -touches.first!.location(in: self).y + CGFloat(PuzzleSizeWide) / 2
+      
+      let PosiX = Int(TapPosiX / CGFloat(PuzzleSizeWide))
+      let PosiY = Int(TapPosiY / CGFloat(PuzzleSizeWide))
+
+      print("TapPosi = (\(TapPosiX), \(TapPosiY))")
+      print("Posi    = (\(PosiX), \(PosiY))")
+      
+      
+      if TouchPointIsAlpha(X: PosiX, Y: PosiY) == true {
+         MoveMyself = false
+         PuzzleTouchStartPostNotification(touches: touches, X: PosiX, Y: PosiY)
+      }
+      
      self.zPosition += 1
       
       SaveSelfPosition()
    }
    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+      
+      guard MoveMyself == true else {
+         return
+      }
      
       // タッチイベントを取得
       let touchEvent = touches.first!
@@ -226,6 +282,10 @@ class puzzle: SKSpriteNode {
       
    }
    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+      
+      guard MoveMyself == true else {
+         return
+      }
      
       self.zPosition -= 1
       UpdateSelfPosi()
