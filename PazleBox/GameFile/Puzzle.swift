@@ -239,6 +239,7 @@ class puzzle: SKSpriteNode {
          return
       }
       
+      
       self.position.x += Dx
       self.position.y += Dy
       
