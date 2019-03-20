@@ -218,6 +218,39 @@ class puzzle: SKSpriteNode {
       
    }
    
+   private func PuzzleTouchMovedPostNotification(Dx: CGFloat, Dy: CGFloat) {
+      
+
+      let SentObject: [String : Any] = ["Dx": Dx as CGFloat,
+                                        "Dy": Dy as CGFloat]
+      
+      NotificationCenter.default.post(name: .PuzzleTouchMoved, object: nil, userInfo: SentObject)
+      
+   }
+   
+   private func PuzzleTouchEndedPostNotification() {
+      
+      NotificationCenter.default.post(name: .PuzzleTouchEnded, object: nil, userInfo: nil)
+      
+   }
+   
+   public func SelfTouchMoved(Dx: CGFloat, Dy: CGFloat){
+      guard MoveMyself == true else {
+         return
+      }
+      
+      self.position.x += Dx
+      self.position.y += Dy
+      
+      UpdateAlphaNodePosi()
+   }
+   
+   public func SelfTouchEnded(){
+      
+      UpdateSelfPosi()
+      FinishMoveTilePOSTMotification()
+   }
+   
    public func ChangeTRUEMoveMyself() {
       self.MoveMyself = true
    }
@@ -250,21 +283,19 @@ class puzzle: SKSpriteNode {
       if TouchPointIsAlpha(X: PosiX, Y: PosiY) == true {
          MoveMyself = false
          PuzzleTouchStartPostNotification(touches: touches, X: PosiX, Y: PosiY)
+         return
       }
       
-     self.zPosition += 1
       
       SaveSelfPosition()
    }
+   
    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
       
-      guard MoveMyself == true else {
-         return
-      }
+      
      
       // タッチイベントを取得
       let touchEvent = touches.first!
-      
       let PreviewXPoint = touchEvent.previousLocation(in: self).x
       let PreviewYPoint = touchEvent.previousLocation(in: self).y
       
@@ -277,6 +308,11 @@ class puzzle: SKSpriteNode {
       self.position.x += Dx
       self.position.y += Dy
       
+       guard MoveMyself == true else {
+         PuzzleTouchMovedPostNotification(Dx: Dx, Dy: Dy)
+         return
+      }
+      
       //print("\(self.position.x), \(self.position.y)")
       UpdateAlphaNodePosi()
       
@@ -284,10 +320,10 @@ class puzzle: SKSpriteNode {
    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
       
       guard MoveMyself == true else {
+         PuzzleTouchEndedPostNotification()
          return
       }
      
-      self.zPosition -= 1
       UpdateSelfPosi()
       FinishMoveTilePOSTMotification()
    }

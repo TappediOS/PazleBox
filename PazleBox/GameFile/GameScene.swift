@@ -26,6 +26,9 @@ class GameScene: SKScene {
 
    var PuzzleBox = Array<Any>()
    
+   var DontMoveNodeNum = 0
+   var ShouldMoveNodeNum = 0
+   
    
    let Debug = false
    
@@ -68,6 +71,8 @@ class GameScene: SKScene {
    private func InitNotification() {
       NotificationCenter.default.addObserver(self, selector: #selector(MovedTileCatchNotification(notification:)), name: .TileMoved, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(PuzzleTouchStartCatchNotification(notification:)), name: .PuzzleTouchStart, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(PuzzleTouchMovedCatchNotification(notification:)), name: .PuzzleTouchMoved, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(PuzzleTouchEndedCatchNotification(notification:)), name: .PuzzleTouchEnded, object: nil)
    }
    
    //MARK: パズルを初期化する。
@@ -466,6 +471,7 @@ class GameScene: SKScene {
          let y = AwayNumY
          
          if (Puzzle as! puzzle).pAllPosi[y][x] == .In {
+            ShouldMoveNodeNum = (Puzzle as! puzzle).GetBirthDayNum()
             print(".Inでした。こいつ動かします。")
             return true
          }else{
@@ -496,14 +502,13 @@ class GameScene: SKScene {
          
          if ExsitsPuzzle(SerchX: SerchX, SerchY: SerchY, SentNum: SentNum) == true {
             print("存在してたよ！")
-            //MoveExsitPuzzle()
+            DontMoveNodeNum = (PuzzleBox[SentNum] as! puzzle).GetBirthDayNum()
+            print("SoudlNum = \(ShouldMoveNodeNum)")
+            print("DontNum  = \(DontMoveNodeNum)")
          }else{
             (PuzzleBox[SentNum] as! puzzle).ChangeTRUEMoveMyself()
             return
          }
-         
-   
-    
          
       }else{
          print("通知受け取ったけど、中身nilやった。")
@@ -512,22 +517,32 @@ class GameScene: SKScene {
       return
    }
    
+   @objc func PuzzleTouchMovedCatchNotification(notification: Notification) -> Void {
+      if let userInfo = notification.userInfo {
+         let Dx = userInfo["Dx"] as! CGFloat
+         let Dy = userInfo["Dy"] as! CGFloat
+         
+         let ShouldMovedNode = PuzzleBox[ShouldMoveNodeNum] as! puzzle
+         
+         ShouldMovedNode.SelfTouchMoved(Dx: Dx, Dy: Dy)
+      }
+   }
+   
+   @objc func PuzzleTouchEndedCatchNotification(notification: Notification) -> Void {
+      let ShouldMovedNode = PuzzleBox[ShouldMoveNodeNum] as! puzzle
+      let DontMoveNode = PuzzleBox[DontMoveNodeNum] as! puzzle
+      
+      ShouldMovedNode.SelfTouchEnded()
+      
+      DontMoveNode.ChangeTRUEMoveMyself()
+      
+      
+   }
+   
    
    //MARK:- ヒットテスト
    
    @objc func handleTap(_ gestureRecognize: UIGestureRecognizer) {
-      // retrieve the SCNView
-      let SceneView = self.view
-      
-
-      
-      // check what nodes are tapped
-      let p = gestureRecognize.location(in: SceneView)
-      
-      
-      let HitTest = self.view?.hitTest(p, with: nil)
-      
-      
       
       
    }

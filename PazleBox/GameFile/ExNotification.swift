@@ -11,6 +11,6 @@ import Foundation
 extension Notification.Name {
    static let TileMoved = Notification.Name("TileMoved")
    static let PuzzleTouchStart = Notification.Name("PuzzleTouchStart")
-   static let FinGame = Notification.Name("FinGame")
-   static let PlaySoundNotifi = Notification.Name("PlaySoundNotifi")
+   static let PuzzleTouchMoved = Notification.Name("PuzzleTouchMoved")
+   static let PuzzleTouchEnded = Notification.Name("PuzzleTouchEnded")
 }
