@@ -8,6 +8,7 @@
 
 import Foundation
 import SpriteKit
+import UIKit
 
 class puzzle: SKSpriteNode {
 
@@ -78,7 +79,8 @@ class puzzle: SKSpriteNode {
       let texture: SKTexture
       let TextureName = PuzzleStyle + PuzzleColor
       texture = SKTexture(imageNamed: TextureName)
-      texture.filteringMode = .nearest
+      
+      
       
       let NodeSize = CGSize(width: CGFloat(PazzleWideSize), height: CGFloat(PazzleHightSize))
       
@@ -90,6 +92,7 @@ class puzzle: SKSpriteNode {
       self.anchorPoint = Anchor
       //ノードがタッチできる状態にする。
       self.isUserInteractionEnabled = true
+      
       //ポジションの設定。
       self.CenterX = PX - 1
       self.CenterY = PY - 1
@@ -196,6 +199,7 @@ class puzzle: SKSpriteNode {
    
    //MARK:- タッチイベント
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      print("Puzzle Touch Began!")
      self.zPosition += 1
       
       SaveSelfPosition()
@@ -227,6 +231,8 @@ class puzzle: SKSpriteNode {
       UpdateSelfPosi()
       FinishMoveTilePOSTMotification()
    }
+   
+   
    
    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
      

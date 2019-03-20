@@ -21,10 +21,18 @@ class GameScene: SKScene {
    var Puzzle2: puzzle?
    var Puzzle3: puzzle?
    var Puzzle4: puzzle?
+   
+   
 
    var PuzzleBox = Array<Any>()
    
+   
+   let Debug = false
+   
     override func sceneDidLoad() {
+      
+      self.isUserInteractionEnabled = true
+      self.view?.isUserInteractionEnabled = true
 
       //ビューの長さを取得
       let ViewSizeX = self.scene?.frame.width
@@ -133,6 +141,11 @@ class GameScene: SKScene {
    
    //MARK:- 配列の情報を出力
    private func ShowCheckStage() {
+      
+      guard Debug else {
+         return
+      }
+      
       for x in 0 ... 11 {
          print()
          for y in 0 ... 8 {
@@ -148,6 +161,10 @@ class GameScene: SKScene {
    }
    
    private func ShowStage(){
+      guard Debug else {
+         return
+      }
+      
       for x in 0 ... 11 {
          print()
          for y in 0 ... 8 {
@@ -161,10 +178,13 @@ class GameScene: SKScene {
       print()
    }
    
+   
+   
    //MARK:- ゲームの行う関数群
    private func GameCheck() -> Bool {
    
       //TODO: デバック終わったら消してOK
+      
       ShowStage()
       ShowCheckStage()
       
@@ -404,33 +424,40 @@ class GameScene: SKScene {
       
       return
    }
+   
+   
+   //MARK:- ヒットテスト
+   
+   
     
-//    
-//    func touchDown(atPoint pos : CGPoint) {
-//      print("Tap Point is \(pos)")
-//    }
-//    
-//    func touchMoved(toPoint pos : CGPoint) {
-//  
-//    }
-//    
-//    func touchUp(atPoint pos : CGPoint) {
-//    
-//    }
-//    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//      for t in touches { self.touchDown(atPoint: t.location(in: self)) }
-//    }
-//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
-//    }
-//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-//    }
-//    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-//    }
-//    override func update(_ currentTime: TimeInterval) {
-//   
-//    }
+   
+    func touchDown(atPoint pos : CGPoint) {
+      
+      
+    }
+   
+    func touchMoved(toPoint pos : CGPoint) {
+  
+    }
+   
+    func touchUp(atPoint pos : CGPoint) {
+      print("touchup")
+    }
+   
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      for t in touches { self.touchDown(atPoint: t.location(in: self)) }
+      
+    }
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
+    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+    }
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+    }
+    override func update(_ currentTime: TimeInterval) {
+   
+    }
 }
