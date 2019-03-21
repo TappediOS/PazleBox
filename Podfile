@@ -6,6 +6,11 @@ target 'PazleBox' do
  use_frameworks!
  
  pod 'SpriteKitEasingSwift'
+ pod 'TapticEngine'
+
+  pod 'SAConfettiView’,
+     :git => 'https://github.com/gokhanakkurt/SAConfettiView',
+     :branch => 'swift3'
 
 
  pod 'Firebase/Core'

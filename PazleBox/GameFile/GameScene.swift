@@ -8,6 +8,9 @@
 
 import SpriteKit
 import GameplayKit
+import UIKit
+import SAConfettiView
+
 
 class GameScene: SKScene {
    
@@ -21,6 +24,7 @@ class GameScene: SKScene {
    var Puzzle2: puzzle?
    var Puzzle3: puzzle?
    var Puzzle4: puzzle?
+   
    
    
 
@@ -52,6 +56,14 @@ class GameScene: SKScene {
       CrearCheckedStage()
       
       InitNotification()
+      
+      let p = SKEmitterNode.init(fileNamed: "GameSetParticle")
+      p?.position.y += ViewSizeY! / 2
+      //addChild(p!)
+      
+      
+      
+      
     }
    
    //MARK:- チェックする配列を初期化する

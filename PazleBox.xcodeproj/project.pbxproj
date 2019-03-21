@@ -89,6 +89,9 @@
 		BF7CD9892240BBF700F8302B /* 32p6Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD9772240BBF600F8302B /* 32p6Blue.png */; };
 		BF7CD98A2240BBF700F8302B /* 32p3Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD9782240BBF600F8302B /* 32p3Red.png */; };
 		BF7CD98E2240C5C300F8302B /* 32p1Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD98D2240C5C200F8302B /* 32p1Red.png */; };
+		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
+		BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D422428287007C8FA1 /* Assets.xcassets */; };
+		BFC6C5D9224283BD007C8FA1 /* Test.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D8224283BD007C8FA1 /* Test.sks */; };
 		BFFA2A7B22336D760023BB71 /* SpriteKitEasingSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */; };
 		BFFA2A7F223372520023BB71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFFA2A7E223372520023BB71 /* GoogleService-Info.plist */; };
 		BFFA2A81223380720023BB71 /* EasyGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A80223380720023BB71 /* EasyGet.swift */; };
@@ -189,6 +192,9 @@
 		BF7CD9772240BBF600F8302B /* 32p6Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32p6Blue.png; sourceTree = "<group>"; };
 		BF7CD9782240BBF600F8302B /* 32p3Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32p3Red.png; sourceTree = "<group>"; };
 		BF7CD98D2240C5C200F8302B /* 32p1Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 32p1Red.png; path = ../../../../../../Downloads/32p1Red.png; sourceTree = "<group>"; };
+		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
+		BFC6C5D422428287007C8FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BFC6C5D8224283BD007C8FA1 /* Test.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Test.sks; sourceTree = "<group>"; };
 		BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpriteKitEasingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA2A7C22336D760023BB71 /* TapticEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TapticEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA2A7E223372520023BB71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -241,6 +247,7 @@
 				BFFA2A8F2234CEED0023BB71 /* TilePick */,
 				BF2674E32227B6A3003D370F /* AppDelegate.swift */,
 				BFFA2A8D2234CC5F0023BB71 /* Tile.swift */,
+				BFC6C5D722428296007C8FA1 /* Particle */,
 				BF2674EB2227B6A3003D370F /* GameViewController.swift */,
 				BF2674E92227B6A3003D370F /* GameScene.swift */,
 				BF46108F22352423006F3DF1 /* Puzzle.swift */,
@@ -389,6 +396,16 @@
 			path = P32;
 			sourceTree = "<group>";
 		};
+		BFC6C5D722428296007C8FA1 /* Particle */ = {
+			isa = PBXGroup;
+			children = (
+				BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */,
+				BFC6C5D8224283BD007C8FA1 /* Test.sks */,
+				BFC6C5D422428287007C8FA1 /* Assets.xcassets */,
+			);
+			path = Particle;
+			sourceTree = "<group>";
+		};
 		BFFA2A82223380760023BB71 /* EasyStage */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,6 +544,7 @@
 				BF519C74223F86B20087A4AC /* P322 in Resources */,
 				BF7CD97A2240BBF700F8302B /* 32p2Blue.png in Resources */,
 				BF7CD9422240B89800F8302B /* 22p5Green.png in Resources */,
+				BFC6C5D9224283BD007C8FA1 /* Test.sks in Resources */,
 				BF2674EF2227B6A3003D370F /* Main.storyboard in Resources */,
 				BF7CD9852240BBF700F8302B /* 32p4Green.png in Resources */,
 				BF7CD9662240BBD500F8302B /* 23p6Blue.png in Resources */,
@@ -539,6 +557,7 @@
 				BF7CD9222240B60400F8302B /* 21p1Red.png in Resources */,
 				BF7CD97D2240BBF700F8302B /* 32p2Green.png in Resources */,
 				BF7CD9402240B89800F8302B /* 22p3Green.png in Resources */,
+				BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */,
 				BF7CD93C2240B89800F8302B /* 22p3Red.png in Resources */,
 				BF7CD98E2240C5C300F8302B /* 32p1Red.png in Resources */,
 				BF7CD97B2240BBF700F8302B /* 32p2Red.png in Resources */,
@@ -559,6 +578,7 @@
 				BF7CD9582240BBD500F8302B /* 23p4Green.png in Resources */,
 				BF519C72223F86B20087A4AC /* P211 in Resources */,
 				BF7CD9382240B89800F8302B /* 22p1Green.png in Resources */,
+				BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */,
 				BF7CD98A2240BBF700F8302B /* 32p3Red.png in Resources */,
 				BF7CD95E2240BBD500F8302B /* 23p4Red.png in Resources */,
 				BF7CD91E2240B56300F8302B /* 12p1Blue.png in Resources */,
@@ -619,7 +639,9 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-PazleBox/Pods-PazleBox-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SAConfettiView/SAConfettiView.framework",
 				"${BUILT_PRODUCTS_DIR}/SpriteKitEasingSwift/SpriteKitEasingSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/TapticEngine/TapticEngine.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -627,7 +649,9 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAConfettiView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpriteKitEasingSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TapticEngine.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

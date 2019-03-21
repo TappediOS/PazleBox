@@ -9,6 +9,7 @@
 import Foundation
 import SpriteKit
 import UIKit
+import TapticEngine
 
 class puzzle: SKSpriteNode {
 
@@ -201,6 +202,7 @@ class puzzle: SKSpriteNode {
       
       //前回の場所と今回の場所に変化があったら，前回の場所を保存
       if self.CenterX != BeforeCenterX || self.CenterY != BeforeCenterY {
+         Play3DtouchLight()
          OneTimeBackPosiX = BeforeCenterX
          OneTimeBackPosiY = BeforeCenterY
       }
@@ -215,10 +217,13 @@ class puzzle: SKSpriteNode {
       
       self.position = BeforePoint
       self.AlphaNode.position = BeforePoint
+      
+      Play3DtouchHeavy()
    }
    
    private func UpdateSelfPosi(){
       self.position = AlphaNode.position
+      Play3DtouchMedium()
    }
    
    private func SaveSelfPosition() {
@@ -337,5 +342,25 @@ class puzzle: SKSpriteNode {
    
    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
      
+   }
+   
+   //MARK:- 3dタッチならす
+   
+   private func Play3DtouchLight() {
+      TapticEngine.impact.feedback(.light)
+      //TapticEngine.notification.feedback(.warning)
+      return
+   }
+   
+   private func Play3DtouchMedium() {
+      TapticEngine.impact.feedback(.medium)
+      //TapticEngine.notification.feedback(.warning)
+      return
+   }
+   
+   private func Play3DtouchHeavy() {
+      TapticEngine.impact.feedback(.heavy)
+      //TapticEngine.notification.feedback(.warning)
+      return
    }
 }

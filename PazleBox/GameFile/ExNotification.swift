@@ -13,4 +13,5 @@ extension Notification.Name {
    static let PuzzleTouchStart = Notification.Name("PuzzleTouchStart")
    static let PuzzleTouchMoved = Notification.Name("PuzzleTouchMoved")
    static let PuzzleTouchEnded = Notification.Name("PuzzleTouchEnded")
+   static let GameClear = Notification.Name("GameClear")
 }

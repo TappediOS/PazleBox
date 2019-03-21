@@ -49,7 +49,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SAConfettiView-SAConfettiView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SAConfettiView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SpriteKitEasingSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>TapticEngine.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

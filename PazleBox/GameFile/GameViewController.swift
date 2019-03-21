@@ -9,11 +9,18 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import SAConfettiView
+
 
 class GameViewController: UIViewController {
+   
+   var GameClearView = SAConfettiView()
+   let GameClearVeiwIntensity: Float = 0.6
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+      
       
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
@@ -54,7 +61,30 @@ class GameViewController: UIViewController {
                 }
             }
         }
+      
+      InitGameClearView()
+      InitNotificationCenter()
+      
+
     }
+   
+   private func InitNotificationCenter() {
+      NotificationCenter.default.addObserver(self, selector: #selector(MovedTileCatchNotification(notification:)), name: .GameClear, object: nil)
+   }
+   
+   private func InitGameClearView() {
+      let Rect = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+      GameClearView = SAConfettiView(frame: Rect)
+      GameClearView.type! = .star
+      GameClearView.intensity = GameClearVeiwIntensity
+      GameClearView.startConfetti()
+      
+   }
+   
+   private func StartConfetti(){
+      self.view?.addSubview(GameClearView)
+      GameClearView.startConfetti()
+   }
 
     override var shouldAutorotate: Bool {
         return true
