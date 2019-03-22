@@ -46,6 +46,11 @@ class puzzle: SKSpriteNode {
    var MoveMyself = true
    
    var PuzzleSizeWide: Int
+   
+   private var PlayParticle = false
+   
+   var SetParticles: PutParticle
+   var SetParticle = SKEmitterNode()
    /// 初期化
    ///
    /// - Parameters:
@@ -86,6 +91,8 @@ class puzzle: SKSpriteNode {
       let TextureName = PuzzleStyle + PuzzleColor
       texture = SKTexture(imageNamed: TextureName)
       
+      SetParticles = PutParticle(PX: PX, PY: PY, CustNum: CustNum, ViewX: ViewX, ViewY: ViewY)
+      
       
       
       let NodeSize = CGSize(width: CGFloat(PazzleWideSize), height: CGFloat(PazzleHightSize))
@@ -114,6 +121,12 @@ class puzzle: SKSpriteNode {
       AlphaNode.isUserInteractionEnabled = false
       
       AlphaNode.alpha = 0.55
+
+      SetParticle = SetParticles.GetParticle()
+   }
+   
+   private func InitSetParticle() {
+      
    }
    
    //MARK:- 初期化
@@ -219,6 +232,9 @@ class puzzle: SKSpriteNode {
       self.AlphaNode.position = BeforePoint
       
       Play3DtouchHeavy()
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+         self.Play3DtouchHeavy()
+      }
    }
    
    private func UpdateSelfPosi(){
@@ -248,6 +264,24 @@ class puzzle: SKSpriteNode {
       }
       
       return false
+   }
+   
+   public func PlayParticleForRightSet() {
+      
+      Play3DtouchHeavy()
+      
+      return
+      
+      guard PlayParticle == false else {
+         return
+      }
+      
+      self.addChild(SetParticle)
+      PlayParticle = true
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+         self.removeChildren(in: [self.SetParticle])
+         self.PlayParticle = false
+      }
    }
    
    //MARK:- 自前のタッチイベント

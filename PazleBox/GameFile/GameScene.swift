@@ -152,6 +152,7 @@ class GameScene: SKScene {
    //MARK:- ゲーム終了。
    private func FinishGame() {
       print("game Set")
+      GameSerPOSTMotification()
    }
    
    //MARK:- 配列の情報を出力
@@ -193,6 +194,11 @@ class GameScene: SKScene {
       print()
    }
    
+   //MARK:- 通知を送る関数
+   private func GameSerPOSTMotification() {
+      print("")
+      NotificationCenter.default.post(name: .GameClear, object: nil, userInfo: nil)
+   }
    
    
    //MARK:- ゲームの行う関数群
@@ -268,7 +274,7 @@ class GameScene: SKScene {
          for y in RightDownY ... LeftUpY {
             let ReverseY = (LeftUpY - y) + RightDownY
             
-            //.OutなのにFillしたら，もし先客が.In入れてても塗りつぶしてしまう。
+            //.OutなのにFillしたら，もし先客が.In入れてた場合にOutで塗りつぶしてしまう。
             if PArry[y - RightDownY][x - LeftUpX] == .In {
                CheckedStage[ReverseY][x] = PArry[y - RightDownY][x - LeftUpX]
             }
@@ -277,7 +283,7 @@ class GameScene: SKScene {
       
    }
    
-   //MARk: Notificationの後に毎回来る
+   //MARK: Notificationの後に毎回来る
    private func GameDecision() {
       
       
@@ -445,6 +451,58 @@ class GameScene: SKScene {
       return false
    }
    
+   private func MovedNodePutRightPosition(BirthDay: Int, StageObject: [String : Any]) -> Bool{
+      
+      let StartX = StageObject["StartPointX"] as! Int
+      let StartY = StageObject["StartPointY"] as! Int
+      
+      let PuzzleWide = StageObject["PuzzleWide"] as! Int
+      let PuzzleHight = StageObject["PuzzleHight"] as! Int
+      let PArry = StageObject["PArry"] as! [[Contents]]
+      
+      let LeftUpX = StartX
+      let LeftUpY = StartY
+      
+      let RightUpX = StartX + (PuzzleWide - 1)
+      let RightUpY = StartY
+      
+      let LeftDownX = StartX
+      let LeftDownY = StartY - (PuzzleHight - 1)
+      
+      let RightDownX = StartX + (PuzzleWide - 1)
+      let RightDownY = StartY - (PuzzleHight - 1)
+      
+      //はみ出てたらさようなら。
+      if CheckLeftUp(x: LeftUpX, y: LeftUpY) == false || CheckLeftDown(x: LeftDownX, y: LeftDownY) == false {
+         return false
+      }
+      
+      if CheckRightUp(x: RightUpX, y: RightUpY) == false || CheckRightDown(x: RightDownX, y: RightDownY) == false {
+         return false
+      }
+      
+      //ここでFillしてく
+      for x in LeftUpX ... RightDownX {
+         for y in RightDownY ... LeftUpY {
+            let ReverseY = (LeftUpY - y) + RightDownY
+            
+            if PArry[y - RightDownY][x - LeftUpX] == .Out { continue }
+            
+            if PArry[y - RightDownY][x - LeftUpX] != Stage.GStage[ReverseY][x] {
+               return false
+            }
+         }
+      }
+      
+      return true
+   }
+   
+   private func PlayParticleForRightSet(BirthDay: Int) {
+      let ParticlePuzzle = PuzzleBox[BirthDay] as! puzzle
+      ParticlePuzzle.PlayParticleForRightSet()
+   }
+   
+   
    //MARK:- 通知を受け取る関数郡
    @objc func MovedTileCatchNotification(notification: Notification) -> Void {
       print("--- Move notification ---")
@@ -456,10 +514,20 @@ class GameScene: SKScene {
          let SentNum = userInfo["BirthDay"] as! Int
          print("送信者番号: \(SentNum)")
          
+         //Nodeを置いた場所に他のノードがいたら，元に戻ってもらう。
          if OverRapped(BirthDay: SentNum) == true {
             (PuzzleBox[SentNum] as! puzzle).ReBackNodePosition()
             CrearCheckedStage()
             return
+         }
+         
+         CrearCheckedStage()
+         
+         //Nodeを置いた正しい場所(黒い場所)だったらパーティクル表示。
+         //TODO:- カチって音を鳴らすならここ
+         let SentOb = (PuzzleBox[SentNum] as! puzzle).GetOfInfomation()
+         if MovedNodePutRightPosition(BirthDay: SentNum, StageObject: SentOb) == true {
+            PlayParticleForRightSet(BirthDay: SentNum)
          }
          
          CrearCheckedStage()

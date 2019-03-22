@@ -15,7 +15,8 @@ import SAConfettiView
 class GameViewController: UIViewController {
    
    var GameClearView = SAConfettiView()
-   let GameClearVeiwIntensity: Float = 0.6
+   let GameClearVeiwIntensity: Float = 0.55
+   var ShowGameClearView = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,14 +70,14 @@ class GameViewController: UIViewController {
     }
    
    private func InitNotificationCenter() {
-      NotificationCenter.default.addObserver(self, selector: #selector(MovedTileCatchNotification(notification:)), name: .GameClear, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(GameClearCatchNotification(notification:)), name: .GameClear, object: nil)
    }
    
    private func InitGameClearView() {
       let Rect = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
       GameClearView = SAConfettiView(frame: Rect)
-      GameClearView.type! = .star
       GameClearView.intensity = GameClearVeiwIntensity
+      GameClearView.type! = .star
       GameClearView.startConfetti()
       
    }
@@ -84,6 +85,17 @@ class GameViewController: UIViewController {
    private func StartConfetti(){
       self.view?.addSubview(GameClearView)
       GameClearView.startConfetti()
+      ShowGameClearView = true
+   }
+   
+   @objc func GameClearCatchNotification(notification: Notification) -> Void {
+      
+      guard ShowGameClearView == false else {
+         return
+      }
+      
+      StartConfetti()
+      return
    }
 
     override var shouldAutorotate: Bool {
