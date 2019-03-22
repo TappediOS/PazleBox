@@ -33,6 +33,7 @@ class GameViewController: UIViewController {
          userDefaults.set(StageNum, forKey: "StageNum")
          LoadStageNum = true
       }
+      
       print("StageNum = \(StageNum)")
       //MARK: user defaults
       userDefaults.set(StageNum, forKey: "StageNum")
