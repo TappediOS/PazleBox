@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="5sc-X1-Wqb">
             <objects>
-                <viewController id="zeP-h8-1W1" sceneMemberID="viewController">
+                <viewController id="zeP-h8-1W1" customClass="HomeViewController" customModule="PazleBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hNG-jq-mK6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="56"/>
                                 <state key="normal" title="N"/>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="OGs-O1-1yE"/>
+                                    <action selector="NextViewWithNum:" destination="zeP-h8-1W1" eventType="touchUpInside" id="M1d-1O-IAv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sp0-vN-R4x">
@@ -32,9 +32,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="56"/>
                                 <state key="normal" title="H"/>
-                                <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="4yw-a7-vgE"/>
-                                </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1r-pK-hHC">
                                 <rect key="frame" x="101" y="284" width="172" height="99"/>
@@ -42,7 +39,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="56"/>
                                 <state key="normal" title="E"/>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="gXO-zv-nyf"/>
+                                    <action selector="NextViewWithNum:" destination="zeP-h8-1W1" eventType="touchUpInside" id="wOm-Co-z9A"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -57,7 +54,7 @@
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="PazleBox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameView" id="BV1-FR-VrT" customClass="GameViewController" customModule="PazleBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleAspectFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,7 +67,4 @@
             <point key="canvasLocation" x="-457" y="516"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="gXO-zv-nyf"/>
-    </inferredMetricsTieBreakers>
 </document>

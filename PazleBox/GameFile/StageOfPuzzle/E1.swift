@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class E1 {
+class EStage1 {
    
    var Puzzle1: puzzle?
    var Puzzle2: puzzle?
@@ -21,14 +21,22 @@ class E1 {
    init(ViewSizeX: CGFloat, ViewSizeY: CGFloat) {
       
       InitPuzzle(SizeX: ViewSizeX, SizeY: ViewSizeY)
+      InitPuzzlePosi()
       AddPuzzle()
    }
    
    private func InitPuzzle(SizeX: CGFloat, SizeY: CGFloat){
-      Puzzle1 = puzzle(PX: 3, PY: 2, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p1", PuzzleColor: "Red")
+      Puzzle1 = puzzle(PX: 3, PY: 2, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p2", PuzzleColor: "Red")
       Puzzle2 = puzzle(PX: 2, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p1", PuzzleColor: "Green")
       Puzzle3 = puzzle(PX: 2, PY: 3, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p2", PuzzleColor: "Blue")
       Puzzle4 = puzzle(PX: 2, PY: 3, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p2", PuzzleColor: "Red")
+   }
+   
+   private func InitPuzzlePosi() {
+      Puzzle1!.InitPazzle(PositionX: 4, PositionY: 1, CustomNum: 1)
+      Puzzle2!.InitPazzle(PositionX: 1, PositionY: 3, CustomNum: 1)
+      Puzzle3!.InitPazzle(PositionX: 2, PositionY: 2, CustomNum: 1)
+      Puzzle4!.InitPazzle(PositionX: 0, PositionY: 2, CustomNum: 1)
    }
    
    //配列に入れて行ってる

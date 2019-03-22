@@ -20,20 +20,7 @@ class GameScene: SKScene {
    
    var CheckedStage: [[Contents]] = Array()
    
-   var Puzzle1: puzzle?
-   var Puzzle2: puzzle?
-   var Puzzle3: puzzle?
-   var Puzzle4: puzzle?
-   var Puzzle5: puzzle?
-   var Puzzle6: puzzle?
-   var Puzzle7: puzzle?
-   var Puzzle8: puzzle?
-   var Puzzle9: puzzle?
-   var Puzzle10: puzzle?
-   var Puzzle11: puzzle?
-   
-   
-   
+
 
    var PuzzleBox = Array<Any>()
    
@@ -41,7 +28,12 @@ class GameScene: SKScene {
    var ShouldMoveNodeNum = 0
    
    
-   let Debug = false
+   let Debug = true
+   
+   
+   var PostedStageNum = 1
+   
+   var userDefaults = UserDefaults.standard
    
     override func sceneDidLoad() {
 
@@ -51,8 +43,10 @@ class GameScene: SKScene {
 
       InitBackGroundColor()
       
+      InitStageNumber()
+      
       InitStageSize(SizeX: ViewSizeX, SizeY: ViewSizeY)
-      SetStage()
+      SetStage(StageNum: self.PostedStageNum)
       
       ShowTile()
       
@@ -67,11 +61,11 @@ class GameScene: SKScene {
       let p = SKEmitterNode.init(fileNamed: "GameSetParticle")
       p?.position.y += ViewSizeY! / 2
       //addChild(p!)
-      
-      
-      
-      
     }
+   
+   private func InitStageNumber() {
+      self.PostedStageNum = userDefaults.integer(forKey: "StageNum")
+   }
    
    //MARK:- チェックする配列を初期化する
    private func CrearCheckedStage() {
@@ -89,18 +83,35 @@ class GameScene: SKScene {
    //MARK: パズルを初期化する。
    //Px Py に1片の長さを入れる
    private func InitPuzzle(SizeX: CGFloat?, SizeY: CGFloat?){
-      Puzzle1 = puzzle(PX: 2, PY: 3, CustNum: 0, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "23p2", PuzzleColor: "Red")
-      Puzzle2 = puzzle(PX: 3, PY: 2, CustNum: 1, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "32p1", PuzzleColor: "Green")
-      Puzzle3 = puzzle(PX: 3, PY: 2, CustNum: 2, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "32p1", PuzzleColor: "Blue")
-      Puzzle4 = puzzle(PX: 2, PY: 2, CustNum: 3, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "22p3", PuzzleColor: "Green")
-      Puzzle5 = puzzle(PX: 1, PY: 2, CustNum: 4, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "12p1", PuzzleColor: "Red")
-      Puzzle6 = puzzle(PX: 2, PY: 1, CustNum: 5, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "21p1", PuzzleColor: "Blue")
-      Puzzle7 = puzzle(PX: 2, PY: 2, CustNum: 6, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "22p3", PuzzleColor: "Blue")
-      Puzzle8 = puzzle(PX: 2, PY: 2, CustNum: 7, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "22p4", PuzzleColor: "Red")
-      Puzzle9 = puzzle(PX: 2, PY: 2, CustNum: 8, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "22p1", PuzzleColor: "Blue")
-      Puzzle10 = puzzle(PX: 3, PY: 2, CustNum: 9, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "32p2", PuzzleColor: "Green")
-      Puzzle11 = puzzle(PX: 2, PY: 2, CustNum: 10, ViewX: Int(SizeX!), ViewY: Int(SizeY!), PuzzleStyle: "22p5", PuzzleColor: "Blue")
-      
+   
+      switch PostedStageNum {
+      case 1:
+         let Stage1 = EStage1(ViewSizeX: SizeX!, ViewSizeY: SizeY!)
+         PuzzleBox = Stage1.GetPuzzleBox()
+      case 2:
+         let Stage2 = EStage2(ViewSizeX: SizeX!, ViewSizeY: SizeY!)
+         PuzzleBox = Stage2.GetPuzzleBox()
+      case 3:
+         let Stage3 = EStage2(ViewSizeX: SizeX!, ViewSizeY: SizeY!)
+         PuzzleBox = Stage3.GetPuzzleBox()
+      default:
+         fatalError()
+      }
+   }
+   
+   //MARK: ステージの配列の取得
+   private func SetStage(StageNum: Int){
+      //FIXME:- ココの右辺は変数にするのがいいかも
+      switch PostedStageNum {
+      case 1:
+         Stage.GStage = AllStage.EasyStage.E1
+      case 2:
+         Stage.GStage = AllStage.EasyStage.E2
+      case 3:
+         Stage.GStage = AllStage.EasyStage.E2
+      default:
+         fatalError()
+      }
    }
    
    
@@ -108,55 +119,16 @@ class GameScene: SKScene {
       //ココの引数は特に使ってない。場所の位置変更で使ってもいいかも。
       //pAllArryの初期化をしてるね。
       //
-      Puzzle1!.InitPazzle(PositionX: 0, PositionY: 6, CustomNum: 1)
-      Puzzle2!.InitPazzle(PositionX: 2, PositionY: 1, CustomNum: 1)
-      Puzzle3!.InitPazzle(PositionX: 0, PositionY: 11, CustomNum: 1)
-      Puzzle4!.InitPazzle(PositionX: 0, PositionY: 3, CustomNum: 1)
-      Puzzle5!.InitPazzle(PositionX: 5, PositionY: 1, CustomNum: 1)
-      Puzzle6!.InitPazzle(PositionX: 2, PositionY: 3, CustomNum: 1)
-      Puzzle7!.InitPazzle(PositionX: 7, PositionY: 1, CustomNum: 1)
-      Puzzle8!.InitPazzle(PositionX: 5, PositionY: 5, CustomNum: 1)
-      Puzzle9!.InitPazzle(PositionX: 3, PositionY: 5, CustomNum: 1)
-      Puzzle10!.InitPazzle(PositionX: 5, PositionY:3, CustomNum: 1)
-      Puzzle11!.InitPazzle(PositionX: 7, PositionY: 6, CustomNum: 1)
-   
-      addChild(Puzzle1!)
-      addChild(Puzzle1!.GetAlhpaNode())
-      addChild(Puzzle2!)
-      addChild(Puzzle2!.GetAlhpaNode())
-      addChild(Puzzle3!)
-      addChild(Puzzle3!.GetAlhpaNode())
-      addChild(Puzzle4!)
-      addChild(Puzzle4!.GetAlhpaNode())
-      addChild(Puzzle5!)
-      addChild(Puzzle5!.GetAlhpaNode())
-      addChild(Puzzle6!)
-      addChild(Puzzle6!.GetAlhpaNode())
-      addChild(Puzzle7!)
-      addChild(Puzzle7!.GetAlhpaNode())
-      addChild(Puzzle8!)
-      addChild(Puzzle8!.GetAlhpaNode())
-      addChild(Puzzle9!)
-      addChild(Puzzle9!.GetAlhpaNode())
-      addChild(Puzzle10!)
-      addChild(Puzzle10!.GetAlhpaNode())
-      addChild(Puzzle11!)
-      addChild(Puzzle11!.GetAlhpaNode())
+      
+      for Puzzle in PuzzleBox {
+         addChild((Puzzle as! puzzle))
+         addChild((Puzzle as! puzzle).GetAlhpaNode())
+      }
    }
    
    //配列に入れて行ってる
    private func AddPuzzle() {
-      PuzzleBox.append(Puzzle1!)
-      PuzzleBox.append(Puzzle2!)
-      PuzzleBox.append(Puzzle3!)
-      PuzzleBox.append(Puzzle4!)
-      PuzzleBox.append(Puzzle5!)
-      PuzzleBox.append(Puzzle6!)
-      PuzzleBox.append(Puzzle7!)
-      PuzzleBox.append(Puzzle8!)
-      PuzzleBox.append(Puzzle9!)
-      PuzzleBox.append(Puzzle10!)
-      PuzzleBox.append(Puzzle11!)
+      
    }
    
    private func InitBackGroundColor() {
@@ -186,11 +158,7 @@ class GameScene: SKScene {
       }
    }
    
-   //MARK: ステージの配列の取得
-   private func SetStage(){
-      //FIXME:- ココの右辺は変数にするのがいいかも
-      Stage.GStage = AllStage.EasyStage.E2
-   }
+   
    
    //MARK:- ゲーム終了。
    private func FinishGame() {

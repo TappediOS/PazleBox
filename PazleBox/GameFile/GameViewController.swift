@@ -17,10 +17,25 @@ class GameViewController: UIViewController {
    var GameClearView = SAConfettiView()
    let GameClearVeiwIntensity: Float = 0.55
    var ShowGameClearView = false
+   
+   var StageNum = Int()
+   
+   var LoadStageNum = false
+   
+   //MARK: user defaults
+   var userDefaults: UserDefaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
       
+      if LoadStageNum == false {
+         print("StageNum = \(StageNum)")
+         userDefaults.set(StageNum, forKey: "StageNum")
+         LoadStageNum = true
+      }
+      print("StageNum = \(StageNum)")
+      //MARK: user defaults
+      userDefaults.set(StageNum, forKey: "StageNum")
       
       
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
@@ -49,6 +64,8 @@ class GameViewController: UIViewController {
                 // Present the scene
                 if let view = self.view as! SKView? {
 
+                  sceneNode.userData = NSMutableDictionary()
+                  sceneNode.userData?.setValue(StageNum, forKey: "StageNum")
    
                     view.presentScene(sceneNode)
       
