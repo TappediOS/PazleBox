@@ -270,7 +270,9 @@ class puzzle: SKSpriteNode {
       
       Play3DtouchHeavy()
       
+      
       return
+      //FIXME:- だだしい場所に置いた時にパーティクルを出すときは以下を変更
       
       guard PlayParticle == false else {
          return

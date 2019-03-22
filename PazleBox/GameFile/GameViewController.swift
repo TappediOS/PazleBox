@@ -65,8 +65,6 @@ class GameViewController: UIViewController {
       
       InitGameClearView()
       InitNotificationCenter()
-      
-
     }
    
    private func InitNotificationCenter() {
@@ -94,7 +92,10 @@ class GameViewController: UIViewController {
          return
       }
       
-      StartConfetti()
+      
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+         self.StartConfetti()
+      }
       return
    }
 
