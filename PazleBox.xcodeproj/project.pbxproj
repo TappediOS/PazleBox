@@ -265,25 +265,13 @@
 			children = (
 				BF1FF2B02231204F0047ED23 /* StageInfomation */,
 				BFFA2A8F2234CEED0023BB71 /* TilePick */,
-				BF2674E32227B6A3003D370F /* AppDelegate.swift */,
-				BFFA2A8D2234CC5F0023BB71 /* Tile.swift */,
 				BFC6C5D722428296007C8FA1 /* Particle */,
 				BF640C0722450FFA00333782 /* StageOfPuzzle */,
-				BF2674E92227B6A3003D370F /* GameScene.swift */,
-				BF2674EB2227B6A3003D370F /* GameViewController.swift */,
-				BF46108F22352423006F3DF1 /* Puzzle.swift */,
-				BF332F712248AEAF009B3042 /* StageLevel.swift */,
-				BF0FD355224371CE00E8F387 /* PutParticle.swift */,
-				BF332F732248B1FE009B3042 /* EasySellectStage.swift */,
-				BF332F752248C043009B3042 /* EasyButton.swift */,
-				BF1FF2AC22311CE60047ED23 /* Stage.swift */,
-				BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */,
-				BF519C7C223FAA470087A4AC /* GetPuzzleArry.swift */,
-				BF519C7A223FA8D60087A4AC /* ExTextureName.swift */,
-				BF519C6A223F58920087A4AC /* ExNotification.swift */,
-				BF0FD35322436DF200E8F387 /* ExUIColor.swift */,
-				BF640C0C224513DF00333782 /* HomeViewController.swift */,
-				BF1FF2AE22311FD40047ED23 /* StageContents.swift */,
+				BF332F7A22491753009B3042 /* SeceneAndViewCon */,
+				BF332F7B22491767009B3042 /* Puzzle */,
+				BF332F7C224917D2009B3042 /* Sellect */,
+				BF332F7E22491850009B3042 /* HomeView */,
+				BF332F7D224917F3009B3042 /* Extention */,
 			);
 			path = GameFile;
 			sourceTree = "<group>";
@@ -292,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				BF1FF2B1223120650047ED23 /* AllStageInfomation.swift */,
+				BF1FF2AC22311CE60047ED23 /* Stage.swift */,
 				BFFA2A82223380760023BB71 /* EasyStage */,
 				BFFA2A83223383680023BB71 /* NormalStage */,
 				BFFA2A84223383750023BB71 /* HardStage */,
@@ -322,6 +311,7 @@
 			children = (
 				BF1FF2AA22311C8D0047ED23 /* GemFile */,
 				BF1FF2AB22311CC10047ED23 /* GameFile */,
+				BF2674E32227B6A3003D370F /* AppDelegate.swift */,
 				BF2674ED2227B6A3003D370F /* Main.storyboard */,
 				BF2674F02227B6A4003D370F /* Assets.xcassets */,
 				BF2674F22227B6A4003D370F /* LaunchScreen.storyboard */,
@@ -331,11 +321,85 @@
 			path = PazleBox;
 			sourceTree = "<group>";
 		};
-		BF640C0722450FFA00333782 /* StageOfPuzzle */ = {
+		BF332F7722490D3A009B3042 /* Easy */ = {
 			isa = PBXGroup;
 			children = (
 				BF640C082245100C00333782 /* E1.swift */,
 				BF640C0A2245103500333782 /* E2.swift */,
+			);
+			path = Easy;
+			sourceTree = "<group>";
+		};
+		BF332F7822490D46009B3042 /* Normal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Normal;
+			sourceTree = "<group>";
+		};
+		BF332F7922490D4F009B3042 /* Hard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Hard;
+			sourceTree = "<group>";
+		};
+		BF332F7A22491753009B3042 /* SeceneAndViewCon */ = {
+			isa = PBXGroup;
+			children = (
+				BF2674E92227B6A3003D370F /* GameScene.swift */,
+				BF2674EB2227B6A3003D370F /* GameViewController.swift */,
+			);
+			path = SeceneAndViewCon;
+			sourceTree = "<group>";
+		};
+		BF332F7B22491767009B3042 /* Puzzle */ = {
+			isa = PBXGroup;
+			children = (
+				BF46108F22352423006F3DF1 /* Puzzle.swift */,
+				BF0FD355224371CE00E8F387 /* PutParticle.swift */,
+				BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */,
+				BF519C7C223FAA470087A4AC /* GetPuzzleArry.swift */,
+				BFFA2A8D2234CC5F0023BB71 /* Tile.swift */,
+			);
+			path = Puzzle;
+			sourceTree = "<group>";
+		};
+		BF332F7C224917D2009B3042 /* Sellect */ = {
+			isa = PBXGroup;
+			children = (
+				BF332F732248B1FE009B3042 /* EasySellectStage.swift */,
+				BF332F752248C043009B3042 /* EasyButton.swift */,
+			);
+			path = Sellect;
+			sourceTree = "<group>";
+		};
+		BF332F7D224917F3009B3042 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				BF519C6A223F58920087A4AC /* ExNotification.swift */,
+				BF519C7A223FA8D60087A4AC /* ExTextureName.swift */,
+				BF0FD35322436DF200E8F387 /* ExUIColor.swift */,
+				BF332F712248AEAF009B3042 /* StageLevel.swift */,
+				BF1FF2AE22311FD40047ED23 /* StageContents.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
+		BF332F7E22491850009B3042 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				BF640C0C224513DF00333782 /* HomeViewController.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		BF640C0722450FFA00333782 /* StageOfPuzzle */ = {
+			isa = PBXGroup;
+			children = (
+				BF332F7722490D3A009B3042 /* Easy */,
+				BF332F7822490D46009B3042 /* Normal */,
+				BF332F7922490D4F009B3042 /* Hard */,
 			);
 			path = StageOfPuzzle;
 			sourceTree = "<group>";

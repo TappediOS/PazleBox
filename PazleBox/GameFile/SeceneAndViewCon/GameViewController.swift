@@ -22,8 +22,7 @@ class GameViewController: UIViewController {
    
    var LoadStageNum = false
    
-   var LoadSKView = SKView()
-   var LoadGKScene = GameScene()
+
    
    var EasySelect = SellectStageEasy()
    
@@ -73,28 +72,26 @@ class GameViewController: UIViewController {
    
    
    
-   func InitGameView() {
+   func InitGameViewAndShowView() {
       
       print("GameSene，GameViewの初期化開始")
       if let scene = GKScene(fileNamed: "GameScene") {
             
          // Get the SKScene from the loaded GKScene
          if let sceneNode = scene.rootNode as! GameScene? {
-               
-            LoadGKScene = sceneNode
             
             sceneNode.scaleMode = GetSceneScalaMode(DeviceHeight: UIScreen.main.nativeBounds.height)
             
             
             // Present the scene
             if let view = self.view as! SKView? {
-               LoadSKView = view
-               
                   
                sceneNode.userData = NSMutableDictionary()
                sceneNode.userData?.setValue(StageLevel, forKey: "StageNum")
 
                view.ignoresSiblingOrder = true
+               
+               view.presentScene(sceneNode)
                
                view.showsDrawCount = true
                view.showsQuadCount = true
@@ -165,8 +162,7 @@ class GameViewController: UIViewController {
          print("送信者番号: \(SentNum)")
          
          LoadStageNumber(Num: SentNum)
-         InitGameView()
-         LoadGameView()
+         InitGameViewAndShowView()
          
          self.EasySelect.removeFromSuperview()
          
@@ -176,11 +172,7 @@ class GameViewController: UIViewController {
       }
    }
    
-   func LoadGameView() {
-      // Present the scene
-      LoadSKView.presentScene(LoadGKScene)
-      
-   }
+
 
     override var shouldAutorotate: Bool {
         return true
