@@ -20,7 +20,6 @@ class GameViewController: UIViewController {
    
    var StageLevel: StageLevel = .Normal
    
-   var LoadStageNum = false
    
 
    
@@ -32,7 +31,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-      LoadStageLebel()
+      LoadStageLevel()
       
       InitNotificationCenter()
       InitStageSellectView()
@@ -59,15 +58,20 @@ class GameViewController: UIViewController {
       userDefaults.set(Num, forKey: "StageNum")
    }
    
-   private func LoadStageLebel() {
-      
-      guard LoadStageNum == true else {
-         return
-      }
+   private func LoadStageLevel() {
 
       print("StageLevel = \(StageLevel)")
-      userDefaults.set(StageLevel, forKey: "SelectedStageLevel")
-      LoadStageNum = true
+      
+      switch StageLevel {
+      case .Easy:
+         userDefaults.set(1, forKey: "SelectedStageLevel")
+      case .Normal:
+         userDefaults.set(2, forKey: "SelectedStageLevel")
+      case .Hard:
+         userDefaults.set(3, forKey: "SelectedStageLevel")
+      }
+      
+      
    }
    
    

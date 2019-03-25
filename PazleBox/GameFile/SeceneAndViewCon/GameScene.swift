@@ -32,6 +32,7 @@ class GameScene: SKScene {
    
    
    var PostedStageNum = 1
+   var StageLebel: StageLevel = .Easy
    
    var userDefaults = UserDefaults.standard
    
@@ -43,6 +44,7 @@ class GameScene: SKScene {
 
       InitBackGroundColor()
       
+      InitStageLevel()
       InitStageNumber()
       
       InitStageSize(SizeX: ViewSizeX, SizeY: ViewSizeY)
@@ -64,17 +66,31 @@ class GameScene: SKScene {
     }
    
    private func InitStageNumber() {
-      print("ステージ難易度の取得開始")
+      print("ステージ番号の取得開始")
       self.PostedStageNum = userDefaults.integer(forKey: "StageNum")
-      print("ステージ難易度の取得完了")
+      print("ステージ番号の取得完了: \(self.PostedStageNum)")
       //self.PostedStageNum = self.userData?.value(forKey: "StageNum") as! Int
+   }
+   
+   private func InitStageLevel() {
+      print("ステージ難易度の取得開始")
+      switch userDefaults.integer(forKey: "SelectedStageLevel") {
+      case 1:
+         self.StageLebel = .Easy
+      case 2:
+         self.StageLebel = .Normal
+      case 3:
+         self.StageLebel = .Hard
+      default:
+         fatalError()
+      }
+      print("ステージ難易度の取得完了: \(self.StageLebel)")
+      
    }
    
    //MARK:- チェックする配列を初期化する
    private func CrearCheckedStage() {
-      print("チェックするからの配列の取得開始")
       CheckedStage = AllStage.Checked
-      print("チェックするからの配列の取得完了")
    }
    
    //MARK:- 初期化
@@ -92,20 +108,20 @@ class GameScene: SKScene {
    private func InitPuzzle(SizeX: CGFloat?, SizeY: CGFloat?){
    
       
+      
       print("パズルBoxの初期化開始")
-      switch PostedStageNum {
-      case 1:
-         let Stage1 = EStage1(ViewSizeX: SizeX!, ViewSizeY: SizeY!)
-         PuzzleBox = Stage1.GetPuzzleBox()
-      case 2:
-         let Stage2 = EStage2(ViewSizeX: SizeX!, ViewSizeY: SizeY!)
-         PuzzleBox = Stage2.GetPuzzleBox()
-      case 3:
-         let Stage3 = EStage2(ViewSizeX: SizeX!, ViewSizeY: SizeY!)
-         PuzzleBox = Stage3.GetPuzzleBox()
-      default:
-         fatalError()
+      
+      
+      switch self.StageLebel {
+      case .Easy:
+         PuzzleBox = GetEasyPuzzleBox(ViewSizeX: SizeX!, ViewSizeY: SizeY!)
+      case .Normal:
+         PuzzleBox = GetNormalPuzzleBox(ViewSizeX: SizeX!, ViewSizeY: SizeY!)
+      case .Hard:
+         PuzzleBox = GetHardPuzzleBox(ViewSizeX: SizeX!, ViewSizeY: SizeY!)
       }
+      
+      
        print("パズルBoxの初期化完了")
    }
    
@@ -113,15 +129,14 @@ class GameScene: SKScene {
    private func SetStage(StageNum: Int){
       //FIXME:- ココの右辺は変数にするのがいいかも
       print("ステージの初期化開始")
-      switch PostedStageNum {
-      case 1:
-         Stage.GStage = AllStage.EasyStage.E1
-      case 2:
-         Stage.GStage = AllStage.EasyStage.E2
-      case 3:
-         Stage.GStage = AllStage.EasyStage.E2
-      default:
-         fatalError()
+      
+      switch self.StageLebel {
+      case .Easy:
+         Stage.GStage = GetEasyMainStage()
+      case .Normal:
+         Stage.GStage = GetNormalMainStage()
+      case .Hard:
+         Stage.GStage = GetHardMainStage()
       }
       print("ステージの初期化完了")
    }

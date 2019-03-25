@@ -27,6 +27,71 @@
 		BF332F722248AEAF009B3042 /* StageLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F712248AEAF009B3042 /* StageLevel.swift */; };
 		BF332F742248B1FE009B3042 /* EasySellectStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F732248B1FE009B3042 /* EasySellectStage.swift */; };
 		BF332F762248C043009B3042 /* EasyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F752248C043009B3042 /* EasyButton.swift */; };
+		BF332F8022491F8D009B3042 /* ExEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F7F22491F8D009B3042 /* ExEnum.swift */; };
+		BF332F862249234C009B3042 /* ExGameSeceneEasy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F852249234C009B3042 /* ExGameSeceneEasy.swift */; };
+		BF332F882249235D009B3042 /* ExGameSeceneNorma.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F872249235D009B3042 /* ExGameSeceneNorma.swift */; };
+		BF332F8A22492366009B3042 /* ExGameSeceneHard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F8922492366009B3042 /* ExGameSeceneHard.swift */; };
+		BF332F8C224926C1009B3042 /* E3.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F8B224926C1009B3042 /* E3.swift */; };
+		BF332F8E224926CA009B3042 /* E4.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F8D224926CA009B3042 /* E4.swift */; };
+		BF332F90224926CD009B3042 /* E5.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F8F224926CD009B3042 /* E5.swift */; };
+		BF332F92224926D3009B3042 /* E6.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F91224926D3009B3042 /* E6.swift */; };
+		BF332F94224926DB009B3042 /* E7.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F93224926DB009B3042 /* E7.swift */; };
+		BF332F96224926DF009B3042 /* E8.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F95224926DF009B3042 /* E8.swift */; };
+		BF332F98224926E6009B3042 /* E9.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F97224926E6009B3042 /* E9.swift */; };
+		BF332F9A224926EB009B3042 /* E10.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F99224926EB009B3042 /* E10.swift */; };
+		BF332F9C224926F0009B3042 /* E11.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F9B224926F0009B3042 /* E11.swift */; };
+		BF332F9E224926F3009B3042 /* E12.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F9D224926F3009B3042 /* E12.swift */; };
+		BF332FA0224926F7009B3042 /* E13.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F9F224926F7009B3042 /* E13.swift */; };
+		BF332FA2224926FF009B3042 /* E14.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FA1224926FE009B3042 /* E14.swift */; };
+		BF332FA422492704009B3042 /* E15.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FA322492704009B3042 /* E15.swift */; };
+		BF332FA622492711009B3042 /* E16.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FA522492711009B3042 /* E16.swift */; };
+		BF332FA822492716009B3042 /* E17.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FA722492716009B3042 /* E17.swift */; };
+		BF332FAA22492719009B3042 /* E18.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FA922492719009B3042 /* E18.swift */; };
+		BF332FAC2249271C009B3042 /* E19.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FAB2249271C009B3042 /* E19.swift */; };
+		BF332FAE22492723009B3042 /* E20.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FAD22492723009B3042 /* E20.swift */; };
+		BF332FB022492766009B3042 /* N1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FAF22492766009B3042 /* N1.swift */; };
+		BF332FB22249276F009B3042 /* N2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FB12249276F009B3042 /* N2.swift */; };
+		BF332FB42249277A009B3042 /* N3.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FB32249277A009B3042 /* N3.swift */; };
+		BF332FB622492784009B3042 /* N4.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FB522492784009B3042 /* N4.swift */; };
+		BF332FB82249278B009B3042 /* N5.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FB72249278B009B3042 /* N5.swift */; };
+		BF332FBA2249278F009B3042 /* N6.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FB92249278F009B3042 /* N6.swift */; };
+		BF332FBC22492798009B3042 /* N7.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FBB22492798009B3042 /* N7.swift */; };
+		BF332FBE2249279C009B3042 /* N8.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FBD2249279C009B3042 /* N8.swift */; };
+		BF332FC0224927A0009B3042 /* N9.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FBF224927A0009B3042 /* N9.swift */; };
+		BF332FC2224927AA009B3042 /* N10.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FC1224927AA009B3042 /* N10.swift */; };
+		BF332FC4224927AE009B3042 /* N11.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FC3224927AE009B3042 /* N11.swift */; };
+		BF332FC6224927B1009B3042 /* N12.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FC5224927B1009B3042 /* N12.swift */; };
+		BF332FC8224927B4009B3042 /* N13.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FC7224927B4009B3042 /* N13.swift */; };
+		BF332FCA224927BA009B3042 /* N14.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FC9224927BA009B3042 /* N14.swift */; };
+		BF332FCC224927BF009B3042 /* N15.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FCB224927BF009B3042 /* N15.swift */; };
+		BF332FCE224927C3009B3042 /* N16.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FCD224927C3009B3042 /* N16.swift */; };
+		BF332FD0224927C9009B3042 /* N17.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FCF224927C9009B3042 /* N17.swift */; };
+		BF332FD2224927CC009B3042 /* N18.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FD1224927CC009B3042 /* N18.swift */; };
+		BF332FD4224927D2009B3042 /* N19.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FD3224927D2009B3042 /* N19.swift */; };
+		BF332FD6224927D5009B3042 /* N20.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FD5224927D5009B3042 /* N20.swift */; };
+		BF332FD8224927E2009B3042 /* H1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FD7224927E2009B3042 /* H1.swift */; };
+		BF332FDA224927EB009B3042 /* H2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FD9224927EB009B3042 /* H2.swift */; };
+		BF332FDC224927EF009B3042 /* H3.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FDB224927EF009B3042 /* H3.swift */; };
+		BF332FDE224927F2009B3042 /* H4.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FDD224927F2009B3042 /* H4.swift */; };
+		BF332FE0224927F5009B3042 /* H5.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FDF224927F5009B3042 /* H5.swift */; };
+		BF332FE2224927F8009B3042 /* H6.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FE1224927F8009B3042 /* H6.swift */; };
+		BF332FE4224927FE009B3042 /* H7.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FE3224927FE009B3042 /* H7.swift */; };
+		BF332FE622492802009B3042 /* H8.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FE522492802009B3042 /* H8.swift */; };
+		BF332FE822492805009B3042 /* H9.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FE722492805009B3042 /* H9.swift */; };
+		BF332FEA2249280A009B3042 /* H10.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FE92249280A009B3042 /* H10.swift */; };
+		BF332FEC2249280D009B3042 /* H11.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FEB2249280D009B3042 /* H11.swift */; };
+		BF332FF022492819009B3042 /* H12.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FEF22492819009B3042 /* H12.swift */; };
+		BF332FF222492827009B3042 /* H13.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FF122492827009B3042 /* H13.swift */; };
+		BF332FF42249282A009B3042 /* H14.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FF32249282A009B3042 /* H14.swift */; };
+		BF332FF622492834009B3042 /* H15.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FF522492834009B3042 /* H15.swift */; };
+		BF332FF822492837009B3042 /* H16.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FF722492837009B3042 /* H16.swift */; };
+		BF332FFA2249283C009B3042 /* H17.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FF92249283C009B3042 /* H17.swift */; };
+		BF332FFC22492848009B3042 /* H18.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FFB22492848009B3042 /* H18.swift */; };
+		BF332FFE2249284F009B3042 /* H19.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FFD2249284F009B3042 /* H19.swift */; };
+		BF33300022492854009B3042 /* H20.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332FFF22492854009B3042 /* H20.swift */; };
+		BF33300222492B31009B3042 /* ExGameSeceneEasyP2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33300122492B31009B3042 /* ExGameSeceneEasyP2.swift */; };
+		BF33300422492B3E009B3042 /* ExGameSecenNormalP2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33300322492B3E009B3042 /* ExGameSecenNormalP2.swift */; };
+		BF33300622492B4C009B3042 /* ExGameSeceneHardP2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33300522492B4C009B3042 /* ExGameSeceneHardP2.swift */; };
 		BF46109022352423006F3DF1 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46108F22352423006F3DF1 /* Puzzle.swift */; };
 		BF519C69223CCBDE0087A4AC /* GetTilePOSITION.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */; };
 		BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C6A223F58920087A4AC /* ExNotification.swift */; };
@@ -140,6 +205,71 @@
 		BF332F712248AEAF009B3042 /* StageLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageLevel.swift; sourceTree = "<group>"; };
 		BF332F732248B1FE009B3042 /* EasySellectStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasySellectStage.swift; sourceTree = "<group>"; };
 		BF332F752248C043009B3042 /* EasyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyButton.swift; sourceTree = "<group>"; };
+		BF332F7F22491F8D009B3042 /* ExEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExEnum.swift; sourceTree = "<group>"; };
+		BF332F852249234C009B3042 /* ExGameSeceneEasy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExGameSeceneEasy.swift; sourceTree = "<group>"; };
+		BF332F872249235D009B3042 /* ExGameSeceneNorma.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExGameSeceneNorma.swift; sourceTree = "<group>"; };
+		BF332F8922492366009B3042 /* ExGameSeceneHard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExGameSeceneHard.swift; sourceTree = "<group>"; };
+		BF332F8B224926C1009B3042 /* E3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E3.swift; sourceTree = "<group>"; };
+		BF332F8D224926CA009B3042 /* E4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E4.swift; sourceTree = "<group>"; };
+		BF332F8F224926CD009B3042 /* E5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E5.swift; sourceTree = "<group>"; };
+		BF332F91224926D3009B3042 /* E6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E6.swift; sourceTree = "<group>"; };
+		BF332F93224926DB009B3042 /* E7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E7.swift; sourceTree = "<group>"; };
+		BF332F95224926DF009B3042 /* E8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E8.swift; sourceTree = "<group>"; };
+		BF332F97224926E6009B3042 /* E9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E9.swift; sourceTree = "<group>"; };
+		BF332F99224926EB009B3042 /* E10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E10.swift; sourceTree = "<group>"; };
+		BF332F9B224926F0009B3042 /* E11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E11.swift; sourceTree = "<group>"; };
+		BF332F9D224926F3009B3042 /* E12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E12.swift; sourceTree = "<group>"; };
+		BF332F9F224926F7009B3042 /* E13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E13.swift; sourceTree = "<group>"; };
+		BF332FA1224926FE009B3042 /* E14.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E14.swift; sourceTree = "<group>"; };
+		BF332FA322492704009B3042 /* E15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E15.swift; sourceTree = "<group>"; };
+		BF332FA522492711009B3042 /* E16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E16.swift; sourceTree = "<group>"; };
+		BF332FA722492716009B3042 /* E17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E17.swift; sourceTree = "<group>"; };
+		BF332FA922492719009B3042 /* E18.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E18.swift; sourceTree = "<group>"; };
+		BF332FAB2249271C009B3042 /* E19.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E19.swift; sourceTree = "<group>"; };
+		BF332FAD22492723009B3042 /* E20.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E20.swift; sourceTree = "<group>"; };
+		BF332FAF22492766009B3042 /* N1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N1.swift; sourceTree = "<group>"; };
+		BF332FB12249276F009B3042 /* N2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N2.swift; sourceTree = "<group>"; };
+		BF332FB32249277A009B3042 /* N3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N3.swift; sourceTree = "<group>"; };
+		BF332FB522492784009B3042 /* N4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N4.swift; sourceTree = "<group>"; };
+		BF332FB72249278B009B3042 /* N5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N5.swift; sourceTree = "<group>"; };
+		BF332FB92249278F009B3042 /* N6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N6.swift; sourceTree = "<group>"; };
+		BF332FBB22492798009B3042 /* N7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N7.swift; sourceTree = "<group>"; };
+		BF332FBD2249279C009B3042 /* N8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N8.swift; sourceTree = "<group>"; };
+		BF332FBF224927A0009B3042 /* N9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N9.swift; sourceTree = "<group>"; };
+		BF332FC1224927AA009B3042 /* N10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N10.swift; sourceTree = "<group>"; };
+		BF332FC3224927AE009B3042 /* N11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N11.swift; sourceTree = "<group>"; };
+		BF332FC5224927B1009B3042 /* N12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N12.swift; sourceTree = "<group>"; };
+		BF332FC7224927B4009B3042 /* N13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N13.swift; sourceTree = "<group>"; };
+		BF332FC9224927BA009B3042 /* N14.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N14.swift; sourceTree = "<group>"; };
+		BF332FCB224927BF009B3042 /* N15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N15.swift; sourceTree = "<group>"; };
+		BF332FCD224927C3009B3042 /* N16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N16.swift; sourceTree = "<group>"; };
+		BF332FCF224927C9009B3042 /* N17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N17.swift; sourceTree = "<group>"; };
+		BF332FD1224927CC009B3042 /* N18.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N18.swift; sourceTree = "<group>"; };
+		BF332FD3224927D2009B3042 /* N19.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N19.swift; sourceTree = "<group>"; };
+		BF332FD5224927D5009B3042 /* N20.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N20.swift; sourceTree = "<group>"; };
+		BF332FD7224927E2009B3042 /* H1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H1.swift; sourceTree = "<group>"; };
+		BF332FD9224927EB009B3042 /* H2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H2.swift; sourceTree = "<group>"; };
+		BF332FDB224927EF009B3042 /* H3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H3.swift; sourceTree = "<group>"; };
+		BF332FDD224927F2009B3042 /* H4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H4.swift; sourceTree = "<group>"; };
+		BF332FDF224927F5009B3042 /* H5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H5.swift; sourceTree = "<group>"; };
+		BF332FE1224927F8009B3042 /* H6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H6.swift; sourceTree = "<group>"; };
+		BF332FE3224927FE009B3042 /* H7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H7.swift; sourceTree = "<group>"; };
+		BF332FE522492802009B3042 /* H8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H8.swift; sourceTree = "<group>"; };
+		BF332FE722492805009B3042 /* H9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H9.swift; sourceTree = "<group>"; };
+		BF332FE92249280A009B3042 /* H10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H10.swift; sourceTree = "<group>"; };
+		BF332FEB2249280D009B3042 /* H11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H11.swift; sourceTree = "<group>"; };
+		BF332FEF22492819009B3042 /* H12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H12.swift; sourceTree = "<group>"; };
+		BF332FF122492827009B3042 /* H13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H13.swift; sourceTree = "<group>"; };
+		BF332FF32249282A009B3042 /* H14.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H14.swift; sourceTree = "<group>"; };
+		BF332FF522492834009B3042 /* H15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H15.swift; sourceTree = "<group>"; };
+		BF332FF722492837009B3042 /* H16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H16.swift; sourceTree = "<group>"; };
+		BF332FF92249283C009B3042 /* H17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H17.swift; sourceTree = "<group>"; };
+		BF332FFB22492848009B3042 /* H18.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H18.swift; sourceTree = "<group>"; };
+		BF332FFD2249284F009B3042 /* H19.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H19.swift; sourceTree = "<group>"; };
+		BF332FFF22492854009B3042 /* H20.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H20.swift; sourceTree = "<group>"; };
+		BF33300122492B31009B3042 /* ExGameSeceneEasyP2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExGameSeceneEasyP2.swift; sourceTree = "<group>"; };
+		BF33300322492B3E009B3042 /* ExGameSecenNormalP2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExGameSecenNormalP2.swift; sourceTree = "<group>"; };
+		BF33300522492B4C009B3042 /* ExGameSeceneHardP2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExGameSeceneHardP2.swift; sourceTree = "<group>"; };
 		BF46108F22352423006F3DF1 /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
 		BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTilePOSITION.swift; sourceTree = "<group>"; };
 		BF519C6A223F58920087A4AC /* ExNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNotification.swift; sourceTree = "<group>"; };
@@ -326,6 +456,24 @@
 			children = (
 				BF640C082245100C00333782 /* E1.swift */,
 				BF640C0A2245103500333782 /* E2.swift */,
+				BF332F8B224926C1009B3042 /* E3.swift */,
+				BF332F8D224926CA009B3042 /* E4.swift */,
+				BF332F8F224926CD009B3042 /* E5.swift */,
+				BF332F91224926D3009B3042 /* E6.swift */,
+				BF332F93224926DB009B3042 /* E7.swift */,
+				BF332F95224926DF009B3042 /* E8.swift */,
+				BF332F97224926E6009B3042 /* E9.swift */,
+				BF332F99224926EB009B3042 /* E10.swift */,
+				BF332F9B224926F0009B3042 /* E11.swift */,
+				BF332F9D224926F3009B3042 /* E12.swift */,
+				BF332F9F224926F7009B3042 /* E13.swift */,
+				BF332FA1224926FE009B3042 /* E14.swift */,
+				BF332FA322492704009B3042 /* E15.swift */,
+				BF332FA522492711009B3042 /* E16.swift */,
+				BF332FA722492716009B3042 /* E17.swift */,
+				BF332FA922492719009B3042 /* E18.swift */,
+				BF332FAB2249271C009B3042 /* E19.swift */,
+				BF332FAD22492723009B3042 /* E20.swift */,
 			);
 			path = Easy;
 			sourceTree = "<group>";
@@ -333,6 +481,26 @@
 		BF332F7822490D46009B3042 /* Normal */ = {
 			isa = PBXGroup;
 			children = (
+				BF332FAF22492766009B3042 /* N1.swift */,
+				BF332FB12249276F009B3042 /* N2.swift */,
+				BF332FB32249277A009B3042 /* N3.swift */,
+				BF332FB522492784009B3042 /* N4.swift */,
+				BF332FB72249278B009B3042 /* N5.swift */,
+				BF332FB92249278F009B3042 /* N6.swift */,
+				BF332FBB22492798009B3042 /* N7.swift */,
+				BF332FBD2249279C009B3042 /* N8.swift */,
+				BF332FBF224927A0009B3042 /* N9.swift */,
+				BF332FC1224927AA009B3042 /* N10.swift */,
+				BF332FC3224927AE009B3042 /* N11.swift */,
+				BF332FC5224927B1009B3042 /* N12.swift */,
+				BF332FC7224927B4009B3042 /* N13.swift */,
+				BF332FC9224927BA009B3042 /* N14.swift */,
+				BF332FCB224927BF009B3042 /* N15.swift */,
+				BF332FCD224927C3009B3042 /* N16.swift */,
+				BF332FCF224927C9009B3042 /* N17.swift */,
+				BF332FD1224927CC009B3042 /* N18.swift */,
+				BF332FD3224927D2009B3042 /* N19.swift */,
+				BF332FD5224927D5009B3042 /* N20.swift */,
 			);
 			path = Normal;
 			sourceTree = "<group>";
@@ -340,6 +508,26 @@
 		BF332F7922490D4F009B3042 /* Hard */ = {
 			isa = PBXGroup;
 			children = (
+				BF332FD7224927E2009B3042 /* H1.swift */,
+				BF332FD9224927EB009B3042 /* H2.swift */,
+				BF332FDB224927EF009B3042 /* H3.swift */,
+				BF332FDD224927F2009B3042 /* H4.swift */,
+				BF332FDF224927F5009B3042 /* H5.swift */,
+				BF332FE1224927F8009B3042 /* H6.swift */,
+				BF332FE3224927FE009B3042 /* H7.swift */,
+				BF332FE522492802009B3042 /* H8.swift */,
+				BF332FE722492805009B3042 /* H9.swift */,
+				BF332FE92249280A009B3042 /* H10.swift */,
+				BF332FEB2249280D009B3042 /* H11.swift */,
+				BF332FEF22492819009B3042 /* H12.swift */,
+				BF332FF122492827009B3042 /* H13.swift */,
+				BF332FF32249282A009B3042 /* H14.swift */,
+				BF332FF522492834009B3042 /* H15.swift */,
+				BF332FF722492837009B3042 /* H16.swift */,
+				BF332FF92249283C009B3042 /* H17.swift */,
+				BF332FFB22492848009B3042 /* H18.swift */,
+				BF332FFD2249284F009B3042 /* H19.swift */,
+				BF332FFF22492854009B3042 /* H20.swift */,
 			);
 			path = Hard;
 			sourceTree = "<group>";
@@ -348,6 +536,7 @@
 			isa = PBXGroup;
 			children = (
 				BF2674E92227B6A3003D370F /* GameScene.swift */,
+				BF332F8122492238009B3042 /* GetStage */,
 				BF2674EB2227B6A3003D370F /* GameViewController.swift */,
 			);
 			path = SeceneAndViewCon;
@@ -380,6 +569,7 @@
 				BF519C6A223F58920087A4AC /* ExNotification.swift */,
 				BF519C7A223FA8D60087A4AC /* ExTextureName.swift */,
 				BF0FD35322436DF200E8F387 /* ExUIColor.swift */,
+				BF332F7F22491F8D009B3042 /* ExEnum.swift */,
 				BF332F712248AEAF009B3042 /* StageLevel.swift */,
 				BF1FF2AE22311FD40047ED23 /* StageContents.swift */,
 			);
@@ -392,6 +582,43 @@
 				BF640C0C224513DF00333782 /* HomeViewController.swift */,
 			);
 			path = HomeView;
+			sourceTree = "<group>";
+		};
+		BF332F8122492238009B3042 /* GetStage */ = {
+			isa = PBXGroup;
+			children = (
+				BF332F822249224E009B3042 /* easy */,
+				BF332F832249225F009B3042 /* normal */,
+				BF332F842249227A009B3042 /* hard */,
+			);
+			path = GetStage;
+			sourceTree = "<group>";
+		};
+		BF332F822249224E009B3042 /* easy */ = {
+			isa = PBXGroup;
+			children = (
+				BF332F852249234C009B3042 /* ExGameSeceneEasy.swift */,
+				BF33300122492B31009B3042 /* ExGameSeceneEasyP2.swift */,
+			);
+			path = easy;
+			sourceTree = "<group>";
+		};
+		BF332F832249225F009B3042 /* normal */ = {
+			isa = PBXGroup;
+			children = (
+				BF332F872249235D009B3042 /* ExGameSeceneNorma.swift */,
+				BF33300322492B3E009B3042 /* ExGameSecenNormalP2.swift */,
+			);
+			path = normal;
+			sourceTree = "<group>";
+		};
+		BF332F842249227A009B3042 /* hard */ = {
+			isa = PBXGroup;
+			children = (
+				BF332F8922492366009B3042 /* ExGameSeceneHard.swift */,
+				BF33300522492B4C009B3042 /* ExGameSeceneHardP2.swift */,
+			);
+			path = hard;
 			sourceTree = "<group>";
 		};
 		BF640C0722450FFA00333782 /* StageOfPuzzle */ = {
@@ -787,32 +1014,97 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF332FBC22492798009B3042 /* N7.swift in Sources */,
 				BF46109022352423006F3DF1 /* Puzzle.swift in Sources */,
+				BF332FE0224927F5009B3042 /* H5.swift in Sources */,
 				BF1FF2B2223120650047ED23 /* AllStageInfomation.swift in Sources */,
 				BF332F762248C043009B3042 /* EasyButton.swift in Sources */,
 				BF640C0B2245103500333782 /* E2.swift in Sources */,
 				BF1FF2B6223122C80047ED23 /* EasyCreate.swift in Sources */,
+				BF332FA0224926F7009B3042 /* E13.swift in Sources */,
+				BF332F882249235D009B3042 /* ExGameSeceneNorma.swift in Sources */,
 				BF519C69223CCBDE0087A4AC /* GetTilePOSITION.swift in Sources */,
 				BF1FF2AF22311FD40047ED23 /* StageContents.swift in Sources */,
 				BF332F722248AEAF009B3042 /* StageLevel.swift in Sources */,
 				BFFA2A8E2234CC5F0023BB71 /* Tile.swift in Sources */,
+				BF332FA422492704009B3042 /* E15.swift in Sources */,
 				BF1FF2B4223121BF0047ED23 /* Easy.swift in Sources */,
+				BF332FBA2249278F009B3042 /* N6.swift in Sources */,
+				BF332F94224926DB009B3042 /* E7.swift in Sources */,
+				BF332F90224926CD009B3042 /* E5.swift in Sources */,
+				BF332FBE2249279C009B3042 /* N8.swift in Sources */,
 				BF0FD356224371CE00E8F387 /* PutParticle.swift in Sources */,
+				BF332FB42249277A009B3042 /* N3.swift in Sources */,
+				BF332F92224926D3009B3042 /* E6.swift in Sources */,
+				BF332FCA224927BA009B3042 /* N14.swift in Sources */,
+				BF332FAA22492719009B3042 /* E18.swift in Sources */,
+				BF332FC8224927B4009B3042 /* N13.swift in Sources */,
+				BF332FCC224927BF009B3042 /* N15.swift in Sources */,
+				BF332FA822492716009B3042 /* E17.swift in Sources */,
+				BF332FC2224927AA009B3042 /* N10.swift in Sources */,
+				BF332FB82249278B009B3042 /* N5.swift in Sources */,
+				BF332FA622492711009B3042 /* E16.swift in Sources */,
+				BF332FB22249276F009B3042 /* N2.swift in Sources */,
+				BF332F8A22492366009B3042 /* ExGameSeceneHard.swift in Sources */,
 				BFFA2A8A223384420023BB71 /* Hard.swift in Sources */,
+				BF332FB622492784009B3042 /* N4.swift in Sources */,
+				BF332FAE22492723009B3042 /* E20.swift in Sources */,
+				BF332FA2224926FF009B3042 /* E14.swift in Sources */,
+				BF332F98224926E6009B3042 /* E9.swift in Sources */,
+				BF33300222492B31009B3042 /* ExGameSeceneEasyP2.swift in Sources */,
+				BF332F8E224926CA009B3042 /* E4.swift in Sources */,
+				BF332FEA2249280A009B3042 /* H10.swift in Sources */,
+				BF332FC6224927B1009B3042 /* N12.swift in Sources */,
+				BF332FDC224927EF009B3042 /* H3.swift in Sources */,
 				BF0FD35422436DF200E8F387 /* ExUIColor.swift in Sources */,
 				BF640C0D224513DF00333782 /* HomeViewController.swift in Sources */,
+				BF332FD4224927D2009B3042 /* N19.swift in Sources */,
+				BF332F96224926DF009B3042 /* E8.swift in Sources */,
 				BF2674EA2227B6A3003D370F /* GameScene.swift in Sources */,
+				BF332FFE2249284F009B3042 /* H19.swift in Sources */,
+				BF332FF622492834009B3042 /* H15.swift in Sources */,
+				BF332FD0224927C9009B3042 /* N17.swift in Sources */,
 				BF2674EC2227B6A3003D370F /* GameViewController.swift in Sources */,
+				BF332FD6224927D5009B3042 /* N20.swift in Sources */,
 				BFFA2A8C223384D80023BB71 /* HardCreate.swift in Sources */,
+				BF332F862249234C009B3042 /* ExGameSeceneEasy.swift in Sources */,
+				BF332F9E224926F3009B3042 /* E12.swift in Sources */,
 				BF519C7B223FA8D60087A4AC /* ExTextureName.swift in Sources */,
+				BF332F9C224926F0009B3042 /* E11.swift in Sources */,
+				BF33300022492854009B3042 /* H20.swift in Sources */,
+				BF332FAC2249271C009B3042 /* E19.swift in Sources */,
 				BF332F742248B1FE009B3042 /* EasySellectStage.swift in Sources */,
+				BF332FF822492837009B3042 /* H16.swift in Sources */,
 				BFFA2A86223383B60023BB71 /* Normal.swift in Sources */,
+				BF33300422492B3E009B3042 /* ExGameSecenNormalP2.swift in Sources */,
+				BF332FE822492805009B3042 /* H9.swift in Sources */,
+				BF332F9A224926EB009B3042 /* E10.swift in Sources */,
+				BF332FC4224927AE009B3042 /* N11.swift in Sources */,
+				BF332FF42249282A009B3042 /* H14.swift in Sources */,
 				BF1FF2AD22311CE60047ED23 /* Stage.swift in Sources */,
+				BF332FDE224927F2009B3042 /* H4.swift in Sources */,
+				BF332FEC2249280D009B3042 /* H11.swift in Sources */,
 				BF2674E42227B6A3003D370F /* AppDelegate.swift in Sources */,
 				BF519C7D223FAA470087A4AC /* GetPuzzleArry.swift in Sources */,
 				BFFA2A81223380720023BB71 /* EasyGet.swift in Sources */,
+				BF332F8C224926C1009B3042 /* E3.swift in Sources */,
+				BF332FF022492819009B3042 /* H12.swift in Sources */,
+				BF332FD2224927CC009B3042 /* N18.swift in Sources */,
+				BF332FDA224927EB009B3042 /* H2.swift in Sources */,
+				BF332FC0224927A0009B3042 /* N9.swift in Sources */,
 				BF640C092245100C00333782 /* E1.swift in Sources */,
+				BF332FE622492802009B3042 /* H8.swift in Sources */,
+				BF332FE2224927F8009B3042 /* H6.swift in Sources */,
+				BF332F8022491F8D009B3042 /* ExEnum.swift in Sources */,
+				BF33300622492B4C009B3042 /* ExGameSeceneHardP2.swift in Sources */,
 				BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */,
+				BF332FFC22492848009B3042 /* H18.swift in Sources */,
+				BF332FF222492827009B3042 /* H13.swift in Sources */,
+				BF332FFA2249283C009B3042 /* H17.swift in Sources */,
+				BF332FB022492766009B3042 /* N1.swift in Sources */,
+				BF332FCE224927C3009B3042 /* N16.swift in Sources */,
+				BF332FD8224927E2009B3042 /* H1.swift in Sources */,
+				BF332FE4224927FE009B3042 /* H7.swift in Sources */,
 				BFFA2A88223384120023BB71 /* NormalCreate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
