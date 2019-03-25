@@ -25,6 +25,8 @@ class GameViewController: UIViewController {
    var LoadSKView = SKView()
    var LoadGKScene = GameScene()
    
+   var EasySelect = SellectStageEasy()
+   
    //MARK: user defaults
    var userDefaults: UserDefaults = UserDefaults.standard
 
@@ -33,15 +35,30 @@ class GameViewController: UIViewController {
       
       LoadStageLebel()
       
+      InitNotificationCenter()
       InitStageSellectView()
       
-      
-      InitGameView()
       InitGameClearView()
-      InitNotificationCenter()
-      //LoadGameView()
    }
    
+   private func InitStageSellectView() {
+      //FIXME:- クラス作ったら直す
+      switch StageLevel {
+      case .Easy:
+         EasySelect.InitView(frame: self.view.frame)
+         self.view.addSubview(EasySelect)
+      case .Normal:
+         EasySelect.InitView(frame: self.view.frame)
+         self.view.addSubview(EasySelect)
+      case .Hard:
+         EasySelect.InitView(frame: self.view.frame)
+         self.view.addSubview(EasySelect)
+      }
+   }
+   
+   private func LoadStageNumber(Num: Int) {
+      userDefaults.set(Num, forKey: "StageNum")
+   }
    
    private func LoadStageLebel() {
       
@@ -110,6 +127,8 @@ class GameViewController: UIViewController {
    
    private func InitNotificationCenter() {
       NotificationCenter.default.addObserver(self, selector: #selector(GameClearCatchNotification(notification:)), name: .GameClear, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(SellectStageNotification(notification:)), name: .SellectStage, object: nil)
+      
    }
    
    private func InitGameClearView() {
@@ -133,11 +152,28 @@ class GameViewController: UIViewController {
          return
       }
       
-      
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
          self.StartConfetti()
       }
       return
+   }
+   
+   @objc func SellectStageNotification(notification: Notification) -> Void {
+      
+      if let userInfo = notification.userInfo {
+         let SentNum = userInfo["StageNum"] as! Int
+         print("送信者番号: \(SentNum)")
+         
+         LoadStageNumber(Num: SentNum)
+         InitGameView()
+         LoadGameView()
+         
+         self.EasySelect.removeFromSuperview()
+         
+         
+      }else{
+         print("通知受け取ったけど、中身nilやった。")
+      }
    }
    
    func LoadGameView() {
