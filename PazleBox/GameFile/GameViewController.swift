@@ -18,9 +18,12 @@ class GameViewController: UIViewController {
    let GameClearVeiwIntensity: Float = 0.55
    var ShowGameClearView = false
    
-   var StageNum = Int()
+   var StageLevel: StageLevel = .Normal
    
    var LoadStageNum = false
+   
+   var LoadSKView = SKView()
+   var LoadGKScene = GameScene()
    
    //MARK: user defaults
    var userDefaults: UserDefaults = UserDefaults.standard
@@ -28,62 +31,82 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-      if LoadStageNum == false {
-         print("StageNum = \(StageNum)")
-         userDefaults.set(StageNum, forKey: "StageNum")
-         LoadStageNum = true
-      }
+      LoadStageLebel()
       
-      print("StageNum = \(StageNum)")
-      //MARK: user defaults
-      userDefaults.set(StageNum, forKey: "StageNum")
+      InitStageSellectView()
       
       
-        // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
-        // including entities and graphs.
-        if let scene = GKScene(fileNamed: "GameScene") {
-
-            // Get the SKScene from the loaded GKScene
-            if let sceneNode = scene.rootNode as! GameScene? {
-               
-               
-               switch UIScreen.main.nativeBounds.height {
-               case 2436.0:
-                  sceneNode.scaleMode = .fill
-               case 1792.0:
-                  sceneNode.scaleMode = .fill
-               case 2688.0:
-                  sceneNode.scaleMode = .fill
-               default:
-                  sceneNode.scaleMode = .aspectFill
-               }
-                // Set the scale mode to scale to fit the window
-               if UIDevice.current.userInterfaceIdiom == .pad {
-                  sceneNode.scaleMode = .fill
-               }
-                  
-                // Present the scene
-                if let view = self.view as! SKView? {
-
-                  sceneNode.userData = NSMutableDictionary()
-                  sceneNode.userData?.setValue(StageNum, forKey: "StageNum")
-   
-                    view.presentScene(sceneNode)
-      
-                    view.ignoresSiblingOrder = true
-               
-                  view.showsDrawCount = true
-                  view.showsQuadCount = true
-                    
-                    view.showsFPS = true
-                    view.showsNodeCount = true
-                }
-            }
-        }
-      
+      InitGameView()
       InitGameClearView()
       InitNotificationCenter()
-    }
+      //LoadGameView()
+   }
+   
+   
+   private func LoadStageLebel() {
+      
+      guard LoadStageNum == true else {
+         return
+      }
+
+      print("StageLevel = \(StageLevel)")
+      userDefaults.set(StageLevel, forKey: "SelectedStageLevel")
+      LoadStageNum = true
+   }
+   
+   
+   
+   func InitGameView() {
+      
+      print("GameSene，GameViewの初期化開始")
+      if let scene = GKScene(fileNamed: "GameScene") {
+            
+         // Get the SKScene from the loaded GKScene
+         if let sceneNode = scene.rootNode as! GameScene? {
+               
+            LoadGKScene = sceneNode
+            
+            sceneNode.scaleMode = GetSceneScalaMode(DeviceHeight: UIScreen.main.nativeBounds.height)
+            
+            
+            // Present the scene
+            if let view = self.view as! SKView? {
+               LoadSKView = view
+               
+                  
+               sceneNode.userData = NSMutableDictionary()
+               sceneNode.userData?.setValue(StageLevel, forKey: "StageNum")
+
+               view.ignoresSiblingOrder = true
+               
+               view.showsDrawCount = true
+               view.showsQuadCount = true
+                  
+               view.showsFPS = true
+               view.showsNodeCount = true
+            }
+         }
+      }
+      print("GameSene，GameViewの初期化完了")
+   }
+   
+   private func GetSceneScalaMode(DeviceHeight: CGFloat) -> SKSceneScaleMode {
+      
+      if UIDevice.current.userInterfaceIdiom == .pad {
+         return .fill
+      }
+      
+      switch DeviceHeight {
+      case 2436.0:
+         return .fill
+      case 1792.0:
+         return .fill
+      case 2688.0:
+         return .fill
+      default:
+         return .aspectFill
+      }
+   }
    
    private func InitNotificationCenter() {
       NotificationCenter.default.addObserver(self, selector: #selector(GameClearCatchNotification(notification:)), name: .GameClear, object: nil)
@@ -115,6 +138,12 @@ class GameViewController: UIViewController {
          self.StartConfetti()
       }
       return
+   }
+   
+   func LoadGameView() {
+      // Present the scene
+      LoadSKView.presentScene(LoadGKScene)
+      
    }
 
     override var shouldAutorotate: Bool {

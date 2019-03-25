@@ -18,10 +18,23 @@ class HomeViewController: UIViewController {
       let vc2 = self.storyboard?.instantiateViewController(withIdentifier: "GameView") as! GameViewController
       
       //ViewController2のtextにtextFieldのテキストを代入
-      print("Button.tag = \(sender.tag)")
-      vc2.StageNum = sender.tag
+
+      print("ステージレベルの送信開始")
+      switch sender.tag {
+      case 1:
+         vc2.StageLevel = .Easy
+      case 2:
+         vc2.StageLevel = .Normal
+      case 3:
+         vc2.StageLevel = .Hard
+      default:
+         fatalError()
+      }
+      print("ステージレベルの送信完了(\(vc2.StageLevel))")
+      
       
       //NavigationControllerを継承したViewControllerを遷移
+      print("GameViewControllerを表示します")
        present(vc2, animated: true, completion: nil)
    }
    

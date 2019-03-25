@@ -24,6 +24,7 @@
 		BF2674EF2227B6A3003D370F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2674ED2227B6A3003D370F /* Main.storyboard */; };
 		BF2674F12227B6A4003D370F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2674F02227B6A4003D370F /* Assets.xcassets */; };
 		BF2674F42227B6A4003D370F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2674F22227B6A4003D370F /* LaunchScreen.storyboard */; };
+		BF332F722248AEAF009B3042 /* StageLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F712248AEAF009B3042 /* StageLevel.swift */; };
 		BF46109022352423006F3DF1 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46108F22352423006F3DF1 /* Puzzle.swift */; };
 		BF519C69223CCBDE0087A4AC /* GetTilePOSITION.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */; };
 		BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C6A223F58920087A4AC /* ExNotification.swift */; };
@@ -134,6 +135,7 @@
 		BF2674F02227B6A4003D370F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF2674F32227B6A4003D370F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF2674F52227B6A4003D370F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF332F712248AEAF009B3042 /* StageLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageLevel.swift; sourceTree = "<group>"; };
 		BF46108F22352423006F3DF1 /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
 		BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTilePOSITION.swift; sourceTree = "<group>"; };
 		BF519C6A223F58920087A4AC /* ExNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNotification.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				BF2674E92227B6A3003D370F /* GameScene.swift */,
 				BF2674EB2227B6A3003D370F /* GameViewController.swift */,
 				BF46108F22352423006F3DF1 /* Puzzle.swift */,
+				BF332F712248AEAF009B3042 /* StageLevel.swift */,
 				BF0FD355224371CE00E8F387 /* PutParticle.swift */,
 				BF1FF2AC22311CE60047ED23 /* Stage.swift */,
 				BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */,
@@ -720,6 +723,7 @@
 				BF1FF2B6223122C80047ED23 /* EasyCreate.swift in Sources */,
 				BF519C69223CCBDE0087A4AC /* GetTilePOSITION.swift in Sources */,
 				BF1FF2AF22311FD40047ED23 /* StageContents.swift in Sources */,
+				BF332F722248AEAF009B3042 /* StageLevel.swift in Sources */,
 				BFFA2A8E2234CC5F0023BB71 /* Tile.swift in Sources */,
 				BF1FF2B4223121BF0047ED23 /* Easy.swift in Sources */,
 				BF0FD356224371CE00E8F387 /* PutParticle.swift in Sources */,

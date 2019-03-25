@@ -64,26 +64,35 @@ class GameScene: SKScene {
     }
    
    private func InitStageNumber() {
+      print("ステージ難易度の取得開始")
       self.PostedStageNum = userDefaults.integer(forKey: "StageNum")
+      print("ステージ難易度の取得完了")
+      //self.PostedStageNum = self.userData?.value(forKey: "StageNum") as! Int
    }
    
    //MARK:- チェックする配列を初期化する
    private func CrearCheckedStage() {
+      print("チェックするからの配列の取得開始")
       CheckedStage = AllStage.Checked
+      print("チェックするからの配列の取得完了")
    }
    
    //MARK:- 初期化
    private func InitNotification() {
+      print("通知センター初期化開始")
       NotificationCenter.default.addObserver(self, selector: #selector(MovedTileCatchNotification(notification:)), name: .TileMoved, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(PuzzleTouchStartCatchNotification(notification:)), name: .PuzzleTouchStart, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(PuzzleTouchMovedCatchNotification(notification:)), name: .PuzzleTouchMoved, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(PuzzleTouchEndedCatchNotification(notification:)), name: .PuzzleTouchEnded, object: nil)
+      print("通知センター初期化完了")
    }
    
    //MARK: パズルを初期化する。
    //Px Py に1片の長さを入れる
    private func InitPuzzle(SizeX: CGFloat?, SizeY: CGFloat?){
    
+      
+      print("パズルBoxの初期化開始")
       switch PostedStageNum {
       case 1:
          let Stage1 = EStage1(ViewSizeX: SizeX!, ViewSizeY: SizeY!)
@@ -97,11 +106,13 @@ class GameScene: SKScene {
       default:
          fatalError()
       }
+       print("パズルBoxの初期化完了")
    }
    
    //MARK: ステージの配列の取得
    private func SetStage(StageNum: Int){
       //FIXME:- ココの右辺は変数にするのがいいかも
+      print("ステージの初期化開始")
       switch PostedStageNum {
       case 1:
          Stage.GStage = AllStage.EasyStage.E1
@@ -112,6 +123,7 @@ class GameScene: SKScene {
       default:
          fatalError()
       }
+      print("ステージの初期化完了")
    }
    
    
@@ -119,11 +131,12 @@ class GameScene: SKScene {
       //ココの引数は特に使ってない。場所の位置変更で使ってもいいかも。
       //pAllArryの初期化をしてるね。
       //
-      
+      print("全てのパズルの表示開始")
       for Puzzle in PuzzleBox {
          addChild((Puzzle as! puzzle))
          addChild((Puzzle as! puzzle).GetAlhpaNode())
       }
+      print("全てのパズルの表示完了")
    }
    
    //配列に入れて行ってる
@@ -137,15 +150,18 @@ class GameScene: SKScene {
    
    //MARK: 背景のタイルを表示してる。
    private func ShowTile(){
+      print("タイルの表示開始")
       for x in 0 ... 11 {
          for y in 0 ... 8 {
             addChild(Stage.getAllTile(x: x, y: y))
          }
       }
+      print("タイルの表示完了")
    }
 
    //MARK: ステージサイズを初期化してる。クラスにしても良さそう。
    private func InitStageSize(SizeX: CGFloat?, SizeY: CGFloat?){
+       print("ステージサイズの初期化開始")
       if let X = SizeX {
          Stage.SetStageSizeX(SizeX: X)
       }else{
@@ -156,6 +172,7 @@ class GameScene: SKScene {
       }else{
          fatalError("ビューの縦を初期化できませんでした。")
       }
+      print("ステージサイズの初期化完了")
    }
    
    
