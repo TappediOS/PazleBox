@@ -535,8 +535,8 @@
 		BF332F7A22491753009B3042 /* SeceneAndViewCon */ = {
 			isa = PBXGroup;
 			children = (
-				BF2674E92227B6A3003D370F /* GameScene.swift */,
 				BF332F8122492238009B3042 /* GetStage */,
+				BF2674E92227B6A3003D370F /* GameScene.swift */,
 				BF2674EB2227B6A3003D370F /* GameViewController.swift */,
 			);
 			path = SeceneAndViewCon;

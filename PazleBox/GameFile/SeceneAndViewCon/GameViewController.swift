@@ -73,8 +73,7 @@ class GameViewController: UIViewController {
       
       
    }
-   
-   
+
    
    func InitGameViewAndShowView() {
       
