@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
       //--------------------FIREBASE-----------------------//
       #if DEBUG
-      let fileName = "GoogleService-Info"
+     // let fileName = "GoogleService-Info"
       print("テスト環境")
       #else
       let fileName = "GoogleService-Info"
