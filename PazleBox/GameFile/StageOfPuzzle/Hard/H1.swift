@@ -15,29 +15,35 @@ class HStage1 {
    var Puzzle2: puzzle?
    var Puzzle3: puzzle?
    var Puzzle4: puzzle?
+   var Puzzle5: puzzle?
+   var Puzzle6: puzzle?
+   var Puzzle7: puzzle?
+  
    
    var PuzzleBox = Array<Any>()
    
    init(ViewSizeX: CGFloat, ViewSizeY: CGFloat) {
       
       InitPuzzle(SizeX: ViewSizeX, SizeY: ViewSizeY)
-      InitPuzzlePosi()
       AddPuzzle()
    }
    
    private func InitPuzzle(SizeX: CGFloat, SizeY: CGFloat){
-      Puzzle1 = puzzle(PX: 3, PY: 2, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p2", PuzzleColor: "Red")
-      Puzzle2 = puzzle(PX: 2, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p1", PuzzleColor: "Green")
-      Puzzle3 = puzzle(PX: 2, PY: 3, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p2", PuzzleColor: "Blue")
-      Puzzle4 = puzzle(PX: 2, PY: 3, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p2", PuzzleColor: "Red")
+      Puzzle1 = puzzle(PX: 3, PY: 2, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p10", PuzzleColor: "Blue", RespawnX: 0, RespawnY: 2)
+      
+      Puzzle2 = puzzle(PX: 3, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p8", PuzzleColor: "Red", RespawnX: 3, RespawnY: 2)
+      
+      Puzzle3 = puzzle(PX: 2, PY: 3, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p2", PuzzleColor: "Green", RespawnX: 5, RespawnY: 9)
+      
+      Puzzle4 = puzzle(PX: 2, PY: 3, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p11", PuzzleColor: "Red", RespawnX: 0, RespawnY: 11)
+      
+      Puzzle5 = puzzle(PX: 3, PY: 3, CustNum: 4, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p17", PuzzleColor: "Green", RespawnX: 7, RespawnY: 7)
+      
+      Puzzle6 = puzzle(PX: 3, PY: 3, CustNum: 5, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p2", PuzzleColor: "Blue", RespawnX: 6, RespawnY: 2)
+      
+      Puzzle7 = puzzle(PX: 3, PY: 2, CustNum: 6, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p11", PuzzleColor: "Green", RespawnX: 0, RespawnY: 5)
    }
    
-   private func InitPuzzlePosi() {
-      Puzzle1!.InitPazzle(PositionX: 4, PositionY: 1, CustomNum: 1)
-      Puzzle2!.InitPazzle(PositionX: 1, PositionY: 3, CustomNum: 1)
-      Puzzle3!.InitPazzle(PositionX: 2, PositionY: 2, CustomNum: 1)
-      Puzzle4!.InitPazzle(PositionX: 0, PositionY: 2, CustomNum: 1)
-   }
    
    //配列に入れて行ってる
    private func AddPuzzle() {
@@ -45,6 +51,9 @@ class HStage1 {
       PuzzleBox.append(Puzzle2!)
       PuzzleBox.append(Puzzle3!)
       PuzzleBox.append(Puzzle4!)
+      PuzzleBox.append(Puzzle5!)
+      PuzzleBox.append(Puzzle6!)
+      PuzzleBox.append(Puzzle7!)
       
    }
    

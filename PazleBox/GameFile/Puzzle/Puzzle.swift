@@ -22,6 +22,10 @@ class puzzle: SKSpriteNode {
    
    public var CenterX: Int = 0
    public var CenterY: Int = 0
+   
+   private var RespawnX: Int = 0
+   private var RespawnY: Int = 0
+   
    public var OneTimeBackPosiX: Int = 0
    public var OneTimeBackPosiY: Int = 0
    
@@ -61,7 +65,7 @@ class puzzle: SKSpriteNode {
    ///   - ViewY: 画面サイズheight
    ///   - PuzzleStyle: パズルの形
    ///   - PuzzleColor: パズルの色
-   init(PX: Int, PY: Int, CustNum: Int, ViewX: Int, ViewY: Int, PuzzleStyle: String, PuzzleColor: String) {
+   init(PX: Int, PY: Int, CustNum: Int, ViewX: Int, ViewY: Int, PuzzleStyle: String, PuzzleColor: String, RespawnX: Int, RespawnY: Int) {
       
       self.BirthDayNum = CustNum
       
@@ -70,6 +74,9 @@ class puzzle: SKSpriteNode {
       
       self.PuzzleWide = PX
       self.PuzzleHight = PY
+      
+      self.RespawnX = RespawnX
+      self.RespawnY = RespawnY
       
       let PazzleSizeFound = ViewX / 10 + (ViewX / 100)
       
@@ -107,8 +114,9 @@ class puzzle: SKSpriteNode {
       self.isUserInteractionEnabled = true
       
       //ポジションの設定。
-      self.CenterX = PX - 1
-      self.CenterY = PY - 1
+      self.CenterX = self.RespawnX
+      self.CenterY = self.RespawnY
+      
       self.position = Tilep.GetAnyPostionXY(xpoint: self.CenterX, ypoint: self.CenterY)
       //FIXME:- これは多さによって変えるべきである。
       self.zPosition = 5
@@ -123,6 +131,8 @@ class puzzle: SKSpriteNode {
       AlphaNode.alpha = 0.55
 
       SetParticle = SetParticles.GetParticle()
+      
+      InitPazzle()
    }
    
    private func InitSetParticle() {
@@ -130,10 +140,10 @@ class puzzle: SKSpriteNode {
    }
    
    //MARK:- 初期化
-   func InitPazzle(PositionX: Int, PositionY: Int, CustomNum: Int){
+   func InitPazzle(){
       //場所を決める
-      self.CenterX = PositionX
-      self.CenterY = PositionY
+      self.CenterX = self.RespawnX
+      self.CenterY = self.RespawnY
       self.position = Tilep.GetAnyPostionXY(xpoint: self.CenterX, ypoint: self.CenterY)
       self.AlphaNode.position = self.position
       //MARK: 配列にここで入れる

@@ -506,13 +506,346 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameScene.swift"
-            timestampString = "575221504.640522"
+            timestampString = "575269735.9401881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
             endingLineNumber = "76"
             landmarkName = "InitStageLevel()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+            timestampString = "575298785.7884409"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "GetEasyMainStage()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.524022"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.526884"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.529796"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "236">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.5326689"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "380">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.534948"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "524">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.5365601"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "668">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.538995"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "812">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.5406049"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "956">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.542246"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "1100">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.5448"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "1244">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.546975"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "1388">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.5490561"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "1532">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.550995"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "1676">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.552738"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "1820">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.554262"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "1964">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.555776"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "2108">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.557336"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "2252">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.558907"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "2396">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.560551"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "2540">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.562333"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "2684">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetEasyMainStage() -&gt; Swift.Array&lt;Swift.Array&lt;PazleBox.Contents&gt;&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
+                  timestampString = "575298886.563912"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "2828">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
