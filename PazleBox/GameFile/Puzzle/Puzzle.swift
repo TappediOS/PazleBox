@@ -349,6 +349,7 @@ class puzzle: SKSpriteNode {
       
       if TouchPointIsAlpha(X: PosiX, Y: PosiY) == true {
          MoveMyself = false
+         SaveSelfPosition()
          PuzzleTouchStartPostNotification(touches: touches, X: PosiX, Y: PosiY)
          return
       }

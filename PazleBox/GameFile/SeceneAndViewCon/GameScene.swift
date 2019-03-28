@@ -572,6 +572,13 @@ class GameScene: SKScene {
       ParticlePuzzle.PlayParticleForRightSet()
    }
    
+   private func PlaySoundKatch() {
+      let queue = OperationQueue()
+      let operation = BlockOperation {
+        self.GameSound.PlaySounds(Type: 1)
+      }
+      queue.addOperation(operation)
+   }
    
    //MARK:- 通知を受け取る関数郡
    @objc func MovedTileCatchNotification(notification: Notification) -> Void {
@@ -598,7 +605,7 @@ class GameScene: SKScene {
          let SentOb = (PuzzleBox[SentNum] as! puzzle).GetOfInfomation()
          if MovedNodePutRightPosition(BirthDay: SentNum, StageObject: SentOb) == true {
             PlayParticleForRightSet(BirthDay: SentNum)
-            GameSound.PlaySounds(Type: 1)
+            PlaySoundKatch()
          }
          
          CrearCheckedStage()
