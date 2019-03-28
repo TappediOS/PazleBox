@@ -1,5 +1,5 @@
 //
-//  RePutButton.swift
+//  Pouse.swift
 //  PazleBox
 //
 //  Created by jun on 2019/03/28.
@@ -11,7 +11,7 @@ import UIKit
 import SpriteKit
 
 
-class RePutButton : SKSpriteNode {
+class PouseNode : SKSpriteNode {
    
    private var TouchBegan = CGPoint(x: 0, y: 0)
    private var AreYouLarge: Bool = false
@@ -22,14 +22,14 @@ class RePutButton : SKSpriteNode {
       
       let PazzleSizeFound = ViewX / 10 + (ViewX / 100)
       
-      let x1 = -PazzleSizeFound * 3
+      let x1 = PazzleSizeFound * 3
       
       let yposi = PazzleSizeFound * 12
       let y1 = -ViewY * 3 / 8 + yposi
-     
+      
       //MARK: 画像の初期化
-//      let texture: SKTexture
-//      texture = SKTexture(imageNamed: TextureName)
+      //      let texture: SKTexture
+      //      texture = SKTexture(imageNamed: TextureName)
       
       
       let NodeSize = CGSize(width: CGFloat(PazzleSizeFound), height: CGFloat(PazzleSizeFound))
@@ -38,12 +38,10 @@ class RePutButton : SKSpriteNode {
       self.position = CGPoint(x: x1, y: y1)
       
       self.isUserInteractionEnabled = true
-      
-      
    }
    
-   private func PostNotificationRePut() {
-      NotificationCenter.default.post(name: .RePut, object: nil, userInfo: nil)
+   private func PostNotificationPouse() {
+      NotificationCenter.default.post(name: .Pouse, object: nil, userInfo: nil)
    }
    
    //MARK:- タッチイベント
@@ -59,7 +57,7 @@ class RePutButton : SKSpriteNode {
    
    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
       
-     
+      
       
    }
    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -74,7 +72,7 @@ class RePutButton : SKSpriteNode {
             return
          }
          
-         PostNotificationRePut()
+         PostNotificationPouse()
          return
       }else{
          print("タッチ離したあと、Nilでした。")

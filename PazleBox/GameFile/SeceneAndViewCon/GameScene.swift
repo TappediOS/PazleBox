@@ -10,6 +10,7 @@ import SpriteKit
 import GameplayKit
 import UIKit
 import SAConfettiView
+import AudioToolbox
 
 
 class GameScene: SKScene {
@@ -36,6 +37,8 @@ class GameScene: SKScene {
    
    var userDefaults = UserDefaults.standard
    
+   private var GameSound = GameSounds()
+   
     override func sceneDidLoad() {
 
       //ビューの長さを取得
@@ -53,6 +56,8 @@ class GameScene: SKScene {
       ShowTile()
       
       InitRePutButton(SizeX: ViewSizeX, SizeY: ViewSizeY)
+      InitHintButton(SizeX: ViewSizeX, SizeY: ViewSizeY)
+      InitPouseButton(SizeX: ViewSizeX, SizeY: ViewSizeY)
       
       InitPuzzle(SizeX: ViewSizeX, SizeY: ViewSizeY)
       puzzleInit()
@@ -70,6 +75,18 @@ class GameScene: SKScene {
    private func InitRePutButton(SizeX: CGFloat?, SizeY: CGFloat?){
       let RePutB = RePutButton(ViewX: Int(SizeX!), ViewY: Int(SizeY!))
       self.addChild(RePutB)
+   }
+   
+   private func InitHintButton(SizeX: CGFloat?, SizeY: CGFloat?){
+      let HintButton = HintNode(ViewX: Int(SizeX!), ViewY: Int(SizeY!))
+      self.addChild(HintButton)
+      self.addChild(HintButton.GetCirc1())
+      self.addChild(HintButton.GetCirc2())
+   }
+   
+   private func InitPouseButton(SizeX: CGFloat?, SizeY: CGFloat?){
+      let Pouse = PouseNode(ViewX: Int(SizeX!), ViewY: Int(SizeY!))
+      self.addChild(Pouse)
    }
    
    private func InitStageNumber() {
@@ -107,6 +124,9 @@ class GameScene: SKScene {
       NotificationCenter.default.addObserver(self, selector: #selector(PuzzleTouchStartCatchNotification(notification:)), name: .PuzzleTouchStart, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(PuzzleTouchMovedCatchNotification(notification:)), name: .PuzzleTouchMoved, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(PuzzleTouchEndedCatchNotification(notification:)), name: .PuzzleTouchEnded, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(RePutCatchNotification(notification:)), name: .RePut, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(HintCatchNotification(notification:)), name: .Hint, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(PouseCatchNotification(notification:)), name: .Pouse, object: nil)
       print("通知センター初期化完了")
    }
    
@@ -578,6 +598,7 @@ class GameScene: SKScene {
          let SentOb = (PuzzleBox[SentNum] as! puzzle).GetOfInfomation()
          if MovedNodePutRightPosition(BirthDay: SentNum, StageObject: SentOb) == true {
             PlayParticleForRightSet(BirthDay: SentNum)
+            GameSound.PlaySounds(Type: 1)
          }
          
          CrearCheckedStage()
@@ -648,6 +669,21 @@ class GameScene: SKScene {
       DontMoveNode.ChangeTRUEMoveMyself()
    }
    
+   @objc func RePutCatchNotification(notification: Notification) -> Void {
+      
+      for Puzzle in PuzzleBox {
+         (Puzzle as! puzzle).PositionToRespown()
+      }
+      GameSound.PlaySounds(Type: 2)
+   }
+   
+   @objc func HintCatchNotification(notification: Notification) -> Void {
+       print("HintCatchNotifi")
+   }
+   
+   @objc func PouseCatchNotification(notification: Notification) -> Void {
+       print("PouseCatchNotifi")
+   }
    
    //MARK:- タッチイベント
 //    func touchDown(atPoint pos : CGPoint) {

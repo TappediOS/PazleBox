@@ -252,6 +252,15 @@ class puzzle: SKSpriteNode {
       Play3DtouchMedium()
    }
    
+   
+   public func PositionToRespown() {
+      self.CenterX = self.RespawnX
+      self.CenterY = self.RespawnY
+      self.position = Tilep.GetAnyPostionXY(xpoint: self.CenterX, ypoint: self.CenterY)
+      self.AlphaNode.position = Tilep.GetAnyPostionXY(xpoint: self.CenterX, ypoint: self.CenterY)
+   }
+   
+   
    private func SaveSelfPosition() {
       self.BeforeCenterX = self.CenterX
       self.BeforeCenterY = self.CenterY

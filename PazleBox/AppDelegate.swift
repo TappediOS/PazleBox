@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,6 +33,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       #endif
       
       //--------------------FIREBASE-----------------------//
+      
+      //-----------バックグラウンドでの音の再生を許可------------//
+      let audioSession : AVAudioSession = AVAudioSession.sharedInstance()
+      try! audioSession.setCategory(AVAudioSession.Category.ambient)
+      //-----------バックグラウンドでの音の再生を許可------------//
 
 
       return true

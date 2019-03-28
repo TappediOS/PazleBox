@@ -1,5 +1,5 @@
 //
-//  RePutButton.swift
+//  Hint.swift
 //  PazleBox
 //
 //  Created by jun on 2019/03/28.
@@ -11,25 +11,29 @@ import UIKit
 import SpriteKit
 
 
-class RePutButton : SKSpriteNode {
+class HintNode : SKSpriteNode {
+   
+   var Circ1 = SKShapeNode()
+   var Circ2 = SKShapeNode()
    
    private var TouchBegan = CGPoint(x: 0, y: 0)
    private var AreYouLarge: Bool = false
    
+   let CircRadius: CGFloat = 1
    
    init(ViewX: Int, ViewY: Int) {
       
       
       let PazzleSizeFound = ViewX / 10 + (ViewX / 100)
       
-      let x1 = -PazzleSizeFound * 3
+      let x1 = -PazzleSizeFound * 1
       
       let yposi = PazzleSizeFound * 12
       let y1 = -ViewY * 3 / 8 + yposi
-     
+      
       //MARK: 画像の初期化
-//      let texture: SKTexture
-//      texture = SKTexture(imageNamed: TextureName)
+      //      let texture: SKTexture
+      //      texture = SKTexture(imageNamed: TextureName)
       
       
       let NodeSize = CGSize(width: CGFloat(PazzleSizeFound), height: CGFloat(PazzleSizeFound))
@@ -39,11 +43,29 @@ class RePutButton : SKSpriteNode {
       
       self.isUserInteractionEnabled = true
       
+      Circ1 = SKShapeNode(circleOfRadius: CGFloat(PazzleSizeFound / 4))
+      Circ2 = SKShapeNode(circleOfRadius: CGFloat(PazzleSizeFound / 4))
+      
+      
+      let x2 = 0
+      Circ1.position = CGPoint(x: x2, y: y1)
+      Circ1.fillColor = UIColor.green
+      
+      let x3 = PazzleSizeFound * 1
+      Circ2.position = CGPoint(x: x3, y: y1)
+      Circ2.fillColor = UIColor.blue
       
    }
    
-   private func PostNotificationRePut() {
-      NotificationCenter.default.post(name: .RePut, object: nil, userInfo: nil)
+   public func GetCirc1() -> SKShapeNode {
+      return self.Circ1
+   }
+   public func GetCirc2() -> SKShapeNode {
+      return self.Circ2
+   }
+   
+   private func PostNotificationHint() {
+      NotificationCenter.default.post(name: .Hint, object: nil, userInfo: nil)
    }
    
    //MARK:- タッチイベント
@@ -59,7 +81,7 @@ class RePutButton : SKSpriteNode {
    
    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
       
-     
+      
       
    }
    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -74,7 +96,7 @@ class RePutButton : SKSpriteNode {
             return
          }
          
-         PostNotificationRePut()
+         PostNotificationHint()
          return
       }else{
          print("タッチ離したあと、Nilでした。")
@@ -132,10 +154,10 @@ class RePutButton : SKSpriteNode {
    }
    
    
+
+   
    
    required init?(coder aDecoder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
    }
 }
-
-

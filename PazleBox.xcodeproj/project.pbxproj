@@ -98,6 +98,9 @@
 		BF519C7B223FA8D60087A4AC /* ExTextureName.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C7A223FA8D60087A4AC /* ExTextureName.swift */; };
 		BF519C7D223FAA470087A4AC /* GetPuzzleArry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C7C223FAA470087A4AC /* GetPuzzleArry.swift */; };
 		BF60AC51224C8F1100D441D6 /* RePutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60AC50224C8F1100D441D6 /* RePutButton.swift */; };
+		BF60AC53224C952E00D441D6 /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60AC52224C952E00D441D6 /* Hint.swift */; };
+		BF60AC55224C981A00D441D6 /* Pouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60AC54224C981A00D441D6 /* Pouse.swift */; };
+		BF60AC5C224CA2E000D441D6 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60AC5B224CA2E000D441D6 /* Sound.swift */; };
 		BF640BF52244F8FD00333782 /* 32p1Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BF640BE32244F8FC00333782 /* 32p1Green.png */; };
 		BF640BF62244F8FD00333782 /* 32p3Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BF640BE42244F8FC00333782 /* 32p3Red.png */; };
 		BF640BF72244F8FD00333782 /* 32p6Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BF640BE52244F8FC00333782 /* 32p6Green.png */; };
@@ -381,6 +384,11 @@
 		BF519C7A223FA8D60087A4AC /* ExTextureName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExTextureName.swift; sourceTree = "<group>"; };
 		BF519C7C223FAA470087A4AC /* GetPuzzleArry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPuzzleArry.swift; sourceTree = "<group>"; };
 		BF60AC50224C8F1100D441D6 /* RePutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePutButton.swift; sourceTree = "<group>"; };
+		BF60AC52224C952E00D441D6 /* Hint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint.swift; sourceTree = "<group>"; };
+		BF60AC54224C981A00D441D6 /* Pouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pouse.swift; sourceTree = "<group>"; };
+		BF60AC5B224CA2E000D441D6 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		BF60AC5D224CA6EB00D441D6 /* Katch.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Katch.caf; sourceTree = "<group>"; };
+		BF60AC5E224CA6EC00D441D6 /* RePut.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RePut.caf; sourceTree = "<group>"; };
 		BF640BE32244F8FC00333782 /* 32p1Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 32p1Green.png; path = ../../../../../../Downloads/Pazzle/P32/32p1Green.png; sourceTree = "<group>"; };
 		BF640BE42244F8FC00333782 /* 32p3Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 32p3Red.png; path = ../../../../../../Downloads/Pazzle/P32/32p3Red.png; sourceTree = "<group>"; };
 		BF640BE52244F8FC00333782 /* 32p6Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 32p6Green.png; path = ../../../../../../Downloads/Pazzle/P32/32p6Green.png; sourceTree = "<group>"; };
@@ -653,6 +661,7 @@
 				BF1FF2AA22311C8D0047ED23 /* GemFile */,
 				BF1FF2AB22311CC10047ED23 /* GameFile */,
 				BF2674E32227B6A3003D370F /* AppDelegate.swift */,
+				BF60AC56224CA2A000D441D6 /* New Group */,
 				BF2674ED2227B6A3003D370F /* Main.storyboard */,
 				BF2674F02227B6A4003D370F /* Assets.xcassets */,
 				BF2674F22227B6A4003D370F /* LaunchScreen.storyboard */,
@@ -836,8 +845,20 @@
 			isa = PBXGroup;
 			children = (
 				BF60AC50224C8F1100D441D6 /* RePutButton.swift */,
+				BF60AC52224C952E00D441D6 /* Hint.swift */,
+				BF60AC54224C981A00D441D6 /* Pouse.swift */,
 			);
 			path = StatesBar;
+			sourceTree = "<group>";
+		};
+		BF60AC56224CA2A000D441D6 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				BF60AC5B224CA2E000D441D6 /* Sound.swift */,
+				BF60AC5D224CA6EB00D441D6 /* Katch.caf */,
+				BF60AC5E224CA6EC00D441D6 /* RePut.caf */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		BF640C0722450FFA00333782 /* StageOfPuzzle */ = {
@@ -1501,6 +1522,7 @@
 				BF332FCC224927BF009B3042 /* N15.swift in Sources */,
 				BF332FA822492716009B3042 /* E17.swift in Sources */,
 				BF332FC2224927AA009B3042 /* N10.swift in Sources */,
+				BF60AC53224C952E00D441D6 /* Hint.swift in Sources */,
 				BF332FB82249278B009B3042 /* N5.swift in Sources */,
 				BF60AC51224C8F1100D441D6 /* RePutButton.swift in Sources */,
 				BF332FA622492711009B3042 /* E16.swift in Sources */,
@@ -1545,11 +1567,13 @@
 				BF332FDE224927F2009B3042 /* H4.swift in Sources */,
 				BF332FEC2249280D009B3042 /* H11.swift in Sources */,
 				BF2674E42227B6A3003D370F /* AppDelegate.swift in Sources */,
+				BF60AC55224C981A00D441D6 /* Pouse.swift in Sources */,
 				BF519C7D223FAA470087A4AC /* GetPuzzleArry.swift in Sources */,
 				BFFA2A81223380720023BB71 /* EasyGet.swift in Sources */,
 				BF332F8C224926C1009B3042 /* E3.swift in Sources */,
 				BF332FF022492819009B3042 /* H12.swift in Sources */,
 				BF332FD2224927CC009B3042 /* N18.swift in Sources */,
+				BF60AC5C224CA2E000D441D6 /* Sound.swift in Sources */,
 				BF332FDA224927EB009B3042 /* H2.swift in Sources */,
 				BF332FC0224927A0009B3042 /* N9.swift in Sources */,
 				BF640C092245100C00333782 /* E1.swift in Sources */,
