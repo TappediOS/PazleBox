@@ -35,7 +35,7 @@ extension Hard {
             [.Out, .Out, .Out, .Out, .In, .Out, .Out, .Out, .Out],
             [.Out, .Out,  .Out,  .In,  .In,  .In,  .Out,  .Out,  .Out],
             [.Out, .Out,  .In,  .In,  .In,  .In,  .In,  .Out,  .Out],
-            [.Out, .In,  .In,  .In,  .In,  .In,  .In,  .In,  .Out],
+            [.Out, .In,  .In,  .In,  .Out,  .In,  .In,  .In,  .Out],
             [.Out, .Out,  .In,  .In,  .In,  .In,  .In,  .Out,  .Out],
             [.Out, .Out,  .Out,  .In,  .In,  .In,  .Out,  .Out,  .Out],
             [.Out, .Out, .Out, .Out, .In, .Out, .Out, .Out, .Out]]
@@ -78,11 +78,11 @@ extension Hard {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .In, .Out],
+            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .In,  .In,  .In,  .In,  .In,  .In,  .In,  .Out],
             [.Out, .In,  .In,  .In,  .In,  .In,  .In,  .In,  .Out],
             [.Out, .In,  .In,  .In,  .In,  .In,  .In,  .In,  .Out],
-            [.Out, .In,  .In,  .In,  .In,  .Out,  .In,  .In,  .Out],
+            [.Out, .In,  .Out,  .In,  .In,  .Out,  .In,  .In,  .Out],
             [.Out, .In,  .In,  .In,  .In,  .Out,  .In,  .In,  .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
@@ -100,6 +100,7 @@ extension Hard {
             [.Out, .In,  .In,  .In,  .In,  .In,  .In,  .In,  .Out],
             [.Out, .In,  .In,  .In,  .In,  .In,  .In,  .In,  .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+      
    }
    
    public func InitH7(){

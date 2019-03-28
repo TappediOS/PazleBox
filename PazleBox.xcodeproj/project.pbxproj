@@ -97,6 +97,7 @@
 		BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C6A223F58920087A4AC /* ExNotification.swift */; };
 		BF519C7B223FA8D60087A4AC /* ExTextureName.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C7A223FA8D60087A4AC /* ExTextureName.swift */; };
 		BF519C7D223FAA470087A4AC /* GetPuzzleArry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C7C223FAA470087A4AC /* GetPuzzleArry.swift */; };
+		BF60AC51224C8F1100D441D6 /* RePutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60AC50224C8F1100D441D6 /* RePutButton.swift */; };
 		BF640BF52244F8FD00333782 /* 32p1Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BF640BE32244F8FC00333782 /* 32p1Green.png */; };
 		BF640BF62244F8FD00333782 /* 32p3Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BF640BE42244F8FC00333782 /* 32p3Red.png */; };
 		BF640BF72244F8FD00333782 /* 32p6Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BF640BE52244F8FC00333782 /* 32p6Green.png */; };
@@ -379,6 +380,7 @@
 		BF519C6A223F58920087A4AC /* ExNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNotification.swift; sourceTree = "<group>"; };
 		BF519C7A223FA8D60087A4AC /* ExTextureName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExTextureName.swift; sourceTree = "<group>"; };
 		BF519C7C223FAA470087A4AC /* GetPuzzleArry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPuzzleArry.swift; sourceTree = "<group>"; };
+		BF60AC50224C8F1100D441D6 /* RePutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePutButton.swift; sourceTree = "<group>"; };
 		BF640BE32244F8FC00333782 /* 32p1Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 32p1Green.png; path = ../../../../../../Downloads/Pazzle/P32/32p1Green.png; sourceTree = "<group>"; };
 		BF640BE42244F8FC00333782 /* 32p3Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 32p3Red.png; path = ../../../../../../Downloads/Pazzle/P32/32p3Red.png; sourceTree = "<group>"; };
 		BF640BE52244F8FC00333782 /* 32p6Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 32p6Green.png; path = ../../../../../../Downloads/Pazzle/P32/32p6Green.png; sourceTree = "<group>"; };
@@ -608,6 +610,7 @@
 				BF332F7A22491753009B3042 /* SeceneAndViewCon */,
 				BF332F7B22491767009B3042 /* Puzzle */,
 				BF332F7C224917D2009B3042 /* Sellect */,
+				BF60AC4F224C8EDA00D441D6 /* StatesBar */,
 				BF332F7E22491850009B3042 /* HomeView */,
 				BF332F7D224917F3009B3042 /* Extention */,
 			);
@@ -827,6 +830,14 @@
 				BF33300522492B4C009B3042 /* ExGameSeceneHardP2.swift */,
 			);
 			path = hard;
+			sourceTree = "<group>";
+		};
+		BF60AC4F224C8EDA00D441D6 /* StatesBar */ = {
+			isa = PBXGroup;
+			children = (
+				BF60AC50224C8F1100D441D6 /* RePutButton.swift */,
+			);
+			path = StatesBar;
 			sourceTree = "<group>";
 		};
 		BF640C0722450FFA00333782 /* StageOfPuzzle */ = {
@@ -1491,6 +1502,7 @@
 				BF332FA822492716009B3042 /* E17.swift in Sources */,
 				BF332FC2224927AA009B3042 /* N10.swift in Sources */,
 				BF332FB82249278B009B3042 /* N5.swift in Sources */,
+				BF60AC51224C8F1100D441D6 /* RePutButton.swift in Sources */,
 				BF332FA622492711009B3042 /* E16.swift in Sources */,
 				BF332FB22249276F009B3042 /* N2.swift in Sources */,
 				BF332F8A22492366009B3042 /* ExGameSeceneHard.swift in Sources */,

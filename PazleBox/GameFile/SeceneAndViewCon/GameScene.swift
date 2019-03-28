@@ -52,6 +52,8 @@ class GameScene: SKScene {
       
       ShowTile()
       
+      InitRePutButton(SizeX: ViewSizeX, SizeY: ViewSizeY)
+      
       InitPuzzle(SizeX: ViewSizeX, SizeY: ViewSizeY)
       puzzleInit()
       AddPuzzle()
@@ -64,6 +66,11 @@ class GameScene: SKScene {
       p?.position.y += ViewSizeY! / 2
       //addChild(p!)
     }
+   
+   private func InitRePutButton(SizeX: CGFloat?, SizeY: CGFloat?){
+      let RePutB = RePutButton(ViewX: Int(SizeX!), ViewY: Int(SizeY!))
+      self.addChild(RePutB)
+   }
    
    private func InitStageNumber() {
       print("ステージ番号の取得開始")

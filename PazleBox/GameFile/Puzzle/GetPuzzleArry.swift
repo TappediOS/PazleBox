@@ -285,7 +285,7 @@ class PArry {
                 [.In, .Out, .Out, .Out],
                 [.In, .Out, .Out, .Out]]
       
-      p43p1 =  [[.Out, .Out, .In, .Out],
+      p43p2 =  [[.Out, .Out, .In, .Out],
                 [.In, .In, .In, .In],
                 [.In, .Out, .Out, .Out]]
 

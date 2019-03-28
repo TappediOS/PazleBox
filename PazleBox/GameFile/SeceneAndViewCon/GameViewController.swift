@@ -94,7 +94,11 @@ class GameViewController: UIViewController {
 
                view.ignoresSiblingOrder = true
                
-               view.presentScene(sceneNode)
+               let Tran = SKTransition.fade(withDuration: 2)
+               
+               
+               view.presentScene(sceneNode, transition: Tran)
+               
                
                view.showsDrawCount = true
                view.showsQuadCount = true

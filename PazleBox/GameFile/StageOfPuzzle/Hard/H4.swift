@@ -14,6 +14,11 @@ class HStage4 {
    var Puzzle1: puzzle?
    var Puzzle2: puzzle?
    var Puzzle3: puzzle?
+   var Puzzle4: puzzle?
+   var Puzzle5: puzzle?
+   var Puzzle6: puzzle?
+   var Puzzle7: puzzle?
+   
    
    var PuzzleBox = Array<Any>()
    
@@ -24,11 +29,19 @@ class HStage4 {
    }
    
    private func InitPuzzle(SizeX: CGFloat, SizeY: CGFloat){
-      Puzzle1 = puzzle(PX: 3, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p9", PuzzleColor: "Red", RespawnX: 0, RespawnY: 2)
+      Puzzle1 = puzzle(PX: 2, PY: 3, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p1", PuzzleColor: "Red", RespawnX: 7, RespawnY: 1)
       
-      Puzzle2 = puzzle(PX: 2, PY: 1, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "21p1", PuzzleColor: "Blue", RespawnX: 0, RespawnY: 1)
+      Puzzle2 = puzzle(PX: 3, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p22", PuzzleColor: "Red", RespawnX: 2, RespawnY: 2)
       
-      //Puzzle3 = puzzle(PX: 3, PY: 2, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p9", PuzzleColor: "Red", RespawnX: 0, RespawnY: 2)
+      Puzzle3 = puzzle(PX: 3, PY: 2, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p8", PuzzleColor: "Green", RespawnX: 0, RespawnY: 4)
+      
+      Puzzle4 = puzzle(PX: 3, PY: 3, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p20", PuzzleColor: "Green", RespawnX: 4, RespawnY: 2)
+      
+      Puzzle5 = puzzle(PX: 3, PY: 2, CustNum: 4, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p5", PuzzleColor: "Blue", RespawnX: 6, RespawnY: 4)
+      
+      Puzzle6 = puzzle(PX: 2, PY: 3, CustNum: 5, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p11", PuzzleColor: "Blue", RespawnX: 0, RespawnY: 2)
+      
+      Puzzle7 = puzzle(PX: 4, PY: 3, CustNum: 6, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p2", PuzzleColor: "Blue", RespawnX: 5, RespawnY: 3)
    }
    
    
@@ -36,7 +49,11 @@ class HStage4 {
    private func AddPuzzle() {
       PuzzleBox.append(Puzzle1!)
       PuzzleBox.append(Puzzle2!)
-      //PuzzleBox.append(Puzzle3!)
+      PuzzleBox.append(Puzzle3!)
+      PuzzleBox.append(Puzzle4!)
+      PuzzleBox.append(Puzzle5!)
+      PuzzleBox.append(Puzzle6!)
+      PuzzleBox.append(Puzzle7!)
       
    }
    

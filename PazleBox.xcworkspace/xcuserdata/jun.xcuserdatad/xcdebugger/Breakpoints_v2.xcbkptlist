@@ -490,7 +490,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
-            timestampString = "575221504.640452"
+            timestampString = "575443355.9510731"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
@@ -506,11 +506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameScene.swift"
-            timestampString = "575269735.9401881"
+            timestampString = "575443355.95114"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "InitStageLevel()"
             landmarkType = "7">
          </BreakpointContent>
@@ -844,6 +844,355 @@
                   startingLineNumber = "15"
                   endingLineNumber = "15"
                   offsetFromSymbolStart = "2828">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+            timestampString = "575443355.95147"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "GetHardPuzzleBox(ViewSizeX:ViewSizeY:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+            timestampString = "575443355.951533"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "GetHardPuzzleBox(ViewSizeX:ViewSizeY:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.363013"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "184">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.364934"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "220">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.366643"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "632">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.368369"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "1044">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.37033"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "1456">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.371994"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "1868">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.3735451"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "2280">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.375218"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "2692">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.376727"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "3104">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.378438"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "3516">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.380088"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "3928">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.3817869"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "4340">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.3834389"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "4752">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.384985"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "5164">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.386842"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "5576">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.388657"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "5980">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.390546"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "6392">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.392244"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "6804">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.393889"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "7216">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.39563"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "7628">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.GameScene.GetHardPuzzleBox(ViewSizeX: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, ViewSizeY: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; Swift.Array&lt;Any&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
+                  timestampString = "575389839.39737"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "8040">
                </Location>
             </Locations>
          </BreakpointContent>

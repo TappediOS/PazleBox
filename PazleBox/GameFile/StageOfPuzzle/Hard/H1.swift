@@ -29,19 +29,19 @@ class HStage1 {
    }
    
    private func InitPuzzle(SizeX: CGFloat, SizeY: CGFloat){
-      Puzzle1 = puzzle(PX: 3, PY: 2, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p10", PuzzleColor: "Blue", RespawnX: 0, RespawnY: 2)
+      Puzzle1 = puzzle(PX: 3, PY: 2, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p10", PuzzleColor: "Blue", RespawnX: 4, RespawnY: 4)
       
-      Puzzle2 = puzzle(PX: 3, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p8", PuzzleColor: "Red", RespawnX: 3, RespawnY: 2)
+      Puzzle2 = puzzle(PX: 3, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p8", PuzzleColor: "Red", RespawnX: 6, RespawnY: 2)
       
-      Puzzle3 = puzzle(PX: 2, PY: 3, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p2", PuzzleColor: "Green", RespawnX: 5, RespawnY: 9)
+      Puzzle3 = puzzle(PX: 2, PY: 3, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p2", PuzzleColor: "Green", RespawnX: 0, RespawnY: 2)
       
-      Puzzle4 = puzzle(PX: 2, PY: 3, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p11", PuzzleColor: "Red", RespawnX: 0, RespawnY: 11)
+      Puzzle4 = puzzle(PX: 2, PY: 3, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p11", PuzzleColor: "Red", RespawnX: 4, RespawnY: 2)
       
-      Puzzle5 = puzzle(PX: 3, PY: 3, CustNum: 4, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p17", PuzzleColor: "Green", RespawnX: 7, RespawnY: 7)
+      Puzzle5 = puzzle(PX: 3, PY: 3, CustNum: 4, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p17", PuzzleColor: "Green", RespawnX: 2, RespawnY: 2)
       
-      Puzzle6 = puzzle(PX: 3, PY: 3, CustNum: 5, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p2", PuzzleColor: "Blue", RespawnX: 6, RespawnY: 2)
+      Puzzle6 = puzzle(PX: 3, PY: 3, CustNum: 5, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p2", PuzzleColor: "Blue", RespawnX: 0, RespawnY: 3)
       
-      Puzzle7 = puzzle(PX: 3, PY: 2, CustNum: 6, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p11", PuzzleColor: "Green", RespawnX: 0, RespawnY: 5)
+      Puzzle7 = puzzle(PX: 3, PY: 2, CustNum: 6, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p11", PuzzleColor: "Green", RespawnX: 6, RespawnY: 3)
    }
    
    

@@ -67,8 +67,8 @@ class GameTile: SKSpriteNode {
          break
          
       default:
-         print("BallNumber is \(TileCont)")
-         fatalError("BallNumber is NOT 1...4")
+         print("TileCont is \(TileCont)")
+         fatalError("TileCont is NOT .In Or .Out")
          break;
       }
       
