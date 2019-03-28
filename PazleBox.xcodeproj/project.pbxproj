@@ -663,7 +663,7 @@
 				BF1FF2AA22311C8D0047ED23 /* GemFile */,
 				BF1FF2AB22311CC10047ED23 /* GameFile */,
 				BF2674E32227B6A3003D370F /* AppDelegate.swift */,
-				BF60AC56224CA2A000D441D6 /* New Group */,
+				BF60AC56224CA2A000D441D6 /* GameSound */,
 				BF2674ED2227B6A3003D370F /* Main.storyboard */,
 				BF2674F02227B6A4003D370F /* Assets.xcassets */,
 				BF2674F22227B6A4003D370F /* LaunchScreen.storyboard */,
@@ -853,14 +853,14 @@
 			path = StatesBar;
 			sourceTree = "<group>";
 		};
-		BF60AC56224CA2A000D441D6 /* New Group */ = {
+		BF60AC56224CA2A000D441D6 /* GameSound */ = {
 			isa = PBXGroup;
 			children = (
 				BF60AC5B224CA2E000D441D6 /* Sound.swift */,
 				BF60AC5D224CA6EB00D441D6 /* Katch.caf */,
 				BF60AC5E224CA6EC00D441D6 /* RePut.caf */,
 			);
-			path = "New Group";
+			path = GameSound;
 			sourceTree = "<group>";
 		};
 		BF640C0722450FFA00333782 /* StageOfPuzzle */ = {
