@@ -24,12 +24,15 @@ class GameScene: SKScene {
 
 
    var PuzzleBox = Array<Any>()
+   var HintPuzzleBox = Array<Any>()
    
    var DontMoveNodeNum = 0
    var ShouldMoveNodeNum = 0
    
    
    let Debug = true
+   
+   var HintButtonNode: HintNode?
    
    
    var PostedStageNum = 1
@@ -60,6 +63,8 @@ class GameScene: SKScene {
       InitPouseButton(SizeX: ViewSizeX, SizeY: ViewSizeY)
       
       InitPuzzle(SizeX: ViewSizeX, SizeY: ViewSizeY)
+      InitHintPuzzle(SizeX: ViewSizeX, SizeY: ViewSizeY)
+      
       puzzleInit()
       AddPuzzle()
       
@@ -82,6 +87,8 @@ class GameScene: SKScene {
       self.addChild(HintButton)
       self.addChild(HintButton.GetCirc1())
       self.addChild(HintButton.GetCirc2())
+      
+      HintButtonNode = HintButton
    }
    
    private func InitPouseButton(SizeX: CGFloat?, SizeY: CGFloat?){
@@ -133,12 +140,7 @@ class GameScene: SKScene {
    //MARK: パズルを初期化する。
    //Px Py に1片の長さを入れる
    private func InitPuzzle(SizeX: CGFloat?, SizeY: CGFloat?){
-   
-      
-      
       print("パズルBoxの初期化開始")
-      
-      
       switch self.StageLebel {
       case .Easy:
          PuzzleBox = GetEasyPuzzleBox(ViewSizeX: SizeX!, ViewSizeY: SizeY!)
@@ -147,9 +149,20 @@ class GameScene: SKScene {
       case .Hard:
          PuzzleBox = GetHardPuzzleBox(ViewSizeX: SizeX!, ViewSizeY: SizeY!)
       }
-      
-      
        print("パズルBoxの初期化完了")
+   }
+   
+   private func InitHintPuzzle(SizeX: CGFloat?, SizeY: CGFloat?){
+      print("パズルBoxの初期化開始")
+      switch self.StageLebel {
+      case .Easy:
+         HintPuzzleBox = GetEasyHintPuzzleBox(ViewSizeX: SizeX!, ViewSizeY: SizeY!)
+      case .Normal:
+         HintPuzzleBox = GetNormalHintPuzzleBox(ViewSizeX: SizeX!, ViewSizeY: SizeY!)
+      case .Hard:
+         HintPuzzleBox = GetHardHintPuzzleBox(ViewSizeX: SizeX!, ViewSizeY: SizeY!)
+      }
+      print("パズルBoxの初期化完了")
    }
    
    //MARK: ステージの配列の取得
@@ -684,12 +697,22 @@ class GameScene: SKScene {
       GameSound.PlaySounds(Type: 2)
    }
    
-   @objc func HintCatchNotification(notification: Notification) -> Void {
-       print("HintCatchNotifi")
-   }
+   
    
    @objc func PouseCatchNotification(notification: Notification) -> Void {
        print("PouseCatchNotifi")
+   }
+   
+   @objc func HintCatchNotification(notification: Notification) -> Void {
+      print("HintCatchNotifi")
+      if HintButtonNode?.CountOfHint == 2{
+         SetHint1()
+      }
+      
+   }
+   
+   private func SetHint1() {
+      
    }
    
    //MARK:- タッチイベント

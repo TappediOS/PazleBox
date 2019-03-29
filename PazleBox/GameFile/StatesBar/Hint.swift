@@ -19,13 +19,12 @@ class HintNode : SKSpriteNode {
    private var TouchBegan = CGPoint(x: 0, y: 0)
    private var AreYouLarge: Bool = false
    
-   let CircRadius: CGFloat = 1
+   var CountOfHint = 2
    
    init(ViewX: Int, ViewY: Int) {
       
       
       let PazzleSizeFound = ViewX / 10 + (ViewX / 100)
-      
       let x1 = -PazzleSizeFound * 1
       
       let yposi = PazzleSizeFound * 12
@@ -67,6 +66,24 @@ class HintNode : SKSpriteNode {
       NotificationCenter.default.post(name: .Hint, object: nil, userInfo: nil)
    }
    
+   private func NotificationSentOrNot() {
+      
+      if CountOfHint == 0 {
+         return
+      }
+      
+      CountOfHint -= 1
+      PostNotificationHint()
+      
+      if CountOfHint == 0 {
+         ChangeImageOfHint()
+      }
+   }
+   
+   private func ChangeImageOfHint() {
+      self.texture = SKTexture(imageNamed: "NoHint.png")
+   }
+   
    //MARK:- タッチイベント
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       
@@ -94,8 +111,7 @@ class HintNode : SKSpriteNode {
          if LengthOfTwoPoint(Start: TouchBegan, End: TouchEndPoint) == false {
             return
          }
-         
-         PostNotificationHint()
+         NotificationSentOrNot()
          return
       }else{
          print("タッチ離したあと、Nilでした。")

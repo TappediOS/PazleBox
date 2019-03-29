@@ -109,6 +109,7 @@
 		BF60AC6A224DD1DB00D441D6 /* NoHint.png in Resources */ = {isa = PBXBuildFile; fileRef = BF60AC65224DD1DA00D441D6 /* NoHint.png */; };
 		BF60AC6B224DD1DB00D441D6 /* Hint.png in Resources */ = {isa = PBXBuildFile; fileRef = BF60AC66224DD1DB00D441D6 /* Hint.png */; };
 		BF60AC6D224DD33B00D441D6 /* Like.png in Resources */ = {isa = PBXBuildFile; fileRef = BF60AC6C224DD33A00D441D6 /* Like.png */; };
+		BF60AC6F224DD62900D441D6 /* HintPuzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60AC6E224DD62900D441D6 /* HintPuzzle.swift */; };
 		BF640BF52244F8FD00333782 /* 32p1Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BF640BE32244F8FC00333782 /* 32p1Green.png */; };
 		BF640BF62244F8FD00333782 /* 32p3Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BF640BE42244F8FC00333782 /* 32p3Red.png */; };
 		BF640BF72244F8FD00333782 /* 32p6Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BF640BE52244F8FC00333782 /* 32p6Green.png */; };
@@ -403,6 +404,7 @@
 		BF60AC65224DD1DA00D441D6 /* NoHint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoHint.png; sourceTree = "<group>"; };
 		BF60AC66224DD1DB00D441D6 /* Hint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hint.png; sourceTree = "<group>"; };
 		BF60AC6C224DD33A00D441D6 /* Like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Like.png; sourceTree = "<group>"; };
+		BF60AC6E224DD62900D441D6 /* HintPuzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintPuzzle.swift; sourceTree = "<group>"; };
 		BF640BE32244F8FC00333782 /* 32p1Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 32p1Green.png; path = ../../../../../../Downloads/Pazzle/P32/32p1Green.png; sourceTree = "<group>"; };
 		BF640BE42244F8FC00333782 /* 32p3Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 32p3Red.png; path = ../../../../../../Downloads/Pazzle/P32/32p3Red.png; sourceTree = "<group>"; };
 		BF640BE52244F8FC00333782 /* 32p6Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 32p6Green.png; path = ../../../../../../Downloads/Pazzle/P32/32p6Green.png; sourceTree = "<group>"; };
@@ -781,6 +783,7 @@
 			isa = PBXGroup;
 			children = (
 				BF46108F22352423006F3DF1 /* Puzzle.swift */,
+				BF60AC6E224DD62900D441D6 /* HintPuzzle.swift */,
 				BF0FD355224371CE00E8F387 /* PutParticle.swift */,
 				BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */,
 				BF519C7C223FAA470087A4AC /* GetPuzzleArry.swift */,
@@ -1549,6 +1552,7 @@
 				BF332F94224926DB009B3042 /* E7.swift in Sources */,
 				BF332F90224926CD009B3042 /* E5.swift in Sources */,
 				BF332FBE2249279C009B3042 /* N8.swift in Sources */,
+				BF60AC6F224DD62900D441D6 /* HintPuzzle.swift in Sources */,
 				BF0FD356224371CE00E8F387 /* PutParticle.swift in Sources */,
 				BF332FB42249277A009B3042 /* N3.swift in Sources */,
 				BF332F92224926D3009B3042 /* E6.swift in Sources */,

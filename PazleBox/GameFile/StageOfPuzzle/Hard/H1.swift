@@ -19,13 +19,19 @@ class HStage1 {
    var Puzzle6: puzzle?
    var Puzzle7: puzzle?
   
+   var Hint1: HintPuzzle?
+   var Hint2: HintPuzzle?
    
    var PuzzleBox = Array<Any>()
+   var HintPuzzleBox = Array<Any>()
    
    init(ViewSizeX: CGFloat, ViewSizeY: CGFloat) {
       
       InitPuzzle(SizeX: ViewSizeX, SizeY: ViewSizeY)
       AddPuzzle()
+      
+      InitHint(SizeX: ViewSizeX, SizeY: ViewSizeY)
+      AddHintPuzzle()
    }
    
    private func InitPuzzle(SizeX: CGFloat, SizeY: CGFloat){
@@ -57,7 +63,23 @@ class HStage1 {
       
    }
    
+   private func AddHintPuzzle() {
+      HintPuzzleBox.append(Hint1!)
+      HintPuzzleBox.append(Hint2!)
+   }
+   
+   private func InitHint(SizeX: CGFloat, SizeY: CGFloat) {
+      Hint1 = HintPuzzle(PX: 3, PY: 2, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p10", PuzzleColor: "Blue", AnsX: 4, AnsY: 4)
+      
+      Hint2 = HintPuzzle(PX: 3, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p8", PuzzleColor: "Red", AnsX: 6, AnsY: 2)
+   }
+   
+
    public func GetPuzzleBox() -> Array<Any> {
       return self.PuzzleBox
+   }
+   
+   public func GetHintPuzzleBox() -> Array<Any> {
+      return self.HintPuzzleBox
    }
 }

@@ -80,4 +80,73 @@ extension GameScene {
       }
    }
    
+   public func GetHardHintPuzzleBox(ViewSizeX: CGFloat?, ViewSizeY: CGFloat?) -> Array<Any> {
+      
+      switch PostedStageNum {
+      case 1:
+         let Stage = HStage1(ViewSizeX: ViewSizeX!, ViewSizeY: ViewSizeY!)
+         return Stage.GetHintPuzzleBox()
+      case 2:
+         let Stage = HStage2(ViewSizeX: ViewSizeX!, ViewSizeY: ViewSizeY!)
+         return Stage.GetHintPuzzleBox()
+      case 3:
+         let Stage = HStage3(ViewSizeX: ViewSizeX!, ViewSizeY: ViewSizeY!)
+         return Stage.GetHintPuzzleBox()
+      case 4:
+         let Stage = HStage4(ViewSizeX: ViewSizeX!, ViewSizeY: ViewSizeY!)
+         return Stage.GetHintPuzzleBox()
+      case 5:
+         let Stage = HStage5(ViewSizeX: ViewSizeX!, ViewSizeY: ViewSizeY!)
+         return Stage.GetHintPuzzleBox()
+      case 6:
+         let Stage = HStage6(ViewSizeX: ViewSizeX!, ViewSizeY: ViewSizeY!)
+         return Stage.GetHintPuzzleBox()
+      case 7:
+         let Stage = HStage7(ViewSizeX: ViewSizeX!, ViewSizeY: ViewSizeY!)
+         return Stage.GetHintPuzzleBox()
+      case 8:
+         let Stage = HStage8(ViewSizeX: ViewSizeX!, ViewSizeY: ViewSizeY!)
+         return Stage.GetHintPuzzleBox()
+      case 9:
+         let Stage = HStage9(ViewSizeX: ViewSizeX!, ViewSizeY: ViewSizeY!)
+         return Stage.GetHintPuzzleBox()
+      case 10:
+         let Stage = HStage10(ViewSizeX: ViewSizeX!, ViewSizeY: ViewSizeY!)
+         return Stage.GetHintPuzzleBox()
+      case 11:
+         let Stage = HStage11(ViewSizeX: ViewSizeX!, ViewSizeY: ViewSizeY!)
+         return Stage.GetHintPuzzleBox()
+      case 12:
+         let Stage = HStage12(ViewSizeX: ViewSizeX!, ViewSizeY: ViewSizeY!)
+         return Stage.GetHintPuzzleBox()
+      case 13:
+         let Stage = HStage13(ViewSizeX: ViewSizeX!, ViewSizeY: ViewSizeY!)
+         return Stage.GetHintPuzzleBox()
+      case 14:
+         let Stage = HStage14(ViewSizeX: ViewSizeX!, ViewSizeY: ViewSizeY!)
+         return Stage.GetHintPuzzleBox()
+      case 15:
+         let Stage = HStage15(ViewSizeX: ViewSizeX!, ViewSizeY: ViewSizeY!)
+         return Stage.GetHintPuzzleBox()
+      case 16:
+         let Stage = HStage16(ViewSizeX: ViewSizeX!, ViewSizeY: ViewSizeY!)
+         return Stage.GetHintPuzzleBox()
+      case 17:
+         let Stage = HStage17(ViewSizeX: ViewSizeX!, ViewSizeY: ViewSizeY!)
+         return Stage.GetHintPuzzleBox()
+      case 18:
+         let Stage = HStage18(ViewSizeX: ViewSizeX!, ViewSizeY: ViewSizeY!)
+         return Stage.GetHintPuzzleBox()
+      case 19:
+         let Stage = HStage19(ViewSizeX: ViewSizeX!, ViewSizeY: ViewSizeY!)
+         return Stage.GetHintPuzzleBox()
+      case 20:
+         let Stage = HStage20(ViewSizeX: ViewSizeX!, ViewSizeY: ViewSizeY!)
+         return Stage.GetHintPuzzleBox()
+         
+      default:
+         fatalError()
+      }
+   }
+   
 }
