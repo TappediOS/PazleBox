@@ -64,12 +64,12 @@ extension Hard {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .In,  .In,  .In,  .In,  .In,  .In,  .In,  .Out],
-            [.Out, .In,  .In,  .In,  .Out,  .In,  .In,  .In,  .Out],
-            [.Out, .In,  .In,  .In,  .Out,  .In,  .In,  .In,  .Out],
-            [.Out, .In,  .In,  .In,  .Out,  .In,  .In,  .In,  .Out],
-            [.Out, .In,  .In,  .In,  .In,  .In,  .In,  .In,  .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+            [.In, .In,  .In,  .In,  .In,  .In,  .In,  .In,  .In],
+            [.In, .In,  .In,  .In,  .Out,  .In,  .In,  .In,  .In],
+            [.In, .In,  .In,  .In,  .Out,  .In,  .In,  .In,  .In],
+            [.In, .In,  .In,  .In,  .Out,  .In,  .In,  .In,  .In],
+            [.In, .In,  .In,  .In,  .In,  .In,  .In,  .In,  .In]]
    }
    
    public func InitH5(){

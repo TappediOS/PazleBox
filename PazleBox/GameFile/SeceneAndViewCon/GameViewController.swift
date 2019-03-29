@@ -96,7 +96,7 @@ class GameViewController: UIViewController {
 
                view.ignoresSiblingOrder = true
                
-               let Tran = SKTransition.fade(withDuration: 2)
+               let Tran = SKTransition.fade(withDuration: 2.35)
                
                
                

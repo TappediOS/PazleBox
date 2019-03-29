@@ -1121,6 +1121,8 @@
 		BFCE256B224A462C0099A775 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				BFFA2A982234D9D30023BB71 /* BaseTile.png */,
+				BFFA2A902234CF010023BB71 /* NullTile.png */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1179,8 +1181,6 @@
 		BFFA2A8F2234CEED0023BB71 /* TilePick */ = {
 			isa = PBXGroup;
 			children = (
-				BFFA2A982234D9D30023BB71 /* BaseTile.png */,
-				BFFA2A902234CF010023BB71 /* NullTile.png */,
 				BFCE256B224A462C0099A775 /* Base */,
 				BF7CD9142240B41500F8302B /* P12 */,
 				BF7CD9152240B43100F8302B /* P21 */,

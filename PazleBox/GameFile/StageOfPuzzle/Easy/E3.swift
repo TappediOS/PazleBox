@@ -53,9 +53,9 @@ class EStage3 {
    }
    
    private func InitHint(SizeX: CGFloat, SizeY: CGFloat) {
-      Hint1 = HintPuzzle(PX: 2, PY: 3, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p1", PuzzleColor: "Green", AnsX: 6, AnsY: 2)
+      Hint1 = HintPuzzle(PX: 2, PY: 3, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p1", PuzzleColor: "Green", AnsX: 2, AnsY: 7)
       
-      Hint2 = HintPuzzle(PX: 3, PY: 3, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p12", PuzzleColor: "Red", AnsX: 0, AnsY: 2)
+      Hint2 = HintPuzzle(PX: 3, PY: 3, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p12", PuzzleColor: "Red", AnsX: 4, AnsY: 7)
    }
    
    

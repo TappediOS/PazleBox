@@ -69,9 +69,9 @@ class HStage5 {
    }
    
    private func InitHint(SizeX: CGFloat, SizeY: CGFloat) {
-      Hint1 = HintPuzzle(PX: 4, PY: 2, CustNum: 6, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "42p1", PuzzleColor: "Blue", AnsX: 5, AnsY: 1)
+      Hint1 = HintPuzzle(PX: 2, PY: 1, CustNum: 4, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "21p1", PuzzleColor: "Green", AnsX: 5, AnsY: 7)
       
-      Hint2 = HintPuzzle(PX: 3, PY: 2, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p5", PuzzleColor: "Green", AnsX: 3, AnsY: 4)
+      Hint2 = HintPuzzle(PX: 3, PY: 2, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p5", PuzzleColor: "Green", AnsX: 1, AnsY: 10)
    }
    
    
