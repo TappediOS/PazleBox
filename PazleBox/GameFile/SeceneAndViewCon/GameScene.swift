@@ -707,11 +707,29 @@ class GameScene: SKScene {
       print("HintCatchNotifi")
       if HintButtonNode?.CountOfHint == 2{
          SetHint1()
+      }else{
+         SetHint2()
       }
+      
+      GameSound.PlaySounds(Type: 3)
+      HintButtonNode?.DecleCountOfHint()
       
    }
    
    private func SetHint1() {
+      let Hint = HintPuzzleBox[1] as! HintPuzzle
+     
+      self.addChild(Hint)
+      Hint.Animation()
+      self.HintButtonNode?.DissMisLile2()
+   }
+   
+   private func SetHint2() {
+      let Hint = HintPuzzleBox[0] as! HintPuzzle
+      
+      self.addChild(Hint)
+      Hint.Animation()
+      self.HintButtonNode?.DissMisLile1()
       
    }
    

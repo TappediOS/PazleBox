@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import SpriteKit
-
+import SpriteKitEasingSwift
 
 class HintNode : SKSpriteNode {
    
@@ -66,18 +66,51 @@ class HintNode : SKSpriteNode {
       NotificationCenter.default.post(name: .Hint, object: nil, userInfo: nil)
    }
    
+   public func DissMisLile1() {
+      let LargeAction = SKEase.scale(easeFunction: .curveTypeCubic, easeType: .easeTypeIn, time: 0.25, from: 1, to: 2)
+      
+      let FadeOut = SKEase.fade(easeFunction: .curveTypeExpo, easeType: .easeTypeOut, time: 0.5, fromValue: 1, toValue: 0.04)
+      let SmallAction = SKEase.scale(easeFunction: .curveTypeQuartic, easeType: .easeTypeOut, time: 0.5, from: 1.3, to: 0.2)
+      
+      let groupAktion = SKAction.group([FadeOut, SmallAction])
+      
+      let FadeAction = SKAction.sequence([LargeAction, groupAktion, SKAction.run({ [weak self] in
+         self?.Circ1.isHidden = true
+      }) ])
+      
+      self.Circ1.run(FadeAction)
+   }
+   
+   public func DissMisLile2() {
+      let LargeAction = SKEase.scale(easeFunction: .curveTypeCubic, easeType: .easeTypeIn, time: 0.25, from: 1, to: 2)
+      
+      let FadeOut = SKEase.fade(easeFunction: .curveTypeExpo, easeType: .easeTypeOut, time: 0.35, fromValue: 1, toValue: 0.04)
+      let SmallAction = SKEase.scale(easeFunction: .curveTypeQuartic, easeType: .easeTypeOut, time: 0.35, from: 1.3, to: 0.2)
+      
+      let groupAktion = SKAction.group([FadeOut, SmallAction])
+      
+      let FadeAction = SKAction.sequence([LargeAction, groupAktion, SKAction.run({ [weak self] in
+         self?.Circ2.isHidden = true
+      }) ])
+      
+      self.Circ2.run(FadeAction)
+   }
+   
    private func NotificationSentOrNot() {
       
       if CountOfHint == 0 {
          return
       }
       
-      CountOfHint -= 1
       PostNotificationHint()
       
       if CountOfHint == 0 {
          ChangeImageOfHint()
       }
+   }
+   
+   public func DecleCountOfHint() {
+      self.CountOfHint -= 1
    }
    
    private func ChangeImageOfHint() {

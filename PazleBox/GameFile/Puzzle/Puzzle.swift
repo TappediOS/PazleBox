@@ -119,13 +119,13 @@ class puzzle: SKSpriteNode {
       
       self.position = Tilep.GetAnyPostionXY(xpoint: self.CenterX, ypoint: self.CenterY)
       //FIXME:- これは多さによって変えるべきである。
-      self.zPosition = 5
+      self.zPosition = 16
       
       AlphaNode = SKSpriteNode(texture: texture, color: UIColor.black, size: NodeSize)
       
       AlphaNode.anchorPoint = Anchor
       AlphaNode.position = self.position
-      AlphaNode.zPosition = 1
+      AlphaNode.zPosition = 6
       AlphaNode.isUserInteractionEnabled = false
       
       AlphaNode.alpha = 0.55

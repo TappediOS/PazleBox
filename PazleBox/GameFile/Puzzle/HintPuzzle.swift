@@ -78,6 +78,7 @@ class HintPuzzle: SKSpriteNode {
       let texture: SKTexture
       let TextureName = PuzzleStyle + PuzzleColor
       texture = SKTexture(imageNamed: TextureName)
+      //texture.
 
       
       let NodeSize = CGSize(width: CGFloat(PazzleWideSize), height: CGFloat(PazzleHightSize))
@@ -87,7 +88,8 @@ class HintPuzzle: SKSpriteNode {
       //print("anchor: \(CGPoint(x: 1 / (PX * 2), y: 1 - ( 1 / (PY * 2) )))")
       //ノードがタッチできる状態にする。
       self.isUserInteractionEnabled = false
-      self.alpha = 0.4
+      self.alpha = 0.55
+      
       
       //ポジションの設定。
       self.CenterX = self.AnsX
@@ -101,7 +103,7 @@ class HintPuzzle: SKSpriteNode {
       var x1 = 0
       
       if CustNum == 0 {
-         x1 = SetPosi * 1
+         x1 = 0
       }else{
          x1 = SetPosi * 1
       }
@@ -128,18 +130,24 @@ class HintPuzzle: SKSpriteNode {
       let SmallAction = SKEase.scale(easeFunction: .curveTypeQuartic, easeType: .easeTypeOut, time: 0.02, from: 0.2, to: 0.15)
       let FadeOutAction = SKEase.fade(easeFunction: .curveTypeExpo, easeType: .easeTypeOut, time: 0.02, fromValue: 0.05, toValue: 0.01)
       
+      let SmallAcitonGroup = SKAction.group([SmallAction, FadeOutAction])
+      
+      let SetAnchorAction = SKAction.sequence([SmallAcitonGroup, SKAction.run({ [weak self] in
+         self?.SetAnchor()
+      }) ])
+      
       let LargeAction = SKEase.scale(easeFunction: .curveTypeBack, easeType: .easeTypeOut, time: 0.5, from: 0.15, to: 1)
-      let FadeInAction = SKEase.fade(easeFunction: .curveTypeBack, easeType: .easeTypeOut, time: 0.5, fromValue: 0.01, toValue: 1)
+      let FadeInAction = SKEase.fade(easeFunction: .curveTypeBack, easeType: .easeTypeOut, time: 0.5, fromValue: 0.01, toValue: 0.3)
       
       let MovePointRight = Tilep.GetAnyPostionXY(xpoint: self.CenterX, ypoint: self.CenterY)
-      let MoveAction = SKEase.move(easeFunction: .curveTypeQuadratic, easeType: .easeTypeOut, time: 0.5, from: self.position, to: MovePointRight)
+      let MoveAction = SKEase.move(easeFunction: .curveTypeQuadratic, easeType: .easeTypeOut, time: 0.55, from: self.position, to: MovePointRight)
       
       
-      let SmallAcitonGroup = SKAction.group([SmallAction, FadeOutAction])
+      
       let LargeActionGroup = SKAction.group([LargeAction, FadeInAction, MoveAction])
       
 
-      let RecreatedAktion = SKAction.sequence([WaitGroup, SmallAcitonGroup, LargeActionGroup])
+      let RecreatedAktion = SKAction.sequence([WaitGroup, SetAnchorAction, LargeActionGroup])
       
       self.run(RecreatedAktion)
       AudioServicesPlaySystemSound(1521)
@@ -147,6 +155,7 @@ class HintPuzzle: SKSpriteNode {
    
    public func Animation() {
       MoveToRightPosi()
+      self.alpha = 0.4
    }
    
    required init?(coder aDecoder: NSCoder) {

@@ -46,15 +46,15 @@ class GameSounds {
          print("Re_Mokkinインスタンス作成失敗")
       }
       
-//      soundFilePath = Bundle.main.path(forResource: "Mi_Mokkin", ofType: "mp3")!
-//      sound = URL(fileURLWithPath: soundFilePath)
-//      // AVAudioPlayerのインスタンスを作成
-//      do {
-//         audioPlayer3 = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
-//      } catch {
-//         print("Mi_Mokkinインスタンス作成失敗")
-//      }
-//
+      soundFilePath = Bundle.main.path(forResource: "Pico", ofType: "caf")!
+      sound = URL(fileURLWithPath: soundFilePath)
+      // AVAudioPlayerのインスタンスを作成
+      do {
+         audioPlayer3 = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
+      } catch {
+         print("Mi_Mokkinインスタンス作成失敗")
+      }
+
 //      soundFilePath = Bundle.main.path(forResource: "Fa_Mokkin", ofType: "mp3")!
 //      sound = URL(fileURLWithPath: soundFilePath)
 //      // AVAudioPlayerのインスタンスを作成
@@ -168,12 +168,12 @@ class GameSounds {
          self.audioPlayer2.currentTime = 0
          self.audioPlayer2.volume = 0.8
          self.audioPlayer2.play()
-//      case 3:
-//         self.audioPlayer3.volume = 0
-//         self.audioPlayer3.stop()
-//         self.audioPlayer3.currentTime = 0
-//         self.audioPlayer3.volume = 0.5
-//         self.audioPlayer3.play()
+      case 3:
+         self.audioPlayer3.volume = 0
+         self.audioPlayer3.stop()
+         self.audioPlayer3.currentTime = 0
+         self.audioPlayer3.volume = 0.8
+         self.audioPlayer3.play()
 //      case 4:
 //         self.audioPlayer4.volume = 0
 //         self.audioPlayer4.stop()
