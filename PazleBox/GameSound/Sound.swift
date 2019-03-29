@@ -34,7 +34,7 @@ class GameSounds {
          audioPlayer1 = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
          
       } catch {
-         print("Do_Mokkinインスタンス作成失敗")
+         print("Katchインスタンス作成失敗")
       }
       
       soundFilePath = Bundle.main.path(forResource: "RePut", ofType: "caf")!
@@ -43,7 +43,7 @@ class GameSounds {
       do {
          audioPlayer2 = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
       } catch {
-         print("Re_Mokkinインスタンス作成失敗")
+         print("RePutインスタンス作成失敗")
       }
       
       soundFilePath = Bundle.main.path(forResource: "Pico", ofType: "caf")!
@@ -52,7 +52,7 @@ class GameSounds {
       do {
          audioPlayer3 = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
       } catch {
-         print("Mi_Mokkinインスタンス作成失敗")
+         print("Picoインスタンス作成失敗")
       }
 
 //      soundFilePath = Bundle.main.path(forResource: "Fa_Mokkin", ofType: "mp3")!

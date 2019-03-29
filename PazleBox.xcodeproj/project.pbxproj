@@ -110,6 +110,7 @@
 		BF60AC6B224DD1DB00D441D6 /* Hint.png in Resources */ = {isa = PBXBuildFile; fileRef = BF60AC66224DD1DB00D441D6 /* Hint.png */; };
 		BF60AC6D224DD33B00D441D6 /* Like.png in Resources */ = {isa = PBXBuildFile; fileRef = BF60AC6C224DD33A00D441D6 /* Like.png */; };
 		BF60AC6F224DD62900D441D6 /* HintPuzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60AC6E224DD62900D441D6 /* HintPuzzle.swift */; };
+		BF60AC71224DF62300D441D6 /* Pico.caf in Resources */ = {isa = PBXBuildFile; fileRef = BF60AC70224DF5A800D441D6 /* Pico.caf */; };
 		BF640BF52244F8FD00333782 /* 32p1Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BF640BE32244F8FC00333782 /* 32p1Green.png */; };
 		BF640BF62244F8FD00333782 /* 32p3Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BF640BE42244F8FC00333782 /* 32p3Red.png */; };
 		BF640BF72244F8FD00333782 /* 32p6Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BF640BE52244F8FC00333782 /* 32p6Green.png */; };
@@ -1423,6 +1424,7 @@
 				BF7CD95F2240BBD500F8302B /* 23p3Green.png in Resources */,
 				BF0FD350224363A800E8F387 /* PutPuzzleParticle.sks in Resources */,
 				BFCE2619224A557B0099A775 /* 23p7Red.png in Resources */,
+				BF60AC71224DF62300D441D6 /* Pico.caf in Resources */,
 				BF7CD91D2240B56300F8302B /* 12p1Green.png in Resources */,
 				BF640BF92244F8FD00333782 /* 32p2Green.png in Resources */,
 				BFCE25B7224A466B0099A775 /* 33p17Red.png in Resources */,
