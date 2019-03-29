@@ -15,11 +15,12 @@ import SAConfettiView
 class GameViewController: UIViewController {
    
    var GameClearView = SAConfettiView()
-   let GameClearVeiwIntensity: Float = 0.55
+   let GameClearVeiwIntensity: Float = 0.65
    var ShowGameClearView = false
    
    var StageLevel: StageLevel = .Normal
    
+   var SellectStageNumber = 0
    
 
    
@@ -55,6 +56,7 @@ class GameViewController: UIViewController {
    }
    
    private func LoadStageNumber(Num: Int) {
+      SellectStageNumber = Num
       userDefaults.set(Num, forKey: "StageNum")
    }
    
@@ -140,14 +142,18 @@ class GameViewController: UIViewController {
       GameClearView = SAConfettiView(frame: Rect)
       GameClearView.intensity = GameClearVeiwIntensity
       GameClearView.type! = .star
-      GameClearView.startConfetti()
-      
    }
    
    private func StartConfetti(){
       self.view?.addSubview(GameClearView)
       GameClearView.startConfetti()
       ShowGameClearView = true
+   }
+   
+   private func StopConfitti() {
+      GameClearView.stopConfetti()
+      ShowGameClearView = false
+//      GameClearView.removeFromSuperview()
    }
    
    @objc func GameClearCatchNotification(notification: Notification) -> Void {
@@ -158,6 +164,13 @@ class GameViewController: UIViewController {
       
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
          self.StartConfetti()
+      }
+      
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+         self.SellectStageNumber += 1
+         self.userDefaults.set(self.SellectStageNumber, forKey: "StageNum")
+         self.StopConfitti()
+         self.InitGameViewAndShowView()
       }
       return
    }

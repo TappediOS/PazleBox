@@ -28,13 +28,13 @@ class RePutButton : SKSpriteNode {
       let y1 = -ViewY * 3 / 8 + yposi
      
       //MARK: 画像の初期化
-//      let texture: SKTexture
-//      texture = SKTexture(imageNamed: TextureName)
+      let texture: SKTexture
+      texture = SKTexture(imageNamed: "RePut.png")
       
       
       let NodeSize = CGSize(width: CGFloat(PazzleSizeFound), height: CGFloat(PazzleSizeFound))
       
-      super.init(texture: nil, color: UIColor.black, size: NodeSize)
+      super.init(texture: texture, color: UIColor.black, size: NodeSize)
       self.position = CGPoint(x: x1, y: y1)
       
       self.isUserInteractionEnabled = true

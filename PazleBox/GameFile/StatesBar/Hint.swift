@@ -13,8 +13,8 @@ import SpriteKit
 
 class HintNode : SKSpriteNode {
    
-   var Circ1 = SKShapeNode()
-   var Circ2 = SKShapeNode()
+   var Circ1 = SKSpriteNode()
+   var Circ2 = SKSpriteNode()
    
    private var TouchBegan = CGPoint(x: 0, y: 0)
    private var AreYouLarge: Bool = false
@@ -32,35 +32,34 @@ class HintNode : SKSpriteNode {
       let y1 = -ViewY * 3 / 8 + yposi
       
       //MARK: 画像の初期化
-      //      let texture: SKTexture
-      //      texture = SKTexture(imageNamed: TextureName)
+      let texture: SKTexture
+      texture = SKTexture(imageNamed: "Hint.png")
       
       
       let NodeSize = CGSize(width: CGFloat(PazzleSizeFound), height: CGFloat(PazzleSizeFound))
       
-      super.init(texture: nil, color: UIColor.black, size: NodeSize)
+      super.init(texture: texture, color: UIColor.black, size: NodeSize)
       self.position = CGPoint(x: x1, y: y1)
       
       self.isUserInteractionEnabled = true
       
-      Circ1 = SKShapeNode(circleOfRadius: CGFloat(PazzleSizeFound / 4))
-      Circ2 = SKShapeNode(circleOfRadius: CGFloat(PazzleSizeFound / 4))
+      let LikeSize = CGSize(width: CGFloat(PazzleSizeFound / 2), height: CGFloat(PazzleSizeFound / 2))
+      Circ1 = SKSpriteNode(texture: SKTexture(imageNamed: "Like.png"), size: LikeSize)
+      Circ2 = SKSpriteNode(texture: SKTexture(imageNamed: "Like.png"), size: LikeSize)
       
       
       let x2 = 0
       Circ1.position = CGPoint(x: x2, y: y1)
-      Circ1.fillColor = UIColor.green
       
       let x3 = PazzleSizeFound * 1
       Circ2.position = CGPoint(x: x3, y: y1)
-      Circ2.fillColor = UIColor.blue
       
    }
    
-   public func GetCirc1() -> SKShapeNode {
+   public func GetCirc1() -> SKSpriteNode {
       return self.Circ1
    }
-   public func GetCirc2() -> SKShapeNode {
+   public func GetCirc2() -> SKSpriteNode {
       return self.Circ2
    }
    

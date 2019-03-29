@@ -103,6 +103,12 @@
 		BF60AC5C224CA2E000D441D6 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60AC5B224CA2E000D441D6 /* Sound.swift */; };
 		BF60AC5F224CA9AD00D441D6 /* Katch.caf in Resources */ = {isa = PBXBuildFile; fileRef = BF60AC5D224CA6EB00D441D6 /* Katch.caf */; };
 		BF60AC60224CA9B000D441D6 /* RePut.caf in Resources */ = {isa = PBXBuildFile; fileRef = BF60AC5E224CA6EC00D441D6 /* RePut.caf */; };
+		BF60AC67224DD1DB00D441D6 /* Pouse.png in Resources */ = {isa = PBXBuildFile; fileRef = BF60AC62224DD1D900D441D6 /* Pouse.png */; };
+		BF60AC68224DD1DB00D441D6 /* refresh-512.png in Resources */ = {isa = PBXBuildFile; fileRef = BF60AC63224DD1D900D441D6 /* refresh-512.png */; };
+		BF60AC69224DD1DB00D441D6 /* RePut.png in Resources */ = {isa = PBXBuildFile; fileRef = BF60AC64224DD1DA00D441D6 /* RePut.png */; };
+		BF60AC6A224DD1DB00D441D6 /* NoHint.png in Resources */ = {isa = PBXBuildFile; fileRef = BF60AC65224DD1DA00D441D6 /* NoHint.png */; };
+		BF60AC6B224DD1DB00D441D6 /* Hint.png in Resources */ = {isa = PBXBuildFile; fileRef = BF60AC66224DD1DB00D441D6 /* Hint.png */; };
+		BF60AC6D224DD33B00D441D6 /* Like.png in Resources */ = {isa = PBXBuildFile; fileRef = BF60AC6C224DD33A00D441D6 /* Like.png */; };
 		BF640BF52244F8FD00333782 /* 32p1Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BF640BE32244F8FC00333782 /* 32p1Green.png */; };
 		BF640BF62244F8FD00333782 /* 32p3Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BF640BE42244F8FC00333782 /* 32p3Red.png */; };
 		BF640BF72244F8FD00333782 /* 32p6Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BF640BE52244F8FC00333782 /* 32p6Green.png */; };
@@ -391,6 +397,12 @@
 		BF60AC5B224CA2E000D441D6 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		BF60AC5D224CA6EB00D441D6 /* Katch.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Katch.caf; sourceTree = "<group>"; };
 		BF60AC5E224CA6EC00D441D6 /* RePut.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RePut.caf; sourceTree = "<group>"; };
+		BF60AC62224DD1D900D441D6 /* Pouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pouse.png; sourceTree = "<group>"; };
+		BF60AC63224DD1D900D441D6 /* refresh-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh-512.png"; sourceTree = "<group>"; };
+		BF60AC64224DD1DA00D441D6 /* RePut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RePut.png; sourceTree = "<group>"; };
+		BF60AC65224DD1DA00D441D6 /* NoHint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoHint.png; sourceTree = "<group>"; };
+		BF60AC66224DD1DB00D441D6 /* Hint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hint.png; sourceTree = "<group>"; };
+		BF60AC6C224DD33A00D441D6 /* Like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Like.png; sourceTree = "<group>"; };
 		BF640BE32244F8FC00333782 /* 32p1Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 32p1Green.png; path = ../../../../../../Downloads/Pazzle/P32/32p1Green.png; sourceTree = "<group>"; };
 		BF640BE42244F8FC00333782 /* 32p3Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 32p3Red.png; path = ../../../../../../Downloads/Pazzle/P32/32p3Red.png; sourceTree = "<group>"; };
 		BF640BE52244F8FC00333782 /* 32p6Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 32p6Green.png; path = ../../../../../../Downloads/Pazzle/P32/32p6Green.png; sourceTree = "<group>"; };
@@ -663,6 +675,7 @@
 				BF1FF2AA22311C8D0047ED23 /* GemFile */,
 				BF1FF2AB22311CC10047ED23 /* GameFile */,
 				BF2674E32227B6A3003D370F /* AppDelegate.swift */,
+				BF60AC61224DD1B500D441D6 /* GameIcons */,
 				BF60AC56224CA2A000D441D6 /* GameSound */,
 				BF2674ED2227B6A3003D370F /* Main.storyboard */,
 				BF2674F02227B6A4003D370F /* Assets.xcassets */,
@@ -861,6 +874,19 @@
 				BF60AC5E224CA6EC00D441D6 /* RePut.caf */,
 			);
 			path = GameSound;
+			sourceTree = "<group>";
+		};
+		BF60AC61224DD1B500D441D6 /* GameIcons */ = {
+			isa = PBXGroup;
+			children = (
+				BF60AC66224DD1DB00D441D6 /* Hint.png */,
+				BF60AC62224DD1D900D441D6 /* Pouse.png */,
+				BF60AC65224DD1DA00D441D6 /* NoHint.png */,
+				BF60AC63224DD1D900D441D6 /* refresh-512.png */,
+				BF60AC6C224DD33A00D441D6 /* Like.png */,
+				BF60AC64224DD1DA00D441D6 /* RePut.png */,
+			);
+			path = GameIcons;
 			sourceTree = "<group>";
 		};
 		BF640C0722450FFA00333782 /* StageOfPuzzle */ = {
@@ -1275,9 +1301,11 @@
 				BFCE25B2224A466B0099A775 /* 33p9Red.png in Resources */,
 				BF2674EF2227B6A3003D370F /* Main.storyboard in Resources */,
 				BF7CD9662240BBD500F8302B /* 23p6Blue.png in Resources */,
+				BF60AC6D224DD33B00D441D6 /* Like.png in Resources */,
 				BFCE25E2224A466B0099A775 /* 33p18Green.png in Resources */,
 				BFCE25D2224A466B0099A775 /* 33p10Green.png in Resources */,
 				BF0FD352224364A900E8F387 /* Star.png in Resources */,
+				BF60AC69224DD1DB00D441D6 /* RePut.png in Resources */,
 				BFCE25CE224A466B0099A775 /* 33p16Red.png in Resources */,
 				BFCE25DE224A466B0099A775 /* 33p21Green.png in Resources */,
 				BFCE25C4224A466B0099A775 /* 33p13Red.png in Resources */,
@@ -1343,6 +1371,8 @@
 				BF640BF82244F8FD00333782 /* 32p2Red.png in Resources */,
 				BFCE2624224A557B0099A775 /* 23p12Blue.png in Resources */,
 				BFCE25E9224A466B0099A775 /* 33p5Blue.png in Resources */,
+				BF60AC6A224DD1DB00D441D6 /* NoHint.png in Resources */,
+				BF60AC68224DD1DB00D441D6 /* refresh-512.png in Resources */,
 				BFCE263B224A58A60099A775 /* 32p8Red.png in Resources */,
 				BFCE25B8224A466B0099A775 /* 33p16Blue.png in Resources */,
 				BFCE2622224A557B0099A775 /* 23p8Blue.png in Resources */,
@@ -1365,6 +1395,7 @@
 				BFCE263C224A58A60099A775 /* 32p7Green.png in Resources */,
 				BF640BF52244F8FD00333782 /* 32p1Green.png in Resources */,
 				BF7CD91E2240B56300F8302B /* 12p1Blue.png in Resources */,
+				BF60AC6B224DD1DB00D441D6 /* Hint.png in Resources */,
 				BFCE261B224A557B0099A775 /* 23p9Blue.png in Resources */,
 				BFCE25DD224A466B0099A775 /* 33p7Blue.png in Resources */,
 				BF60AC60224CA9B000D441D6 /* RePut.caf in Resources */,
@@ -1393,6 +1424,7 @@
 				BFCE2600224A4D980099A775 /* 43p1Red.png in Resources */,
 				BF7CD9552240BBD500F8302B /* 23p5Red.png in Resources */,
 				BF640C012244F8FD00333782 /* 32p6Blue.png in Resources */,
+				BF60AC67224DD1DB00D441D6 /* Pouse.png in Resources */,
 				BF7CD9242240B60400F8302B /* 21p1Blue.png in Resources */,
 				BFCE25CD224A466B0099A775 /* 33p19Blue.png in Resources */,
 				BF7CD9632240BBD500F8302B /* 23p6Green.png in Resources */,
