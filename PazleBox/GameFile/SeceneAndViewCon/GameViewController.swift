@@ -96,8 +96,8 @@ class GameViewController: UIViewController {
 
                view.ignoresSiblingOrder = true
                
-               //let Tran = SKTransition.fade(withDuration: 2)
-               let Tran = SKTransition.doorsCloseHorizontal(withDuration: 2)
+               let Tran = SKTransition.fade(withDuration: 2)
+               
                
                
                view.presentScene(sceneNode, transition: Tran)
@@ -135,6 +135,7 @@ class GameViewController: UIViewController {
    private func InitNotificationCenter() {
       NotificationCenter.default.addObserver(self, selector: #selector(GameClearCatchNotification(notification:)), name: .GameClear, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(SellectStageNotification(notification:)), name: .SellectStage, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(SellectBackNotification(notification:)), name: .SellectBack, object: nil)
       
    }
    
@@ -191,6 +192,11 @@ class GameViewController: UIViewController {
       }else{
          print("通知受け取ったけど、中身nilやった。")
       }
+   }
+   
+   @objc func SellectBackNotification(notification: Notification) -> Void {
+      
+      self.dismiss(animated: true, completion: nil)
    }
    
 

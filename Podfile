@@ -12,6 +12,9 @@ target 'PazleBox' do
      :git => 'https://github.com/gokhanakkurt/SAConfettiView',
      :branch => 'swift3'
 
+  pod 'ChameleonFramework/Swift'
+  pod 'FlatUIKit'
+
 
  pod 'Firebase/Core'
  pod 'Crashlytics'

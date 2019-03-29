@@ -23,6 +23,8 @@ class GameSounds {
    var audioPlayer9: AVAudioPlayer! = nil
    var audioPlayer10: AVAudioPlayer! = nil
    
+   let SoundVolume: Float = 0.15
+   
    
    init() {
       
@@ -160,19 +162,19 @@ class GameSounds {
          self.audioPlayer1.volume = 0
          self.audioPlayer1.stop()
          self.audioPlayer1.currentTime = 0
-         self.audioPlayer1.volume = 0.8
+         self.audioPlayer1.volume = SoundVolume
          self.audioPlayer1.play()
       case 2:
          self.audioPlayer2.volume = 0
          self.audioPlayer2.stop()
          self.audioPlayer2.currentTime = 0
-         self.audioPlayer2.volume = 0.8
+         self.audioPlayer2.volume = SoundVolume
          self.audioPlayer2.play()
       case 3:
          self.audioPlayer3.volume = 0
          self.audioPlayer3.stop()
          self.audioPlayer3.currentTime = 0
-         self.audioPlayer3.volume = 0.8
+         self.audioPlayer3.volume = SoundVolume
          self.audioPlayer3.play()
 //      case 4:
 //         self.audioPlayer4.volume = 0

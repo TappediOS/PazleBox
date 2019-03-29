@@ -19,28 +19,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ff9-dL-ofO">
-                                <rect key="frame" x="101" y="402" width="172" height="99"/>
+                                <rect key="frame" x="45" y="401" width="291" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="56"/>
-                                <state key="normal" title="N"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="60"/>
+                                <state key="normal" title="Normal"/>
                                 <connections>
                                     <action selector="NextViewWithNum:" destination="zeP-h8-1W1" eventType="touchUpInside" id="M1d-1O-IAv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sp0-vN-R4x">
-                                <rect key="frame" x="101" y="530" width="172" height="99"/>
+                                <rect key="frame" x="85" y="528" width="205" height="99"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="56"/>
-                                <state key="normal" title="H"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="70"/>
+                                <state key="normal" title="Hard"/>
                                 <connections>
                                     <action selector="NextViewWithNum:" destination="zeP-h8-1W1" eventType="touchUpInside" id="ucw-9w-LUj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1r-pK-hHC">
-                                <rect key="frame" x="101" y="284" width="172" height="99"/>
+                                <rect key="frame" x="21" y="272" width="333" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="56"/>
-                                <state key="normal" title="E"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="58"/>
+                                <state key="normal" title="Easy"/>
                                 <connections>
                                     <action selector="NextViewWithNum:" destination="zeP-h8-1W1" eventType="touchUpInside" id="wOm-Co-z9A"/>
                                 </connections>
@@ -49,6 +49,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="uNd-S3-yRY"/>
                     </view>
+                    <connections>
+                        <outlet property="EasyButton" destination="B1r-pK-hHC" id="Ljr-Fw-C3G"/>
+                        <outlet property="HardButton" destination="sp0-vN-R4x" id="3Iq-Ib-pBs"/>
+                        <outlet property="NormalButton" destination="Ff9-dL-ofO" id="XMS-9k-xXS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fyO-ji-YuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

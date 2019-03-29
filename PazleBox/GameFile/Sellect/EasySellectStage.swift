@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FlatUIKit
 
 class SellectStageEasy: UIScrollView {
    
@@ -16,6 +17,25 @@ class SellectStageEasy: UIScrollView {
    
    override init(frame: CGRect) {
       super.init(frame: frame)
+      self.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
+      
+   }
+   
+   private func InitBackButton() {
+      let FirstX = Internal
+      let FirstY = Internal
+      let Frame = CGRect(x: FirstX, y: FirstY, width: ButtonSize, height: ButtonSize / 2)
+      let BackB = FUIButton(frame: Frame)
+      BackB.setTitle("←", for: UIControl.State.normal)
+      BackB.buttonColor = UIColor.greenSea()
+      BackB.shadowColor = UIColor.greenSea()
+      BackB.shadowHeight = 3.0
+      BackB.cornerRadius = 6.0
+      BackB.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
+      BackB.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
+      BackB.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
+      BackB.addTarget(self, action: #selector(self.TapBackButton(_:)), for: UIControl.Event.touchUpInside)
+      self.addSubview(BackB)
    }
    
    private func InitButton() {
@@ -25,7 +45,7 @@ class SellectStageEasy: UIScrollView {
          let y = (tmp - 1) / 4
          
          let FirstX = Internal * CGFloat(x + 1) + ButtonSize * CGFloat(x)
-         let FirstY = Internal * CGFloat(y + 1) + ButtonSize * CGFloat(y)
+         let FirstY = Internal * CGFloat(y + 1) + ButtonSize * CGFloat(y) + ButtonSize
          
          let Frame = CGRect(x: FirstX, y: FirstY, width: ButtonSize, height: ButtonSize)
          
@@ -47,9 +67,17 @@ class SellectStageEasy: UIScrollView {
       NotificationCenter.default.post(name: .SellectStage, object: nil, userInfo: SentObject)
    }
    
+   private func GameSellectBackPOSTMotification() {
+      NotificationCenter.default.post(name: .SellectBack, object: nil, userInfo: nil)
+   }
+   
    @objc func SellectButton (_ sender: UIButton) {
       print("押されたボタン: \(sender.tag)")
       GameSerPOSTMotification(StageNum: sender.tag)
+   }
+   
+   @objc func TapBackButton (_ sender: UIButton) {
+      GameSellectBackPOSTMotification()
    }
    
    
@@ -61,6 +89,7 @@ class SellectStageEasy: UIScrollView {
       ButtonSize = frame.width / 5
       Internal = ButtonSize / 5
       
+      self.InitBackButton()
       self.InitButton()
    }
    

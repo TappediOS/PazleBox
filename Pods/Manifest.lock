@@ -1,4 +1,7 @@
 PODS:
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
   - Fabric (1.9.0)
@@ -23,6 +26,7 @@ PODS:
     - FirebaseCore (~> 5.2)
     - GoogleUtilities/Environment (~> 5.2)
     - GoogleUtilities/UserDefaults (~> 5.2)
+  - FlatUIKit (1.6.2)
   - GoogleAppMeasurement (5.8.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
@@ -57,20 +61,24 @@ PODS:
   - TapticEngine (1.2.0)
 
 DEPENDENCIES:
+  - ChameleonFramework/Swift
   - Crashlytics
   - Firebase/Core
+  - FlatUIKit
   - SAConfettiView (from `https://github.com/gokhanakkurt/SAConfettiView`, branch `swift3`)
   - SpriteKitEasingSwift
   - TapticEngine
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - ChameleonFramework
     - Crashlytics
     - Fabric
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
     - FirebaseInstanceID
+    - FlatUIKit
     - GoogleAppMeasurement
     - GoogleUtilities
     - nanopb
@@ -88,12 +96,14 @@ CHECKOUT OPTIONS:
     :git: https://github.com/gokhanakkurt/SAConfettiView
 
 SPEC CHECKSUMS:
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   Firebase: c60d49e9c2630875a96207d15e2affb8364996d1
   FirebaseAnalytics: fd72a26bf8dac84cefba2f0864366f718555a5b0
   FirebaseCore: 22a79a961c3951ef2f77b67bfbc99e454247b319
   FirebaseInstanceID: cf488df2f4b79782f0e430b04a0e17c0aa7979b2
+  FlatUIKit: 1b41f0d4952ce8d970d8479ce79df54a960242c4
   GoogleAppMeasurement: 1624046ab1bcc5e170061a56ef5679000b079c8e
   GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
@@ -101,6 +111,6 @@ SPEC CHECKSUMS:
   SpriteKitEasingSwift: d389a59f5531399b69cc9c31f52c2e279c813688
   TapticEngine: ed6f5b4a2e9aa46d4e8fa69a72a7a0b6719bf8ac
 
-PODFILE CHECKSUM: b59e0142863d2d639c13cd14b56c270889871aa0
+PODFILE CHECKSUM: ee047f586a30c4c7e3dae8f707466b026a0a4ed1
 
 COCOAPODS: 1.6.0

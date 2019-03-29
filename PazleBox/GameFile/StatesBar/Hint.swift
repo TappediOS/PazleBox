@@ -67,10 +67,10 @@ class HintNode : SKSpriteNode {
    }
    
    public func DissMisLile1() {
-      let LargeAction = SKEase.scale(easeFunction: .curveTypeCubic, easeType: .easeTypeIn, time: 0.25, from: 1, to: 2)
+      let LargeAction = SKEase.scale(easeFunction: .curveTypeCubic, easeType: .easeTypeIn, time: 0.35, from: 1, to: 2)
       
-      let FadeOut = SKEase.fade(easeFunction: .curveTypeExpo, easeType: .easeTypeOut, time: 0.5, fromValue: 1, toValue: 0.04)
-      let SmallAction = SKEase.scale(easeFunction: .curveTypeQuartic, easeType: .easeTypeOut, time: 0.5, from: 1.3, to: 0.2)
+      let FadeOut = SKEase.fade(easeFunction: .curveTypeExpo, easeType: .easeTypeOut, time: 0.45, fromValue: 1, toValue: 0.04)
+      let SmallAction = SKEase.scale(easeFunction: .curveTypeQuartic, easeType: .easeTypeOut, time: 0.45, from: 1.3, to: 0.2)
       
       let groupAktion = SKAction.group([FadeOut, SmallAction])
       

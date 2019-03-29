@@ -11,6 +11,7 @@ import GameplayKit
 import UIKit
 import SAConfettiView
 import AudioToolbox
+import FlatUIKit
 
 
 class GameScene: SKScene {

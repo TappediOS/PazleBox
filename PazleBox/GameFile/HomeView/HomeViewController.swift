@@ -8,8 +8,28 @@
 
 import Foundation
 import UIKit
+import ChameleonFramework
 
 class HomeViewController: UIViewController {
+   
+   
+   
+   @IBOutlet weak var EasyButton: UIButton!
+   
+   @IBOutlet weak var NormalButton: UIButton!
+   
+   @IBOutlet weak var HardButton: UIButton!
+   
+   private func InitButton() {
+      EasyButton.backgroundColor = UIColor.flatLime()
+      NormalButton.backgroundColor = UIColor.flatLime()
+      HardButton.backgroundColor = UIColor.flatLime()
+      
+      EasyButton.setTitleColor(UIColor.flatWhite(), for: .normal)
+      NormalButton.setTitleColor(UIColor.flatWhite(), for: .normal)
+      HardButton.setTitleColor(UIColor.flatWhite(), for: .normal)
+   }
+   
    
    @IBAction func NextViewWithNum(_ sender: UIButton) {
       
@@ -42,7 +62,9 @@ class HomeViewController: UIViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
-
+         self.view.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
+      
+      InitButton()
    }
 
 }

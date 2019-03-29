@@ -8,8 +8,9 @@
 
 import Foundation
 import UIKit
+import FlatUIKit
 
-class EasyButton: UIButton {
+class EasyButton: FUIButton {
    
    
    required init(coder aDecoder: NSCoder) {
@@ -18,13 +19,23 @@ class EasyButton: UIButton {
    
    public func Init(Tag: Int) {
       self.tag = Tag
+      
+      setTitle("Stage\(Tag)", for: UIControl.State.normal)
+      buttonColor = UIColor.turquoise()
+      shadowColor = UIColor.greenSea()
+      shadowHeight = 3.0
+      cornerRadius = 6.0
+      titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
+      setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
+      setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
+      
        
    }
    
    override init(frame: CGRect) {
       super.init(frame: frame)
       
-      self.backgroundColor = UIColor.black
+      //self.backgroundColor = UIColor.black
       
    }
 }
