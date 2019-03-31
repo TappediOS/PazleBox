@@ -34,6 +34,8 @@ class GameScene: SKScene {
    let Debug = true
    
    var HintButtonNode: HintNode?
+   var RePutButtonNode: RePutButton?
+   var PousePuttonNode: PouseNode?
    
    
    var PostedStageNum = 1
@@ -81,6 +83,8 @@ class GameScene: SKScene {
    private func InitRePutButton(SizeX: CGFloat?, SizeY: CGFloat?){
       let RePutB = RePutButton(ViewX: Int(SizeX!), ViewY: Int(SizeY!))
       self.addChild(RePutB)
+      
+      RePutButtonNode = RePutB
    }
    
    private func InitHintButton(SizeX: CGFloat?, SizeY: CGFloat?){
@@ -95,6 +99,8 @@ class GameScene: SKScene {
    private func InitPouseButton(SizeX: CGFloat?, SizeY: CGFloat?){
       let Pouse = PouseNode(ViewX: Int(SizeX!), ViewY: Int(SizeY!))
       self.addChild(Pouse)
+      
+      PousePuttonNode = Pouse
    }
    
    private func InitStageNumber() {
@@ -232,10 +238,24 @@ class GameScene: SKScene {
    }
    
    
+   private func LockAllNode() {
+      
+      for Puzzle in PuzzleBox {
+         (Puzzle as! puzzle).LockPuzzle()
+      }
+      
+      RePutButtonNode?.LockPuzzle()
+      HintButtonNode?.LockPuzzle()
+      PousePuttonNode?.LockPuzzle()
+   }
+   
    
    //MARK:- ゲーム終了。
    private func FinishGame() {
       print("game Set")
+      
+      LockAllNode()
+      
       GameSerPOSTMotification()
    }
    

@@ -38,6 +38,8 @@ class puzzle: SKSpriteNode {
    private var PuzzleColor: String
    private var BirthDayNum: Int
    
+   private var isLocked = false
+   
    
    private var AlphaNode = SKSpriteNode()
    
@@ -330,10 +332,18 @@ class puzzle: SKSpriteNode {
       FinishMoveTilePOSTMotification()
    }
    
+   public func LockPuzzle() {
+      self.isLocked = true
+   }
+   
    
    
    //MARK:- タッチイベント
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      
+      if isLocked == true {
+         return
+      }
       
       self.zPosition += 2
       

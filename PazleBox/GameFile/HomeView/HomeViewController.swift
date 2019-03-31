@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import ChameleonFramework
+import Lottie
 
 class HomeViewController: UIViewController {
    
@@ -65,6 +66,21 @@ class HomeViewController: UIViewController {
          self.view.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
       
       InitButton()
+      showAnimation()
+   }
+   
+   func showAnimation() {
+      let animationView = AnimationView(name: "StarStar")
+      animationView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height / 2)
+      animationView.center = self.view.center
+
+      animationView.contentMode = .scaleAspectFit
+      animationView.animationSpeed = 1
+      animationView.isUserInteractionEnabled = false
+      
+      view.addSubview(animationView)
+      
+      animationView.play()
    }
 
 }

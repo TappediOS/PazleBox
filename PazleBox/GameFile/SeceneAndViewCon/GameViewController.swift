@@ -10,9 +10,9 @@ import UIKit
 import SpriteKit
 import GameplayKit
 import SAConfettiView
+import Firebase
 
-
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
    
    var GameClearView = SAConfettiView()
    let GameClearVeiwIntensity: Float = 0.65
@@ -21,10 +21,13 @@ class GameViewController: UIViewController {
    var StageLevel: StageLevel = .Normal
    
    var SellectStageNumber = 0
-   
 
-   
    var EasySelect = SellectStageEasy()
+   
+   
+   var Reward: GADRewardBasedVideoAd!
+   let REWARD_TEST_ID = "ca-app-pub-3940256099942544/1712485313"
+   let REWARD_ID = "ca-app-pub-1460017825820383/8389602396"
    
    //MARK: user defaults
    var userDefaults: UserDefaults = UserDefaults.standard
@@ -38,6 +41,22 @@ class GameViewController: UIViewController {
       InitStageSellectView()
       
       InitGameClearView()
+      
+      InitRewardView()
+   }
+   
+   private func InitRewardView() {
+      
+      Reward = GADRewardBasedVideoAd.sharedInstance()
+      Reward?.delegate = self
+      
+      #if DEBUG
+      print("リワード:テスト環境")
+      Reward.load(GADRequest(), withAdUnitID: REWARD_TEST_ID)
+      #else
+      print("リワード:本番環境")
+      Reward.load(GADRequest(), withAdUnitID: REWARD_ID)
+      #endif
    }
    
    private func InitStageSellectView() {
@@ -77,7 +96,7 @@ class GameViewController: UIViewController {
    }
 
    
-   func InitGameViewAndShowView() {
+   private func InitGameViewAndShowView() {
       
       print("GameSene，GameViewの初期化開始")
       if let scene = GKScene(fileNamed: "GameScene") {
@@ -144,6 +163,7 @@ class GameViewController: UIViewController {
       GameClearView = SAConfettiView(frame: Rect)
       GameClearView.intensity = GameClearVeiwIntensity
       GameClearView.type! = .star
+      GameClearView.isUserInteractionEnabled = false
    }
    
    private func StartConfetti(){
@@ -193,6 +213,56 @@ class GameViewController: UIViewController {
          print("通知受け取ったけど、中身nilやった。")
       }
    }
+   
+   
+   
+   
+   
+   
+   //AD
+   func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd, didRewardUserWith reward: GADAdReward) {
+      print("Reward received with currency: \(reward.type), amount \(reward.amount).")
+   }
+   
+   func rewardBasedVideoAdDidReceive(_ rewardBasedVideoAd:GADRewardBasedVideoAd) {
+      print("Reward based video ad is received.")
+   }
+   
+   func rewardBasedVideoAdDidOpen(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+      print("Opened reward based video ad.")
+   }
+   
+   func rewardBasedVideoAdDidStartPlaying(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+      print("Reward based video ad started playing.")
+   }
+   
+   func rewardBasedVideoAdDidCompletePlaying(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+      print("Reward based video ad has completed.")
+   }
+   
+   func rewardBasedVideoAdDidClose(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+      #if DEBUG
+      print("リワード再読み込み:テスト環境")
+      Reward.load(GADRequest(), withAdUnitID: REWARD_TEST_ID)
+      #else
+      print("リワード再読み込み:本番環境")
+      Reward.load(GADRequest(), withAdUnitID: REWARD_ID)
+      #endif
+   }
+   
+   func rewardBasedVideoAdWillLeaveApplication(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+      print("Reward based video ad will leave application.")
+   }
+   
+   func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd,
+                           didFailToLoadWithError error: Error) {
+      print("Reward based video ad failed to load.")
+   }
+   
+   
+   
+   
+   
    
    @objc func SellectBackNotification(notification: Notification) -> Void {
       

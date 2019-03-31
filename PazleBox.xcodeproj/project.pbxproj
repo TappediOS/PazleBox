@@ -92,6 +92,7 @@
 		BF33300222492B31009B3042 /* ExGameSeceneEasyP2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33300122492B31009B3042 /* ExGameSeceneEasyP2.swift */; };
 		BF33300422492B3E009B3042 /* ExGameSecenNormalP2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33300322492B3E009B3042 /* ExGameSecenNormalP2.swift */; };
 		BF33300622492B4C009B3042 /* ExGameSeceneHardP2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33300522492B4C009B3042 /* ExGameSeceneHardP2.swift */; };
+		BF3EF63B2250988700D5534A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF3EF63A2250988700D5534A /* GoogleService-Info.plist */; };
 		BF46109022352423006F3DF1 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46108F22352423006F3DF1 /* Puzzle.swift */; };
 		BF519C69223CCBDE0087A4AC /* GetTilePOSITION.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */; };
 		BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C6A223F58920087A4AC /* ExNotification.swift */; };
@@ -171,6 +172,8 @@
 		BF7CD9642240BBD500F8302B /* 23p1Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD9522240BBD300F8302B /* 23p1Green.png */; };
 		BF7CD9652240BBD500F8302B /* 23p5Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD9532240BBD400F8302B /* 23p5Blue.png */; };
 		BF7CD9662240BBD500F8302B /* 23p6Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD9542240BBD500F8302B /* 23p6Blue.png */; };
+		BF8A464E2250829C0016F801 /* StarStar.json in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464D2250829C0016F801 /* StarStar.json */; };
+		BF8A4650225088EE0016F801 /* NoLike.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464F225088EE0016F801 /* NoLike.png */; };
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
 		BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D422428287007C8FA1 /* Assets.xcassets */; };
 		BFC6C5D9224283BD007C8FA1 /* Test.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D8224283BD007C8FA1 /* Test.sks */; };
@@ -286,7 +289,6 @@
 		BFCE264A224A58A60099A775 /* 32p9Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE2638224A58A50099A775 /* 32p9Blue.png */; };
 		BFCE264B224A58A60099A775 /* 32p12Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE2639224A58A60099A775 /* 32p12Red.png */; };
 		BFFA2A7B22336D760023BB71 /* SpriteKitEasingSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */; };
-		BFFA2A7F223372520023BB71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFFA2A7E223372520023BB71 /* GoogleService-Info.plist */; };
 		BFFA2A81223380720023BB71 /* EasyGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A80223380720023BB71 /* EasyGet.swift */; };
 		BFFA2A86223383B60023BB71 /* Normal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A85223383B60023BB71 /* Normal.swift */; };
 		BFFA2A88223384120023BB71 /* NormalCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A87223384120023BB71 /* NormalCreate.swift */; };
@@ -388,6 +390,7 @@
 		BF33300122492B31009B3042 /* ExGameSeceneEasyP2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExGameSeceneEasyP2.swift; sourceTree = "<group>"; };
 		BF33300322492B3E009B3042 /* ExGameSecenNormalP2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExGameSecenNormalP2.swift; sourceTree = "<group>"; };
 		BF33300522492B4C009B3042 /* ExGameSeceneHardP2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExGameSeceneHardP2.swift; sourceTree = "<group>"; };
+		BF3EF63A2250988700D5534A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		BF46108F22352423006F3DF1 /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
 		BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTilePOSITION.swift; sourceTree = "<group>"; };
 		BF519C6A223F58920087A4AC /* ExNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNotification.swift; sourceTree = "<group>"; };
@@ -467,6 +470,8 @@
 		BF7CD9522240BBD300F8302B /* 23p1Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 23p1Green.png; sourceTree = "<group>"; };
 		BF7CD9532240BBD400F8302B /* 23p5Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 23p5Blue.png; sourceTree = "<group>"; };
 		BF7CD9542240BBD500F8302B /* 23p6Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 23p6Blue.png; sourceTree = "<group>"; };
+		BF8A464D2250829C0016F801 /* StarStar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StarStar.json; sourceTree = "<group>"; };
+		BF8A464F225088EE0016F801 /* NoLike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoLike.png; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
 		BFC6C5D422428287007C8FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC6C5D8224283BD007C8FA1 /* Test.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Test.sks; sourceTree = "<group>"; };
@@ -583,7 +588,6 @@
 		BFCE2639224A58A60099A775 /* 32p12Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32p12Red.png; sourceTree = "<group>"; };
 		BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpriteKitEasingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA2A7C22336D760023BB71 /* TapticEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TapticEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFFA2A7E223372520023BB71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		BFFA2A80223380720023BB71 /* EasyGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyGet.swift; sourceTree = "<group>"; };
 		BFFA2A85223383B60023BB71 /* Normal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Normal.swift; sourceTree = "<group>"; };
 		BFFA2A87223384120023BB71 /* NormalCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalCreate.swift; sourceTree = "<group>"; };
@@ -637,6 +641,7 @@
 				BF332F7B22491767009B3042 /* Puzzle */,
 				BF332F7C224917D2009B3042 /* Sellect */,
 				BF60AC4F224C8EDA00D441D6 /* StatesBar */,
+				BF8A464C225081E90016F801 /* LottieJSON */,
 				BF332F7E22491850009B3042 /* HomeView */,
 				BF332F7D224917F3009B3042 /* Extention */,
 			);
@@ -684,7 +689,7 @@
 				BF2674ED2227B6A3003D370F /* Main.storyboard */,
 				BF2674F02227B6A4003D370F /* Assets.xcassets */,
 				BF2674F22227B6A4003D370F /* LaunchScreen.storyboard */,
-				BFFA2A7E223372520023BB71 /* GoogleService-Info.plist */,
+				BF3EF63A2250988700D5534A /* GoogleService-Info.plist */,
 				BF2674F52227B6A4003D370F /* Info.plist */,
 			);
 			path = PazleBox;
@@ -889,6 +894,7 @@
 				BF60AC62224DD1D900D441D6 /* Pouse.png */,
 				BF60AC65224DD1DA00D441D6 /* NoHint.png */,
 				BF60AC63224DD1D900D441D6 /* refresh-512.png */,
+				BF8A464F225088EE0016F801 /* NoLike.png */,
 				BF60AC6C224DD33A00D441D6 /* Like.png */,
 				BF60AC64224DD1DA00D441D6 /* RePut.png */,
 			);
@@ -1031,6 +1037,14 @@
 				BFCE2639224A58A60099A775 /* 32p12Red.png */,
 			);
 			path = P32;
+			sourceTree = "<group>";
+		};
+		BF8A464C225081E90016F801 /* LottieJSON */ = {
+			isa = PBXGroup;
+			children = (
+				BF8A464D2250829C0016F801 /* StarStar.json */,
+			);
+			path = LottieJSON;
 			sourceTree = "<group>";
 		};
 		BFC6C5D722428296007C8FA1 /* Particle */ = {
@@ -1344,7 +1358,6 @@
 				BF2674E82227B6A3003D370F /* Actions.sks in Resources */,
 				BFCE25C1224A466B0099A775 /* 33p6Blue.png in Resources */,
 				BFCE264B224A58A60099A775 /* 32p12Red.png in Resources */,
-				BFFA2A7F223372520023BB71 /* GoogleService-Info.plist in Resources */,
 				BFCE25AE224A466B0099A775 /* 33p12Green.png in Resources */,
 				BFCE25DB224A466B0099A775 /* 33p14Blue.png in Resources */,
 				BFCE2645224A58A60099A775 /* 32p10Red.png in Resources */,
@@ -1355,6 +1368,7 @@
 				BFCE25D6224A466B0099A775 /* 33p15Red.png in Resources */,
 				BF7CD95C2240BBD500F8302B /* 23p3Red.png in Resources */,
 				BFCE25E1224A466B0099A775 /* 33p2Blue.png in Resources */,
+				BF3EF63B2250988700D5534A /* GoogleService-Info.plist in Resources */,
 				BF7CD9602240BBD500F8302B /* 23p5Green.png in Resources */,
 				BFCE25C3224A466B0099A775 /* 33p8Red.png in Resources */,
 				BF640C062244F8FD00333782 /* 32p2Blue.png in Resources */,
@@ -1373,6 +1387,7 @@
 				BF7CD9562240BBD500F8302B /* 23p6Red.png in Resources */,
 				BFCE25B6224A466B0099A775 /* 33p8Green.png in Resources */,
 				BFCE2621224A557B0099A775 /* 23p9Red.png in Resources */,
+				BF8A4650225088EE0016F801 /* NoLike.png in Resources */,
 				BF7CD9622240BBD500F8302B /* 23p1Red.png in Resources */,
 				BF640BF82244F8FD00333782 /* 32p2Red.png in Resources */,
 				BFCE2624224A557B0099A775 /* 23p12Blue.png in Resources */,
@@ -1419,6 +1434,7 @@
 				BF640BFA2244F8FD00333782 /* 32p5Red.png in Resources */,
 				BF7CD9372240B89800F8302B /* 22p4Red.png in Resources */,
 				BF7CD95D2240BBD500F8302B /* 23p2Red.png in Resources */,
+				BF8A464E2250829C0016F801 /* StarStar.json in Resources */,
 				BFFA2A992234D9D30023BB71 /* BaseTile.png in Resources */,
 				BF640C052244F8FD00333782 /* 32p3Blue.png in Resources */,
 				BF7CD95F2240BBD500F8302B /* 23p3Green.png in Resources */,
@@ -1498,6 +1514,7 @@
 				"${BUILT_PRODUCTS_DIR}/SAConfettiView/SAConfettiView.framework",
 				"${BUILT_PRODUCTS_DIR}/SpriteKitEasingSwift/SpriteKitEasingSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/TapticEngine/TapticEngine.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1510,6 +1527,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAConfettiView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpriteKitEasingSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TapticEngine.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

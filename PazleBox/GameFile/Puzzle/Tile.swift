@@ -136,19 +136,15 @@ class GameTile: SKSpriteNode {
          var TmpPoint = TouchEndPoint
          TmpPoint.x = TmpPoint.x - self.TouchBegan.x
          TmpPoint.y = TmpPoint.y - self.TouchBegan.y
-         //print("touch End Point = \(TouchEndPoint)")
-//         if LengthOfTwoPoint(Start: TouchBegan, End: TouchEndPoint) == false {
-//            return
-//         }
+
          return
       }else{
          print("タッチ離したあと、Nilでした。")
          return
       }
-      
-      
    }
    
    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
    }
+
 }

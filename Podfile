@@ -14,10 +14,12 @@ target 'PazleBox' do
 
   pod 'ChameleonFramework/Swift'
   pod 'FlatUIKit'
+  pod 'lottie-ios'
 
 
- pod 'Firebase/Core'
- pod 'Crashlytics'
+  pod 'Firebase/Core'
+  pod 'Crashlytics'
+  pod 'Firebase/AdMob'
 
 
 end

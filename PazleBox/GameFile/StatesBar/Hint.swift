@@ -19,6 +19,10 @@ class HintNode : SKSpriteNode {
    private var TouchBegan = CGPoint(x: 0, y: 0)
    private var AreYouLarge: Bool = false
    
+   private var LockedLastHint = true
+   
+   private var isLocked = false
+   
    var CountOfHint = 2
    
    init(ViewX: Int, ViewY: Int) {
@@ -43,7 +47,7 @@ class HintNode : SKSpriteNode {
       self.isUserInteractionEnabled = true
       
       let LikeSize = CGSize(width: CGFloat(PazzleSizeFound / 2), height: CGFloat(PazzleSizeFound / 2))
-      Circ1 = SKSpriteNode(texture: SKTexture(imageNamed: "Like.png"), size: LikeSize)
+      Circ1 = SKSpriteNode(texture: SKTexture(imageNamed: "NoLike"), size: LikeSize)
       Circ2 = SKSpriteNode(texture: SKTexture(imageNamed: "Like.png"), size: LikeSize)
       
       
@@ -117,8 +121,20 @@ class HintNode : SKSpriteNode {
       self.texture = SKTexture(imageNamed: "NoHint.png")
    }
    
+   public func LockPuzzle() {
+      self.isLocked = true
+   }
+   
+   public func EnableLastHint() {
+      Circ1.texture = SKTexture(imageNamed: "NoLike")
+   }
+   
    //MARK:- タッチイベント
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      
+      if isLocked == true {
+         return
+      }
       
       if let TouchStartPoint = touches.first?.location(in: self) {
          self.TouchBegan = TouchStartPoint
@@ -151,6 +167,8 @@ class HintNode : SKSpriteNode {
          return
       }
    }
+   
+   
    
    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
       

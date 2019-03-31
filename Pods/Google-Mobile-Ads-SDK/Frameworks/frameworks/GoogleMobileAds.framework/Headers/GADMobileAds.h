@@ -12,8 +12,6 @@
 #import <GoogleMobileAds/GADRequestConfiguration.h>
 #import <GoogleMobileAds/GoogleMobileAdsDefines.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 /// A block called with the initialization status when [GADMobileAds startWithCompletionHandler:]
 /// completes or times out.
 typedef void (^GADInitializationCompletionHandler)(GADInitializationStatus *_Nonnull status);
@@ -22,10 +20,7 @@ typedef void (^GADInitializationCompletionHandler)(GADInitializationStatus *_Non
 @interface GADMobileAds : NSObject
 
 /// Returns the shared GADMobileAds instance.
-+ (GADMobileAds *)sharedInstance;
-
-/// Configures the SDK using the settings associated with the given application ID.
-+ (void)configureWithApplicationID:(NSString *)applicationID;
++ (nonnull GADMobileAds *)sharedInstance;
 
 /// Disables automated in app purchase (IAP) reporting. Must be called before any IAP transaction is
 /// initiated. IAP reporting is used to track IAP ad conversions. Do not disable reporting if you
@@ -43,16 +38,16 @@ typedef void (^GADInitializationCompletionHandler)(GADInitializationStatus *_Non
 /// volumes). Defaults to 1.0.
 @property(nonatomic, assign) float applicationVolume;
 
-/// Indicates if the application's audio is muted. Affects initial mute state for all ads. Use this
-/// method only if your application has its own volume controls (e.g., custom music or sound effect
-/// muting). Defaults to NO.
+/// Indicates whether the application's audio is muted. Affects initial mute state for all ads. Use
+/// this method only if your application has its own volume controls (e.g., custom music or sound
+/// effect muting). Defaults to NO.
 @property(nonatomic, assign) BOOL applicationMuted;
 
 /// Manages the Google Mobile Ads SDK's audio and video settings.
-@property(nonatomic, readonly, strong) GADAudioVideoManager *audioVideoManager;
+@property(nonatomic, readonly, strong, nonnull) GADAudioVideoManager *audioVideoManager;
 
-/// Request configuration common to all ad requests.
-@property(nonatomic, readonly, strong) GADRequestConfiguration *requestConfiguration;
+/// Request configuration that is common to all requests.
+@property(nonatomic, readonly, strong, nonnull) GADRequestConfiguration *requestConfiguration;
 
 /// Initialization status of the ad networks available to the Google Mobile Ads SDK.
 @property(nonatomic, nonnull, readonly) GADInitializationStatus *initializationStatus;
@@ -72,6 +67,10 @@ typedef void (^GADInitializationCompletionHandler)(GADInitializationStatus *_Non
 /// request if this method is not called.
 - (void)startWithCompletionHandler:(nullable GADInitializationCompletionHandler)completionHandler;
 
-@end
+#pragma mark Deprecated
 
-NS_ASSUME_NONNULL_END
+/// Configures the SDK using the settings associated with the given application ID.
++ (void)configureWithApplicationID:(nonnull NSString *)applicationID
+    GAD_DEPRECATED_MSG_ATTRIBUTE("Use [GADMobileAds.sharedInstance startWithCompletionHandler:]");
+
+@end

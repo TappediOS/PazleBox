@@ -16,6 +16,8 @@ class PouseNode : SKSpriteNode {
    private var TouchBegan = CGPoint(x: 0, y: 0)
    private var AreYouLarge: Bool = false
    
+   private var isLocked = false
+   
    
    init(ViewX: Int, ViewY: Int) {
       
@@ -44,8 +46,16 @@ class PouseNode : SKSpriteNode {
       NotificationCenter.default.post(name: .Pouse, object: nil, userInfo: nil)
    }
    
+   public func LockPuzzle() {
+      self.isLocked = true
+   }
+   
    //MARK:- タッチイベント
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      
+      if isLocked == true {
+         return
+      }
       
       if let TouchStartPoint = touches.first?.location(in: self) {
          self.TouchBegan = TouchStartPoint

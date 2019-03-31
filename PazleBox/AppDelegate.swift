@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import AVFoundation
+import Crashlytics
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,12 +34,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       FirebaseApp.configure(options: fileopts!)
       #endif
       
+      
       //--------------------FIREBASE-----------------------//
       
       //-----------バックグラウンドでの音の再生を許可------------//
       let audioSession : AVAudioSession = AVAudioSession.sharedInstance()
       try! audioSession.setCategory(AVAudioSession.Category.ambient)
       //-----------バックグラウンドでの音の再生を許可------------//
+      
+      
+      GADMobileAds.sharedInstance().start(completionHandler: nil)
 
 
       return true
