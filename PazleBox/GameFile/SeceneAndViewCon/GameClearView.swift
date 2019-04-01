@@ -52,6 +52,7 @@ class GameClearView: UIView {
    
    @objc func TapNextButton (_ sender: UIButton) {
       print("Tap NextButton")
+      StarView1.stop()
       StarView1.play()
    }
    

@@ -15,18 +15,15 @@ import Firebase
 class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
    
    var ConfettiView = SAConfettiView()
-   
    var ClearView: GameClearView?
    
    let GameClearVeiwIntensity: Float = 0.65
    var ShowGameClearView = false
    
    var StageLevel: StageLevel = .Normal
-   
    var SellectStageNumber = 0
 
    var EasySelect = SellectStageEasy()
-   
    var ViewFrame: CGRect?
    
    let StarAnimationBetTime = 0.45
@@ -200,15 +197,15 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
    
    
    private func StartStarAnimation() {
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.12) {
          self.ClearView?.StartAnimationView1()
       }
       
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.15 + StarAnimationBetTime) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.12 + StarAnimationBetTime) {
          self.ClearView?.StartAnimationView2()
       }
       
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.15 + StarAnimationBetTime * 2) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.12 + StarAnimationBetTime * 2) {
          self.ClearView?.StartAnimationView3()
       }
    }
