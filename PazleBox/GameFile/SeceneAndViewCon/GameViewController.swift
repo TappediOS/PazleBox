@@ -172,6 +172,8 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
       NotificationCenter.default.addObserver(self, selector: #selector(SellectStageNotification(notification:)), name: .SellectStage, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(SellectBackNotification(notification:)), name: .SellectBack, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(RewardADNotification(notification:)), name: .RewardAD, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(TapNextNotification(notification:)), name: .TapNext, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(TapHomeNotification(notification:)), name: .TapHome, object: nil)
       
    }
    
@@ -197,15 +199,15 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
    
    
    private func StartStarAnimation() {
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.12) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
          self.ClearView?.StartAnimationView1()
       }
       
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.12 + StarAnimationBetTime) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.05 + StarAnimationBetTime) {
          self.ClearView?.StartAnimationView2()
       }
       
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.12 + StarAnimationBetTime * 2) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.05 + StarAnimationBetTime * 2) {
          self.ClearView?.StartAnimationView3()
       }
    }
@@ -226,10 +228,9 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
          self.StartConfetti()
       }
       
+
       
-      
-      
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.65) {
          
          self.view.addSubview(self.ClearView!)
          self.view.bringSubviewToFront(self.ConfettiView)
@@ -240,13 +241,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
             self?.ShowGameClearViewWithStar()
          }
     
-         
-         
-         //FIXME:
-//         self.SellectStageNumber += 1
-//         self.userDefaults.set(self.SellectStageNumber, forKey: "StageNum")
-//         self.StopConfitti()
-//         self.InitGameViewAndShowView()
+   
       }
       return
    }
@@ -274,6 +269,35 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
 
       }
    }
+   
+   @objc func TapNextNotification(notification: Notification) -> Void {
+
+      ShowNextGame()
+   }
+   
+   @objc func TapHomeNotification(notification: Notification) -> Void {
+      
+      self.dismiss(animated: false, completion: nil)
+   }
+   
+   private func ShowNextGame() {
+      
+      
+      self.ClearView?.fadeOut(type: .Slow){ [weak self] in
+         self?.ClearView?.removeFromSuperview()
+      }
+    
+      self.SellectStageNumber += 1
+      self.userDefaults.set(self.SellectStageNumber, forKey: "StageNum")
+      self.StopConfitti()
+      self.InitGameViewAndShowView()
+      
+      self.InitGameClearView()
+   }
+   
+   
+   
+   
    
    
    

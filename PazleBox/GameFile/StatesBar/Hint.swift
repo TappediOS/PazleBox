@@ -156,6 +156,10 @@ class HintNode : SKSpriteNode {
    }
    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
       
+      if isLocked == true {
+         return
+      }
+      
       if let TouchEndPoint = touches.first?.location(in: self) {
          var TmpPoint = TouchEndPoint
          TmpPoint.x = TmpPoint.x - self.TouchBegan.x

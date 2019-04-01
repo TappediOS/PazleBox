@@ -12,7 +12,7 @@ import UIKit
 enum FadeType: TimeInterval {
    case
    Normal = 0.2,
-   Slow = 1
+   Slow = 0.85
    
 }
 

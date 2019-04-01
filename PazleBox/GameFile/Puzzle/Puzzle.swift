@@ -369,6 +369,10 @@ class puzzle: SKSpriteNode {
    }
    
    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+      
+      if isLocked == true {
+         return
+      }
 
       // タッチイベントを取得
       let touchEvent = touches.first!
@@ -394,6 +398,10 @@ class puzzle: SKSpriteNode {
       
    }
    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+      
+      if isLocked == true {
+         return
+      }
       
       self.zPosition -= 2
       
