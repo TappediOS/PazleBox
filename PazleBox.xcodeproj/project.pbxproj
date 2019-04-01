@@ -297,6 +297,8 @@
 		BFFA2A8E2234CC5F0023BB71 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A8D2234CC5F0023BB71 /* Tile.swift */; };
 		BFFA2A912234CF010023BB71 /* NullTile.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFA2A902234CF010023BB71 /* NullTile.png */; };
 		BFFA2A992234D9D30023BB71 /* BaseTile.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFA2A982234D9D30023BB71 /* BaseTile.png */; };
+		BFFB3AD52250F5E7000C90E1 /* GameClearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB3AD42250F5E7000C90E1 /* GameClearView.swift */; };
+		BFFB3AD722510716000C90E1 /* ExUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB3AD622510716000C90E1 /* ExUIView.swift */; };
 		C568DD1EF47C3315C5F1E752 /* Pods_PazleBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E806537451A9DDED852EEBA6 /* Pods_PazleBox.framework */; };
 /* End PBXBuildFile section */
 
@@ -596,6 +598,8 @@
 		BFFA2A8D2234CC5F0023BB71 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		BFFA2A902234CF010023BB71 /* NullTile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NullTile.png; sourceTree = "<group>"; };
 		BFFA2A982234D9D30023BB71 /* BaseTile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BaseTile.png; sourceTree = "<group>"; };
+		BFFB3AD42250F5E7000C90E1 /* GameClearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameClearView.swift; sourceTree = "<group>"; };
+		BFFB3AD622510716000C90E1 /* ExUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIView.swift; sourceTree = "<group>"; };
 		E806537451A9DDED852EEBA6 /* Pods_PazleBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PazleBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -782,6 +786,7 @@
 				BF332F8122492238009B3042 /* GetStage */,
 				BF2674E92227B6A3003D370F /* GameScene.swift */,
 				BF2674EB2227B6A3003D370F /* GameViewController.swift */,
+				BFFB3AD42250F5E7000C90E1 /* GameClearView.swift */,
 			);
 			path = SeceneAndViewCon;
 			sourceTree = "<group>";
@@ -812,6 +817,7 @@
 			isa = PBXGroup;
 			children = (
 				BF519C6A223F58920087A4AC /* ExNotification.swift */,
+				BFFB3AD622510716000C90E1 /* ExUIView.swift */,
 				BF519C7A223FA8D60087A4AC /* ExTextureName.swift */,
 				BF0FD35322436DF200E8F387 /* ExUIColor.swift */,
 				BF332F7F22491F8D009B3042 /* ExEnum.swift */,
@@ -1565,6 +1571,7 @@
 				BF1FF2B2223120650047ED23 /* AllStageInfomation.swift in Sources */,
 				BF332F762248C043009B3042 /* EasyButton.swift in Sources */,
 				BF640C0B2245103500333782 /* E2.swift in Sources */,
+				BFFB3AD722510716000C90E1 /* ExUIView.swift in Sources */,
 				BF1FF2B6223122C80047ED23 /* EasyCreate.swift in Sources */,
 				BF332FA0224926F7009B3042 /* E13.swift in Sources */,
 				BF332F882249235D009B3042 /* ExGameSeceneNorma.swift in Sources */,
@@ -1577,6 +1584,7 @@
 				BF332FBA2249278F009B3042 /* N6.swift in Sources */,
 				BF332F94224926DB009B3042 /* E7.swift in Sources */,
 				BF332F90224926CD009B3042 /* E5.swift in Sources */,
+				BFFB3AD52250F5E7000C90E1 /* GameClearView.swift in Sources */,
 				BF332FBE2249279C009B3042 /* N8.swift in Sources */,
 				BF60AC6F224DD62900D441D6 /* HintPuzzle.swift in Sources */,
 				BF0FD356224371CE00E8F387 /* PutParticle.swift in Sources */,

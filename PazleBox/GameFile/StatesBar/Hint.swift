@@ -126,7 +126,12 @@ class HintNode : SKSpriteNode {
    }
    
    public func EnableLastHint() {
-      Circ1.texture = SKTexture(imageNamed: "NoLike")
+      Circ1.texture = SKTexture(imageNamed: "Like")
+      self.LockedLastHint = false
+   }
+   
+   public func GetEnableLastHint() -> Bool {
+      return self.LockedLastHint
    }
    
    //MARK:- タッチイベント

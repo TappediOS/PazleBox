@@ -729,12 +729,27 @@ class GameScene: SKScene {
       if HintButtonNode?.CountOfHint == 2{
          SetHint1()
       }else{
+         if HintButtonNode?.GetEnableLastHint() == true{
+            AdShowOrNot()
+            return
+         }
          SetHint2()
       }
       
       GameSound.PlaySounds(Type: 3)
       HintButtonNode?.DecleCountOfHint()
       
+   }
+   
+   private func ShowAdPOSTMotification() {
+      
+      NotificationCenter.default.post(name: .RewardAD, object: nil, userInfo: nil)
+   }
+   
+   private func AdShowOrNot() {
+      
+      ShowAdPOSTMotification()
+      HintButtonNode?.EnableLastHint()
    }
    
    private func SetHint1() {

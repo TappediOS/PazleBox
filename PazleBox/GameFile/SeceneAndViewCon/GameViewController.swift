@@ -14,7 +14,10 @@ import Firebase
 
 class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
    
-   var GameClearView = SAConfettiView()
+   var ConfettiView = SAConfettiView()
+   
+   var ClearView: GameClearView?
+   
    let GameClearVeiwIntensity: Float = 0.65
    var ShowGameClearView = false
    
@@ -23,6 +26,10 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
    var SellectStageNumber = 0
 
    var EasySelect = SellectStageEasy()
+   
+   var ViewFrame: CGRect?
+   
+   let StarAnimationBetTime = 0.45
    
    
    var Reward: GADRewardBasedVideoAd!
@@ -35,28 +42,40 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
       
+      ViewFrame = self.view.frame
+      
       LoadStageLevel()
       
       InitNotificationCenter()
       InitStageSellectView()
       
+      InitConfettiView()
+      
       InitGameClearView()
       
-      InitRewardView()
+      //InitRewardView()
+      
+   }
+   
+   private func InitGameClearView() {
+      ClearView = GameClearView(frame: ViewFrame!)
    }
    
    private func InitRewardView() {
       
       Reward = GADRewardBasedVideoAd.sharedInstance()
       Reward?.delegate = self
-      
       #if DEBUG
       print("リワード:テスト環境")
       Reward.load(GADRequest(), withAdUnitID: REWARD_TEST_ID)
+      print("ID = \(REWARD_TEST_ID)")
       #else
       print("リワード:本番環境")
       Reward.load(GADRequest(), withAdUnitID: REWARD_ID)
+      print("ID = \(REWARD_ID)")
       #endif
+      
+
    }
    
    private func InitStageSellectView() {
@@ -155,27 +174,49 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
       NotificationCenter.default.addObserver(self, selector: #selector(GameClearCatchNotification(notification:)), name: .GameClear, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(SellectStageNotification(notification:)), name: .SellectStage, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(SellectBackNotification(notification:)), name: .SellectBack, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(RewardADNotification(notification:)), name: .RewardAD, object: nil)
       
    }
    
-   private func InitGameClearView() {
+   private func InitConfettiView() {
       let Rect = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-      GameClearView = SAConfettiView(frame: Rect)
-      GameClearView.intensity = GameClearVeiwIntensity
-      GameClearView.type! = .star
-      GameClearView.isUserInteractionEnabled = false
+      ConfettiView = SAConfettiView(frame: Rect)
+      ConfettiView.intensity = GameClearVeiwIntensity
+      ConfettiView.type! = .star
+      ConfettiView.isUserInteractionEnabled = false
    }
    
    private func StartConfetti(){
-      self.view?.addSubview(GameClearView)
-      GameClearView.startConfetti()
+      self.view?.addSubview(ConfettiView)
+      ConfettiView.startConfetti()
       ShowGameClearView = true
    }
    
    private func StopConfitti() {
-      GameClearView.stopConfetti()
+      ConfettiView.stopConfetti()
       ShowGameClearView = false
 //      GameClearView.removeFromSuperview()
+   }
+   
+   
+   private func StartStarAnimation() {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+         self.ClearView?.StartAnimationView1()
+      }
+      
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.15 + StarAnimationBetTime) {
+         self.ClearView?.StartAnimationView2()
+      }
+      
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.15 + StarAnimationBetTime * 2) {
+         self.ClearView?.StartAnimationView3()
+      }
+   }
+   
+   private func ShowGameClearViewWithStar() {
+      
+      self.StartStarAnimation()
+      
    }
    
    @objc func GameClearCatchNotification(notification: Notification) -> Void {
@@ -188,11 +229,27 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
          self.StartConfetti()
       }
       
-      DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-         self.SellectStageNumber += 1
-         self.userDefaults.set(self.SellectStageNumber, forKey: "StageNum")
-         self.StopConfitti()
-         self.InitGameViewAndShowView()
+      
+      
+      
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+         
+         self.view.addSubview(self.ClearView!)
+         self.view.bringSubviewToFront(self.ConfettiView)
+         self.ClearView?.AddStarView1()
+         self.ClearView?.AddStarView2()
+         self.ClearView?.AddStarView3()
+         self.ClearView?.fadeIn(type: .Slow) { [weak self] in
+            self?.ShowGameClearViewWithStar()
+         }
+    
+         
+         
+         //FIXME:
+//         self.SellectStageNumber += 1
+//         self.userDefaults.set(self.SellectStageNumber, forKey: "StageNum")
+//         self.StopConfitti()
+//         self.InitGameViewAndShowView()
       }
       return
    }
@@ -214,6 +271,16 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
       }
    }
    
+   @objc func RewardADNotification(notification: Notification) -> Void {
+      if Reward.isReady == true {
+         Reward.present(fromRootViewController: self)
+
+      }
+   }
+   
+   
+   
+   
    
    
    
@@ -226,6 +293,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
    
    func rewardBasedVideoAdDidReceive(_ rewardBasedVideoAd:GADRewardBasedVideoAd) {
       print("Reward based video ad is received.")
+      
    }
    
    func rewardBasedVideoAdDidOpen(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {

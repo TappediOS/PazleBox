@@ -19,4 +19,5 @@ extension Notification.Name {
    static let Hint = Notification.Name("Hint")
    static let Pouse = Notification.Name("Pouse")
    static let SellectBack = Notification.Name("SellectBack")
+   static let RewardAD = Notification.Name("RewardAD")
 }
