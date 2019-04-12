@@ -53,10 +53,6 @@ class GameClearView: UIView {
    @objc func TapNextButton (_ sender: UIButton) {
       print("Tap NextButton")
 
-      StarView1.play()
-      StarView2.play()
-      StarView3.play()
-      
       NotificationCenter.default.post(name: .TapNext, object: nil, userInfo: nil)
    }
    

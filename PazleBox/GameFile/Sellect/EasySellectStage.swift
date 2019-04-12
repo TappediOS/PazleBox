@@ -83,7 +83,7 @@ class SellectStageEasy: UIScrollView {
    
    public func InitView(frame: CGRect) {
       self.frame = frame
-      self.contentSize.height = 1000
+      self.contentSize.height = frame.height * 5
       self.backgroundColor = UIColor.white
       
       ButtonSize = frame.width / 5

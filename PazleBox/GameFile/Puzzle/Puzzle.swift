@@ -99,6 +99,7 @@ class puzzle: SKSpriteNode {
       let texture: SKTexture
       let TextureName = PuzzleStyle + PuzzleColor
       texture = SKTexture(imageNamed: TextureName)
+      texture.usesMipmaps = true
       
       SetParticles = PutParticle(PX: PX, PY: PY, CustNum: CustNum, ViewX: ViewX, ViewY: ViewY)
       

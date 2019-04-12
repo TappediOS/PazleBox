@@ -32,6 +32,7 @@ class RePutButton : SKSpriteNode {
       //MARK: 画像の初期化
       let texture: SKTexture
       texture = SKTexture(imageNamed: "RePut.png")
+      texture.usesMipmaps = true
       
       
       let NodeSize = CGSize(width: CGFloat(PazzleSizeFound), height: CGFloat(PazzleSizeFound))

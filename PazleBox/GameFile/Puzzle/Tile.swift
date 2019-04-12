@@ -72,6 +72,8 @@ class GameTile: SKSpriteNode {
          break;
       }
       
+      texture.usesMipmaps = true
+      
       let NodeSize = CGSize(width: CGFloat(TileWide), height: CGFloat(TileWide))
       super.init(texture: texture, color: UIColor.black, size: NodeSize)
       

@@ -78,6 +78,8 @@ class HintPuzzle: SKSpriteNode {
       let texture: SKTexture
       let TextureName = PuzzleStyle + PuzzleColor
       texture = SKTexture(imageNamed: TextureName)
+      texture.usesMipmaps = true
+      
       //texture.
 
       

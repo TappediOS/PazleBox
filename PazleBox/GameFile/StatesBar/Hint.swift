@@ -37,6 +37,7 @@ class HintNode : SKSpriteNode {
       //MARK: 画像の初期化
       let texture: SKTexture
       texture = SKTexture(imageNamed: "Hint.png")
+      texture.usesMipmaps = true
       
       
       let NodeSize = CGSize(width: CGFloat(PazzleSizeFound), height: CGFloat(PazzleSizeFound))

@@ -384,7 +384,6 @@ class GameScene: SKScene {
             }
          }
       }
-      
    }
    
    //MARK: Notificationの後に毎回来る

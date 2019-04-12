@@ -151,9 +151,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
    
    private func GetSceneScalaMode(DeviceHeight: CGFloat) -> SKSceneScaleMode {
       
-      if UIDevice.current.userInterfaceIdiom == .pad {
-         return .fill
-      }
+      if UIDevice.current.userInterfaceIdiom == .pad { return .fill }
       
       switch DeviceHeight {
       case 2436.0:
@@ -360,9 +358,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
    
 
 
-    override var shouldAutorotate: Bool {
-        return true
-    }
+    override var shouldAutorotate: Bool { return true }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
@@ -372,7 +368,5 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
         }
     }
 
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+    override var prefersStatusBarHidden: Bool { return true }
 }
