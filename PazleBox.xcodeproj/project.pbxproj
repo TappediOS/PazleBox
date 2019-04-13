@@ -172,6 +172,10 @@
 		BF7CD9642240BBD500F8302B /* 23p1Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD9522240BBD300F8302B /* 23p1Green.png */; };
 		BF7CD9652240BBD500F8302B /* 23p5Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD9532240BBD400F8302B /* 23p5Blue.png */; };
 		BF7CD9662240BBD500F8302B /* 23p6Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD9542240BBD500F8302B /* 23p6Blue.png */; };
+		BF7CE79022607FEA0040352D /* PouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7CE78F22607FEA0040352D /* PouseView.swift */; };
+		BF7CE793226083920040352D /* GoHomeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7CE792226083920040352D /* GoHomeNode.swift */; };
+		BF7CE7952260839E0040352D /* ReSumeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7CE7942260839E0040352D /* ReSumeNode.swift */; };
+		BF7CE797226083AD0040352D /* PouseTextureNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7CE796226083AD0040352D /* PouseTextureNode.swift */; };
 		BF8A464E2250829C0016F801 /* StarStar.json in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464D2250829C0016F801 /* StarStar.json */; };
 		BF8A4650225088EE0016F801 /* NoLike.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464F225088EE0016F801 /* NoLike.png */; };
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
@@ -472,6 +476,10 @@
 		BF7CD9522240BBD300F8302B /* 23p1Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 23p1Green.png; sourceTree = "<group>"; };
 		BF7CD9532240BBD400F8302B /* 23p5Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 23p5Blue.png; sourceTree = "<group>"; };
 		BF7CD9542240BBD500F8302B /* 23p6Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 23p6Blue.png; sourceTree = "<group>"; };
+		BF7CE78F22607FEA0040352D /* PouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouseView.swift; sourceTree = "<group>"; };
+		BF7CE792226083920040352D /* GoHomeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoHomeNode.swift; sourceTree = "<group>"; };
+		BF7CE7942260839E0040352D /* ReSumeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReSumeNode.swift; sourceTree = "<group>"; };
+		BF7CE796226083AD0040352D /* PouseTextureNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouseTextureNode.swift; sourceTree = "<group>"; };
 		BF8A464D2250829C0016F801 /* StarStar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StarStar.json; sourceTree = "<group>"; };
 		BF8A464F225088EE0016F801 /* NoLike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoLike.png; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
@@ -643,6 +651,7 @@
 				BF640C0722450FFA00333782 /* StageOfPuzzle */,
 				BF332F7A22491753009B3042 /* SeceneAndViewCon */,
 				BF332F7B22491767009B3042 /* Puzzle */,
+				BF7CE791226083690040352D /* PouseView */,
 				BF332F7C224917D2009B3042 /* Sellect */,
 				BF60AC4F224C8EDA00D441D6 /* StatesBar */,
 				BF8A464C225081E90016F801 /* LottieJSON */,
@@ -1043,6 +1052,17 @@
 				BFCE2639224A58A60099A775 /* 32p12Red.png */,
 			);
 			path = P32;
+			sourceTree = "<group>";
+		};
+		BF7CE791226083690040352D /* PouseView */ = {
+			isa = PBXGroup;
+			children = (
+				BF7CE78F22607FEA0040352D /* PouseView.swift */,
+				BF7CE796226083AD0040352D /* PouseTextureNode.swift */,
+				BF7CE792226083920040352D /* GoHomeNode.swift */,
+				BF7CE7942260839E0040352D /* ReSumeNode.swift */,
+			);
+			path = PouseView;
 			sourceTree = "<group>";
 		};
 		BF8A464C225081E90016F801 /* LottieJSON */ = {
@@ -1577,6 +1597,7 @@
 				BF332F882249235D009B3042 /* ExGameSeceneNorma.swift in Sources */,
 				BF519C69223CCBDE0087A4AC /* GetTilePOSITION.swift in Sources */,
 				BF1FF2AF22311FD40047ED23 /* StageContents.swift in Sources */,
+				BF7CE7952260839E0040352D /* ReSumeNode.swift in Sources */,
 				BF332F722248AEAF009B3042 /* StageLevel.swift in Sources */,
 				BFFA2A8E2234CC5F0023BB71 /* Tile.swift in Sources */,
 				BF332FA422492704009B3042 /* E15.swift in Sources */,
@@ -1585,6 +1606,7 @@
 				BF332F94224926DB009B3042 /* E7.swift in Sources */,
 				BF332F90224926CD009B3042 /* E5.swift in Sources */,
 				BFFB3AD52250F5E7000C90E1 /* GameClearView.swift in Sources */,
+				BF7CE797226083AD0040352D /* PouseTextureNode.swift in Sources */,
 				BF332FBE2249279C009B3042 /* N8.swift in Sources */,
 				BF60AC6F224DD62900D441D6 /* HintPuzzle.swift in Sources */,
 				BF0FD356224371CE00E8F387 /* PutParticle.swift in Sources */,
@@ -1635,6 +1657,7 @@
 				BF33300422492B3E009B3042 /* ExGameSecenNormalP2.swift in Sources */,
 				BF332FE822492805009B3042 /* H9.swift in Sources */,
 				BF332F9A224926EB009B3042 /* E10.swift in Sources */,
+				BF7CE793226083920040352D /* GoHomeNode.swift in Sources */,
 				BF332FC4224927AE009B3042 /* N11.swift in Sources */,
 				BF332FF42249282A009B3042 /* H14.swift in Sources */,
 				BF1FF2AD22311CE60047ED23 /* Stage.swift in Sources */,
@@ -1650,6 +1673,7 @@
 				BF60AC5C224CA2E000D441D6 /* Sound.swift in Sources */,
 				BF332FDA224927EB009B3042 /* H2.swift in Sources */,
 				BF332FC0224927A0009B3042 /* N9.swift in Sources */,
+				BF7CE79022607FEA0040352D /* PouseView.swift in Sources */,
 				BF640C092245100C00333782 /* E1.swift in Sources */,
 				BF332FE622492802009B3042 /* H8.swift in Sources */,
 				BF332FE2224927F8009B3042 /* H6.swift in Sources */,

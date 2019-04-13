@@ -37,6 +37,8 @@ class GameScene: SKScene {
    var RePutButtonNode: RePutButton?
    var PousePuttonNode: PouseNode?
    
+   var PouseViewNode: PouseView?
+   
    
    var PostedStageNum = 1
    var StageLebel: StageLevel = .Easy
@@ -64,6 +66,8 @@ class GameScene: SKScene {
       InitRePutButton(SizeX: ViewSizeX, SizeY: ViewSizeY)
       InitHintButton(SizeX: ViewSizeX, SizeY: ViewSizeY)
       InitPouseButton(SizeX: ViewSizeX, SizeY: ViewSizeY)
+      
+      InitPouseViewNode(SizeX: ViewSizeX, SizeY: ViewSizeY)
       
       InitPuzzle(SizeX: ViewSizeX, SizeY: ViewSizeY)
       InitHintPuzzle(SizeX: ViewSizeX, SizeY: ViewSizeY)
@@ -101,6 +105,12 @@ class GameScene: SKScene {
       self.addChild(Pouse)
       
       PousePuttonNode = Pouse
+   }
+   
+   private func InitPouseViewNode(SizeX: CGFloat?, SizeY: CGFloat?){
+      let CreatePouseView = PouseView(ViewX: Int(SizeX!), ViewY: Int(SizeY!))
+      
+      PouseViewNode = CreatePouseView
    }
    
    private func InitStageNumber() {
@@ -721,6 +731,9 @@ class GameScene: SKScene {
    
    @objc func PouseCatchNotification(notification: Notification) -> Void {
        print("PouseCatchNotifi")
+      
+      self.addChild(self.PouseViewNode!)
+      
    }
    
    @objc func HintCatchNotification(notification: Notification) -> Void {
