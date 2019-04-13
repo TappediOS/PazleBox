@@ -22,4 +22,5 @@ extension Notification.Name {
    static let RewardAD = Notification.Name("RewardAD")
    static let TapNext = Notification.Name("TapNext")
    static let TapHome = Notification.Name("TapHome")
+   static let ReSume = Notification.Name("ReSume")
 }

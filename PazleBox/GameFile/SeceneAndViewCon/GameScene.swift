@@ -151,6 +151,7 @@ class GameScene: SKScene {
       NotificationCenter.default.addObserver(self, selector: #selector(RePutCatchNotification(notification:)), name: .RePut, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(HintCatchNotification(notification:)), name: .Hint, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(PouseCatchNotification(notification:)), name: .Pouse, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(ReSumeCatchNotification(notification:)), name: .ReSume, object: nil)
       print("通知センター初期化完了")
    }
    
@@ -253,10 +254,18 @@ class GameScene: SKScene {
       for Puzzle in PuzzleBox {
          (Puzzle as! puzzle).LockPuzzle()
       }
-      
       RePutButtonNode?.LockPuzzle()
       HintButtonNode?.LockPuzzle()
       PousePuttonNode?.LockPuzzle()
+   }
+   
+   private func UnLockAllNode(){
+      for Puzzle in PuzzleBox {
+         (Puzzle as! puzzle).UnLockPuzzle()
+      }
+      RePutButtonNode?.UnLockPuzzle()
+      HintButtonNode?.UnLockPuzzle()
+      PousePuttonNode?.UnLockPuzzle()
    }
    
    
@@ -730,10 +739,9 @@ class GameScene: SKScene {
    
    
    @objc func PouseCatchNotification(notification: Notification) -> Void {
-       print("PouseCatchNotifi")
-      
+      print("PouseCatchNotifi")
       self.addChild(self.PouseViewNode!)
-      
+      LockAllNode()
    }
    
    @objc func HintCatchNotification(notification: Notification) -> Void {
@@ -751,6 +759,12 @@ class GameScene: SKScene {
       GameSound.PlaySounds(Type: 3)
       HintButtonNode?.DecleCountOfHint()
       
+   }
+   
+   @objc func ReSumeCatchNotification(notification: Notification) -> Void {
+      print("ReSumeCatchNotifi")
+      PouseViewNode?.removeFromParent()
+      UnLockAllNode()
    }
    
    private func ShowAdPOSTMotification() {

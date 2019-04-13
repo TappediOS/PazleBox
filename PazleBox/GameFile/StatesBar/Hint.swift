@@ -126,6 +126,10 @@ class HintNode : SKSpriteNode {
       self.isLocked = true
    }
    
+   public func UnLockPuzzle() {
+      self.isLocked = false
+   }
+   
    public func EnableLastHint() {
       Circ1.texture = SKTexture(imageNamed: "Like")
       self.LockedLastHint = false

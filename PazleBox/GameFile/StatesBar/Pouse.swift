@@ -51,6 +51,10 @@ class PouseNode : SKSpriteNode {
       self.isLocked = true
    }
    
+   public func UnLockPuzzle() {
+      self.isLocked = false
+   }
+   
    //MARK:- タッチイベント
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       

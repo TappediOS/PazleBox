@@ -17,6 +17,10 @@ class GameClearView: UIView {
    var StarView2 = AnimationView(name: "StarStar")
    var StarView3 = AnimationView(name: "StarStar")
    
+   var ConfView1 = AnimationView(name: "Confe")
+   var ConfView2 = AnimationView(name: "Confe")
+   var ConfView3 = AnimationView(name: "Confe")
+   
    var StarViewWide: CGFloat = 1
    var StarViewIntarnal: CGFloat = 1
    
@@ -41,12 +45,18 @@ class GameClearView: UIView {
       ViewW = frame.width
       ViewH = frame.height
       
+      IniiNextButton(frame: frame)
+      InitGoHomeButton(frame: frame)
+      
       InitStarView1()
       InitStarView2()
       InitStarView3()
       
-      IniiNextButton(frame: frame)
-      InitGoHomeButton(frame: frame)
+      InitConfeView1()
+      InitConfeView2()
+      InitConfeView3()
+      
+      
    }
    
    
@@ -117,6 +127,51 @@ class GameClearView: UIView {
       self.addSubview(GoHomeButton!)
    }
    
+   private func InitConfeView1() {
+
+      let StartPosi = StarViewIntarnal * 3 + StarViewWide * 2
+      let StartY = ViewH / 3
+      
+      ConfView1.frame = CGRect(x: StartPosi, y: StartY, width: ViewW, height: ViewW)
+      ConfView1.center.x = ViewW / 4 * 3
+      ConfView1.center.y = StartY
+      ConfView1.contentMode = .scaleAspectFit
+      ConfView1.animationSpeed = 0.6
+      ConfView1.isUserInteractionEnabled = false
+      self.addSubview(ConfView1)
+ 
+   }
+   
+   private func InitConfeView2() {
+      
+      let StartPosi = StarViewIntarnal * 3 + StarViewWide * 2
+      let StartY = ViewH / 8 * 7
+      
+      ConfView2.frame = CGRect(x: StartPosi, y: StartY, width: ViewW, height: ViewW)
+      ConfView2.center.x = ViewW / 4 * 3
+      ConfView2.center.y = StartY
+      ConfView2.contentMode = .scaleAspectFit
+      ConfView2.animationSpeed = 0.6
+      ConfView2.isUserInteractionEnabled = false
+      self.addSubview(ConfView2)
+      
+   }
+   
+   private func InitConfeView3() {
+      
+      let StartPosi = StarViewIntarnal
+      let StartY = ViewH / 2
+      
+      ConfView3.frame = CGRect(x: StartPosi, y: StartY, width: ViewW, height: ViewW)
+      ConfView3.center.x = ViewW / 4
+      ConfView3.center.y = StartY
+      ConfView3.contentMode = .scaleAspectFit
+      ConfView3.animationSpeed = 0.6
+      ConfView3.isUserInteractionEnabled = false
+      self.addSubview(ConfView3)
+      
+   }
+   
    private func InitStarView1() {
       
       let StartPosi = StarViewIntarnal
@@ -149,7 +204,7 @@ class GameClearView: UIView {
       let StartY = ViewH / 5 * 1
       
       StarView3.frame = CGRect(x: StartPosi, y: StartY, width: ViewW / 2, height: ViewW / 2)
-      StarView3.center.x = ViewW / 4  * 3
+      StarView3.center.x = ViewW / 4 * 3
       StarView3.center.y = StartY
       StarView3.contentMode = .scaleAspectFit
       StarView3.animationSpeed = 1
@@ -183,6 +238,19 @@ class GameClearView: UIView {
    public func StartAnimationView3() {
       StarView3.play()
    }
+   
+   public func StartConfe1() {
+      ConfView1.play()
+   }
+   
+   public func StartConfe2() {
+      ConfView2.play()
+   }
+   
+   public func StartConfe3() {
+      ConfView3.play()
+   }
+   
    
    public func StartAnimation3() {
       StarView1.play() { (finished) in

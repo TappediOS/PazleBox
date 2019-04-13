@@ -50,7 +50,7 @@ class GoHomeNode : SKSpriteNode {
    
    
    private func PostNotificationPouse() {
-      NotificationCenter.default.post(name: .Pouse, object: nil, userInfo: nil)
+      NotificationCenter.default.post(name: .TapHome, object: nil, userInfo: nil)
    }
    
    public func LockPuzzle() {
@@ -73,9 +73,7 @@ class GoHomeNode : SKSpriteNode {
    }
    
    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-      
-      
-      
+
    }
    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
       
@@ -93,7 +91,7 @@ class GoHomeNode : SKSpriteNode {
             return
          }
          
-         //PostNotificationPouse()
+         PostNotificationPouse()
          return
       }else{
          print("タッチ離したあと、Nilでした。")

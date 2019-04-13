@@ -11,14 +11,14 @@ import UIKit
 import SpriteKit
 import ChameleonFramework
 
-class GoHomeNode : SKSpriteNode {
+class ReSumeNode : SKSpriteNode {
    
    private var TouchBegan = CGPoint(x: 0, y: 0)
    private var AreYouLarge: Bool = false
    
    private var isLocked = false
    
-   private let NodeText: SKLabelNode = SKLabelNode(text: "GoHome")
+   private let NodeText: SKLabelNode = SKLabelNode(text: "Resume")
    
    
    init(ViewX: Int, ViewY: Int, StartX: Int, StartY: Int) {
@@ -50,7 +50,7 @@ class GoHomeNode : SKSpriteNode {
    
    
    private func PostNotificationPouse() {
-      NotificationCenter.default.post(name: .Pouse, object: nil, userInfo: nil)
+      NotificationCenter.default.post(name: .ReSume, object: nil, userInfo: nil)
    }
    
    public func LockPuzzle() {
@@ -93,7 +93,7 @@ class GoHomeNode : SKSpriteNode {
             return
          }
          
-         //PostNotificationPouse()
+         PostNotificationPouse()
          return
       }else{
          print("タッチ離したあと、Nilでした。")

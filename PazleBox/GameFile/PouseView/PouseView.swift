@@ -46,7 +46,7 @@ class PouseView : SKSpriteNode {
       let y = ViewH / 4
       let startY = y + y / 4
       
-      let Node = PouseTextNode(StartX: 0, StartY: startY)
+      let Node = PouseTextNode(StartX: 0, StartY: startY - startY / 4)
  
       self.addChild(Node)
    }
@@ -54,7 +54,6 @@ class PouseView : SKSpriteNode {
    private func InitReSumeNode() {
       let x = ViewW / 10 * 8
       let y = ViewH / 4
-      let startY = y + y / 4
       
       let Node = ReSumeNode(ViewX: x, ViewY: y, StartX: 0, StartY: 0)
       self.addChild(Node)

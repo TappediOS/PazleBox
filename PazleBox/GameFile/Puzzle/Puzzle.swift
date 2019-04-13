@@ -337,6 +337,10 @@ class puzzle: SKSpriteNode {
       self.isLocked = true
    }
    
+   public func UnLockPuzzle() {
+      self.isLocked = false
+   }
+   
    
    
    //MARK:- タッチイベント

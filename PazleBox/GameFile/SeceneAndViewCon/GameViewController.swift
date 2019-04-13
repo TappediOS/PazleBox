@@ -210,9 +210,24 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
       }
    }
    
+   private func StartConfeAnimation() {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.06) {
+         self.ClearView?.StartConfe1()
+      }
+      
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.06 + StarAnimationBetTime) {
+         self.ClearView?.StartConfe2()
+      }
+      
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.06 + StarAnimationBetTime * 2) {
+         self.ClearView?.StartConfe3()
+      }
+   }
+   
    private func ShowGameClearViewWithStar() {
       
       self.StartStarAnimation()
+      self.StartConfeAnimation()
       
    }
    
@@ -358,7 +373,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
    
 
 
-    override var shouldAutorotate: Bool { return true }
+    override var shouldAutorotate: Bool {return true}
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {

@@ -176,6 +176,7 @@
 		BF7CE793226083920040352D /* GoHomeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7CE792226083920040352D /* GoHomeNode.swift */; };
 		BF7CE7952260839E0040352D /* ReSumeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7CE7942260839E0040352D /* ReSumeNode.swift */; };
 		BF7CE797226083AD0040352D /* PouseTextureNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7CE796226083AD0040352D /* PouseTextureNode.swift */; };
+		BF7CE7992261E3840040352D /* Confe.json in Resources */ = {isa = PBXBuildFile; fileRef = BF7CE7982261E3840040352D /* Confe.json */; };
 		BF8A464E2250829C0016F801 /* StarStar.json in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464D2250829C0016F801 /* StarStar.json */; };
 		BF8A4650225088EE0016F801 /* NoLike.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464F225088EE0016F801 /* NoLike.png */; };
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
@@ -480,6 +481,7 @@
 		BF7CE792226083920040352D /* GoHomeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoHomeNode.swift; sourceTree = "<group>"; };
 		BF7CE7942260839E0040352D /* ReSumeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReSumeNode.swift; sourceTree = "<group>"; };
 		BF7CE796226083AD0040352D /* PouseTextureNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouseTextureNode.swift; sourceTree = "<group>"; };
+		BF7CE7982261E3840040352D /* Confe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Confe.json; sourceTree = "<group>"; };
 		BF8A464D2250829C0016F801 /* StarStar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StarStar.json; sourceTree = "<group>"; };
 		BF8A464F225088EE0016F801 /* NoLike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoLike.png; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
@@ -1069,6 +1071,7 @@
 			isa = PBXGroup;
 			children = (
 				BF8A464D2250829C0016F801 /* StarStar.json */,
+				BF7CE7982261E3840040352D /* Confe.json */,
 			);
 			path = LottieJSON;
 			sourceTree = "<group>";
@@ -1354,6 +1357,7 @@
 				BF60AC69224DD1DB00D441D6 /* RePut.png in Resources */,
 				BFCE25CE224A466B0099A775 /* 33p16Red.png in Resources */,
 				BFCE25DE224A466B0099A775 /* 33p21Green.png in Resources */,
+				BF7CE7992261E3840040352D /* Confe.json in Resources */,
 				BFCE25C4224A466B0099A775 /* 33p13Red.png in Resources */,
 				BF2674E62227B6A3003D370F /* GameScene.sks in Resources */,
 				BF2674F12227B6A4003D370F /* Assets.xcassets in Resources */,
