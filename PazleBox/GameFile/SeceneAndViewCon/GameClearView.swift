@@ -26,7 +26,7 @@ class GameClearView: UIView {
    var ConfView3 = AnimationView(name: "Confe")
    
    var ConfAniSpi: CGFloat = 1
-   var KiraAniSpi: CGFloat = 1.6
+   var KiraAniSpi: CGFloat = 2.35
    
    var StarViewWide: CGFloat = 1
    var StarViewIntarnal: CGFloat = 1
@@ -232,6 +232,7 @@ class GameClearView: UIView {
       KiraView1.center.y = StartY
       KiraView1.contentMode = .scaleAspectFit
       KiraView1.animationSpeed = KiraAniSpi
+      KiraView1.loopMode = .loop
       KiraView1.isUserInteractionEnabled = false
    }
    
@@ -245,6 +246,7 @@ class GameClearView: UIView {
       KiraView2.center.y = StartY
       KiraView2.contentMode = .scaleAspectFit
       KiraView2.animationSpeed = KiraAniSpi
+      KiraView2.loopMode = .loop
       KiraView2.isUserInteractionEnabled = false
    }
    
@@ -258,6 +260,7 @@ class GameClearView: UIView {
       KiraView3.center.y = StartY
       KiraView3.contentMode = .scaleAspectFit
       KiraView3.animationSpeed = KiraAniSpi
+      KiraView3.loopMode = .loop
       KiraView3.isUserInteractionEnabled = false
    }
    

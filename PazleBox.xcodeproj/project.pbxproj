@@ -177,7 +177,7 @@
 		BF7CE7952260839E0040352D /* ReSumeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7CE7942260839E0040352D /* ReSumeNode.swift */; };
 		BF7CE797226083AD0040352D /* PouseTextureNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7CE796226083AD0040352D /* PouseTextureNode.swift */; };
 		BF7CE7992261E3840040352D /* Confe.json in Resources */ = {isa = PBXBuildFile; fileRef = BF7CE7982261E3840040352D /* Confe.json */; };
-		BF7CE7CC22687A850040352D /* KiraKira.json in Resources */ = {isa = PBXBuildFile; fileRef = BF7CE7CB22687A850040352D /* KiraKira.json */; };
+		BF7CE7CE226882370040352D /* KiraKira.json in Resources */ = {isa = PBXBuildFile; fileRef = BF7CE7CD226882370040352D /* KiraKira.json */; };
 		BF8A464E2250829C0016F801 /* StarStar.json in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464D2250829C0016F801 /* StarStar.json */; };
 		BF8A4650225088EE0016F801 /* NoLike.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464F225088EE0016F801 /* NoLike.png */; };
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
@@ -483,7 +483,7 @@
 		BF7CE7942260839E0040352D /* ReSumeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReSumeNode.swift; sourceTree = "<group>"; };
 		BF7CE796226083AD0040352D /* PouseTextureNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouseTextureNode.swift; sourceTree = "<group>"; };
 		BF7CE7982261E3840040352D /* Confe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Confe.json; sourceTree = "<group>"; };
-		BF7CE7CB22687A850040352D /* KiraKira.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = KiraKira.json; sourceTree = "<group>"; };
+		BF7CE7CD226882370040352D /* KiraKira.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = KiraKira.json; sourceTree = "<group>"; };
 		BF8A464D2250829C0016F801 /* StarStar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StarStar.json; sourceTree = "<group>"; };
 		BF8A464F225088EE0016F801 /* NoLike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoLike.png; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
@@ -1073,7 +1073,7 @@
 			isa = PBXGroup;
 			children = (
 				BF8A464D2250829C0016F801 /* StarStar.json */,
-				BF7CE7CB22687A850040352D /* KiraKira.json */,
+				BF7CE7CD226882370040352D /* KiraKira.json */,
 				BF7CE7982261E3840040352D /* Confe.json */,
 			);
 			path = LottieJSON;
@@ -1372,11 +1372,11 @@
 				BFCE25C5224A466B0099A775 /* 33p11Blue.png in Resources */,
 				BFCE25F7224A4C990099A775 /* 42p1Red.png in Resources */,
 				BF7CD95B2240BBD500F8302B /* 23p2Blue.png in Resources */,
+				BF7CE7CE226882370040352D /* KiraKira.json in Resources */,
 				BFCE2617224A557B0099A775 /* 23p8Green.png in Resources */,
 				BFCE25C2224A466B0099A775 /* 33p22Green.png in Resources */,
 				BF7CD9222240B60400F8302B /* 21p1Red.png in Resources */,
 				BFCE2626224A557B0099A775 /* 23p11Blue.png in Resources */,
-				BF7CE7CC22687A850040352D /* KiraKira.json in Resources */,
 				BF640BF62244F8FD00333782 /* 32p3Red.png in Resources */,
 				BFCE25F6224A4C990099A775 /* 42p1Green.png in Resources */,
 				BFCE25E7224A466B0099A775 /* 33p17Green.png in Resources */,
