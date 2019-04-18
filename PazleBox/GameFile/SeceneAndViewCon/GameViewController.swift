@@ -233,15 +233,11 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
    
    @objc func GameClearCatchNotification(notification: Notification) -> Void {
       
-      guard ShowGameClearView == false else {
-         return
-      }
+      guard ShowGameClearView == false else { return }
       
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
          self.StartConfetti()
       }
-      
-
       
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.65) {
          
@@ -250,11 +246,12 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
          self.ClearView?.AddStarView1()
          self.ClearView?.AddStarView2()
          self.ClearView?.AddStarView3()
+         self.ClearView?.AddKiraView1()
+         self.ClearView?.AddKiraView2()
+         self.ClearView?.AddKiraView3()
          self.ClearView?.fadeIn(type: .Slow) { [weak self] in
             self?.ShowGameClearViewWithStar()
          }
-    
-   
       }
       return
    }

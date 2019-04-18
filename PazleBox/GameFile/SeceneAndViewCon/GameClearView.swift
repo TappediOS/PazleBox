@@ -17,9 +17,16 @@ class GameClearView: UIView {
    var StarView2 = AnimationView(name: "StarStar")
    var StarView3 = AnimationView(name: "StarStar")
    
+   var KiraView1 = AnimationView(name: "KiraKira")
+   var KiraView2 = AnimationView(name: "KiraKira")
+   var KiraView3 = AnimationView(name: "KiraKira")
+   
    var ConfView1 = AnimationView(name: "Confe")
    var ConfView2 = AnimationView(name: "Confe")
    var ConfView3 = AnimationView(name: "Confe")
+   
+   var ConfAniSpi: CGFloat = 1
+   var KiraAniSpi: CGFloat = 1.6
    
    var StarViewWide: CGFloat = 1
    var StarViewIntarnal: CGFloat = 1
@@ -51,6 +58,10 @@ class GameClearView: UIView {
       InitStarView1()
       InitStarView2()
       InitStarView3()
+      
+      InitKiraView1()
+      InitKiraView2()
+      InitKiraView3()
       
       InitConfeView1()
       InitConfeView2()
@@ -136,7 +147,7 @@ class GameClearView: UIView {
       ConfView1.center.x = ViewW / 4 * 3
       ConfView1.center.y = StartY
       ConfView1.contentMode = .scaleAspectFit
-      ConfView1.animationSpeed = 0.6
+      ConfView1.animationSpeed = ConfAniSpi
       ConfView1.isUserInteractionEnabled = false
       self.addSubview(ConfView1)
  
@@ -151,7 +162,7 @@ class GameClearView: UIView {
       ConfView2.center.x = ViewW / 4 * 3
       ConfView2.center.y = StartY
       ConfView2.contentMode = .scaleAspectFit
-      ConfView2.animationSpeed = 0.6
+      ConfView2.animationSpeed = ConfAniSpi
       ConfView2.isUserInteractionEnabled = false
       self.addSubview(ConfView2)
       
@@ -166,7 +177,7 @@ class GameClearView: UIView {
       ConfView3.center.x = ViewW / 4
       ConfView3.center.y = StartY
       ConfView3.contentMode = .scaleAspectFit
-      ConfView3.animationSpeed = 0.6
+      ConfView3.animationSpeed = ConfAniSpi
       ConfView3.isUserInteractionEnabled = false
       self.addSubview(ConfView3)
       
@@ -209,14 +220,49 @@ class GameClearView: UIView {
       StarView3.contentMode = .scaleAspectFit
       StarView3.animationSpeed = 1
       StarView3.isUserInteractionEnabled = false
+   }
+   
+   private func InitKiraView1() {
       
-
+      let StartPosi = StarViewIntarnal
+      let StartY = ViewH / 5 * 1
+      
+      KiraView1.frame = CGRect(x: StartPosi, y: StartY, width: ViewW / 2, height: ViewW / 2)
+      KiraView1.center.x = ViewW / 4
+      KiraView1.center.y = StartY
+      KiraView1.contentMode = .scaleAspectFit
+      KiraView1.animationSpeed = KiraAniSpi
+      KiraView1.isUserInteractionEnabled = false
+   }
+   
+   private func InitKiraView2() {
+      
+      let StartPosi = StarViewIntarnal * 2 + StarViewWide
+      let StartY = ViewH / 5 * 1 - StarViewWide / 2
+      
+      KiraView2.frame = CGRect(x: StartPosi, y: StartY, width: ViewW / 2, height: ViewW / 2)
+      KiraView2.center.x = ViewW / 4  * 2
+      KiraView2.center.y = StartY
+      KiraView2.contentMode = .scaleAspectFit
+      KiraView2.animationSpeed = KiraAniSpi
+      KiraView2.isUserInteractionEnabled = false
+   }
+   
+   private func InitKiraView3() {
+      
+      let StartPosi = StarViewIntarnal * 3 + StarViewWide * 2
+      let StartY = ViewH / 5 * 1
+      
+      KiraView3.frame = CGRect(x: StartPosi, y: StartY, width: ViewW / 2, height: ViewW / 2)
+      KiraView3.center.x = ViewW / 4 * 3
+      KiraView3.center.y = StartY
+      KiraView3.contentMode = .scaleAspectFit
+      KiraView3.animationSpeed = KiraAniSpi
+      KiraView3.isUserInteractionEnabled = false
    }
    
    public func AddStarView1() {
       self.addSubview(StarView1)
-      
-      
    }
    
    public func AddStarView2() {
@@ -227,16 +273,31 @@ class GameClearView: UIView {
       self.addSubview(StarView3)
    }
    
+   public func AddKiraView1() {
+      self.addSubview(KiraView1)
+   }
+   
+   public func AddKiraView2() {
+      self.addSubview(KiraView2)
+   }
+   
+   public func AddKiraView3() {
+      self.addSubview(KiraView3)
+   }
+   
    public func StartAnimationView1() {
       StarView1.play()
+      KiraView1.play()
    }
    
    public func StartAnimationView2() {
       StarView2.play()
+      KiraView2.play()
    }
    
    public func StartAnimationView3() {
       StarView3.play()
+      KiraView3.play()
    }
    
    public func StartConfe1() {
@@ -256,6 +317,12 @@ class GameClearView: UIView {
       StarView1.play() { (finished) in
          self.StarView2.play() { (finished) in
             self.StarView3.play()
+         }
+      }
+      
+      KiraView1.play() { (finished) in
+         self.KiraView2.play() { (finished) in
+            self.KiraView3.play()
          }
       }
    }

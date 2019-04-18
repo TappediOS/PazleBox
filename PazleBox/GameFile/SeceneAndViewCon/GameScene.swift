@@ -84,6 +84,7 @@ class GameScene: SKScene {
       //addChild(p!)
     }
    
+   //MARK:- 初期化
    private func InitRePutButton(SizeX: CGFloat?, SizeY: CGFloat?){
       let RePutB = RePutButton(ViewX: Int(SizeX!), ViewY: Int(SizeY!))
       self.addChild(RePutB)
@@ -103,13 +104,11 @@ class GameScene: SKScene {
    private func InitPouseButton(SizeX: CGFloat?, SizeY: CGFloat?){
       let Pouse = PouseNode(ViewX: Int(SizeX!), ViewY: Int(SizeY!))
       self.addChild(Pouse)
-      
       PousePuttonNode = Pouse
    }
    
    private func InitPouseViewNode(SizeX: CGFloat?, SizeY: CGFloat?){
       let CreatePouseView = PouseView(ViewX: Int(SizeX!), ViewY: Int(SizeY!))
-      
       PouseViewNode = CreatePouseView
    }
    
@@ -136,12 +135,7 @@ class GameScene: SKScene {
       
    }
    
-   //MARK:- チェックする配列を初期化する
-   private func CrearCheckedStage() {
-      CheckedStage = AllStage.Checked
-   }
    
-   //MARK:- 初期化
    private func InitNotification() {
       print("通知センター初期化開始")
       NotificationCenter.default.addObserver(self, selector: #selector(MovedTileCatchNotification(notification:)), name: .TileMoved, object: nil)
@@ -170,7 +164,7 @@ class GameScene: SKScene {
        print("パズルBoxの初期化完了")
    }
    
-   private func InitHintPuzzle(SizeX: CGFloat?, SizeY: CGFloat?){
+   private func InitHintPuzzle(SizeX: CGFloat?, SizeY: CGFloat?) {
       print("パズルBoxの初期化開始")
       switch self.StageLebel {
       case .Easy:
@@ -181,6 +175,11 @@ class GameScene: SKScene {
          HintPuzzleBox = GetHardHintPuzzleBox(ViewSizeX: SizeX!, ViewSizeY: SizeY!)
       }
       print("パズルBoxの初期化完了")
+   }
+   
+   //MARK:- チェックする配列を初期化する
+   private func CrearCheckedStage() {
+      CheckedStage = AllStage.Checked
    }
    
    //MARK: ステージの配列の取得
@@ -213,9 +212,7 @@ class GameScene: SKScene {
    }
    
    //配列に入れて行ってる
-   private func AddPuzzle() {
-      
-   }
+   private func AddPuzzle() { }
    
    private func InitBackGroundColor() {
       self.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 0)
@@ -249,6 +246,7 @@ class GameScene: SKScene {
    }
    
    
+   //MARK:- パズルアンロックするたやつ
    private func LockAllNode() {
       
       for Puzzle in PuzzleBox {
@@ -272,18 +270,14 @@ class GameScene: SKScene {
    //MARK:- ゲーム終了。
    private func FinishGame() {
       print("game Set")
-      
       LockAllNode()
-      
       GameSerPOSTMotification()
    }
    
    //MARK:- 配列の情報を出力
    private func ShowCheckStage() {
       
-      guard Debug else {
-         return
-      }
+      guard Debug else { return }
       
       for x in 0 ... 11 {
          print()
@@ -317,30 +311,26 @@ class GameScene: SKScene {
       print()
    }
    
-   //MARK:- 通知を送る関数
+   //MARK:- ゲーム終わって通知を送る関数
    private func GameSerPOSTMotification() {
       print("")
       NotificationCenter.default.post(name: .GameClear, object: nil, userInfo: nil)
    }
    
-   
    //MARK:- ゲームの行う関数群
    private func GameCheck() -> Bool {
-   
       //TODO: デバック終わったら消してOK
-      
       ShowStage()
       ShowCheckStage()
       
+      //MARK: これね
       //配列が一致したらおわりね
-      if Stage.GStage.elementsEqual(CheckedStage) {
-         return true
-      }
+      if Stage.GStage.elementsEqual(CheckedStage) { return true }
       
       return false
    }
    
-   //MARK: 位置の判定をしてる
+   //MARK:- 位置の判定をしてる
    private func CheckLeftUp(x: Int, y: Int) -> Bool {
       if x >= 0 && y <= 11 { return true }
       return false
@@ -385,7 +375,7 @@ class GameScene: SKScene {
       
       //はみ出てたらさようなら。
       if CheckLeftUp(x: LeftUpX, y: LeftUpY) == false || CheckLeftDown(x: LeftDownX, y: LeftDownY) == false {
-      return
+         return
       }
       
       if CheckRightUp(x: RightUpX, y: RightUpY) == false || CheckRightDown(x: RightDownX, y: RightDownY) == false {
@@ -408,21 +398,20 @@ class GameScene: SKScene {
    //MARK: Notificationの後に毎回来る
    private func GameDecision() {
       
-      
       for Puzzle in PuzzleBox {
          let PuzzleInfo = (Puzzle as! puzzle).GetOfInfomation()
          CheckedStageFill(StageObject: PuzzleInfo)
       }
       
-      if GameCheck() == true {
-         FinishGame()
-      }
+      //MARK: ここここ，ここで帰るやつ
+      if GameCheck() == true { FinishGame() }
       
       //ゲームが終わらなかったら，配列をクリアする。
       CrearCheckedStage()
       return
    }
    
+   //MARK: なんかこれおんなじことしてていらんような気がする。
    private func CheckdPuzzleFillSentPazzle(StageObject: [String : Any]) -> Bool {
       
       let StartX = StageObject["StartPointX"] as! Int
@@ -490,15 +479,14 @@ class GameScene: SKScene {
       return false
    }
    
+   //MARK:- パズルが被ってるかを判定
    private func OverRapped(BirthDay: Int) -> Bool {
       
       let SentPazzle: puzzle = PuzzleBox[BirthDay] as! puzzle
       let SentPuzzleInfo = SentPazzle.GetOfInfomation()
       
       //はみ出てたらそもそもアウト
-      if CheckdPuzzleFillSentPazzle(StageObject: SentPuzzleInfo) == false {
-         return true
-      }
+      if CheckdPuzzleFillSentPazzle(StageObject: SentPuzzleInfo) == false { return true }
       
       for Puzzle in PuzzleBox {
          
@@ -510,9 +498,7 @@ class GameScene: SKScene {
          let PuzzleInfo = (Puzzle as! puzzle).GetOfInfomation()
          
          //かぶってたらReturn true
-         if SentCheckedStageFill(StageObject: PuzzleInfo) == true {
-            return true
-         }
+         if SentCheckedStageFill(StageObject: PuzzleInfo) == true { return true }
       }
       // 被りなし。
       return false
@@ -537,7 +523,6 @@ class GameScene: SKScene {
    private func ExsitsPuzzle(SerchX: Int, SerchY: Int, SentNum: Int) -> Bool {
       
       for Puzzle in PuzzleBox {
-         
          //送信者と一致したらcontinue
          if Puzzle as! puzzle == (PuzzleBox[SentNum] as! puzzle){
             print("Puzzle:\((Puzzle as! puzzle).GetBirthDayNum()) は送信者やからパス")
@@ -595,13 +580,9 @@ class GameScene: SKScene {
       let RightDownY = StartY - (PuzzleHight - 1)
       
       //はみ出てたらさようなら。
-      if CheckLeftUp(x: LeftUpX, y: LeftUpY) == false || CheckLeftDown(x: LeftDownX, y: LeftDownY) == false {
-         return false
-      }
+      if CheckLeftUp(x: LeftUpX, y: LeftUpY) == false || CheckLeftDown(x: LeftDownX, y: LeftDownY) == false { return false }
       
-      if CheckRightUp(x: RightUpX, y: RightUpY) == false || CheckRightDown(x: RightDownX, y: RightDownY) == false {
-         return false
-      }
+      if CheckRightUp(x: RightUpX, y: RightUpY) == false || CheckRightDown(x: RightDownX, y: RightDownY) == false { return false }
       
       //ここでFillしてく
       for x in LeftUpX ... RightDownX {
@@ -619,6 +600,7 @@ class GameScene: SKScene {
       return true
    }
    
+   //MARK:- サウンドとかパーティクル再生する
    private func PlayParticleForRightSet(BirthDay: Int) {
       let ParticlePuzzle = PuzzleBox[BirthDay] as! puzzle
       ParticlePuzzle.PlayParticleForRightSet()
@@ -635,9 +617,7 @@ class GameScene: SKScene {
    //MARK:- 通知を受け取る関数郡
    @objc func MovedTileCatchNotification(notification: Notification) -> Void {
       print("--- Move notification ---")
-      
       CrearCheckedStage()
-      
       
       if let userInfo = notification.userInfo {
          let SentNum = userInfo["BirthDay"] as! Int
@@ -661,18 +641,15 @@ class GameScene: SKScene {
          }
          
          CrearCheckedStage()
-         
          //ゲーム判定へ。
          GameDecision()
          
-         
-      }else{
-         print("通知受け取ったけど、中身nilやった。")
-      }
+      }else{ print("通知受け取ったけど、中身nilやった。") }
       
       return
    }
    
+   //MARK: ナニコノカンスウ？
    @objc func PuzzleTouchStartCatchNotification(notification: Notification) -> Void {
       print("--- Alpha Tap notification ---")
       
@@ -737,13 +714,14 @@ class GameScene: SKScene {
    }
    
    
-   
+   //MARK:  ポーズをする
    @objc func PouseCatchNotification(notification: Notification) -> Void {
       print("PouseCatchNotifi")
       self.addChild(self.PouseViewNode!)
       LockAllNode()
    }
    
+   //MARK: ヒント表示
    @objc func HintCatchNotification(notification: Notification) -> Void {
       print("HintCatchNotifi")
       if HintButtonNode?.CountOfHint == 2{
@@ -758,7 +736,6 @@ class GameScene: SKScene {
       
       GameSound.PlaySounds(Type: 3)
       HintButtonNode?.DecleCountOfHint()
-      
    }
    
    @objc func ReSumeCatchNotification(notification: Notification) -> Void {
@@ -768,7 +745,6 @@ class GameScene: SKScene {
    }
    
    private func ShowAdPOSTMotification() {
-      
       NotificationCenter.default.post(name: .RewardAD, object: nil, userInfo: nil)
    }
    
@@ -794,34 +770,6 @@ class GameScene: SKScene {
       self.HintButtonNode?.DissMisLile1()
       
    }
-   
-   //MARK:- タッチイベント
-//    func touchDown(atPoint pos : CGPoint) {
-//
-//    }
-//
-//    func touchMoved(toPoint pos : CGPoint) {
-//
-//    }
-//
-//    func touchUp(atPoint pos : CGPoint) {
-//
-//    }
-//
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//
-//    }
-//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-//
-//    }
-//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//
-//    }
-//    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-//    }
-   
-    override func update(_ currentTime: TimeInterval) {
-   
-    }
+
+    override func update(_ currentTime: TimeInterval) { }
 }
