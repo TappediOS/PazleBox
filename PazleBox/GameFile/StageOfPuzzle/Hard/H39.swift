@@ -1,13 +1,4 @@
 //
-//  H39.swift
-//  PazleBox
-//
-//  Created by jun on 2019/04/22.
-//  Copyright © 2019 jun. All rights reserved.
-//
-
-import Foundation
-//
 //  H20.swift
 //  PazleBox
 //
@@ -18,7 +9,7 @@ import Foundation
 import Foundation
 import UIKit
 
-class HStage20 {
+class HStage39 {
    
    var Puzzle1: puzzle?
    var Puzzle2: puzzle?

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class NStage20 {
+class NStage26 {
    
    var Puzzle1: puzzle?
    var Puzzle2: puzzle?

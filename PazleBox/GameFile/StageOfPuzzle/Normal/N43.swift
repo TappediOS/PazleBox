@@ -1,13 +1,4 @@
 //
-//  N44.swift
-//  PazleBox
-//
-//  Created by jun on 2019/04/22.
-//  Copyright © 2019 jun. All rights reserved.
-//
-
-import Foundation
-a//
 //  N20.swift
 //  PazleBox
 //
@@ -18,7 +9,7 @@ a//
 import Foundation
 import UIKit
 
-class NStage20 {
+class NStage43 {
    
    var Puzzle1: puzzle?
    var Puzzle2: puzzle?
@@ -84,4 +75,3 @@ class NStage20 {
       return self.HintPuzzleBox
    }
 }
-
