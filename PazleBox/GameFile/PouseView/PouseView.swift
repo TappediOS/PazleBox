@@ -91,12 +91,17 @@ class PouseView : SKSpriteNode {
 
    
    public func ShowViewAnimation() {
+      self.alpha = 0.2
       let WaitActon = SKAction.wait(forDuration: 0.01)
       let LargeAction = SKEase.scale(easeFunction: .curveTypeQuartic, easeType: .easeTypeOut, time: 0.085, from: 1, to: 1.1)
+      
       let SmallAction = SKEase.scale(easeFunction: .curveTypeBack, easeType: .easeTypeOut, time: 0.175, from: 1.1, to: 1)
       let PouseAnime = SKAction.sequence([WaitActon, LargeAction, SmallAction])
+
+      let FadeInAction = SKEase.fade(easeFunction: .curveTypeExpo, easeType: .easeTypeOut, time: 0.28, fromValue: 0.2, toValue: 1)
+      let RunAni = SKAction.group([PouseAnime, FadeInAction])
       
-      self.run(PouseAnime)
+      self.run(RunAni)
    }
    
    public func FadeOutAniAndRemoveFromParent() {

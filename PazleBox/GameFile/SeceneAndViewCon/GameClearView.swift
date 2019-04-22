@@ -33,7 +33,7 @@ class GameClearView: UIView {
    
    //2こめのやつで何倍かできる
    var ConfiViewSize: CGFloat?
-   var ConfiViewSizeSet: CGFloat = 1.1
+   var ConfiViewSizeSet: CGFloat = 1.14
    
    var KiraViewSize: CGFloat?
    var KiraViewSizeSet: CGFloat = 1.34
