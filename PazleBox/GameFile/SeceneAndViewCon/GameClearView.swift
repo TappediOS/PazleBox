@@ -31,7 +31,7 @@ class GameClearView: UIView {
    var StarViewWide: CGFloat = 1
    var StarViewIntarnal: CGFloat = 1
    
-   //2こめのやつで何倍かできる
+   //2こめのやつで何倍かできる!
    var ConfiViewSize: CGFloat?
    var ConfiViewSizeSet: CGFloat = 1.14
    
