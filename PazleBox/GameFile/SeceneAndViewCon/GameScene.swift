@@ -718,6 +718,7 @@ class GameScene: SKScene {
    @objc func PouseCatchNotification(notification: Notification) -> Void {
       print("PouseCatchNotifi")
       self.addChild(self.PouseViewNode!)
+      self.PouseViewNode!.ShowViewAnimation()
       LockAllNode()
    }
    

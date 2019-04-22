@@ -27,7 +27,7 @@ class GoHomeNode : SKSpriteNode {
       let NodeSize = CGSize(width: CGFloat(ViewX), height: CGFloat(ViewY))
       //let NodeColor = UIColor.flatYellow()
       
-      super.init(texture: nil, color: UIColor.flatYellow(), size: NodeSize)
+      super.init(texture: nil, color: UIColor.flatNavyBlue(), size: NodeSize)
       self.position = CGPoint(x: StartX, y: StartY)
       
       self.zPosition = 101
@@ -41,7 +41,7 @@ class GoHomeNode : SKSpriteNode {
       self.NodeText.zPosition = 102
       self.NodeText.fontName = "Helvetica"
       self.NodeText.fontSize = 100
-      self.NodeText.fontColor = UIColor.flatMint()
+      self.NodeText.fontColor = UIColor(contrastingBlackOrWhiteColorOn: UIColor.flatNavyBlue(), isFlat: true)
       
       self.NodeText.position = CGPoint(x: 0, y: -textY)
       

@@ -25,11 +25,18 @@ class GameClearView: UIView {
    var ConfView2 = AnimationView(name: "Confe")
    var ConfView3 = AnimationView(name: "Confe")
    
-   var ConfAniSpi: CGFloat = 1
-   var KiraAniSpi: CGFloat = 2.35
+   var ConfAniSpi: CGFloat = 1.02
+   var KiraAniSpi: CGFloat = 1.2
    
    var StarViewWide: CGFloat = 1
    var StarViewIntarnal: CGFloat = 1
+   
+   //2こめのやつで何倍かできる
+   var ConfiViewSize: CGFloat?
+   var ConfiViewSizeSet: CGFloat = 1.1
+   
+   var KiraViewSize: CGFloat?
+   var KiraViewSizeSet: CGFloat = 1.34
    
    var NextButton: FUIButton?
    var GoHomeButton: FUIButton?
@@ -59,32 +66,20 @@ class GameClearView: UIView {
       InitStarView2()
       InitStarView3()
       
+      KiraViewSize = (ViewW / 2) * KiraViewSizeSet
+      
       InitKiraView1()
       InitKiraView2()
       InitKiraView3()
       
+      ConfiViewSize = ViewW * ConfiViewSizeSet
+      
       InitConfeView1()
       InitConfeView2()
       InitConfeView3()
-      
-      
    }
    
-   
-   @objc func TapNextButton (_ sender: UIButton) {
-      print("Tap NextButton")
-
-      NotificationCenter.default.post(name: .TapNext, object: nil, userInfo: nil)
-   }
-   
-   @objc func TapGoHomeButton (_ sender: UIButton) {
-      print("Tap GoHomeButton")
-      
-      NotificationCenter.default.post(name: .TapHome, object: nil, userInfo: nil)
-      
-   }
-
-   
+   //MARK:- 初期化
    private func IniiNextButton(frame: CGRect) {
       
       let StartX = ViewW / 16
@@ -143,44 +138,42 @@ class GameClearView: UIView {
       let StartPosi = StarViewIntarnal * 3 + StarViewWide * 2
       let StartY = ViewH / 3
       
-      ConfView1.frame = CGRect(x: StartPosi, y: StartY, width: ViewW, height: ViewW)
-      ConfView1.center.x = ViewW / 4 * 3
-      ConfView1.center.y = StartY
+      ConfView1.frame = CGRect(x: StartPosi, y: StartY, width: ConfiViewSize!, height: ConfiViewSize!)
+      ConfView1.center.x = GetConfiViewXPoint()
+      ConfView1.center.y = GetConfiViewYPoint()
       ConfView1.contentMode = .scaleAspectFit
       ConfView1.animationSpeed = ConfAniSpi
+      //ConfView1.loopMode = .loop
       ConfView1.isUserInteractionEnabled = false
-      self.addSubview(ConfView1)
- 
    }
    
    private func InitConfeView2() {
       
-      let StartPosi = StarViewIntarnal * 3 + StarViewWide * 2
-      let StartY = ViewH / 8 * 7
+      let StartPosi = StarViewIntarnal
+      let StartY = ViewH / 2
       
-      ConfView2.frame = CGRect(x: StartPosi, y: StartY, width: ViewW, height: ViewW)
-      ConfView2.center.x = ViewW / 4 * 3
-      ConfView2.center.y = StartY
+      ConfView2.frame = CGRect(x: StartPosi, y: StartY, width: ConfiViewSize! , height: ConfiViewSize!)
+      ConfView2.center.x = GetConfiViewXPoint()
+      ConfView2.center.y = GetConfiViewYPoint()
       ConfView2.contentMode = .scaleAspectFit
       ConfView2.animationSpeed = ConfAniSpi
+      //ConfView2.loopMode = .loop
       ConfView2.isUserInteractionEnabled = false
-      self.addSubview(ConfView2)
-      
    }
    
    private func InitConfeView3() {
       
-      let StartPosi = StarViewIntarnal
-      let StartY = ViewH / 2
+      let StartPosi = StarViewIntarnal * 3 + StarViewWide * 2
+      let StartY = ViewH / 8 * 7
       
-      ConfView3.frame = CGRect(x: StartPosi, y: StartY, width: ViewW, height: ViewW)
-      ConfView3.center.x = ViewW / 4
-      ConfView3.center.y = StartY
+      ConfView3.frame = CGRect(x: StartPosi, y: StartY, width: ConfiViewSize!, height: ConfiViewSize!)
+      ConfView3.center.x = GetConfiViewXPoint()
+      ConfView3.center.y = GetConfiViewYPoint()
       ConfView3.contentMode = .scaleAspectFit
       ConfView3.animationSpeed = ConfAniSpi
+      //ConfView3.loopMode = .loop
       ConfView3.isUserInteractionEnabled = false
-      self.addSubview(ConfView3)
-      
+
    }
    
    private func InitStarView1() {
@@ -227,7 +220,7 @@ class GameClearView: UIView {
       let StartPosi = StarViewIntarnal
       let StartY = ViewH / 5 * 1
       
-      KiraView1.frame = CGRect(x: StartPosi, y: StartY, width: ViewW / 2, height: ViewW / 2)
+      KiraView1.frame = CGRect(x: StartPosi, y: StartY, width: KiraViewSize!, height: KiraViewSize!)
       KiraView1.center.x = ViewW / 4
       KiraView1.center.y = StartY
       KiraView1.contentMode = .scaleAspectFit
@@ -241,7 +234,7 @@ class GameClearView: UIView {
       let StartPosi = StarViewIntarnal * 2 + StarViewWide
       let StartY = ViewH / 5 * 1 - StarViewWide / 2
       
-      KiraView2.frame = CGRect(x: StartPosi, y: StartY, width: ViewW / 2, height: ViewW / 2)
+      KiraView2.frame = CGRect(x: StartPosi, y: StartY, width: KiraViewSize!, height: KiraViewSize!)
       KiraView2.center.x = ViewW / 4  * 2
       KiraView2.center.y = StartY
       KiraView2.contentMode = .scaleAspectFit
@@ -255,7 +248,7 @@ class GameClearView: UIView {
       let StartPosi = StarViewIntarnal * 3 + StarViewWide * 2
       let StartY = ViewH / 5 * 1
       
-      KiraView3.frame = CGRect(x: StartPosi, y: StartY, width: ViewW / 2, height: ViewW / 2)
+      KiraView3.frame = CGRect(x: StartPosi, y: StartY, width: KiraViewSize!, height: KiraViewSize!)
       KiraView3.center.x = ViewW / 4 * 3
       KiraView3.center.y = StartY
       KiraView3.contentMode = .scaleAspectFit
@@ -264,6 +257,28 @@ class GameClearView: UIView {
       KiraView3.isUserInteractionEnabled = false
    }
    
+   //MARK:- タッチイベント
+   @objc func TapNextButton (_ sender: UIButton) {
+      print("Tap NextButton")
+      
+      NotificationCenter.default.post(name: .TapNext, object: nil, userInfo: nil)
+   }
+   
+   @objc func TapGoHomeButton (_ sender: UIButton) {
+      print("Tap GoHomeButton")
+      
+      NotificationCenter.default.post(name: .TapHome, object: nil, userInfo: nil)
+   }
+   
+   //MARK:- コンフィの座標取得
+   private func GetConfiViewXPoint() -> CGFloat {
+      return CGFloat.random(in: 0 ... ViewW)
+   }
+   private func GetConfiViewYPoint() -> CGFloat {
+      return CGFloat.random(in: 0 ... ViewH)
+   }
+   
+   //MARK:- AddSubView
    public func AddStarView1() {
       self.addSubview(StarView1)
    }
@@ -288,6 +303,19 @@ class GameClearView: UIView {
       self.addSubview(KiraView3)
    }
    
+   public func AddConfiView1() {
+      self.addSubview(ConfView1)
+   }
+   
+   public func AddConfiView2() {
+      self.addSubview(ConfView2)
+   }
+   
+   public func AddConfiView3() {
+      self.addSubview(ConfView3)
+   }
+   
+   //MARK:- スタートアニメーション
    public func StartAnimationView1() {
       StarView1.play()
       KiraView1.play()
@@ -303,18 +331,31 @@ class GameClearView: UIView {
       KiraView3.play()
    }
    
+   
    public func StartConfe1() {
-      ConfView1.play()
+      ConfView1.play() { (finished) in
+         self.ConfView1.center.x = self.GetConfiViewXPoint()
+         self.ConfView1.center.y = self.GetConfiViewYPoint()
+         //self.StartConfe1()
+      }
    }
    
    public func StartConfe2() {
-      ConfView2.play()
+      ConfView2.play(){ (finished) in
+         self.ConfView2.center.x = self.GetConfiViewXPoint()
+         self.ConfView2.center.y = self.GetConfiViewYPoint()
+         //self.StartConfe2()
+      }
+      
    }
    
    public func StartConfe3() {
-      ConfView3.play()
+      ConfView3.play(){ (finished) in
+         self.ConfView3.center.x = self.GetConfiViewXPoint()
+         self.ConfView3.center.y = self.GetConfiViewYPoint()
+        // self.StartConfe3()
+      }
    }
-   
    
    public func StartAnimation3() {
       StarView1.play() { (finished) in
@@ -328,6 +369,22 @@ class GameClearView: UIView {
             self.KiraView3.play()
          }
       }
+   }
+   
+   //MARK:- ストップアニメーション
+   public func StopConfi() {
+      self.ConfView1.stop()
+      self.ConfView2.stop()
+      self.ConfView3.stop()
+   }
+   
+   public func StopStar() {
+      self.StarView1.stop()
+      self.KiraView1.stop()
+      self.StarView2.stop()
+      self.KiraView2.stop()
+      self.StarView3.stop()
+      self.KiraView3.stop()
    }
    
    required init?(coder aDecoder: NSCoder) {

@@ -11,11 +11,11 @@ import UIKit
 
 class TilePosi {
    
-   private var FoundX = 0
-   private var Intarnal = 0
-   private var FoundY = 0
-   private var HalfView = 0
-   private var ViewY = 0
+   private var FoundX: Int = 0
+   private var Intarnal: Int = 0
+   private var FoundY: Int = 0
+   private var HalfView: Int = 0
+   private var ViewY: Int = 0
    
    private var X: [CGFloat] = Array()
    private var Y: [CGFloat] = Array()
@@ -39,7 +39,9 @@ class TilePosi {
    private func SetUpY(){
       
       for y in 1 ... 12 {
-         let SetY = (-self.ViewY * 3 / 8) + Intarnal * (y - 1) + FoundX * (y - 2)
+         var SetY: Int = (-self.ViewY * 3 / 8)
+         SetY += Intarnal * (y - 1)
+         SetY += FoundX * (y - 2)
          Y.append(CGFloat(SetY))
          //print("Y[\(y - 1)] = \(Y[y - 1])")
       }

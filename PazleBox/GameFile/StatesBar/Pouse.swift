@@ -22,12 +22,12 @@ class PouseNode : SKSpriteNode {
    init(ViewX: Int, ViewY: Int) {
       
       
-      let PazzleSizeFound = ViewX / 10 + (ViewX / 100)
+      let PazzleSizeFound: Int = ViewX / 10 + (ViewX / 100)
       
       let x1 = PazzleSizeFound * 3
       
-      let yposi = PazzleSizeFound * 12
-      let y1 = -ViewY * 3 / 8 + yposi
+      let yposi: Int = PazzleSizeFound * 12
+      let y1: Int = -ViewY * 3 / 8 + yposi
       
       //MARK: 画像の初期化
       let texture: SKTexture

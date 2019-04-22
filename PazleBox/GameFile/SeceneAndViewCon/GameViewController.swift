@@ -205,7 +205,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
          self.ClearView?.StartAnimationView2()
       }
       
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.05 + StarAnimationBetTime * 2) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.05 + StarAnimationBetTime * Double(2)) {
          self.ClearView?.StartAnimationView3()
       }
    }
@@ -219,7 +219,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
          self.ClearView?.StartConfe2()
       }
       
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.06 + StarAnimationBetTime * 2) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.06 + StarAnimationBetTime * Double(2)) {
          self.ClearView?.StartConfe3()
       }
    }
@@ -249,6 +249,9 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
          self.ClearView?.AddKiraView1()
          self.ClearView?.AddKiraView2()
          self.ClearView?.AddKiraView3()
+         self.ClearView?.AddConfiView1()
+         self.ClearView?.AddConfiView2()
+         self.ClearView?.AddConfiView3()
          self.ClearView?.fadeIn(type: .Slow) { [weak self] in
             self?.ShowGameClearViewWithStar()
          }
@@ -294,6 +297,8 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
       
       
       self.ClearView?.fadeOut(type: .Slow){ [weak self] in
+         self?.ClearView?.StopConfi()
+         self?.ClearView?.StopStar()
          self?.ClearView?.removeFromSuperview()
       }
     

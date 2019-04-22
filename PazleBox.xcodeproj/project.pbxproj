@@ -1850,6 +1850,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = myfirst.PazleBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

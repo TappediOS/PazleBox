@@ -99,8 +99,8 @@ class HintPuzzle: SKSpriteNode {
       
       let SetPosi = ViewX / 10 + (ViewX / 100)
       
-      let yposi = SetPosi * 12
-      let y1 = -ViewY * 3 / 8 + yposi
+      let yposi: Int = SetPosi * 12
+      let y1: Int = -ViewY * 3 / 8 + yposi
       
       var x1 = 0
       

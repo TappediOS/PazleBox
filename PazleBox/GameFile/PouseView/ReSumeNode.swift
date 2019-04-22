@@ -27,7 +27,7 @@ class ReSumeNode : SKSpriteNode {
       let NodeSize = CGSize(width: CGFloat(ViewX), height: CGFloat(ViewY))
       //let NodeColor = UIColor.flatYellow()
       
-      super.init(texture: nil, color: UIColor.flatYellow(), size: NodeSize)
+      super.init(texture: nil, color: UIColor.flatNavyBlue(), size: NodeSize)
       self.position = CGPoint(x: StartX, y: StartY)
       
       self.zPosition = 101
@@ -41,7 +41,7 @@ class ReSumeNode : SKSpriteNode {
       self.NodeText.zPosition = 102
       self.NodeText.fontName = "Helvetica"
       self.NodeText.fontSize = 100
-      self.NodeText.fontColor = UIColor.flatMint()
+      self.NodeText.fontColor = UIColor(contrastingBlackOrWhiteColorOn: UIColor.flatNavyBlue(), isFlat: true)
       
       self.NodeText.position = CGPoint(x: 0, y: -textY)
       
@@ -72,11 +72,8 @@ class ReSumeNode : SKSpriteNode {
       }
    }
    
-   override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-      
-      
-      
-   }
+   override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) { }
+   
    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
       
       if isLocked == true {
@@ -107,7 +104,6 @@ class ReSumeNode : SKSpriteNode {
    
    /// ノードを大きくする関数
    private func LargeAnimation() {
-      
       //Large状態でなければ大きくする。
       if self.AreYouLarge == false {
          let Large: SKAction = SKAction.scale(by: 1.2, duration: 0.2)
@@ -119,7 +115,6 @@ class ReSumeNode : SKSpriteNode {
    
    /// ノードを小さくする関数
    private func SmallAnimateion() {
-      
       //Large状態であれば小さくする
       if self.AreYouLarge == true {
          let Small: SKAction = SKAction.scale(by: 1 / 1.2, duration: 0.2)
@@ -141,16 +136,9 @@ class ReSumeNode : SKSpriteNode {
       let yDistance = Start.y - End.y
       let distance = sqrtf(Float(xDistance*xDistance + yDistance*yDistance))
       
-      print("2点間の距離は\(distance)")
-      
-      if distance > 55 {
-         return false
-      }
-      
+      if distance > 55 { return false }
       return true
    }
-   
-   
    
    required init?(coder aDecoder: NSCoder) {
       fatalError("init(coder:) has not been implemented")

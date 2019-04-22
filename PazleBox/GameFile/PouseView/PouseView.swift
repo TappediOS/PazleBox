@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import SpriteKit
-
+import SpriteKitEasingSwift
 
 class PouseView : SKSpriteNode {
    
@@ -21,25 +21,40 @@ class PouseView : SKSpriteNode {
    private var ViewW = 0
    private var ViewH = 0
    
+   private var PouseTouchPosi: CGPoint?
+   
+   private let PouseViewPosiX = 0
+   private let PouseViewPosiY = 0
+   
    init(ViewX: Int, ViewY: Int) {
       
       self.ViewW = ViewX / 10 * 8
       self.ViewH = self.ViewW
-  
       
       let NodeSize = CGSize(width: CGFloat(ViewW), height: CGFloat(ViewH))
-      let NodeColor = UIColor.flatWhite()
+      let NodeColor = UIColor(red: 255, green: 255, blue: 204, alpha: 0)
       
-      super.init(texture: nil, color: NodeColor!, size: NodeSize)
-      self.position = CGPoint(x: 0, y: 0)
+      super.init(texture: nil, color: NodeColor, size: NodeSize)
+      self.position = CGPoint(x: PouseViewPosiX, y: PouseViewPosiY)
       
       self.zPosition = 100
       
       self.isUserInteractionEnabled = false
       
+      InitPouseTouchPoint(ViewX: ViewX, ViewY: ViewY)
+      
       InitPouseLabel()
       InitReSumeNode()
       InitGoHomeNode()
+   }
+   
+   private func InitPouseTouchPoint(ViewX: Int, ViewY: Int) {
+      let PazzleSizeFound: Int = ViewX / 10 + (ViewX / 100)
+      let x = PazzleSizeFound * 3
+      let yposi: Int = PazzleSizeFound * 12
+      let y = -ViewY * 3 / 8 + yposi
+      
+      self.PouseTouchPosi = CGPoint(x: x, y: y)
    }
    
    private func InitPouseLabel() {
@@ -70,108 +85,34 @@ class PouseView : SKSpriteNode {
       self.addChild(Node)
    }
    
-   private func PostNotificationPouse() {
-      NotificationCenter.default.post(name: .Pouse, object: nil, userInfo: nil)
-   }
-   
-   public func LockPuzzle() {
-      self.isLocked = true
-   }
-   
-   //MARK:- タッチイベント
-   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-      
-      if isLocked == true {
+   private func SetViewFirstPosi() {
+      if let point = self.PouseTouchPosi {
+         self.position = point
+      }else {
          return
       }
-      
-      if let TouchStartPoint = touches.first?.location(in: self) {
-         self.TouchBegan = TouchStartPoint
-         LargeAnimation()
-      }else{
-         print("タッチ離したとき、Nilでした。")
-      }
    }
    
-   override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-      
-      
-      
+   private func SetViewSize() {
+      self.size = CGSize(width: 3, height: 3)
    }
-   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+   
+   private func MoveAnimation() {
       
-      if isLocked == true {
-         return
-      }
+      let MovePoint = CGPoint(x: 0, y: 0)
       
-      if let TouchEndPoint = touches.first?.location(in: self) {
-         var TmpPoint = TouchEndPoint
-         TmpPoint.x = TmpPoint.x - self.TouchBegan.x
-         TmpPoint.y = TmpPoint.y - self.TouchBegan.y
+      let Aktion = SKEase.move(easeFunction: .curveTypeQuadratic, easeType: .easeTypeOut, time: 1, from: self.position, to: MovePoint)
+      let action = SKAction.sequence([Aktion, SKAction.run({ [weak self] in
          
-         SmallAnimateion()
-         if LengthOfTwoPoint(Start: TouchBegan, End: TouchEndPoint) == false {
-            return
-         }
-         
-         PostNotificationPouse()
-         return
-      }else{
-         print("タッチ離したあと、Nilでした。")
-         return
-      }
+      }) ])
+      self.run(action)
    }
    
-   override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-      
+   public func ShowViewAnimation() {
+      SetViewFirstPosi()
+      SetViewSize()
+      MoveAnimation()
    }
-   
-   /// ノードを大きくする関数
-   private func LargeAnimation() {
-      
-      //Large状態でなければ大きくする。
-      if self.AreYouLarge == false {
-         let Large: SKAction = SKAction.scale(by: 1.2, duration: 0.2)
-         self.run(Large)
-         self.AreYouLarge = true
-         return
-      }
-   }
-   
-   /// ノードを小さくする関数
-   private func SmallAnimateion() {
-      
-      //Large状態であれば小さくする
-      if self.AreYouLarge == true {
-         let Small: SKAction = SKAction.scale(by: 1 / 1.2, duration: 0.2)
-         self.run(Small)
-         self.AreYouLarge = false
-         return
-      }
-   }
-   
-   /// 2点間の距離を求め、距離が十分であるかどうか調べる
-   ///
-   /// - Parameters:
-   ///   - Start: 始点
-   ///   - End: 終点
-   /// - Returns: 一定以上ならばtrueを返す。
-   private func LengthOfTwoPoint(Start: CGPoint, End: CGPoint) -> Bool {
-      
-      let xDistance = Start.x - End.x
-      let yDistance = Start.y - End.y
-      let distance = sqrtf(Float(xDistance*xDistance + yDistance*yDistance))
-      
-      print("2点間の距離は\(distance)")
-      
-      if distance > 55 {
-         return false
-      }
-      
-      return true
-   }
-   
-   
    
    required init?(coder aDecoder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
