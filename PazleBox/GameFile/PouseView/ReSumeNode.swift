@@ -57,6 +57,10 @@ class ReSumeNode : SKSpriteNode {
       self.isLocked = true
    }
    
+   public func UnLockPuzzle() {
+      self.isLocked = false
+   }
+   
    //MARK:- タッチイベント
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       
@@ -66,7 +70,6 @@ class ReSumeNode : SKSpriteNode {
       
       if let TouchStartPoint = touches.first?.location(in: self) {
          self.TouchBegan = TouchStartPoint
-         LargeAnimation()
       }else{
          print("タッチ離したとき、Nilでした。")
       }
@@ -85,11 +88,11 @@ class ReSumeNode : SKSpriteNode {
          TmpPoint.x = TmpPoint.x - self.TouchBegan.x
          TmpPoint.y = TmpPoint.y - self.TouchBegan.y
          
-         SmallAnimateion()
          if LengthOfTwoPoint(Start: TouchBegan, End: TouchEndPoint) == false {
             return
          }
          
+         self.LockPuzzle()
          PostNotificationPouse()
          return
       }else{
@@ -102,27 +105,6 @@ class ReSumeNode : SKSpriteNode {
       
    }
    
-   /// ノードを大きくする関数
-   private func LargeAnimation() {
-      //Large状態でなければ大きくする。
-      if self.AreYouLarge == false {
-         let Large: SKAction = SKAction.scale(by: 1.2, duration: 0.2)
-         self.run(Large)
-         self.AreYouLarge = true
-         return
-      }
-   }
-   
-   /// ノードを小さくする関数
-   private func SmallAnimateion() {
-      //Large状態であれば小さくする
-      if self.AreYouLarge == true {
-         let Small: SKAction = SKAction.scale(by: 1 / 1.2, duration: 0.2)
-         self.run(Small)
-         self.AreYouLarge = false
-         return
-      }
-   }
    
    /// 2点間の距離を求め、距離が十分であるかどうか調べる
    ///

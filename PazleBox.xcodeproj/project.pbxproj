@@ -98,6 +98,96 @@
 		BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C6A223F58920087A4AC /* ExNotification.swift */; };
 		BF519C7B223FA8D60087A4AC /* ExTextureName.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C7A223FA8D60087A4AC /* ExTextureName.swift */; };
 		BF519C7D223FAA470087A4AC /* GetPuzzleArry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C7C223FAA470087A4AC /* GetPuzzleArry.swift */; };
+		BF552E8C226DDCE600756E16 /* E21.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552E8B226DDCE600756E16 /* E21.swift */; };
+		BF552E8E226DDCEE00756E16 /* E22.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552E8D226DDCEE00756E16 /* E22.swift */; };
+		BF552E90226DDCF200756E16 /* E23.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552E8F226DDCF200756E16 /* E23.swift */; };
+		BF552E92226DDCFE00756E16 /* E24.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552E91226DDCFE00756E16 /* E24.swift */; };
+		BF552E94226DDD0600756E16 /* E25.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552E93226DDD0600756E16 /* E25.swift */; };
+		BF552E96226DDD0C00756E16 /* E26.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552E95226DDD0C00756E16 /* E26.swift */; };
+		BF552E98226DDD1100756E16 /* E27.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552E97226DDD1100756E16 /* E27.swift */; };
+		BF552E9A226DDD1400756E16 /* E28.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552E99226DDD1400756E16 /* E28.swift */; };
+		BF552E9C226DDD1700756E16 /* E29.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552E9B226DDD1700756E16 /* E29.swift */; };
+		BF552E9E226DDD1B00756E16 /* E30.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552E9D226DDD1B00756E16 /* E30.swift */; };
+		BF552EA0226DDD2800756E16 /* E31.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552E9F226DDD2800756E16 /* E31.swift */; };
+		BF552EA2226DDD2B00756E16 /* E32.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EA1226DDD2B00756E16 /* E32.swift */; };
+		BF552EA4226DDD3400756E16 /* E33.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EA3226DDD3400756E16 /* E33.swift */; };
+		BF552EA6226DDD3700756E16 /* E34.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EA5226DDD3700756E16 /* E34.swift */; };
+		BF552EA8226DDD3A00756E16 /* E35.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EA7226DDD3A00756E16 /* E35.swift */; };
+		BF552EAA226DDD3D00756E16 /* E36.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EA9226DDD3D00756E16 /* E36.swift */; };
+		BF552EAC226DDD4200756E16 /* E37.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EAB226DDD4200756E16 /* E37.swift */; };
+		BF552EAE226DDD4500756E16 /* E38.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EAD226DDD4500756E16 /* E38.swift */; };
+		BF552EB0226DDD4C00756E16 /* E39.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EAF226DDD4C00756E16 /* E39.swift */; };
+		BF552EB2226DDD5000756E16 /* E40.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EB1226DDD5000756E16 /* E40.swift */; };
+		BF552EB4226DDD5500756E16 /* E41.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EB3226DDD5500756E16 /* E41.swift */; };
+		BF552EB6226DDD5B00756E16 /* E42.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EB5226DDD5B00756E16 /* E42.swift */; };
+		BF552EB8226DDD5E00756E16 /* E43.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EB7226DDD5E00756E16 /* E43.swift */; };
+		BF552EBA226DDD6100756E16 /* E44.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EB9226DDD6100756E16 /* E44.swift */; };
+		BF552EBC226DDD6400756E16 /* E45.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EBB226DDD6400756E16 /* E45.swift */; };
+		BF552EBE226DDD6B00756E16 /* E46.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EBD226DDD6B00756E16 /* E46.swift */; };
+		BF552EC0226DDD7100756E16 /* E47.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EBF226DDD7100756E16 /* E47.swift */; };
+		BF552EC2226DDD7600756E16 /* E48.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EC1226DDD7600756E16 /* E48.swift */; };
+		BF552EC4226DDD7B00756E16 /* E49.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EC3226DDD7B00756E16 /* E49.swift */; };
+		BF552EC6226DDD7F00756E16 /* E50.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EC5226DDD7F00756E16 /* E50.swift */; };
+		BF552EC8226DDD9100756E16 /* N21.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EC7226DDD9100756E16 /* N21.swift */; };
+		BF552ECA226DDD9700756E16 /* N22.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EC9226DDD9700756E16 /* N22.swift */; };
+		BF552ECC226DDDA800756E16 /* N23.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552ECB226DDDA800756E16 /* N23.swift */; };
+		BF552ECE226DDDAC00756E16 /* N25.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552ECD226DDDAC00756E16 /* N25.swift */; };
+		BF552ED0226DDDB400756E16 /* N24.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552ECF226DDDB400756E16 /* N24.swift */; };
+		BF552ED2226DDDBE00756E16 /* N26.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552ED1226DDDBE00756E16 /* N26.swift */; };
+		BF552ED4226DDDC300756E16 /* N27.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552ED3226DDDC300756E16 /* N27.swift */; };
+		BF552ED6226DDDC900756E16 /* N28.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552ED5226DDDC900756E16 /* N28.swift */; };
+		BF552ED8226DDDD200756E16 /* N29.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552ED7226DDDD200756E16 /* N29.swift */; };
+		BF552EDA226DDDD700756E16 /* N30.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552ED9226DDDD700756E16 /* N30.swift */; };
+		BF552EDC226DDDE200756E16 /* N31.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EDB226DDDE200756E16 /* N31.swift */; };
+		BF552EDE226DDDE800756E16 /* N32.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EDD226DDDE800756E16 /* N32.swift */; };
+		BF552EE0226DDDF100756E16 /* N33.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EDF226DDDF100756E16 /* N33.swift */; };
+		BF552EE2226DDDF400756E16 /* N34.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EE1226DDDF400756E16 /* N34.swift */; };
+		BF552EE4226DDDF800756E16 /* N35.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EE3226DDDF800756E16 /* N35.swift */; };
+		BF552EE6226DDE0600756E16 /* 36.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EE5226DDE0600756E16 /* 36.swift */; };
+		BF552EE8226DDE1400756E16 /* N37.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EE7226DDE1400756E16 /* N37.swift */; };
+		BF552EEA226DDE1800756E16 /* N38.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EE9226DDE1800756E16 /* N38.swift */; };
+		BF552EEC226DDE2700756E16 /* N39.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EEB226DDE2700756E16 /* N39.swift */; };
+		BF552EEE226DDE3300756E16 /* N40.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EED226DDE3300756E16 /* N40.swift */; };
+		BF552EF0226DDE3700756E16 /* N41.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EEF226DDE3700756E16 /* N41.swift */; };
+		BF552EF2226DDE3A00756E16 /* N42.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EF1226DDE3A00756E16 /* N42.swift */; };
+		BF552EF4226DDE3F00756E16 /* N43.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EF3226DDE3F00756E16 /* N43.swift */; };
+		BF552EF6226DDE4900756E16 /* N44.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EF5226DDE4900756E16 /* N44.swift */; };
+		BF552EF8226DDE4E00756E16 /* N45.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EF7226DDE4E00756E16 /* N45.swift */; };
+		BF552EFA226DDE5100756E16 /* N46.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EF9226DDE5100756E16 /* N46.swift */; };
+		BF552EFC226DDE5D00756E16 /* N47.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EFB226DDE5D00756E16 /* N47.swift */; };
+		BF552EFE226DDE6100756E16 /* N48.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EFD226DDE6100756E16 /* N48.swift */; };
+		BF552F00226DDE6C00756E16 /* N49.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552EFF226DDE6C00756E16 /* N49.swift */; };
+		BF552F02226DDE7300756E16 /* N50.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F01226DDE7300756E16 /* N50.swift */; };
+		BF552F04226DDE8200756E16 /* H21.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F03226DDE8200756E16 /* H21.swift */; };
+		BF552F06226DDE8700756E16 /* H22.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F05226DDE8700756E16 /* H22.swift */; };
+		BF552F08226DDE8D00756E16 /* H23.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F07226DDE8D00756E16 /* H23.swift */; };
+		BF552F0A226DDE9400756E16 /* H24.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F09226DDE9400756E16 /* H24.swift */; };
+		BF552F0C226DDE9F00756E16 /* H25.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F0B226DDE9F00756E16 /* H25.swift */; };
+		BF552F0E226DDEAB00756E16 /* H26.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F0D226DDEAB00756E16 /* H26.swift */; };
+		BF552F10226DDEB000756E16 /* H27.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F0F226DDEB000756E16 /* H27.swift */; };
+		BF552F12226DDEB400756E16 /* H28.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F11226DDEB400756E16 /* H28.swift */; };
+		BF552F14226DDEB800756E16 /* H29.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F13226DDEB800756E16 /* H29.swift */; };
+		BF552F16226DDEC500756E16 /* H30.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F15226DDEC500756E16 /* H30.swift */; };
+		BF552F18226DDEC900756E16 /* H31.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F17226DDEC900756E16 /* H31.swift */; };
+		BF552F1A226DDECC00756E16 /* H32.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F19226DDECC00756E16 /* H32.swift */; };
+		BF552F1C226DDED000756E16 /* H33.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F1B226DDED000756E16 /* H33.swift */; };
+		BF552F1E226DDED300756E16 /* H34.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F1D226DDED300756E16 /* H34.swift */; };
+		BF552F20226DDEE200756E16 /* H35.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F1F226DDEE200756E16 /* H35.swift */; };
+		BF552F22226DDEEF00756E16 /* H36.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F21226DDEEF00756E16 /* H36.swift */; };
+		BF552F24226DDEF800756E16 /* H37.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F23226DDEF800756E16 /* H37.swift */; };
+		BF552F26226DDEFD00756E16 /* H38.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F25226DDEFD00756E16 /* H38.swift */; };
+		BF552F28226DDF0000756E16 /* H39.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F27226DDF0000756E16 /* H39.swift */; };
+		BF552F2A226DDF0600756E16 /* H40.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F29226DDF0600756E16 /* H40.swift */; };
+		BF552F2C226DDF0900756E16 /* H41.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F2B226DDF0900756E16 /* H41.swift */; };
+		BF552F2E226DDF0D00756E16 /* H42.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F2D226DDF0D00756E16 /* H42.swift */; };
+		BF552F30226DDF1100756E16 /* H43.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F2F226DDF1100756E16 /* H43.swift */; };
+		BF552F32226DDF1500756E16 /* H44.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F31226DDF1500756E16 /* H44.swift */; };
+		BF552F34226DDF1800756E16 /* H45.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F33226DDF1800756E16 /* H45.swift */; };
+		BF552F36226DDF1C00756E16 /* H46.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F35226DDF1C00756E16 /* H46.swift */; };
+		BF552F38226DDF2D00756E16 /* H47.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F37226DDF2D00756E16 /* H47.swift */; };
+		BF552F3A226DDF3100756E16 /* H48.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F39226DDF3100756E16 /* H48.swift */; };
+		BF552F3C226DDF4700756E16 /* H49.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F3B226DDF4700756E16 /* H49.swift */; };
+		BF552F3E226DDF4D00756E16 /* H50.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F3D226DDF4D00756E16 /* H50.swift */; };
 		BF60AC51224C8F1100D441D6 /* RePutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60AC50224C8F1100D441D6 /* RePutButton.swift */; };
 		BF60AC53224C952E00D441D6 /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60AC52224C952E00D441D6 /* Hint.swift */; };
 		BF60AC55224C981A00D441D6 /* Pouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60AC54224C981A00D441D6 /* Pouse.swift */; };
@@ -404,6 +494,96 @@
 		BF519C6A223F58920087A4AC /* ExNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNotification.swift; sourceTree = "<group>"; };
 		BF519C7A223FA8D60087A4AC /* ExTextureName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExTextureName.swift; sourceTree = "<group>"; };
 		BF519C7C223FAA470087A4AC /* GetPuzzleArry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPuzzleArry.swift; sourceTree = "<group>"; };
+		BF552E8B226DDCE600756E16 /* E21.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E21.swift; sourceTree = "<group>"; };
+		BF552E8D226DDCEE00756E16 /* E22.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E22.swift; sourceTree = "<group>"; };
+		BF552E8F226DDCF200756E16 /* E23.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E23.swift; sourceTree = "<group>"; };
+		BF552E91226DDCFE00756E16 /* E24.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E24.swift; sourceTree = "<group>"; };
+		BF552E93226DDD0600756E16 /* E25.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E25.swift; sourceTree = "<group>"; };
+		BF552E95226DDD0C00756E16 /* E26.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E26.swift; sourceTree = "<group>"; };
+		BF552E97226DDD1100756E16 /* E27.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E27.swift; sourceTree = "<group>"; };
+		BF552E99226DDD1400756E16 /* E28.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E28.swift; sourceTree = "<group>"; };
+		BF552E9B226DDD1700756E16 /* E29.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E29.swift; sourceTree = "<group>"; };
+		BF552E9D226DDD1B00756E16 /* E30.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E30.swift; sourceTree = "<group>"; };
+		BF552E9F226DDD2800756E16 /* E31.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E31.swift; sourceTree = "<group>"; };
+		BF552EA1226DDD2B00756E16 /* E32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E32.swift; sourceTree = "<group>"; };
+		BF552EA3226DDD3400756E16 /* E33.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E33.swift; sourceTree = "<group>"; };
+		BF552EA5226DDD3700756E16 /* E34.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E34.swift; sourceTree = "<group>"; };
+		BF552EA7226DDD3A00756E16 /* E35.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E35.swift; sourceTree = "<group>"; };
+		BF552EA9226DDD3D00756E16 /* E36.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E36.swift; sourceTree = "<group>"; };
+		BF552EAB226DDD4200756E16 /* E37.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E37.swift; sourceTree = "<group>"; };
+		BF552EAD226DDD4500756E16 /* E38.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E38.swift; sourceTree = "<group>"; };
+		BF552EAF226DDD4C00756E16 /* E39.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E39.swift; sourceTree = "<group>"; };
+		BF552EB1226DDD5000756E16 /* E40.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E40.swift; sourceTree = "<group>"; };
+		BF552EB3226DDD5500756E16 /* E41.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E41.swift; sourceTree = "<group>"; };
+		BF552EB5226DDD5B00756E16 /* E42.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E42.swift; sourceTree = "<group>"; };
+		BF552EB7226DDD5E00756E16 /* E43.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E43.swift; sourceTree = "<group>"; };
+		BF552EB9226DDD6100756E16 /* E44.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E44.swift; sourceTree = "<group>"; };
+		BF552EBB226DDD6400756E16 /* E45.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E45.swift; sourceTree = "<group>"; };
+		BF552EBD226DDD6B00756E16 /* E46.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E46.swift; sourceTree = "<group>"; };
+		BF552EBF226DDD7100756E16 /* E47.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E47.swift; sourceTree = "<group>"; };
+		BF552EC1226DDD7600756E16 /* E48.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E48.swift; sourceTree = "<group>"; };
+		BF552EC3226DDD7B00756E16 /* E49.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E49.swift; sourceTree = "<group>"; };
+		BF552EC5226DDD7F00756E16 /* E50.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E50.swift; sourceTree = "<group>"; };
+		BF552EC7226DDD9100756E16 /* N21.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N21.swift; sourceTree = "<group>"; };
+		BF552EC9226DDD9700756E16 /* N22.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N22.swift; sourceTree = "<group>"; };
+		BF552ECB226DDDA800756E16 /* N23.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N23.swift; sourceTree = "<group>"; };
+		BF552ECD226DDDAC00756E16 /* N25.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N25.swift; sourceTree = "<group>"; };
+		BF552ECF226DDDB400756E16 /* N24.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N24.swift; sourceTree = "<group>"; };
+		BF552ED1226DDDBE00756E16 /* N26.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N26.swift; sourceTree = "<group>"; };
+		BF552ED3226DDDC300756E16 /* N27.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N27.swift; sourceTree = "<group>"; };
+		BF552ED5226DDDC900756E16 /* N28.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N28.swift; sourceTree = "<group>"; };
+		BF552ED7226DDDD200756E16 /* N29.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N29.swift; sourceTree = "<group>"; };
+		BF552ED9226DDDD700756E16 /* N30.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N30.swift; sourceTree = "<group>"; };
+		BF552EDB226DDDE200756E16 /* N31.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N31.swift; sourceTree = "<group>"; };
+		BF552EDD226DDDE800756E16 /* N32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N32.swift; sourceTree = "<group>"; };
+		BF552EDF226DDDF100756E16 /* N33.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N33.swift; sourceTree = "<group>"; };
+		BF552EE1226DDDF400756E16 /* N34.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N34.swift; sourceTree = "<group>"; };
+		BF552EE3226DDDF800756E16 /* N35.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N35.swift; sourceTree = "<group>"; };
+		BF552EE5226DDE0600756E16 /* 36.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 36.swift; sourceTree = "<group>"; };
+		BF552EE7226DDE1400756E16 /* N37.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N37.swift; sourceTree = "<group>"; };
+		BF552EE9226DDE1800756E16 /* N38.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N38.swift; sourceTree = "<group>"; };
+		BF552EEB226DDE2700756E16 /* N39.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N39.swift; sourceTree = "<group>"; };
+		BF552EED226DDE3300756E16 /* N40.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N40.swift; sourceTree = "<group>"; };
+		BF552EEF226DDE3700756E16 /* N41.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N41.swift; sourceTree = "<group>"; };
+		BF552EF1226DDE3A00756E16 /* N42.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N42.swift; sourceTree = "<group>"; };
+		BF552EF3226DDE3F00756E16 /* N43.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N43.swift; sourceTree = "<group>"; };
+		BF552EF5226DDE4900756E16 /* N44.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N44.swift; sourceTree = "<group>"; };
+		BF552EF7226DDE4E00756E16 /* N45.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N45.swift; sourceTree = "<group>"; };
+		BF552EF9226DDE5100756E16 /* N46.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N46.swift; sourceTree = "<group>"; };
+		BF552EFB226DDE5D00756E16 /* N47.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N47.swift; sourceTree = "<group>"; };
+		BF552EFD226DDE6100756E16 /* N48.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N48.swift; sourceTree = "<group>"; };
+		BF552EFF226DDE6C00756E16 /* N49.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N49.swift; sourceTree = "<group>"; };
+		BF552F01226DDE7300756E16 /* N50.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N50.swift; sourceTree = "<group>"; };
+		BF552F03226DDE8200756E16 /* H21.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H21.swift; sourceTree = "<group>"; };
+		BF552F05226DDE8700756E16 /* H22.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H22.swift; sourceTree = "<group>"; };
+		BF552F07226DDE8D00756E16 /* H23.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H23.swift; sourceTree = "<group>"; };
+		BF552F09226DDE9400756E16 /* H24.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H24.swift; sourceTree = "<group>"; };
+		BF552F0B226DDE9F00756E16 /* H25.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H25.swift; sourceTree = "<group>"; };
+		BF552F0D226DDEAB00756E16 /* H26.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H26.swift; sourceTree = "<group>"; };
+		BF552F0F226DDEB000756E16 /* H27.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H27.swift; sourceTree = "<group>"; };
+		BF552F11226DDEB400756E16 /* H28.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H28.swift; sourceTree = "<group>"; };
+		BF552F13226DDEB800756E16 /* H29.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H29.swift; sourceTree = "<group>"; };
+		BF552F15226DDEC500756E16 /* H30.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H30.swift; sourceTree = "<group>"; };
+		BF552F17226DDEC900756E16 /* H31.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H31.swift; sourceTree = "<group>"; };
+		BF552F19226DDECC00756E16 /* H32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H32.swift; sourceTree = "<group>"; };
+		BF552F1B226DDED000756E16 /* H33.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H33.swift; sourceTree = "<group>"; };
+		BF552F1D226DDED300756E16 /* H34.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H34.swift; sourceTree = "<group>"; };
+		BF552F1F226DDEE200756E16 /* H35.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H35.swift; sourceTree = "<group>"; };
+		BF552F21226DDEEF00756E16 /* H36.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H36.swift; sourceTree = "<group>"; };
+		BF552F23226DDEF800756E16 /* H37.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H37.swift; sourceTree = "<group>"; };
+		BF552F25226DDEFD00756E16 /* H38.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H38.swift; sourceTree = "<group>"; };
+		BF552F27226DDF0000756E16 /* H39.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H39.swift; sourceTree = "<group>"; };
+		BF552F29226DDF0600756E16 /* H40.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H40.swift; sourceTree = "<group>"; };
+		BF552F2B226DDF0900756E16 /* H41.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H41.swift; sourceTree = "<group>"; };
+		BF552F2D226DDF0D00756E16 /* H42.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H42.swift; sourceTree = "<group>"; };
+		BF552F2F226DDF1100756E16 /* H43.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H43.swift; sourceTree = "<group>"; };
+		BF552F31226DDF1500756E16 /* H44.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H44.swift; sourceTree = "<group>"; };
+		BF552F33226DDF1800756E16 /* H45.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H45.swift; sourceTree = "<group>"; };
+		BF552F35226DDF1C00756E16 /* H46.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H46.swift; sourceTree = "<group>"; };
+		BF552F37226DDF2D00756E16 /* H47.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H47.swift; sourceTree = "<group>"; };
+		BF552F39226DDF3100756E16 /* H48.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H48.swift; sourceTree = "<group>"; };
+		BF552F3B226DDF4700756E16 /* H49.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H49.swift; sourceTree = "<group>"; };
+		BF552F3D226DDF4D00756E16 /* H50.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H50.swift; sourceTree = "<group>"; };
 		BF60AC50224C8F1100D441D6 /* RePutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePutButton.swift; sourceTree = "<group>"; };
 		BF60AC52224C952E00D441D6 /* Hint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint.swift; sourceTree = "<group>"; };
 		BF60AC54224C981A00D441D6 /* Pouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pouse.swift; sourceTree = "<group>"; };
@@ -735,6 +915,36 @@
 				BF332FA922492719009B3042 /* E18.swift */,
 				BF332FAB2249271C009B3042 /* E19.swift */,
 				BF332FAD22492723009B3042 /* E20.swift */,
+				BF552E8B226DDCE600756E16 /* E21.swift */,
+				BF552E8D226DDCEE00756E16 /* E22.swift */,
+				BF552E8F226DDCF200756E16 /* E23.swift */,
+				BF552E91226DDCFE00756E16 /* E24.swift */,
+				BF552E93226DDD0600756E16 /* E25.swift */,
+				BF552E95226DDD0C00756E16 /* E26.swift */,
+				BF552E97226DDD1100756E16 /* E27.swift */,
+				BF552E99226DDD1400756E16 /* E28.swift */,
+				BF552E9B226DDD1700756E16 /* E29.swift */,
+				BF552E9D226DDD1B00756E16 /* E30.swift */,
+				BF552E9F226DDD2800756E16 /* E31.swift */,
+				BF552EA1226DDD2B00756E16 /* E32.swift */,
+				BF552EA3226DDD3400756E16 /* E33.swift */,
+				BF552EA5226DDD3700756E16 /* E34.swift */,
+				BF552EA7226DDD3A00756E16 /* E35.swift */,
+				BF552EA9226DDD3D00756E16 /* E36.swift */,
+				BF552EAB226DDD4200756E16 /* E37.swift */,
+				BF552EAD226DDD4500756E16 /* E38.swift */,
+				BF552EAF226DDD4C00756E16 /* E39.swift */,
+				BF552EB1226DDD5000756E16 /* E40.swift */,
+				BF552EB3226DDD5500756E16 /* E41.swift */,
+				BF552EB5226DDD5B00756E16 /* E42.swift */,
+				BF552EB7226DDD5E00756E16 /* E43.swift */,
+				BF552EB9226DDD6100756E16 /* E44.swift */,
+				BF552EBB226DDD6400756E16 /* E45.swift */,
+				BF552EBD226DDD6B00756E16 /* E46.swift */,
+				BF552EBF226DDD7100756E16 /* E47.swift */,
+				BF552EC1226DDD7600756E16 /* E48.swift */,
+				BF552EC3226DDD7B00756E16 /* E49.swift */,
+				BF552EC5226DDD7F00756E16 /* E50.swift */,
 			);
 			path = Easy;
 			sourceTree = "<group>";
@@ -762,6 +972,36 @@
 				BF332FD1224927CC009B3042 /* N18.swift */,
 				BF332FD3224927D2009B3042 /* N19.swift */,
 				BF332FD5224927D5009B3042 /* N20.swift */,
+				BF552EC7226DDD9100756E16 /* N21.swift */,
+				BF552EC9226DDD9700756E16 /* N22.swift */,
+				BF552ECB226DDDA800756E16 /* N23.swift */,
+				BF552ECF226DDDB400756E16 /* N24.swift */,
+				BF552ECD226DDDAC00756E16 /* N25.swift */,
+				BF552ED1226DDDBE00756E16 /* N26.swift */,
+				BF552ED3226DDDC300756E16 /* N27.swift */,
+				BF552ED5226DDDC900756E16 /* N28.swift */,
+				BF552ED7226DDDD200756E16 /* N29.swift */,
+				BF552ED9226DDDD700756E16 /* N30.swift */,
+				BF552EDB226DDDE200756E16 /* N31.swift */,
+				BF552EDD226DDDE800756E16 /* N32.swift */,
+				BF552EDF226DDDF100756E16 /* N33.swift */,
+				BF552EE1226DDDF400756E16 /* N34.swift */,
+				BF552EE3226DDDF800756E16 /* N35.swift */,
+				BF552EE5226DDE0600756E16 /* 36.swift */,
+				BF552EE7226DDE1400756E16 /* N37.swift */,
+				BF552EE9226DDE1800756E16 /* N38.swift */,
+				BF552EEB226DDE2700756E16 /* N39.swift */,
+				BF552EED226DDE3300756E16 /* N40.swift */,
+				BF552EEF226DDE3700756E16 /* N41.swift */,
+				BF552EF1226DDE3A00756E16 /* N42.swift */,
+				BF552EF3226DDE3F00756E16 /* N43.swift */,
+				BF552EF5226DDE4900756E16 /* N44.swift */,
+				BF552EF7226DDE4E00756E16 /* N45.swift */,
+				BF552EF9226DDE5100756E16 /* N46.swift */,
+				BF552EFB226DDE5D00756E16 /* N47.swift */,
+				BF552EFD226DDE6100756E16 /* N48.swift */,
+				BF552EFF226DDE6C00756E16 /* N49.swift */,
+				BF552F01226DDE7300756E16 /* N50.swift */,
 			);
 			path = Normal;
 			sourceTree = "<group>";
@@ -789,6 +1029,36 @@
 				BF332FFB22492848009B3042 /* H18.swift */,
 				BF332FFD2249284F009B3042 /* H19.swift */,
 				BF332FFF22492854009B3042 /* H20.swift */,
+				BF552F03226DDE8200756E16 /* H21.swift */,
+				BF552F05226DDE8700756E16 /* H22.swift */,
+				BF552F07226DDE8D00756E16 /* H23.swift */,
+				BF552F09226DDE9400756E16 /* H24.swift */,
+				BF552F0B226DDE9F00756E16 /* H25.swift */,
+				BF552F0D226DDEAB00756E16 /* H26.swift */,
+				BF552F0F226DDEB000756E16 /* H27.swift */,
+				BF552F11226DDEB400756E16 /* H28.swift */,
+				BF552F13226DDEB800756E16 /* H29.swift */,
+				BF552F15226DDEC500756E16 /* H30.swift */,
+				BF552F17226DDEC900756E16 /* H31.swift */,
+				BF552F19226DDECC00756E16 /* H32.swift */,
+				BF552F1B226DDED000756E16 /* H33.swift */,
+				BF552F1D226DDED300756E16 /* H34.swift */,
+				BF552F1F226DDEE200756E16 /* H35.swift */,
+				BF552F21226DDEEF00756E16 /* H36.swift */,
+				BF552F23226DDEF800756E16 /* H37.swift */,
+				BF552F25226DDEFD00756E16 /* H38.swift */,
+				BF552F27226DDF0000756E16 /* H39.swift */,
+				BF552F29226DDF0600756E16 /* H40.swift */,
+				BF552F2B226DDF0900756E16 /* H41.swift */,
+				BF552F2D226DDF0D00756E16 /* H42.swift */,
+				BF552F2F226DDF1100756E16 /* H43.swift */,
+				BF552F31226DDF1500756E16 /* H44.swift */,
+				BF552F33226DDF1800756E16 /* H45.swift */,
+				BF552F35226DDF1C00756E16 /* H46.swift */,
+				BF552F37226DDF2D00756E16 /* H47.swift */,
+				BF552F39226DDF3100756E16 /* H48.swift */,
+				BF552F3B226DDF4700756E16 /* H49.swift */,
+				BF552F3D226DDF4D00756E16 /* H50.swift */,
 			);
 			path = Hard;
 			sourceTree = "<group>";
@@ -1596,7 +1866,9 @@
 				BF332FBC22492798009B3042 /* N7.swift in Sources */,
 				BF46109022352423006F3DF1 /* Puzzle.swift in Sources */,
 				BF332FE0224927F5009B3042 /* H5.swift in Sources */,
+				BF552ECA226DDD9700756E16 /* N22.swift in Sources */,
 				BF1FF2B2223120650047ED23 /* AllStageInfomation.swift in Sources */,
+				BF552E9C226DDD1700756E16 /* E29.swift in Sources */,
 				BF332F762248C043009B3042 /* EasyButton.swift in Sources */,
 				BF640C0B2245103500333782 /* E2.swift in Sources */,
 				BFFB3AD722510716000C90E1 /* ExUIView.swift in Sources */,
@@ -1606,94 +1878,182 @@
 				BF519C69223CCBDE0087A4AC /* GetTilePOSITION.swift in Sources */,
 				BF1FF2AF22311FD40047ED23 /* StageContents.swift in Sources */,
 				BF7CE7952260839E0040352D /* ReSumeNode.swift in Sources */,
+				BF552ED8226DDDD200756E16 /* N29.swift in Sources */,
 				BF332F722248AEAF009B3042 /* StageLevel.swift in Sources */,
+				BF552F26226DDEFD00756E16 /* H38.swift in Sources */,
+				BF552EC8226DDD9100756E16 /* N21.swift in Sources */,
 				BFFA2A8E2234CC5F0023BB71 /* Tile.swift in Sources */,
 				BF332FA422492704009B3042 /* E15.swift in Sources */,
 				BF1FF2B4223121BF0047ED23 /* Easy.swift in Sources */,
+				BF552EBC226DDD6400756E16 /* E45.swift in Sources */,
+				BF552F24226DDEF800756E16 /* H37.swift in Sources */,
 				BF332FBA2249278F009B3042 /* N6.swift in Sources */,
+				BF552F3C226DDF4700756E16 /* H49.swift in Sources */,
+				BF552F06226DDE8700756E16 /* H22.swift in Sources */,
+				BF552EDE226DDDE800756E16 /* N32.swift in Sources */,
+				BF552EE6226DDE0600756E16 /* 36.swift in Sources */,
+				BF552F22226DDEEF00756E16 /* H36.swift in Sources */,
+				BF552EA8226DDD3A00756E16 /* E35.swift in Sources */,
 				BF332F94224926DB009B3042 /* E7.swift in Sources */,
 				BF332F90224926CD009B3042 /* E5.swift in Sources */,
 				BFFB3AD52250F5E7000C90E1 /* GameClearView.swift in Sources */,
 				BF7CE797226083AD0040352D /* PouseTextureNode.swift in Sources */,
+				BF552ED6226DDDC900756E16 /* N28.swift in Sources */,
 				BF332FBE2249279C009B3042 /* N8.swift in Sources */,
 				BF60AC6F224DD62900D441D6 /* HintPuzzle.swift in Sources */,
+				BF552ED2226DDDBE00756E16 /* N26.swift in Sources */,
+				BF552EC6226DDD7F00756E16 /* E50.swift in Sources */,
 				BF0FD356224371CE00E8F387 /* PutParticle.swift in Sources */,
 				BF332FB42249277A009B3042 /* N3.swift in Sources */,
+				BF552EE2226DDDF400756E16 /* N34.swift in Sources */,
+				BF552F14226DDEB800756E16 /* H29.swift in Sources */,
 				BF332F92224926D3009B3042 /* E6.swift in Sources */,
 				BF332FCA224927BA009B3042 /* N14.swift in Sources */,
 				BF332FAA22492719009B3042 /* E18.swift in Sources */,
 				BF332FC8224927B4009B3042 /* N13.swift in Sources */,
+				BF552F0C226DDE9F00756E16 /* H25.swift in Sources */,
 				BF332FCC224927BF009B3042 /* N15.swift in Sources */,
+				BF552F1E226DDED300756E16 /* H34.swift in Sources */,
+				BF552F18226DDEC900756E16 /* H31.swift in Sources */,
+				BF552F3A226DDF3100756E16 /* H48.swift in Sources */,
 				BF332FA822492716009B3042 /* E17.swift in Sources */,
+				BF552E98226DDD1100756E16 /* E27.swift in Sources */,
+				BF552E8E226DDCEE00756E16 /* E22.swift in Sources */,
 				BF332FC2224927AA009B3042 /* N10.swift in Sources */,
+				BF552E90226DDCF200756E16 /* E23.swift in Sources */,
 				BF60AC53224C952E00D441D6 /* Hint.swift in Sources */,
+				BF552E96226DDD0C00756E16 /* E26.swift in Sources */,
+				BF552F2A226DDF0600756E16 /* H40.swift in Sources */,
 				BF332FB82249278B009B3042 /* N5.swift in Sources */,
 				BF60AC51224C8F1100D441D6 /* RePutButton.swift in Sources */,
 				BF332FA622492711009B3042 /* E16.swift in Sources */,
 				BF332FB22249276F009B3042 /* N2.swift in Sources */,
+				BF552EDA226DDDD700756E16 /* N30.swift in Sources */,
 				BF332F8A22492366009B3042 /* ExGameSeceneHard.swift in Sources */,
+				BF552F12226DDEB400756E16 /* H28.swift in Sources */,
 				BFFA2A8A223384420023BB71 /* Hard.swift in Sources */,
 				BF332FB622492784009B3042 /* N4.swift in Sources */,
 				BF332FAE22492723009B3042 /* E20.swift in Sources */,
+				BF552E94226DDD0600756E16 /* E25.swift in Sources */,
 				BF332FA2224926FF009B3042 /* E14.swift in Sources */,
 				BF332F98224926E6009B3042 /* E9.swift in Sources */,
 				BF33300222492B31009B3042 /* ExGameSeceneEasyP2.swift in Sources */,
 				BF332F8E224926CA009B3042 /* E4.swift in Sources */,
+				BF552EA2226DDD2B00756E16 /* E32.swift in Sources */,
+				BF552EA6226DDD3700756E16 /* E34.swift in Sources */,
+				BF552EF6226DDE4900756E16 /* N44.swift in Sources */,
+				BF552F38226DDF2D00756E16 /* H47.swift in Sources */,
 				BF332FEA2249280A009B3042 /* H10.swift in Sources */,
+				BF552ECE226DDDAC00756E16 /* N25.swift in Sources */,
 				BF332FC6224927B1009B3042 /* N12.swift in Sources */,
 				BF332FDC224927EF009B3042 /* H3.swift in Sources */,
+				BF552EBE226DDD6B00756E16 /* E46.swift in Sources */,
+				BF552E92226DDCFE00756E16 /* E24.swift in Sources */,
+				BF552F02226DDE7300756E16 /* N50.swift in Sources */,
 				BF0FD35422436DF200E8F387 /* ExUIColor.swift in Sources */,
 				BF640C0D224513DF00333782 /* HomeViewController.swift in Sources */,
+				BF552F20226DDEE200756E16 /* H35.swift in Sources */,
+				BF552EFA226DDE5100756E16 /* N46.swift in Sources */,
 				BF332FD4224927D2009B3042 /* N19.swift in Sources */,
+				BF552F28226DDF0000756E16 /* H39.swift in Sources */,
+				BF552EE4226DDDF800756E16 /* N35.swift in Sources */,
 				BF332F96224926DF009B3042 /* E8.swift in Sources */,
 				BF2674EA2227B6A3003D370F /* GameScene.swift in Sources */,
+				BF552EF4226DDE3F00756E16 /* N43.swift in Sources */,
 				BF332FFE2249284F009B3042 /* H19.swift in Sources */,
+				BF552EB2226DDD5000756E16 /* E40.swift in Sources */,
 				BF332FF622492834009B3042 /* H15.swift in Sources */,
+				BF552F10226DDEB000756E16 /* H27.swift in Sources */,
+				BF552EC2226DDD7600756E16 /* E48.swift in Sources */,
 				BF332FD0224927C9009B3042 /* N17.swift in Sources */,
 				BF2674EC2227B6A3003D370F /* GameViewController.swift in Sources */,
+				BF552EA0226DDD2800756E16 /* E31.swift in Sources */,
 				BF332FD6224927D5009B3042 /* N20.swift in Sources */,
+				BF552EAA226DDD3D00756E16 /* E36.swift in Sources */,
 				BFFA2A8C223384D80023BB71 /* HardCreate.swift in Sources */,
 				BF332F862249234C009B3042 /* ExGameSeceneEasy.swift in Sources */,
 				BF332F9E224926F3009B3042 /* E12.swift in Sources */,
+				BF552EFC226DDE5D00756E16 /* N47.swift in Sources */,
 				BF519C7B223FA8D60087A4AC /* ExTextureName.swift in Sources */,
+				BF552F1A226DDECC00756E16 /* H32.swift in Sources */,
 				BF332F9C224926F0009B3042 /* E11.swift in Sources */,
+				BF552ED0226DDDB400756E16 /* N24.swift in Sources */,
 				BF33300022492854009B3042 /* H20.swift in Sources */,
+				BF552EAE226DDD4500756E16 /* E38.swift in Sources */,
 				BF332FAC2249271C009B3042 /* E19.swift in Sources */,
+				BF552EB8226DDD5E00756E16 /* E43.swift in Sources */,
+				BF552EA4226DDD3400756E16 /* E33.swift in Sources */,
+				BF552F3E226DDF4D00756E16 /* H50.swift in Sources */,
+				BF552EF2226DDE3A00756E16 /* N42.swift in Sources */,
 				BF332F742248B1FE009B3042 /* EasySellectStage.swift in Sources */,
+				BF552F16226DDEC500756E16 /* H30.swift in Sources */,
 				BF332FF822492837009B3042 /* H16.swift in Sources */,
 				BFFA2A86223383B60023BB71 /* Normal.swift in Sources */,
 				BF33300422492B3E009B3042 /* ExGameSecenNormalP2.swift in Sources */,
 				BF332FE822492805009B3042 /* H9.swift in Sources */,
 				BF332F9A224926EB009B3042 /* E10.swift in Sources */,
+				BF552EFE226DDE6100756E16 /* N48.swift in Sources */,
 				BF7CE793226083920040352D /* GoHomeNode.swift in Sources */,
+				BF552F00226DDE6C00756E16 /* N49.swift in Sources */,
 				BF332FC4224927AE009B3042 /* N11.swift in Sources */,
+				BF552F2C226DDF0900756E16 /* H41.swift in Sources */,
+				BF552EDC226DDDE200756E16 /* N31.swift in Sources */,
+				BF552F32226DDF1500756E16 /* H44.swift in Sources */,
+				BF552EC0226DDD7100756E16 /* E47.swift in Sources */,
+				BF552EE8226DDE1400756E16 /* N37.swift in Sources */,
 				BF332FF42249282A009B3042 /* H14.swift in Sources */,
 				BF1FF2AD22311CE60047ED23 /* Stage.swift in Sources */,
 				BF332FDE224927F2009B3042 /* H4.swift in Sources */,
+				BF552F08226DDE8D00756E16 /* H23.swift in Sources */,
+				BF552ED4226DDDC300756E16 /* N27.swift in Sources */,
+				BF552F1C226DDED000756E16 /* H33.swift in Sources */,
 				BF332FEC2249280D009B3042 /* H11.swift in Sources */,
 				BF2674E42227B6A3003D370F /* AppDelegate.swift in Sources */,
 				BF60AC55224C981A00D441D6 /* Pouse.swift in Sources */,
+				BF552EF8226DDE4E00756E16 /* N45.swift in Sources */,
 				BF519C7D223FAA470087A4AC /* GetPuzzleArry.swift in Sources */,
 				BFFA2A81223380720023BB71 /* EasyGet.swift in Sources */,
+				BF552F04226DDE8200756E16 /* H21.swift in Sources */,
+				BF552EEC226DDE2700756E16 /* N39.swift in Sources */,
+				BF552F2E226DDF0D00756E16 /* H42.swift in Sources */,
 				BF332F8C224926C1009B3042 /* E3.swift in Sources */,
 				BF332FF022492819009B3042 /* H12.swift in Sources */,
 				BF332FD2224927CC009B3042 /* N18.swift in Sources */,
 				BF60AC5C224CA2E000D441D6 /* Sound.swift in Sources */,
 				BF332FDA224927EB009B3042 /* H2.swift in Sources */,
+				BF552EB6226DDD5B00756E16 /* E42.swift in Sources */,
+				BF552EB4226DDD5500756E16 /* E41.swift in Sources */,
 				BF332FC0224927A0009B3042 /* N9.swift in Sources */,
 				BF7CE79022607FEA0040352D /* PouseView.swift in Sources */,
+				BF552EEA226DDE1800756E16 /* N38.swift in Sources */,
+				BF552EEE226DDE3300756E16 /* N40.swift in Sources */,
 				BF640C092245100C00333782 /* E1.swift in Sources */,
+				BF552EE0226DDDF100756E16 /* N33.swift in Sources */,
 				BF332FE622492802009B3042 /* H8.swift in Sources */,
 				BF332FE2224927F8009B3042 /* H6.swift in Sources */,
+				BF552F30226DDF1100756E16 /* H43.swift in Sources */,
+				BF552E8C226DDCE600756E16 /* E21.swift in Sources */,
 				BF332F8022491F8D009B3042 /* ExEnum.swift in Sources */,
+				BF552ECC226DDDA800756E16 /* N23.swift in Sources */,
+				BF552EAC226DDD4200756E16 /* E37.swift in Sources */,
 				BF33300622492B4C009B3042 /* ExGameSeceneHardP2.swift in Sources */,
+				BF552E9E226DDD1B00756E16 /* E30.swift in Sources */,
 				BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */,
 				BF332FFC22492848009B3042 /* H18.swift in Sources */,
+				BF552F34226DDF1800756E16 /* H45.swift in Sources */,
+				BF552EBA226DDD6100756E16 /* E44.swift in Sources */,
+				BF552F36226DDF1C00756E16 /* H46.swift in Sources */,
+				BF552EC4226DDD7B00756E16 /* E49.swift in Sources */,
 				BF332FF222492827009B3042 /* H13.swift in Sources */,
+				BF552E9A226DDD1400756E16 /* E28.swift in Sources */,
+				BF552F0A226DDE9400756E16 /* H24.swift in Sources */,
 				BF332FFA2249283C009B3042 /* H17.swift in Sources */,
 				BF332FB022492766009B3042 /* N1.swift in Sources */,
 				BF332FCE224927C3009B3042 /* N16.swift in Sources */,
 				BF332FD8224927E2009B3042 /* H1.swift in Sources */,
+				BF552EB0226DDD4C00756E16 /* E39.swift in Sources */,
+				BF552EF0226DDE3700756E16 /* N41.swift in Sources */,
+				BF552F0E226DDEAB00756E16 /* H26.swift in Sources */,
 				BF332FE4224927FE009B3042 /* H7.swift in Sources */,
 				BFFA2A88223384120023BB71 /* NormalCreate.swift in Sources */,
 			);

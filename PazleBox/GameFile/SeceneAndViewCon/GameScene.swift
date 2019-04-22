@@ -717,9 +717,14 @@ class GameScene: SKScene {
    //MARK:  ポーズをする
    @objc func PouseCatchNotification(notification: Notification) -> Void {
       print("PouseCatchNotifi")
-      self.addChild(self.PouseViewNode!)
-      self.PouseViewNode!.ShowViewAnimation()
-      LockAllNode()
+      
+      if self.PouseViewNode!.GetIsLocked() == false {
+         self.addChild(self.PouseViewNode!)
+         self.PouseViewNode!.ShowViewAnimation()
+         LockAllNode()
+      }else{
+         print("現在Viewを消している最中です.")
+      }
    }
    
    //MARK: ヒント表示
@@ -741,7 +746,8 @@ class GameScene: SKScene {
    
    @objc func ReSumeCatchNotification(notification: Notification) -> Void {
       print("ReSumeCatchNotifi")
-      PouseViewNode?.removeFromParent()
+      //PouseViewNode?.removeFromParent()
+      PouseViewNode?.FadeOutAniAndRemoveFromParent()
       UnLockAllNode()
    }
    

@@ -13,6 +13,8 @@ import SpriteKitEasingSwift
 
 class PouseView : SKSpriteNode {
    
+   private var ResumeNodes: ReSumeNode?
+   
    private var TouchBegan = CGPoint(x: 0, y: 0)
    private var AreYouLarge: Bool = false
    
@@ -21,7 +23,6 @@ class PouseView : SKSpriteNode {
    private var ViewW = 0
    private var ViewH = 0
    
-   private var PouseTouchPosi: CGPoint?
    
    private let PouseViewPosiX = 0
    private let PouseViewPosiY = 0
@@ -32,7 +33,7 @@ class PouseView : SKSpriteNode {
       self.ViewH = self.ViewW
       
       let NodeSize = CGSize(width: CGFloat(ViewW), height: CGFloat(ViewH))
-      let NodeColor = UIColor(red: 255, green: 255, blue: 204, alpha: 0)
+      let NodeColor = UIColor(red: 255, green: 255, blue: 204, alpha: 1)
       
       super.init(texture: nil, color: NodeColor, size: NodeSize)
       self.position = CGPoint(x: PouseViewPosiX, y: PouseViewPosiY)
@@ -41,22 +42,13 @@ class PouseView : SKSpriteNode {
       
       self.isUserInteractionEnabled = false
       
-      InitPouseTouchPoint(ViewX: ViewX, ViewY: ViewY)
       
       InitPouseLabel()
       InitReSumeNode()
       InitGoHomeNode()
    }
    
-   private func InitPouseTouchPoint(ViewX: Int, ViewY: Int) {
-      let PazzleSizeFound: Int = ViewX / 10 + (ViewX / 100)
-      let x = PazzleSizeFound * 3
-      let yposi: Int = PazzleSizeFound * 12
-      let y = -ViewY * 3 / 8 + yposi
-      
-      self.PouseTouchPosi = CGPoint(x: x, y: y)
-   }
-   
+
    private func InitPouseLabel() {
       let y = ViewH / 4
       let startY = y + y / 4
@@ -71,9 +63,14 @@ class PouseView : SKSpriteNode {
       let y = ViewH / 4
       
       let Node = ReSumeNode(ViewX: x, ViewY: y, StartX: 0, StartY: 0)
-      self.addChild(Node)
+      self.ResumeNodes = Node
+      self.addChild(self.ResumeNodes!)
    }
    
+   
+   public func GetIsLocked() -> Bool {
+      return self.isLocked
+   }
    
    private func InitGoHomeNode() {
       
@@ -85,33 +82,44 @@ class PouseView : SKSpriteNode {
       self.addChild(Node)
    }
    
-   private func SetViewFirstPosi() {
-      if let point = self.PouseTouchPosi {
-         self.position = point
-      }else {
-         return
-      }
-   }
+
    
-   private func SetViewSize() {
-      self.size = CGSize(width: 3, height: 3)
+   private func ReSetNodeSize() {
+      self.size = CGSize(width: CGFloat(ViewW), height: CGFloat(ViewH))
+      self.alpha = 1
    }
-   
-   private func MoveAnimation() {
-      
-      let MovePoint = CGPoint(x: 0, y: 0)
-      
-      let Aktion = SKEase.move(easeFunction: .curveTypeQuadratic, easeType: .easeTypeOut, time: 1, from: self.position, to: MovePoint)
-      let action = SKAction.sequence([Aktion, SKAction.run({ [weak self] in
-         
-      }) ])
-      self.run(action)
-   }
+
    
    public func ShowViewAnimation() {
-      SetViewFirstPosi()
-      SetViewSize()
-      MoveAnimation()
+      let WaitActon = SKAction.wait(forDuration: 0.01)
+      let LargeAction = SKEase.scale(easeFunction: .curveTypeQuartic, easeType: .easeTypeOut, time: 0.085, from: 1, to: 1.1)
+      let SmallAction = SKEase.scale(easeFunction: .curveTypeBack, easeType: .easeTypeOut, time: 0.175, from: 1.1, to: 1)
+      let PouseAnime = SKAction.sequence([WaitActon, LargeAction, SmallAction])
+      
+      self.run(PouseAnime)
+   }
+   
+   public func FadeOutAniAndRemoveFromParent() {
+      
+      self.isLocked = true
+      
+      let LargeAction = SKEase.scale(easeFunction: .curveTypeQuartic, easeType: .easeTypeOut, time: 0.085, from: 1, to: 1.08)
+      
+      let SmallAction = SKEase.scale(easeFunction: .curveTypeLinear, easeType: .easeTypeIn, time: 0.24, from: 1.1, to: 0)
+      let FadeOutAction = SKEase.fade(easeFunction: .curveTypeExpo, easeType: .easeTypeOut, time: 0.36, fromValue: 1, toValue: 0)
+      
+      let SmallGroup = SKAction.group([SmallAction, FadeOutAction])
+      
+      let LargeAndSmallGroup = SKAction.sequence([LargeAction, SmallGroup])
+      
+      let RunAction = SKAction.sequence([LargeAndSmallGroup, SKAction.run({ [weak self] in
+         self?.ReSetNodeSize()
+         self?.removeFromParent()
+         self?.isLocked = false
+         self?.ResumeNodes!.UnLockPuzzle()
+      }) ])
+      
+      self.run(RunAction)
    }
    
    required init?(coder aDecoder: NSCoder) {
