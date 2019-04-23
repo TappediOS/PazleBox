@@ -14,26 +14,20 @@ import SpriteKit
 class RePutButton : SKSpriteNode {
    
    private var TouchBegan = CGPoint(x: 0, y: 0)
-   private var AreYouLarge: Bool = false
-   
+   private var AreYouLarge = false
    private var isLocked = false
-   
    
    init(ViewX: Int, ViewY: Int) {
       
-      
       let PazzleSizeFound = ViewX / 10 + (ViewX / 100)
-      
       let x1 = -PazzleSizeFound * 3
-      
-      let yposi: Int = PazzleSizeFound * 12
-      let y1: Int = -ViewY * 3 / 8 + yposi
+      let yposi = PazzleSizeFound * 12
+      let y1 = -ViewY * 3 / 8 + yposi
      
       //MARK: 画像の初期化
       let texture: SKTexture
       texture = SKTexture(imageNamed: "RePut.png")
       texture.usesMipmaps = true
-      
       
       let NodeSize = CGSize(width: CGFloat(PazzleSizeFound), height: CGFloat(PazzleSizeFound))
       
@@ -41,8 +35,6 @@ class RePutButton : SKSpriteNode {
       self.position = CGPoint(x: x1, y: y1)
       
       self.isUserInteractionEnabled = true
-      
-      
    }
    
    private func PostNotificationRePut() {
@@ -59,9 +51,7 @@ class RePutButton : SKSpriteNode {
    //MARK:- タッチイベント
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       
-      if isLocked == true {
-         return
-      }
+      if isLocked == true { return }
       
       if let TouchStartPoint = touches.first?.location(in: self) {
          self.TouchBegan = TouchStartPoint
@@ -71,16 +61,11 @@ class RePutButton : SKSpriteNode {
       }
    }
    
-   override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-      
-     
-      
-   }
+   override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) { }
+   
    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
       
-      if isLocked == true {
-         return
-      }
+      if isLocked == true { return }
       
       if let TouchEndPoint = touches.first?.location(in: self) {
          var TmpPoint = TouchEndPoint
@@ -101,12 +86,11 @@ class RePutButton : SKSpriteNode {
    }
    
    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-      
+
    }
    
    /// ノードを大きくする関数
    private func LargeAnimation() {
-      
       //Large状態でなければ大きくする。
       if self.AreYouLarge == false {
          let Large: SKAction = SKAction.scale(by: 1.2, duration: 0.2)
@@ -118,7 +102,6 @@ class RePutButton : SKSpriteNode {
    
    /// ノードを小さくする関数
    private func SmallAnimateion() {
-      
       //Large状態であれば小さくする
       if self.AreYouLarge == true {
          let Small: SKAction = SKAction.scale(by: 1 / 1.2, duration: 0.2)
@@ -135,17 +118,13 @@ class RePutButton : SKSpriteNode {
    ///   - End: 終点
    /// - Returns: 一定以上ならばtrueを返す。
    private func LengthOfTwoPoint(Start: CGPoint, End: CGPoint) -> Bool {
-      
       let xDistance = Start.x - End.x
       let yDistance = Start.y - End.y
       let distance = sqrtf(Float(xDistance*xDistance + yDistance*yDistance))
       
       print("2点間の距離は\(distance)")
       
-      if distance > 55 {
-         return false
-      }
-      
+      if distance > 55 {return false}
       return true
    }
    

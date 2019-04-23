@@ -279,7 +279,6 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
    @objc func RewardADNotification(notification: Notification) -> Void {
       if Reward.isReady == true {
          Reward.present(fromRootViewController: self)
-
       }
    }
    
