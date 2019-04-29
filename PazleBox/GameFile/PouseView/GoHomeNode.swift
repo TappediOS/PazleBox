@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SpriteKit
 import ChameleonFramework
+import TapticEngine
 
 class GoHomeNode : SKSpriteNode {
    
@@ -91,6 +92,7 @@ class GoHomeNode : SKSpriteNode {
          }
          
          self.LockPuzzle()
+         Play3DtouchMedium()
          PostNotificationPouse()
          return
       }else{
@@ -130,6 +132,18 @@ class GoHomeNode : SKSpriteNode {
    
    required init?(coder aDecoder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
+   }
+   
+   private func Play3DtouchLight() {
+      TapticEngine.impact.feedback(.light)
+   }
+   
+   private func Play3DtouchMedium() {
+      TapticEngine.impact.feedback(.medium)
+   }
+   
+   private func Play3DtouchHeavy() {
+      TapticEngine.impact.feedback(.heavy)
    }
 }
 

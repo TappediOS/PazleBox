@@ -10,6 +10,7 @@ import Foundation
 import Lottie
 import UIKit
 import FlatUIKit
+import TapticEngine
 
 class GameClearView: UIView {
    
@@ -260,13 +261,13 @@ class GameClearView: UIView {
    //MARK:- タッチイベント
    @objc func TapNextButton (_ sender: UIButton) {
       print("Tap NextButton")
-      
+      Play3DtouchMedium()
       NotificationCenter.default.post(name: .TapNext, object: nil, userInfo: nil)
    }
    
    @objc func TapGoHomeButton (_ sender: UIButton) {
       print("Tap GoHomeButton")
-      
+      Play3DtouchMedium()
       NotificationCenter.default.post(name: .TapHome, object: nil, userInfo: nil)
    }
    
@@ -319,16 +320,19 @@ class GameClearView: UIView {
    public func StartAnimationView1() {
       StarView1.play()
       KiraView1.play()
+      Play3DtouchHeavy()
    }
    
    public func StartAnimationView2() {
       StarView2.play()
       KiraView2.play()
+      Play3DtouchHeavy()
    }
    
    public func StartAnimationView3() {
       StarView3.play()
       KiraView3.play()
+      Play3DtouchHeavy()
    }
    
    
@@ -389,5 +393,17 @@ class GameClearView: UIView {
    
    required init?(coder aDecoder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
+   }
+   
+   private func Play3DtouchLight() {
+      TapticEngine.impact.feedback(.light)
+   }
+   
+   private func Play3DtouchMedium() {
+      TapticEngine.impact.feedback(.medium)
+   }
+   
+   private func Play3DtouchHeavy() {
+      TapticEngine.impact.feedback(.heavy)
    }
 }

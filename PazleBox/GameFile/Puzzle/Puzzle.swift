@@ -427,19 +427,16 @@ class puzzle: SKSpriteNode {
    
    private func Play3DtouchLight() {
       TapticEngine.impact.feedback(.light)
-      //TapticEngine.notification.feedback(.warning)
       return
    }
    
    private func Play3DtouchMedium() {
       TapticEngine.impact.feedback(.medium)
-      //TapticEngine.notification.feedback(.warning)
       return
    }
    
    private func Play3DtouchHeavy() {
       TapticEngine.impact.feedback(.heavy)
-      //TapticEngine.notification.feedback(.warning)
       return
    }
 }

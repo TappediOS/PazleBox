@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import FlatUIKit
+import TapticEngine
 
 class SellectStageEasy: UIScrollView {
    
@@ -73,10 +74,12 @@ class SellectStageEasy: UIScrollView {
    
    @objc func SellectButton (_ sender: UIButton) {
       print("押されたボタン: \(sender.tag)")
+      Play3DtouchLight()
       GameSerPOSTMotification(StageNum: sender.tag)
    }
    
    @objc func TapBackButton (_ sender: UIButton) {
+      Play3DtouchMedium()
       GameSellectBackPOSTMotification()
    }
    
@@ -95,5 +98,20 @@ class SellectStageEasy: UIScrollView {
    
    required init?(coder aDecoder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
+   }
+   
+   private func Play3DtouchLight() {
+      TapticEngine.impact.feedback(.light)
+      return
+   }
+   
+   private func Play3DtouchMedium() {
+      TapticEngine.impact.feedback(.medium)
+      return
+   }
+   
+   private func Play3DtouchHeavy() {
+      TapticEngine.impact.feedback(.heavy)
+      return
    }
 }

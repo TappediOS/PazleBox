@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import SpriteKit
-
+import TapticEngine
 
 class PouseNode : SKSpriteNode {
    
@@ -91,6 +91,7 @@ class PouseNode : SKSpriteNode {
             return
          }
          
+         Play3DtouchLight()
          PostNotificationPouse()
          return
       }else{
@@ -152,6 +153,18 @@ class PouseNode : SKSpriteNode {
    
    required init?(coder aDecoder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
+   }
+   
+   private func Play3DtouchLight() {
+      TapticEngine.impact.feedback(.light)
+   }
+   
+   private func Play3DtouchMedium() {
+      TapticEngine.impact.feedback(.medium)
+   }
+   
+   private func Play3DtouchHeavy() {
+      TapticEngine.impact.feedback(.heavy)
    }
 }
 

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import SpriteKit
-
+import TapticEngine
 
 class RePutButton : SKSpriteNode {
    
@@ -76,7 +76,7 @@ class RePutButton : SKSpriteNode {
          if LengthOfTwoPoint(Start: TouchBegan, End: TouchEndPoint) == false {
             return
          }
-         
+         Play3DtouchLight()
          PostNotificationRePut()
          return
       }else{
@@ -132,6 +132,18 @@ class RePutButton : SKSpriteNode {
    
    required init?(coder aDecoder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
+   }
+   
+   private func Play3DtouchLight() {
+      TapticEngine.impact.feedback(.light)
+   }
+   
+   private func Play3DtouchMedium() {
+      TapticEngine.impact.feedback(.medium)
+   }
+   
+   private func Play3DtouchHeavy() {
+      TapticEngine.impact.feedback(.heavy)
    }
 }
 

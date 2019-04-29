@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import ChameleonFramework
 import Lottie
+import TapticEngine
 
 class HomeViewController: UIViewController {
    
@@ -53,7 +54,7 @@ class HomeViewController: UIViewController {
       }
       print("ステージレベルの送信完了(\(vc2.StageLevel))")
       
-      
+      Play3DtouchLight()
       //NavigationControllerを継承したViewControllerを遷移
       print("GameViewControllerを表示します")
        present(vc2, animated: true, completion: nil)
@@ -68,7 +69,20 @@ class HomeViewController: UIViewController {
       InitButton()
    }
    
-
+   private func Play3DtouchLight() {
+      TapticEngine.impact.feedback(.light)
+      return
+   }
+   
+   private func Play3DtouchMedium() {
+      TapticEngine.impact.feedback(.medium)
+      return
+   }
+   
+   private func Play3DtouchHeavy() {
+      TapticEngine.impact.feedback(.heavy)
+      return
+   }
 
 }
 

@@ -23,7 +23,7 @@ class GameSounds {
    var audioPlayer9: AVAudioPlayer! = nil
    var audioPlayer10: AVAudioPlayer! = nil
    
-   let SoundVolume: Float = 0.15
+   let SoundVolume: Float = 0.5
    
    
    init() {
