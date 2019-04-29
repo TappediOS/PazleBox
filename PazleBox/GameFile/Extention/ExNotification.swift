@@ -23,4 +23,6 @@ extension Notification.Name {
    static let TapNext = Notification.Name("TapNext")
    static let TapHome = Notification.Name("TapHome")
    static let ReSume = Notification.Name("ReSume")
+   static let AdWatch = Notification.Name("AdWatch")
+   static let AdNoWatch = Notification.Name("AdNoWatch")
 }

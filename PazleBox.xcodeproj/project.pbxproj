@@ -24,6 +24,10 @@
 		BF2674EF2227B6A3003D370F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2674ED2227B6A3003D370F /* Main.storyboard */; };
 		BF2674F12227B6A4003D370F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2674F02227B6A4003D370F /* Assets.xcassets */; };
 		BF2674F42227B6A4003D370F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2674F22227B6A4003D370F /* LaunchScreen.storyboard */; };
+		BF2C145F2276F39500C7B8FB /* HintPouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C145E2276F39500C7B8FB /* HintPouseView.swift */; };
+		BF2C14612276F3A300C7B8FB /* HintTextNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C14602276F3A300C7B8FB /* HintTextNode.swift */; };
+		BF2C14632276F3B000C7B8FB /* YesNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C14622276F3B000C7B8FB /* YesNode.swift */; };
+		BF2C14652276F3B700C7B8FB /* NoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C14642276F3B700C7B8FB /* NoNode.swift */; };
 		BF332F722248AEAF009B3042 /* StageLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F712248AEAF009B3042 /* StageLevel.swift */; };
 		BF332F742248B1FE009B3042 /* EasySellectStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F732248B1FE009B3042 /* EasySellectStage.swift */; };
 		BF332F762248C043009B3042 /* EasyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F752248C043009B3042 /* EasyButton.swift */; };
@@ -420,6 +424,10 @@
 		BF2674F02227B6A4003D370F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF2674F32227B6A4003D370F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF2674F52227B6A4003D370F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF2C145E2276F39500C7B8FB /* HintPouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintPouseView.swift; sourceTree = "<group>"; };
+		BF2C14602276F3A300C7B8FB /* HintTextNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintTextNode.swift; sourceTree = "<group>"; };
+		BF2C14622276F3B000C7B8FB /* YesNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesNode.swift; sourceTree = "<group>"; };
+		BF2C14642276F3B700C7B8FB /* NoNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNode.swift; sourceTree = "<group>"; };
 		BF332F712248AEAF009B3042 /* StageLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageLevel.swift; sourceTree = "<group>"; };
 		BF332F732248B1FE009B3042 /* EasySellectStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasySellectStage.swift; sourceTree = "<group>"; };
 		BF332F752248C043009B3042 /* EasyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyButton.swift; sourceTree = "<group>"; };
@@ -835,7 +843,7 @@
 				BF640C0722450FFA00333782 /* StageOfPuzzle */,
 				BF332F7A22491753009B3042 /* SeceneAndViewCon */,
 				BF332F7B22491767009B3042 /* Puzzle */,
-				BF7CE791226083690040352D /* PouseView */,
+				BF2C145C2276F35600C7B8FB /* GameSubView */,
 				BF332F7C224917D2009B3042 /* Sellect */,
 				BF60AC4F224C8EDA00D441D6 /* StatesBar */,
 				BF8A464C225081E90016F801 /* LottieJSON */,
@@ -890,6 +898,27 @@
 				BF2674F52227B6A4003D370F /* Info.plist */,
 			);
 			path = PazleBox;
+			sourceTree = "<group>";
+		};
+		BF2C145C2276F35600C7B8FB /* GameSubView */ = {
+			isa = PBXGroup;
+			children = (
+				BF2C145D2276F37B00C7B8FB /* HIntPouseView */,
+				BF7CE791226083690040352D /* PouseView */,
+			);
+			path = GameSubView;
+			sourceTree = "<group>";
+		};
+		BF2C145D2276F37B00C7B8FB /* HIntPouseView */ = {
+			isa = PBXGroup;
+			children = (
+				BF2C145E2276F39500C7B8FB /* HintPouseView.swift */,
+				BF2C14602276F3A300C7B8FB /* HintTextNode.swift */,
+				BF2C14622276F3B000C7B8FB /* YesNode.swift */,
+				BF2C14642276F3B700C7B8FB /* NoNode.swift */,
+			);
+			name = HIntPouseView;
+			path = PouseView;
 			sourceTree = "<group>";
 		};
 		BF332F7722490D3A009B3042 /* Easy */ = {
@@ -1333,8 +1362,8 @@
 			children = (
 				BF7CE78F22607FEA0040352D /* PouseView.swift */,
 				BF7CE796226083AD0040352D /* PouseTextureNode.swift */,
-				BF7CE792226083920040352D /* GoHomeNode.swift */,
 				BF7CE7942260839E0040352D /* ReSumeNode.swift */,
+				BF7CE792226083920040352D /* GoHomeNode.swift */,
 			);
 			path = PouseView;
 			sourceTree = "<group>";
@@ -1902,6 +1931,7 @@
 				BF332FBE2249279C009B3042 /* N8.swift in Sources */,
 				BF60AC6F224DD62900D441D6 /* HintPuzzle.swift in Sources */,
 				BF552ED2226DDDBE00756E16 /* N26.swift in Sources */,
+				BF2C14612276F3A300C7B8FB /* HintTextNode.swift in Sources */,
 				BF552EC6226DDD7F00756E16 /* E50.swift in Sources */,
 				BF0FD356224371CE00E8F387 /* PutParticle.swift in Sources */,
 				BF332FB42249277A009B3042 /* N3.swift in Sources */,
@@ -1971,6 +2001,7 @@
 				BF332FD6224927D5009B3042 /* N20.swift in Sources */,
 				BF552EAA226DDD3D00756E16 /* E36.swift in Sources */,
 				BFFA2A8C223384D80023BB71 /* HardCreate.swift in Sources */,
+				BF2C145F2276F39500C7B8FB /* HintPouseView.swift in Sources */,
 				BF332F862249234C009B3042 /* ExGameSeceneEasy.swift in Sources */,
 				BF332F9E224926F3009B3042 /* E12.swift in Sources */,
 				BF552EFC226DDE5D00756E16 /* N47.swift in Sources */,
@@ -1992,6 +2023,7 @@
 				BF33300422492B3E009B3042 /* ExGameSecenNormalP2.swift in Sources */,
 				BF332FE822492805009B3042 /* H9.swift in Sources */,
 				BF332F9A224926EB009B3042 /* E10.swift in Sources */,
+				BF2C14652276F3B700C7B8FB /* NoNode.swift in Sources */,
 				BF552EFE226DDE6100756E16 /* N48.swift in Sources */,
 				BF7CE793226083920040352D /* GoHomeNode.swift in Sources */,
 				BF552F00226DDE6C00756E16 /* N49.swift in Sources */,
@@ -2028,6 +2060,7 @@
 				BF552EEA226DDE1800756E16 /* N38.swift in Sources */,
 				BF552EEE226DDE3300756E16 /* N40.swift in Sources */,
 				BF640C092245100C00333782 /* E1.swift in Sources */,
+				BF2C14632276F3B000C7B8FB /* YesNode.swift in Sources */,
 				BF552EE0226DDDF100756E16 /* N33.swift in Sources */,
 				BF332FE622492802009B3042 /* H8.swift in Sources */,
 				BF332FE2224927F8009B3042 /* H6.swift in Sources */,

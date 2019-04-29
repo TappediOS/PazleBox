@@ -39,6 +39,8 @@ class GameScene: SKScene {
    
    var PouseViewNode: PouseView?
    
+   var HintPouseViewNode: HintPouseView?
+   
    
    var PostedStageNum = 1
    var StageLebel: StageLevel = .Easy
@@ -68,6 +70,7 @@ class GameScene: SKScene {
       InitPouseButton(SizeX: ViewSizeX, SizeY: ViewSizeY)
       
       InitPouseViewNode(SizeX: ViewSizeX, SizeY: ViewSizeY)
+      InitHintPouseViewNode(SizeX: ViewSizeX, SizeY: ViewSizeY)
       
       InitPuzzle(SizeX: ViewSizeX, SizeY: ViewSizeY)
       InitHintPuzzle(SizeX: ViewSizeX, SizeY: ViewSizeY)
@@ -112,6 +115,11 @@ class GameScene: SKScene {
       PouseViewNode = CreatePouseView
    }
    
+   private func InitHintPouseViewNode(SizeX: CGFloat?, SizeY: CGFloat?){
+      let CreateHintPouseView = HintPouseView(ViewX: Int(SizeX!), ViewY: Int(SizeY!))
+      HintPouseViewNode = CreateHintPouseView
+   }
+   
    private func InitStageNumber() {
       print("ステージ番号の取得開始")
       self.PostedStageNum = userDefaults.integer(forKey: "StageNum")
@@ -146,6 +154,8 @@ class GameScene: SKScene {
       NotificationCenter.default.addObserver(self, selector: #selector(HintCatchNotification(notification:)), name: .Hint, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(PouseCatchNotification(notification:)), name: .Pouse, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(ReSumeCatchNotification(notification:)), name: .ReSume, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(AdWatchCatchNotification(notification:)), name: .AdWatch, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(AdNoWatchCatchNotification(notification:)), name: .AdNoWatch, object: nil)
       print("通知センター初期化完了")
    }
    
@@ -744,6 +754,25 @@ class GameScene: SKScene {
       HintButtonNode?.DecleCountOfHint()
    }
    
+   @objc func AdWatchCatchNotification(notification: Notification) -> Void {
+      print("AdWatchCatchNotification")
+      //PouseViewNode?.removeFromParent()
+      
+      ShowAdPOSTMotification()
+      HintButtonNode?.EnableLastHint()
+      
+      HintPouseViewNode?.FadeOutAniAndRemoveFromParent()
+      UnLockAllNode()
+   }
+   
+   @objc func AdNoWatchCatchNotification(notification: Notification) -> Void {
+      print("AdNoWatchCatchNotification")
+      //PouseViewNode?.removeFromParent()
+      HintPouseViewNode?.FadeOutAniAndRemoveFromParent()
+      UnLockAllNode()
+   }
+   
+   
    @objc func ReSumeCatchNotification(notification: Notification) -> Void {
       print("ReSumeCatchNotifi")
       //PouseViewNode?.removeFromParent()
@@ -757,8 +786,15 @@ class GameScene: SKScene {
    
    private func AdShowOrNot() {
       
-      ShowAdPOSTMotification()
-      HintButtonNode?.EnableLastHint()
+      if self.HintPouseViewNode!.GetIsLocked() == false {
+         self.addChild(self.HintPouseViewNode!)
+         self.HintPouseViewNode!.ShowViewAnimation()
+         LockAllNode()
+      }else{
+         print("現在Viewを消している最中です.")
+      }
+      
+      
    }
    
    private func SetHint1() {
