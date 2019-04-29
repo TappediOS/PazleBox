@@ -25,4 +25,5 @@ extension Notification.Name {
    static let ReSume = Notification.Name("ReSume")
    static let AdWatch = Notification.Name("AdWatch")
    static let AdNoWatch = Notification.Name("AdNoWatch")
+   static let FinRewardWatch = Notification.Name("FinRewardWatch")
 }

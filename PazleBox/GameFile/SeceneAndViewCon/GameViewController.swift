@@ -50,7 +50,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
       
       InitGameClearView()
       
-      //InitRewardView()
+      InitRewardView()
       
    }
    
@@ -196,44 +196,55 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
    }
    
    
-   private func StartStarAnimation() {
+   private func StartStarAnimation(CountOfUsedHint: Int) {
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
          self.ClearView?.StartAnimationView1()
       }
       
+      if CountOfUsedHint == 2 { return }
+      
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.05 + StarAnimationBetTime) {
          self.ClearView?.StartAnimationView2()
       }
+      
+      if CountOfUsedHint == 1 { return }
       
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.05 + StarAnimationBetTime * Double(2)) {
          self.ClearView?.StartAnimationView3()
       }
    }
    
-   private func StartConfeAnimation() {
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.06) {
+   private func StartConfeAnimation(CountOfUsedHint: Int) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
          self.ClearView?.StartConfe1()
       }
+      if CountOfUsedHint == 2 { return }
       
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.06 + StarAnimationBetTime) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.05 + StarAnimationBetTime) {
          self.ClearView?.StartConfe2()
       }
-      
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.06 + StarAnimationBetTime * Double(2)) {
+      if CountOfUsedHint == 1 { return }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.05 + StarAnimationBetTime * Double(2)) {
          self.ClearView?.StartConfe3()
       }
    }
    
-   private func ShowGameClearViewWithStar() {
-      
-      self.StartStarAnimation()
-      self.StartConfeAnimation()
-      
+   private func ShowGameClearViewWithStar(CountOfUsedHint: Int) {
+      self.StartStarAnimation(CountOfUsedHint: CountOfUsedHint)
+      self.StartConfeAnimation(CountOfUsedHint: CountOfUsedHint)
    }
    
    @objc func GameClearCatchNotification(notification: Notification) -> Void {
       
       guard ShowGameClearView == false else { return }
+      
+      var CountOfUsedHint = 0
+      
+      if let userInfo = notification.userInfo {
+         CountOfUsedHint = userInfo["CountOfUsedHint"] as! Int
+      }else{
+         print("Nil きたよ")
+      }
       
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
          self.StartConfetti()
@@ -253,7 +264,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
          self.ClearView?.AddConfiView2()
          self.ClearView?.AddConfiView3()
          self.ClearView?.fadeIn(type: .Slow) { [weak self] in
-            self?.ShowGameClearViewWithStar()
+            self?.ShowGameClearViewWithStar(CountOfUsedHint: CountOfUsedHint)
          }
       }
       return
@@ -320,33 +331,38 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
    
    
    
+   private func PostNotificationFinAdWatch() {
+      NotificationCenter.default.post(name: .FinRewardWatch, object: nil, userInfo: nil)
+   }
    
    //AD
    func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd, didRewardUserWith reward: GADAdReward) {
-      print("Reward received with currency: \(reward.type), amount \(reward.amount).")
+      print("報酬与えます")
+      PostNotificationFinAdWatch()
    }
    
    func rewardBasedVideoAdDidReceive(_ rewardBasedVideoAd:GADRewardBasedVideoAd) {
-      print("Reward based video ad is received.")
+      print("広告受け取った")
       
    }
    
    func rewardBasedVideoAdDidOpen(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
-      print("Opened reward based video ad.")
+      print("広告開いた")
    }
    
    func rewardBasedVideoAdDidStartPlaying(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
-      print("Reward based video ad started playing.")
+      print("再生スタート")
    }
    
    func rewardBasedVideoAdDidCompletePlaying(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
-      print("Reward based video ad has completed.")
+      print("広告全部見終わった")
    }
    
    func rewardBasedVideoAdDidClose(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
       #if DEBUG
       print("リワード再読み込み:テスト環境")
       Reward.load(GADRequest(), withAdUnitID: REWARD_TEST_ID)
+      print("読み込んだID: \(REWARD_TEST_ID)")
       #else
       print("リワード再読み込み:本番環境")
       Reward.load(GADRequest(), withAdUnitID: REWARD_ID)
@@ -354,12 +370,11 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate {
    }
    
    func rewardBasedVideoAdWillLeaveApplication(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
-      print("Reward based video ad will leave application.")
+      print("アプリ離れた")
    }
    
-   func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd,
-                           didFailToLoadWithError error: Error) {
-      print("Reward based video ad failed to load.")
+   func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd, didFailToLoadWithError error: Error) {
+      print("広告ロード失敗")
    }
    
    

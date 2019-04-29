@@ -118,6 +118,10 @@ class HintNode : SKSpriteNode {
       self.CountOfHint -= 1
    }
    
+   public func GetCountOfUsedHint() -> Int {
+      return 2 - self.CountOfHint
+   }
+   
    private func ChangeImageOfHint() {
       self.texture = SKTexture(imageNamed: "NoHint.png")
    }
@@ -183,7 +187,6 @@ class HintNode : SKSpriteNode {
    }
    
    
-   
    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
       
    }
@@ -212,19 +215,12 @@ class HintNode : SKSpriteNode {
       }
    }
    
-   /// 2点間の距離を求め、距離が十分であるかどうか調べる
-   ///
-   /// - Parameters:
-   ///   - Start: 始点
-   ///   - End: 終点
-   /// - Returns: 一定以上ならばtrueを返す。
+ 
    private func LengthOfTwoPoint(Start: CGPoint, End: CGPoint) -> Bool {
       
       let xDistance = Start.x - End.x
       let yDistance = Start.y - End.y
       let distance = sqrtf(Float(xDistance*xDistance + yDistance*yDistance))
-      
-      print("2点間の距離は\(distance)")
       
       if distance > 55 {
          return false

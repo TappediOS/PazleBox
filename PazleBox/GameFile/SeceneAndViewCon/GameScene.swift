@@ -156,6 +156,7 @@ class GameScene: SKScene {
       NotificationCenter.default.addObserver(self, selector: #selector(ReSumeCatchNotification(notification:)), name: .ReSume, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(AdWatchCatchNotification(notification:)), name: .AdWatch, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(AdNoWatchCatchNotification(notification:)), name: .AdNoWatch, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(FinRewardWatchCatchNotification(notification:)), name: .FinRewardWatch, object: nil)
       print("通知センター初期化完了")
    }
    
@@ -324,7 +325,10 @@ class GameScene: SKScene {
    //MARK:- ゲーム終わって通知を送る関数
    private func GameSerPOSTMotification() {
       print("")
-      NotificationCenter.default.post(name: .GameClear, object: nil, userInfo: nil)
+      let CountOfUsedHint = HintButtonNode?.GetCountOfUsedHint()
+      print("ヒントを使った回数：　\(String(describing: CountOfUsedHint))")
+      let SentObject: [String : Any] = ["CountOfUsedHint": CountOfUsedHint! as Int]
+      NotificationCenter.default.post(name: .GameClear, object: nil, userInfo: SentObject)
    }
    
    //MARK:- ゲームの行う関数群
@@ -740,15 +744,21 @@ class GameScene: SKScene {
    //MARK: ヒント表示
    @objc func HintCatchNotification(notification: Notification) -> Void {
       print("HintCatchNotifi")
+      
+      if HintButtonNode?.CountOfHint == 0 { return }
+      
       if HintButtonNode?.CountOfHint == 2{
          SetHint1()
-      }else{
+      }
+      
+      if HintButtonNode?.CountOfHint == 1{
          if HintButtonNode?.GetEnableLastHint() == true{
             AdShowOrNot()
             return
          }
          SetHint2()
       }
+      
       
       GameSound.PlaySounds(Type: 3)
       HintButtonNode?.DecleCountOfHint()
@@ -759,7 +769,8 @@ class GameScene: SKScene {
       //PouseViewNode?.removeFromParent()
       
       ShowAdPOSTMotification()
-      HintButtonNode?.EnableLastHint()
+      //FIXME:-  これは広告をちゃんと見た人に表示する
+      
       
       HintPouseViewNode?.FadeOutAniAndRemoveFromParent()
       UnLockAllNode()
@@ -772,6 +783,10 @@ class GameScene: SKScene {
       UnLockAllNode()
    }
    
+   @objc func FinRewardWatchCatchNotification(notification: Notification) -> Void {
+      print("FinRewardWatchCatchNotification")
+      HintButtonNode?.EnableLastHint()
+   }
    
    @objc func ReSumeCatchNotification(notification: Notification) -> Void {
       print("ReSumeCatchNotifi")
@@ -783,6 +798,8 @@ class GameScene: SKScene {
    private func ShowAdPOSTMotification() {
       NotificationCenter.default.post(name: .RewardAD, object: nil, userInfo: nil)
    }
+   
+  
    
    private func AdShowOrNot() {
       
