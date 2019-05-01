@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import FlatUIKit
 
-class EasyButton: FUIButton {
+class StageSellectButton: FUIButton {
    
    var CanPlay: Bool = true
    

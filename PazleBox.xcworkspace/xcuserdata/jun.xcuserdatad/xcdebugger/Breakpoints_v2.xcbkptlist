@@ -495,7 +495,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "150"
             endingLineNumber = "150"
-            landmarkName = "LoadStageLevel()"
+            landmarkName = "LoadStageNumber(Num:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1209,7 +1209,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "242"
             endingLineNumber = "242"
-            landmarkName = "StopConfitti()"
+            landmarkName = "StartConfetti()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1380,29 +1380,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/Sellect/EasySellectStage.swift"
-            timestampString = "578403702.712482"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "FirstOpenSellectEasyStage()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PazleBox/GameFile/Sellect/EasySellectStage.swift"
             timestampString = "578403702.712733"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "168"
             endingLineNumber = "168"
-            landmarkName = "SellectButton(_:)"
-            landmarkType = "7">
+            landmarkName = "SellectStageEasy"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

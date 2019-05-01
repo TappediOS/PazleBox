@@ -12,6 +12,7 @@ import GameKit
 import GameplayKit
 import SAConfettiView
 import Firebase
+import RealmSwift
 
 class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADInterstitialDelegate {
    
@@ -45,6 +46,9 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    //MARK: user defaults
    var userDefaults: UserDefaults = UserDefaults.standard
 
+   
+   let realm = try! Realm()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -284,6 +288,89 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       self.StartConfeAnimation(CountOfUsedHint: CountOfUsedHint)
    }
    
+   //MARK:- セーブ
+   private func SaveStageInfo(CountOfUsedHint: Int) {
+      switch StageLevel {
+      case .Easy:
+         SaveEasyStage(CountOfUsedHint: CountOfUsedHint)
+      case .Normal:
+         SaveNormalStage(CountOfUsedHint: CountOfUsedHint)
+      case .Hard:
+         SaveHardStage(CountOfUsedHint: CountOfUsedHint)
+      }
+   }
+   
+  
+   
+   private func SaveEasyStage(CountOfUsedHint: Int) {
+      let result = realm.objects(EasyStageClearInfomation.self).filter("StageNum == \(self.SellectStageNumber)")
+      
+      if result.isEmpty == true{
+         print(result)
+         fatalError("なんで空っぽやねん。フザケンナ")
+      }
+      
+      if result.count != 1 {
+         print("result.count = \(result.count)")
+         fatalError("なんで1個以上入ってんねん。")
+      }
+      
+      if let result = result.first {
+         do {
+            try realm.write {
+               result.Clear = true
+               result.CountOfUsedHint = CountOfUsedHint
+            }
+         }catch{  print("\n\n-----------------ream 保存失敗------------------\n\n") }
+      }
+   }
+   
+   private func SaveNormalStage(CountOfUsedHint: Int) {
+      let result = realm.objects(NormalStageClearInfomation.self).filter("StageNum == \(self.SellectStageNumber)")
+      
+      if result.isEmpty == true{
+         print(result)
+         fatalError("なんで空っぽやねん。フザケンナ")
+      }
+      
+      if result.count != 1 {
+         print("result.count = \(result.count)")
+         fatalError("なんで1個以上入ってんねん。")
+      }
+      
+      if let result = result.first {
+         do {
+            try realm.write {
+               result.Clear = true
+               result.CountOfUsedHint = CountOfUsedHint
+            }
+         }catch{  print("\n\n-----------------ream 保存失敗------------------\n\n") }
+      }
+   }
+   
+   private func SaveHardStage(CountOfUsedHint: Int) {
+      let result = realm.objects(HardStageClearInfomation.self).filter("StageNum == \(self.SellectStageNumber)")
+      
+      if result.isEmpty == true{
+         print(result)
+         fatalError("なんで空っぽやねん。フザケンナ")
+      }
+      
+      if result.count != 1 {
+         print("result.count = \(result.count)")
+         fatalError("なんで1個以上入ってんねん。")
+      }
+      
+      if let result = result.first {
+         do {
+            try realm.write {
+               result.Clear = true
+               result.CountOfUsedHint = CountOfUsedHint
+            }
+         }catch{  print("\n\n-----------------ream 保存失敗------------------\n\n") }
+      }
+   }
+   
    @objc func GameClearCatchNotification(notification: Notification) -> Void {
       
       guard ShowGameClearView == false else { return }
@@ -292,6 +379,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       
       if let userInfo = notification.userInfo {
          CountOfUsedHint = userInfo["CountOfUsedHint"] as! Int
+         SaveStageInfo(CountOfUsedHint: CountOfUsedHint)
       }else{
          print("Nil きたよ")
       }
@@ -491,20 +579,14 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       print("インタースティシャル広告ボタンクリックした")
    }
    
-   
-   
-   
-   
    @objc func SellectBackNotification(notification: Notification) -> Void {
       
       self.dismiss(animated: true, completion: nil)
    }
    
-
-
     override var shouldAutorotate: Bool {return true}
 
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+   override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
             return .allButUpsideDown
         } else {

@@ -18,7 +18,6 @@ class SellectStageEasy: UIScrollView {
    var Internal: CGFloat = 0
    
    let realm = try! Realm()
-
    
    let AllStageNum = 50
 
@@ -26,17 +25,11 @@ class SellectStageEasy: UIScrollView {
       super.init(frame: frame)
       self.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
       
-      
-      
-      
       InitStageClearArry()
    }
    
    private func FirstOpenSellectEasyStage() {
-      
-      
       for tmp in 1 ...  AllStageNum {
-       
          let InitInfo = EasyStageClearInfomation()
          
          InitInfo.StageNum = tmp
@@ -49,10 +42,6 @@ class SellectStageEasy: UIScrollView {
       }
       
       print(Realm.Configuration.defaultConfiguration.fileURL!)
-      
-
-      
-     // userDefaults.set(NSKeyedArchiver.archivedData(withRootObject: <#T##Any#>, requiringSecureCoding: <#T##Bool#>), forKey: "EasyStageClearInfomation")
    }
    
    private func InitStageClearArry() {
@@ -66,27 +55,12 @@ class SellectStageEasy: UIScrollView {
          FirstOpenSellectEasyStage()
          return
       }
-      
-      
-//      let info = realm.objects(EasyStageClearInfomation.self).filter("StageNum == 20")
-//
-//
-//      try! realm.write {
-//         info[0].Clear = false
-//      }
-//
-//
-      
-
-
-   
    }
    
    public func InitView(frame: CGRect) {
       self.frame = frame
       self.contentSize.height = frame.height * 5
-      
-      
+
       ButtonSize = frame.width / 5
       Internal = ButtonSize / 5
       
@@ -112,7 +86,6 @@ class SellectStageEasy: UIScrollView {
    }
    
    private func InitButton() {
-      
       let ClearOfNot = realm.objects(EasyStageClearInfomation.self).filter("Clear == true")
       var LastClearNum: Int = 1
       
@@ -140,7 +113,7 @@ class SellectStageEasy: UIScrollView {
          
          let Frame = CGRect(x: FirstX, y: FirstY, width: ButtonSize, height: ButtonSize)
          
-         let EasyNumberButton = EasyButton(frame: Frame)
+         let EasyNumberButton = StageSellectButton(frame: Frame)
          EasyNumberButton.Init(Tag: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum)
          EasyNumberButton.addTarget(self, action: #selector(self.SellectButton(_:)), for: UIControl.Event.touchUpInside)
          
@@ -162,7 +135,7 @@ class SellectStageEasy: UIScrollView {
       NotificationCenter.default.post(name: .SellectBack, object: nil, userInfo: nil)
    }
    
-   @objc func SellectButton (_ sender: EasyButton) {
+   @objc func SellectButton (_ sender: StageSellectButton) {
       print("押されたボタン: \(sender.tag)")
       
       if sender.GetCanPlay() == false {
@@ -178,9 +151,6 @@ class SellectStageEasy: UIScrollView {
       Play3DtouchMedium()
       GameSellectBackPOSTMotification()
    }
-   
-   
-   
    
    required init?(coder aDecoder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
