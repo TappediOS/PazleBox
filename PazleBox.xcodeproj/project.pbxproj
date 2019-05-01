@@ -11,6 +11,7 @@
 		BF0FD352224364A900E8F387 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = BF0FD351224364A900E8F387 /* Star.png */; };
 		BF0FD35422436DF200E8F387 /* ExUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0FD35322436DF200E8F387 /* ExUIColor.swift */; };
 		BF0FD356224371CE00E8F387 /* PutParticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0FD355224371CE00E8F387 /* PutParticle.swift */; };
+		BF1BD1EA2279A2620047496B /* EasyStageClearInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD1E92279A2620047496B /* EasyStageClearInfomation.swift */; };
 		BF1FF2AD22311CE60047ED23 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FF2AC22311CE60047ED23 /* Stage.swift */; };
 		BF1FF2AF22311FD40047ED23 /* StageContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FF2AE22311FD40047ED23 /* StageContents.swift */; };
 		BF1FF2B2223120650047ED23 /* AllStageInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FF2B1223120650047ED23 /* AllStageInfomation.swift */; };
@@ -28,6 +29,9 @@
 		BF2C14612276F3A300C7B8FB /* HintTextNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C14602276F3A300C7B8FB /* HintTextNode.swift */; };
 		BF2C14632276F3B000C7B8FB /* YesNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C14622276F3B000C7B8FB /* YesNode.swift */; };
 		BF2C14652276F3B700C7B8FB /* NoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C14642276F3B700C7B8FB /* NoNode.swift */; };
+		BF2C146722770A2600C7B8FB /* cherry.caf in Resources */ = {isa = PBXBuildFile; fileRef = BF2C146622770A2100C7B8FB /* cherry.caf */; };
+		BF2C146922770A8500C7B8FB /* GameBGM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C146822770A8500C7B8FB /* GameBGM.swift */; };
+		BF2C146B22771D0200C7B8FB /* ka.caf in Resources */ = {isa = PBXBuildFile; fileRef = BF2C146A22771CFE00C7B8FB /* ka.caf */; };
 		BF332F722248AEAF009B3042 /* StageLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F712248AEAF009B3042 /* StageLevel.swift */; };
 		BF332F742248B1FE009B3042 /* EasySellectStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F732248B1FE009B3042 /* EasySellectStage.swift */; };
 		BF332F762248C043009B3042 /* EasyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF332F752248C043009B3042 /* EasyButton.swift */; };
@@ -409,6 +413,7 @@
 		BF0FD351224364A900E8F387 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
 		BF0FD35322436DF200E8F387 /* ExUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIColor.swift; sourceTree = "<group>"; };
 		BF0FD355224371CE00E8F387 /* PutParticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutParticle.swift; sourceTree = "<group>"; };
+		BF1BD1E92279A2620047496B /* EasyStageClearInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyStageClearInfomation.swift; sourceTree = "<group>"; };
 		BF1FF2AC22311CE60047ED23 /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
 		BF1FF2AE22311FD40047ED23 /* StageContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageContents.swift; sourceTree = "<group>"; };
 		BF1FF2B1223120650047ED23 /* AllStageInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStageInfomation.swift; sourceTree = "<group>"; };
@@ -428,6 +433,9 @@
 		BF2C14602276F3A300C7B8FB /* HintTextNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintTextNode.swift; sourceTree = "<group>"; };
 		BF2C14622276F3B000C7B8FB /* YesNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesNode.swift; sourceTree = "<group>"; };
 		BF2C14642276F3B700C7B8FB /* NoNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNode.swift; sourceTree = "<group>"; };
+		BF2C146622770A2100C7B8FB /* cherry.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = cherry.caf; sourceTree = "<group>"; };
+		BF2C146822770A8500C7B8FB /* GameBGM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBGM.swift; sourceTree = "<group>"; };
+		BF2C146A22771CFE00C7B8FB /* ka.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ka.caf; sourceTree = "<group>"; };
 		BF332F712248AEAF009B3042 /* StageLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageLevel.swift; sourceTree = "<group>"; };
 		BF332F732248B1FE009B3042 /* EasySellectStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasySellectStage.swift; sourceTree = "<group>"; };
 		BF332F752248C043009B3042 /* EasyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyButton.swift; sourceTree = "<group>"; };
@@ -825,6 +833,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BF1BD1E82279A2420047496B /* ClearInfomation */ = {
+			isa = PBXGroup;
+			children = (
+				BF1BD1E92279A2620047496B /* EasyStageClearInfomation.swift */,
+			);
+			path = ClearInfomation;
+			sourceTree = "<group>";
+		};
 		BF1FF2AA22311C8D0047ED23 /* GemFile */ = {
 			isa = PBXGroup;
 			children = (
@@ -844,6 +860,7 @@
 				BF332F7A22491753009B3042 /* SeceneAndViewCon */,
 				BF332F7B22491767009B3042 /* Puzzle */,
 				BF2C145C2276F35600C7B8FB /* GameSubView */,
+				BF1BD1E82279A2420047496B /* ClearInfomation */,
 				BF332F7C224917D2009B3042 /* Sellect */,
 				BF60AC4F224C8EDA00D441D6 /* StatesBar */,
 				BF8A464C225081E90016F801 /* LottieJSON */,
@@ -1198,7 +1215,10 @@
 			isa = PBXGroup;
 			children = (
 				BF60AC5B224CA2E000D441D6 /* Sound.swift */,
+				BF2C146822770A8500C7B8FB /* GameBGM.swift */,
 				BF60AC5D224CA6EB00D441D6 /* Katch.caf */,
+				BF2C146622770A2100C7B8FB /* cherry.caf */,
+				BF2C146A22771CFE00C7B8FB /* ka.caf */,
 				BF60AC70224DF5A800D441D6 /* Pico.caf */,
 				BF60AC5E224CA6EC00D441D6 /* RePut.caf */,
 			);
@@ -1632,6 +1652,7 @@
 				BFCE25B5224A466B0099A775 /* 33p12Red.png in Resources */,
 				BF7CD9642240BBD500F8302B /* 23p1Green.png in Resources */,
 				BFCE25CB224A466B0099A775 /* 33p3Blue.png in Resources */,
+				BF2C146B22771D0200C7B8FB /* ka.caf in Resources */,
 				BFCE25D3224A466B0099A775 /* 33p16Green.png in Resources */,
 				BFCE25DF224A466B0099A775 /* 33p12Blue.png in Resources */,
 				BFCE25BC224A466B0099A775 /* 33p9Blue.png in Resources */,
@@ -1659,6 +1680,7 @@
 				BF60AC69224DD1DB00D441D6 /* RePut.png in Resources */,
 				BFCE25CE224A466B0099A775 /* 33p16Red.png in Resources */,
 				BFCE25DE224A466B0099A775 /* 33p21Green.png in Resources */,
+				BF2C146722770A2600C7B8FB /* cherry.caf in Resources */,
 				BF7CE7992261E3840040352D /* Confe.json in Resources */,
 				BFCE25C4224A466B0099A775 /* 33p13Red.png in Resources */,
 				BF2674E62227B6A3003D370F /* GameScene.sks in Resources */,
@@ -1844,6 +1866,8 @@
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/FlatUIKit/FlatUIKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SAConfettiView/SAConfettiView.framework",
 				"${BUILT_PRODUCTS_DIR}/SpriteKitEasingSwift/SpriteKitEasingSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/TapticEngine/TapticEngine.framework",
@@ -1857,6 +1881,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlatUIKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAConfettiView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpriteKitEasingSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TapticEngine.framework",
@@ -1986,6 +2012,7 @@
 				BF552EFA226DDE5100756E16 /* N46.swift in Sources */,
 				BF332FD4224927D2009B3042 /* N19.swift in Sources */,
 				BF552F28226DDF0000756E16 /* H39.swift in Sources */,
+				BF2C146922770A8500C7B8FB /* GameBGM.swift in Sources */,
 				BF552EE4226DDDF800756E16 /* N35.swift in Sources */,
 				BF332F96224926DF009B3042 /* E8.swift in Sources */,
 				BF2674EA2227B6A3003D370F /* GameScene.swift in Sources */,
@@ -2019,6 +2046,7 @@
 				BF332F742248B1FE009B3042 /* EasySellectStage.swift in Sources */,
 				BF552F16226DDEC500756E16 /* H30.swift in Sources */,
 				BF332FF822492837009B3042 /* H16.swift in Sources */,
+				BF1BD1EA2279A2620047496B /* EasyStageClearInfomation.swift in Sources */,
 				BFFA2A86223383B60023BB71 /* Normal.swift in Sources */,
 				BF33300422492B3E009B3042 /* ExGameSecenNormalP2.swift in Sources */,
 				BF332FE822492805009B3042 /* H9.swift in Sources */,

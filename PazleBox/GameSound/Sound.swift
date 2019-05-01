@@ -57,14 +57,14 @@ class GameSounds {
          print("Picoインスタンス作成失敗")
       }
 
-//      soundFilePath = Bundle.main.path(forResource: "Fa_Mokkin", ofType: "mp3")!
-//      sound = URL(fileURLWithPath: soundFilePath)
-//      // AVAudioPlayerのインスタンスを作成
-//      do {
-//         audioPlayer4 = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
-//      } catch {
-//         print("Fa_Mokkinインスタンス作成失敗")
-//      }
+      soundFilePath = Bundle.main.path(forResource: "ka", ofType: "caf")!
+      sound = URL(fileURLWithPath: soundFilePath)
+      // AVAudioPlayerのインスタンスを作成
+      do {
+         audioPlayer4 = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
+      } catch {
+         print("Fa_Mokkinインスタンス作成失敗")
+      }
 //
 //      soundFilePath = Bundle.main.path(forResource: "So_Mokkin", ofType: "mp3")!
 //      sound = URL(fileURLWithPath: soundFilePath)
@@ -122,8 +122,8 @@ class GameSounds {
 //      // バッファに保持していつでも再生できるようにする
       audioPlayer1.prepareToPlay()
       audioPlayer2.prepareToPlay()
-//      audioPlayer3.prepareToPlay()
-//      audioPlayer4.prepareToPlay()
+      audioPlayer3.prepareToPlay()
+      audioPlayer4.prepareToPlay()
 //      audioPlayer5.prepareToPlay()
 //      audioPlayer6.prepareToPlay()
 //      audioPlayer7.prepareToPlay()
@@ -154,6 +154,21 @@ class GameSounds {
       
    }
    
+//   public func PlaySoundsKA() {
+//      
+//      let queue = OperationQueue()
+//      let operation = BlockOperation {
+//         self.audioPlayer4.volume = 0
+//         self.audioPlayer4.stop()
+//         self.audioPlayer4.currentTime = 0
+//         self.audioPlayer4.volume = self.SoundVolume
+//         self.audioPlayer4.play()
+//         
+//      }
+//      queue.addOperation(operation)
+//      
+//   }
+   
    public func PlaySounds(Type: Int) {
       
       
@@ -180,7 +195,7 @@ class GameSounds {
 //         self.audioPlayer4.volume = 0
 //         self.audioPlayer4.stop()
 //         self.audioPlayer4.currentTime = 0
-//         self.audioPlayer4.volume = 0.5
+//         self.audioPlayer4.volume = SoundVolume
 //         self.audioPlayer4.play()
 //      case 5:
 //         self.audioPlayer5.volume = 0

@@ -53,6 +53,16 @@ class Easy {
    var E38: [[Contents]] = Array()
    var E39: [[Contents]] = Array()
    var E40: [[Contents]] = Array()
+   var E41: [[Contents]] = Array()
+   var E42: [[Contents]] = Array()
+   var E43: [[Contents]] = Array()
+   var E44: [[Contents]] = Array()
+   var E45: [[Contents]] = Array()
+   var E46: [[Contents]] = Array()
+   var E47: [[Contents]] = Array()
+   var E48: [[Contents]] = Array()
+   var E49: [[Contents]] = Array()
+   var E50: [[Contents]] = Array()
    
    init() {
      
@@ -96,6 +106,16 @@ class Easy {
       InitE38()
       InitE39()
       InitE40()
+      InitE41()
+      InitE42()
+      InitE43()
+      InitE44()
+      InitE45()
+      InitE46()
+      InitE47()
+      InitE48()
+      InitE49()
+      InitE50()
       
       InitGetAllEasyStage()
    }
@@ -149,6 +169,16 @@ class Easy {
       ReturnStage.append(contentsOf: E38)
       ReturnStage.append(contentsOf: E39)
       ReturnStage.append(contentsOf: E40)
+      ReturnStage.append(contentsOf: E41)
+      ReturnStage.append(contentsOf: E42)
+      ReturnStage.append(contentsOf: E43)
+      ReturnStage.append(contentsOf: E44)
+      ReturnStage.append(contentsOf: E45)
+      ReturnStage.append(contentsOf: E46)
+      ReturnStage.append(contentsOf: E47)
+      ReturnStage.append(contentsOf: E48)
+      ReturnStage.append(contentsOf: E49)
+      ReturnStage.append(contentsOf: E50)
 
 
       return ReturnStage

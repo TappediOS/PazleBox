@@ -41,7 +41,7 @@ extension Easy {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE3(){
+   public func InitE3(){
       E3 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -56,7 +56,7 @@ extension Easy {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE4(){
+   public func InitE4(){
       E4 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -71,7 +71,7 @@ extension Easy {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE5(){
+   public func InitE5(){
       E5 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -86,7 +86,7 @@ extension Easy {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE6(){
+   public func InitE6(){
       E6 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -101,7 +101,7 @@ extension Easy {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE7(){
+   public func InitE7(){
       E7 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -116,7 +116,7 @@ extension Easy {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE8(){
+   public func InitE8(){
       E8 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -131,7 +131,7 @@ extension Easy {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE9(){
+   public func InitE9(){
       E9 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -146,7 +146,7 @@ extension Easy {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE10(){
+   public func InitE10(){
       E10 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -192,7 +192,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE13(){
+   public func InitE13(){
       E13 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -207,7 +207,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE14(){
+   public func InitE14(){
       E14 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -222,7 +222,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE15(){
+   public func InitE15(){
       E15 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -237,7 +237,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE16(){
+   public func InitE16(){
       E16 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -252,7 +252,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE17(){
+   public func InitE17(){
       E17 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -267,7 +267,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE18(){
+   public func InitE18(){
       E18 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -282,7 +282,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE19(){
+   public func InitE19(){
       E19 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -297,7 +297,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE20(){
+  public  func InitE20(){
       E20 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -343,7 +343,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE23(){
+   public func InitE23(){
       E23 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -358,7 +358,7 @@ extension Easy {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE24(){
+   public func InitE24(){
       E24 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -373,7 +373,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE25(){
+   public func InitE25(){
       E25 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -388,7 +388,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE26(){
+   public func InitE26(){
       E26 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -403,7 +403,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE27(){
+   public func InitE27(){
       E27 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -418,7 +418,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE28(){
+   public func InitE28(){
       E28 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -433,7 +433,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE29(){
+   public func InitE29(){
       E29 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -448,7 +448,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE30(){
+   public func InitE30(){
       E30 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -494,7 +494,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE33(){
+   public func InitE33(){
       E33 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -509,7 +509,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE34(){
+   public func InitE34(){
       E34 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -524,7 +524,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE35(){
+   public func InitE35(){
       E35 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -539,7 +539,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE36(){
+   public func InitE36(){
       E36 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -554,7 +554,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE37(){
+   public func InitE37(){
       E37 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -569,7 +569,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE38(){
+   public func InitE38(){
       E38 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -584,7 +584,7 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE39(){
+   public func InitE39(){
       E39 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -599,8 +599,159 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitE40(){
+   public func InitE40(){
       E40 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitE41(){
+      
+      E41 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitE42(){
+      E42 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitE43(){
+      E43 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitE44(){
+      E44 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitE45(){
+      E45 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitE46(){
+      E46 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitE47(){
+      E47 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitE48(){
+      E48 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitE49(){
+      E49 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitE50(){
+      E50 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],

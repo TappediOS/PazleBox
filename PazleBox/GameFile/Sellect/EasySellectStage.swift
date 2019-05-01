@@ -10,16 +10,62 @@ import Foundation
 import UIKit
 import FlatUIKit
 import TapticEngine
+import RealmSwift
 
 class SellectStageEasy: UIScrollView {
    
    var ButtonSize: CGFloat = 0
    var Internal: CGFloat = 0
    
+   
+   var EasyStageClearInfo: [(Clear: Bool, CountOfusedHint: Int)] = []
+
+   let userDefaults = UserDefaults.standard
+   
+   let AllStageNum = 50
+
    override init(frame: CGRect) {
       super.init(frame: frame)
       self.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
       
+      
+      print(Realm.Configuration.defaultConfiguration.fileURL)
+      
+      InitStageClearArry()
+   }
+   
+   private func FirstInitArry() {
+      let SetTapple: (Bool, Int) = (false, 2)
+      for tmp in 0 ... AllStageNum - 1 {
+         //EasyStageClearInfo[tmp] = SetTapple
+         EasyStageClearInfo.append(SetTapple)
+      }
+      
+      
+     // userDefaults.set(NSKeyedArchiver.archivedData(withRootObject: <#T##Any#>, requiringSecureCoding: <#T##Bool#>), forKey: "EasyStageClearInfomation")
+   }
+   
+   private func InitStageClearArry() {
+      
+      if userDefaults.object(forKey: "EasyStageClearInfomation") == nil {
+         print("初めて起動したのでEasyStageのクリア情報を初期化します。")
+         FirstInitArry()
+      }else{
+         EasyStageClearInfo = userDefaults.object(forKey: "EasyStageClearInfo") as! [(Clear: Bool, CountOfusedHint: Int)]
+      }
+   
+   }
+   
+   public func InitView(frame: CGRect) {
+      self.frame = frame
+      self.contentSize.height = frame.height * 5
+      
+      
+      ButtonSize = frame.width / 5
+      Internal = ButtonSize / 5
+      
+      self.InitBackButton()
+      self.InitButton()
    }
    
    private func InitBackButton() {
@@ -40,7 +86,7 @@ class SellectStageEasy: UIScrollView {
    }
    
    private func InitButton() {
-      for tmp in 1 ...  20 {
+      for tmp in 1 ...  AllStageNum {
          
          let x = (tmp - 1) % 4
          let y = (tmp - 1) / 4
@@ -84,17 +130,7 @@ class SellectStageEasy: UIScrollView {
    }
    
    
-   public func InitView(frame: CGRect) {
-      self.frame = frame
-      self.contentSize.height = frame.height * 5
-      self.backgroundColor = UIColor.white
-      
-      ButtonSize = frame.width / 5
-      Internal = ButtonSize / 5
-      
-      self.InitBackButton()
-      self.InitButton()
-   }
+   
    
    required init?(coder aDecoder: NSCoder) {
       fatalError("init(coder:) has not been implemented")

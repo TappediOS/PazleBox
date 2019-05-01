@@ -40,7 +40,7 @@ class YesNode : SKSpriteNode {
    
    private func InitLabel(textY: Int) {
       self.NodeText.zPosition = 102
-      self.NodeText.fontName = "Helvetica"
+      self.NodeText.fontName = "HiraMaruProN-W4"
       self.NodeText.fontSize = 100
       self.NodeText.fontColor = UIColor(contrastingBlackOrWhiteColorOn: UIColor.flatNavyBlue(), isFlat: true)
       

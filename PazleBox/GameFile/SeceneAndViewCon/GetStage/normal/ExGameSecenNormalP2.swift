@@ -53,6 +53,66 @@ extension GameScene {
          return AllStage.NormalStage.N19
       case 20:
          return AllStage.NormalStage.N20
+      case 21:
+         return AllStage.NormalStage.N21
+      case 22:
+         return AllStage.NormalStage.N22
+      case 23:
+         return AllStage.NormalStage.N23
+      case 24:
+         return AllStage.NormalStage.N24
+      case 25:
+         return AllStage.NormalStage.N25
+      case 26:
+         return AllStage.NormalStage.N26
+      case 27:
+         return AllStage.NormalStage.N27
+      case 28:
+         return AllStage.NormalStage.N28
+      case 29:
+         return AllStage.NormalStage.N29
+      case 30:
+         return AllStage.NormalStage.N30
+      case 31:
+         return AllStage.NormalStage.N31
+      case 32:
+         return AllStage.NormalStage.N32
+      case 33:
+         return AllStage.NormalStage.N33
+      case 34:
+         return AllStage.NormalStage.N34
+      case 35:
+         return AllStage.NormalStage.N35
+      case 36:
+         return AllStage.NormalStage.N36
+      case 37:
+         return AllStage.NormalStage.N37
+      case 38:
+         return AllStage.NormalStage.N38
+      case 39:
+         return AllStage.NormalStage.N39
+      case 40:
+         return AllStage.NormalStage.N40
+      case 41:
+         return AllStage.NormalStage.N41
+      case 42:
+         return AllStage.NormalStage.N42
+      case 43:
+         return AllStage.NormalStage.N43
+      case 44:
+         return AllStage.NormalStage.N44
+      case 45:
+         return AllStage.NormalStage.N45
+      case 46:
+         return AllStage.NormalStage.N46
+      case 47:
+         return AllStage.NormalStage.N47
+      case 48:
+         return AllStage.NormalStage.N48
+      case 49:
+         return AllStage.NormalStage.N49
+      case 50:
+         return AllStage.NormalStage.N50
          
       default:
          fatalError()

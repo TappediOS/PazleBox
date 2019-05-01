@@ -16,6 +16,8 @@ target 'PazleBox' do
   pod 'FlatUIKit'
   pod 'lottie-ios'
 
+  pod 'RealmSwift'
+
 
   pod 'Firebase/Core'
   pod 'Crashlytics'

@@ -62,6 +62,11 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - Realm (3.14.0):
+    - Realm/Headers (= 3.14.0)
+  - Realm/Headers (3.14.0)
+  - RealmSwift (3.14.0):
+    - Realm (= 3.14.0)
   - SAConfettiView (0.1.8)
   - SpriteKitEasingSwift (0.14)
   - TapticEngine (1.2.0)
@@ -73,6 +78,7 @@ DEPENDENCIES:
   - Firebase/Core
   - FlatUIKit
   - lottie-ios
+  - RealmSwift
   - SAConfettiView (from `https://github.com/gokhanakkurt/SAConfettiView`, branch `swift3`)
   - SpriteKitEasingSwift
   - TapticEngine
@@ -92,6 +98,8 @@ SPEC REPOS:
     - GoogleUtilities
     - lottie-ios
     - nanopb
+    - Realm
+    - RealmSwift
     - SpriteKitEasingSwift
     - TapticEngine
 
@@ -119,10 +127,12 @@ SPEC CHECKSUMS:
   GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
   lottie-ios: 06e0b54aab85ba128e332687d7f4ac4861a7a7ae
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  Realm: 221b25919bb5a010a3c597d707f8df3492dcd93a
+  RealmSwift: 28f22dfa6a27b9a778cfb09471558b6afcf1022c
   SAConfettiView: c87031a2280659261b730fce3669fb10e73636ee
   SpriteKitEasingSwift: d389a59f5531399b69cc9c31f52c2e279c813688
   TapticEngine: ed6f5b4a2e9aa46d4e8fa69a72a7a0b6719bf8ac
 
-PODFILE CHECKSUM: 4e865cca2e7bbe753df5b3590c71199e1de376c6
+PODFILE CHECKSUM: 856b0ad5a6d63dfc9547ef502fb02704f9c8b666
 
 COCOAPODS: 1.6.0

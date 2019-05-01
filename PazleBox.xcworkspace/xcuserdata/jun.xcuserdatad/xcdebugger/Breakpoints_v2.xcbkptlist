@@ -490,11 +490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
-            timestampString = "578225379.990091"
+            timestampString = "578394504.4522901"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "LoadStageLevel()"
             landmarkType = "7">
          </BreakpointContent>
@@ -506,11 +506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameScene.swift"
-            timestampString = "578225379.994269"
+            timestampString = "578394504.452402"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "InitStageLevel()"
             landmarkType = "7">
          </BreakpointContent>
@@ -522,7 +522,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GetStage/easy/ExGameSeceneEasyP2.swift"
-            timestampString = "575471523.291701"
+            timestampString = "578394504.452462"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
@@ -855,7 +855,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
-            timestampString = "575536414.150769"
+            timestampString = "578394504.452508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -871,7 +871,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GetStage/hard/ExGameSeceneHard.swift"
-            timestampString = "575536414.150815"
+            timestampString = "578394504.452549"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -1204,11 +1204,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
-            timestampString = "578225379.9944021"
+            timestampString = "578394504.4525861"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "StopConfitti()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1220,11 +1220,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameScene.swift"
-            timestampString = "578225379.994808"
+            timestampString = "578394504.4526761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "803"
-            endingLineNumber = "803"
+            startingLineNumber = "810"
+            endingLineNumber = "810"
             landmarkName = "GameScene"
             landmarkType = "3">
          </BreakpointContent>
@@ -1236,11 +1236,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameScene.swift"
-            timestampString = "578225379.994853"
+            timestampString = "578394504.452724"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "814"
-            endingLineNumber = "814"
+            startingLineNumber = "821"
+            endingLineNumber = "821"
             landmarkName = "AdShowOrNot()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1252,11 +1252,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameScene.swift"
-            timestampString = "578225379.994893"
+            timestampString = "578394504.452772"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
             landmarkName = "LockAllNode()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1284,11 +1284,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameClearView.swift"
-            timestampString = "578223988.109331"
+            timestampString = "578394504.452853"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "322"
-            endingLineNumber = "322"
+            startingLineNumber = "422"
+            endingLineNumber = "422"
             landmarkName = "StartAnimationView1()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1300,11 +1300,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameScene.swift"
-            timestampString = "578225379.994959"
+            timestampString = "578394504.4529181"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "795"
-            endingLineNumber = "795"
+            startingLineNumber = "802"
+            endingLineNumber = "802"
             landmarkName = "ReSumeCatchNotification(notification:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1332,11 +1332,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameScene.swift"
-            timestampString = "578225379.995013"
+            timestampString = "578394504.452998"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "804"
-            endingLineNumber = "804"
+            startingLineNumber = "811"
+            endingLineNumber = "811"
             landmarkName = "AdShowOrNot()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1348,12 +1348,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameScene.swift"
-            timestampString = "578225379.995055"
+            timestampString = "578394504.45305"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "326"
-            endingLineNumber = "326"
+            startingLineNumber = "333"
+            endingLineNumber = "333"
             landmarkName = "GameSerPOSTMotification()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/GameFile/Sellect/EasySellectStage.swift"
+            timestampString = "578396298.0847681"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "InitStageClearArry()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/GameFile/Sellect/EasySellectStage.swift"
+            timestampString = "578396298.085328"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "FirstInitArry()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/GameFile/Sellect/EasySellectStage.swift"
+            timestampString = "578396298.085515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "FirstInitArry()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -1,9 +1,9 @@
 //
-//  NormalCreate.swift
-//  PazleBox
+//  NormalCrNatN.swift
+//  PazlNBox
 //
-//  Created by jun on 2019/03/09.
-//  Copyright © 2019 jun. All rights reserved.
+//  CrNatNd by jun on 2019/03/09.
+//  Copyright © 2019 jun. All rights rNsNrvNd.
 //
 
 import Foundation
@@ -40,7 +40,7 @@ extension Normal {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitN3(){
+   public func InitN3(){
       N3 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -175,7 +175,7 @@ extension Normal {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitN12(){
+   public func InitN12(){
       N12 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -220,7 +220,7 @@ extension Normal {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitN15(){
+   public func InitN15(){
       N15 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -265,7 +265,7 @@ extension Normal {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
-   func InitN18(){
+   public func InitN18(){
       N18 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
@@ -308,6 +308,459 @@ extension Normal {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitN21(){
+      
+      N21 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitN22(){
+      N22 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   func InitN23(){
+      N23 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   func InitN24(){
+      N24 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   func InitN25(){
+      N25 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   func InitN26(){
+      N26 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   func InitN27(){
+      N27 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   func InitN28(){
+      N28 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   func InitN29(){
+      N29 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   func InitN30(){
+      N30 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitN31(){
+      
+      N31 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitN32(){
+      N32 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   func InitN33(){
+      N33 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   func InitN34(){
+      N34 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   func InitN35(){
+      N35 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   func InitN36(){
+      N36 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   func InitN37(){
+      N37 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   func InitN38(){
+      N38 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   func InitN39(){
+      N39 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   func InitN40(){
+      N40 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitN41(){
+      
+      N41 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitN42(){
+      N42 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitN43(){
+      N43 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitN44(){
+      N44 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitN45(){
+      N45 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitN46(){
+      N46 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitN47(){
+      N47 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitN48(){
+      N48 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitN49(){
+      N49 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   public func InitN50(){
+      N50 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
 }

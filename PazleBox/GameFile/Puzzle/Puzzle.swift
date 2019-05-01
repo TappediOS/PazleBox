@@ -43,6 +43,7 @@ class puzzle: SKSpriteNode {
    
    private var AlphaNode = SKSpriteNode()
    
+   
    //割って場所を特定する
    var SerchPlace: CGFloat
    
@@ -234,6 +235,7 @@ class puzzle: SKSpriteNode {
       }
    }
    
+
    public func ReBackNodePosition() {
       
       self.CenterX = BeforeCenterX

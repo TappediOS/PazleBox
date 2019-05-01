@@ -48,6 +48,7 @@ class GameScene: SKScene {
    var userDefaults = UserDefaults.standard
    
    private var GameSound = GameSounds()
+   private var GameBGM = BGM()
    
     override func sceneDidLoad() {
 
@@ -82,6 +83,8 @@ class GameScene: SKScene {
       
       InitNotification()
       
+      //InitBGM()
+      
       let p = SKEmitterNode.init(fileNamed: "GameSetParticle")
       p?.position.y += ViewSizeY! / 2
       //addChild(p!)
@@ -93,6 +96,10 @@ class GameScene: SKScene {
       self.addChild(RePutB)
       
       RePutButtonNode = RePutB
+   }
+   
+   private func InitBGM() {
+      self.GameBGM.PlaySounds()
    }
    
    private func InitHintButton(SizeX: CGFloat?, SizeY: CGFloat?){

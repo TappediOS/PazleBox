@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8B9C231C13FCA2043E872F0A315201BA"
+               BlueprintIdentifier = "2523737BCEB1A8B3A29FD77AFCBE28FA"
                BuildableName = "Pods_PazleBox.framework"
                BlueprintName = "Pods-PazleBox"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8B9C231C13FCA2043E872F0A315201BA"
+            BlueprintIdentifier = "2523737BCEB1A8B3A29FD77AFCBE28FA"
             BuildableName = "Pods_PazleBox.framework"
             BlueprintName = "Pods-PazleBox"
             ReferencedContainer = "container:Pods.xcodeproj">

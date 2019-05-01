@@ -11,8 +11,10 @@ import Lottie
 import UIKit
 import FlatUIKit
 import TapticEngine
+import Firebase
 
-class GameClearView: UIView {
+
+class GameClearView: UIView, GADBannerViewDelegate {
    
    var StarView1 = AnimationView(name: "StarStar")
    var StarView2 = AnimationView(name: "StarStar")
@@ -44,6 +46,16 @@ class GameClearView: UIView {
    
    var ViewW: CGFloat = 0
    var ViewH: CGFloat = 0
+   
+   var GameClearLabel: UILabel?
+   var CountOfNextADLabel : UILabel?
+   
+   let NextADString = "Until Next AD : "
+   
+   let GameClearBannerView = GADBannerView()
+   let BannerViewReqest = GADRequest()
+   let BANNER_VIEW_TEST_ID: String = "ca-app-pub-3940256099942544/2934735716"
+   let BANNER_VIEW_ID: String = "ca-app-pub-1460017825820383/4049149088"
    
    
    override init(frame: CGRect) {
@@ -78,16 +90,103 @@ class GameClearView: UIView {
       InitConfeView1()
       InitConfeView2()
       InitConfeView3()
+      
+      InitGameClearLabel()
+      InitCountOfNextADLabel()
+      
+      InitBannerView()
    }
    
    //MARK:- 初期化
-   private func IniiNextButton(frame: CGRect) {
+   
+   private func InitGameClearLabel() {
       
       let StartX = ViewW / 16
-      let StartY = ViewH / 5 * 2 + StarViewWide / 2
+      let StartY = ViewH / 5 * 2 - StarViewWide
       
-      let ButtonW = ViewW / 8 * 7
-      let ButtonH = StarViewWide
+      let LabelW = ViewW / 8 * 7
+      let LabelH = StarViewWide * 1.2
+      
+      let Frame = CGRect(x: StartX, y: StartY, width: LabelW, height: LabelH)
+      
+      GameClearLabel = UILabel(frame: Frame)
+      GameClearLabel?.text = "Stage Clear"
+      GameClearLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 100)
+      GameClearLabel?.textAlignment = .center
+      GameClearLabel?.adjustsFontSizeToFitWidth = true
+      GameClearLabel?.adjustsFontForContentSizeCategory = true
+      
+      self.addSubview(GameClearLabel!)
+   }
+   
+   private func InitCountOfNextADLabel() {
+      let StartX = ViewW / 8
+      let StartY = ViewH / 8 * 4
+      
+      let LabelW = ViewW / 4 * 3
+      let LabelH = ViewH / 16
+      
+      let Frame = CGRect(x: StartX, y: StartY, width: LabelW, height: LabelH)
+      
+      CountOfNextADLabel = UILabel(frame: Frame)
+      CountOfNextADLabel?.text = "Next AD: "
+      CountOfNextADLabel?.textColor = UIColor.flatWhiteColorDark()
+      CountOfNextADLabel?.font = UIFont(name: "HiraMaruProN-W4", size: 25)
+      CountOfNextADLabel?.textAlignment = .center
+      CountOfNextADLabel?.adjustsFontSizeToFitWidth = true
+      CountOfNextADLabel?.adjustsFontForContentSizeCategory = true
+      
+      self.addSubview(CountOfNextADLabel!)
+   }
+   
+   public func SetCountOfNextADLabel(NextCount: Int) {
+      
+      if NextCount == 0 {
+         self.CountOfNextADLabel?.text = "Ad Flow"
+         return
+      }
+      
+      self.CountOfNextADLabel?.text = NextADString + String(NextCount)
+   }
+   
+   private func InitBannerView() {
+      #if DEBUG
+         print("\n\n--------INFO ADMOB--------------\n")
+         print("Google Mobile ads SDK Versioin -> " + GADRequest.sdkVersion() + "\n")
+         GameClearBannerView.adUnitID = BANNER_VIEW_ID
+         BannerViewReqest.testDevices = ["9d012329e337de42666c706e842b7819"];
+         print("バナー広告：テスト環境\n\n")
+      #else
+         print("\n\n--------INFO ADMOB--------------\n")
+         print("Google Mobile ads SDK Versioin -> " + GADRequest.sdkVersion() + "\n")
+         BannerView.adUnitID = BANNER_VIEW_ID
+         print("バナー広告：本番環境")
+      #endif
+      
+      //GameClearBannerView.backgroundColor = .black
+      GameClearBannerView.frame = CGRect(x: 0, y: ViewH - 55, width: ViewW, height: 50)
+      self.addSubview(GameClearBannerView)
+      self.bringSubviewToFront(GameClearBannerView)
+      
+      GameClearBannerView.delegate = self
+   }
+   
+   public func InitBannerViewGetRootViewController(SelfViewCon: UIViewController) {
+      print("バナービューにルートビューつけた")
+      self.GameClearBannerView.rootViewController = SelfViewCon
+   }
+   
+   public func InitBannerViewRequest() {
+      GameClearBannerView.load(BannerViewReqest)
+   }
+   
+   private func IniiNextButton(frame: CGRect) {
+      
+      let StartX = ViewW / 8
+      let StartY = ViewH / 8 * 4 + ViewH / 16
+      
+      let ButtonW = ViewW / 4 * 3
+      let ButtonH = ViewH / 8
       
       let Frame = CGRect(x: StartX, y: StartY, width: ButtonW, height: ButtonH)
       
@@ -110,11 +209,12 @@ class GameClearView: UIView {
    }
    
    private func InitGoHomeButton(frame: CGRect) {
-      let StartX = ViewW / 16
-      let StartY = ViewH / 5 * 2 + StarViewWide / 2 + StarViewWide * 1.2
+      let StartX = ViewW / 8
+      let StartY = ViewH / 8 * 6
       
-      let ButtonW = ViewW / 8 * 7
-      let ButtonH = StarViewWide
+      
+      let ButtonW = ViewW / 4 * 3
+      let ButtonH = ViewH / 8
       
       let Frame = CGRect(x: StartX, y: StartY, width: ButtonW, height: ButtonH)
       
@@ -405,5 +505,43 @@ class GameClearView: UIView {
    
    private func Play3DtouchHeavy() {
       TapticEngine.impact.feedback(.heavy)
+   }
+   
+   
+   
+   
+   
+   //MARK:- ADMOB
+   /// Tells the delegate an ad request loaded an ad.
+   func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+      print("広告(banner)のロードが完了しました。")
+   }
+   
+   /// Tells the delegate an ad request failed.
+   func adView(_ bannerView: GADBannerView,
+               didFailToReceiveAdWithError error: GADRequestError) {
+      print("広告(banner)のロードに失敗しました。: \(error.localizedDescription)")
+   }
+   
+   /// Tells the delegate that a full-screen view will be presented in response
+   /// to the user clicking on an ad.
+   func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+      print("adViewWillPresentScreen")
+   }
+   
+   /// Tells the delegate that the full-screen view will be dismissed.
+   func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+      print("adViewWillDismissScreen")
+   }
+   
+   /// Tells the delegate that the full-screen view has been dismissed.
+   func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+      print("adViewDidDismissScreen")
+   }
+   
+   /// Tells the delegate that a user click will open another app (such as
+   /// the App Store), backgrounding the current app.
+   func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+      print("adViewWillLeaveApplication")
    }
 }
