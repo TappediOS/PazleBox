@@ -17,10 +17,8 @@ class SellectStageEasy: UIScrollView {
    var ButtonSize: CGFloat = 0
    var Internal: CGFloat = 0
    
-   
-   var EasyStageClearInfo: [(Clear: Bool, CountOfusedHint: Int)] = []
+   let realm = try! Realm()
 
-   let userDefaults = UserDefaults.standard
    
    let AllStageNum = 50
 
@@ -29,30 +27,58 @@ class SellectStageEasy: UIScrollView {
       self.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
       
       
-      print(Realm.Configuration.defaultConfiguration.fileURL)
+      
       
       InitStageClearArry()
    }
    
-   private func FirstInitArry() {
-      let SetTapple: (Bool, Int) = (false, 2)
-      for tmp in 0 ... AllStageNum - 1 {
-         //EasyStageClearInfo[tmp] = SetTapple
-         EasyStageClearInfo.append(SetTapple)
+   private func FirstOpenSellectEasyStage() {
+      
+      
+      for tmp in 1 ...  AllStageNum {
+       
+         let InitInfo = EasyStageClearInfomation()
+         
+         InitInfo.StageNum = tmp
+         InitInfo.Clear = false
+         InitInfo.CountOfUsedHint = 2
+         
+         try! realm.write {
+            realm.add(InitInfo)
+         }
       }
       
+      print(Realm.Configuration.defaultConfiguration.fileURL!)
+      
+
       
      // userDefaults.set(NSKeyedArchiver.archivedData(withRootObject: <#T##Any#>, requiringSecureCoding: <#T##Bool#>), forKey: "EasyStageClearInfomation")
    }
    
    private func InitStageClearArry() {
       
-      if userDefaults.object(forKey: "EasyStageClearInfomation") == nil {
-         print("初めて起動したのでEasyStageのクリア情報を初期化します。")
-         FirstInitArry()
-      }else{
-         EasyStageClearInfo = userDefaults.object(forKey: "EasyStageClearInfo") as! [(Clear: Bool, CountOfusedHint: Int)]
+      let RealmCount = realm.objects(EasyStageClearInfomation.self).count
+      
+      print("\nRealmCount = \(RealmCount)")
+      
+      if RealmCount == 0 {
+         print("初めて開いたのでRealmの初期化を行います")
+         FirstOpenSellectEasyStage()
+         return
       }
+      
+      
+//      let info = realm.objects(EasyStageClearInfomation.self).filter("StageNum == 20")
+//
+//
+//      try! realm.write {
+//         info[0].Clear = false
+//      }
+//
+//
+      
+
+
    
    }
    
@@ -86,6 +112,24 @@ class SellectStageEasy: UIScrollView {
    }
    
    private func InitButton() {
+      
+      let ClearOfNot = realm.objects(EasyStageClearInfomation.self).filter("Clear == true")
+      var LastClearNum: Int = 1
+      
+      if ClearOfNot.isEmpty == true {
+         LastClearNum = 1
+      }else{
+         if let Last = ClearOfNot.last?.StageNum {
+            LastClearNum = Last
+         }else{
+            fatalError("ステージナンバーnil入ってて笑えない")
+         }
+      }
+      
+      print("クリアステージの最大番号は\(String(describing: LastClearNum))")
+      
+      let PlayerCanPlayMaxStageNum = LastClearNum + 3
+      
       for tmp in 1 ...  AllStageNum {
          
          let x = (tmp - 1) % 4
@@ -97,7 +141,7 @@ class SellectStageEasy: UIScrollView {
          let Frame = CGRect(x: FirstX, y: FirstY, width: ButtonSize, height: ButtonSize)
          
          let EasyNumberButton = EasyButton(frame: Frame)
-         EasyNumberButton.Init(Tag: tmp)
+         EasyNumberButton.Init(Tag: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum)
          EasyNumberButton.addTarget(self, action: #selector(self.SellectButton(_:)), for: UIControl.Event.touchUpInside)
          
          
@@ -118,8 +162,14 @@ class SellectStageEasy: UIScrollView {
       NotificationCenter.default.post(name: .SellectBack, object: nil, userInfo: nil)
    }
    
-   @objc func SellectButton (_ sender: UIButton) {
+   @objc func SellectButton (_ sender: EasyButton) {
       print("押されたボタン: \(sender.tag)")
+      
+      if sender.GetCanPlay() == false {
+         Play3DtouchError()
+         return
+      }
+      
       Play3DtouchLight()
       GameSerPOSTMotification(StageNum: sender.tag)
    }
@@ -149,5 +199,9 @@ class SellectStageEasy: UIScrollView {
    private func Play3DtouchHeavy() {
       TapticEngine.impact.feedback(.heavy)
       return
+   }
+   
+   private func Play3DtouchError() {
+      TapticEngine.notification.feedback(.error)
    }
 }

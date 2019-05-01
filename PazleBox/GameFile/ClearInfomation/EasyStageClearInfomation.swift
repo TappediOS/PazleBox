@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import RealmSwift
+
+class EasyStageClearInfomation: Object{
+   
+   @objc dynamic var StageNum: Int = 0
+   @objc dynamic var Clear: Bool = false
+   @objc dynamic var CountOfUsedHint: Int = 2
+   
+}

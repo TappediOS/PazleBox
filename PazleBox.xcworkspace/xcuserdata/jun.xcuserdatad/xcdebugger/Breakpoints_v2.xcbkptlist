@@ -1360,16 +1360,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/Sellect/EasySellectStage.swift"
-            timestampString = "578396298.0847681"
+            timestampString = "578403702.71208"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "InitStageClearArry()"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "FirstOpenSellectEasyStage()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1380,28 +1380,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/Sellect/EasySellectStage.swift"
-            timestampString = "578396298.085328"
+            timestampString = "578403702.712482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "FirstInitArry()"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "FirstOpenSellectEasyStage()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/Sellect/EasySellectStage.swift"
-            timestampString = "578396298.085515"
+            timestampString = "578403702.712733"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "FirstInitArry()"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "SellectButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
