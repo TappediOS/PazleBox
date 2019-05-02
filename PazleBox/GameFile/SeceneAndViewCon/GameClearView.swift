@@ -28,8 +28,8 @@ class GameClearView: UIView, GADBannerViewDelegate {
    var ConfView2 = AnimationView(name: "Confe")
    var ConfView3 = AnimationView(name: "Confe")
    
-   var ConfAniSpi: CGFloat = 1.02
-   var KiraAniSpi: CGFloat = 1.2
+   var ConfAniSpi: CGFloat = 1.12
+   var KiraAniSpi: CGFloat = 1.23
    
    var StarViewWide: CGFloat = 1
    var StarViewIntarnal: CGFloat = 1
@@ -39,7 +39,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
    var ConfiViewSizeSet: CGFloat = 1.14
    
    var KiraViewSize: CGFloat?
-   var KiraViewSizeSet: CGFloat = 1.34
+   var KiraViewSizeSet: CGFloat = 1.39
    
    var NextButton: FUIButton?
    var GoHomeButton: FUIButton?

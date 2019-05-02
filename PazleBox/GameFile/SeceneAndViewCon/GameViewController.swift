@@ -26,9 +26,13 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    var SellectStageNumber = 0
 
    var EasySelect = SellectStageEasy()
+   var NormalSelect = SellectStageNormal()
+   var HardSelect = SellectStageHard()
    var ViewFrame: CGRect?
    
    let StarAnimationBetTime = 0.45
+   
+   var GoHomeForInstitialAD = false
    
    
    var Reward: GADRewardBasedVideoAd!
@@ -39,8 +43,8 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    let INTERSTITIAL_TEST_ID = "ca-app-pub-3940256099942544/4411468910"
    let INTERSTITIAL_ID = "ca-app-pub-1460017825820383/5793475595"
    
-   var InterstitialCount = 4
-   var InterstitialCountBase = 4
+   var InterstitialCount = 3
+   var InterstitialCountBase = 3
    
    
    //MARK: user defaults
@@ -104,7 +108,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       if userDefaults.object(forKey: "InterstitialCount") == nil {
          self.InterstitialCount = self.InterstitialCountBase
          userDefaults.set(self.InterstitialCount, forKey: "InterstitialCount")
-         print("初めて起動したので4をセットしました。")
+         print("初めて起動したので3をセットしました。")
       }else{
          self.InterstitialCount = userDefaults.integer(forKey: "InterstitialCount")
          print("広告の表示するまでの回数: \(self.InterstitialCount)")
@@ -136,11 +140,11 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          EasySelect.InitView(frame: self.view.frame)
          self.view.addSubview(EasySelect)
       case .Normal:
-         EasySelect.InitView(frame: self.view.frame)
-         self.view.addSubview(EasySelect)
+         NormalSelect.InitView(frame: self.view.frame)
+         self.view.addSubview(NormalSelect)
       case .Hard:
-         EasySelect.InitView(frame: self.view.frame)
-         self.view.addSubview(EasySelect)
+         HardSelect.InitView(frame: self.view.frame)
+         self.view.addSubview(HardSelect)
       }
    }
    
@@ -417,7 +421,14 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          LoadStageNumber(Num: SentNum)
          InitGameViewAndShowView()
          
-         self.EasySelect.removeFromSuperview()
+         switch StageLevel {
+         case .Easy:
+            self.EasySelect.removeFromSuperview()
+         case .Normal:
+            self.NormalSelect.removeFromSuperview()
+         case .Hard:
+            self.HardSelect.removeFromSuperview()
+         }
          
          
       }else{
@@ -446,6 +457,15 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    
    @objc func TapHomeNotification(notification: Notification) -> Void {
       
+      //1やったら広告表示してカウンタアプデして帰る
+      if userDefaults.integer(forKey: "InterstitialCount") == 0 {
+         GoHomeForInstitialAD = true
+         ShowInterstitial()
+         UpdateInterstitialCountANDUpdateLabelCount()
+         return
+      }
+      
+      UpdateInterstitialCountANDUpdateLabelCount()
       self.dismiss(animated: false, completion: nil)
    }
    
@@ -476,10 +496,18 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       if Interstitial.isReady {
          print("インタースティシャル広告の準備できてるからpresentする!")
          Interstitial.present(fromRootViewController: self)
-      }else{
-         print("インタースティシャル広告準備できてないから次のステージに進みます")
-         ShowNextGame()
+         return
       }
+      
+      if Interstitial.isReady == false && GoHomeForInstitialAD == true {
+         print("インタースティシャル広告準備できてないし，帰りたいから帰る")
+         GoHomeForInstitialAD = false
+         self.dismiss(animated: false, completion: nil)
+         return
+      }
+         
+      print("インタースティシャル広告準備できてないから次のステージに進みます")
+      ShowNextGame()
    }
    
    //MARK:- 広告表示カウントとラベルの更新
@@ -571,6 +599,14 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
       print("インタースティシャル広告閉じる直後")
       AudioServicesPlaySystemSound(1519)
+      
+      if GoHomeForInstitialAD == true {
+         print("帰りたいから帰る")
+         GoHomeForInstitialAD = false
+         self.dismiss(animated: false, completion: nil)
+         return
+      }
+      
       print("ってことで次のステージに移動します")
       ShowNextGame()
    }

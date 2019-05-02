@@ -1,8 +1,8 @@
 //
-//  EasySellectStage.swift
+//  NormalSellectStage.swift
 //  PazleBox
 //
-//  Created by jun on 2019/03/25.
+//  Created by jun on 2019/05/01.
 //  Copyright © 2019 jun. All rights reserved.
 //
 
@@ -12,14 +12,14 @@ import FlatUIKit
 import TapticEngine
 import RealmSwift
 
-class SellectStageEasy: UIScrollView {
+class SellectStageNormal: UIScrollView {
    
    var ButtonSize: CGFloat = 0
    var Internal: CGFloat = 0
    
    let realm = try! Realm()
    let AllStageNum = 50
-
+   
    override init(frame: CGRect) {
       super.init(frame: frame)
       self.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
@@ -30,7 +30,7 @@ class SellectStageEasy: UIScrollView {
    
    private func FirstOpenSellectEasyStage() {
       for tmp in 1 ...  AllStageNum {
-         let InitInfo = EasyStageClearInfomation()
+         let InitInfo = NormalStageClearInfomation()
          
          InitInfo.StageNum = tmp
          InitInfo.Clear = false
@@ -44,12 +44,12 @@ class SellectStageEasy: UIScrollView {
    
    private func InitStageClearArry() {
       
-      let RealmCount = realm.objects(EasyStageClearInfomation.self).count
+      let RealmCount = realm.objects(NormalStageClearInfomation.self).count
       
-      print("\nRealmCount(Easy) = \(RealmCount)")
+      print("\nRealmCount(Normal) = \(RealmCount)")
       
       if RealmCount == 0 {
-         print("初めて開いたのでRealm(Easy)の初期化を行います")
+         print("初めて開いたのでRealm(Normal)の初期化を行います")
          FirstOpenSellectEasyStage()
          return
       }
@@ -58,7 +58,7 @@ class SellectStageEasy: UIScrollView {
    public func InitView(frame: CGRect) {
       self.frame = frame
       self.contentSize.height = frame.height * 5
-
+      
       ButtonSize = frame.width / 5
       Internal = ButtonSize / 5
       
@@ -84,7 +84,7 @@ class SellectStageEasy: UIScrollView {
    }
    
    private func InitButton() {
-      let ClearOfNot = realm.objects(EasyStageClearInfomation.self).filter("Clear == true")
+      let ClearOfNot = realm.objects(NormalStageClearInfomation.self).filter("Clear == true")
       var LastClearNum: Int = 1
       
       if ClearOfNot.isEmpty == true {
@@ -114,7 +114,7 @@ class SellectStageEasy: UIScrollView {
          let EasyNumberButton = StageSellectButton(frame: Frame)
          EasyNumberButton.Init(Tag: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum)
          EasyNumberButton.addTarget(self, action: #selector(self.SellectButton(_:)), for: UIControl.Event.touchUpInside)
-
+         
          self.addSubview(EasyNumberButton)
       }
    }

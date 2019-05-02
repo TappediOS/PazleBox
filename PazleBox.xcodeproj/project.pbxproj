@@ -280,6 +280,8 @@
 		BF7CE7CE226882370040352D /* KiraKira.json in Resources */ = {isa = PBXBuildFile; fileRef = BF7CE7CD226882370040352D /* KiraKira.json */; };
 		BF8A464E2250829C0016F801 /* StarStar.json in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464D2250829C0016F801 /* StarStar.json */; };
 		BF8A4650225088EE0016F801 /* NoLike.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464F225088EE0016F801 /* NoLike.png */; };
+		BF8ABFD82279C6B100F275FA /* NormalSellectStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8ABFD72279C6B100F275FA /* NormalSellectStage.swift */; };
+		BF8ABFDA2279C6B900F275FA /* HardSellectStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8ABFD92279C6B900F275FA /* HardSellectStage.swift */; };
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
 		BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D422428287007C8FA1 /* Assets.xcassets */; };
 		BFC6C5D9224283BD007C8FA1 /* Test.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D8224283BD007C8FA1 /* Test.sks */; };
@@ -686,6 +688,8 @@
 		BF7CE7CD226882370040352D /* KiraKira.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = KiraKira.json; sourceTree = "<group>"; };
 		BF8A464D2250829C0016F801 /* StarStar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StarStar.json; sourceTree = "<group>"; };
 		BF8A464F225088EE0016F801 /* NoLike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoLike.png; sourceTree = "<group>"; };
+		BF8ABFD72279C6B100F275FA /* NormalSellectStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalSellectStage.swift; sourceTree = "<group>"; };
+		BF8ABFD92279C6B900F275FA /* HardSellectStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardSellectStage.swift; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
 		BFC6C5D422428287007C8FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC6C5D8224283BD007C8FA1 /* Test.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Test.sks; sourceTree = "<group>"; };
@@ -1143,6 +1147,8 @@
 			isa = PBXGroup;
 			children = (
 				BF332F732248B1FE009B3042 /* EasySellectStage.swift */,
+				BF8ABFD72279C6B100F275FA /* NormalSellectStage.swift */,
+				BF8ABFD92279C6B900F275FA /* HardSellectStage.swift */,
 				BF332F752248C043009B3042 /* StageSellectButton.swift */,
 			);
 			path = Sellect;
@@ -1987,6 +1993,7 @@
 				BF552E96226DDD0C00756E16 /* E26.swift in Sources */,
 				BF552F2A226DDF0600756E16 /* H40.swift in Sources */,
 				BF332FB82249278B009B3042 /* N5.swift in Sources */,
+				BF8ABFDA2279C6B900F275FA /* HardSellectStage.swift in Sources */,
 				BF60AC51224C8F1100D441D6 /* RePutButton.swift in Sources */,
 				BF332FA622492711009B3042 /* E16.swift in Sources */,
 				BF332FB22249276F009B3042 /* N2.swift in Sources */,
@@ -2068,6 +2075,7 @@
 				BF552F32226DDF1500756E16 /* H44.swift in Sources */,
 				BF552EC0226DDD7100756E16 /* E47.swift in Sources */,
 				BF552EE8226DDE1400756E16 /* N37.swift in Sources */,
+				BF8ABFD82279C6B100F275FA /* NormalSellectStage.swift in Sources */,
 				BF332FF42249282A009B3042 /* H14.swift in Sources */,
 				BF1FF2AD22311CE60047ED23 /* Stage.swift in Sources */,
 				BF332FDE224927F2009B3042 /* H4.swift in Sources */,
