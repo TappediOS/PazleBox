@@ -28,18 +28,18 @@ class GameClearView: UIView, GADBannerViewDelegate {
    var ConfView2 = AnimationView(name: "Confe")
    var ConfView3 = AnimationView(name: "Confe")
    
-   var ConfAniSpi: CGFloat = 1.12
-   var KiraAniSpi: CGFloat = 1.23
+   var ConfAniSpi: CGFloat = 1.3
+   var KiraAniSpi: CGFloat = 1.245
    
    var StarViewWide: CGFloat = 1
    var StarViewIntarnal: CGFloat = 1
    
    //2こめのやつで何倍かできる!
    var ConfiViewSize: CGFloat?
-   var ConfiViewSizeSet: CGFloat = 1.14
+   var ConfiViewSizeSet: CGFloat = 1.17
    
    var KiraViewSize: CGFloat?
-   var KiraViewSizeSet: CGFloat = 1.39
+   var KiraViewSizeSet: CGFloat = 1.45
    
    var NextButton: FUIButton?
    var GoHomeButton: FUIButton?
@@ -56,6 +56,8 @@ class GameClearView: UIView, GADBannerViewDelegate {
    let BannerViewReqest = GADRequest()
    let BANNER_VIEW_TEST_ID: String = "ca-app-pub-3940256099942544/2934735716"
    let BANNER_VIEW_ID: String = "ca-app-pub-1460017825820383/4049149088"
+   
+   let GameSound = GameSounds()
    
    
    override init(frame: CGRect) {
@@ -420,18 +422,21 @@ class GameClearView: UIView, GADBannerViewDelegate {
    public func StartAnimationView1() {
       StarView1.play()
       KiraView1.play()
+      GameSound.PlaySoundsStarSound()
       Play3DtouchHeavy()
    }
    
    public func StartAnimationView2() {
       StarView2.play()
       KiraView2.play()
+      GameSound.PlaySoundsStarSound()
       Play3DtouchHeavy()
    }
    
    public func StartAnimationView3() {
       StarView3.play()
       KiraView3.play()
+      GameSound.PlaySoundsStarSound()
       Play3DtouchHeavy()
    }
    

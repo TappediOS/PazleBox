@@ -30,9 +30,12 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    var HardSelect = SellectStageHard()
    var ViewFrame: CGRect?
    
-   let StarAnimationBetTime = 0.45
+   let GameSound = GameSounds()
+   
+   let StarAnimationBetTime = 0.4659
    
    var GoHomeForInstitialAD = false
+   
    
    
    var Reward: GADRewardBasedVideoAd!
@@ -191,7 +194,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
                
                let Tran = SKTransition.fade(withDuration: 2.35)
                
-               
+
                
                view.presentScene(sceneNode, transition: Tran)
                
@@ -418,6 +421,8 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          let SentNum = userInfo["StageNum"] as! Int
          print("送信者番号: \(SentNum)")
          
+         GameSound.PlaySoundsTapButton()
+         
          LoadStageNumber(Num: SentNum)
          InitGameViewAndShowView()
          
@@ -444,6 +449,8 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    
    @objc func TapNextNotification(notification: Notification) -> Void {
       
+      GameSound.PlaySoundsTapButton()
+      
       //1やったら広告表示してカウンタアプデして帰る
       if userDefaults.integer(forKey: "InterstitialCount") == 0 {
          ShowInterstitial()
@@ -457,6 +464,8 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    
    @objc func TapHomeNotification(notification: Notification) -> Void {
       
+      GameSound.PlaySoundsTapButton()
+      
       //1やったら広告表示してカウンタアプデして帰る
       if userDefaults.integer(forKey: "InterstitialCount") == 0 {
          GoHomeForInstitialAD = true
@@ -466,7 +475,9 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       }
       
       UpdateInterstitialCountANDUpdateLabelCount()
-      self.dismiss(animated: false, completion: nil)
+      self.view.fadeOut(type: .Slow){ [weak self] in
+         self?.dismiss(animated: false, completion: nil)
+      }
    }
    
    private func ShowNextGame() {
@@ -603,7 +614,9 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       if GoHomeForInstitialAD == true {
          print("帰りたいから帰る")
          GoHomeForInstitialAD = false
-         self.dismiss(animated: false, completion: nil)
+         self.view.fadeOut(type: .Slow){ [weak self] in
+            self?.dismiss(animated: false, completion: nil)
+         }
          return
       }
       
@@ -616,8 +629,22 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    }
    
    @objc func SellectBackNotification(notification: Notification) -> Void {
+//      switch StageLevel {
+//      case .Easy:
+//         self.view.fadeOut(type: .Slow){ [weak self] in
+//            self?.dismiss(animated: false, completion: nil)
+//         }
+//      case .Normal:
+//         NormalSelect.InitView(frame: self.view.frame)
+//         self.view.addSubview(NormalSelect)
+//      case .Hard:
+//         HardSelect.InitView(frame: self.view.frame)
+//         self.view.addSubview(HardSelect)
+//      }
       
-      self.dismiss(animated: true, completion: nil)
+      self.view.fadeOut(type: .Slow){ [weak self] in
+         self?.dismiss(animated: false, completion: nil)
+      }
    }
    
     override var shouldAutorotate: Bool {return true}

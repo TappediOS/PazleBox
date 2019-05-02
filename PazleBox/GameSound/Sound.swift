@@ -23,7 +23,7 @@ class GameSounds {
    var audioPlayer9: AVAudioPlayer! = nil
    var audioPlayer10: AVAudioPlayer! = nil
    
-   let SoundVolume: Float = 0.5
+   let SoundVolume: Float = 0.65
    
    
    init() {
@@ -65,24 +65,24 @@ class GameSounds {
       } catch {
          print("Fa_Mokkinインスタンス作成失敗")
       }
-//
-//      soundFilePath = Bundle.main.path(forResource: "So_Mokkin", ofType: "mp3")!
-//      sound = URL(fileURLWithPath: soundFilePath)
-//      // AVAudioPlayerのインスタンスを作成
-//      do {
-//         audioPlayer5 = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
-//      } catch {
-//         print("So_Mokkinインスタンス作成失敗")
-//      }
-//
-//      soundFilePath = Bundle.main.path(forResource: "Ra_Mokkin", ofType: "mp3")!
-//      sound = URL(fileURLWithPath: soundFilePath)
-//      // AVAudioPlayerのインスタンスを作成
-//      do {
-//         audioPlayer6 = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
-//      } catch {
-//         print("Ra_Mokkinインスタンス作成失敗")
-//      }
+
+      soundFilePath = Bundle.main.path(forResource: "TapButton", ofType: "caf")!
+      sound = URL(fileURLWithPath: soundFilePath)
+      // AVAudioPlayerのインスタンスを作成
+      do {
+         audioPlayer5 = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
+      } catch {
+         print("TapButtonインスタンス作成失敗")
+      }
+
+      soundFilePath = Bundle.main.path(forResource: "StarSound", ofType: "caf")!
+      sound = URL(fileURLWithPath: soundFilePath)
+      // AVAudioPlayerのインスタンスを作成
+      do {
+         audioPlayer6 = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
+      } catch {
+         print("StarSoundインスタンス作成失敗")
+      }
 //
 //      soundFilePath = Bundle.main.path(forResource: "Si_Mokkin", ofType: "mp3")!
 //      sound = URL(fileURLWithPath: soundFilePath)
@@ -124,8 +124,8 @@ class GameSounds {
       audioPlayer2.prepareToPlay()
       audioPlayer3.prepareToPlay()
       audioPlayer4.prepareToPlay()
-//      audioPlayer5.prepareToPlay()
-//      audioPlayer6.prepareToPlay()
+      audioPlayer5.prepareToPlay()
+      audioPlayer6.prepareToPlay()
 //      audioPlayer7.prepareToPlay()
 //      audioPlayer8.prepareToPlay()
 //      audioPlayer9.prepareToPlay()
@@ -168,6 +168,36 @@ class GameSounds {
 //      queue.addOperation(operation)
 //      
 //   }
+   
+      public func PlaySoundsTapButton() {
+   
+         let queue = OperationQueue()
+         let operation = BlockOperation {
+            self.audioPlayer5.volume = 0
+            self.audioPlayer5.stop()
+            self.audioPlayer5.currentTime = 0
+            self.audioPlayer5.volume = self.SoundVolume
+            self.audioPlayer5.play()
+   
+         }
+         queue.addOperation(operation)
+   
+      }
+   
+   public func PlaySoundsStarSound() {
+      
+      let queue = OperationQueue()
+      let operation = BlockOperation {
+         self.audioPlayer6.volume = 0
+         self.audioPlayer6.stop()
+         self.audioPlayer6.currentTime = 0
+         self.audioPlayer6.volume = self.SoundVolume
+         self.audioPlayer6.play()
+         
+      }
+      queue.addOperation(operation)
+      
+   }
    
    public func PlaySounds(Type: Int) {
       

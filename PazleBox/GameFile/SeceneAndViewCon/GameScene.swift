@@ -47,7 +47,7 @@ class GameScene: SKScene {
    
    var userDefaults = UserDefaults.standard
    
-   private var GameSound = GameSounds()
+   private let GameSound = GameSounds()
    private var GameBGM = BGM()
    
     override func sceneDidLoad() {
@@ -740,6 +740,7 @@ class GameScene: SKScene {
       print("PouseCatchNotifi")
       
       if self.PouseViewNode!.GetIsLocked() == false {
+         GameSound.PlaySoundsTapButton()
          self.addChild(self.PouseViewNode!)
          self.PouseViewNode!.ShowViewAnimation()
          LockAllNode()
@@ -760,6 +761,7 @@ class GameScene: SKScene {
       
       if HintButtonNode?.CountOfHint == 1{
          if HintButtonNode?.GetEnableLastHint() == true{
+            GameSound.PlaySoundsTapButton()
             AdShowOrNot()
             return
          }
@@ -775,6 +777,7 @@ class GameScene: SKScene {
       print("AdWatchCatchNotification")
       //PouseViewNode?.removeFromParent()
       
+      GameSound.PlaySoundsTapButton()
       ShowAdPOSTMotification()
       //FIXME:-  これは広告をちゃんと見た人に表示する
       
@@ -788,6 +791,7 @@ class GameScene: SKScene {
       //PouseViewNode?.removeFromParent()
       HintPouseViewNode?.FadeOutAniAndRemoveFromParent()
       UnLockAllNode()
+      GameSound.PlaySoundsTapButton()
    }
    
    @objc func FinRewardWatchCatchNotification(notification: Notification) -> Void {
@@ -800,6 +804,7 @@ class GameScene: SKScene {
       //PouseViewNode?.removeFromParent()
       PouseViewNode?.FadeOutAniAndRemoveFromParent()
       UnLockAllNode()
+      GameSound.PlaySoundsTapButton()
    }
    
    private func ShowAdPOSTMotification() {

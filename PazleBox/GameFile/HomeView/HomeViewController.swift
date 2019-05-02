@@ -15,6 +15,8 @@ import TapticEngine
 class HomeViewController: UIViewController {
    
    
+   private let GameSound = GameSounds()
+   
    
    @IBOutlet weak var EasyButton: UIButton!
    
@@ -55,9 +57,15 @@ class HomeViewController: UIViewController {
       print("ステージレベルの送信完了(\(vc2.StageLevel))")
       
       Play3DtouchLight()
+      GameSound.PlaySoundsTapButton()
+      
+      
       //NavigationControllerを継承したViewControllerを遷移
       print("GameViewControllerを表示します")
-       present(vc2, animated: true, completion: nil)
+      self.view.fadeOut(type: .Normal){ [weak self] in
+         self?.present(vc2, animated: false, completion: nil)
+         self?.view.fadeIn(type: .Normal)
+      }
    }
    
  

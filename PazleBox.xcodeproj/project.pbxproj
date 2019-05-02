@@ -282,6 +282,8 @@
 		BF8A4650225088EE0016F801 /* NoLike.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464F225088EE0016F801 /* NoLike.png */; };
 		BF8ABFD82279C6B100F275FA /* NormalSellectStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8ABFD72279C6B100F275FA /* NormalSellectStage.swift */; };
 		BF8ABFDA2279C6B900F275FA /* HardSellectStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8ABFD92279C6B900F275FA /* HardSellectStage.swift */; };
+		BF8ABFDC227AD2AD00F275FA /* TapButton.caf in Resources */ = {isa = PBXBuildFile; fileRef = BF8ABFDB227AD2A500F275FA /* TapButton.caf */; };
+		BF8ABFDE227AE48000F275FA /* StarSound.caf in Resources */ = {isa = PBXBuildFile; fileRef = BF8ABFDD227AE47D00F275FA /* StarSound.caf */; };
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
 		BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D422428287007C8FA1 /* Assets.xcassets */; };
 		BFC6C5D9224283BD007C8FA1 /* Test.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D8224283BD007C8FA1 /* Test.sks */; };
@@ -690,6 +692,8 @@
 		BF8A464F225088EE0016F801 /* NoLike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoLike.png; sourceTree = "<group>"; };
 		BF8ABFD72279C6B100F275FA /* NormalSellectStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalSellectStage.swift; sourceTree = "<group>"; };
 		BF8ABFD92279C6B900F275FA /* HardSellectStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardSellectStage.swift; sourceTree = "<group>"; };
+		BF8ABFDB227AD2A500F275FA /* TapButton.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TapButton.caf; sourceTree = "<group>"; };
+		BF8ABFDD227AE47D00F275FA /* StarSound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = StarSound.caf; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
 		BFC6C5D422428287007C8FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC6C5D8224283BD007C8FA1 /* Test.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Test.sks; sourceTree = "<group>"; };
@@ -1229,7 +1233,9 @@
 				BF60AC5B224CA2E000D441D6 /* Sound.swift */,
 				BF2C146822770A8500C7B8FB /* GameBGM.swift */,
 				BF60AC5D224CA6EB00D441D6 /* Katch.caf */,
+				BF8ABFDB227AD2A500F275FA /* TapButton.caf */,
 				BF2C146622770A2100C7B8FB /* cherry.caf */,
+				BF8ABFDD227AE47D00F275FA /* StarSound.caf */,
 				BF2C146A22771CFE00C7B8FB /* ka.caf */,
 				BF60AC70224DF5A800D441D6 /* Pico.caf */,
 				BF60AC5E224CA6EC00D441D6 /* RePut.caf */,
@@ -1766,6 +1772,7 @@
 				BFCE2622224A557B0099A775 /* 23p8Blue.png in Resources */,
 				BFCE25C9224A466B0099A775 /* 33p8Blue.png in Resources */,
 				BFCE2642224A58A60099A775 /* 32p7Blue.png in Resources */,
+				BF8ABFDE227AE48000F275FA /* StarSound.caf in Resources */,
 				BF7CD9582240BBD500F8302B /* 23p4Green.png in Resources */,
 				BF7CD9382240B89800F8302B /* 22p1Green.png in Resources */,
 				BFCE25E4224A466B0099A775 /* 33p20Green.png in Resources */,
@@ -1811,6 +1818,7 @@
 				BF7CD91D2240B56300F8302B /* 12p1Green.png in Resources */,
 				BF640BF92244F8FD00333782 /* 32p2Green.png in Resources */,
 				BFCE25B7224A466B0099A775 /* 33p17Red.png in Resources */,
+				BF8ABFDC227AD2AD00F275FA /* TapButton.caf in Resources */,
 				BFCE2600224A4D980099A775 /* 43p1Red.png in Resources */,
 				BF7CD9552240BBD500F8302B /* 23p5Red.png in Resources */,
 				BF640C012244F8FD00333782 /* 32p6Blue.png in Resources */,
