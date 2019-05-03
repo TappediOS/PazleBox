@@ -96,7 +96,16 @@ class GameClearView: UIView, GADBannerViewDelegate {
       InitGameClearLabel()
       InitCountOfNextADLabel()
       
-      InitBannerView()
+      InitAllADCheck()
+      
+   }
+   
+   private func InitAllADCheck() {
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false{
+         InitBannerView()
+      }else{
+         print("課金をしているので広告の初期化は行いません")
+      }
    }
    
    //MARK:- 初期化
@@ -179,6 +188,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    public func InitBannerViewRequest() {
+      print("バナービューのロードを行います")
       GameClearBannerView.load(BannerViewReqest)
    }
    

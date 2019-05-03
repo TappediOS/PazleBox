@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import AVFoundation
 import Crashlytics
+import SwiftyStoreKit
 
 
 @UIApplicationMain
@@ -44,7 +45,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       
       
       GADMobileAds.sharedInstance().start(completionHandler: nil)
-
+      
+      
+      
+      //--------------------STORE KIT-----------------------//
+      SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+         for purchase in purchases {
+            switch purchase.transaction.transactionState {
+            case .purchased, .restored:
+               if purchase.needsFinishTransaction {
+                  SwiftyStoreKit.finishTransaction(purchase.transaction)
+               }
+            // Unlock content
+            case .failed, .purchasing, .deferred:
+               break // do nothing
+            }
+         }
+      }
+      //--------------------STORE KIT-----------------------//
+      
+      //-------------------User First Open-----------------//
+      //-------------------Init Ad Flag-------------------//
+      UserDefaults.standard.register(defaults: ["BuyRemoveAd": false])
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == true {
+         print("\n--- ユーザーは広告削除の課金をしています ---\n")
+      }else{
+         print("\n ---ユーザーは広告削除の課金をしてない. ---\n")
+      }
+      //-------------------User First Open-----------------//
+      //-------------------Init Ad Flag-------------------//
 
       return true
    }

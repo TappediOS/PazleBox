@@ -25,6 +25,8 @@ class HintNode : SKSpriteNode {
    
    var CountOfHint = 2
    
+   
+   
    init(ViewX: Int, ViewY: Int) {
       
       
@@ -48,7 +50,12 @@ class HintNode : SKSpriteNode {
       self.isUserInteractionEnabled = true
       
       let LikeSize = CGSize(width: CGFloat(PazzleSizeFound / 2), height: CGFloat(PazzleSizeFound / 2))
-      Circ1 = SKSpriteNode(texture: SKTexture(imageNamed: "NoLike"), size: LikeSize)
+      
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == true{
+         Circ1 = SKSpriteNode(texture: SKTexture(imageNamed: "Like.png"), size: LikeSize)
+      }else{
+         Circ1 = SKSpriteNode(texture: SKTexture(imageNamed: "NoLike"), size: LikeSize)
+      }
       Circ2 = SKSpriteNode(texture: SKTexture(imageNamed: "Like.png"), size: LikeSize)
       
       

@@ -70,17 +70,29 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       
       InitGameClearView()
       
-      InitRewardView()
-      InitInstitial()
-      InitInstitialCount()
+      InitAllADCheck()
       
-      InitInstitialLabelOFClearView()
+      
+      
+   }
+   
+   private func InitAllADCheck() {
+      if userDefaults.bool(forKey: "BuyRemoveAd") == false{
+         InitRewardView()
+         InitInstitial()
+         InitInstitialCount()
+         InitInstitialLabelOFClearView()
+      }else{
+         print("課金をしているので広告の初期化は行いません")
+      }
    }
    
    private func InitGameClearView() {
       ClearView = GameClearView(frame: ViewFrame!)
-      ClearView?.InitBannerViewGetRootViewController(SelfViewCon: self)
-      ClearView?.InitBannerViewRequest()
+      if userDefaults.bool(forKey: "BuyRemoveAd") == false{
+         ClearView?.InitBannerViewGetRootViewController(SelfViewCon: self)
+         ClearView?.InitBannerViewRequest()
+      }
    }
    
    private func InitInstitialLabelOFClearView() {
@@ -451,6 +463,12 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       
       GameSound.PlaySoundsTapButton()
       
+      //課金してたらそのまま次のステージに
+      if userDefaults.bool(forKey: "BuyRemoveAd") == true {
+         ShowNextGame()
+         return
+      }
+      
       //1やったら広告表示してカウンタアプデして帰る
       if userDefaults.integer(forKey: "InterstitialCount") == 0 {
          ShowInterstitial()
@@ -465,6 +483,14 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    @objc func TapHomeNotification(notification: Notification) -> Void {
       
       GameSound.PlaySoundsTapButton()
+      
+      //課金してたらそのまま返す
+      if userDefaults.bool(forKey: "BuyRemoveAd") == true {
+         self.view.fadeOut(type: .Slow){ [weak self] in
+            self?.dismiss(animated: false, completion: nil)
+         }
+         return
+      }
       
       //1やったら広告表示してカウンタアプデして帰る
       if userDefaults.integer(forKey: "InterstitialCount") == 0 {
@@ -484,7 +510,9 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       
       
       self.ClearView?.fadeOut(type: .Slow){ [weak self] in
-         self?.UpdateInterstitialCountANDUpdateLabelCount()
+         if self?.userDefaults.bool(forKey: "BuyRemoveAd") == false {
+            self?.UpdateInterstitialCountANDUpdateLabelCount()
+         }
          self?.ClearView?.StopConfi()
          self?.ClearView?.StopStar()
          self?.ClearView?.removeFromSuperview()

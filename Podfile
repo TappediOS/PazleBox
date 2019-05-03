@@ -17,6 +17,7 @@ target 'PazleBox' do
   pod 'lottie-ios'
 
   pod 'RealmSwift'
+  pod 'SwiftyStoreKit'
 
 
   pod 'Firebase/Core'

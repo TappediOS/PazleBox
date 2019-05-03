@@ -759,7 +759,11 @@ class GameScene: SKScene {
          SetHint1()
       }
       
-      if HintButtonNode?.CountOfHint == 1{
+      if HintButtonNode?.CountOfHint == 1 && userDefaults.bool(forKey: "BuyRemoveAd") == true{
+         SetHint2()
+      }
+      
+      if HintButtonNode?.CountOfHint == 1 && userDefaults.bool(forKey: "BuyRemoveAd") == false{
          if HintButtonNode?.GetEnableLastHint() == true{
             GameSound.PlaySoundsTapButton()
             AdShowOrNot()
