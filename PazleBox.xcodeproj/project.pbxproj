@@ -398,6 +398,11 @@
 		BFCE2649224A58A60099A775 /* 32p12Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE2637224A58A40099A775 /* 32p12Green.png */; };
 		BFCE264A224A58A60099A775 /* 32p9Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE2638224A58A50099A775 /* 32p9Blue.png */; };
 		BFCE264B224A58A60099A775 /* 32p12Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE2639224A58A60099A775 /* 32p12Red.png */; };
+		BFDD3EE7227D6B3200B9E6B0 /* Gold_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE4227D6B3100B9E6B0 /* Gold_Badge.png */; };
+		BFDD3EE8227D6B3200B9E6B0 /* Bronze_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE5227D6B3200B9E6B0 /* Bronze_Badge.png */; };
+		BFDD3EE9227D6B3200B9E6B0 /* Silver_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE6227D6B3200B9E6B0 /* Silver_Badge.png */; };
+		BFDD3EEB227D7A9A00B9E6B0 /* Lock_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EEA227D7A9A00B9E6B0 /* Lock_Badge.png */; };
+		BFDD3EED227D7E5200B9E6B0 /* BadgeScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDD3EEC227D7E5200B9E6B0 /* BadgeScale.swift */; };
 		BFFA2A7B22336D760023BB71 /* SpriteKitEasingSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */; };
 		BFFA2A81223380720023BB71 /* EasyGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A80223380720023BB71 /* EasyGet.swift */; };
 		BFFA2A86223383B60023BB71 /* Normal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A85223383B60023BB71 /* Normal.swift */; };
@@ -808,6 +813,11 @@
 		BFCE2637224A58A40099A775 /* 32p12Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32p12Green.png; sourceTree = "<group>"; };
 		BFCE2638224A58A50099A775 /* 32p9Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32p9Blue.png; sourceTree = "<group>"; };
 		BFCE2639224A58A60099A775 /* 32p12Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32p12Red.png; sourceTree = "<group>"; };
+		BFDD3EE4227D6B3100B9E6B0 /* Gold_Badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gold_Badge.png; sourceTree = "<group>"; };
+		BFDD3EE5227D6B3200B9E6B0 /* Bronze_Badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bronze_Badge.png; sourceTree = "<group>"; };
+		BFDD3EE6227D6B3200B9E6B0 /* Silver_Badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Silver_Badge.png; sourceTree = "<group>"; };
+		BFDD3EEA227D7A9A00B9E6B0 /* Lock_Badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lock_Badge.png; sourceTree = "<group>"; };
+		BFDD3EEC227D7E5200B9E6B0 /* BadgeScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeScale.swift; sourceTree = "<group>"; };
 		BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpriteKitEasingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA2A7C22336D760023BB71 /* TapticEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TapticEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA2A80223380720023BB71 /* EasyGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyGet.swift; sourceTree = "<group>"; };
@@ -1153,7 +1163,9 @@
 				BF332F732248B1FE009B3042 /* EasySellectStage.swift */,
 				BF8ABFD72279C6B100F275FA /* NormalSellectStage.swift */,
 				BF8ABFD92279C6B900F275FA /* HardSellectStage.swift */,
+				BFDD3EEC227D7E5200B9E6B0 /* BadgeScale.swift */,
 				BF332F752248C043009B3042 /* StageSellectButton.swift */,
+				BFDD3EE3227D6B1900B9E6B0 /* Clear_Badge */,
 			);
 			path = Sellect;
 			sourceTree = "<group>";
@@ -1533,6 +1545,17 @@
 			path = P43;
 			sourceTree = "<group>";
 		};
+		BFDD3EE3227D6B1900B9E6B0 /* Clear_Badge */ = {
+			isa = PBXGroup;
+			children = (
+				BFDD3EE5227D6B3200B9E6B0 /* Bronze_Badge.png */,
+				BFDD3EE6227D6B3200B9E6B0 /* Silver_Badge.png */,
+				BFDD3EE4227D6B3100B9E6B0 /* Gold_Badge.png */,
+				BFDD3EEA227D7A9A00B9E6B0 /* Lock_Badge.png */,
+			);
+			path = Clear_Badge;
+			sourceTree = "<group>";
+		};
 		BFFA2A82223380760023BB71 /* EasyStage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1729,6 +1752,7 @@
 				BF640C002244F8FD00333782 /* 32p5Green.png in Resources */,
 				BF640BFB2244F8FD00333782 /* 32p5Blue.png in Resources */,
 				BF2674E82227B6A3003D370F /* Actions.sks in Resources */,
+				BFDD3EEB227D7A9A00B9E6B0 /* Lock_Badge.png in Resources */,
 				BFCE25C1224A466B0099A775 /* 33p6Blue.png in Resources */,
 				BFCE264B224A58A60099A775 /* 32p12Red.png in Resources */,
 				BFCE25AE224A466B0099A775 /* 33p12Green.png in Resources */,
@@ -1766,6 +1790,7 @@
 				BFCE2624224A557B0099A775 /* 23p12Blue.png in Resources */,
 				BFCE25E9224A466B0099A775 /* 33p5Blue.png in Resources */,
 				BF60AC6A224DD1DB00D441D6 /* NoHint.png in Resources */,
+				BFDD3EE8227D6B3200B9E6B0 /* Bronze_Badge.png in Resources */,
 				BF60AC68224DD1DB00D441D6 /* refresh-512.png in Resources */,
 				BFCE263B224A58A60099A775 /* 32p8Red.png in Resources */,
 				BFCE25B8224A466B0099A775 /* 33p16Blue.png in Resources */,
@@ -1777,8 +1802,10 @@
 				BF7CD9382240B89800F8302B /* 22p1Green.png in Resources */,
 				BFCE25E4224A466B0099A775 /* 33p20Green.png in Resources */,
 				BFCE25C7224A466B0099A775 /* 33p10Blue.png in Resources */,
+				BFDD3EE7227D6B3200B9E6B0 /* Gold_Badge.png in Resources */,
 				BFCE25D5224A466B0099A775 /* 33p15Green.png in Resources */,
 				BFCE25BE224A466B0099A775 /* 33p5Red.png in Resources */,
+				BFDD3EE9227D6B3200B9E6B0 /* Silver_Badge.png in Resources */,
 				BF640C032244F8FD00333782 /* 32p1Blue.png in Resources */,
 				BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */,
 				BF7CD95E2240BBD500F8302B /* 23p4Red.png in Resources */,
@@ -1889,6 +1916,7 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SAConfettiView/SAConfettiView.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SpriteKitEasingSwift/SpriteKitEasingSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/TapticEngine/TapticEngine.framework",
@@ -1905,6 +1933,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAConfettiView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpriteKitEasingSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TapticEngine.framework",
@@ -2126,6 +2155,7 @@
 				BF552E9E226DDD1B00756E16 /* E30.swift in Sources */,
 				BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */,
 				BF332FFC22492848009B3042 /* H18.swift in Sources */,
+				BFDD3EED227D7E5200B9E6B0 /* BadgeScale.swift in Sources */,
 				BF552F34226DDF1800756E16 /* H45.swift in Sources */,
 				BF552EBA226DDD6100756E16 /* E44.swift in Sources */,
 				BF552F36226DDF1C00756E16 /* H46.swift in Sources */,
@@ -2290,6 +2320,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9R4W53MKG7;
 				INFOPLIST_FILE = PazleBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
@@ -2302,6 +2334,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -2311,6 +2344,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9R4W53MKG7;
 				INFOPLIST_FILE = PazleBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
@@ -2322,6 +2357,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};

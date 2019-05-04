@@ -11,6 +11,7 @@ import Firebase
 import AVFoundation
 import Crashlytics
 import SwiftyStoreKit
+import GameKit
 
 
 @UIApplicationMain
@@ -34,7 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       
       FirebaseApp.configure(options: fileopts!)
       #endif
-      
       
       //--------------------FIREBASE-----------------------//
       
@@ -74,6 +74,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       }
       //-------------------User First Open-----------------//
       //-------------------Init Ad Flag-------------------//
+      
+      
+      
+      
+      
+      //-------------------Game Center-----------------//
+      if let rootView = self.window?.rootViewController {
+         let player = GKLocalPlayer.local
+         
+         player.authenticateHandler = {(viewController, error) -> Void in
+            if player.isAuthenticated {
+               //geme center login
+               print("ゲームセンターの認証完了")
+               
+            } else if viewController != nil {
+               //game center not login. login page open
+               print("ゲームセンターにログインしていません。ログインページを表示します。")
+               rootView.present(viewController!, animated: true, completion: nil)
+               
+            } else {
+               if error != nil {
+                  //game center login error
+                  print("ゲームセンターのログインでエラーが発生しました")
+               }
+            }
+         }
+      }
+      //-------------------Game Center-----------------//
 
       return true
    }

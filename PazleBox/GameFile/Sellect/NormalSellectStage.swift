@@ -11,6 +11,7 @@ import UIKit
 import FlatUIKit
 import TapticEngine
 import RealmSwift
+import SCLAlertView
 
 class SellectStageNormal: UIScrollView {
    
@@ -19,6 +20,8 @@ class SellectStageNormal: UIScrollView {
    
    let realm = try! Realm()
    let AllStageNum = 50
+   
+   let BadgeScale = AllBadgeScale()
    
    override init(frame: CGRect) {
       super.init(frame: frame)
@@ -34,7 +37,7 @@ class SellectStageNormal: UIScrollView {
          
          InitInfo.StageNum = tmp
          InitInfo.Clear = false
-         InitInfo.CountOfUsedHint = 2
+         InitInfo.CountOfUsedHint = 3
          
          try! realm.write {
             realm.add(InitInfo)
@@ -109,13 +112,52 @@ class SellectStageNormal: UIScrollView {
          let FirstX = Internal * CGFloat(x + 1) + ButtonSize * CGFloat(x)
          let FirstY = Internal * CGFloat(y + 1) + ButtonSize * CGFloat(y) + ButtonSize
          
-         let Frame = CGRect(x: FirstX, y: FirstY, width: ButtonSize, height: ButtonSize)
+         let ButtonFrame = CGRect(x: FirstX, y: FirstY, width: ButtonSize, height: ButtonSize)
          
-         let EasyNumberButton = StageSellectButton(frame: Frame)
-         EasyNumberButton.Init(Tag: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum)
-         EasyNumberButton.addTarget(self, action: #selector(self.SellectButton(_:)), for: UIControl.Event.touchUpInside)
+         let NormalNumberButton = StageSellectButton(frame: ButtonFrame)
+         NormalNumberButton.Init(Tag: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum)
+         NormalNumberButton.addTarget(self, action: #selector(self.SellectButton(_:)), for: UIControl.Event.touchUpInside)
+         self.addSubview(NormalNumberButton)
          
-         self.addSubview(EasyNumberButton)
+         
+         ///MARK: ここからバッジをつける
+         let NormalStageInfo = realm.objects(NormalStageClearInfomation.self)
+         
+         //クリアしてなくて遊べる状態なら続ける
+         if NormalStageInfo[tmp - 1].CountOfUsedHint == 3 && tmp <= PlayerCanPlayMaxStageNum{
+            continue
+         }
+         
+         let BadgeSize = ButtonSize / 2
+         let BadgeStartX = FirstX - (BadgeSize / 2)
+         let BadgeStartY = FirstY - (BadgeSize / 2)
+         let BadgeFrame = CGRect(x: BadgeStartX, y: BadgeStartY, width: BadgeSize, height: BadgeSize)
+         
+         let Badge = UIImageView(frame: BadgeFrame)
+         Badge.isUserInteractionEnabled = false
+         
+         switch NormalStageInfo[tmp - 1].CountOfUsedHint {
+         case 3:
+            let BadgeImage = UIImage(named: "Lock_Badge.png")
+            Badge.image = BadgeImage
+            Badge.transform = CGAffineTransform(scaleX: BadgeScale.Lock, y: BadgeScale.Lock)
+         case 2:
+            let BadgeImage = UIImage(named: "Bronze_Badge.png")
+            Badge.image = BadgeImage
+            Badge.transform = CGAffineTransform(scaleX: BadgeScale.Bronze, y: BadgeScale.Bronze)
+         case 1:
+            let BadgeImage = UIImage(named: "Silver_Badge.png")
+            Badge.image = BadgeImage
+            Badge.transform = CGAffineTransform(scaleX: BadgeScale.Silver, y: BadgeScale.Silver)
+         case 0:
+            let BadgeImage = UIImage(named: "Gold_Badge.png")
+            Badge.image = BadgeImage
+            Badge.transform = CGAffineTransform(scaleX: BadgeScale.Gold, y: BadgeScale.Gold)
+         default:
+            fatalError("一体何が入ってんねん")
+         }
+         
+         self.addSubview(Badge)
       }
    }
    
@@ -132,11 +174,23 @@ class SellectStageNormal: UIScrollView {
       NotificationCenter.default.post(name: .SellectBack, object: nil, userInfo: nil)
    }
    
+   private func ShowErrorView() {
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ErrorAlertView = SCLAlertView(appearance: Appearanse)
+      ErrorAlertView.addButton("OK"){
+         self.Play3DtouchMedium()
+         
+      }
+      ErrorAlertView.showWarning(NSLocalizedString("Locked", comment: ""), subTitle: "Clear previous levels to unlock.")
+      
+   }
+   
    @objc func SellectButton (_ sender: StageSellectButton) {
       print("押されたボタン: \(sender.tag)")
       
       if sender.GetCanPlay() == false {
          Play3DtouchError()
+         ShowErrorView()
          return
       }
       

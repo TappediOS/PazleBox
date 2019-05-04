@@ -12,8 +12,12 @@ import ChameleonFramework
 import Lottie
 import TapticEngine
 import SwiftyStoreKit
+import SCLAlertView
+import Crashlytics
+import GameKit
 
-class HomeViewController: UIViewController {
+
+class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    private let GameSound = GameSounds()
    
@@ -24,8 +28,15 @@ class HomeViewController: UIViewController {
    var testbutton: UIButton?
    var testbuttonRes: UIButton?
    
+   var ShowRankingViewButton: UIButton?
+   
+   //この2つは課金で使う
    private let IAP_PRO_ID = "NO_ADS"
    private let SECRET_CODE = "c8bf5f01b42f4f80ad32ffd00349d92d"
+   
+   
+   //MARK: リーダボードID
+   let LEADERBOARD_ID = "ClearStageNumLeaderBoard"
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -38,6 +49,8 @@ class HomeViewController: UIViewController {
       
       
       Inittestbutton()
+      
+      InitShowRankingViewButton()
    }
    
    func  CheckIAPInfomation() {
@@ -60,14 +73,34 @@ class HomeViewController: UIViewController {
       testbutton = UIButton(frame: CGRect(x: 20, y: 20, width: 100, height: 100))
       testbutton?.setTitle("Purchas", for: .normal)
       testbutton?.backgroundColor = .black
-      testbutton?.addTarget(self, action: #selector(self.tapparchas), for: .touchDown)
+      testbutton?.addTarget(self, action: #selector(self.tapparchas), for: .touchUpInside)
       self.view.addSubview(testbutton!)
       
       testbuttonRes = UIButton(frame: CGRect(x: 140, y: 20, width: 100, height: 100))
       testbuttonRes?.setTitle("restore", for: .normal)
-      testbuttonRes?.addTarget(self, action: #selector(self.restore), for: .touchDown)
+      testbuttonRes?.addTarget(self, action: #selector(self.restore), for: .touchUpInside)
       testbuttonRes?.backgroundColor = .black
       self.view.addSubview(testbuttonRes!)
+   }
+   
+   private func InitShowRankingViewButton() {
+      ShowRankingViewButton = UIButton(frame: CGRect(x: 20, y: 140, width: 100, height: 100))
+      ShowRankingViewButton?.setTitle("show rank", for: .normal)
+      ShowRankingViewButton?.backgroundColor = .black
+      ShowRankingViewButton?.addTarget(self, action: #selector(self.ShowRankingView), for: .touchUpInside)
+      self.view.addSubview(ShowRankingViewButton!)
+   }
+   
+   
+   
+   private func ShowGameSetView() {
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let GameSetView = SCLAlertView(appearance: Appearanse)
+      GameSetView.addButton("Return"){
+         print("tap")
+         
+      }
+      GameSetView.showSuccess(NSLocalizedString("Passed", comment: ""), subTitle: "a\nab\n\nc)\nd")
    }
    
    
@@ -80,6 +113,7 @@ class HomeViewController: UIViewController {
             defaults.set(true, forKey: "BuyRemoveAd")
             print("購入成功！")
             print("購入フラグを　\(defaults.bool(forKey: "BuyRemoveAd"))　に変更しました")
+            self.ShowGameSetView()
             
             //購入の検証
             self.verifyPurchase(PRODUCT_ID: PRODUCT_ID)
@@ -136,6 +170,7 @@ class HomeViewController: UIViewController {
             defaults.set(true, forKey: "BuyRemoveAd")
             print("リストアに成功しました")
             print("購入フラグを　\(defaults.bool(forKey: "BuyRemoveAd"))　に変更しました")
+            self.ShowGameSetView()
          }
          else {
             print("リストアするものがない")
@@ -191,7 +226,22 @@ class HomeViewController: UIViewController {
       }
    }
    
- 
+   
+   //MARK:- スコアボードビューの表示
+   @objc func ShowRankingView() {
+      let gcView = GKGameCenterViewController()
+      gcView.gameCenterDelegate = self
+      gcView.viewState = GKGameCenterViewControllerState.leaderboards
+      self.present(gcView, animated: true, completion: nil)
+      
+      //Analytics.logEvent("LoadRankingView", parameters: nil)
+   }
+   
+   //MARK:- GKGameCenterControllerDelegate実装用
+   func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+      gameCenterViewController.dismiss(animated: true, completion: nil)
+   }
+   
    
    private func Play3DtouchLight() {
       TapticEngine.impact.feedback(.light)

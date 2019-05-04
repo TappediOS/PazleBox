@@ -19,6 +19,7 @@ target 'PazleBox' do
   pod 'RealmSwift'
   pod 'SwiftyStoreKit'
 
+  pod 'SCLAlertView'
 
   pod 'Firebase/Core'
   pod 'Crashlytics'

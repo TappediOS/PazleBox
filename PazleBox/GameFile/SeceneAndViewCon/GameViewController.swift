@@ -335,6 +335,16 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       }
       
       if let result = result.first {
+         
+         if result.Clear == true && result.CountOfUsedHint <= CountOfUsedHint{
+            print("クリアしてて，ヒント使用回数更新しませんでした。")
+            print("保存してる回数:\(result.CountOfUsedHint)  ,今回使ったヒント回数:\(CountOfUsedHint)")
+            return
+         }else{
+            print("ヒント使用回数更新しました。")
+            print("保存してる回数:\(result.CountOfUsedHint)  ,今回使ったヒント回数:\(CountOfUsedHint)")
+         }
+         
          do {
             try realm.write {
                result.Clear = true
