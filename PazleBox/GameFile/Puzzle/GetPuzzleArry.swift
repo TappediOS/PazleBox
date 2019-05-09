@@ -69,6 +69,7 @@ class PArry {
    var p33p20: [[Contents]] = Array()
    var p33p21: [[Contents]] = Array()
    var p33p22: [[Contents]] = Array()
+   var p33p23: [[Contents]] = Array()
    
    var p42p1: [[Contents]] = Array()
    
@@ -246,9 +247,9 @@ class PArry {
                [.Out, .In, .Out],
                [.Out, .In, .In]]
       
-      p33p15 = [[.Out, .In, .In],
-               [.Out, .In, .Out],
-               [.In, .In, .Out]]
+      p33p15 = [[.Out, .Out, .In],
+               [.In, .In, .In],
+               [.In, .Out, .Out]]
       
       p33p16 = [[.In, .Out, .Out],
                [.In, .In, .Out],
@@ -277,6 +278,12 @@ class PArry {
       p33p22 = [[.In, .In, .In],
                [.In, .Out, .In],
                [.Out, .Out, .In]]
+      
+      p33p23 = [[.In, .In, .In],
+                [.In, .Out, .In],
+                [.In, .In, .In]]
+      
+      
       
       p42p1 =  [[.In, .Out, .In, .In],
                 [.In, .Out, .In, .In]]
@@ -410,6 +417,8 @@ class PArry {
          return p33p21
       case "33p22":
          return p33p22
+      case "33p23":
+         return p33p23
          
       case "42p1":
          return p42p1

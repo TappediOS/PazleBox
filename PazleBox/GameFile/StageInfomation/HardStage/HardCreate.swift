@@ -88,18 +88,19 @@ extension Hard {
    }
    
    func InitH6(){
+      
       H6 = [[.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .In,  .In,  .In,  .In,  .In,  .In,  .In,  .Out],
-            [.Out, .In,  .In,  .In,  .In,  .In,  .In,  .In,  .Out],
-            [.Out, .In,  .In,  .In,  .In,  .In,  .In,  .In,  .Out],
-            [.Out, .In,  .In,  .In,  .In,  .In,  .In,  .In,  .Out],
-            [.Out, .In,  .In,  .In,  .In,  .In,  .In,  .In,  .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+            [.In, .In, .In, .Out, .Out, .Out, .Out, .Out, .Out],
+            [.In, .In, .In, .Out, .Out, .Out, .In, .In, .In],
+            [.In, .In, .In, .In, .In, .In, .In, .In, .In],
+            [.In, .In, .In, .In, .Out, .Out, .In, .In, .In],
+            [.In, .In, .In, .In, .In, .In, .Out, .In, .In],
+            [.Out, .Out, .In, .In, .In, .In, .Out, .In, .In],
+            [.Out, .In, .In, .In, .In, .In, .Out, .In, .In]]
       
    }
    
@@ -110,13 +111,13 @@ extension Hard {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+            [.Out, .Out, .In, .In, .In, .Out, .Out, .Out, .Out],
+            [.In, .In, .In, .Out, .In, .In, .Out, .In, .In],
+            [.In, .Out, .In, .In, .In, .In, .In, .Out, .In],
+            [.In, .In, .In, .Out, .In, .In, .Out, .In, .In],
+            [.In, .Out, .In, .In, .In, .In, .In, .Out, .In],
+            [.Out, .In, .In, .Out, .In, .In, .Out, .In, .In],
+            [.In, .Out, .In, .In, .In, .Out, .In, .In, .Out]]
    }
    
    public func InitH8(){

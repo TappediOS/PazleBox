@@ -56,6 +56,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (5.5.0):
     - GoogleUtilities/Logger
+  - LicensePlist (2.3.0)
   - lottie-ios (3.0.3)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
@@ -79,6 +80,7 @@ DEPENDENCIES:
   - Firebase/AdMob
   - Firebase/Core
   - FlatUIKit
+  - LicensePlist
   - lottie-ios
   - RealmSwift
   - SAConfettiView (from `https://github.com/gokhanakkurt/SAConfettiView`, branch `swift3`)
@@ -100,6 +102,7 @@ SPEC REPOS:
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleUtilities
+    - LicensePlist
     - lottie-ios
     - nanopb
     - Realm
@@ -131,6 +134,7 @@ SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: 8f4f7e793bfd3fff5b082181b54112f81b579a67
   GoogleAppMeasurement: 1624046ab1bcc5e170061a56ef5679000b079c8e
   GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
+  LicensePlist: 9425c4baf514ee5cb2e68cac95c9f567f5148c8b
   lottie-ios: 06e0b54aab85ba128e332687d7f4ac4861a7a7ae
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Realm: 221b25919bb5a010a3c597d707f8df3492dcd93a
@@ -141,6 +145,6 @@ SPEC CHECKSUMS:
   SwiftyStoreKit: cc399645796b094022fb650c148a0aed25995873
   TapticEngine: ed6f5b4a2e9aa46d4e8fa69a72a7a0b6719bf8ac
 
-PODFILE CHECKSUM: 46f1f9a371435cf313175f2518da7ff5414cd2b0
+PODFILE CHECKSUM: 605740f8a79b5384fd969d3bb2dd4c2d21bf49ca
 
 COCOAPODS: 1.6.0

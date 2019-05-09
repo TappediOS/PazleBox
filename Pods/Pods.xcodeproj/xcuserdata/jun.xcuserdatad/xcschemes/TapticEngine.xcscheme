@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "249EEDA2CEAAD538E1F382454B37D6C2"
+               BlueprintIdentifier = "83ECB59630C2143E23AD9ECBDE866633"
                BuildableName = "TapticEngine.framework"
                BlueprintName = "TapticEngine"
                ReferencedContainer = "container:Pods.xcodeproj">

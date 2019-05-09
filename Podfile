@@ -25,5 +25,6 @@ target 'PazleBox' do
   pod 'Crashlytics'
   pod 'Firebase/AdMob'
 
+  pod 'LicensePlist'
 
 end
