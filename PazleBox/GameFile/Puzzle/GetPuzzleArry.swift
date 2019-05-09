@@ -33,6 +33,8 @@ class PArry {
    var p23p10: [[Contents]] = Array()
    var p23p11: [[Contents]] = Array()
    var p23p12: [[Contents]] = Array()
+   var p23p13: [[Contents]] = Array()
+   var p23p14: [[Contents]] = Array()
    
    var p32p1: [[Contents]] = Array()
    var p32p2: [[Contents]] = Array()
@@ -70,6 +72,22 @@ class PArry {
    var p33p21: [[Contents]] = Array()
    var p33p22: [[Contents]] = Array()
    var p33p23: [[Contents]] = Array()
+   var p33p24: [[Contents]] = Array()
+   var p33p25: [[Contents]] = Array()
+   var p33p26: [[Contents]] = Array()
+   var p33p27: [[Contents]] = Array()
+   var p33p28: [[Contents]] = Array()
+   var p33p29: [[Contents]] = Array()
+   var p33p30: [[Contents]] = Array()
+   var p33p31: [[Contents]] = Array()
+   var p33p32: [[Contents]] = Array()
+   var p33p33: [[Contents]] = Array()
+   var p33p34: [[Contents]] = Array()
+   var p33p35: [[Contents]] = Array()
+   var p33p36: [[Contents]] = Array()
+   var p33p37: [[Contents]] = Array()
+   var p33p38: [[Contents]] = Array()
+   
    
    var p42p1: [[Contents]] = Array()
    
@@ -151,6 +169,14 @@ class PArry {
       p23p12 = [[.Out, .In],
                [.In, .In],
                [.In, .Out],]
+      
+      p23p13 = [[.In, .Out],
+                [.In, .In],
+                [.In, .Out],]
+      
+      p23p14 = [[.Out, .In],
+                [.In, .In],
+                [.Out, .In],]
       
       
       p32p1 = [[.In, .In, .In],
@@ -283,6 +309,67 @@ class PArry {
                 [.In, .Out, .In],
                 [.In, .In, .In]]
       
+      p33p24 = [[.Out, .In, .Out],
+                [.In, .In, .In],
+                [.In, .Out, .In]]
+      
+      
+      p33p25 = [[.Out, .In, .In],
+                [.In, .In, .Out],
+                [.Out, .In, .In]]
+      
+      p33p26 = [[.In, .Out, .In],
+                [.In, .In, .In],
+                [.Out, .In, .Out]]
+      
+      p33p27 = [[.In, .In, .Out],
+                [.Out, .In, .In],
+                [.In, .In, .Out]]
+      
+      p33p28 = [[.In, .In, .Out],
+                [.Out, .In, .Out],
+                [.Out, .Out, .In]]
+   
+      p33p29 = [[.In, .Out, .In],
+                [.Out, .Out, .Out],
+                [.In, .In, .Out]]
+      
+      p33p30 = [[.In, .Out, .In],
+                [.Out, .Out, .Out],
+                [.In, .Out, .In]]
+      
+      p33p31 = [[.In, .In, .Out],
+                [.In, .Out, .In],
+                [.Out, .In, .In]]
+      
+      p33p32 = [[.Out, .In, .In],
+                [.In, .Out, .In],
+                [.In, .In, .Out]]
+      
+      p33p33 = [[.In, .In, .In],
+                [.In, .Out, .Out],
+                [.In, .Out, .In]]
+      
+      p33p34 = [[.Out, .In, .Out],
+                [.In, .Out, .In],
+                [.In, .In, .In]]
+      
+      p33p35 = [[.Out, .In, .In],
+                [.In, .Out, .In],
+                [.Out, .In, .In]]
+      
+      p33p36 = [[.In, .Out, .In],
+                [.Out, .In, .Out],
+                [.Out, .In, .In]]
+      
+      p33p37 = [[.In, .In, .In],
+                [.Out, .In, .Out],
+                [.Out, .Out, .In]]
+      
+      p33p38 = [[.In, .In, .Out],
+                [.Out, .Out, .Out],
+                [.Out, .In, .In]]
+      
       
       
       p42p1 =  [[.In, .Out, .In, .In],
@@ -346,6 +433,10 @@ class PArry {
          return p23p11
       case "23p12":
          return p23p12
+      case "23p13":
+         return p23p13
+      case "23p14":
+         return p23p14
          
       case "32p1":
          return p32p1
@@ -419,6 +510,36 @@ class PArry {
          return p33p22
       case "33p23":
          return p33p23
+      case "33p24":
+         return p33p24
+      case "33p25":
+         return p33p25
+      case "33p26":
+         return p33p26
+      case "33p27":
+         return p33p27
+      case "33p28":
+         return p33p28
+      case "33p29":
+         return p33p29
+      case "33p30":
+         return p33p30
+      case "33p31":
+         return p33p31
+      case "33p32":
+         return p33p32
+      case "33p33":
+         return p33p33
+      case "33p34":
+         return p33p34
+      case "33p35":
+         return p33p35
+      case "33p36":
+         return p33p36
+      case "33p37":
+         return p33p37
+      case "33p38":
+         return p33p38
          
       case "42p1":
          return p42p1
