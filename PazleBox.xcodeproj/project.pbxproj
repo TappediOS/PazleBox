@@ -464,6 +464,9 @@
 		BFF6D6462284152F000253A2 /* 32p13Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D6402284152F000253A2 /* 32p13Green.png */; };
 		BFF6D6472284152F000253A2 /* 32p14Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D6412284152F000253A2 /* 32p14Blue.png */; };
 		BFF6D6482284152F000253A2 /* 32p13Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D6422284152F000253A2 /* 32p13Blue.png */; };
+		BFF6D64C22841643000253A2 /* 43p3Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D64922841640000253A2 /* 43p3Blue.png */; };
+		BFF6D64D22841643000253A2 /* 43p3Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D64A22841641000253A2 /* 43p3Green.png */; };
+		BFF6D64E22841643000253A2 /* 43p3Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D64B22841642000253A2 /* 43p3Red.png */; };
 		BFFA2A7B22336D760023BB71 /* SpriteKitEasingSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */; };
 		BFFA2A81223380720023BB71 /* EasyGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A80223380720023BB71 /* EasyGet.swift */; };
 		BFFA2A86223383B60023BB71 /* Normal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A85223383B60023BB71 /* Normal.swift */; };
@@ -940,6 +943,9 @@
 		BFF6D6402284152F000253A2 /* 32p13Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32p13Green.png; sourceTree = "<group>"; };
 		BFF6D6412284152F000253A2 /* 32p14Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32p14Blue.png; sourceTree = "<group>"; };
 		BFF6D6422284152F000253A2 /* 32p13Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32p13Blue.png; sourceTree = "<group>"; };
+		BFF6D64922841640000253A2 /* 43p3Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 43p3Blue.png; sourceTree = "<group>"; };
+		BFF6D64A22841641000253A2 /* 43p3Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 43p3Green.png; sourceTree = "<group>"; };
+		BFF6D64B22841642000253A2 /* 43p3Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 43p3Red.png; sourceTree = "<group>"; };
 		BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpriteKitEasingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA2A7C22336D760023BB71 /* TapticEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TapticEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA2A80223380720023BB71 /* EasyGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyGet.swift; sourceTree = "<group>"; };
@@ -1724,6 +1730,9 @@
 				BFCE25FD224A4D970099A775 /* 43p2Blue.png */,
 				BFCE25F8224A4D950099A775 /* 43p2Green.png */,
 				BFCE25FB224A4D960099A775 /* 43p2Red.png */,
+				BFF6D64922841640000253A2 /* 43p3Blue.png */,
+				BFF6D64A22841641000253A2 /* 43p3Green.png */,
+				BFF6D64B22841642000253A2 /* 43p3Red.png */,
 			);
 			path = P43;
 			sourceTree = "<group>";
@@ -1855,6 +1864,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFCE25FF224A4D980099A775 /* 43p1Blue.png in Resources */,
+				BFF6D64C22841643000253A2 /* 43p3Blue.png in Resources */,
 				BFCE261C224A557B0099A775 /* 23p11Green.png in Resources */,
 				BFCE25E5224A466B0099A775 /* 33p9Green.png in Resources */,
 				BF7CD9362240B89800F8302B /* 22p5Blue.png in Resources */,
@@ -2010,6 +2020,7 @@
 				BFF6D63C22841472000253A2 /* 23p14Green.png in Resources */,
 				BFCE2624224A557B0099A775 /* 23p12Blue.png in Resources */,
 				BFCE25E9224A466B0099A775 /* 33p5Blue.png in Resources */,
+				BFF6D64E22841643000253A2 /* 43p3Red.png in Resources */,
 				BF60AC6A224DD1DB00D441D6 /* NoHint.png in Resources */,
 				BFF6D62B228412D2000253A2 /* 33p30Green.png in Resources */,
 				BFDD3EE8227D6B3200B9E6B0 /* Bronze_Badge.png in Resources */,
@@ -2032,6 +2043,7 @@
 				BF640C032244F8FD00333782 /* 32p1Blue.png in Resources */,
 				BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */,
 				BF7CD95E2240BBD500F8302B /* 23p4Red.png in Resources */,
+				BFF6D64D22841643000253A2 /* 43p3Green.png in Resources */,
 				BF640C022244F8FD00333782 /* 32p4Red.png in Resources */,
 				BFCE25EF224A466B0099A775 /* 33p20Blue.png in Resources */,
 				BFF6D627228412D2000253A2 /* 33p36Green.png in Resources */,

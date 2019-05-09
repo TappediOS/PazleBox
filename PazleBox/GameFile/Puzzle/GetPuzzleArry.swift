@@ -95,6 +95,7 @@ class PArry {
    
    var p43p1: [[Contents]] = Array()
    var p43p2: [[Contents]] = Array()
+   var p43p3: [[Contents]] = Array()
    
    
    init() {
@@ -390,6 +391,10 @@ class PArry {
       p43p2 =  [[.Out, .Out, .In, .Out],
                 [.In, .In, .In, .In],
                 [.In, .Out, .Out, .Out]]
+      
+      p43p3 =  [[.Out, .In, .In, .In],
+                [.In, .In, .In, .In],
+                [.In, .In, .Out, .Out]]
 
       
 
@@ -560,6 +565,11 @@ class PArry {
          return p43p1
       case "43p2":
          return p43p2
+      case "43p3":
+         return p43p3
+         
+         
+         
       default:
          fatalError("PuzzleStyle = \(PuzzleStyle)")
       }
