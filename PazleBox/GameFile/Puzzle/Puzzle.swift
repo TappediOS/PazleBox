@@ -13,8 +13,9 @@ import TapticEngine
 
 class puzzle: SKSpriteNode {
 
-   
+   //selfの配列を取得する
    var pAllPosi: [[Contents]] = Array()
+   //配列を全部取る重い気がする
    var SerchpAllPosi = PArry()
    
    public var PuzzleWide = 0
@@ -145,10 +146,7 @@ class puzzle: SKSpriteNode {
       InitPazzle()
    }
    
-   deinit {
-      print("\n--- DeInit Puzzle \(self.PuzzleStyle) ---\n")
-   }
-   
+
    private func InitSetParticle() {
       
    }

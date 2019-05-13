@@ -470,7 +470,7 @@ class PArry {
       
       p43p3 =  [[.Out, .In, .In, .In],
                 [.In, .In, .In, .In],
-                [.In, .In, .Out, .Out]]
+                [.Out, .In, .Out, .Out]]
 
       p43p4 = [[.In, .In, .Out, .Out],
                [.In, .In, .In, .In],
