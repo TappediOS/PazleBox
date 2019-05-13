@@ -102,7 +102,53 @@ class PArry {
    var p43p1: [[Contents]] = Array()
    var p43p2: [[Contents]] = Array()
    var p43p3: [[Contents]] = Array()
-   
+   var p43p4: [[Contents]] = Array()
+   var p43p5: [[Contents]] = Array()
+   var p43p6: [[Contents]] = Array()
+   var p43p7: [[Contents]] = Array()
+   var p43p8: [[Contents]] = Array()
+   var p43p9: [[Contents]] = Array()
+   var p43p10: [[Contents]] = Array()
+   var p43p11: [[Contents]] = Array()
+   var p43p12: [[Contents]] = Array()
+   var p43p13: [[Contents]] = Array()
+   var p43p14: [[Contents]] = Array()
+   var p43p15: [[Contents]] = Array()
+   var p43p16: [[Contents]] = Array()
+   var p43p17: [[Contents]] = Array()
+   var p43p18: [[Contents]] = Array()
+   var p43p19: [[Contents]] = Array()
+   var p43p20: [[Contents]] = Array()
+   var p43p21: [[Contents]] = Array()
+   var p43p22: [[Contents]] = Array()
+   var p43p23: [[Contents]] = Array()
+   var p43p24: [[Contents]] = Array()
+   var p43p25: [[Contents]] = Array()
+   var p43p26: [[Contents]] = Array()
+   var p43p27: [[Contents]] = Array()
+   var p43p28: [[Contents]] = Array()
+   var p43p29: [[Contents]] = Array()
+   var p43p30: [[Contents]] = Array()
+   var p43p31: [[Contents]] = Array()
+   var p43p32: [[Contents]] = Array()
+   var p43p33: [[Contents]] = Array()
+   var p43p34: [[Contents]] = Array()
+   var p43p35: [[Contents]] = Array()
+   var p43p36: [[Contents]] = Array()
+   var p43p37: [[Contents]] = Array()
+   var p43p38: [[Contents]] = Array()
+   var p43p39: [[Contents]] = Array()
+   var p43p40: [[Contents]] = Array()
+   var p43p41: [[Contents]] = Array()
+   var p43p42: [[Contents]] = Array()
+   var p43p43: [[Contents]] = Array()
+   var p43p44: [[Contents]] = Array()
+   var p43p45: [[Contents]] = Array()
+   var p43p46: [[Contents]] = Array()
+   var p43p47: [[Contents]] = Array()
+   var p43p48: [[Contents]] = Array()
+   var p43p49: [[Contents]] = Array()
+   var p43p50: [[Contents]] = Array()
    
    init() {
       
@@ -426,7 +472,199 @@ class PArry {
                 [.In, .In, .In, .In],
                 [.In, .In, .Out, .Out]]
 
+      p43p4 = [[.In, .In, .Out, .Out],
+               [.In, .In, .In, .In],
+               [.Out, .Out, .In, .In]]
       
+      p43p5 = [[.Out, .In, .Out, .In],
+               [.In, .Out, .In, .Out],
+               [.Out, .In, .Out, .In]]
+      
+      p43p6 = [[.Out, .Out, .In, .In],
+               [.In, .Out, .Out, .In],
+               [.In, .In, .Out, .Out]]
+      
+      p43p7 = [[.Out, .In, .In, .Out],
+               [.Out, .Out, .Out, .Out],
+               [.In, .Out, .Out, .In]]
+      
+      p43p8 = [[.In, .In, .Out, .Out],
+               [.In, .Out, .Out, .In],
+               [.In, .Out, .In, .In]]
+      
+      p43p9 = [[.In, .In, .Out, .Out],
+               [.Out, .In, .In, .Out],
+               [.Out, .Out, .In, .In]]
+      
+      p43p10 = [[.In, .Out, .In, .Out],
+                [.Out, .In, .Out, .Out],
+                [.Out, .Out, .In, .In]]
+      
+      p43p11 = [[.Out, .Out, .In, .In],
+                [.In, .In, .Out, .Out],
+                [.Out, .In, .In, .In]]
+      
+      p43p12 = [[.In, .In, .In, .Out],
+                [.In, .Out, .In, .Out],
+                [.Out, .Out, .In, .In]]
+      
+      p43p13 = [[.In, .Out, .Out, .Out],
+                [.In, .In, .In, .In],
+                [.In, .Out, .Out, .Out]]
+      
+      p43p14 = [[.Out, .Out, .Out, .In],
+                [.In, .In, .In, .In],
+                [.Out, .Out, .Out, .In]]
+      
+      p43p15 = [[.Out, .In, .Out, .In],
+                [.In, .In, .In, .In],
+                [.In, .Out, .In, .Out]]
+      
+      p43p16 = [[.Out, .In, .Out, .In],
+                [.Out, .In, .Out, .In],
+                [.In, .In, .Out, .Out]]
+      
+      p43p17 = [[.In, .Out, .Out, .In],
+                [.Out, .In, .In, .Out],
+                [.In, .Out, .Out, .In]]
+      
+      p43p18 = [[.In, .Out, .In, .In],
+                [.Out, .Out, .In, .In],
+                [.Out, .In, .Out, .Out]]
+      
+      p43p19 = [[.Out, .Out, .Out, .In],
+                [.In, .Out, .Out, .In],
+                [.In, .Out, .Out, .Out]]
+      
+      p43p20 = [[.In, .Out, .Out, .In],
+                [.Out, .Out, .Out, .Out],
+                [.Out, .Out, .In, .Out]]
+      
+      p43p21 = [[.In, .Out, .In, .Out],
+                [.Out, .Out, .Out, .In],
+                [.In, .In, .Out, .In]]
+      
+      p43p22 = [[.Out, .Out, .Out, .In],
+                [.Out, .In, .In, .Out],
+                [.In, .Out, .Out, .Out]]
+      
+      p43p23 = [[.In, .Out, .Out, .Out],
+                [.Out, .Out, .Out, .Out],
+                [.Out, .Out, .In, .In]]
+      
+      p43p24 = [[.In, .Out, .Out, .Out],
+                [.Out, .Out, .Out, .Out],
+                [.Out, .Out, .Out, .In]]
+      
+      p43p25 = [[.Out, .Out, .Out, .In],
+                [.Out, .Out, .Out, .Out],
+                [.In, .Out, .Out, .Out]]
+      
+      p43p26 = [[.Out, .Out, .In, .Out],
+                [.In, .Out, .In, .In],
+                [.In, .In, .Out, .Out]]
+      
+      p43p27 = [[.In, .Out, .In, .Out],
+                [.In, .Out, .In, .In],
+                [.In, .In, .Out, .In]]
+      
+      p43p28 = [[.In, .Out, .In, .Out],
+                [.Out, .Out, .Out, .Out],
+                [.In, .Out, .Out, .In]]
+      
+      
+      p43p29 = [[.In, .In, .Out, .Out],
+                [.Out, .In, .Out, .Out],
+                [.Out, .Out, .Out, .In]]
+      
+      p43p30 = [[.In, .Out, .Out, .In],
+                [.Out, .In, .Out, .Out],
+                [.Out, .Out, .In, .Out]]
+      
+      p43p31 = [[.In, .Out, .Out, .Out],
+                [.Out, .Out, .Out, .Out],
+                [.Out, .In, .Out, .In]]
+      
+      p43p32 = [[.Out, .Out, .Out, .In],
+                [.In, .Out, .Out, .Out],
+                [.Out, .Out, .Out, .In]]
+      
+      p43p33 = [[.Out, .In, .Out, .Out],
+                [.In, .Out, .Out, .In],
+                [.Out, .Out, .In, .Out]]
+      
+      p43p34 = [[.Out, .Out, .Out, .In],
+                [.In, .Out, .Out, .In],
+                [.Out, .In, .Out, .Out]]
+      
+      p43p35 = [[.In, .In, .Out, .Out],
+                [.In, .Out, .In, .Out],
+                [.Out, .Out, .Out, .In]]
+      
+      p43p36 = [[.Out, .Out, .Out, .In],
+                [.In, .Out, .Out, .Out],
+                [.In, .In, .In, .In]]
+      
+      p43p37 = [[.Out, .Out, .In, .Out],
+                [.Out, .Out, .Out, .In],
+                [.In, .Out, .In, .Out]]
+      
+      p43p38 = [[.In, .In, .Out, .Out],
+                [.In, .Out, .Out, .In],
+                [.In, .In, .Out, .Out]]
+      
+      p43p39 = [[.Out, .Out, .In, .Out],
+                [.In, .In, .Out, .Out],
+                [.Out, .Out, .Out, .In]]
+      
+      p43p40 = [[.Out, .In, .In, .Out],
+                [.In, .In, .Out, .Out],
+                [.Out, .Out, .Out, .In]]
+      
+      p43p41 = [[.Out, .Out, .Out, .In],
+                [.Out, .Out, .In, .Out],
+                [.In, .Out, .Out, .Out]]
+      
+      p43p42 = [[.Out, .Out, .Out, .In],
+                [.Out, .In, .Out, .Out],
+                [.In, .In, .In, .Out]]
+      
+      p43p43 = [[.Out, .In, .In, .Out],
+                [.Out, .In, .Out, .Out],
+                [.In, .Out, .Out, .In]]
+      
+      p43p44 = [[.Out, .Out, .Out, .In],
+                [.Out, .Out, .In, .Out],
+                [.In, .Out, .Out, .In]]
+      
+      p43p45 = [[.Out, .Out, .Out, .In],
+                [.Out, .Out, .Out, .In],
+                [.In, .Out, .Out, .In]]
+      
+      p43p46 = [[.Out, .In, .Out, .In],
+                [.Out, .Out, .Out, .In],
+                [.In, .Out, .Out, .Out]]
+      
+      p43p47 = [[.In, .In, .Out, .In],
+                [.In, .Out, .Out, .Out],
+                [.In, .In, .Out, .Out]]
+      
+      p43p48 = [[.Out, .In, .Out, .In],
+                [.In, .Out, .Out, .In],
+                [.In, .Out, .In, .Out]]
+      
+      p43p49 = [[.In, .In, .Out, .Out],
+                [.Out, .In, .Out, .Out],
+                [.Out, .Out, .Out, .In]]
+      
+      p43p50 = [[.Out, .In, .In, .In],
+                [.Out, .Out, .In, .Out],
+                [.In, .Out, .In, .Out]]
+      
+      //p43p51 = [[.Out, .Out, .Out, .Out],
+      //          [.Out, .Out, .Out, .Out],
+      //          [.Out, .Out, .Out, .Out]]
+
 
    }
    
@@ -609,7 +847,100 @@ class PArry {
          return p43p2
       case "43p3":
          return p43p3
-         
+      case "43p4":
+         return p43p4
+      case "43p5":
+         return p43p5
+      case "43p6":
+         return p43p6
+      case "43p7":
+         return p43p7
+      case "43p8":
+         return p43p8
+      case "43p9":
+         return p43p9
+      case "43p0":
+         return p43p10
+      case "43p11":
+         return p43p11
+      case "43p12":
+         return p43p12
+      case "43p13":
+         return p43p13
+      case "43p14":
+         return p43p14
+      case "43p15":
+         return p43p15
+      case "43p16":
+         return p43p16
+      case "43p17":
+         return p43p17
+      case "43p18":
+         return p43p18
+      case "43p19":
+         return p43p19
+      case "43p20":
+         return p43p20
+      case "43p21":
+         return p43p21
+      case "43p22":
+         return p43p22
+      case "43p23":
+         return p43p23
+      case "43p24":
+         return p43p24
+      case "43p25":
+         return p43p25
+      case "43p26":
+         return p43p26
+      case "43p27":
+         return p43p27
+      case "43p28":
+         return p43p28
+      case "43p29":
+         return p43p29
+      case "43p30":
+         return p43p30
+      case "43p31":
+         return p43p31
+      case "43p32":
+         return p43p32
+      case "43p33":
+         return p43p33
+      case "43p34":
+         return p43p34
+      case "43p35":
+         return p43p35
+      case "43p36":
+         return p43p36
+      case "43p37":
+         return p43p37
+      case "43p38":
+         return p43p38
+      case "43p39":
+         return p43p39
+      case "43p40":
+         return p43p40
+      case "43p41":
+         return p43p41
+      case "43p42":
+         return p43p42
+      case "43p43":
+         return p43p43
+      case "43p44":
+         return p43p44
+      case "43p45":
+         return p43p45
+      case "43p46":
+         return p43p46
+      case "43p47":
+         return p43p47
+      case "43p48":
+         return p43p48
+      case "43p49":
+         return p43p49
+      case "43p50":
+         return p43p50
          
          
       default:
