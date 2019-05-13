@@ -89,6 +89,12 @@ class PArry {
    var p33p36: [[Contents]] = Array()
    var p33p37: [[Contents]] = Array()
    var p33p38: [[Contents]] = Array()
+   var p33p39: [[Contents]] = Array()
+   var p33p40: [[Contents]] = Array()
+   var p33p41: [[Contents]] = Array()
+   var p33p42: [[Contents]] = Array()
+   var p33p43: [[Contents]] = Array()
+   var p33p44: [[Contents]] = Array()
    
    
    var p42p1: [[Contents]] = Array()
@@ -287,8 +293,8 @@ class PArry {
                [.In, .Out, .Out]]
       
       p33p16 = [[.In, .Out, .Out],
-               [.In, .In, .Out],
-               [.Out, .In, .In]]
+               [.In, .In, .In],
+               [.Out, .Out, .In]]
       
       p33p17 = [[.In, .Out, .Out],
                [.In, .In, .Out],
@@ -378,6 +384,30 @@ class PArry {
       p33p38 = [[.In, .In, .Out],
                 [.Out, .Out, .Out],
                 [.Out, .In, .In]]
+      
+      p33p39 = [[.In, .In, .Out],
+                [.In, .Out, .Out],
+                [.In, .In, .In]]
+      
+      p33p40 = [[.Out, .Out, .In],
+                [.In, .Out, .In],
+                [.In, .In, .In]]
+      
+      p33p41 = [[.In, .In, .In],
+                [.Out, .Out, .In],
+                [.Out, .In, .In]]
+      
+      p33p42 = [[.In, .In, .In],
+                [.In, .Out, .In],
+                [.In, .Out, .Out]]
+      
+      p33p43 = [[.Out, .Out, .In],
+                [.Out, .In, .In],
+                [.In, .In, .Out]]
+      
+      p33p44 = [[.In, .In, .Out],
+                [.Out, .In, .In],
+                [.Out, .Out, .In]]
       
       
       
@@ -557,6 +587,18 @@ class PArry {
          return p33p37
       case "33p38":
          return p33p38
+      case "33p39":
+         return p33p39
+      case "33p40":
+         return p33p40
+      case "33p41":
+         return p33p41
+      case "33p42":
+         return p33p42
+      case "33p43":
+         return p33p43
+      case "33p44":
+         return p33p44
          
       case "42p1":
          return p42p1

@@ -14,6 +14,7 @@ class EStage13 {
    var Puzzle1: puzzle?
    var Puzzle2: puzzle?
    var Puzzle3: puzzle?
+   var Puzzle4: puzzle?
    
    var Hint1: HintPuzzle?
    var Hint2: HintPuzzle?
@@ -31,11 +32,13 @@ class EStage13 {
    }
    
    private func InitPuzzle(SizeX: CGFloat, SizeY: CGFloat){
-      Puzzle1 = puzzle(PX: 3, PY: 3, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p9", PuzzleColor: "Red", RespawnX: 0, RespawnY: 2)
+      Puzzle1 = puzzle(PX: 3, PY: 2, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p4", PuzzleColor: "Red", RespawnX: 2, RespawnY: 11)
       
-      Puzzle2 = puzzle(PX: 2, PY: 1, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "21p1", PuzzleColor: "Blue", RespawnX: 0, RespawnY: 1)
+      Puzzle2 = puzzle(PX: 3, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p16", PuzzleColor: "Blue", RespawnX: 2, RespawnY: 9)
       
-      Puzzle3 = puzzle(PX: 3, PY: 2, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p8", PuzzleColor: "Green", RespawnX: 0, RespawnY: 2)
+      Puzzle3 = puzzle(PX: 3, PY: 3, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p10", PuzzleColor: "Green", RespawnX: 5, RespawnY: 10)
+      
+      Puzzle4 = puzzle(PX: 4, PY: 3, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p2", PuzzleColor: "Red", RespawnX: 3, RespawnY: 7)
    }
    
    
@@ -44,6 +47,7 @@ class EStage13 {
       PuzzleBox.append(Puzzle1!)
       PuzzleBox.append(Puzzle2!)
       PuzzleBox.append(Puzzle3!)
+      PuzzleBox.append(Puzzle4!)
       
    }
    

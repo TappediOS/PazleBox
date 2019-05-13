@@ -23,6 +23,8 @@ class SellectStageNormal: UIScrollView {
    
    let BadgeScale = AllBadgeScale()
    
+   var TapLockedButton = false
+   
    override init(frame: CGRect) {
       super.init(frame: frame)
       self.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
@@ -175,11 +177,15 @@ class SellectStageNormal: UIScrollView {
    }
    
    private func ShowErrorView() {
+      
+      guard self.TapLockedButton == false else { return }
+      TapLockedButton = true
+      
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
       let ErrorAlertView = SCLAlertView(appearance: Appearanse)
       ErrorAlertView.addButton("OK"){
          self.Play3DtouchMedium()
-         
+         self.TapLockedButton = false
       }
       ErrorAlertView.showWarning(NSLocalizedString("Locked", comment: ""), subTitle: "Clear previous levels to unlock.")
       

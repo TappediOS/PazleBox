@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 struct AllBadgeScale {
-   let Gold: CGFloat = 1.3
-   let Silver: CGFloat = 1.2
-   let Bronze: CGFloat = 1.2
-   let Lock: CGFloat = 0.525
+   let Gold: CGFloat = 1.335
+   let Silver: CGFloat = 1.223
+   let Bronze: CGFloat = 1.45
+   let Lock: CGFloat = 0.62
 }

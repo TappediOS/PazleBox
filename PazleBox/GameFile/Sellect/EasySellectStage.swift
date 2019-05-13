@@ -22,6 +22,8 @@ class SellectStageEasy: UIScrollView {
    let AllStageNum = 50
    
    let BadgeScale = AllBadgeScale()
+   
+   var TapLockedButton = false
 
    override init(frame: CGRect) {
       super.init(frame: frame)
@@ -179,14 +181,18 @@ class SellectStageEasy: UIScrollView {
    
    
    private func ShowErrorView() {
+      
+      guard self.TapLockedButton == false else { return }
+      TapLockedButton = true
+      
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
       let ErrorAlertView = SCLAlertView(appearance: Appearanse)
       ErrorAlertView.addButton("OK"){
          self.Play3DtouchMedium()
-
+         self.TapLockedButton = false
       }
-      ErrorAlertView.showWarning(NSLocalizedString("Locked", comment: ""), subTitle: "Clear previous levels to unlock.")
       
+      ErrorAlertView.showWarning(NSLocalizedString("Locked", comment: ""), subTitle: "Clear previous levels to unlock.")
    }
    
    @objc func SellectButton (_ sender: StageSellectButton) {

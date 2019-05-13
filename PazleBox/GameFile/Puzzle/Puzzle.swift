@@ -99,8 +99,14 @@ class puzzle: SKSpriteNode {
       //MARK: 画像の初期化
       let texture: SKTexture
       let TextureName = PuzzleStyle + PuzzleColor
-      texture = SKTexture(imageNamed: TextureName)
+      
+      //キャッシュ化しないようにcontentOfFiletで画像を取得
+      let TextureUIImage = UIImage(contentsOfFile: Bundle.main.path(forResource: TextureName, ofType: "png")!)
+      
+      texture = SKTexture(image: TextureUIImage!)
       texture.usesMipmaps = true
+      
+      
       
       SetParticles = PutParticle(PX: PX, PY: PY, CustNum: CustNum, ViewX: ViewX, ViewY: ViewY)
       
@@ -110,12 +116,12 @@ class puzzle: SKSpriteNode {
       
       super.init(texture: texture, color: UIColor.black, size: NodeSize)
       
-      //print("anchor: \(CGPoint(x: 1 / (PX * 2), y: 1 - ( 1 / (PY * 2) )))")
       //MARK: アンカーの設定。
       let Anchor = CGPoint(x: 1 / CGFloat(PX * 2), y: 1 - 1 / CGFloat(PY * 2) )
       self.anchorPoint = Anchor
       //ノードがタッチできる状態にする。
       self.isUserInteractionEnabled = true
+      
       
       //ポジションの設定。
       self.CenterX = self.RespawnX
@@ -137,6 +143,10 @@ class puzzle: SKSpriteNode {
       SetParticle = SetParticles.GetParticle()
       
       InitPazzle()
+   }
+   
+   deinit {
+      print("\n--- DeInit Puzzle \(self.PuzzleStyle) ---\n")
    }
    
    private func InitSetParticle() {
