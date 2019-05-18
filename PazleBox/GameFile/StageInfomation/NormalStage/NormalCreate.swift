@@ -243,11 +243,11 @@ extension Normal {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+            [.Out, .In, .In, .In, .In, .Out, .In, .Out, .Out],
+            [.Out, .Out, .Out, .In, .In, .In, .In, .In, .Out],
+            [.Out, .In, .In, .In, .In, .Out, .Out, .In, .Out],
+            [.In, .Out, .In, .In, .In, .In, .In, .In, .Out],
+            [.In, .In, .In, .In, .In, .In, .In, .In, .Out]]
    }
    
    public func InitN17(){
@@ -258,10 +258,10 @@ extension Normal {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+            [.Out, .In, .In, .In, .In, .In, .Out, .Out, .Out],
+            [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+            [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+            [.Out, .Out, .In, .Out, .In, .In, .In, .In, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -272,11 +272,11 @@ extension Normal {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+            [.Out, .Out, .Out, .In, .In, .In, .Out, .Out, .Out],
+            [.Out, .Out, .Out, .In, .Out, .In, .In, .In, .Out],
+            [.In, .In, .In, .In, .In, .In, .In, .In, .In],
+            [.In, .Out, .In, .Out, .Out, .In, .In, .Out, .In],
+            [.In, .In, .In, .In, .In, .In, .In, .In, .In],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -288,11 +288,11 @@ extension Normal {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+            [.In, .In, .In, .In, .In, .In, .Out, .Out, .Out],
+            [.In, .Out, .In, .In, .In, .In, .In, .In, .Out],
+            [.In, .In, .In, .In, .Out, .In, .In, .In, .In],
+            [.Out, .In, .Out, .In, .In, .In, .Out, .In, .In],
+            [.In, .In, .In, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
    public func InitN20(){
@@ -303,11 +303,11 @@ extension Normal {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-            [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+            [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+            [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+            [.Out, .In, .In, .In, .Out, .In, .In, .In, .Out],
+            [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
+            [.Out, .Out, .Out, .Out, .Out, .In, .Out, .Out, .Out]]
    }
    
    public func InitN21(){
@@ -319,11 +319,11 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .Out, .In, .In, .In, .Out],
+             [.Out, .Out, .In, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
    public func InitN22(){
@@ -334,11 +334,11 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.In, .In, .In, .In, .In, .Out, .In, .In, .Out],
+             [.In, .In, .In, .In, .Out, .In, .In, .In, .In],
+             [.In, .In, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .In, .In, .In, .In, .In],
+             [.Out, .Out, .Out, .Out, .Out, .In, .Out, .Out, .Out]]
    }
    
    func InitN23(){
@@ -350,9 +350,9 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.In, .In, .In, .In, .In, .In, .In, .In, .In],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .In],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .In],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -363,12 +363,12 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.Out, .Out, .Out, .Out, .In, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.In, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .Out, .In, .Out],
+             [.Out, .Out, .In, .In, .In, .Out, .Out, .Out, .Out]]
    }
    
    func InitN25(){
@@ -378,12 +378,12 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.Out, .In, .In, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .In],
+             [.Out, .In, .In, .In, .Out, .In, .In, .In, .In],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .In],
+             [.Out, .Out, .In, .In, .In, .Out, .Out, .Out, .Out]]
    }
    
    func InitN26(){

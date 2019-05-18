@@ -76,9 +76,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       
    }
    
-   deinit {
-      print("\n --- Deinit GameViewController ---\n")
-   }
+
    
    private func InitAllADCheck() {
       if userDefaults.bool(forKey: "BuyRemoveAd") == false{

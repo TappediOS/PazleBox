@@ -90,10 +90,7 @@ class GameScene: SKScene {
       //addChild(p!)
     }
    
-   deinit {
-      print("\n------ deinit gamescene ------\n")
-   }
-   
+ 
    //MARK:- 初期化
    private func InitRePutButton(SizeX: CGFloat?, SizeY: CGFloat?){
       let RePutB = RePutButton(ViewX: Int(SizeX!), ViewY: Int(SizeY!))

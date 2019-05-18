@@ -62,10 +62,16 @@ class SellectStageHard: UIScrollView {
    
    public func InitView(frame: CGRect) {
       self.frame = frame
-      self.contentSize.height = frame.height * 5
       
       ButtonSize = frame.width / 5
       Internal = ButtonSize / 5
+      
+      let BackButtonHight = Internal + ButtonSize / 2
+      
+      let StageNumH = CGFloat( (AllStageNum + 1) / 4 + 2 )
+      let ScrollViewHight: CGFloat = BackButtonHight + (ButtonSize + Internal) * StageNumH
+      
+      self.contentSize.height = ScrollViewHight
       
       self.InitBackButton()
       self.InitButton()
