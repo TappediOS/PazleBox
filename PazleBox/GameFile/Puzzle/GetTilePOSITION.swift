@@ -62,61 +62,78 @@ class TilePosi {
    
    //let y1 = -ViewY * 3 / 8 + Intarnal * TilePosiX + TileWide * (TilePosiX - 1)
    
-   public func GetAlphasXPosi(AlPosiX: CGFloat) -> Int {
+   
+   private func GetSmallerNum(First: Int, Secand: Int) ->Int {
+      if First <= Secand {
+         return First
+      }
+      return Secand
+   }
+   
+   private func GetBiggerNum(First: Int, Secand: Int) ->Int {
+      if First >= Secand {
+         return First
+      }
+      return Secand
+   }
+   
+   public func GetAlphasXPosi(AlPosiX: CGFloat, SizeWidth: Int) -> Int {
       
+      let MaxX = 8 - (SizeWidth - 1)
       
       switch AlPosiX {
       case let x where x <= -3.5:
-         return 0
+         return GetSmallerNum(First: 0, Secand: MaxX)
       case -3.5 ..< -2.5:
-         return 1
+         return GetSmallerNum(First: 1, Secand: MaxX)
       case -2.5 ..< -1.5:
-         return 2
+         return GetSmallerNum(First: 2, Secand: MaxX)
       case -1.5 ..< -0.5:
-         return 3
+         return GetSmallerNum(First: 3, Secand: MaxX)
       case -0.5 ..< 0.5:
-         return 4
+         return GetSmallerNum(First: 4, Secand: MaxX)
       case 0.5 ..< 1.5:
-         return 5
+         return GetSmallerNum(First: 5, Secand: MaxX)
       case 1.5 ..< 2.5:
-         return 6
+         return GetSmallerNum(First: 6, Secand: MaxX)
       case 2.5 ..< 3.5:
-         return 7
+         return GetSmallerNum(First: 7, Secand: MaxX)
       case let x where x >= 3.5:
-         return 8
+         return GetSmallerNum(First: 8, Secand: MaxX)
       default:
          fatalError()
       }
    }
    
-   public func GetAlphasYPosi(AlPosiY: CGFloat) -> Int {
+   public func GetAlphasYPosi(AlPosiY: CGFloat, SizeHight: Int) -> Int {
       
+      let MinY = 0 + (SizeHight - 1)
       
       switch AlPosiY {
       case let y where y <= -6.5:
-         return 0
+         return GetBiggerNum(First: 0, Secand: MinY)
       case -6.5 ..< -5.5:
-         return 1
+         return GetBiggerNum(First: 1, Secand: MinY)
       case -5.5 ..< -4.5:
-         return 2
+         return GetBiggerNum(First: 2, Secand: MinY)
       case -4.5 ..< -3.5:
-         return 3
+         return GetBiggerNum(First: 3, Secand: MinY)
       case -3.5 ..< -2.5:
-         return 4
+         return GetBiggerNum(First: 4, Secand: MinY)
       case -2.5 ..< -1.5:
-         return 5
+         return GetBiggerNum(First: 5, Secand: MinY)
       case -1.5 ..< -0.5:
-         return 6
+         return GetBiggerNum(First: 6, Secand: MinY)
       case -0.5 ..< 0.5:
-         return 7
+         return GetBiggerNum(First: 7, Secand: MinY)
       case 0.5 ..< 1.5:
-         return 8
+         return GetBiggerNum(First: 8, Secand: MinY)
       case 1.5 ..< 2.5:
-         return 9
+         return GetBiggerNum(First: 9, Secand: MinY)
       case 2.5 ..< 3.5:
-         return 10
+         return GetBiggerNum(First: 10, Secand: MinY)
       case let x where x >= 3.5:
-         return 11
+         return GetBiggerNum(First: 11, Secand: MinY)
       default:
          fatalError()
       }

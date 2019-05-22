@@ -37,7 +37,6 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    var GoHomeForInstitialAD = false
    
    
-   
    var Reward: GADRewardBasedVideoAd!
    let REWARD_TEST_ID = "ca-app-pub-3940256099942544/1712485313"
    let REWARD_ID = "ca-app-pub-1460017825820383/8389602396"
@@ -56,6 +55,21 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    
    let realm = try! Realm()
    
+   
+   let SentLeadarbord = SentLearderBords()
+   
+   //   @available(iOS 11, *)
+   //   override var prefersHomeIndicatorAutoHidden: Bool {
+   //      get {
+   //         return true
+   //      }
+   //   }
+   //スワイプ無効にするやつ
+   @available(iOS 11, *)
+   override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge{
+      return .bottom
+   }
+   
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -72,6 +86,10 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       
       InitAllADCheck()
       
+      
+      if #available(iOS 11.0, *) {
+         self.setNeedsUpdateOfHomeIndicatorAutoHidden()
+      }
       
       
    }
@@ -322,7 +340,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    }
    
   
-   
+   //ヒント使用回数の保存をする
    private func SaveEasyStage(CountOfUsedHint: Int) {
       let result = realm.objects(EasyStageClearInfomation.self).filter("StageNum == \(self.SellectStageNumber)")
       

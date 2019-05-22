@@ -36,7 +36,7 @@ class NStage4 {
    private func InitPuzzle(SizeX: CGFloat, SizeY: CGFloat){
       Puzzle1 = puzzle(PX: 2, PY: 3, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p1", PuzzleColor: "Green", RespawnX: 1, RespawnY: 10)
       
-      Puzzle2 = puzzle(PX: 3, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p14", PuzzleColor: "Red", RespawnX: 3, RespawnY: 11)
+      Puzzle2 = puzzle(PX: 3, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p14", PuzzleColor: "Red", RespawnX: 3, RespawnY: 10)
       
       Puzzle3 = puzzle(PX: 2, PY: 2, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "22p2", PuzzleColor: "Red", RespawnX: 2, RespawnY: 9)
       

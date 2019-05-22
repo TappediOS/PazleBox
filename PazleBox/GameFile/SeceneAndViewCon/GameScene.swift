@@ -83,6 +83,8 @@ class GameScene: SKScene {
       
       InitNotification()
       
+      
+      
       //InitBGM()
       
       let p = SKEmitterNode.init(fileNamed: "GameSetParticle")
@@ -184,7 +186,7 @@ class GameScene: SKScene {
    }
    
    private func InitHintPuzzle(SizeX: CGFloat?, SizeY: CGFloat?) {
-      print("パズルBoxの初期化開始")
+      print("パズルBox(Hint)の初期化開始")
       switch self.StageLebel {
       case .Easy:
          HintPuzzleBox = GetEasyHintPuzzleBox(ViewSizeX: SizeX!, ViewSizeY: SizeY!)
@@ -193,7 +195,7 @@ class GameScene: SKScene {
       case .Hard:
          HintPuzzleBox = GetHardHintPuzzleBox(ViewSizeX: SizeX!, ViewSizeY: SizeY!)
       }
-      print("パズルBoxの初期化完了")
+      print("パズルBox(Hint)の初期化完了")
    }
    
    //MARK:- チェックする配列を初期化する

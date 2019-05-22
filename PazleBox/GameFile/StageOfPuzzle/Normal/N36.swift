@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class NStage42 {
+class NStage36 {
    
    var Puzzle1: puzzle?
    var Puzzle2: puzzle?
@@ -35,19 +35,19 @@ class NStage42 {
    }
    
    private func InitPuzzle(SizeX: CGFloat, SizeY: CGFloat){
-      Puzzle1 = puzzle(PX: 3, PY: 3, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p33", PuzzleColor: "Red", RespawnX: 2, RespawnY: 11)
+      Puzzle1 = puzzle(PX: 4, PY: 3, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p29", PuzzleColor: "Green", RespawnX: 1, RespawnY: 10)
       
-      Puzzle2 = puzzle(PX: 3, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p30", PuzzleColor: "Green", RespawnX: 1, RespawnY: 10)
+      Puzzle2 = puzzle(PX: 4, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p29", PuzzleColor: "Red", RespawnX: 4, RespawnY: 10)
       
-      Puzzle3 = puzzle(PX: 3, PY: 2, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p9", PuzzleColor: "Green", RespawnX: 4, RespawnY: 10)
+      Puzzle3 = puzzle(PX: 4, PY: 3, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p26", PuzzleColor: "Blue", RespawnX: 1, RespawnY: 10)
       
-      Puzzle4 = puzzle(PX: 3, PY: 3, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p31", PuzzleColor: "Red", RespawnX: 0, RespawnY: 9)
+      Puzzle4 = puzzle(PX: 2, PY: 3, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p5", PuzzleColor: "Blue", RespawnX: 6, RespawnY: 9)
       
-      Puzzle5 = puzzle(PX: 3, PY: 3, CustNum: 4, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p1", PuzzleColor: "Blue", RespawnX: 3, RespawnY: 8)
+      Puzzle5 = puzzle(PX: 4, PY: 3, CustNum: 4, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p2", PuzzleColor: "Red", RespawnX: 1, RespawnY: 8)
       
-      Puzzle6 = puzzle(PX: 3, PY: 3, CustNum: 5, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p30", PuzzleColor: "Red", RespawnX: 5, RespawnY: 8)
+      Puzzle6 = puzzle(PX: 4, PY: 3, CustNum: 5, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p25", PuzzleColor: "Blue", RespawnX: 2, RespawnY: 8)
       
-      Puzzle7 = puzzle(PX: 3, PY: 3, CustNum: 6, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p32", PuzzleColor: "Blue", RespawnX: 6, RespawnY: 9)
+      Puzzle7 = puzzle(PX: 3, PY: 2, CustNum: 6, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p4", PuzzleColor: "Green", RespawnX: 3, RespawnY: 7)
    }
    
    

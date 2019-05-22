@@ -231,8 +231,8 @@ class puzzle: SKSpriteNode {
       let BeforeCenterY = self.CenterY
       
       //print(Selfy / SerchPlace)
-      self.CenterX = Tilep.GetAlphasXPosi(AlPosiX: Selfx / SerchPlace)
-      self.CenterY = Tilep.GetAlphasYPosi(AlPosiY: Selfy / SerchPlace)
+      self.CenterX = Tilep.GetAlphasXPosi(AlPosiX: Selfx / SerchPlace, SizeWidth: self.PuzzleWide)
+      self.CenterY = Tilep.GetAlphasYPosi(AlPosiY: Selfy / SerchPlace, SizeHight: self.PuzzleHight)
       self.AlphaNode.position = Tilep.GetAnyPostionXY(xpoint: self.CenterX, ypoint: self.CenterY)
       
       //前回の場所と今回の場所に変化があったら，前回の場所を保存

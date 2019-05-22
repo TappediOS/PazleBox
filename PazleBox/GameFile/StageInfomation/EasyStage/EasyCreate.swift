@@ -396,10 +396,10 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -410,11 +410,11 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .Out, .Out, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .Out, .In, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .Out, .In, .Out],
+             [.Out, .Out, .In, .Out, .In, .Out, .In, .In, .Out],
+             [.Out, .Out, .In, .In, .In, .Out, .In, .In, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -426,11 +426,11 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.Out, .Out, .Out, .In, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .In, .In, .Out, .Out, .In, .In, .Out]]
    }
    
    public func InitE29(){
@@ -441,10 +441,10 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .Out, .Out, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .Out, .Out, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .In, .In, .In, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -456,11 +456,11 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .Out, .In, .Out, .In, .Out, .In, .In, .Out],
+             [.Out, .In, .In, .In, .Out, .In, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .In, .Out, .In, .Out, .Out]]
    }
    
    public func InitE31(){
@@ -472,10 +472,10 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .Out, .Out, .In, .In, .In, .In, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -486,11 +486,11 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .In, .In, .Out, .In, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .Out, .Out, .In, .Out, .In, .In, .Out, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -501,12 +501,12 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.Out, .Out, .Out, .In, .In, .In, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .In, .In, .In, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .Out, .In, .Out, .In, .Out, .In, .Out, .Out],
+             [.Out, .Out, .In, .Out, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .In, .Out, .Out]]
    }
    
    public func InitE34(){
@@ -517,10 +517,10 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .In, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .In, .In, .Out, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -532,10 +532,10 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .In, .Out, .Out],
+             [.Out, .In, .In, .Out, .Out, .In, .In, .In, .In],
+             [.Out, .In, .Out, .Out, .Out, .In, .In, .Out, .In],
+             [.Out, .In, .In, .In, .Out, .In, .In, .In, .In],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -546,11 +546,11 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .In, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .In, .In, .In, .Out, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .In, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -561,12 +561,12 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.Out, .Out, .Out, .Out, .In, .In, .Out, .Out, .Out],
+             [.Out, .Out, .In, .Out, .In, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .Out, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .Out, .In, .In, .Out, .In, .Out, .In, .Out],
+             [.Out, .Out, .Out, .Out, .In, .Out, .In, .Out, .Out]]
    }
    
    public func InitE38(){
@@ -576,12 +576,12 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.Out, .In, .In, .Out, .In, .In, .In, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .In, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.In, .In, .In, .In, .In, .In, .In, .In, .In],
+             [.Out, .Out, .Out, .In, .In, .In, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .In, .In, .In, .Out, .Out, .Out]]
    }
    
    public func InitE39(){
@@ -591,11 +591,11 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .In, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .In, .Out, .Out, .In, .Out, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .In],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -606,12 +606,12 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.Out, .In, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .Out, .In, .In, .In, .Out],
+             [.Out, .Out, .Out, .In, .In, .In, .Out, .In, .Out],
+             [.In, .In, .Out, .Out, .In, .In, .In, .Out, .Out],
+             [.Out, .In, .In, .Out, .In, .Out, .In, .Out, .Out]]
    }
    
    public func InitE41(){
@@ -623,11 +623,11 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.Out, .Out, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .In, .Out, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .Out, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .In, .In, .In, .Out, .Out]]
    }
    
    public func InitE42(){
@@ -638,10 +638,10 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .Out, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .In, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -652,12 +652,12 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.Out, .Out, .Out, .In, .In, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .In, .In, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .In, .In, .Out, .Out]]
    }
    
    public func InitE44(){
@@ -666,12 +666,12 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .In, .In, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .In, .Out, .In, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .In, .In, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .Out, .Out, .In],
+             [.Out, .In, .Out, .In, .Out, .In, .In, .Out, .In],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -683,11 +683,11 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.Out, .In, .Out, .In, .In, .In, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .Out, .In, .Out, .In, .In, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .In, .Out, .Out]]
    }
    
    public func InitE46(){
@@ -697,12 +697,12 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.Out, .In, .Out, .Out, .In, .Out, .Out, .In, .Out],
+             [.Out, .In, .In, .Out, .Out, .Out, .In, .In, .In],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .Out, .In, .In, .Out, .In, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .In, .In, .In, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .In, .Out]]
    }
    
    public func InitE47(){
@@ -712,11 +712,11 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .In, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -727,12 +727,12 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.Out, .In, .In, .In, .Out, .Out, .In, .In, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .Out, .Out, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .Out, .Out, .In, .Out, .In, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .In, .Out, .In, .Out, .Out, .Out]]
    }
    
    public func InitE49(){
@@ -742,11 +742,11 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .In, .In, .In, .Out, .Out, .Out],
+             [.Out, .Out, .In, .In, .In, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .In, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -757,11 +757,11 @@ extension Easy {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .Out, .In, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .Out, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .Out, .In, .Out, .In, .Out],
+             [.Out, .Out, .In, .In, .Out, .In, .In, .In, .Out],
+             [.Out, .Out, .In, .In, .Out, .In, .In, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    

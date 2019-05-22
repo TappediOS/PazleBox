@@ -149,6 +149,7 @@ class PArry {
    var p43p48: [[Contents]] = Array()
    var p43p49: [[Contents]] = Array()
    var p43p50: [[Contents]] = Array()
+   var p43p51: [[Contents]] = Array()
    
    init() {
       
@@ -661,7 +662,11 @@ class PArry {
                 [.Out, .Out, .In, .Out],
                 [.In, .Out, .In, .Out]]
       
-      //p43p51 = [[.Out, .Out, .Out, .Out],
+      p43p51 = [[.In, .In, .Out, .Out],
+                [.In, .Out, .Out, .Out],
+                [.Out, .Out, .Out, .In]]
+      
+      //p43p52 = [[.Out, .Out, .Out, .Out],
       //          [.Out, .Out, .Out, .Out],
       //          [.Out, .Out, .Out, .Out]]
 
@@ -941,6 +946,8 @@ class PArry {
          return p43p49
       case "43p50":
          return p43p50
+      case "43p51":
+         return p43p51
          
          
       default:

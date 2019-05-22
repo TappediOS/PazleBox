@@ -42,9 +42,9 @@ class NStage5 {
       
       Puzzle4 = puzzle(PX: 4, PY: 2, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "42p1", PuzzleColor: "Blue", RespawnX: 3, RespawnY: 8)
       
-      Puzzle5 = puzzle(PX: 3, PY: 2, CustNum: 4, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p4", PuzzleColor: "Red", RespawnX: 2, RespawnY: 3)
+      Puzzle5 = puzzle(PX: 3, PY: 2, CustNum: 4, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p4", PuzzleColor: "Red", RespawnX: 5, RespawnY: 7)
       
-      Puzzle6 = puzzle(PX: 3, PY: 2, CustNum: 5, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p6", PuzzleColor: "Red", RespawnX: 5, RespawnY: 7)
+      Puzzle6 = puzzle(PX: 3, PY: 2, CustNum: 5, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p6", PuzzleColor: "Red", RespawnX: 2, RespawnY: 7)
    }
    
    

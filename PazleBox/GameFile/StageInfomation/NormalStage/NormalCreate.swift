@@ -47,10 +47,10 @@ extension Normal {
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
             [.Out, .In, .In, .Out, .Out, .Out, .In, .In, .Out],
-            [.Out, .Out, .In, .In, .In, .In, .In, .In, .Out],
-            [.Out, .Out, .In, .In, .In, .In, .In, .Out, .Out],
-            [.Out, .Out, .In, .In, .In, .In, .In, .Out, .Out],
             [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
+            [.Out, .Out, .In, .In, .In, .In, .In, .Out, .Out],
+            [.Out, .Out, .In, .In, .In, .In, .In, .Out, .Out],
+            [.Out, .Out, .In, .In, .In, .In, .In, .In, .Out],
             [.Out, .In, .In, .Out, .Out, .Out, .In, .In, .Out],
             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
@@ -393,12 +393,12 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.Out, .Out, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .In],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .In, .In]]
    }
    
    func InitN27(){
@@ -409,10 +409,10 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .Out, .In, .In, .In, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -423,11 +423,11 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -438,11 +438,11 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .Out, .In, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -453,12 +453,12 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.Out, .Out, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .Out, .In, .In, .Out, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .Out, .In, .In, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .In, .Out, .Out]]
    }
    
    public func InitN31(){
@@ -469,11 +469,11 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.In, .In, .Out, .In, .In, .In, .In, .In, .Out],
+             [.In, .Out, .Out, .In, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .Out, .In, .In, .In, .In, .In, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -484,11 +484,11 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .Out, .Out, .In, .In, .In, .In, .In, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -499,11 +499,11 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .Out, .In, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .Out, .In, .In, .Out, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -514,11 +514,11 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .Out, .Out, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -529,11 +529,11 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .Out, .Out, .Out, .Out, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.In, .In, .In, .In, .In, .Out, .In, .In, .Out],
+             [.In, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -544,11 +544,11 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -559,11 +559,11 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -574,11 +574,11 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .In, .Out, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .Out, .Out, .In, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -589,12 +589,12 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.Out, .In, .In, .In, .Out, .Out, .Out, .In, .Out],
+             [.Out, .In, .Out, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .Out, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .Out, .In, .In, .Out],
+             [.Out, .Out, .Out, .In, .Out, .Out, .Out, .Out, .Out]]
    }
    
    func InitN40(){
@@ -604,11 +604,11 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .Out, .In, .In, .In, .In, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -619,12 +619,12 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .Out, .In, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -635,12 +635,12 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.Out, .Out, .Out, .Out, .In, .In, .Out, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.In, .In, .In, .In, .In, .In, .In, .In, .In],
+             [.In, .In, .In, .Out, .In, .In, .In, .In, .In],
+             [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .Out, .In, .In, .In, .Out, .Out, .Out, .Out]]
    }
    
    public func InitN43(){
@@ -650,12 +650,12 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.Out, .In, .In, .In, .In, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .Out, .In, .Out, .Out, .Out, .Out, .Out]]
    }
    
    public func InitN44(){
@@ -665,11 +665,11 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .In, .In, .In, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -681,10 +681,10 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .Out, .In, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -695,12 +695,12 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+             [.Out, .In, .In, .In, .In, .In, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .Out, .In, .In, .In, .Out],
+             [.Out, .Out, .Out, .In, .Out, .Out, .Out, .Out, .Out]]
    }
    
    public func InitN47(){
@@ -710,11 +710,11 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -725,11 +725,11 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .In, .Out, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .In, .In, .In, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -739,12 +739,12 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .In, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .Out, .In, .In, .In, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
@@ -755,11 +755,11 @@ extension Normal {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .Out, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .Out, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .Out, .In, .In, .In, .In, .In, .In],
+             [.Out, .In, .In, .In, .In, .In, .Out, .Out, .In],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
    }
    
