@@ -705,12 +705,12 @@ extension Hard {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .Out, .In, .Out, .In],
+             [.Out, .Out, .In, .Out, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .In],
              [.In, .In, .In, .In, .In, .In, .In, .In, .In],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In]]
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .In],
+             [.Out, .Out, .Out, .In, .In, .Out, .Out, .Out, .Out]]
    }
    
    public func InitH47(){
@@ -720,12 +720,12 @@ extension Hard {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In]]
+             [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .Out, .In, .In, .Out, .In, .Out, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.In, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.In, .Out, .In, .In, .In, .In, .Out, .In, .Out],
+             [.Out, .Out, .Out, .In, .In, .In, .In, .In, .In]]
    }
    
    public func InitH48(){
@@ -735,12 +735,12 @@ extension Hard {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .Out, .In, .In, .In, .Out],
              [.In, .In, .In, .In, .In, .In, .In, .In, .In],
              [.In, .In, .In, .In, .In, .In, .In, .In, .In],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In]]
+             [.In, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .Out],
+             [.Out, .In, .In, .In, .Out, .In, .In, .In, .Out]]
    }
    
    public func InitH49(){
@@ -750,12 +750,12 @@ extension Hard {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .Out, .Out, .Out, .In, .In, .Out, .Out, .Out],
+             [.In, .Out, .In, .In, .Out, .Out, .In, .Out, .In],
              [.In, .In, .In, .In, .In, .In, .In, .In, .In],
              [.In, .In, .In, .In, .In, .In, .In, .In, .In],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In]]
+             [.In, .Out, .In, .In, .In, .In, .In, .In, .In],
+             [.Out, .In, .In, .In, .In, .In, .In, .In, .In]]
    }
    
    public func InitH50(){
@@ -765,8 +765,8 @@ extension Hard {
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
              [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In],
-             [.In, .In, .In, .In, .In, .In, .In, .In, .In],
+             [.In, .In, .In, .In, .Out, .Out, .Out, .Out, .Out],
+             [.Out, .In, .In, .Out, .Out, .Out, .Out, .Out, .Out],
              [.In, .In, .In, .In, .In, .In, .In, .In, .In],
              [.In, .In, .In, .In, .In, .In, .In, .In, .In],
              [.In, .In, .In, .In, .In, .In, .In, .In, .In],

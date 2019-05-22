@@ -631,6 +631,9 @@
 		BFF6D7962294058A000253A2 /* 43p51Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D79322940589000253A2 /* 43p51Green.png */; };
 		BFF6D7972294058A000253A2 /* 43p51Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D79422940589000253A2 /* 43p51Blue.png */; };
 		BFF6D7982294058A000253A2 /* 43p51Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D7952294058A000253A2 /* 43p51Red.png */; };
+		BFF6D79B229527C6000253A2 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF6D79A229527C6000253A2 /* ReviewView.swift */; };
+		BFF6D79E22952C22000253A2 /* NotSellectReview.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D79C22952C22000253A2 /* NotSellectReview.png */; };
+		BFF6D79F22952C22000253A2 /* SellectReview.png.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D79D22952C22000253A2 /* SellectReview.png.png */; };
 		BFFA2A7B22336D760023BB71 /* SpriteKitEasingSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */; };
 		BFFA2A81223380720023BB71 /* EasyGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A80223380720023BB71 /* EasyGet.swift */; };
 		BFFA2A86223383B60023BB71 /* Normal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A85223383B60023BB71 /* Normal.swift */; };
@@ -1274,6 +1277,9 @@
 		BFF6D79322940589000253A2 /* 43p51Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 43p51Green.png; sourceTree = "<group>"; };
 		BFF6D79422940589000253A2 /* 43p51Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 43p51Blue.png; sourceTree = "<group>"; };
 		BFF6D7952294058A000253A2 /* 43p51Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 43p51Red.png; sourceTree = "<group>"; };
+		BFF6D79A229527C6000253A2 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
+		BFF6D79C22952C22000253A2 /* NotSellectReview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotSellectReview.png; sourceTree = "<group>"; };
+		BFF6D79D22952C22000253A2 /* SellectReview.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SellectReview.png.png; sourceTree = "<group>"; };
 		BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpriteKitEasingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA2A7C22336D760023BB71 /* TapticEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TapticEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA2A80223380720023BB71 /* EasyGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyGet.swift; sourceTree = "<group>"; };
@@ -1596,7 +1602,7 @@
 				BF332F8122492238009B3042 /* GetStage */,
 				BF2674E92227B6A3003D370F /* GameScene.swift */,
 				BF2674EB2227B6A3003D370F /* GameViewController.swift */,
-				BFFB3AD42250F5E7000C90E1 /* GameClearView.swift */,
+				BFF6D799229527AE000253A2 /* GameClearView */,
 			);
 			path = SeceneAndViewCon;
 			sourceTree = "<group>";
@@ -2240,6 +2246,17 @@
 			path = Clear_Badge;
 			sourceTree = "<group>";
 		};
+		BFF6D799229527AE000253A2 /* GameClearView */ = {
+			isa = PBXGroup;
+			children = (
+				BFFB3AD42250F5E7000C90E1 /* GameClearView.swift */,
+				BFF6D79A229527C6000253A2 /* ReviewView.swift */,
+				BFF6D79C22952C22000253A2 /* NotSellectReview.png */,
+				BFF6D79D22952C22000253A2 /* SellectReview.png.png */,
+			);
+			path = GameClearView;
+			sourceTree = "<group>";
+		};
 		BFFA2A82223380760023BB71 /* EasyStage */ = {
 			isa = PBXGroup;
 			children = (
@@ -2383,6 +2400,7 @@
 				BFCE264A224A58A60099A775 /* 32p9Blue.png in Resources */,
 				BF640BFE2244F8FD00333782 /* 32p3Green.png in Resources */,
 				BFF6D75F22896610000253A2 /* 43p18Blue.png in Resources */,
+				BFF6D79F22952C22000253A2 /* SellectReview.png.png in Resources */,
 				BFF6D74922896610000253A2 /* 43p25Blue.png in Resources */,
 				BFF6D72022896610000253A2 /* 43p11Red.png in Resources */,
 				BFF6D74322896610000253A2 /* 43p9Blue.png in Resources */,
@@ -2599,6 +2617,7 @@
 				BFF6D60C228412D2000253A2 /* 33p32Green.png in Resources */,
 				BFF6D71022896610000253A2 /* 43p23Red.png in Resources */,
 				BFF6D72E22896610000253A2 /* 43p29Red.png in Resources */,
+				BFF6D79E22952C22000253A2 /* NotSellectReview.png in Resources */,
 				BF7CD9562240BBD500F8302B /* 23p6Red.png in Resources */,
 				BFF6D71A22896610000253A2 /* 43p41Green.png in Resources */,
 				BFCE25B6224A466B0099A775 /* 33p8Green.png in Resources */,
@@ -3051,6 +3070,7 @@
 				BF552EB4226DDD5500756E16 /* E41.swift in Sources */,
 				BF332FC0224927A0009B3042 /* N9.swift in Sources */,
 				BF7CE79022607FEA0040352D /* PouseView.swift in Sources */,
+				BFF6D79B229527C6000253A2 /* ReviewView.swift in Sources */,
 				BF552EEA226DDE1800756E16 /* N38.swift in Sources */,
 				BF552EEE226DDE3300756E16 /* N40.swift in Sources */,
 				BF640C092245100C00333782 /* E1.swift in Sources */,

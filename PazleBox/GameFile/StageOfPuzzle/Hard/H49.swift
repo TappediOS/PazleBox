@@ -16,6 +16,11 @@ class HStage49 {
    var Puzzle3: puzzle?
    var Puzzle4: puzzle?
    var Puzzle5: puzzle?
+   var Puzzle6: puzzle?
+   var Puzzle7: puzzle?
+   var Puzzle8: puzzle?
+   var Puzzle9: puzzle?
+   var Puzzle10: puzzle?
    
    var Hint1: HintPuzzle?
    var Hint2: HintPuzzle?
@@ -33,15 +38,25 @@ class HStage49 {
    }
    
    private func InitPuzzle(SizeX: CGFloat, SizeY: CGFloat){
-      Puzzle1 = puzzle(PX: 3, PY: 3, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p1", PuzzleColor: "Red", RespawnX: 0, RespawnY: 4)
+      Puzzle1 = puzzle(PX: 4, PY: 3, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p49", PuzzleColor: "Green", RespawnX: 1, RespawnY: 11)
       
-      Puzzle2 = puzzle(PX: 3, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p1", PuzzleColor: "Red", RespawnX: 4, RespawnY: 2)
+      Puzzle2 = puzzle(PX: 4, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p35", PuzzleColor: "Blue", RespawnX: 4, RespawnY: 11)
       
-      Puzzle3 = puzzle(PX: 3, PY: 2, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p12", PuzzleColor: "Blue", RespawnX: 0, RespawnY: 1)
+      Puzzle3 = puzzle(PX: 3, PY: 3, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p37", PuzzleColor: "Green", RespawnX: 6, RespawnY: 11)
       
-      Puzzle4 = puzzle(PX: 3, PY: 2, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p7", PuzzleColor: "Blue", RespawnX: 3, RespawnY: 3)
+      Puzzle4 = puzzle(PX: 4, PY: 3, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p19", PuzzleColor: "Red", RespawnX: 0, RespawnY: 11)
       
-      Puzzle5 = puzzle(PX: 3, PY: 3, CustNum: 4, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p17", PuzzleColor: "Green", RespawnX: 2, RespawnY: 2)
+      Puzzle5 = puzzle(PX: 4, PY: 3, CustNum: 4, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p24", PuzzleColor: "Red", RespawnX: 5, RespawnY: 10)
+      
+      Puzzle6 = puzzle(PX: 4, PY: 3, CustNum: 5, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p48", PuzzleColor: "Blue", RespawnX: 0, RespawnY: 9)
+      
+      Puzzle7 = puzzle(PX: 4, PY: 3, CustNum: 6, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p33", PuzzleColor: "Red", RespawnX: 1, RespawnY: 9)
+      
+      Puzzle8 = puzzle(PX: 4, PY: 3, CustNum: 7, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p31", PuzzleColor: "Blue", RespawnX: 5, RespawnY: 9)
+      
+      Puzzle9 = puzzle(PX: 4, PY: 3, CustNum: 8, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p42", PuzzleColor: "Red", RespawnX: 5, RespawnY: 10)
+      
+      Puzzle10 = puzzle(PX: 4, PY: 3, CustNum: 9, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p23", PuzzleColor: "Green", RespawnX: 2, RespawnY: 8)
    }
    
    
@@ -52,6 +67,11 @@ class HStage49 {
       PuzzleBox.append(Puzzle3!)
       PuzzleBox.append(Puzzle4!)
       PuzzleBox.append(Puzzle5!)
+      PuzzleBox.append(Puzzle6!)
+      PuzzleBox.append(Puzzle7!)
+      PuzzleBox.append(Puzzle8!)
+      PuzzleBox.append(Puzzle9!)
+      PuzzleBox.append(Puzzle10!)
       
    }
    
@@ -61,9 +81,9 @@ class HStage49 {
    }
    
    private func InitHint(SizeX: CGFloat, SizeY: CGFloat) {
-      Hint1 = HintPuzzle(PX: 3, PY: 3, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p1", PuzzleColor: "Red", AnsX: 0, AnsY: 4)
+      Hint1 = HintPuzzle(PX: 2, PY: 1, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "21p1", PuzzleColor: "Blue", AnsX: 6, AnsY: 11)
       
-      Hint2 = HintPuzzle(PX: 3, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p1", PuzzleColor: "Red", AnsX: 4, AnsY: 2)
+      Hint2 = HintPuzzle(PX: 2, PY: 2, CustNum: 9, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "22p5", PuzzleColor: "Red", AnsX: 7, AnsY: 7)
    }
    
    

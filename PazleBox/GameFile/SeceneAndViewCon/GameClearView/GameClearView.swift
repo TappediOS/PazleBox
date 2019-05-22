@@ -74,6 +74,8 @@ class GameClearView: UIView, GADBannerViewDelegate {
       ViewW = frame.width
       ViewH = frame.height
       
+      InitReviewView(frame: frame)
+      
       IniiNextButton(frame: frame)
       InitGoHomeButton(frame: frame)
       
@@ -100,6 +102,14 @@ class GameClearView: UIView, GADBannerViewDelegate {
       
    }
    
+   private func InitReviewView(frame: CGRect) {
+      let ReviewViewFrame = CGRect(x: 0, y: frame.height / 2 - 70, width: frame.width, height: frame.height / 8)
+      
+      let ReviewedView = ReviewView(frame: ReviewViewFrame)
+      
+      self.addSubview(ReviewedView)
+   }
+   
    private func InitAllADCheck() {
       if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false{
          InitBannerView()
@@ -121,7 +131,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
       let Frame = CGRect(x: StartX, y: StartY, width: LabelW, height: LabelH)
       
       GameClearLabel = UILabel(frame: Frame)
-      GameClearLabel?.text = "Stage Clear"
+      GameClearLabel?.text = "Clear"
       GameClearLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 100)
       GameClearLabel?.textAlignment = .center
       GameClearLabel?.adjustsFontSizeToFitWidth = true
