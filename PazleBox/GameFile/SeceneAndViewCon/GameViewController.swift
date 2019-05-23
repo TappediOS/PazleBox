@@ -438,6 +438,54 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       }
    }
    
+   
+   
+   private func GetLevelASString() -> String {
+      switch StageLevel {
+      case .Easy:
+         return "Easy"
+      case .Normal:
+         return "Normal"
+      case .Hard:
+         return "Easy"
+      }
+   }
+   
+   private func SentFirebaseStageReview() {
+      let StageReview = ClearView!.GetReView()
+      
+      if StageReview == 0 {
+         print("\nステージレビューをしていません")
+         return
+      }
+      
+      let Level: String = GetLevelASString()
+      let StageNum = self.SellectStageNumber
+      
+      let SentMessage = Level + String(StageNum)
+      print("\nステージレベル: \(Level), ステージ番号: \(StageNum)")
+      print("送信情報: \(SentMessage)")
+      print("評価:    \(StageReview)\n")
+      
+      
+      //FIXME:- firebaseの送信 -
+      //firebaseのコンテンツで，なんかStageNumが表示されないっぽい。
+      //だから，一番上のItemIDをSentMessageにしたほうがいいような気がする
+      Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+         AnalyticsParameterItemID: Level,
+         AnalyticsParameterItemName: String(StageNum),
+         AnalyticsParameterContentType: String(StageReview)
+      ])
+      
+      
+      self.ClearView!.ReSetReView()
+      
+   }
+   
+   
+   
+   
+   
    @objc func GameClearCatchNotification(notification: Notification) -> Void {
       
       guard ShowGameClearView == false else { return }
@@ -509,6 +557,9 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    
    @objc func TapNextNotification(notification: Notification) -> Void {
       
+      
+      SentFirebaseStageReview()
+      
       GameSound.PlaySoundsTapButton()
       
       //課金してたらそのまま次のステージに
@@ -529,6 +580,8 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    }
    
    @objc func TapHomeNotification(notification: Notification) -> Void {
+      
+      SentFirebaseStageReview()
       
       GameSound.PlaySoundsTapButton()
       

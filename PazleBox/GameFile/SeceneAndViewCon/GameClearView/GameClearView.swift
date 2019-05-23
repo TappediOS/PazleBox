@@ -59,6 +59,8 @@ class GameClearView: UIView, GADBannerViewDelegate {
    
    let GameSound = GameSounds()
    
+   var ReviewedView: ReviewView?
+   
    
    override init(frame: CGRect) {
       super.init(frame: frame)
@@ -103,11 +105,11 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    private func InitReviewView(frame: CGRect) {
-      let ReviewViewFrame = CGRect(x: 0, y: frame.height / 2 - 70, width: frame.width, height: frame.height / 8)
+      let ReviewViewFrame = CGRect(x: 0, y: frame.height / 2 - 70, width: frame.width, height: frame.height / 9)
       
-      let ReviewedView = ReviewView(frame: ReviewViewFrame)
+      self.ReviewedView = ReviewView(frame: ReviewViewFrame)
       
-      self.addSubview(ReviewedView)
+      self.addSubview(ReviewedView!)
    }
    
    private func InitAllADCheck() {
@@ -132,7 +134,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
       
       GameClearLabel = UILabel(frame: Frame)
       GameClearLabel?.text = "Clear"
-      GameClearLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 100)
+      GameClearLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 55)
       GameClearLabel?.textAlignment = .center
       GameClearLabel?.adjustsFontSizeToFitWidth = true
       GameClearLabel?.adjustsFontForContentSizeCategory = true
@@ -379,6 +381,19 @@ class GameClearView: UIView, GADBannerViewDelegate {
       KiraView3.loopMode = .loop
       KiraView3.isUserInteractionEnabled = false
    }
+   
+   
+   
+   
+   
+   
+   public func GetReView() -> Int { return ReviewedView!.GetUserSellectReviewNum() }
+   
+   public func ReSetReView() {
+      self.ReviewedView!.ResetReviewView()
+   }
+   
+   
    
    //MARK:- タッチイベント
    @objc func TapNextButton (_ sender: UIButton) {

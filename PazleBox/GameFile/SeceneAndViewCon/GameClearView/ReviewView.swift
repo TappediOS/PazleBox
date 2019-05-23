@@ -130,6 +130,16 @@ class ReviewView : UIView {
    }
    
    
+   public func ResetReviewView() {
+      self.UserSellectReviewNum = 0
+      Change1NotHart()
+      Change2NotHart()
+      Change3NotHart()
+      Change4NotHart()
+      Change5NotHart()
+   }
+   
+   
    
    private func Change1FillHart() { FirstHart?.image = FillHart }
    

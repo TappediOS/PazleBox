@@ -36,6 +36,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       FirebaseApp.configure(options: fileopts!)
       #endif
       
+      
+//      print("本番のfirebaseにアクセス")
+//
+//      let filePath = Bundle.main.path(forResource: fileName, ofType: "plist")
+//      let fileopts = FirebaseOptions(contentsOfFile: filePath!)
+//
+//      FirebaseApp.configure(options: fileopts!)
+//
       //--------------------FIREBASE-----------------------//
       
       //-----------バックグラウンドでの音の再生を許可------------//
