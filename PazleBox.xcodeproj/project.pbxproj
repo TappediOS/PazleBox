@@ -634,6 +634,7 @@
 		BFF6D79B229527C6000253A2 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF6D79A229527C6000253A2 /* ReviewView.swift */; };
 		BFF6D79E22952C22000253A2 /* NotSellectReview.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D79C22952C22000253A2 /* NotSellectReview.png */; };
 		BFF6D79F22952C22000253A2 /* SellectReview.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D79D22952C22000253A2 /* SellectReview.png */; };
+		BFF6D7A32297B695000253A2 /* ManageLeaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF6D7A22297B695000253A2 /* ManageLeaderboard.swift */; };
 		BFFA2A7B22336D760023BB71 /* SpriteKitEasingSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */; };
 		BFFA2A81223380720023BB71 /* EasyGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A80223380720023BB71 /* EasyGet.swift */; };
 		BFFA2A86223383B60023BB71 /* Normal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A85223383B60023BB71 /* Normal.swift */; };
@@ -1280,6 +1281,7 @@
 		BFF6D79A229527C6000253A2 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		BFF6D79C22952C22000253A2 /* NotSellectReview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotSellectReview.png; sourceTree = "<group>"; };
 		BFF6D79D22952C22000253A2 /* SellectReview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SellectReview.png; sourceTree = "<group>"; };
+		BFF6D7A22297B695000253A2 /* ManageLeaderboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageLeaderboard.swift; sourceTree = "<group>"; };
 		BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpriteKitEasingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA2A7C22336D760023BB71 /* TapticEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TapticEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA2A80223380720023BB71 /* EasyGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyGet.swift; sourceTree = "<group>"; };
@@ -1602,6 +1604,7 @@
 				BF332F8122492238009B3042 /* GetStage */,
 				BF2674E92227B6A3003D370F /* GameScene.swift */,
 				BF2674EB2227B6A3003D370F /* GameViewController.swift */,
+				BFF6D7A12297B674000253A2 /* ManageLeaderBoards */,
 				BFF6D799229527AE000253A2 /* GameClearView */,
 			);
 			path = SeceneAndViewCon;
@@ -2255,6 +2258,14 @@
 				BFF6D79D22952C22000253A2 /* SellectReview.png */,
 			);
 			path = GameClearView;
+			sourceTree = "<group>";
+		};
+		BFF6D7A12297B674000253A2 /* ManageLeaderBoards */ = {
+			isa = PBXGroup;
+			children = (
+				BFF6D7A22297B695000253A2 /* ManageLeaderboard.swift */,
+			);
+			path = ManageLeaderBoards;
 			sourceTree = "<group>";
 		};
 		BFFA2A82223380760023BB71 /* EasyStage */ = {
@@ -3010,6 +3021,7 @@
 				BF332FD6224927D5009B3042 /* N20.swift in Sources */,
 				BF552EAA226DDD3D00756E16 /* E36.swift in Sources */,
 				BFFA2A8C223384D80023BB71 /* HardCreate.swift in Sources */,
+				BFF6D7A32297B695000253A2 /* ManageLeaderboard.swift in Sources */,
 				BF2C145F2276F39500C7B8FB /* HintPouseView.swift in Sources */,
 				BF332F862249234C009B3042 /* ExGameSeceneEasy.swift in Sources */,
 				BF332F9E224926F3009B3042 /* E12.swift in Sources */,

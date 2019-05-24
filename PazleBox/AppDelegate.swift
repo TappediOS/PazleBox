@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //      let fileopts = FirebaseOptions(contentsOfFile: filePath!)
 //
 //      FirebaseApp.configure(options: fileopts!)
-//
+
       //--------------------FIREBASE-----------------------//
       
       //-----------バックグラウンドでの音の再生を許可------------//

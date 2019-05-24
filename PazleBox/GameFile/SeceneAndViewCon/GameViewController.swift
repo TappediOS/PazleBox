@@ -36,6 +36,8 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    
    var GoHomeForInstitialAD = false
    
+   let MaxStageNum = 50
+   
    
    var Reward: GADRewardBasedVideoAd!
    let REWARD_TEST_ID = "ca-app-pub-3940256099942544/1712485313"
@@ -55,8 +57,10 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    
    let realm = try! Realm()
    
-   
+   //FIXME- こいつ要らん
    let SentLeadarbord = SentLearderBords()
+   
+   let ManageLeaderBoard = ManageLeadearBoards()
    
    //   @available(iOS 11, *)
    //   override var prefersHomeIndicatorAutoHidden: Bool {
@@ -327,21 +331,32 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       self.StartConfeAnimation(CountOfUsedHint: CountOfUsedHint)
    }
    
+   private func ManageGameCenter() {
+      ManageLeaderBoard.CheckUserUpdateNumberOfClearStage()
+      ManageLeaderBoard.CheckUserUpdateNumberOfCollectedStar()
+   }
+   
    //MARK:- セーブ
    private func SaveStageInfo(CountOfUsedHint: Int) {
       switch StageLevel {
       case .Easy:
-         SaveEasyStage(CountOfUsedHint: CountOfUsedHint)
+         if SaveEasyStage(CountOfUsedHint: CountOfUsedHint) == true{
+            ManageGameCenter()
+         }
       case .Normal:
-         SaveNormalStage(CountOfUsedHint: CountOfUsedHint)
+         if SaveNormalStage(CountOfUsedHint: CountOfUsedHint) == true{
+            ManageGameCenter()
+         }
       case .Hard:
-         SaveHardStage(CountOfUsedHint: CountOfUsedHint)
+         if SaveHardStage(CountOfUsedHint: CountOfUsedHint) == true{
+            ManageGameCenter()
+         }
       }
    }
    
   
    //ヒント使用回数の保存をする
-   private func SaveEasyStage(CountOfUsedHint: Int) {
+   private func SaveEasyStage(CountOfUsedHint: Int) -> Bool {
       let result = realm.objects(EasyStageClearInfomation.self).filter("StageNum == \(self.SellectStageNumber)")
       
       if result.isEmpty == true{
@@ -359,7 +374,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          if result.Clear == true && result.CountOfUsedHint <= CountOfUsedHint{
             print("クリアしてて，ヒント使用回数更新しませんでした。")
             print("保存してる回数:\(result.CountOfUsedHint)  ,今回使ったヒント回数:\(CountOfUsedHint)")
-            return
+            return false
          }else{
             print("ヒント使用回数更新しました。")
             print("保存してる回数:\(result.CountOfUsedHint)  ,今回使ったヒント回数:\(CountOfUsedHint)")
@@ -372,9 +387,10 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
             }
          }catch{  print("\n\n-----------------ream 保存失敗------------------\n\n") }
       }
+      return true
    }
    
-   private func SaveNormalStage(CountOfUsedHint: Int) {
+   private func SaveNormalStage(CountOfUsedHint: Int)-> Bool {
       let result = realm.objects(NormalStageClearInfomation.self).filter("StageNum == \(self.SellectStageNumber)")
       
       if result.isEmpty == true{
@@ -391,7 +407,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          if result.Clear == true && result.CountOfUsedHint <= CountOfUsedHint{
             print("クリアしてて，ヒント使用回数更新しませんでした。")
             print("保存してる回数:\(result.CountOfUsedHint)  ,今回使ったヒント回数:\(CountOfUsedHint)")
-            return
+            return false
          }else{
             print("ヒント使用回数更新しました。")
             print("保存してる回数:\(result.CountOfUsedHint)  ,今回使ったヒント回数:\(CountOfUsedHint)")
@@ -404,9 +420,11 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
             }
          }catch{  print("\n\n-----------------ream 保存失敗------------------\n\n") }
       }
+      
+      return true
    }
    
-   private func SaveHardStage(CountOfUsedHint: Int) {
+   private func SaveHardStage(CountOfUsedHint: Int) -> Bool {
       let result = realm.objects(HardStageClearInfomation.self).filter("StageNum == \(self.SellectStageNumber)")
       
       if result.isEmpty == true{
@@ -423,7 +441,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          if result.Clear == true && result.CountOfUsedHint <= CountOfUsedHint{
             print("クリアしてて，ヒント使用回数更新しませんでした。")
             print("保存してる回数:\(result.CountOfUsedHint)  ,今回使ったヒント回数:\(CountOfUsedHint)")
-            return
+            return false
          }else{
             print("ヒント使用回数更新しました。")
             print("保存してる回数:\(result.CountOfUsedHint)  ,今回使ったヒント回数:\(CountOfUsedHint)")
@@ -436,10 +454,12 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
             }
          }catch{  print("\n\n-----------------ream 保存失敗------------------\n\n") }
       }
+      
+      return true
    }
    
    
-   
+   //現在のレベルをStringで取得する
    private func GetLevelASString() -> String {
       switch StageLevel {
       case .Easy:
@@ -451,6 +471,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       }
    }
    
+   //MARK:- Firebaseにステージレビューを送信する
    private func SentFirebaseStageReview() {
       let StageReview = ClearView!.GetReView()
       
@@ -472,8 +493,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       //firebaseのコンテンツで，なんかStageNumが表示されないっぽい。
       //だから，一番上のItemIDをSentMessageにしたほうがいいような気がする
       Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
-         AnalyticsParameterItemID: Level,
-         AnalyticsParameterItemName: String(StageNum),
+         AnalyticsParameterItemID: SentMessage,
          AnalyticsParameterContentType: String(StageReview)
       ])
       
@@ -485,13 +505,14 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    
    
    
-   
+   //MARK:- ゲームクリアして通知を受け取る関数
    @objc func GameClearCatchNotification(notification: Notification) -> Void {
       
       guard ShowGameClearView == false else { return }
       
       var CountOfUsedHint = 0
       
+      //セーブする関数に飛ばす
       if let userInfo = notification.userInfo {
          CountOfUsedHint = userInfo["CountOfUsedHint"] as! Int
          SaveStageInfo(CountOfUsedHint: CountOfUsedHint)
@@ -549,15 +570,17 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       }
    }
    
+   //MARK:- リワード広告流すように通知きたよ
    @objc func RewardADNotification(notification: Notification) -> Void {
       if Reward.isReady == true {
          Reward.present(fromRootViewController: self)
       }
    }
    
+   //MARK:- Nextボタン押されたよ
    @objc func TapNextNotification(notification: Notification) -> Void {
       
-      
+      //レビュー飛ばす関数へ
       SentFirebaseStageReview()
       
       GameSound.PlaySoundsTapButton()
@@ -568,7 +591,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          return
       }
       
-      //1やったら広告表示してカウンタアプデして帰る
+      //ヒント表示カウントが1やったら広告表示してカウンタアプデして帰る
       if userDefaults.integer(forKey: "InterstitialCount") == 0 {
          ShowInterstitial()
          return
@@ -579,8 +602,9 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       return
    }
    
+   //MARK:- Homeボタンタップされたよ
    @objc func TapHomeNotification(notification: Notification) -> Void {
-      
+      //レビュー飛ばす関数へ
       SentFirebaseStageReview()
       
       GameSound.PlaySoundsTapButton()
@@ -607,6 +631,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       }
    }
    
+   //MARK:- 次のステージに行くために，ClearView消したりアニメーション消したりする
    private func ShowNextGame() {
       
       
@@ -618,7 +643,17 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          self?.ClearView?.StopStar()
          self?.ClearView?.removeFromSuperview()
       }
+      
+      //MARK:- 最後のステージプレイしてたらさようなら
+      if self.SellectStageNumber == self.MaxStageNum{
+         print("最後のステージ: \(self.MaxStageNum) をプレーしてたのでホームに帰ります")
+         self.view.fadeOut(type: .Slow){ [weak self] in
+            self?.dismiss(animated: false, completion: nil)
+         }
+         return
+      }
     
+      //MARK:- 次のステージ行くねんからステージナンバーインクリメントするね -
       self.SellectStageNumber += 1
       self.userDefaults.set(self.SellectStageNumber, forKey: "StageNum")
       self.StopConfitti()
@@ -630,7 +665,9 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
  
    
 
-   //MARK:- 広告表示する
+   //MARK:- インタースティシャル広告表示する
+   //インステーシャル広告表示するのはNextボタン押した時とHomeボタン押した時の2通りあるね.
+   //
    private func ShowInterstitial(){
       
       if Interstitial.isReady {
@@ -740,6 +777,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       print("インタースティシャル広告閉じる直後")
       AudioServicesPlaySystemSound(1519)
       
+      //Homeボタン押してた時はDismissしなあかんよ
       if GoHomeForInstitialAD == true {
          print("帰りたいから帰る")
          GoHomeForInstitialAD = false
