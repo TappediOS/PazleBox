@@ -17,13 +17,13 @@ class ManageLeadearBoards {
    
    let MaxStarCount = 450
    
-   let CLEAR1_ID = "70669980"
-   let CLEAR5_ID = "70669981"
-   let CLEAR10_ID = "70669982"
-   let CLEAR25_ID = "70669983"
-   let CLEAR50_ID = "70669984"
-   let CLEAR100_ID = "70669985"
-   let CLEAR150_ID = "70669986"
+   let CLEAR1_ID = "1_STAGE_CLEAR"
+   let CLEAR5_ID = "5_STAGE_CLEAE"
+   let CLEAR10_ID = "10_STAGE_CLEAR"
+   let CLEAR25_ID = "25_STAGE_CLEAE"
+   let CLEAR50_ID = "50_STAGE_CLEAE"
+   let CLEAR100_ID = "100_STAGE_CLEAR"
+   let CLEAR150_ID = "150_STAGE_CLEAE"
    
    let CLEAR_STAGE_NUM_DEADERBOARD_ID = "ClearStageNumLeaderBoard"
    let COLLECTED_STAR_NUM_DEADERBOARD_ID = "CollectNumberOfStarsLeaderBoad"
@@ -70,16 +70,15 @@ class ManageLeadearBoards {
          return
       }
       
-      
       SentCollectStarScore.value = Int64(NewRecordOfCollectedStarNum)
-      userDefaults.set(NewRecordOfCollectedStarNum, forKey: "CollectNumberOfStarsLeaderBoad")
+      userDefaults.set(NewRecordOfCollectedStarNum, forKey: "SumOfCollectedStarNum")
       print()
       
       GKScore.report([SentCollectStarScore], withCompletionHandler: { (error) in
          if error != nil {
             print("error, cant sent new score of Collected Star Num...\(String(describing: error))")
             print("")
-            self.userDefaults.set(BeforeRecord, forKey: "CollectNumberOfStarsLeaderBoad")
+            self.userDefaults.set(BeforeRecord, forKey: "SumOfCollectedStarNum")
          }
          
       })
@@ -90,19 +89,19 @@ class ManageLeadearBoards {
    public func CheckUserUpdateNumberOfCollectedStar() {
       let EasyStar3 = realm.objects(EasyStageClearInfomation.self).filter("CountOfUsedHint == 0").count
       let NormalStar3 = realm.objects(NormalStageClearInfomation.self).filter("CountOfUsedHint == 0").count
-      let HardStar3 = realm.objects(NormalStageClearInfomation.self).filter("CountOfUsedHint == 0").count
+      let HardStar3 = realm.objects(HardStageClearInfomation.self).filter("CountOfUsedHint == 0").count
       
       let EasyStar2 = realm.objects(EasyStageClearInfomation.self).filter("CountOfUsedHint == 1").count
       let NormalStar2 = realm.objects(NormalStageClearInfomation.self).filter("CountOfUsedHint == 1").count
-      let HardStar2 = realm.objects(NormalStageClearInfomation.self).filter("CountOfUsedHint == 1").count
+      let HardStar2 = realm.objects(HardStageClearInfomation.self).filter("CountOfUsedHint == 1").count
       
       let EasyStar1 = realm.objects(EasyStageClearInfomation.self).filter("CountOfUsedHint == 2").count
       let NormalStar1 = realm.objects(NormalStageClearInfomation.self).filter("CountOfUsedHint == 2").count
-      let HardStar1 = realm.objects(NormalStageClearInfomation.self).filter("CountOfUsedHint == 2").count
+      let HardStar1 = realm.objects(HardStageClearInfomation.self).filter("CountOfUsedHint == 2").count
       
-      let SumOfEasy = EasyStar1 + EasyStar2 + EasyStar3
-      let SumOfNormal = NormalStar1 + NormalStar2 + NormalStar3
-      let SumOfHard = HardStar1 + HardStar2 + HardStar3
+      let SumOfEasy = EasyStar1 * 1 + EasyStar2 * 2 + EasyStar3 * 3
+      let SumOfNormal = NormalStar1 * 1 + NormalStar2 * 2 + NormalStar3 * 3
+      let SumOfHard = HardStar1 * 1 + HardStar2 * 2 + HardStar3 * 3
       
       print("\n--- Easy Stage ---")
       print("3 Star -> \(EasyStar3)")
@@ -133,7 +132,7 @@ class ManageLeadearBoards {
       
       if AllCollectedStarNum > NowSavedAllCollectedStarNum {
          print("星の数を更新したのでリーダボードに送信をします")
-         SentNumberOfClearStageToLeaderBoard(NewRecordOfStageClearNum: AllCollectedStarNum, BeforeRecord: NowSavedAllCollectedStarNum)
+         SentNumberOfCollectedStarToLeaderBoard(NewRecordOfCollectedStarNum: AllCollectedStarNum, BeforeRecord: NowSavedAllCollectedStarNum)
       }else{
          print("星の数の記録は更新されませんでした。")
       }
@@ -171,7 +170,7 @@ class ManageLeadearBoards {
       
       let EasyResult = realm.objects(EasyStageClearInfomation.self).filter("Clear == true")
       let NormalResult = realm.objects(NormalStageClearInfomation.self).filter("Clear == true")
-      let HardResult = realm.objects(NormalStageClearInfomation.self).filter("Clear == true")
+      let HardResult = realm.objects(HardStageClearInfomation.self).filter("Clear == true")
       
       
       let EasyClearCount = EasyResult.count

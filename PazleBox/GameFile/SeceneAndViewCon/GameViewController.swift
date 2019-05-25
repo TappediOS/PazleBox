@@ -332,6 +332,14 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    }
    
    private func ManageGameCenter() {
+      
+      #if DEBUG
+      print("デバッグなのでゲームセンターに送信しませーん")
+      return
+      #else
+      
+      #endif
+      
       ManageLeaderBoard.CheckUserUpdateNumberOfClearStage()
       ManageLeaderBoard.CheckUserUpdateNumberOfCollectedStar()
    }

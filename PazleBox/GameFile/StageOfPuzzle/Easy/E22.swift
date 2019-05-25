@@ -32,13 +32,13 @@ class EStage22 {
    }
    
    private func InitPuzzle(SizeX: CGFloat, SizeY: CGFloat){
-      Puzzle1 = puzzle(PX: 3, PY: 3, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p3", PuzzleColor: "Green", RespawnX: 2, RespawnY: 10)
+      Puzzle1 = puzzle(PX: 3, PY: 3, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p3", PuzzleColor: "Green", RespawnX: 2, RespawnY: 3)
       
-      Puzzle2 = puzzle(PX: 3, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p38", PuzzleColor: "Red", RespawnX: 3, RespawnY: 10)
+      Puzzle2 = puzzle(PX: 3, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p38", PuzzleColor: "Red", RespawnX: 0, RespawnY: 2)
       
-      Puzzle3 = puzzle(PX: 4, PY: 3, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p36", PuzzleColor: "Blue", RespawnX: 3, RespawnY: 9)
+      Puzzle3 = puzzle(PX: 4, PY: 3, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p36", PuzzleColor: "Blue", RespawnX: 5, RespawnY: 2)
       
-      Puzzle4 = puzzle(PX: 3, PY: 3, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p22", PuzzleColor: "Green", RespawnX: 5, RespawnY: 10)
+      Puzzle4 = puzzle(PX: 3, PY: 3, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p22", PuzzleColor: "Green", RespawnX: 5, RespawnY: 4)
    }
    
    
@@ -57,9 +57,9 @@ class EStage22 {
    }
    
    private func InitHint(SizeX: CGFloat, SizeY: CGFloat) {
-      Hint1 = HintPuzzle(PX: 3, PY: 3, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p9", PuzzleColor: "Red", AnsX: 0, AnsY: 2)
+      Hint1 = HintPuzzle(PX: 3, PY: 3, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p38", PuzzleColor: "Red", AnsX: 3, AnsY: 10)
       
-      Hint2 = HintPuzzle(PX: 2, PY: 1, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "21p1", PuzzleColor: "Blue", AnsX: 0, AnsY: 1)
+      Hint2 = HintPuzzle(PX: 4, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p36", PuzzleColor: "Blue", AnsX: 3, AnsY: 9)
    }
    
    
