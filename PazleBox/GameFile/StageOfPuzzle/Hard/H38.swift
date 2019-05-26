@@ -39,7 +39,7 @@ class HStage38 {
    private func InitPuzzle(SizeX: CGFloat, SizeY: CGFloat){
       Puzzle1 = puzzle(PX: 4, PY: 3, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p2", PuzzleColor: "Green", RespawnX: 0, RespawnY: 5)
       
-      Puzzle2 = puzzle(PX: 4, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p50", PuzzleColor: "Blue", RespawnX: 6, RespawnY: 3)
+      Puzzle2 = puzzle(PX: 4, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p50", PuzzleColor: "Blue", RespawnX: 5, RespawnY: 3)
       
       Puzzle3 = puzzle(PX: 4, PY: 3, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p28", PuzzleColor: "Green", RespawnX: 1, RespawnY: 5)
       

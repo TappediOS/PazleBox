@@ -68,7 +68,7 @@ class HStage8 {
    private func InitHint(SizeX: CGFloat, SizeY: CGFloat) {
       Hint1 = HintPuzzle(PX: 3, PY: 3, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p28", PuzzleColor: "Blue", AnsX: 3, AnsY: 9)
       
-      Hint2 = HintPuzzle(PX: 3, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p1", PuzzleColor: "Red", AnsX: 4, AnsY: 2)
+      Hint2 = HintPuzzle(PX: 3, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p40", PuzzleColor: "Red", AnsX: 4, AnsY: 8)
    }
    
    
