@@ -34,17 +34,17 @@ class NStage1 {
    }
    
    private func InitPuzzle(SizeX: CGFloat, SizeY: CGFloat){
-      Puzzle1 = puzzle(PX: 3, PY: 3, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p19", PuzzleColor: "Red", RespawnX: 0, RespawnY: 10)
+      Puzzle1 = puzzle(PX: 3, PY: 3, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p19", PuzzleColor: "Red", RespawnX: 4, RespawnY: 5)
       
-      Puzzle2 = puzzle(PX: 3, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p1", PuzzleColor: "Green", RespawnX: 3, RespawnY: 11)
+      Puzzle2 = puzzle(PX: 3, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p1", PuzzleColor: "Green", RespawnX: 6, RespawnY: 4)
       
-      Puzzle3 = puzzle(PX: 3, PY: 3, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p10", PuzzleColor: "Blue", RespawnX: 6, RespawnY: 11)
+      Puzzle3 = puzzle(PX: 3, PY: 3, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p10", PuzzleColor: "Blue", RespawnX: 0, RespawnY: 3)
       
-      Puzzle4 = puzzle(PX: 2, PY: 3, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p1", PuzzleColor: "Red", RespawnX: 2, RespawnY: 8)
+      Puzzle4 = puzzle(PX: 2, PY: 3, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "23p1", PuzzleColor: "Red", RespawnX: 4, RespawnY: 2)
       
-      Puzzle5 = puzzle(PX: 3, PY: 3, CustNum: 4, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p18", PuzzleColor: "Blue", RespawnX: 3, RespawnY: 9)
+      Puzzle5 = puzzle(PX: 3, PY: 3, CustNum: 4, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p18", PuzzleColor: "Blue", RespawnX: 6, RespawnY: 2)
       
-      Puzzle6 = puzzle(PX: 3, PY: 2, CustNum: 5, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p9", PuzzleColor: "Red", RespawnX: 5, RespawnY: 8)
+      Puzzle6 = puzzle(PX: 3, PY: 2, CustNum: 5, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p9", PuzzleColor: "Red", RespawnX: 2, RespawnY: 1)
    }
    
    
@@ -65,9 +65,9 @@ class NStage1 {
    }
    
    private func InitHint(SizeX: CGFloat, SizeY: CGFloat) {
-      Hint1 = HintPuzzle(PX: 3, PY: 3, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p1", PuzzleColor: "Red", AnsX: 0, AnsY: 4)
+      Hint1 = HintPuzzle(PX: 3, PY: 3, CustNum: 0, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p1", PuzzleColor: "Green", AnsX: 3, AnsY: 11)
       
-      Hint2 = HintPuzzle(PX: 3, PY: 3, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p1", PuzzleColor: "Red", AnsX: 4, AnsY: 2)
+      Hint2 = HintPuzzle(PX: 3, PY: 2, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p9", PuzzleColor: "Red", AnsX: 5, AnsY: 8)
    }
    
    
