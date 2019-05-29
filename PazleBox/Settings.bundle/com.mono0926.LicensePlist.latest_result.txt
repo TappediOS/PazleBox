@@ -32,6 +32,10 @@ body:
                    …
 version: 4.1.0
 
+name: FirebasePerformance, nameSpecified: 
+body: Copyright 2019 Googl…
+version: 3.0.0
+
 name: FirebaseRemoteConfig, nameSpecified: 
 body: Copyright 2019 Googl…
 version: 4.0.0
@@ -48,10 +52,20 @@ name: GoogleAppMeasurement, nameSpecified:
 body: Copyright 2019 Googl…
 version: 6.0.1
 
+name: GoogleToolboxForMac, nameSpecified: 
+body: 
+                   …
+version: 2.2.1
+
 name: GoogleUtilities, nameSpecified: 
 body: 
                    …
 version: 6.1.0
+
+name: GTMSessionFetcher, nameSpecified: 
+body: 
+                   …
+version: 1.2.2
 
 name: LicensePlist, nameSpecified: 
 body: MIT License

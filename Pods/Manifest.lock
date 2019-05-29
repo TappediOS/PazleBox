@@ -13,6 +13,9 @@ PODS:
     - FirebaseAnalytics (= 6.0.1)
   - Firebase/CoreOnly (6.1.0):
     - FirebaseCore (= 6.0.1)
+  - Firebase/Performance (6.1.0):
+    - Firebase/CoreOnly
+    - FirebasePerformance (~> 3.0.0)
   - Firebase/RemoteConfig (6.1.0):
     - Firebase/CoreOnly
     - FirebaseRemoteConfig (~> 4.0.0)
@@ -35,6 +38,17 @@ PODS:
     - FirebaseCore (~> 6.0)
     - GoogleUtilities/Environment (~> 6.0)
     - GoogleUtilities/UserDefaults (~> 6.0)
+  - FirebasePerformance (3.0.0):
+    - FirebaseCore (~> 6.0)
+    - FirebaseInstanceID (~> 4.0)
+    - FirebaseRemoteConfig (~> 4.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - GoogleUtilities/Environment (~> 6.0)
+    - GoogleUtilities/ISASwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+    - Protobuf (~> 3.5)
   - FirebaseRemoteConfig (4.0.0):
     - FirebaseABTesting (~> 3.0)
     - FirebaseCore (~> 6.0)
@@ -51,11 +65,17 @@ PODS:
     - GoogleUtilities/Network (~> 6.0)
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (~> 0.3)
+  - GoogleToolboxForMac/Defines (2.2.1)
+  - GoogleToolboxForMac/Logger (2.2.1):
+    - GoogleToolboxForMac/Defines (= 2.2.1)
+  - "GoogleToolboxForMac/NSData+zlib (2.2.1)":
+    - GoogleToolboxForMac/Defines (= 2.2.1)
   - GoogleUtilities/AppDelegateSwizzler (6.1.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
   - GoogleUtilities/Environment (6.1.0)
+  - GoogleUtilities/ISASwizzler (6.1.0)
   - GoogleUtilities/Logger (6.1.0):
     - GoogleUtilities/Environment
   - GoogleUtilities/MethodSwizzler (6.1.0):
@@ -69,6 +89,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.1.0):
     - GoogleUtilities/Logger
+  - GTMSessionFetcher/Core (1.2.2)
   - LicensePlist (2.5.0)
   - lottie-ios (3.0.6)
   - nanopb (0.3.901):
@@ -93,6 +114,7 @@ DEPENDENCIES:
   - Crashlytics
   - Firebase/AdMob
   - Firebase/Core
+  - Firebase/Performance
   - Firebase/RemoteConfig
   - FlatUIKit
   - LicensePlist
@@ -114,11 +136,14 @@ SPEC REPOS:
     - FirebaseAnalytics
     - FirebaseCore
     - FirebaseInstanceID
+    - FirebasePerformance
     - FirebaseRemoteConfig
     - FlatUIKit
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
+    - GoogleToolboxForMac
     - GoogleUtilities
+    - GTMSessionFetcher
     - LicensePlist
     - lottie-ios
     - nanopb
@@ -149,11 +174,14 @@ SPEC CHECKSUMS:
   FirebaseAnalytics: 629301c2b9925f3537d4093a17a72751ae5b7084
   FirebaseCore: 66bdef3b310a026880e2a5bc8aa586ab62ce4543
   FirebaseInstanceID: 27bed93a59b6685f5c3e0c028a878a764fd75c33
+  FirebasePerformance: 3dd8dbe6eb1258b8d148eb33768f6aa6e1684127
   FirebaseRemoteConfig: 40f75c6ea20a52bf65ef44e3898910dd5b57c532
   FlatUIKit: 1b41f0d4952ce8d970d8479ce79df54a960242c4
   Google-Mobile-Ads-SDK: 1e72b4f438d997ab0f2ee62b3a7b0cbcc87c47cb
   GoogleAppMeasurement: 51d8d9ea48f0ca44484d29cfbdef976fbd4fc336
+  GoogleToolboxForMac: b3553629623a3b1bff17f555e736cd5a6d95ad55
   GoogleUtilities: 84df567c76ca84f67b7bb40e769fdd4acc746a10
+  GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   LicensePlist: e5f8f2e3465620e53ec4c669955a5a7d0692b9cb
   lottie-ios: d030b6cda141cfd8bbaa3db89264785e6fdf675a
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
@@ -166,6 +194,6 @@ SPEC CHECKSUMS:
   SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
   TapticEngine: ed6f5b4a2e9aa46d4e8fa69a72a7a0b6719bf8ac
 
-PODFILE CHECKSUM: 032d50b12081ca6f773587d45d40b764f20e20a7
+PODFILE CHECKSUM: 7725d0b480b8214b8728240edb718fa34bf1c789
 
 COCOAPODS: 1.6.0

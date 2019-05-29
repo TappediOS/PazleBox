@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "792F2C2D02A25E2A045B36BAC5C69616"
+               BlueprintIdentifier = "72861079C252884E9F754E673A33DDCA"
                BuildableName = "Google-Mobile-Ads-SDK"
                BlueprintName = "Google-Mobile-Ads-SDK"
                ReferencedContainer = "container:Pods.xcodeproj">

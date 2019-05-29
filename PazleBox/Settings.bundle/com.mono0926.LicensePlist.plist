@@ -70,6 +70,14 @@
 		</dict>
 		<dict>
 			<key>File</key>
+			<string>com.mono0926.LicensePlist/FirebasePerformance</string>
+			<key>Title</key>
+			<string>FirebasePerformance</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>com.mono0926.LicensePlist/FirebaseRemoteConfig</string>
 			<key>Title</key>
 			<string>FirebaseRemoteConfig</string>
@@ -102,9 +110,25 @@
 		</dict>
 		<dict>
 			<key>File</key>
+			<string>com.mono0926.LicensePlist/GoogleToolboxForMac</string>
+			<key>Title</key>
+			<string>GoogleToolboxForMac</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>com.mono0926.LicensePlist/GoogleUtilities</string>
 			<key>Title</key>
 			<string>GoogleUtilities</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/GTMSessionFetcher</string>
+			<key>Title</key>
+			<string>GTMSessionFetcher</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>

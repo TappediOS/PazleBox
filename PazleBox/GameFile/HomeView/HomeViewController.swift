@@ -16,20 +16,21 @@ import SCLAlertView
 import Crashlytics
 import GameKit
 import Firebase
+import FlatUIKit
 
 
 class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    private let GameSound = GameSounds()
    
-   @IBOutlet weak var EasyButton: UIButton!
-   @IBOutlet weak var NormalButton: UIButton!
-   @IBOutlet weak var HardButton: UIButton!
+   @IBOutlet weak var EasyButton: FUIButton!
+   @IBOutlet weak var NormalButton: FUIButton!
+   @IBOutlet weak var HardButton: FUIButton!
    
-   var testbutton: UIButton?
-   var testbuttonRes: UIButton?
+   var testbutton: FUIButton?
+   var testbuttonRes: FUIButton?
    
-   var ShowRankingViewButton: UIButton?
+   var ShowRankingViewButton: FUIButton?
    let ButtonKey = "TEST"
    
    //この2つは課金で使う
@@ -140,40 +141,60 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       }
    }
    
+   private func SetUpHomeEachSmallButton(sender: FUIButton) {
+      sender.buttonColor = UIColor.turquoise()
+      sender.shadowColor = UIColor.greenSea()
+      sender.shadowHeight = 3.0
+      sender.cornerRadius = 6.0
+      sender.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
+      sender.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
+      sender.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
+   }
+   
    //ボタンの初期化
    //FIXME:- testbuttonはひどいよ
    func Inittestbutton() {
-      testbutton = UIButton(frame: CGRect(x: 20, y: 20, width: 100, height: 100))
+      testbutton = FUIButton(frame: CGRect(x: 20, y: 20, width: 100, height: 100))
       testbutton?.setTitle("Purchas", for: .normal)
-      testbutton?.backgroundColor = .black
       testbutton?.addTarget(self, action: #selector(self.tapparchas), for: .touchUpInside)
+      SetUpHomeEachSmallButton(sender: testbutton!)
       self.view.addSubview(testbutton!)
       
-      testbuttonRes = UIButton(frame: CGRect(x: 140, y: 20, width: 100, height: 100))
+      testbuttonRes = FUIButton(frame: CGRect(x: 140, y: 20, width: 100, height: 100))
       testbuttonRes?.setTitle("restore", for: .normal)
       testbuttonRes?.addTarget(self, action: #selector(self.restore), for: .touchUpInside)
-      testbuttonRes?.backgroundColor = .black
+      SetUpHomeEachSmallButton(sender: testbuttonRes!)
       self.view.addSubview(testbuttonRes!)
    }
    
    private func InitShowRankingViewButton() {
-      ShowRankingViewButton = UIButton(frame: CGRect(x: 20, y: 140, width: 100, height: 100))
+      ShowRankingViewButton = FUIButton(frame: CGRect(x: 20, y: 140, width: 100, height: 100))
       ShowRankingViewButton?.setTitle("show rank", for: .normal)
-      ShowRankingViewButton?.backgroundColor = .black
       ShowRankingViewButton?.addTarget(self, action: #selector(self.ShowRankingView), for: .touchUpInside)
+      SetUpHomeEachSmallButton(sender: ShowRankingViewButton!)
       self.view.addSubview(ShowRankingViewButton!)
    }
    
    
    
-   private func ShowGameSetView() {
+   private func CompleateRestore() {
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
-      let GameSetView = SCLAlertView(appearance: Appearanse)
-      GameSetView.addButton("Return"){
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      ComleateView.addButton("OK"){
          print("tap")
          
       }
-      GameSetView.showSuccess(NSLocalizedString("Passed", comment: ""), subTitle: "a\nab\n\nc)\nd")
+      ComleateView.showSuccess(NSLocalizedString("Passed.", comment: ""), subTitle: "Restore successful")
+   }
+   
+   private func CompleateBuyRemoveADS() {
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      ComleateView.addButton("OK"){
+         print("tap")
+         
+      }
+      ComleateView.showSuccess(NSLocalizedString("Passed.", comment: ""), subTitle: "Purchase complete")
    }
    
    
@@ -187,7 +208,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
             defaults.set(true, forKey: "BuyRemoveAd")
             print("購入成功！")
             print("購入フラグを　\(defaults.bool(forKey: "BuyRemoveAd"))　に変更しました")
-            self.ShowGameSetView()
+            self.CompleateBuyRemoveADS()
             
             //購入の検証
             self.verifyPurchase(PRODUCT_ID: PRODUCT_ID)
@@ -244,7 +265,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
             defaults.set(true, forKey: "BuyRemoveAd")
             print("リストアに成功しました")
             print("購入フラグを　\(defaults.bool(forKey: "BuyRemoveAd"))　に変更しました")
-            self.ShowGameSetView()
+            self.CompleateRestore()
          }
          else {
             print("リストアするものがない")
@@ -253,18 +274,22 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       }
    }
    
+   //MARK:- FlatUIButtonをセットアップ
+   private func SetUpSellectStageButton(sender: FUIButton) {
+      sender.buttonColor = UIColor.turquoise()
+      sender.shadowColor = UIColor.greenSea()
+      sender.shadowHeight = 3.0
+      sender.cornerRadius = 6.0
+      sender.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
+      sender.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
+      sender.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
+   }
    
-   
-   
-   
+   //MARK:- ステージボタン3つを初期化
    private func InitButton() {
-      EasyButton.backgroundColor = UIColor.flatLime()
-      NormalButton.backgroundColor = UIColor.flatLime()
-      HardButton.backgroundColor = UIColor.flatLime()
-      
-      EasyButton.setTitleColor(UIColor.flatWhite(), for: .normal)
-      NormalButton.setTitleColor(UIColor.flatWhite(), for: .normal)
-      HardButton.setTitleColor(UIColor.flatWhite(), for: .normal)
+      SetUpSellectStageButton(sender: EasyButton)
+      SetUpSellectStageButton(sender: NormalButton)
+      SetUpSellectStageButton(sender: HardButton)
    }
    
    
@@ -274,7 +299,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       //ユーティリティエリアで設定したStoryBoardIDをwithIdentifierに設定
       let vc2 = self.storyboard?.instantiateViewController(withIdentifier: "GameView") as! GameViewController
       
-      //ViewController2のtextにtextFieldのテキストを代入
 
       print("ステージレベルの送信開始")
       switch sender.tag {
