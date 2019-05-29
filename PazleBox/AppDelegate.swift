@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       FirebaseApp.configure(options: fileopts!)
       #endif
       
-      
+//      
 //      print("本番のfirebaseにアクセス")
 //
 //      let filePath = Bundle.main.path(forResource: fileName, ofType: "plist")

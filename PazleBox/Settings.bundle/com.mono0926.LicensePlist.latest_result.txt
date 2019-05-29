@@ -4,29 +4,37 @@ version: 2.1.0
 
 name: Crashlytics, nameSpecified: 
 body: Fabric: Copyright 20…
-version: 3.12.0
+version: 3.13.1
 
 name: Fabric, nameSpecified: 
 body: Fabric: Copyright 20…
-version: 1.9.0
+version: 1.10.1
 
 name: Firebase, nameSpecified: 
 body: Copyright 2019 Googl…
-version: 5.20.1
+version: 6.1.0
+
+name: FirebaseABTesting, nameSpecified: 
+body: Copyright 2019 Googl…
+version: 3.0.0
 
 name: FirebaseAnalytics, nameSpecified: 
 body: Copyright 2019 Googl…
-version: 5.8.0
+version: 6.0.1
 
 name: FirebaseCore, nameSpecified: 
 body: 
                    …
-version: 5.4.1
+version: 6.0.1
 
 name: FirebaseInstanceID, nameSpecified: 
 body: 
                    …
-version: 3.8.1
+version: 4.1.0
+
+name: FirebaseRemoteConfig, nameSpecified: 
+body: Copyright 2019 Googl…
+version: 4.0.0
 
 name: FlatUIKit, nameSpecified: 
 body: The MIT License (MIT…
@@ -34,42 +42,46 @@ version: 1.6.2
 
 name: Google-Mobile-Ads-SDK, nameSpecified: 
 body: Copyright 2019 Googl…
-version: 7.42.2
+version: 7.44.0
 
 name: GoogleAppMeasurement, nameSpecified: 
 body: Copyright 2019 Googl…
-version: 5.8.0
+version: 6.0.1
 
 name: GoogleUtilities, nameSpecified: 
 body: 
                    …
-version: 5.5.0
+version: 6.1.0
 
 name: LicensePlist, nameSpecified: 
 body: MIT License
 
 Copyrig…
-version: 2.3.0
+version: 2.5.0
 
 name: lottie-ios, nameSpecified: 
 body:                     …
-version: 3.0.3
+version: 3.0.6
 
 name: nanopb, nameSpecified: 
 body: Copyright (c) 2011 P…
 version: 0.3.901
 
+name: Protobuf, nameSpecified: 
+body: Copyright 2008 Googl…
+version: 3.7.0
+
 name: Realm, nameSpecified: 
 body: TABLE OF CONTENTS
 
 1…
-version: 3.14.0
+version: 3.15.0
 
 name: RealmSwift, nameSpecified: 
 body: TABLE OF CONTENTS
 
 1…
-version: 3.14.0
+version: 3.15.0
 
 name: SAConfettiView, nameSpecified: 
 body: Copyright (c) 2015 S…
@@ -85,7 +97,7 @@ version: 0.14
 
 name: SwiftyStoreKit, nameSpecified: 
 body: Copyright (c) 2015-2…
-version: 0.14.2
+version: 0.15.0
 
 name: TapticEngine, nameSpecified: 
 body: MIT License

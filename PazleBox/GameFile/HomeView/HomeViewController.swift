@@ -15,6 +15,7 @@ import SwiftyStoreKit
 import SCLAlertView
 import Crashlytics
 import GameKit
+import Firebase
 
 
 class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
@@ -29,14 +30,23 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    var testbuttonRes: UIButton?
    
    var ShowRankingViewButton: UIButton?
+   let ButtonKey = "TEST"
    
    //この2つは課金で使う
    private let IAP_PRO_ID = "NO_ADS"
    private let SECRET_CODE = "c8bf5f01b42f4f80ad32ffd00349d92d"
    
-   
    //MARK: リーダボードID
    let LEADERBOARD_ID = "ClearStageNumLeaderBoard"
+   
+   var RemorteConfigs: RemoteConfig!
+   
+   let EasyStageNameKey = "Easy"
+   let NormalStageNameKey = "Normal"
+   let HardStageNameKey = "Hard"
+   
+   let EasyStageNameKeyss = "Easy"
+   
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -47,12 +57,74 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       InitButton()
       
       
+      InitConfig()
+      SetUpRemoteConfigDefaults()
+      setDisplayLabel()
+      FetchConfig()
+      
+      
+      
       
       Inittestbutton()
       
       InitShowRankingViewButton()
    }
    
+   private func SetUpRemoteConfigDefaults() {
+      let defaultsValues = [
+         "EasyStageNameKey" : "Easy" as NSObject,
+         "NormalStageNameKey" : "Normal" as NSObject,
+         "HardStageNameKey" : "Hard" as NSObject,
+         
+         "EasyStageNameKeyss" : "Easy" as NSObject
+      ]
+      
+      self.RemorteConfigs.setDefaults(defaultsValues)
+   }
+   
+   private func InitConfig() {
+      self.RemorteConfigs = RemoteConfig.remoteConfig()
+      
+      //FIXME:- デベロッパモード　出すときはやめろ
+      
+      let RemortConfigSetting = RemoteConfigSettings(developerModeEnabled: true)
+      
+      self.RemorteConfigs.configSettings = RemortConfigSetting
+      
+      
+   }
+   
+   func FetchConfig() {
+      // フェッチが終わる前まで表示されるメッセージ
+      
+      
+      // ディベロッパーモードの時、expirationDurationを0にして随時更新できるようにする。
+      //let expirationDuration = RemorteConfigs.configSettings.isDeveloperModeEnabled ? 0 : 3600
+      RemorteConfigs.fetch(withExpirationDuration: TimeInterval(0)) { [unowned self] (status, error) -> Void in
+         guard error == nil else {
+            print("Firebase Config フェッチあかん買った")
+            print("Error: \(error?.localizedDescription ?? "No error available.")")
+            return
+         }
+         
+         print("フェッチできたよ　クラウドからーー")
+         self.RemorteConfigs.activateFetched()
+         self.setDisplayLabel()
+      }
+   }
+   
+   func setDisplayLabel() {
+      print("れもこん1 \(String(describing: RemorteConfigs["EasyStageNameKeyss"].stringValue))")
+      print("れもこん2 \(String(describing: RemorteConfigs["NormalStageNameKey"].stringValue))")
+      print("れもこん3 \(String(describing: RemorteConfigs["HardStageNameKey"].stringValue))")
+      
+      EasyButton.setTitle(RemorteConfigs["EasyStageNameKeyss"].stringValue, for: .normal)
+      NormalButton.setTitle(RemorteConfigs["NormalStageNameKey"].stringValue, for: .normal)
+      HardButton.setTitle(RemorteConfigs["HardStageNameKey"].stringValue, for: .normal)
+   }
+   
+   
+   //課金する商品情報を取得する
    func  CheckIAPInfomation() {
       SwiftyStoreKit.retrieveProductsInfo([IAP_PRO_ID]) { result in
          if let product = result.retrievedProducts.first {
@@ -68,7 +140,8 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       }
    }
    
-   
+   //ボタンの初期化
+   //FIXME:- testbuttonはひどいよ
    func Inittestbutton() {
       testbutton = UIButton(frame: CGRect(x: 20, y: 20, width: 100, height: 100))
       testbutton?.setTitle("Purchas", for: .normal)
@@ -104,6 +177,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    }
    
    
+   //MARK:- パーチャスボタンを押した時の処理
    func purchase(PRODUCT_ID:String){
       SwiftyStoreKit.purchaseProduct(PRODUCT_ID, quantity: 1, atomically: true) { result in
          switch result {
@@ -194,6 +268,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    }
    
    
+   //MARK:- Main.storybordでつけたボタンのタッチイベント
    @IBAction func NextViewWithNum(_ sender: UIButton) {
       //遷移先のインスタンス
       //ユーティリティエリアで設定したStoryBoardIDをwithIdentifierに設定
@@ -243,18 +318,9 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    }
    
    
-   private func Play3DtouchLight() {
-      TapticEngine.impact.feedback(.light)
-      return
-   }
-   private func Play3DtouchMedium() {
-      TapticEngine.impact.feedback(.medium)
-      return
-   }
-   private func Play3DtouchHeavy() {
-      TapticEngine.impact.feedback(.heavy)
-      return
-   }
+   private func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
+   private func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
+   private func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
 }
 
 
