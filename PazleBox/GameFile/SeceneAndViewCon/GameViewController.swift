@@ -231,7 +231,6 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
                let Tran = SKTransition.fade(withDuration: 2.35)
                
 
-               
                view.presentScene(sceneNode, transition: Tran)
                
                
@@ -484,6 +483,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       let StageReview = ClearView!.GetReView()
       
       if StageReview == 0 {
+         Analytics.logEvent("DontReview", parameters: nil)
          print("\nステージレビューをしていません")
          return
       }
@@ -504,6 +504,10 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          AnalyticsParameterItemID: SentMessage,
          AnalyticsParameterContentType: String(StageReview)
       ])
+      
+      
+      let ClearEasyStage = "Clear" + Level + "Stage"
+      Analytics.logEvent(ClearEasyStage, parameters: nil)
       
       
       self.ClearView!.ReSetReView()
@@ -528,11 +532,11 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          print("Nil きたよ")
       }
       
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.245) {
          self.StartConfetti()
       }
       
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.65) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.645) {
          
          self.view.addSubview(self.ClearView!)
          self.view.bringSubviewToFront(self.ConfettiView)

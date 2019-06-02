@@ -27,8 +27,8 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    @IBOutlet weak var NormalButton: FUIButton!
    @IBOutlet weak var HardButton: FUIButton!
    
-   var testbutton: FUIButton?
-   var testbuttonRes: FUIButton?
+   var PurchasButton: FUIButton?
+   var RestoreButton: FUIButton?
    
    var ShowRankingViewButton: FUIButton?
    let ButtonKey = "TEST"
@@ -48,6 +48,9 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    let EasyStageNameKeyss = "Easy"
    
+   let RemoConName = RemoteConfgName()
+   let ButtonClorMane = ButtonColorManager()
+   
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -56,52 +59,65 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       CheckIAPInfomation()
       
       InitButton()
+      Inittestbutton()
       
+      InitShowRankingViewButton()
       
       InitConfig()
       SetUpRemoteConfigDefaults()
-      setDisplayLabel()
+      SetEachStageButtonName()
+      SetEachButtonColor()
       FetchConfig()
       
       
       
       
-      Inittestbutton()
       
-      InitShowRankingViewButton()
    }
    
+   //MARK:- Remote ConfigのInitするよ-
+   //MARK: RemoteConfigのdefaultをセットする
    private func SetUpRemoteConfigDefaults() {
       let defaultsValues = [
-         "EasyStageNameKey" : "Easy" as NSObject,
-         "NormalStageNameKey" : "Normal" as NSObject,
-         "HardStageNameKey" : "Hard" as NSObject,
+         RemoConName.EasyStageButtonName : "Easy Stage" as NSObject,
+         RemoConName.NormalStageButtonName : "Normal Stage" as NSObject,
+         RemoConName.HardStageButtonName : "Hard Stage" as NSObject,
          
-         "EasyStageNameKeyss" : "Easy" as NSObject
+         RemoConName.EasyStageButtonColor : "FlatMint" as NSObject,
+         RemoConName.NormalStageButtonColor : "FlatPowerBlue" as NSObject,
+         RemoConName.HardStageButtonColor : "FlatWatermelon" as NSObject,
+         RemoConName.PurchasStageButtonColor : "FlatSand" as NSObject,
+         RemoConName.RestoreStageButtonColor : "FlatSand" as NSObject,
+         RemoConName.ShowRankStageButtonColor : "FlatSand" as NSObject
       ]
       
       self.RemorteConfigs.setDefaults(defaultsValues)
    }
    
+   //MARK: InitConfigする
    private func InitConfig() {
       self.RemorteConfigs = RemoteConfig.remoteConfig()
       
-      //FIXME:- デベロッパモード　出すときはやめろ
-      
+      //MARK: デベロッパモード　出すときはやめろ
+      #if DEBUG
+      print("RemoConデバッグモードでいくとよ。")
       let RemortConfigSetting = RemoteConfigSettings(developerModeEnabled: true)
-      
       self.RemorteConfigs.configSettings = RemortConfigSetting
-      
+      #else
+      print("RemoConリリースモードでいくとよ。")
+      let RemortConfigSetting = RemoteConfigSettings(developerModeEnabled: false)
+      self.RemorteConfigs.configSettings = RemortConfigSetting
+      #endif
       
    }
    
    func FetchConfig() {
-      // フェッチが終わる前まで表示されるメッセージ
       
       
       // ディベロッパーモードの時、expirationDurationを0にして随時更新できるようにする。
-      //let expirationDuration = RemorteConfigs.configSettings.isDeveloperModeEnabled ? 0 : 3600
-      RemorteConfigs.fetch(withExpirationDuration: TimeInterval(0)) { [unowned self] (status, error) -> Void in
+      let expirationDuration = RemorteConfigs.configSettings.isDeveloperModeEnabled ? 0 : 3600
+      print("RemoteConfigのフェッチする間隔： \(expirationDuration)")
+      RemorteConfigs.fetch(withExpirationDuration: TimeInterval(expirationDuration)) { [unowned self] (status, error) -> Void in
          guard error == nil else {
             print("Firebase Config フェッチあかん買った")
             print("Error: \(error?.localizedDescription ?? "No error available.")")
@@ -110,18 +126,37 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
          
          print("フェッチできたよ　クラウドからーー")
          self.RemorteConfigs.activateFetched()
-         self.setDisplayLabel()
+         self.SetEachStageButtonName()
+         self.SetEachButtonColor()
       }
    }
    
-   func setDisplayLabel() {
-      print("れもこん1 \(String(describing: RemorteConfigs["EasyStageNameKeyss"].stringValue))")
-      print("れもこん2 \(String(describing: RemorteConfigs["NormalStageNameKey"].stringValue))")
-      print("れもこん3 \(String(describing: RemorteConfigs["HardStageNameKey"].stringValue))")
+   func SetEachStageButtonName() {
+      print("れもこん1 \(String(describing: RemorteConfigs[RemoConName.EasyStageButtonName].stringValue))")
+      print("れもこん2 \(String(describing: RemorteConfigs[RemoConName.NormalStageButtonName].stringValue))")
+      print("れもこん3 \(String(describing: RemorteConfigs[RemoConName.HardStageButtonName].stringValue))")
       
-      EasyButton.setTitle(RemorteConfigs["EasyStageNameKeyss"].stringValue, for: .normal)
-      NormalButton.setTitle(RemorteConfigs["NormalStageNameKey"].stringValue, for: .normal)
-      HardButton.setTitle(RemorteConfigs["HardStageNameKey"].stringValue, for: .normal)
+      EasyButton.setTitle(RemorteConfigs[RemoConName.EasyStageButtonName].stringValue, for: .normal)
+      NormalButton.setTitle(RemorteConfigs[RemoConName.NormalStageButtonName].stringValue, for: .normal)
+      HardButton.setTitle(RemorteConfigs[RemoConName.HardStageButtonName].stringValue, for: .normal)
+   }
+   
+   private func SetEachButtonColor() {
+      EasyButton.buttonColor = ButtonClorMane.GetButtonFlatColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.EasyStageButtonColor].stringValue!)
+      NormalButton.buttonColor = ButtonClorMane.GetButtonFlatColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.NormalStageButtonColor].stringValue!)
+      HardButton.buttonColor = ButtonClorMane.GetButtonFlatColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.HardStageButtonColor].stringValue!)
+      
+      PurchasButton!.buttonColor = ButtonClorMane.GetButtonFlatColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.PurchasStageButtonColor].stringValue!)
+      RestoreButton!.buttonColor = ButtonClorMane.GetButtonFlatColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.RestoreStageButtonColor].stringValue!)
+      ShowRankingViewButton!.buttonColor = ButtonClorMane.GetButtonFlatColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.ShowRankStageButtonColor].stringValue!)
+      
+      EasyButton.shadowColor = ButtonClorMane.GetButtonFlatShadowColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.EasyStageButtonColor].stringValue!)
+      NormalButton.shadowColor = ButtonClorMane.GetButtonFlatShadowColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.NormalStageButtonColor].stringValue!)
+      HardButton.shadowColor = ButtonClorMane.GetButtonFlatShadowColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.HardStageButtonColor].stringValue!)
+      
+      PurchasButton!.shadowColor = ButtonClorMane.GetButtonFlatShadowColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.PurchasStageButtonColor].stringValue!)
+      RestoreButton!.shadowColor = ButtonClorMane.GetButtonFlatShadowColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.RestoreStageButtonColor].stringValue!)
+      ShowRankingViewButton!.shadowColor = ButtonClorMane.GetButtonFlatShadowColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.ShowRankStageButtonColor].stringValue!)
    }
    
    
@@ -154,17 +189,17 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    //ボタンの初期化
    //FIXME:- testbuttonはひどいよ
    func Inittestbutton() {
-      testbutton = FUIButton(frame: CGRect(x: 20, y: 20, width: 100, height: 100))
-      testbutton?.setTitle("Purchas", for: .normal)
-      testbutton?.addTarget(self, action: #selector(self.tapparchas), for: .touchUpInside)
-      SetUpHomeEachSmallButton(sender: testbutton!)
-      self.view.addSubview(testbutton!)
+      PurchasButton = FUIButton(frame: CGRect(x: 20, y: 20, width: 100, height: 100))
+      PurchasButton?.setTitle("Purchas", for: .normal)
+      PurchasButton?.addTarget(self, action: #selector(self.tapparchas), for: .touchUpInside)
+      SetUpHomeEachSmallButton(sender: PurchasButton!)
+      self.view.addSubview(PurchasButton!)
       
-      testbuttonRes = FUIButton(frame: CGRect(x: 140, y: 20, width: 100, height: 100))
-      testbuttonRes?.setTitle("restore", for: .normal)
-      testbuttonRes?.addTarget(self, action: #selector(self.restore), for: .touchUpInside)
-      SetUpHomeEachSmallButton(sender: testbuttonRes!)
-      self.view.addSubview(testbuttonRes!)
+      RestoreButton = FUIButton(frame: CGRect(x: 140, y: 20, width: 100, height: 100))
+      RestoreButton?.setTitle("restore", for: .normal)
+      RestoreButton?.addTarget(self, action: #selector(self.restore), for: .touchUpInside)
+      SetUpHomeEachSmallButton(sender: RestoreButton!)
+      self.view.addSubview(RestoreButton!)
    }
    
    private func InitShowRankingViewButton() {
@@ -249,6 +284,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    
    @objc func tapparchas(sender: UIButton) {
+      Analytics.logEvent("TapParchasHomeView", parameters: nil)
       purchase(PRODUCT_ID: IAP_PRO_ID)
    }
    
@@ -328,6 +364,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    //MARK:- スコアボードビューの表示
    @objc func ShowRankingView() {
+      Analytics.logEvent("ShowGameCenter", parameters: nil)
       let gcView = GKGameCenterViewController()
       gcView.gameCenterDelegate = self
       gcView.viewState = GKGameCenterViewControllerState.leaderboards

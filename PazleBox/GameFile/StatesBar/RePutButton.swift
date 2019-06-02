@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SpriteKit
 import TapticEngine
+import Firebase
 
 class RePutButton : SKSpriteNode {
    
@@ -78,6 +79,7 @@ class RePutButton : SKSpriteNode {
          }
          Play3DtouchLight()
          PostNotificationRePut()
+         Analytics.logEvent("TapRePutNode", parameters: nil)
          return
       }else{
          print("タッチ離したあと、Nilでした。")

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SpriteKit
 import SpriteKitEasingSwift
+import Firebase
 
 class HintNode : SKSpriteNode {
    
@@ -20,6 +21,7 @@ class HintNode : SKSpriteNode {
    private var AreYouLarge: Bool = false
    
    private var LockedLastHint = true
+   private var LockedFirstHint = true
    
    private var isLocked = false
    
@@ -186,6 +188,7 @@ class HintNode : SKSpriteNode {
             return
          }
          NotificationSentOrNot()
+         Analytics.logEvent("TapHintNode", parameters: nil)
          return
       }else{
          print("タッチ離したあと、Nilでした。")

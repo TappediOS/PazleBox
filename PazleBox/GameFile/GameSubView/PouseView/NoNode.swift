@@ -11,6 +11,7 @@ import UIKit
 import SpriteKit
 import ChameleonFramework
 import TapticEngine
+import Firebase
 
 class NoNode : SKSpriteNode {
    
@@ -51,6 +52,7 @@ class NoNode : SKSpriteNode {
    
    
    private func PostNotificationPouse() {
+      Analytics.logEvent("TapNoNode", parameters: nil)
       NotificationCenter.default.post(name: .AdNoWatch, object: nil, userInfo: nil)
    }
    
