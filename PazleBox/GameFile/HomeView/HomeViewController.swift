@@ -52,6 +52,8 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    let ButtonClorMane = ButtonColorManager()
    
    
+   var LockPurchasButton = false
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       self.view.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
@@ -227,7 +229,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       let ComleateView = SCLAlertView(appearance: Appearanse)
       ComleateView.addButton("OK"){
          print("tap")
-         
+         self.LockPurchasButton = false
       }
       ComleateView.showSuccess(NSLocalizedString("Passed.", comment: ""), subTitle: "Purchase complete")
    }
@@ -250,6 +252,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
          case .error(_):
             //購入失敗
             print("purchaseエラー")
+            self.LockPurchasButton = false
          }
       }
    }
@@ -268,14 +271,17 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
 //
 //               print("購入フラグを　\(defaults.bool(forKey: "BuyRemoveAd"))　に変更しました")
                 print("購入の検証 成功")
+               self.LockPurchasButton = false
                
             case .notPurchased:
                //リストアの失敗
                print("購入の検証 失敗")
+               self.LockPurchasButton = false
             }
          case .error:
             //エラー
             print("verifyPurchaseエラー")
+            self.LockPurchasButton = false
             
          }
       }
@@ -284,6 +290,12 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    
    @objc func tapparchas(sender: UIButton) {
+      
+      if LockPurchasButton == true {
+         return
+      }
+      
+      LockPurchasButton = true
       Analytics.logEvent("TapParchasHomeView", parameters: nil)
       purchase(PRODUCT_ID: IAP_PRO_ID)
    }
