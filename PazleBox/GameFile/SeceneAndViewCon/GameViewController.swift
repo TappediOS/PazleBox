@@ -395,6 +395,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          }catch{  print("\n\n-----------------ream 保存失敗------------------\n\n") }
       }
       return true
+      
    }
    
    private func SaveNormalStage(CountOfUsedHint: Int)-> Bool {
