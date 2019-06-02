@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SpriteKit
 import TapticEngine
+import Firebase
 
 class PouseNode : SKSpriteNode {
    
@@ -44,6 +45,7 @@ class PouseNode : SKSpriteNode {
    }
    
    private func PostNotificationPouse() {
+      Analytics.logEvent("TapPouseNode", parameters: nil)
       NotificationCenter.default.post(name: .Pouse, object: nil, userInfo: nil)
    }
    

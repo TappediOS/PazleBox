@@ -12,6 +12,7 @@ import UIKit
 import SAConfettiView
 import AudioToolbox
 import FlatUIKit
+import Firebase
 
 
 class GameScene: SKScene {
@@ -55,6 +56,12 @@ class GameScene: SKScene {
       //ビューの長さを取得
       let ViewSizeX = self.scene?.frame.width
       let ViewSizeY = self.scene?.frame.height
+      
+      
+      //MARK:- ココのトレースは，FirebaseがConfigurしてないとクラッシュする
+      print("初期化開始")
+      //let InitTimePeformance = Performance.startTrace(name: "InitGameSeceneTime")
+      
 
       InitBackGroundColor()
       
@@ -82,6 +89,10 @@ class GameScene: SKScene {
       CrearCheckedStage()
       
       InitNotification()
+      
+      //MARK:- ココのトレースは，FirebaseがConfigurしてないとクラッシュする
+      print("初期化終わり")
+      //InitTimePeformance?.stop()
       
       
       
@@ -834,6 +845,9 @@ class GameScene: SKScene {
    }
    
    private func SetHint1() {
+      
+      Analytics.logEvent("ShowHint1", parameters: nil)
+      
       let Hint = HintPuzzleBox[1] as! HintPuzzle
      
       self.addChild(Hint)
@@ -842,6 +856,9 @@ class GameScene: SKScene {
    }
    
    private func SetHint2() {
+      
+      Analytics.logEvent("ShowHint2", parameters: nil)
+      
       let Hint = HintPuzzleBox[0] as! HintPuzzle
       
       self.addChild(Hint)

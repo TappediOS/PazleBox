@@ -40,6 +40,7 @@ class StageSellectButton: FUIButton {
       setTitle("Stage\(Tag)", for: UIControl.State.normal)
       buttonColor = UIColor.greenSea()
       shadowColor = UIColor.greenSea()
+      titleLabel?.adjustsFontSizeToFitWidth = true
       shadowHeight = 3.0
       cornerRadius = 6.0
       titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)

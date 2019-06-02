@@ -635,6 +635,10 @@
 		BFF6D79E22952C22000253A2 /* NotSellectReview.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D79C22952C22000253A2 /* NotSellectReview.png */; };
 		BFF6D79F22952C22000253A2 /* SellectReview.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D79D22952C22000253A2 /* SellectReview.png */; };
 		BFF6D7A32297B695000253A2 /* ManageLeaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF6D7A22297B695000253A2 /* ManageLeaderboard.swift */; };
+		BFF889A3229F830C0056A839 /* FirebasePerformanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF889A2229F830C0056A839 /* FirebasePerformanceManager.swift */; };
+		BFF889A5229FC0CA0056A839 /* RemotConfigManagerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF889A4229FC0CA0056A839 /* RemotConfigManagerHomeView.swift */; };
+		BFF889A7229FC86A0056A839 /* ButtonColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF889A6229FC86A0056A839 /* ButtonColorManager.swift */; };
+		BFF889A922A39A5A0056A839 /* NoAdsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF889A822A39A5A0056A839 /* NoAdsButton.swift */; };
 		BFFA2A7B22336D760023BB71 /* SpriteKitEasingSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */; };
 		BFFA2A81223380720023BB71 /* EasyGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A80223380720023BB71 /* EasyGet.swift */; };
 		BFFA2A86223383B60023BB71 /* Normal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA2A85223383B60023BB71 /* Normal.swift */; };
@@ -1282,6 +1286,10 @@
 		BFF6D79C22952C22000253A2 /* NotSellectReview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotSellectReview.png; sourceTree = "<group>"; };
 		BFF6D79D22952C22000253A2 /* SellectReview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SellectReview.png; sourceTree = "<group>"; };
 		BFF6D7A22297B695000253A2 /* ManageLeaderboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageLeaderboard.swift; sourceTree = "<group>"; };
+		BFF889A2229F830C0056A839 /* FirebasePerformanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebasePerformanceManager.swift; sourceTree = "<group>"; };
+		BFF889A4229FC0CA0056A839 /* RemotConfigManagerHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotConfigManagerHomeView.swift; sourceTree = "<group>"; };
+		BFF889A6229FC86A0056A839 /* ButtonColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonColorManager.swift; sourceTree = "<group>"; };
+		BFF889A822A39A5A0056A839 /* NoAdsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAdsButton.swift; sourceTree = "<group>"; };
 		BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpriteKitEasingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA2A7C22336D760023BB71 /* TapticEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TapticEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA2A80223380720023BB71 /* EasyGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyGet.swift; sourceTree = "<group>"; };
@@ -1656,6 +1664,8 @@
 			isa = PBXGroup;
 			children = (
 				BF640C0C224513DF00333782 /* HomeViewController.swift */,
+				BFF889A6229FC86A0056A839 /* ButtonColorManager.swift */,
+				BFF889A4229FC0CA0056A839 /* RemotConfigManagerHomeView.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -2254,6 +2264,7 @@
 			children = (
 				BFFB3AD42250F5E7000C90E1 /* GameClearView.swift */,
 				BFF6D79A229527C6000253A2 /* ReviewView.swift */,
+				BFF889A822A39A5A0056A839 /* NoAdsButton.swift */,
 				BFF6D79C22952C22000253A2 /* NotSellectReview.png */,
 				BFF6D79D22952C22000253A2 /* SellectReview.png */,
 			);
@@ -2264,6 +2275,7 @@
 			isa = PBXGroup;
 			children = (
 				BFF6D7A22297B695000253A2 /* ManageLeaderboard.swift */,
+				BFF889A2229F830C0056A839 /* FirebasePerformanceManager.swift */,
 			);
 			path = ManageLeaderBoards;
 			sourceTree = "<group>";
@@ -3000,6 +3012,7 @@
 				BF552F38226DDF2D00756E16 /* H47.swift in Sources */,
 				BF332FEA2249280A009B3042 /* H10.swift in Sources */,
 				BF552ECE226DDDAC00756E16 /* N25.swift in Sources */,
+				BFF889A3229F830C0056A839 /* FirebasePerformanceManager.swift in Sources */,
 				BF332FC6224927B1009B3042 /* N12.swift in Sources */,
 				BF332FDC224927EF009B3042 /* H3.swift in Sources */,
 				BF552EBE226DDD6B00756E16 /* E46.swift in Sources */,
@@ -3110,9 +3123,12 @@
 				BF552EBA226DDD6100756E16 /* E44.swift in Sources */,
 				BF552F36226DDF1C00756E16 /* H46.swift in Sources */,
 				BF552EC4226DDD7B00756E16 /* E49.swift in Sources */,
+				BFF889A7229FC86A0056A839 /* ButtonColorManager.swift in Sources */,
 				BF332FF222492827009B3042 /* H13.swift in Sources */,
 				BF552E9A226DDD1400756E16 /* E28.swift in Sources */,
+				BFF889A5229FC0CA0056A839 /* RemotConfigManagerHomeView.swift in Sources */,
 				BF552F0A226DDE9400756E16 /* H24.swift in Sources */,
+				BFF889A922A39A5A0056A839 /* NoAdsButton.swift in Sources */,
 				BF1BD1EC2279C4060047496B /* NormalStageClearInfomation.swift in Sources */,
 				BF332FFA2249283C009B3042 /* H17.swift in Sources */,
 				BF332FB022492766009B3042 /* N1.swift in Sources */,

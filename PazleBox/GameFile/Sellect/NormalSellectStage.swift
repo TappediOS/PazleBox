@@ -12,6 +12,7 @@ import FlatUIKit
 import TapticEngine
 import RealmSwift
 import SCLAlertView
+import Firebase
 
 class SellectStageNormal: UIScrollView {
    
@@ -172,6 +173,8 @@ class SellectStageNormal: UIScrollView {
    //MARK:- 通知を送る関数
    private func GameSerPOSTMotification(StageNum: Int) {
       
+      Analytics.logEvent("PlayNormalStage", parameters: nil)
+      
       let SentObject: [String : Any] = ["StageNum": StageNum as Int]
       
       print("")
@@ -179,6 +182,7 @@ class SellectStageNormal: UIScrollView {
    }
    
    private func GameSellectBackPOSTMotification() {
+      Analytics.logEvent("BackSellectNormal", parameters: nil)
       NotificationCenter.default.post(name: .SellectBack, object: nil, userInfo: nil)
    }
    

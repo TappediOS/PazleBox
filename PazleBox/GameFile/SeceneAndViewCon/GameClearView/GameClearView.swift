@@ -47,6 +47,11 @@ class GameClearView: UIView, GADBannerViewDelegate {
    var ViewW: CGFloat = 0
    var ViewH: CGFloat = 0
    
+   //FoundViewWはVuewW / 8
+   //FoundViewWは (VuewH - 55) / 8
+   var FoundViewW: CGFloat = 0
+   var FoundViewH: CGFloat = 0
+   
    var GameClearLabel: UILabel?
    var CountOfNextADLabel : UILabel?
    
@@ -61,6 +66,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
    
    var ReviewedView: ReviewView?
    
+   var NoAdButton: NoAdsButton?
    
    override init(frame: CGRect) {
       super.init(frame: frame)
@@ -76,10 +82,14 @@ class GameClearView: UIView, GADBannerViewDelegate {
       ViewW = frame.width
       ViewH = frame.height
       
+      FoundViewH = (ViewH - 55) / 8
+      FoundViewW = ViewW / 8
+      
       InitReviewView(frame: frame)
       
       IniiNextButton(frame: frame)
       InitGoHomeButton(frame: frame)
+      InitNoAdsButton(frame: frame)
       
       InitStarView1()
       InitStarView2()
@@ -105,7 +115,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    private func InitReviewView(frame: CGRect) {
-      let ReviewViewFrame = CGRect(x: 0, y: frame.height / 2 - 70, width: frame.width, height: frame.height / 9)
+      let ReviewViewFrame = CGRect(x: FoundViewW, y: FoundViewH * 3 + FoundViewH / 2, width: FoundViewW * 6, height: FoundViewH * 2)
       
       self.ReviewedView = ReviewView(frame: ReviewViewFrame)
       
@@ -125,7 +135,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
    private func InitGameClearLabel() {
       
       let StartX = ViewW / 16
-      let StartY = ViewH / 5 * 2 - StarViewWide
+      let StartY = ViewH / 5 * 2 - StarViewWide - 5
       
       let LabelW = ViewW / 8 * 7
       let LabelH = StarViewWide * 1.2
@@ -134,7 +144,8 @@ class GameClearView: UIView, GADBannerViewDelegate {
       
       GameClearLabel = UILabel(frame: Frame)
       GameClearLabel?.text = "Clear"
-      GameClearLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 55)
+      GameClearLabel?.textColor = UIColor.flatBlack()
+      GameClearLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 48)
       GameClearLabel?.textAlignment = .center
       GameClearLabel?.adjustsFontSizeToFitWidth = true
       GameClearLabel?.adjustsFontForContentSizeCategory = true
@@ -143,11 +154,11 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    private func InitCountOfNextADLabel() {
-      let StartX = ViewW / 8
-      let StartY = ViewH / 8 * 4
+      let StartX = FoundViewW * 2
+      let StartY = FoundViewH * 5
       
-      let LabelW = ViewW / 4 * 3
-      let LabelH = ViewH / 16
+      let LabelW = FoundViewW * 4
+      let LabelH = FoundViewH / 2
       
       let Frame = CGRect(x: StartX, y: StartY, width: LabelW, height: LabelH)
       
@@ -158,6 +169,10 @@ class GameClearView: UIView, GADBannerViewDelegate {
       CountOfNextADLabel?.textAlignment = .center
       CountOfNextADLabel?.adjustsFontSizeToFitWidth = true
       CountOfNextADLabel?.adjustsFontForContentSizeCategory = true
+      
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == true{
+         CountOfNextADLabel?.text = "Ad NOT Flow!"
+      }
       
       self.addSubview(CountOfNextADLabel!)
    }
@@ -206,11 +221,20 @@ class GameClearView: UIView, GADBannerViewDelegate {
    
    private func IniiNextButton(frame: CGRect) {
       
-      let StartX = ViewW / 8
-      let StartY = ViewH / 8 * 4 + ViewH / 16
       
-      let ButtonW = ViewW / 4 * 3
-      let ButtonH = ViewH / 8
+      let StartY = FoundViewH * 6
+      let ButtonH = FoundViewH
+      
+      var StartX: CGFloat = 0
+      var ButtonW: CGFloat = 0
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false{
+         ButtonW = ViewW / 4
+         StartX = ViewW / 16
+      }else{
+         ButtonW = FoundViewW * 3
+         StartX = ViewW / 16
+      }
+      
       
       let Frame = CGRect(x: StartX, y: StartY, width: ButtonW, height: ButtonH)
       
@@ -222,6 +246,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
       NextButton!.shadowColor = UIColor.greenSea()
       NextButton!.shadowHeight = 3.0
       NextButton!.cornerRadius = 6.0
+      NextButton!.titleLabel?.adjustsFontSizeToFitWidth = true
       NextButton!.titleLabel?.font = UIFont.boldFlatFont(ofSize: 50)
       NextButton!.titleLabel?.adjustsFontSizeToFitWidth = true
       NextButton!.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
@@ -233,12 +258,19 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    private func InitGoHomeButton(frame: CGRect) {
-      let StartX = ViewW / 8
-      let StartY = ViewH / 8 * 6
+      var StartX: CGFloat = 0
+      let StartY = FoundViewH * 6
       
+      var ButtonW: CGFloat = 0
+      let ButtonH = FoundViewH
       
-      let ButtonW = ViewW / 4 * 3
-      let ButtonH = ViewH / 8
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false{
+         ButtonW = ViewW / 4
+         StartX = ViewW / 16 + ViewW / 4 + ViewW / 16
+      }else{
+         ButtonW = FoundViewW * 3
+         StartX = FoundViewW * 4.5
+      }
       
       let Frame = CGRect(x: StartX, y: StartY, width: ButtonW, height: ButtonH)
       
@@ -250,12 +282,31 @@ class GameClearView: UIView, GADBannerViewDelegate {
       GoHomeButton!.shadowColor = UIColor.greenSea()
       GoHomeButton!.shadowHeight = 3.0
       GoHomeButton!.cornerRadius = 6.0
+      GoHomeButton!.titleLabel?.adjustsFontSizeToFitWidth = true
       GoHomeButton!.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
       GoHomeButton!.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       GoHomeButton!.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
       GoHomeButton!.addTarget(self, action: #selector(self.TapGoHomeButton(_:)), for: UIControl.Event.touchUpInside)
       
       self.addSubview(GoHomeButton!)
+   }
+   
+   private func InitNoAdsButton(frame: CGRect) {
+      
+      guard UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false else{
+         return
+      }
+      
+      let StartX = ViewW / 16 + ViewW / 4 + ViewW / 16 + ViewW / 4 + ViewW / 16
+      let StartY = FoundViewH * 6
+      
+      let ButtonW = ViewW / 4
+      let ButtonH = FoundViewH
+      
+      let Frame = CGRect(x: StartX, y: StartY, width: ButtonW, height: ButtonH)
+      
+      NoAdButton = NoAdsButton(frame: Frame)
+      self.addSubview(NoAdButton!)
    }
    
    private func InitConfeView1() {
@@ -399,12 +450,14 @@ class GameClearView: UIView, GADBannerViewDelegate {
    @objc func TapNextButton (_ sender: UIButton) {
       print("Tap NextButton")
       Play3DtouchMedium()
+      Analytics.logEvent("TapNextGameButton", parameters: nil)
       NotificationCenter.default.post(name: .TapNext, object: nil, userInfo: nil)
    }
    
    @objc func TapGoHomeButton (_ sender: UIButton) {
       print("Tap GoHomeButton")
       Play3DtouchMedium()
+      Analytics.logEvent("TapGoHomeInClearView", parameters: nil)
       NotificationCenter.default.post(name: .TapHome, object: nil, userInfo: nil)
    }
    
