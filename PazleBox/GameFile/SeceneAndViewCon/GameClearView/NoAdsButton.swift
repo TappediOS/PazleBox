@@ -12,13 +12,13 @@ import SwiftyStoreKit
 import SCLAlertView
 import Firebase
 
-
-
 class NoAdsButton: FUIButton {
    
    //この2つは課金で使う
    private let IAP_PRO_ID = "NO_ADS"
    private let SECRET_CODE = "c8bf5f01b42f4f80ad32ffd00349d92d"
+   
+   var LockPurchasButton = false
    
    override init(frame: CGRect) {
       super.init(frame: frame)
@@ -65,12 +65,14 @@ class NoAdsButton: FUIButton {
             print("購入成功！")
             print("購入フラグを　\(defaults.bool(forKey: "BuyRemoveAd"))　に変更しました")
             self.CompleateBuyRemoveADS()
+            self.LockPurchasButton = true
             
             //購入の検証
             self.verifyPurchase(PRODUCT_ID: PRODUCT_ID)
          case .error(_):
             //購入失敗
             print("purchaseエラー")
+            self.LockPurchasButton = true
          }
       }
    }
@@ -120,6 +122,11 @@ class NoAdsButton: FUIButton {
    
    
    @objc func TapNoAdsButton(_ sender: FUIButton) {
+      
+      if LockPurchasButton == true { return }
+      
+      self.LockPurchasButton = true
+      
        Analytics.logEvent("TapNoAdsInClearView", parameters: nil)
        purchase(PRODUCT_ID: IAP_PRO_ID)
    }
