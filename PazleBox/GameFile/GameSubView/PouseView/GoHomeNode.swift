@@ -19,7 +19,7 @@ class GoHomeNode : SKSpriteNode {
    
    private var isLocked = false
    
-   private let NodeText: SKLabelNode = SKLabelNode(text: "GoHome")
+   private let NodeText: SKLabelNode = SKLabelNode(text: NSLocalizedString("Home", comment: ""))
    
    
    init(ViewX: Int, ViewY: Int, StartX: Int, StartY: Int) {

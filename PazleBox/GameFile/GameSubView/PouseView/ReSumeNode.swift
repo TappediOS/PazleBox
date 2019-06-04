@@ -19,7 +19,7 @@ class ReSumeNode : SKSpriteNode {
    
    private var isLocked = false
    
-   private let NodeText: SKLabelNode = SKLabelNode(text: "Resume")
+   private let NodeText: SKLabelNode = SKLabelNode(text: NSLocalizedString("Continue", comment: ""))
    
    
    init(ViewX: Int, ViewY: Int, StartX: Int, StartY: Int) {

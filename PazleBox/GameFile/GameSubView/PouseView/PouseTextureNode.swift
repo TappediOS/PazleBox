@@ -17,7 +17,7 @@ class PouseTextNode: SKLabelNode {
    init(StartX: Int, StartY: Int) {
       super.init()
       
-      self.text = "Pouse"
+      self.text = NSLocalizedString("Pouse", comment: "")
       
       self.fontSize = 100
       self.fontName = "Helvetica"

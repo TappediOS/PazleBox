@@ -23,20 +23,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
       //--------------------FIREBASE-----------------------//
-      #if DEBUG
+//      #if DEBUG
+//      let fileName = "GoogleService-Info"
+//      print("テスト環境")
+//      #else
+//      let fileName = "GoogleService-Info"
+//      print("本番のfirebaseにアクセス")
+//
+//      let filePath = Bundle.main.path(forResource: fileName, ofType: "plist")
+//      let fileopts = FirebaseOptions(contentsOfFile: filePath!)
+//
+//      FirebaseApp.configure(options: fileopts!)
+//      #endif
+      
       let fileName = "GoogleService-Info"
-      print("テスト環境")
-      #else
-      let fileName = "GoogleService-Info"
-      print("本番のfirebaseにアクセス")
       
-      let filePath = Bundle.main.path(forResource: fileName, ofType: "plist")
-      let fileopts = FirebaseOptions(contentsOfFile: filePath!)
-      
-      FirebaseApp.configure(options: fileopts!)
-      #endif
-      
-
       print("本番のfirebaseにアクセス")
 
       let filePath = Bundle.main.path(forResource: fileName, ofType: "plist")
@@ -95,16 +96,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if player.isAuthenticated {
                //geme center login
                print("ゲームセンターの認証完了")
+               Analytics.logEvent("LoginGameCenter", parameters: nil)
                
             } else if viewController != nil {
                //game center not login. login page open
                print("ゲームセンターにログインしていません。ログインページを表示します。")
+               Analytics.logEvent("UserDontLoginGCenter", parameters: nil)
                rootView.present(viewController!, animated: true, completion: nil)
                
             } else {
                if error != nil {
                   //game center login error
                   print("ゲームセンターのログインでエラーが発生しました")
+                  Analytics.logEvent("LoginGameCenterError", parameters: nil)
                }
             }
          }

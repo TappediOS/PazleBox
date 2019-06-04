@@ -31,6 +31,9 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    var RestoreButton: FUIButton?
    
    var ShowRankingViewButton: FUIButton?
+   
+   var ContactusButton: FUIButton?
+   
    let ButtonKey = "TEST"
    
    //この2つは課金で使う
@@ -51,6 +54,12 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    let RemoConName = RemoteConfgName()
    let ButtonClorMane = ButtonColorManager()
    
+   var ViewW: CGFloat = 0
+   var ViewH: CGFloat = 0
+   var FViewW: CGFloat = 0
+   var FViewH: CGFloat = 0
+   
+   var TitleLabel: UILabel?
    
    var LockPurchasButton = false
    
@@ -58,10 +67,21 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       super.viewDidLoad()
       self.view.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
       
+      ViewW = self.view.frame.width
+      ViewH = self.view.frame.height
+      
+      FViewW = ViewW / 25
+      FViewH = ViewH / 32
+      
       CheckIAPInfomation()
+      
+      
+      
+      InitTitleLabel()
       
       InitButton()
       Inittestbutton()
+      InitContactusButton()
       
       InitShowRankingViewButton()
       
@@ -69,12 +89,25 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       SetUpRemoteConfigDefaults()
       SetEachStageButtonName()
       SetEachButtonColor()
+      SetTitileLabelText()
       FetchConfig()
       
       
       
       
       
+   }
+   
+   private func InitTitleLabel() {
+      
+      TitleLabel = UILabel(frame: CGRect(x: FViewW * 6, y: FViewH * 3, width: FViewW * 13, height: FViewH * 3))
+      TitleLabel!.text = "Relaxing puzzle"
+      TitleLabel!.font = UIFont(name: "HiraMaruProN-W4", size: 50)
+      TitleLabel!.adjustsFontSizeToFitWidth = true
+      TitleLabel!.adjustsFontForContentSizeCategory = true
+      TitleLabel!.minimumScaleFactor = 0.3
+      TitleLabel!.textAlignment = NSTextAlignment.center
+      self.view.addSubview(TitleLabel!)
    }
    
    //MARK:- Remote ConfigのInitするよ-
@@ -88,9 +121,12 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
          RemoConName.EasyStageButtonColor : "FlatMint" as NSObject,
          RemoConName.NormalStageButtonColor : "FlatPowerBlue" as NSObject,
          RemoConName.HardStageButtonColor : "FlatWatermelon" as NSObject,
-         RemoConName.PurchasStageButtonColor : "FlatSand" as NSObject,
-         RemoConName.RestoreStageButtonColor : "FlatSand" as NSObject,
-         RemoConName.ShowRankStageButtonColor : "FlatSand" as NSObject
+         RemoConName.PurchasStageButtonColor : "FlatCoffee" as NSObject,
+         RemoConName.RestoreStageButtonColor : "FlatCoffee" as NSObject,
+         RemoConName.ShowRankStageButtonColor : "FlatCoffee" as NSObject,
+         RemoConName.ContactUsButtonColor : "FlatCoffee" as NSObject,
+         
+         RemoConName.TitileLabelText: "Relaxing puzzle" as NSObject
       ]
       
       self.RemorteConfigs.setDefaults(defaultsValues)
@@ -151,6 +187,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       PurchasButton!.buttonColor = ButtonClorMane.GetButtonFlatColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.PurchasStageButtonColor].stringValue!)
       RestoreButton!.buttonColor = ButtonClorMane.GetButtonFlatColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.RestoreStageButtonColor].stringValue!)
       ShowRankingViewButton!.buttonColor = ButtonClorMane.GetButtonFlatColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.ShowRankStageButtonColor].stringValue!)
+      ContactusButton!.buttonColor = ButtonClorMane.GetButtonFlatColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.ContactUsButtonColor].stringValue!)
       
       EasyButton.shadowColor = ButtonClorMane.GetButtonFlatShadowColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.EasyStageButtonColor].stringValue!)
       NormalButton.shadowColor = ButtonClorMane.GetButtonFlatShadowColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.NormalStageButtonColor].stringValue!)
@@ -159,8 +196,12 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       PurchasButton!.shadowColor = ButtonClorMane.GetButtonFlatShadowColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.PurchasStageButtonColor].stringValue!)
       RestoreButton!.shadowColor = ButtonClorMane.GetButtonFlatShadowColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.RestoreStageButtonColor].stringValue!)
       ShowRankingViewButton!.shadowColor = ButtonClorMane.GetButtonFlatShadowColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.ShowRankStageButtonColor].stringValue!)
+      ContactusButton!.shadowColor = ButtonClorMane.GetButtonFlatShadowColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.ContactUsButtonColor].stringValue!)
    }
    
+   private func SetTitileLabelText() {
+      TitleLabel!.text = RemorteConfigs[RemoConName.TitileLabelText].stringValue!
+   }
    
    //課金する商品情報を取得する
    func  CheckIAPInfomation() {
@@ -179,6 +220,8 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    }
    
    private func SetUpHomeEachSmallButton(sender: FUIButton) {
+      sender.titleLabel?.adjustsFontSizeToFitWidth = true
+      sender.titleLabel?.adjustsFontForContentSizeCategory = true
       sender.buttonColor = UIColor.turquoise()
       sender.shadowColor = UIColor.greenSea()
       sender.shadowHeight = 3.0
@@ -191,25 +234,52 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    //ボタンの初期化
    //FIXME:- testbuttonはひどいよ
    func Inittestbutton() {
-      PurchasButton = FUIButton(frame: CGRect(x: 20, y: 20, width: 100, height: 100))
-      PurchasButton?.setTitle("Purchas", for: .normal)
+      
+      
+      PurchasButton = FUIButton(frame: CGRect(x: FViewW * 13, y: FViewH * 25, width: FViewW * 5, height: FViewH * 3))
+      PurchasButton?.setTitle(NSLocalizedString("No Ads", comment: ""), for: .normal)
       PurchasButton?.addTarget(self, action: #selector(self.tapparchas), for: .touchUpInside)
       SetUpHomeEachSmallButton(sender: PurchasButton!)
       self.view.addSubview(PurchasButton!)
       
-      RestoreButton = FUIButton(frame: CGRect(x: 140, y: 20, width: 100, height: 100))
-      RestoreButton?.setTitle("restore", for: .normal)
+      RestoreButton = FUIButton(frame: CGRect(x: FViewW * 19, y: FViewH * 25, width: FViewW * 5, height: FViewH * 3))
+      RestoreButton?.setTitle(NSLocalizedString("Restore", comment: ""), for: .normal)
       RestoreButton?.addTarget(self, action: #selector(self.restore), for: .touchUpInside)
       SetUpHomeEachSmallButton(sender: RestoreButton!)
       self.view.addSubview(RestoreButton!)
    }
    
    private func InitShowRankingViewButton() {
-      ShowRankingViewButton = FUIButton(frame: CGRect(x: 20, y: 140, width: 100, height: 100))
-      ShowRankingViewButton?.setTitle("show rank", for: .normal)
+      ShowRankingViewButton = FUIButton(frame: CGRect(x: FViewW * 1, y: FViewH * 25, width: FViewW * 5, height: FViewH * 3))
+      ShowRankingViewButton?.setTitle(NSLocalizedString("Ranking", comment: ""), for: .normal)
       ShowRankingViewButton?.addTarget(self, action: #selector(self.ShowRankingView), for: .touchUpInside)
       SetUpHomeEachSmallButton(sender: ShowRankingViewButton!)
       self.view.addSubview(ShowRankingViewButton!)
+   }
+   
+   private func InitContactusButton() {
+      ContactusButton = FUIButton(frame: CGRect(x: FViewW * 7, y: FViewH * 25, width: FViewW * 5, height: FViewH * 3))
+      ContactusButton?.setTitle(NSLocalizedString("Contact us", comment: ""), for: .normal)
+      ContactusButton?.addTarget(self, action: #selector(self.ContactUs), for: .touchUpInside)
+      SetUpHomeEachSmallButton(sender: ContactusButton!)
+      self.view.addSubview(ContactusButton!)
+   }
+   
+   @objc func ContactUs() {
+      let url = URL(string: "https://forms.gle/mSEq7WwDz3fZNcqF6")
+      if let OpenURL = url {
+         if UIApplication.shared.canOpenURL(OpenURL){
+            Analytics.logEvent("OpenContactUsURL", parameters: nil)
+            UIApplication.shared.open(OpenURL)
+         }else{
+            Analytics.logEvent("CantOpenURL", parameters: nil)
+            print("URL nil ちゃうのにひらけない")
+         }
+      }else{
+         Analytics.logEvent("CantOpenURLWithNil", parameters: nil)
+         print("URL 開こうとしたらNilやった")
+      }
+      
    }
    
    
@@ -324,6 +394,8 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    //MARK:- FlatUIButtonをセットアップ
    private func SetUpSellectStageButton(sender: FUIButton) {
+      sender.titleLabel?.adjustsFontSizeToFitWidth = true
+      sender.titleLabel?.adjustsFontForContentSizeCategory = true
       sender.buttonColor = UIColor.turquoise()
       sender.shadowColor = UIColor.greenSea()
       sender.shadowHeight = 3.0
@@ -338,6 +410,14 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       SetUpSellectStageButton(sender: EasyButton)
       SetUpSellectStageButton(sender: NormalButton)
       SetUpSellectStageButton(sender: HardButton)
+      
+      SetUpStageButtonPosition()
+   }
+   
+   private func SetUpStageButtonPosition() {
+      EasyButton.frame = CGRect(x: FViewW * 6, y: FViewH * 11, width: FViewW * 12, height: FViewH * 3)
+      NormalButton.frame = CGRect(x: FViewW * 6, y: FViewH * 15, width: FViewW * 12, height: FViewH * 3)
+      HardButton.frame = CGRect(x: FViewW * 6, y: FViewH * 19, width: FViewW * 12, height: FViewH * 3)
    }
    
    

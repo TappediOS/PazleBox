@@ -32,7 +32,7 @@ class NoAdsButton: FUIButton {
    }
    
    private func InitSelf() {
-      self.setTitle("No Ads", for: UIControl.State.normal)
+      self.setTitle(NSLocalizedString("No Ads", comment: ""), for: UIControl.State.normal)
       self.buttonColor = UIColor.turquoise()
       self.shadowColor = UIColor.greenSea()
       self.shadowHeight = 3.0

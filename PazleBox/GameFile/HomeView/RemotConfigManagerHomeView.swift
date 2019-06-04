@@ -22,6 +22,9 @@ struct RemoteConfgName {
    let PurchasStageButtonColor = "PurchasButtonColorKey"
    let RestoreStageButtonColor = "RestoreButtonColorKey"
    let ShowRankStageButtonColor = "ShowRandButtonColorKey"
+   let ContactUsButtonColor = "ContactUsButtonColorKey"
+   
+   let TitileLabelText = "TitileLabelTextKey"
 }
 
 
