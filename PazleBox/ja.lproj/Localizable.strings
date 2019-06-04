@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  PazleBox
+
+  Created by jun on 2019/06/04.
+  Copyright © 2019 jun. All rights reserved.
+*/
+
+"Ranking" = "ランキング";
+"No Ads" = "広告削除";
+"Restore" = "復元";
+
+"Contact us" = "問い合わせ";
+
+"Pouse" = "Pouse";
+"Continue" = "つづける";
+"Home" = "Home";
+
+"WathcAdAnd" = "広告を見てヒントを取得する";
+
+"AdNotFlow" = "広告は流れません";
+"Ad Flow" = "広告が流れます";
+
+"Stage review" = "ステージレビュー";
+
+"UntilNextAd" = "次の広告まで :";
+
+"Next" = "Next";

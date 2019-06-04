@@ -17,9 +17,9 @@ class HintTextNode: SKLabelNode {
    init(StartX: Int, StartY: Int) {
       super.init()
       
-      self.text = "Watch AD and get a hint"
+      self.text = NSLocalizedString("WathcAdAnd", comment: "")
       
-      self.fontSize = 50
+      self.fontSize = 40
       self.fontName = "HelveticaNeue-Light"
       self.fontColor = UIColor(contrastingBlackOrWhiteColorOn: UIColor.flatWhite(), isFlat: true)
       

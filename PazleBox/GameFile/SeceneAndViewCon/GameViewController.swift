@@ -332,13 +332,6 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    
    private func ManageGameCenter() {
       
-      #if DEBUG
-      print("デバッグなのでゲームセンターに送信しませーん")
-      return
-      #else
-      
-      #endif
-      
       ManageLeaderBoard.CheckUserUpdateNumberOfClearStage()
       ManageLeaderBoard.CheckUserUpdateNumberOfCollectedStar()
    }
@@ -498,7 +491,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       print("評価:    \(StageReview)\n")
       
       
-      //FIXME:- firebaseの送信 -
+      //MARK:- firebaseの送信 -
       //firebaseのコンテンツで，なんかStageNumが表示されないっぽい。
       //だから，一番上のItemIDをSentMessageにしたほうがいいような気がする
       Analytics.logEvent(AnalyticsEventSelectContent, parameters: [

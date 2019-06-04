@@ -55,7 +55,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
    var GameClearLabel: UILabel?
    var CountOfNextADLabel : UILabel?
    
-   let NextADString = "Until Next AD : "
+   let NextADString = NSLocalizedString("UntilNextAd", comment: "")
    
    let GameClearBannerView = GADBannerView()
    let BannerViewReqest = GADRequest()
@@ -163,7 +163,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
       let Frame = CGRect(x: StartX, y: StartY, width: LabelW, height: LabelH)
       
       CountOfNextADLabel = UILabel(frame: Frame)
-      CountOfNextADLabel?.text = "Next AD: "
+      CountOfNextADLabel?.text = NSLocalizedString("UntilNextAd", comment: "")
       CountOfNextADLabel?.textColor = UIColor.flatWhiteColorDark()
       CountOfNextADLabel?.font = UIFont(name: "HiraMaruProN-W4", size: 25)
       CountOfNextADLabel?.textAlignment = .center
@@ -171,7 +171,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
       CountOfNextADLabel?.adjustsFontForContentSizeCategory = true
       
       if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == true{
-         CountOfNextADLabel?.text = "Ad NOT Flow!"
+         CountOfNextADLabel?.text = NSLocalizedString("AdNotFlow", comment: "")
       }
       
       self.addSubview(CountOfNextADLabel!)
@@ -180,7 +180,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
    public func SetCountOfNextADLabel(NextCount: Int) {
       
       if NextCount == 0 {
-         self.CountOfNextADLabel?.text = "Ad Flow"
+         self.CountOfNextADLabel?.text = NSLocalizedString("Ad Flo", comment: "")
          return
       }
       
@@ -241,7 +241,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
       
       NextButton = FUIButton(frame: Frame)
       
-      NextButton!.setTitle("Next", for: UIControl.State.normal)
+      NextButton!.setTitle(NSLocalizedString("Next", comment: ""), for: UIControl.State.normal)
       NextButton!.buttonColor = UIColor.turquoise()
       NextButton!.shadowColor = UIColor.greenSea()
       NextButton!.shadowHeight = 3.0
@@ -277,7 +277,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
       
       GoHomeButton = FUIButton(frame: Frame)
       
-      GoHomeButton!.setTitle("Go Home", for: UIControl.State.normal)
+      GoHomeButton!.setTitle(NSLocalizedString("Home", comment: ""), for: UIControl.State.normal)
       GoHomeButton!.buttonColor = UIColor.turquoise()
       GoHomeButton!.shadowColor = UIColor.greenSea()
       GoHomeButton!.shadowHeight = 3.0

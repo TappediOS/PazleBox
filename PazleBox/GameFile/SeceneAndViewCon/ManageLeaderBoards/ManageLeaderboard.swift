@@ -13,6 +13,7 @@ import GameplayKit
 import Realm
 import RealmSwift
 import Firebase
+import StoreKit
 
 class ManageLeadearBoards {
    
@@ -213,6 +214,16 @@ class ManageLeadearBoards {
       
    }
    
+   private func AppStoreReview() {
+      if #available(iOS 10.3, *) {
+         SKStoreReviewController.requestReview()
+         Analytics.logEvent("AppStoreReviewOK", parameters: nil)
+      }
+      else{
+         Analytics.logEvent("AppStoreReviewNO", parameters: nil)
+      }
+   }
+   
    //MARK:- GameCneterのチャレンジが達成されたか見る
    private func CheckUpdateUserChallenge(AllClearCount: Int) {
       
@@ -228,6 +239,8 @@ class ManageLeadearBoards {
             userDefaults.set(true, forKey: "Clear5")
             AchievedGameCenter(AchievedItemID: CLEAR5_ID)
             Analytics.logEvent("Achieve5Clear", parameters: nil)
+            
+            AppStoreReview()
          }
       case 10:
          if userDefaults.object(forKey: "Clear10") as! Bool == false{

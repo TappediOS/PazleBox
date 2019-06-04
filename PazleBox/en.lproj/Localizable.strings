@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  PazleBox
+
+  Created by jun on 2019/06/04.
+  Copyright © 2019 jun. All rights reserved.
+*/
+
+
+"Ranking" = "Ranking";
+"No Ads" = "No Ads";
+"Restore" = "Restore";
+
+"Contact us" = "Contact Us";
+
+"Pouse" = "Pouse";
+"Continue" = "Continue";
+"Home" = "Home";
+
+"WathcAdAnd" = "Look at the ad and get a hint?";
+
+"AdNotFlow" = "Ad NOT Flow";
+"Ad Flow" = "Ad Flow";
+
+"Stage review" = "Stage review";
+
+"UntilNextAd" = "Until Next Ad :";
+
+"Next" = "Next";

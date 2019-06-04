@@ -66,7 +66,7 @@ class ReviewView : UIView {
       let LabelFrame = CGRect(x: 0, y: 0, width: ViewW, height: ViewH / 3)
       
       ReveiwLabel = UILabel(frame: LabelFrame)
-      ReveiwLabel?.text = "おすすめど"
+      ReveiwLabel?.text = NSLocalizedString("Stage review", comment: "")
       ReveiwLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 25)
       ReveiwLabel?.textAlignment = .center
       ReveiwLabel?.adjustsFontSizeToFitWidth = true

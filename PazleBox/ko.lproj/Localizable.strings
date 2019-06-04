@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  PazleBox
+
+  Created by jun on 2019/06/04.
+  Copyright © 2019 jun. All rights reserved.
+*/
+
+"Ranking" = "순위";
+"No Ads" = "광고 없음";
+"Restore" = "복원";
+
+"Contact us" = "연락처";
+
+"Pouse" = "Pouse";
+"Continue" = "잇다";
+"Home" = "집";
+
+"WathcAdAnd" = "광고를보고 힌트를 얻으시겠습니까?";
+
+"AdNotFlow" = "광고가 흐르지 않습니다.";
+"Ad Flow" = "광고 흐름";
+
+"Stage review" = "단계 검토";
+
+"UntilNextAd" = "다음 광고까지 :";
+
+"Next" = "다음 것";
