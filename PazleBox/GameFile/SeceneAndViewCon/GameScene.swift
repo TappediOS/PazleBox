@@ -60,7 +60,7 @@ class GameScene: SKScene {
       
       //MARK:- ココのトレースは，FirebaseがConfigurしてないとクラッシュする
       print("初期化開始")
-      //let InitTimePeformance = Performance.startTrace(name: "InitGameSeceneTime")
+      let InitTimePeformance = Performance.startTrace(name: "InitGameSeceneTime")
       
 
       InitBackGroundColor()
@@ -92,7 +92,7 @@ class GameScene: SKScene {
       
       //MARK:- ココのトレースは，FirebaseがConfigurしてないとクラッシュする
       print("初期化終わり")
-      //InitTimePeformance?.stop()
+      InitTimePeformance?.stop()
       
       
       
@@ -196,6 +196,7 @@ class GameScene: SKScene {
        print("パズルBoxの初期化完了")
    }
    
+   //ヒントの取得
    private func InitHintPuzzle(SizeX: CGFloat?, SizeY: CGFloat?) {
       print("パズルBox(Hint)の初期化開始")
       switch self.StageLebel {
@@ -246,6 +247,7 @@ class GameScene: SKScene {
    //配列に入れて行ってる
    private func AddPuzzle() { }
    
+   //背景色を決める
    private func InitBackGroundColor() {
       self.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 0)
    }
@@ -278,7 +280,7 @@ class GameScene: SKScene {
    }
    
    
-   //MARK:- パズルアンロックするたやつ
+   //MARK:- パズルロックするたやつ
    private func LockAllNode() {
       
       for Puzzle in PuzzleBox {
@@ -300,6 +302,7 @@ class GameScene: SKScene {
    
    
    //MARK:- ゲーム終了。
+   //ロックして，ポストするよー
    private func FinishGame() {
       print("game Set")
       LockAllNode()
@@ -352,7 +355,7 @@ class GameScene: SKScene {
       NotificationCenter.default.post(name: .GameClear, object: nil, userInfo: SentObject)
    }
    
-   //MARK:- ゲームの行う関数群
+   //MARK:- ゲームのチェックを行う関数群
    private func GameCheck() -> Bool {
       //TODO: デバック終わったら消してOK
       ShowStage()
@@ -433,6 +436,7 @@ class GameScene: SKScene {
    //MARK: Notificationの後に毎回来る
    private func GameDecision() {
       
+      //パズルを取り出して，判定用の配列にFillしちゃう
       for Puzzle in PuzzleBox {
          let PuzzleInfo = (Puzzle as! puzzle).GetOfInfomation()
          CheckedStageFill(StageObject: PuzzleInfo)
@@ -487,6 +491,7 @@ class GameScene: SKScene {
       return true
    }
    
+   //被っても動くように.
    private func SentCheckedStageFill(StageObject: [String : Any]) -> Bool {
       
       let StartX = StageObject["StartPointX"] as! Int
@@ -740,6 +745,7 @@ class GameScene: SKScene {
       DontMoveNode.ChangeTRUEMoveMyself()
    }
    
+   //RePutButtonを押した時の処理。リスポーンに戻して，音を鳴らす。
    @objc func RePutCatchNotification(notification: Notification) -> Void {
       
       for Puzzle in PuzzleBox {
@@ -797,7 +803,6 @@ class GameScene: SKScene {
       
       GameSound.PlaySoundsTapButton()
       ShowAdPOSTMotification()
-      //FIXME:-  これは広告をちゃんと見た人に表示する
       
       
       HintPouseViewNode?.FadeOutAniAndRemoveFromParent()

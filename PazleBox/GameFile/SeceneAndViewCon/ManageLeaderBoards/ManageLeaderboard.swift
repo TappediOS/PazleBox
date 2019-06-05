@@ -88,6 +88,7 @@ class ManageLeadearBoards {
             print("")
             //エラーったら前の記録を保存
             self.userDefaults.set(BeforeRecord, forKey: "SumOfCollectedStarNum")
+            Analytics.logEvent("SentNumOfCollectStarERROR", parameters: nil)
          }
          
       })
@@ -176,6 +177,7 @@ class ManageLeadearBoards {
             print("error, cant sent new score of Clear Stage num...\(String(describing: error))")
             print("")
             self.userDefaults.set(BeforeRecord, forKey: "SumOfClearStageNum")
+            Analytics.logEvent("SentNumOfClearStageERROR", parameters: nil)
          }
          
       })
@@ -301,6 +303,7 @@ class ManageLeadearBoards {
       GKAchievement.report([Achieve]) { (error) -> Void in
          if error != nil {
             print("---達成項目の送信失敗しました...---: \(String(describing: error))")
+            Analytics.logEvent("AchievedGameCenterERROR", parameters: nil)
          }
       }
    }
