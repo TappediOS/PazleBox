@@ -28,6 +28,7 @@ class puzzle: SKSpriteNode {
    private var RespawnX: Int = 0
    private var RespawnY: Int = 0
    
+   //1回前のパズルの場所を保存する
    public var OneTimeBackPosiX: Int = 0
    public var OneTimeBackPosiY: Int = 0
    
@@ -403,6 +404,8 @@ class puzzle: SKSpriteNode {
       let Dx = AfterXPoint - PreviewXPoint
       let Dy = AfterYPoint - PreviewYPoint
       
+      //パズルの空白をタッチしてて，そこに違うパズルがあったら，そいつを移動させないとあかんから
+      //ココでパズルの移動量をGameSceneに送る
       guard MoveMyself == true else {
          PuzzleTouchMovedPostNotification(Dx: Dx, Dy: Dy)
          return

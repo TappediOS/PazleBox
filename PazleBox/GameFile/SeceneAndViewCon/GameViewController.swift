@@ -34,6 +34,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    
    let StarAnimationBetTime = 0.4659
    
+   //GohomeButtonを押したとに広告表示する場合の判定
    var GoHomeForInstitialAD = false
    
    let MaxStageNum = 50
@@ -47,6 +48,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    let INTERSTITIAL_TEST_ID = "ca-app-pub-3940256099942544/4411468910"
    let INTERSTITIAL_ID = "ca-app-pub-1460017825820383/5793475595"
    
+   //インターステーシャル広告出すまでの回数
    var InterstitialCount = 3
    var InterstitialCountBase = 3
    
@@ -233,12 +235,20 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
 
                view.presentScene(sceneNode, transition: Tran)
                
-               
-               view.showsDrawCount = true
-               view.showsQuadCount = true
+               //デバックやったら色々表示
+               #if DEBUG
+                  view.showsDrawCount = true
+                  view.showsQuadCount = true
                   
-               view.showsFPS = true
-               view.showsNodeCount = true
+                  view.showsFPS = true
+                  view.showsNodeCount = true
+               #else
+                  view.showsDrawCount = false
+                  view.showsQuadCount = false
+               
+                  view.showsFPS = false
+                  view.showsNodeCount = false
+               #endif
             }
          }
       }
@@ -261,6 +271,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       }
    }
    
+   //MARK: 通知の初期化
    private func InitNotificationCenter() {
       NotificationCenter.default.addObserver(self, selector: #selector(GameClearCatchNotification(notification:)), name: .GameClear, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(SellectStageNotification(notification:)), name: .SellectStage, object: nil)
@@ -271,6 +282,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       
    }
    
+   //星が降ってくるVeiwの初期化
    private func InitConfettiView() {
       let Rect = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
       ConfettiView = SAConfettiView(frame: Rect)
@@ -330,6 +342,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       self.StartConfeAnimation(CountOfUsedHint: CountOfUsedHint)
    }
    
+   //MARK:- リーダボードに送るかどうかのやつ
    private func ManageGameCenter() {
       
       ManageLeaderBoard.CheckUserUpdateNumberOfClearStage()
@@ -355,8 +368,9 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    }
    
   
-   //ヒント使用回数の保存をする
+   //クリアしたステージのヒントの使用回数の保存をするかどうか
    private func SaveEasyStage(CountOfUsedHint: Int) -> Bool {
+      //クリアしたステージのセルを取得
       let result = realm.objects(EasyStageClearInfomation.self).filter("StageNum == \(self.SellectStageNumber)")
       
       if result.isEmpty == true{
@@ -388,7 +402,6 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          }catch{  print("\n\n-----------------ream 保存失敗------------------\n\n") }
       }
       return true
-      
    }
    
    private func SaveNormalStage(CountOfUsedHint: Int)-> Bool {
@@ -785,6 +798,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       
       //Homeボタン押してた時はDismissしなあかんよ
       if GoHomeForInstitialAD == true {
+         Analytics.logEvent("InterAdAndGoHome", parameters: nil)
          print("帰りたいから帰る")
          GoHomeForInstitialAD = false
          self.view.fadeOut(type: .Slow){ [weak self] in
@@ -793,6 +807,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          return
       }
       
+      Analytics.logEvent("InterAdAndNext", parameters: nil)
       print("ってことで次のステージに移動します")
       ShowNextGame()
    }
