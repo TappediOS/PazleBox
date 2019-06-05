@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8D68C42281797189BA5C166ECA8BFBB8"
+               BlueprintIdentifier = "C6FD9E284FC9105ADEEDC0CE29B806B9"
                BuildableName = "Pods_PazleBox.framework"
                BlueprintName = "Pods-PazleBox"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
