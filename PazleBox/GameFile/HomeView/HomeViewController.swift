@@ -107,6 +107,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       TitleLabel!.adjustsFontForContentSizeCategory = true
       TitleLabel!.minimumScaleFactor = 0.3
       TitleLabel!.textAlignment = NSTextAlignment.center
+      
       self.view.addSubview(TitleLabel!)
    }
    
