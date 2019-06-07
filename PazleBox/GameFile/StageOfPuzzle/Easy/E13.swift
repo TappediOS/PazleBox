@@ -38,7 +38,7 @@ class EStage13 {
       
       Puzzle3 = puzzle(PX: 3, PY: 3, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p10", PuzzleColor: "Green", RespawnX:6, RespawnY: 4)
       
-      Puzzle4 = puzzle(PX: 4, PY: 3, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p2", PuzzleColor: "Red", RespawnX: 0, RespawnY: 3)
+      Puzzle4 = puzzle(PX: 4, PY: 3, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p2", PuzzleColor: "Red", RespawnX: 0, RespawnY: 4)
    }
    
    
