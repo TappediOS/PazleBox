@@ -63,6 +63,8 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    var LockPurchasButton = false
    
+   let GameBGM = BGM()
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       self.view.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
@@ -92,8 +94,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       SetTitileLabelText()
       FetchConfig()
       
-      
-      
+      StartBGM()
       
       
    }
@@ -267,6 +268,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    }
    
    @objc func ContactUs() {
+      GameSound.PlaySoundsTapButton()
       let url = URL(string: "https://forms.gle/mSEq7WwDz3fZNcqF6")
       if let OpenURL = url {
          if UIApplication.shared.canOpenURL(OpenURL){
@@ -365,13 +367,14 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       if LockPurchasButton == true {
          return
       }
-      
+      GameSound.PlaySoundsTapButton()
       LockPurchasButton = true
       Analytics.logEvent("TapParchasHomeView", parameters: nil)
       purchase(PRODUCT_ID: IAP_PRO_ID)
    }
    
    @objc func restore(sender: UIButton) {
+      GameSound.PlaySoundsTapButton()
       SwiftyStoreKit.restorePurchases(atomically: true) { results in
          if results.restoreFailedPurchases.count > 0 {
             //リストアに失敗
@@ -421,6 +424,10 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       HardButton.frame = CGRect(x: FViewW * 6, y: FViewH * 19, width: FViewW * 12, height: FViewH * 3)
    }
    
+   private func StartBGM() {
+      GameBGM.PlayHomeBGM()
+   }
+   
    
    //MARK:- Main.storybordでつけたボタンのタッチイベント
    @IBAction func NextViewWithNum(_ sender: UIButton) {
@@ -444,6 +451,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       
       Play3DtouchLight()
       GameSound.PlaySoundsTapButton()
+      //GameBGM.StopHomeBGMSlow()
       
       
       //NavigationControllerを継承したViewControllerを遷移
@@ -457,6 +465,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    //MARK:- スコアボードビューの表示
    @objc func ShowRankingView() {
+      GameSound.PlaySoundsTapButton()
       Analytics.logEvent("ShowGameCenter", parameters: nil)
       let gcView = GKGameCenterViewController()
       gcView.gameCenterDelegate = self
@@ -470,6 +479,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
       gameCenterViewController.dismiss(animated: true, completion: nil)
    }
+
    
    
    private func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }

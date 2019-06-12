@@ -23,6 +23,8 @@ class GameSounds {
    var audioPlayer9: AVAudioPlayer! = nil
    var audioPlayer10: AVAudioPlayer! = nil
    
+   var GameClearSound: AVAudioPlayer! = nil
+   
    let SoundVolume: Float = 0.65
    
    
@@ -83,6 +85,15 @@ class GameSounds {
       } catch {
          print("StarSoundインスタンス作成失敗")
       }
+      
+      soundFilePath = Bundle.main.path(forResource: "Clear", ofType: "caf")!
+      sound = URL(fileURLWithPath: soundFilePath)
+      // AVAudioPlayerのインスタンスを作成
+      do {
+         GameClearSound = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
+      } catch {
+         print("Clearインスタンス作成失敗")
+      }
 //
 //      soundFilePath = Bundle.main.path(forResource: "Si_Mokkin", ofType: "mp3")!
 //      sound = URL(fileURLWithPath: soundFilePath)
@@ -126,6 +137,8 @@ class GameSounds {
       audioPlayer4.prepareToPlay()
       audioPlayer5.prepareToPlay()
       audioPlayer6.prepareToPlay()
+      
+      GameClearSound.prepareToPlay()
 //      audioPlayer7.prepareToPlay()
 //      audioPlayer8.prepareToPlay()
 //      audioPlayer9.prepareToPlay()
@@ -169,20 +182,34 @@ class GameSounds {
 //      
 //   }
    
-      public func PlaySoundsTapButton() {
    
-         let queue = OperationQueue()
-         let operation = BlockOperation {
-            self.audioPlayer5.volume = 0
-            self.audioPlayer5.stop()
-            self.audioPlayer5.currentTime = 0
-            self.audioPlayer5.volume = self.SoundVolume
-            self.audioPlayer5.play()
    
-         }
-         queue.addOperation(operation)
+   public func PlaySoundsTapButton() {
+   
+      let queue = OperationQueue()
+      let operation = BlockOperation {
+         self.audioPlayer5.volume = 0
+         self.audioPlayer5.stop()
+         self.audioPlayer5.currentTime = 0
+         self.audioPlayer5.volume = self.SoundVolume
+         self.audioPlayer5.play()
    
       }
+      queue.addOperation(operation)
+   
+   }
+   
+   public func PlayGameClearSound() {
+      let queue = OperationQueue()
+      let operation = BlockOperation {
+         self.GameClearSound.volume = 0
+         self.GameClearSound.stop()
+         self.GameClearSound.currentTime = 0
+         self.GameClearSound.volume = self.SoundVolume / 1.5
+         self.GameClearSound.play()
+      }
+      queue.addOperation(operation)
+   }
    
    public func PlaySoundsStarSound() {
       
