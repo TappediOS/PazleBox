@@ -288,6 +288,13 @@
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
 		BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D422428287007C8FA1 /* Assets.xcassets */; };
 		BFC6C5D9224283BD007C8FA1 /* Test.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D8224283BD007C8FA1 /* Test.sks */; };
+		BFC9C1E022B136E600F0FFDE /* Clear.caf in Resources */ = {isa = PBXBuildFile; fileRef = BFC9C1DF22B136E600F0FFDE /* Clear.caf */; };
+		BFC9C1E722B136FD00F0FFDE /* Yukimasu.caf in Resources */ = {isa = PBXBuildFile; fileRef = BFC9C1E122B136FB00F0FFDE /* Yukimasu.caf */; };
+		BFC9C1E822B136FD00F0FFDE /* Breakfast.caf in Resources */ = {isa = PBXBuildFile; fileRef = BFC9C1E222B136FC00F0FFDE /* Breakfast.caf */; };
+		BFC9C1E922B136FD00F0FFDE /* Hight_Tech.caf in Resources */ = {isa = PBXBuildFile; fileRef = BFC9C1E322B136FC00F0FFDE /* Hight_Tech.caf */; };
+		BFC9C1EA22B136FD00F0FFDE /* Yurufuwa.caf in Resources */ = {isa = PBXBuildFile; fileRef = BFC9C1E422B136FC00F0FFDE /* Yurufuwa.caf */; };
+		BFC9C1EB22B136FD00F0FFDE /* Tokino.caf in Resources */ = {isa = PBXBuildFile; fileRef = BFC9C1E522B136FC00F0FFDE /* Tokino.caf */; };
+		BFC9C1EC22B136FD00F0FFDE /* Morning.caf in Resources */ = {isa = PBXBuildFile; fileRef = BFC9C1E622B136FD00F0FFDE /* Morning.caf */; };
 		BFCE25AE224A466B0099A775 /* 33p12Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE256C224A464C0099A775 /* 33p12Green.png */; };
 		BFCE25AF224A466B0099A775 /* 33p6Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE256D224A464C0099A775 /* 33p6Green.png */; };
 		BFCE25B0224A466B0099A775 /* 33p19Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE256E224A464D0099A775 /* 33p19Green.png */; };
@@ -949,6 +956,13 @@
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
 		BFC6C5D422428287007C8FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC6C5D8224283BD007C8FA1 /* Test.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Test.sks; sourceTree = "<group>"; };
+		BFC9C1DF22B136E600F0FFDE /* Clear.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Clear.caf; sourceTree = "<group>"; };
+		BFC9C1E122B136FB00F0FFDE /* Yukimasu.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Yukimasu.caf; sourceTree = "<group>"; };
+		BFC9C1E222B136FC00F0FFDE /* Breakfast.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Breakfast.caf; sourceTree = "<group>"; };
+		BFC9C1E322B136FC00F0FFDE /* Hight_Tech.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hight_Tech.caf; sourceTree = "<group>"; };
+		BFC9C1E422B136FC00F0FFDE /* Yurufuwa.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Yurufuwa.caf; sourceTree = "<group>"; };
+		BFC9C1E522B136FC00F0FFDE /* Tokino.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tokino.caf; sourceTree = "<group>"; };
+		BFC9C1E622B136FD00F0FFDE /* Morning.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Morning.caf; sourceTree = "<group>"; };
 		BFCE256C224A464C0099A775 /* 33p12Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 33p12Green.png; sourceTree = "<group>"; };
 		BFCE256D224A464C0099A775 /* 33p6Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 33p6Green.png; sourceTree = "<group>"; };
 		BFCE256E224A464D0099A775 /* 33p19Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 33p19Green.png; sourceTree = "<group>"; };
@@ -1734,13 +1748,8 @@
 			children = (
 				BF60AC5B224CA2E000D441D6 /* Sound.swift */,
 				BF2C146822770A8500C7B8FB /* GameBGM.swift */,
-				BF60AC5D224CA6EB00D441D6 /* Katch.caf */,
-				BF8ABFDB227AD2A500F275FA /* TapButton.caf */,
-				BF2C146622770A2100C7B8FB /* cherry.caf */,
-				BF8ABFDD227AE47D00F275FA /* StarSound.caf */,
-				BF2C146A22771CFE00C7B8FB /* ka.caf */,
-				BF60AC70224DF5A800D441D6 /* Pico.caf */,
-				BF60AC5E224CA6EC00D441D6 /* RePut.caf */,
+				BFC9C1DD22B136AE00F0FFDE /* Sound */,
+				BFC9C1DE22B136B900F0FFDE /* BGM */,
 			);
 			path = GameSound;
 			sourceTree = "<group>";
@@ -1940,6 +1949,34 @@
 				BFC6C5D422428287007C8FA1 /* Assets.xcassets */,
 			);
 			path = Particle;
+			sourceTree = "<group>";
+		};
+		BFC9C1DD22B136AE00F0FFDE /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				BFC9C1DF22B136E600F0FFDE /* Clear.caf */,
+				BF60AC5D224CA6EB00D441D6 /* Katch.caf */,
+				BF8ABFDB227AD2A500F275FA /* TapButton.caf */,
+				BF2C146622770A2100C7B8FB /* cherry.caf */,
+				BF8ABFDD227AE47D00F275FA /* StarSound.caf */,
+				BF2C146A22771CFE00C7B8FB /* ka.caf */,
+				BF60AC70224DF5A800D441D6 /* Pico.caf */,
+				BF60AC5E224CA6EC00D441D6 /* RePut.caf */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		BFC9C1DE22B136B900F0FFDE /* BGM */ = {
+			isa = PBXGroup;
+			children = (
+				BFC9C1E222B136FC00F0FFDE /* Breakfast.caf */,
+				BFC9C1E322B136FC00F0FFDE /* Hight_Tech.caf */,
+				BFC9C1E622B136FD00F0FFDE /* Morning.caf */,
+				BFC9C1E522B136FC00F0FFDE /* Tokino.caf */,
+				BFC9C1E122B136FB00F0FFDE /* Yukimasu.caf */,
+				BFC9C1E422B136FC00F0FFDE /* Yurufuwa.caf */,
+			);
+			path = BGM;
 			sourceTree = "<group>";
 		};
 		BFCE256A224A46230099A775 /* P33 */ = {
@@ -2421,6 +2458,7 @@
 				BFF6D72B22896610000253A2 /* 43p50Red.png in Resources */,
 				BFF6D605228412D2000253A2 /* 33p24Blue.png in Resources */,
 				BFCE25EA224A466B0099A775 /* 33p22Blue.png in Resources */,
+				BFC9C1EB22B136FD00F0FFDE /* Tokino.caf in Resources */,
 				BFF6D71122896610000253A2 /* 43p23Blue.png in Resources */,
 				BFF6D73122896610000253A2 /* 43p18Green.png in Resources */,
 				BFCE25D1224A466B0099A775 /* 33p4Red.png in Resources */,
@@ -2442,11 +2480,13 @@
 				BFF6D74922896610000253A2 /* 43p25Blue.png in Resources */,
 				BFF6D72022896610000253A2 /* 43p11Red.png in Resources */,
 				BFF6D74322896610000253A2 /* 43p9Blue.png in Resources */,
+				BFC9C1EC22B136FD00F0FFDE /* Morning.caf in Resources */,
 				BFF6D63922841472000253A2 /* 23p14Red.png in Resources */,
 				BF640BF72244F8FD00333782 /* 32p6Green.png in Resources */,
 				BFF6D606228412D2000253A2 /* 33p37Blue.png in Resources */,
 				BF7CD9612240BBD500F8302B /* 23p3Blue.png in Resources */,
 				BF7CD93E2240B89800F8302B /* 22p5Red.png in Resources */,
+				BFC9C1E722B136FD00F0FFDE /* Yukimasu.caf in Resources */,
 				BFCE25CA224A466B0099A775 /* 33p2Red.png in Resources */,
 				BFCE25DC224A466B0099A775 /* 33p14Green.png in Resources */,
 				BF7CD9232240B60400F8302B /* 21p1Green.png in Resources */,
@@ -2642,12 +2682,14 @@
 				BFF6D73222896610000253A2 /* 43p17Red.png in Resources */,
 				BFF6D70522896610000253A2 /* 43p39Red.png in Resources */,
 				BFCE2616224A557B0099A775 /* 23p7Blue.png in Resources */,
+				BFC9C1E022B136E600F0FFDE /* Clear.caf in Resources */,
 				BFCE2618224A557B0099A775 /* 23p7Green.png in Resources */,
 				BFF6D77622896610000253A2 /* 43p40Blue.png in Resources */,
 				BFF6D75D22896610000253A2 /* 43p4Blue.png in Resources */,
 				BFF6D65F22853EC7000253A2 /* 33p41Red.png in Resources */,
 				BFCE2641224A58A60099A775 /* 32p9Green.png in Resources */,
 				BFF6D74C22896610000253A2 /* 43p46Green.png in Resources */,
+				BFC9C1EA22B136FD00F0FFDE /* Yurufuwa.caf in Resources */,
 				BFF6D60A228412D2000253A2 /* 33p29Red.png in Resources */,
 				BFF6D77022896610000253A2 /* 43p42Blue.png in Resources */,
 				BFF6D617228412D2000253A2 /* 33p29Blue.png in Resources */,
@@ -2767,6 +2809,7 @@
 				BFF6D629228412D2000253A2 /* 33p25Green.png in Resources */,
 				BFF6D71E22896610000253A2 /* 43p6Red.png in Resources */,
 				BF7CD9372240B89800F8302B /* 22p4Red.png in Resources */,
+				BFC9C1E922B136FD00F0FFDE /* Hight_Tech.caf in Resources */,
 				BFF6D66C2286BC74000253A2 /* 33p43Blue.png in Resources */,
 				BF7CD95D2240BBD500F8302B /* 23p2Red.png in Resources */,
 				BF8A464E2250829C0016F801 /* StarStar.json in Resources */,
@@ -2792,6 +2835,7 @@
 				BF7CD9552240BBD500F8302B /* 23p5Red.png in Resources */,
 				BFF6D609228412D2000253A2 /* 33p28Red.png in Resources */,
 				BF640C012244F8FD00333782 /* 32p6Blue.png in Resources */,
+				BFC9C1E822B136FD00F0FFDE /* Breakfast.caf in Resources */,
 				BFF6D70822896610000253A2 /* 43p27Green.png in Resources */,
 				BFF6D77922896610000253A2 /* 43p5Red.png in Resources */,
 				BF60AC67224DD1DB00D441D6 /* Pouse.png in Resources */,

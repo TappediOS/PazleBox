@@ -76,6 +76,8 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       return .bottom
    }
    
+   let GameBGM = BGM()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -99,6 +101,8 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       
       
    }
+   
+   
    
 
    
@@ -340,11 +344,15 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    private func ShowGameClearViewWithStar(CountOfUsedHint: Int) {
       self.StartStarAnimation(CountOfUsedHint: CountOfUsedHint)
       self.StartConfeAnimation(CountOfUsedHint: CountOfUsedHint)
+      
    }
    
    //MARK:- リーダボードに送るかどうかのやつ
    private func ManageGameCenter() {
-      
+      //FIXME: 出す前に消す
+      #if DEBUG
+      return
+      #endif
       ManageLeaderBoard.CheckUserUpdateNumberOfClearStage()
       ManageLeaderBoard.CheckUserUpdateNumberOfCollectedStar()
    }
@@ -541,6 +549,10 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.245) {
          self.StartConfetti()
+      }
+      
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+         self.ClearView?.PlayGameClseraSounds()
       }
       
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.645) {

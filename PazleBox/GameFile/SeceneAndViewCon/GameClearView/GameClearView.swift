@@ -528,6 +528,10 @@ class GameClearView: UIView, GADBannerViewDelegate {
       Play3DtouchHeavy()
    }
    
+   public func PlayGameClseraSounds() {
+      GameSound.PlayGameClearSound()
+   }
+   
    
    public func StartConfe1() {
       ConfView1.play() { (finished) in

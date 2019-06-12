@@ -96,7 +96,7 @@ class GameScene: SKScene {
       
       
       
-      //InitBGM()
+      
       
       let p = SKEmitterNode.init(fileNamed: "GameSetParticle")
       p?.position.y += ViewSizeY! / 2
@@ -112,9 +112,7 @@ class GameScene: SKScene {
       RePutButtonNode = RePutB
    }
    
-   private func InitBGM() {
-      self.GameBGM.PlaySounds()
-   }
+   
    
    private func InitHintButton(SizeX: CGFloat?, SizeY: CGFloat?){
       let HintButton = HintNode(ViewX: Int(SizeX!), ViewY: Int(SizeY!))
