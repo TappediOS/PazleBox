@@ -13,7 +13,7 @@ import AVFoundation
 class BGM {
    
    //効果音素材：ポケットサウンド – https://pocket-se.info/
-   var audioPlayer1: AVAudioPlayer! = nil
+   var Cherry: AVAudioPlayer! = nil
    
    var Breakfast: AVAudioPlayer! = nil
    var Hight_Tech: AVAudioPlayer! = nil
@@ -24,9 +24,11 @@ class BGM {
    
    let SoundVolume: Float = 0.2
    
+   var isPlayHomeBGM = false
    
    init() {
       
+      InitCherry()
       InitBreak()
       InitHight_Tech()
       InitMorning()
@@ -37,11 +39,11 @@ class BGM {
       let soundFilePath = Bundle.main.path(forResource: "cherry", ofType: "caf")!
       let sound:URL = URL(fileURLWithPath: soundFilePath)
       do {
-         audioPlayer1 = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
+         Cherry = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
       } catch { print("Katchインスタンス作成失敗") }
       
-      audioPlayer1.prepareToPlay()
-      audioPlayer1.numberOfLoops = -1
+      Cherry.prepareToPlay()
+      Cherry.numberOfLoops = -1
   
    }
    
@@ -53,7 +55,32 @@ class BGM {
    }
    
    public func StopSound() {
-      self.audioPlayer1.stop()
+      self.Cherry.stop()
+   }
+   
+   public func PlayGameBGM() {
+      Yurufuwa.stop()
+      Yurufuwa.currentTime = 0
+      Yurufuwa.volume = SoundVolume
+      Yurufuwa.play()
+      fade(player: Yurufuwa, fromVolume: 0, toVolume: SoundVolume, overTime: 5)
+   }
+   
+   public func StopGameBGM() {
+      Yurufuwa.stop()
+      Yurufuwa.currentTime = 0
+   }
+   
+   public func StopGameBGMSlow() {
+      Yurufuwa.volume = SoundVolume / 1.5
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.08) {
+         self.Yurufuwa.volume = self.Yurufuwa.volume / 2
+         DispatchQueue.main.asyncAfter(deadline: .now() + 0.08) {
+            self.Yurufuwa.volume = 0
+            self.Yurufuwa.stop()
+            self.Yurufuwa.currentTime = 0
+         }
+      }
    }
    
    public func PlayHomeBGM() {
@@ -61,28 +88,93 @@ class BGM {
       Hight_Tech.currentTime = 0
       Hight_Tech.volume = SoundVolume
       Hight_Tech.play()
+      isPlayHomeBGM = true
    }
    
    public func StopHomeBGM() {
       Hight_Tech.stop()
       Hight_Tech.currentTime = 0
+      isPlayHomeBGM = false
    }
    
    public func StopHomeBGMSlow() {
       Hight_Tech.volume = SoundVolume / 1.5
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.08) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+         print("半分！")
          self.Hight_Tech.volume = self.Hight_Tech.volume / 2
-         DispatchQueue.main.asyncAfter(deadline: .now() + 0.08) {
+         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            print("半分！")
             self.Hight_Tech.volume = 0
             self.Hight_Tech.stop()
             self.Hight_Tech.currentTime = 0
+            self.isPlayHomeBGM = false
          }
       }
    }
    
+   public func fade(player: AVAudioPlayer,
+             fromVolume startVolume : Float,
+             toVolume endVolume : Float,
+             overTime time : TimeInterval) {
+      
+      let stepsPerSecond = 100
+      // Update the volume every 1/100 of a second
+      let fadeSteps = Int(time * TimeInterval(stepsPerSecond))
+      // Work out how much time each step will take
+      let timePerStep = TimeInterval(1.0 / Double(stepsPerSecond))
+      
+      player.volume = startVolume;
+      
+      // Schedule a number of volume changes
+      for step in 0...fadeSteps {
+         
+         let delayInSeconds : TimeInterval = TimeInterval(step) * timePerStep
+         let deadline = DispatchTime.now() + delayInSeconds
+         
+         DispatchQueue.main.asyncAfter(deadline: deadline, execute: {
+            let fraction = (Float(step) / Float(fadeSteps))
+            player.volume = startVolume + (endVolume - startVolume) * fraction
+         })
+         
+      }
+   }
+   
+   public func ChangeHomeBGMVolume(ChangeVolumeFacter: Float) {
+      Hight_Tech.volume = Hight_Tech.volume * ChangeVolumeFacter
+   }
+   
+   public func ResetHomeBGMVolume() {
+      Hight_Tech.volume = SoundVolume
+   }
+   
+   public func isPlayingHomeBGM() -> Bool {
+      return self.isPlayHomeBGM
+   }
+   
 }
 
+
+
+
+
+
+
+
+
+
 extension BGM {
+   
+   private func InitCherry(){
+      let soundFilePath = Bundle.main.path(forResource: "cherry", ofType: "caf")!
+      let sound:URL = URL(fileURLWithPath: soundFilePath)
+      do {
+         Cherry = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
+      } catch { print("Breakfastインスタンス作成失敗") }
+      
+      Cherry.prepareToPlay()
+      Cherry.numberOfLoops = -1
+      Cherry.volume = SoundVolume
+   }
    
    private func InitBreak(){
       let soundFilePath = Bundle.main.path(forResource: "Breakfast", ofType: "caf")!

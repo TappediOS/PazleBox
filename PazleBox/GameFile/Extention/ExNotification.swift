@@ -26,4 +26,5 @@ extension Notification.Name {
    static let AdWatch = Notification.Name("AdWatch")
    static let AdNoWatch = Notification.Name("AdNoWatch")
    static let FinRewardWatch = Notification.Name("FinRewardWatch")
+   static let StopHomeViewBGM = Notification.Name("StopHomeViewBGM")
 }

@@ -575,6 +575,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       return
    }
    
+   //MARK:- ゲームのステージを選択したって通知を受け取る関数
    @objc func SellectStageNotification(notification: Notification) -> Void {
       
       if let userInfo = notification.userInfo {
@@ -586,6 +587,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          LoadStageNumber(Num: SentNum)
          InitGameViewAndShowView()
          
+         //ステージセレクト画面は消す
          switch StageLevel {
          case .Easy:
             self.EasySelect.removeFromSuperview()
@@ -595,6 +597,10 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
             self.HardSelect.removeFromSuperview()
          }
          
+         //HomeViewに対してBGMを消してって通知を送る
+         NotificationCenter.default.post(name: .StopHomeViewBGM, object: nil, userInfo: nil)
+         //したら，こっちはこっちでBGMスタートさせる
+         PlayGameBGM()
          
       }else{
          print("通知受け取ったけど、中身nilやった。")
@@ -694,6 +700,10 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       //self.InitGameClearView()
    }
  
+   
+   private func PlayGameBGM() {
+      GameBGM.PlayGameBGM()
+   }
    
 
    //MARK:- インタースティシャル広告表示する
@@ -829,19 +839,6 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    }
    
    @objc func SellectBackNotification(notification: Notification) -> Void {
-//      switch StageLevel {
-//      case .Easy:
-//         self.view.fadeOut(type: .Slow){ [weak self] in
-//            self?.dismiss(animated: false, completion: nil)
-//         }
-//      case .Normal:
-//         NormalSelect.InitView(frame: self.view.frame)
-//         self.view.addSubview(NormalSelect)
-//      case .Hard:
-//         HardSelect.InitView(frame: self.view.frame)
-//         self.view.addSubview(HardSelect)
-//      }
-      
       self.view.fadeOut(type: .Slow){ [weak self] in
          self?.dismiss(animated: false, completion: nil)
       }
