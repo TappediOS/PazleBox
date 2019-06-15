@@ -21,7 +21,7 @@ import FlatUIKit
 
 class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
-   private let GameSound = GameSounds()
+   
    
    @IBOutlet weak var EasyButton: FUIButton!
    @IBOutlet weak var NormalButton: FUIButton!
@@ -34,9 +34,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    var ContactusButton: FUIButton?
    
-   //この2つは課金で使う
-   private let IAP_PRO_ID = "NO_ADS"
-   private let SECRET_CODE = "c8bf5f01b42f4f80ad32ffd00349d92d"
+   
    
    //MARK: リーダボードID
    let LEADERBOARD_ID = "ClearStageNumLeaderBoard"
@@ -58,9 +56,14 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    var TitleLabel: UILabel?
    
-   var LockPurchasButton = false
+   //この2つは課金で使う
+   let IAP_PRO_ID = "NO_ADS"
+   let SECRET_CODE = "c8bf5f01b42f4f80ad32ffd00349d92d"
    
-   let GameBGM = BGM()
+   var LockPurchasButton = false  //ロックされていたらappleのサーバに余計に請求しなくする
+   
+   private let GameBGM = BGM()
+   let GameSound = GameSounds()
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -106,7 +109,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    }
    
    private func InitTitleLabel() {
-      
       TitleLabel = UILabel(frame: CGRect(x: FViewW * 6, y: FViewH * 3, width: FViewW * 13, height: FViewH * 3))
       TitleLabel!.text = "Relaxing puzzle"
       TitleLabel!.font = UIFont(name: "HiraMaruProN-W4", size: 50)
@@ -143,7 +145,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    //MARK: InitConfigする
    private func InitConfig() {
       self.RemorteConfigs = RemoteConfig.remoteConfig()
-      
       //MARK: デベロッパモード　出すときはやめろ
       #if DEBUG
       print("RemoConデバッグモードでいくとよ。")
@@ -154,12 +155,9 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       let RemortConfigSetting = RemoteConfigSettings(developerModeEnabled: false)
       self.RemorteConfigs.configSettings = RemortConfigSetting
       #endif
-      
    }
    
    func FetchConfig() {
-      
-      
       // ディベロッパーモードの時、expirationDurationを0にして随時更新できるようにする。
       let expirationDuration = RemorteConfigs.configSettings.isDeveloperModeEnabled ? 0 : 3600
       print("RemoteConfigのフェッチする間隔： \(expirationDuration)")
@@ -177,6 +175,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       }
    }
    
+   //ステージボタンのtextsを変更する
    func SetEachStageButtonName() {
       print("れもこん1 \(String(describing: RemorteConfigs[RemoConName.EasyStageButtonName].stringValue))")
       print("れもこん2 \(String(describing: RemorteConfigs[RemoConName.NormalStageButtonName].stringValue))")
@@ -187,6 +186,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       HardButton.setTitle(RemorteConfigs[RemoConName.HardStageButtonName].stringValue, for: .normal)
    }
    
+   //した4個のボタンの色を変更するん
    private func SetEachButtonColor() {
       EasyButton.buttonColor = ButtonClorMane.GetButtonFlatColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.EasyStageButtonColor].stringValue!)
       NormalButton.buttonColor = ButtonClorMane.GetButtonFlatColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.NormalStageButtonColor].stringValue!)
@@ -211,21 +211,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       TitleLabel!.text = RemorteConfigs[RemoConName.TitileLabelText].stringValue!
    }
    
-   //課金する商品情報を取得する
-   func  CheckIAPInfomation() {
-      SwiftyStoreKit.retrieveProductsInfo([IAP_PRO_ID]) { result in
-         if let product = result.retrievedProducts.first {
-            let priceString = product.localizedPrice!
-            print("Product: \(product.localizedDescription), price: \(priceString)")
-         }
-         else if let invalidProductId = result.invalidProductIDs.first {
-            print("Invalid product identifier: \(invalidProductId)")
-         }
-         else {
-            print("Error: \(String(describing: result.error))")
-         }
-      }
-   }
+   
    
    private func SetUpHomeEachSmallButton(sender: FUIButton) {
       sender.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -240,10 +226,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    }
    
    //ボタンの初期化
-   //FIXME:- testbuttonはひどいよ
    func Inittestbutton() {
-      
-      
       PurchasButton = FUIButton(frame: CGRect(x: FViewW * 13, y: FViewH * 25, width: FViewW * 5, height: FViewH * 3))
       PurchasButton?.setTitle(NSLocalizedString("No Ads", comment: ""), for: .normal)
       PurchasButton?.addTarget(self, action: #selector(self.tapparchas), for: .touchUpInside)
@@ -293,114 +276,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    
    
-   private func CompleateRestore() {
-      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
-      let ComleateView = SCLAlertView(appearance: Appearanse)
-      ComleateView.addButton("OK"){
-         print("tap")
-         
-      }
-      ComleateView.showSuccess(NSLocalizedString("Passed.", comment: ""), subTitle: "Restore successful")
-   }
    
-   private func CompleateBuyRemoveADS() {
-      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
-      let ComleateView = SCLAlertView(appearance: Appearanse)
-      ComleateView.addButton("OK"){
-         print("tap")
-         self.LockPurchasButton = false
-      }
-      ComleateView.showSuccess(NSLocalizedString("Passed.", comment: ""), subTitle: "Purchase complete")
-   }
-   
-   
-   //MARK:- パーチャスボタンを押した時の処理
-   func purchase(PRODUCT_ID:String){
-      SwiftyStoreKit.purchaseProduct(PRODUCT_ID, quantity: 1, atomically: true) { result in
-         switch result {
-         case .success(_):
-            //購入成功
-            let defaults = UserDefaults.standard
-            defaults.set(true, forKey: "BuyRemoveAd")
-            print("購入成功！")
-            print("購入フラグを　\(defaults.bool(forKey: "BuyRemoveAd"))　に変更しました")
-            self.CompleateBuyRemoveADS()
-            
-            //購入の検証
-            self.verifyPurchase(PRODUCT_ID: PRODUCT_ID)
-         case .error(_):
-            //購入失敗
-            print("purchaseエラー")
-            self.LockPurchasButton = false
-         }
-      }
-   }
-   
-   func verifyPurchase(PRODUCT_ID:String){
-      let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: SECRET_CODE)
-      SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
-         switch result {
-         case .success(let receipt):
-            let purchaseResult = SwiftyStoreKit.verifyPurchase(productId: PRODUCT_ID, inReceipt: receipt)
-            switch purchaseResult {
-            case .purchased:
-//               let defaults = UserDefaults.standard
-//               defaults.set(true, forKey: "BuyRemoveAd")
-//               print("購入成功！")
-//
-//               print("購入フラグを　\(defaults.bool(forKey: "BuyRemoveAd"))　に変更しました")
-                print("購入の検証 成功")
-               self.LockPurchasButton = false
-               
-            case .notPurchased:
-               //リストアの失敗
-               print("購入の検証 失敗")
-               self.LockPurchasButton = false
-            }
-         case .error:
-            //エラー
-            print("verifyPurchaseエラー")
-            self.LockPurchasButton = false
-            
-         }
-      }
-   }
-   
-   
-   
-   @objc func tapparchas(sender: UIButton) {
-      
-      if LockPurchasButton == true {
-         return
-      }
-      GameSound.PlaySoundsTapButton()
-      LockPurchasButton = true
-      Analytics.logEvent("TapParchasHomeView", parameters: nil)
-      purchase(PRODUCT_ID: IAP_PRO_ID)
-   }
-   
-   @objc func restore(sender: UIButton) {
-      GameSound.PlaySoundsTapButton()
-      SwiftyStoreKit.restorePurchases(atomically: true) { results in
-         if results.restoreFailedPurchases.count > 0 {
-            //リストアに失敗
-            print("リストアに失敗")
-         }
-         else if results.restoredPurchases.count > 0 {
-            print("リストアに成功")
-            //購入成功
-            let defaults = UserDefaults.standard
-            defaults.set(true, forKey: "BuyRemoveAd")
-            print("リストアに成功しました")
-            print("購入フラグを　\(defaults.bool(forKey: "BuyRemoveAd"))　に変更しました")
-            self.CompleateRestore()
-         }
-         else {
-            print("リストアするものがない")
-            print("Restorボタン押したけどなんも買ってないパターン")
-         }
-      }
-   }
    
    //MARK:- FlatUIButtonをセットアップ
    private func SetUpSellectStageButton(sender: FUIButton) {
@@ -464,8 +340,8 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       
       Play3DtouchLight()
       GameSound.PlaySoundsTapButton()
-      GameBGM.ChangeHomeBGMVolume(ChangeVolumeFacter: 0.5)
-      
+      //GameBGM.ChangeHomeBGMVolume(ChangeVolumeFacter: 0.5)
+      GameBGM.fade(player: GameBGM.Hight_Tech, fromVolume: GameBGM.Hight_Tech.volume, toVolume: GameBGM.Hight_Tech.volume / 1.32, overTime: 3)
       
       //NavigationControllerを継承したViewControllerを遷移
       print("GameViewControllerを表示します")

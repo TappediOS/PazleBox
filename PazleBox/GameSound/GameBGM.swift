@@ -22,7 +22,7 @@ class BGM {
    var Yukimasu: AVAudioPlayer! = nil
    var Yurufuwa: AVAudioPlayer! = nil
    
-   let SoundVolume: Float = 0.2
+   let SoundVolume: Float = 0.185
    
    var isPlayHomeBGM = false
    
@@ -52,7 +52,7 @@ class BGM {
       Yurufuwa.currentTime = 0
       Yurufuwa.volume = SoundVolume
       Yurufuwa.play()
-      fade(player: Yurufuwa, fromVolume: 0, toVolume: SoundVolume, overTime: 5)
+      fade(player: Yurufuwa, fromVolume: 0, toVolume: SoundVolume, overTime: 6.5)
    }
    
    public func StopGameBGM() {
@@ -113,6 +113,11 @@ class BGM {
       let timePerStep = TimeInterval(1.0 / Double(stepsPerSecond))
       
       player.volume = startVolume;
+      
+      if startVolume == 0 {
+         player.currentTime = 0
+         player.play()
+      }
       
       // Schedule a number of volume changes
       for step in 0...fadeSteps {
