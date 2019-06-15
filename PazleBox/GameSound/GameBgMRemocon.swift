@@ -56,6 +56,7 @@ extension BGM {
    func SetGameBGM() {
       print("Fetched ゲームBGM Name is \(String(describing: RemorteConfigs["GameBGMKey"].stringValue))")
       self.FetchedPlayGameBGM = GetGameBGMFromBGMString(BGMName: RemorteConfigs["GameBGMKey"].stringValue!)
+      self.FetchedPlayGameBGM.volume = self.SoundVolume
    }
    
    func GetGameBGMFromBGMString(BGMName: String) -> AVAudioPlayer {

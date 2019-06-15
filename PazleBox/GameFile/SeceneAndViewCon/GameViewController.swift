@@ -702,7 +702,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
  
    
    private func PlayGameBGM() {
-      GameBGM.PlayGameBGM()
+      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: 0, toVolume: GameBGM.SoundVolume, overTime: 5)
    }
    
 
@@ -754,8 +754,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd, didRewardUserWith reward: GADAdReward) {
       print("リワード広告終わったから報酬与えます")
       PostNotificationFinAdWatch()
-      print("あとリワード広告終わったから，BGM再生しますね")
-      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: 0, toVolume: GameBGM.SoundVolume, overTime: 4)
+      
    }
    
    func rewardBasedVideoAdDidReceive(_ rewardBasedVideoAd:GADRewardBasedVideoAd) {
@@ -777,6 +776,10 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    }
    
    func rewardBasedVideoAdDidClose(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+      print("リワード広告が閉じられたよ")
+      print("だから，BGM再生しますね")
+      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: 0, toVolume: GameBGM.SoundVolume, overTime: 4)
+      print("ついでにリワード広告の再読み込みするよ")
       #if DEBUG
       print("リワード再読み込み:テスト環境")
       Reward.load(GADRequest(), withAdUnitID: REWARD_TEST_ID)
