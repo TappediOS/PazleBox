@@ -26,6 +26,7 @@ target 'PazleBox' do
   pod 'Firebase/AdMob'
   pod 'Firebase/RemoteConfig'
   pod 'Firebase/Performance'
+  pod 'Firebase/Messaging'
 
   pod 'LicensePlist'
 
