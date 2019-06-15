@@ -27,6 +27,7 @@
 		BF2674EF2227B6A3003D370F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2674ED2227B6A3003D370F /* Main.storyboard */; };
 		BF2674F12227B6A4003D370F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2674F02227B6A4003D370F /* Assets.xcassets */; };
 		BF2674F42227B6A4003D370F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2674F22227B6A4003D370F /* LaunchScreen.storyboard */; };
+		BF27D04A22B4E61800596644 /* HomeViewIAP.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF27D04922B4E61800596644 /* HomeViewIAP.swift */; };
 		BF2A186822A6AD7300E19CFF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF2A186A22A6AD7300E19CFF /* Localizable.strings */; };
 		BF2C145F2276F39500C7B8FB /* HintPouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C145E2276F39500C7B8FB /* HintPouseView.swift */; };
 		BF2C14612276F3A300C7B8FB /* HintTextNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C14602276F3A300C7B8FB /* HintTextNode.swift */; };
@@ -686,6 +687,7 @@
 		BF2674F02227B6A4003D370F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF2674F32227B6A4003D370F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF2674F52227B6A4003D370F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF27D04922B4E61800596644 /* HomeViewIAP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewIAP.swift; sourceTree = "<group>"; };
 		BF2A186022A6ACD500E19CFF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		BF2A186122A6ACD500E19CFF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		BF2A186222A6ACE500E19CFF /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
@@ -1690,6 +1692,7 @@
 			isa = PBXGroup;
 			children = (
 				BF640C0C224513DF00333782 /* HomeViewController.swift */,
+				BF27D04922B4E61800596644 /* HomeViewIAP.swift */,
 				BFF889A6229FC86A0056A839 /* ButtonColorManager.swift */,
 				BFF889A4229FC0CA0056A839 /* RemotConfigManagerHomeView.swift */,
 			);
@@ -3187,6 +3190,7 @@
 				BF332FF222492827009B3042 /* H13.swift in Sources */,
 				BF552E9A226DDD1400756E16 /* E28.swift in Sources */,
 				BFF889A5229FC0CA0056A839 /* RemotConfigManagerHomeView.swift in Sources */,
+				BF27D04A22B4E61800596644 /* HomeViewIAP.swift in Sources */,
 				BF552F0A226DDE9400756E16 /* H24.swift in Sources */,
 				BFF889A922A39A5A0056A839 /* NoAdsButton.swift in Sources */,
 				BF1BD1EC2279C4060047496B /* NormalStageClearInfomation.swift in Sources */,
