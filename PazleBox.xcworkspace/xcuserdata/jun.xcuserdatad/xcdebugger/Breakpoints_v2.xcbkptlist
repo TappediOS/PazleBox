@@ -490,7 +490,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
-            timestampString = "582042052.495581"
+            timestampString = "582111397.20725"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "199"
@@ -1204,7 +1204,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
-            timestampString = "582042052.495774"
+            timestampString = "582111397.207343"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "300"
@@ -1225,8 +1225,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "836"
             endingLineNumber = "836"
-            landmarkName = "AdShowOrNot()"
-            landmarkType = "7">
+            landmarkName = "GameScene"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1241,7 +1241,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "847"
             endingLineNumber = "847"
-            landmarkName = "SetHint1()"
+            landmarkName = "AdShowOrNot()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1257,8 +1257,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "288"
             endingLineNumber = "288"
-            landmarkName = "GameScene"
-            landmarkType = "3">
+            landmarkName = "LockAllNode()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1305,8 +1305,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "827"
             endingLineNumber = "827"
-            landmarkName = "GameScene"
-            landmarkType = "3">
+            landmarkName = "ReSumeCatchNotification(notification:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1380,7 +1380,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
-            timestampString = "582042052.496186"
+            timestampString = "582111397.2074701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "652"
@@ -1506,7 +1506,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
-            timestampString = "582042052.496351"
+            timestampString = "582111397.207536"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
@@ -1709,7 +1709,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
-            timestampString = "582042052.496506"
+            timestampString = "582111397.207619"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "677"
@@ -1741,12 +1741,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/HomeView/HomeViewController.swift"
-            timestampString = "582042052.4965841"
+            timestampString = "582111397.20767"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "SetEachStageButtonName()"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "FetchConfig()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1757,12 +1757,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/HomeView/HomeViewController.swift"
-            timestampString = "582042052.496968"
+            timestampString = "582111397.208172"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "SetEachStageButtonName()"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "FetchConfig()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1805,12 +1805,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameSound/GameBGM.swift"
-            timestampString = "582042052.497327"
+            timestampString = "582111397.208578"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
             endingLineNumber = "52"
             landmarkName = "PlaySounds()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/GameFile/HomeView/HomeViewController.swift"
+            timestampString = "582111397.2086231"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

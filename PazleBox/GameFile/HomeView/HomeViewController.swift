@@ -34,8 +34,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    var ContactusButton: FUIButton?
    
-   let ButtonKey = "TEST"
-   
    //この2つは課金で使う
    private let IAP_PRO_ID = "NO_ADS"
    private let SECRET_CODE = "c8bf5f01b42f4f80ad32ffd00349d92d"
@@ -43,14 +41,13 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    //MARK: リーダボードID
    let LEADERBOARD_ID = "ClearStageNumLeaderBoard"
    
+   //リモートコンフィグろとるやつ
    var RemorteConfigs: RemoteConfig!
    
    let EasyStageNameKey = "Easy"
    let NormalStageNameKey = "Normal"
    let HardStageNameKey = "Hard"
-   
-   let EasyStageNameKeyss = "Easy"
-   
+
    let RemoConName = RemoteConfgName()
    let ButtonClorMane = ButtonColorManager()
    
@@ -69,22 +66,14 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       super.viewDidLoad()
       self.view.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
       
-      ViewW = self.view.frame.width
-      ViewH = self.view.frame.height
-      
-      FViewW = ViewW / 25
-      FViewH = ViewH / 32
+      InitViewSize()
       
       CheckIAPInfomation()
-      
-      
-      
+      InitNotificationCenter()
       InitTitleLabel()
-      
       InitButton()
       Inittestbutton()
       InitContactusButton()
-      
       InitShowRankingViewButton()
       
       InitConfig()
@@ -95,8 +84,25 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       FetchConfig()
       
       StartBGM()
-      
-      
+   }
+   
+   override func viewWillAppear(_ animated: Bool) {
+      StartBGM()
+      GameBGM.ResetHomeBGMVolume()
+   }
+   
+   
+   private func InitViewSize() {
+      ViewW = self.view.frame.width
+      ViewH = self.view.frame.height
+      FViewW = ViewW / 25
+      FViewH = ViewH / 32
+   }
+   
+   //MARK: 通知の初期化
+   private func InitNotificationCenter() {
+      NotificationCenter.default.addObserver(self, selector: #selector(StopHomeBGMCatchNotification(notification:)), name: .StopHomeViewBGM, object: nil)
+
    }
    
    private func InitTitleLabel() {
@@ -425,9 +431,16 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    }
    
    private func StartBGM() {
-      GameBGM.PlayHomeBGM()
+      if !GameBGM.isPlayingHomeBGM() {
+         GameBGM.PlayHomeBGM()
+      }
    }
    
+   //MARK:- BGM止めるようにしろってに通知きたよ
+   @objc func StopHomeBGMCatchNotification(notification: Notification) -> Void {
+      GameBGM.StopHomeBGMSlow()
+      //GameBGM.fade(player: GameBGM.Hight_Tech, fromVolume: GameBGM.Hight_Tech.volume * 0.7, toVolume: 0, overTime: 1.2)
+   }
    
    //MARK:- Main.storybordでつけたボタンのタッチイベント
    @IBAction func NextViewWithNum(_ sender: UIButton) {
@@ -451,7 +464,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       
       Play3DtouchLight()
       GameSound.PlaySoundsTapButton()
-      //GameBGM.StopHomeBGMSlow()
+      GameBGM.ChangeHomeBGMVolume(ChangeVolumeFacter: 0.5)
       
       
       //NavigationControllerを継承したViewControllerを遷移

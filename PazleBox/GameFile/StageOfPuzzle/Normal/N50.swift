@@ -41,7 +41,7 @@ class NStage50 {
       Puzzle2 = puzzle(PX: 3, PY: 2, CustNum: 1, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "32p5", PuzzleColor: "Red", RespawnX: 4, RespawnY: 4)
       
       Puzzle3 = puzzle(PX: 2, PY: 2, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "22p3", PuzzleColor: "Green", RespawnX: 4, RespawnY: 1)
-      5
+
       Puzzle4 = puzzle(PX: 3, PY: 3, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p15", PuzzleColor: "Blue", RespawnX: 6, RespawnY: 2)
       
       Puzzle5 = puzzle(PX: 4, PY: 3, CustNum: 4, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p31", PuzzleColor: "Red", RespawnX: 3, RespawnY: 4)
