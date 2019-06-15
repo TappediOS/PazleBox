@@ -957,6 +957,7 @@
 		BF8ABFD92279C6B900F275FA /* HardSellectStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardSellectStage.swift; sourceTree = "<group>"; };
 		BF8ABFDB227AD2A500F275FA /* TapButton.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TapButton.caf; sourceTree = "<group>"; };
 		BF8ABFDD227AE47D00F275FA /* StarSound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = StarSound.caf; sourceTree = "<group>"; };
+		BFA61D0522B5040D002C8EDD /* PazleBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PazleBox.entitlements; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
 		BFC6C5D422428287007C8FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC6C5D8224283BD007C8FA1 /* Test.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Test.sks; sourceTree = "<group>"; };
@@ -1428,6 +1429,7 @@
 		BF2674E22227B6A3003D370F /* PazleBox */ = {
 			isa = PBXGroup;
 			children = (
+				BFA61D0522B5040D002C8EDD /* PazleBox.entitlements */,
 				BF1FF2AA22311C8D0047ED23 /* GemFile */,
 				BF1FF2AB22311CC10047ED23 /* GameFile */,
 				BF60AC61224DD1B500D441D6 /* GameIcons */,
@@ -2424,6 +2426,11 @@
 				TargetAttributes = {
 					BF2674DF2227B6A3003D370F = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -3372,6 +3379,7 @@
 			baseConfigurationReference = 23639FCB16B4DCCF8E13A1D3 /* Pods-PazleBox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PazleBox/PazleBox.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 9;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -3396,6 +3404,7 @@
 			baseConfigurationReference = AC63FB0A53E7131595C10607 /* Pods-PazleBox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PazleBox/PazleBox.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 9;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
