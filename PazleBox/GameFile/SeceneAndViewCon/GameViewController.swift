@@ -750,10 +750,12 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       NotificationCenter.default.post(name: .FinRewardWatch, object: nil, userInfo: nil)
    }
    
-   //AD
+   //MARK:- リワード広告のデリゲート
    func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd, didRewardUserWith reward: GADAdReward) {
       print("リワード広告終わったから報酬与えます")
       PostNotificationFinAdWatch()
+      print("あとリワード広告終わったから，BGM再生しますね")
+      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: 0, toVolume: GameBGM.SoundVolume, overTime: 4)
    }
    
    func rewardBasedVideoAdDidReceive(_ rewardBasedVideoAd:GADRewardBasedVideoAd) {
@@ -762,7 +764,8 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    }
    
    func rewardBasedVideoAdDidOpen(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
-      print("リワード広告開いた")
+      print("リワード広告開いたから，BGMストップする")
+      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: GameBGM.FetchedPlayGameBGM.volume, toVolume: 0, overTime: 1)
    }
    
    func rewardBasedVideoAdDidStartPlaying(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
@@ -808,6 +811,9 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    //広告画面が開いた時
    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
       print("インタースティシャル広告開いた")
+      print("インタースティシャル広告開いたから，BGMストップ")
+      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: GameBGM.FetchedPlayGameBGM.volume, toVolume: 0, overTime: 1)
+      
    }
    //広告をクリックして開いた画面を閉じる直前
    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
@@ -829,6 +835,9 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          return
       }
       
+      //この下の処理はNextButtonを押した時の処理ね
+      print("インタースティシャル広告終わったから，BGM再生しますね")
+      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: 0, toVolume: GameBGM.SoundVolume, overTime: 4)
       Analytics.logEvent("InterAdAndNext", parameters: nil)
       print("ってことで次のステージに移動します")
       ShowNextGame()

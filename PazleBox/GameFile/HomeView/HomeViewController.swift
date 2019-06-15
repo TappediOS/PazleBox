@@ -31,11 +31,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    var RestoreButton: FUIButton?
    
    var ShowRankingViewButton: FUIButton?
-   
    var ContactusButton: FUIButton?
-   
-   
-   
    //MARK: リーダボードID
    let LEADERBOARD_ID = "ClearStageNumLeaderBoard"
    
@@ -90,8 +86,11 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    }
    
    override func viewWillAppear(_ animated: Bool) {
-      StartBGM()
-      GameBGM.ResetHomeBGMVolume()
+      if !GameBGM.Hight_Tech.isPlaying {
+         StartBGM()
+      }else{
+         GameBGM.fade(player: GameBGM.Hight_Tech, fromVolume: GameBGM.Hight_Tech.volume, toVolume: GameBGM.SoundVolume, overTime: 3)
+      }
    }
    
    
@@ -308,14 +307,13 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    private func StartBGM() {
       if !GameBGM.isPlayingHomeBGM() {
-         GameBGM.PlayHomeBGM()
+         GameBGM.fade(player: GameBGM.Hight_Tech, fromVolume: 0, toVolume: GameBGM.SoundVolume, overTime: 2)
       }
    }
    
    //MARK:- BGM止めるようにしろってに通知きたよ
    @objc func StopHomeBGMCatchNotification(notification: Notification) -> Void {
-      GameBGM.StopHomeBGMSlow()
-      //GameBGM.fade(player: GameBGM.Hight_Tech, fromVolume: GameBGM.Hight_Tech.volume * 0.7, toVolume: 0, overTime: 1.2)
+      GameBGM.fade(player: GameBGM.Hight_Tech, fromVolume: GameBGM.Hight_Tech.volume, toVolume: 0, overTime: 4)
    }
    
    //MARK:- Main.storybordでつけたボタンのタッチイベント

@@ -28,6 +28,7 @@
 		BF2674F12227B6A4003D370F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2674F02227B6A4003D370F /* Assets.xcassets */; };
 		BF2674F42227B6A4003D370F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2674F22227B6A4003D370F /* LaunchScreen.storyboard */; };
 		BF27D04A22B4E61800596644 /* HomeViewIAP.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF27D04922B4E61800596644 /* HomeViewIAP.swift */; };
+		BF27D04C22B4EBE800596644 /* GameBgMRemocon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF27D04B22B4EBE800596644 /* GameBgMRemocon.swift */; };
 		BF2A186822A6AD7300E19CFF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF2A186A22A6AD7300E19CFF /* Localizable.strings */; };
 		BF2C145F2276F39500C7B8FB /* HintPouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C145E2276F39500C7B8FB /* HintPouseView.swift */; };
 		BF2C14612276F3A300C7B8FB /* HintTextNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C14602276F3A300C7B8FB /* HintTextNode.swift */; };
@@ -688,6 +689,7 @@
 		BF2674F32227B6A4003D370F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF2674F52227B6A4003D370F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF27D04922B4E61800596644 /* HomeViewIAP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewIAP.swift; sourceTree = "<group>"; };
+		BF27D04B22B4EBE800596644 /* GameBgMRemocon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBgMRemocon.swift; sourceTree = "<group>"; };
 		BF2A186022A6ACD500E19CFF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		BF2A186122A6ACD500E19CFF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		BF2A186222A6ACE500E19CFF /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
@@ -1751,6 +1753,7 @@
 			children = (
 				BF60AC5B224CA2E000D441D6 /* Sound.swift */,
 				BF2C146822770A8500C7B8FB /* GameBGM.swift */,
+				BF27D04B22B4EBE800596644 /* GameBgMRemocon.swift */,
 				BFC9C1DD22B136AE00F0FFDE /* Sound */,
 				BFC9C1DE22B136B900F0FFDE /* BGM */,
 			);
@@ -3122,6 +3125,7 @@
 				BF332F742248B1FE009B3042 /* EasySellectStage.swift in Sources */,
 				BF552F16226DDEC500756E16 /* H30.swift in Sources */,
 				BF332FF822492837009B3042 /* H16.swift in Sources */,
+				BF27D04C22B4EBE800596644 /* GameBgMRemocon.swift in Sources */,
 				BF1BD1EA2279A2620047496B /* EasyStageClearInfomation.swift in Sources */,
 				BFFA2A86223383B60023BB71 /* Normal.swift in Sources */,
 				BF33300422492B3E009B3042 /* ExGameSecenNormalP2.swift in Sources */,
