@@ -27,7 +27,6 @@ class BGM {
    var isPlayHomeBGM = false
    
    init() {
-      
       InitCherry()
       InitBreak()
       InitHight_Tech()
@@ -35,16 +34,6 @@ class BGM {
       InitTokino()
       InitYukimasu()
       InitYurufuwa()
-      
-      let soundFilePath = Bundle.main.path(forResource: "cherry", ofType: "caf")!
-      let sound:URL = URL(fileURLWithPath: soundFilePath)
-      do {
-         Cherry = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
-      } catch { print("Katchインスタンス作成失敗") }
-      
-      Cherry.prepareToPlay()
-      Cherry.numberOfLoops = -1
-  
    }
    
    public func PlaySounds() {
@@ -131,9 +120,16 @@ class BGM {
          let delayInSeconds : TimeInterval = TimeInterval(step) * timePerStep
          let deadline = DispatchTime.now() + delayInSeconds
          
+         //もしendVolumeが0だったら，最後にプレイヤーを停止する。
+         //startVolumeが0の時にif文走らないようにする
          DispatchQueue.main.asyncAfter(deadline: deadline, execute: {
             let fraction = (Float(step) / Float(fadeSteps))
             player.volume = startVolume + (endVolume - startVolume) * fraction
+            if player.volume == 0 && endVolume == 0 {
+               print("\(player)を止めました。")
+               player.stop()
+               player.currentTime = 0
+            }
          })
          
       }
