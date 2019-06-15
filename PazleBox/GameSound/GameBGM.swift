@@ -8,7 +8,7 @@
 
 import Foundation
 import AVFoundation
-
+import Firebase
 
 class BGM {
    
@@ -22,9 +22,14 @@ class BGM {
    var Yukimasu: AVAudioPlayer! = nil
    var Yurufuwa: AVAudioPlayer! = nil
    
-   let SoundVolume: Float = 0.185
+   var FetchedPlayGameBGM: AVAudioPlayer! = nil
+   
+   var SoundVolume: Float = 0.185
    
    var isPlayHomeBGM = false
+   
+   //リモートコンフィグろとるやつ
+   var RemorteConfigs: RemoteConfig!
    
    init() {
       InitCherry()
@@ -34,6 +39,12 @@ class BGM {
       InitTokino()
       InitYukimasu()
       InitYurufuwa()
+      
+      InitConfig()
+      SetUpRemoteConfigDefaults()
+      SetGameBGM()
+
+      FetchConfig()
    }
    
    public func PlaySounds() {
@@ -48,16 +59,16 @@ class BGM {
    }
    
    public func PlayGameBGM() {
-      Yurufuwa.stop()
-      Yurufuwa.currentTime = 0
-      Yurufuwa.volume = SoundVolume
-      Yurufuwa.play()
-      fade(player: Yurufuwa, fromVolume: 0, toVolume: SoundVolume, overTime: 6.5)
+      FetchedPlayGameBGM.stop()
+      FetchedPlayGameBGM.currentTime = 0
+      FetchedPlayGameBGM.volume = SoundVolume
+      FetchedPlayGameBGM.play()
+      fade(player: FetchedPlayGameBGM, fromVolume: 0, toVolume: SoundVolume, overTime: 7.25)
    }
    
    public func StopGameBGM() {
-      Yurufuwa.stop()
-      Yurufuwa.currentTime = 0
+      FetchedPlayGameBGM.stop()
+      FetchedPlayGameBGM.currentTime = 0
    }
    
    public func StopGameBGMSlow() {
