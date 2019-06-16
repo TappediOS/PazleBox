@@ -534,29 +534,39 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    
    //MARK:- ゲームクリアして通知を受け取る関数
    @objc func GameClearCatchNotification(notification: Notification) -> Void {
-      
       guard ShowGameClearView == false else { return }
-      
       var CountOfUsedHint = 0
       
       //セーブする関数に飛ばす
       if let userInfo = notification.userInfo {
          CountOfUsedHint = userInfo["CountOfUsedHint"] as! Int
          SaveStageInfo(CountOfUsedHint: CountOfUsedHint)
-      }else{
-         print("Nil きたよ")
-      }
+      }else{ print("Nil きたよ") }
       
+      //BGM小さくして，
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.174) {
+         self.GameBGM.fade(player: self.GameBGM.FetchedPlayGameBGM,
+                           fromVolume: self.GameBGM.FetchedPlayGameBGM.volume,
+                           toVolume: self.GameBGM.FetchedPlayGameBGM.volume * 0.215,
+                           overTime: 0.28)
+      }
+      //降ってくるviewの開始
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.245) {
          self.StartConfetti()
       }
-      
+      //MARK:- クリアした時に音楽を鳴らす
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
          self.ClearView?.PlayGameClseraSounds()
+         //クリア音を鳴らしたら，BGMを元の大きさに戻す
+         DispatchQueue.main.asyncAfter(deadline: .now() + 4.65) {
+            self.GameBGM.fade(player: self.GameBGM.FetchedPlayGameBGM,
+                              fromVolume: self.GameBGM.FetchedPlayGameBGM.volume,
+                              toVolume: self.GameBGM.SoundVolume,
+                              overTime: 3)
+         }
       }
       
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.645) {
-         
          self.view.addSubview(self.ClearView!)
          self.view.bringSubviewToFront(self.ConfettiView)
          self.ClearView?.AddStarView1()
@@ -572,7 +582,6 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
             self?.ShowGameClearViewWithStar(CountOfUsedHint: CountOfUsedHint)
          }
       }
-      return
    }
    
    //MARK:- ゲームのステージを選択したって通知を受け取る関数

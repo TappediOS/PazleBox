@@ -490,7 +490,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
-            timestampString = "582285998.414616"
+            timestampString = "582378373.7544709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "199"
@@ -1204,7 +1204,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
-            timestampString = "582285998.414986"
+            timestampString = "582378373.754604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "300"
@@ -1380,11 +1380,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
-            timestampString = "582285998.415277"
+            timestampString = "582378373.754757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "652"
-            endingLineNumber = "652"
+            startingLineNumber = "661"
+            endingLineNumber = "661"
             landmarkName = "TapHomeNotification(notification:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1506,7 +1506,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
-            timestampString = "582285998.4155149"
+            timestampString = "582378373.7548389"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
@@ -1709,11 +1709,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
-            timestampString = "582285998.415754"
+            timestampString = "582378373.7549421"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "677"
-            endingLineNumber = "677"
+            startingLineNumber = "686"
+            endingLineNumber = "686"
             landmarkName = "ShowNextGame()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1741,7 +1741,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/HomeView/HomeViewController.swift"
-            timestampString = "582290068.788576"
+            timestampString = "582378373.755011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "170"
@@ -1757,7 +1757,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/HomeView/HomeViewController.swift"
-            timestampString = "582290068.789075"
+            timestampString = "582378373.7553509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "171"
@@ -1773,7 +1773,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameClearView/GameClearView.swift"
-            timestampString = "582042052.497233"
+            timestampString = "582378373.755618"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "229"
@@ -1789,7 +1789,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameClearView/GameClearView.swift"
-            timestampString = "582042052.497281"
+            timestampString = "582378373.7556829"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "166"
@@ -1805,7 +1805,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameSound/GameBGM.swift"
-            timestampString = "582285998.4169151"
+            timestampString = "582375789.249166"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
@@ -1821,7 +1821,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/HomeView/HomeViewController.swift"
-            timestampString = "582290068.789484"
+            timestampString = "582378373.755751"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
@@ -1837,13 +1837,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameSound/GameBgMRemocon.swift"
-            timestampString = "582285998.417395"
+            timestampString = "582378373.756017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
             endingLineNumber = "55"
             landmarkName = "BGM"
             landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
+            timestampString = "582378373.756302"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "630"
+            endingLineNumber = "630"
+            landmarkName = "TapNextNotification(notification:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
+            timestampString = "582379760.93819"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "546"
+            endingLineNumber = "546"
+            landmarkName = "GameClearCatchNotification(notification:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

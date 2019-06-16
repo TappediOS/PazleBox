@@ -138,6 +138,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       return true
    }
 
+   //MARK:- 元々あったやつ
    func applicationWillResignActive(_ application: UIApplication) {
       // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
       // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -159,8 +160,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    func applicationWillTerminate(_ application: UIApplication) {
       // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
    }
+   //MARK: 元々あったやつ -
    
-   //MARK:- 通知のデリゲート
+   //MARK: 通知のデリゲート
    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
       //アプリがバックグラウンドにある間に通知メッセージを受信した場合
       //このコールバックは、ユーザーがアプリケーションを起動する通知をタップするまで起動されません。
@@ -232,21 +234,22 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
 }
 
 extension AppDelegate : MessagingDelegate {
-   // [START refresh_token]
+   //MARK:- START refresh_token
    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
       print("Firebase registration token: \(fcmToken)")
       
       let dataDict:[String: String] = ["token": fcmToken]
       NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
-      // TODO: If necessary send token to application server.
-      // Note: This callback is fired at each app startup and whenever a new token is generated.
+      // TODO: 必要に応じてトークンをアプリケーションサーバーに送信します。
+      // Note: このコールバックは、アプリの起動時と新しいトークンが生成されるたびに発生します。
    }
-   // [END refresh_token]
-   // [START ios_10_data_message]
-   // Receive data messages on iOS 10+ directly from FCM (bypassing APNs) when the app is in the foreground.
+   //MARK: END refresh_token -
+   
+   //MARK:- START ios_10_data_message
+   // アプリがフォアグラウンドにあるときに、iOS 10以降でデータメッセージをFCMから直接（APNをバイパスして）受信する。
    // To enable direct data messages, you can set Messaging.messaging().shouldEstablishDirectChannel to true.
    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
       print("Received data message: \(remoteMessage.appData)")
    }
-   // [END ios_10_data_message]
+   //MARK: END ios_10_data_message -
 }
