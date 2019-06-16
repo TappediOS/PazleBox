@@ -113,8 +113,6 @@ class puzzle: SKSpriteNode {
       
       SetParticles = PutParticle(PX: PX, PY: PY, CustNum: CustNum, ViewX: ViewX, ViewY: ViewY)
       
-      
-      
       let NodeSize = CGSize(width: CGFloat(PazzleWideSize), height: CGFloat(PazzleHightSize))
       
       super.init(texture: texture, color: UIColor.black, size: NodeSize)
