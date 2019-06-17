@@ -59,6 +59,7 @@ extension BGM {
       self.FetchedPlayGameBGM.volume = self.SoundVolume
    }
    
+   
    func GetGameBGMFromBGMString(BGMName: String) -> AVAudioPlayer {
       switch BGMName {
       case "Cherry":

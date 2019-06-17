@@ -11,6 +11,8 @@
 		BF0FD352224364A900E8F387 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = BF0FD351224364A900E8F387 /* Star.png */; };
 		BF0FD35422436DF200E8F387 /* ExUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0FD35322436DF200E8F387 /* ExUIColor.swift */; };
 		BF0FD356224371CE00E8F387 /* PutParticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0FD355224371CE00E8F387 /* PutParticle.swift */; };
+		BF1A5EDB22B78609002C6733 /* BuyCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A5EDA22B78609002C6733 /* BuyCoinView.swift */; };
+		BF1A5EDD22B78616002C6733 /* CoinsID.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A5EDC22B78616002C6733 /* CoinsID.swift */; };
 		BF1BD1EA2279A2620047496B /* EasyStageClearInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD1E92279A2620047496B /* EasyStageClearInfomation.swift */; };
 		BF1BD1EC2279C4060047496B /* NormalStageClearInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD1EB2279C4060047496B /* NormalStageClearInfomation.swift */; };
 		BF1BD1EE2279C4120047496B /* HardStageClearInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD1ED2279C4120047496B /* HardStageClearInfomation.swift */; };
@@ -670,6 +672,8 @@
 		BF0FD351224364A900E8F387 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
 		BF0FD35322436DF200E8F387 /* ExUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIColor.swift; sourceTree = "<group>"; };
 		BF0FD355224371CE00E8F387 /* PutParticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutParticle.swift; sourceTree = "<group>"; };
+		BF1A5EDA22B78609002C6733 /* BuyCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCoinView.swift; sourceTree = "<group>"; };
+		BF1A5EDC22B78616002C6733 /* CoinsID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsID.swift; sourceTree = "<group>"; };
 		BF1BD1E92279A2620047496B /* EasyStageClearInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyStageClearInfomation.swift; sourceTree = "<group>"; };
 		BF1BD1EB2279C4060047496B /* NormalStageClearInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalStageClearInfomation.swift; sourceTree = "<group>"; };
 		BF1BD1ED2279C4120047496B /* HardStageClearInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardStageClearInfomation.swift; sourceTree = "<group>"; };
@@ -1357,6 +1361,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BF1A5ED922B785CF002C6733 /* BuyCoinView */ = {
+			isa = PBXGroup;
+			children = (
+				BF1A5EDA22B78609002C6733 /* BuyCoinView.swift */,
+				BF1A5EDC22B78616002C6733 /* CoinsID.swift */,
+			);
+			path = BuyCoinView;
+			sourceTree = "<group>";
+		};
 		BF1BD1E82279A2420047496B /* ClearInfomation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1391,6 +1404,7 @@
 				BF60AC4F224C8EDA00D441D6 /* StatesBar */,
 				BF8A464C225081E90016F801 /* LottieJSON */,
 				BF332F7E22491850009B3042 /* HomeView */,
+				BF1A5ED922B785CF002C6733 /* BuyCoinView */,
 				BF332F7D224917F3009B3042 /* Extention */,
 			);
 			path = GameFile;
@@ -3041,6 +3055,7 @@
 				BF552ED2226DDDBE00756E16 /* N26.swift in Sources */,
 				BF2C14612276F3A300C7B8FB /* HintTextNode.swift in Sources */,
 				BF552EC6226DDD7F00756E16 /* E50.swift in Sources */,
+				BF1A5EDD22B78616002C6733 /* CoinsID.swift in Sources */,
 				BF0FD356224371CE00E8F387 /* PutParticle.swift in Sources */,
 				BF332FB42249277A009B3042 /* N3.swift in Sources */,
 				BF552EE2226DDDF400756E16 /* N34.swift in Sources */,
@@ -3189,6 +3204,7 @@
 				BF552ECC226DDDA800756E16 /* N23.swift in Sources */,
 				BF552EAC226DDD4200756E16 /* E37.swift in Sources */,
 				BF33300622492B4C009B3042 /* ExGameSeceneHardP2.swift in Sources */,
+				BF1A5EDB22B78609002C6733 /* BuyCoinView.swift in Sources */,
 				BF552E9E226DDD1B00756E16 /* E30.swift in Sources */,
 				BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */,
 				BF332FFC22492848009B3042 /* H18.swift in Sources */,
