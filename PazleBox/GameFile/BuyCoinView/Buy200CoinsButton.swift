@@ -39,7 +39,7 @@ class Buy200CoinsButton: FUIButton {
          print("現在200CoinボタンはLockされています")
          return
       }
-      
+      NotificationCenter.default.post(name: .LockBuyCoinButton, object: nil, userInfo: nil)
       CoinsIAPMana.purchase(PRODUCT_ID: ProductID.Buy200Coins, sharedSecret: ProductID.SECRET_CODE)
       
    }
