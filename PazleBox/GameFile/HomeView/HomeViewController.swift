@@ -248,6 +248,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    }
    
    //MARK:- コンタクトアスボタン押された時の処理
+   //FIXME:- とりあえず，CoinView出すから終わったら消せ
    @objc func ContactUs() {
       GameSound.PlaySoundsTapButton()
       let url = URL(string: "https://forms.gle/mSEq7WwDz3fZNcqF6")
