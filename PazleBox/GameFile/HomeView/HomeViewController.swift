@@ -211,7 +211,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    }
    
    
-   
    private func SetUpHomeEachSmallButton(sender: FUIButton) {
       sender.titleLabel?.adjustsFontSizeToFitWidth = true
       sender.titleLabel?.adjustsFontForContentSizeCategory = true
