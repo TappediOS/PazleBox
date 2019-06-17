@@ -7,3 +7,18 @@
 //
 
 import Foundation
+import UIKit
+import FlatUIKit
+import Firebase
+import ChameleonFramework
+
+class Buy200Coins: FUIButton {
+   
+   override init(frame: CGRect) {
+      super.init(frame: frame)
+   }
+   
+   required init?(coder aDecoder: NSCoder) {
+      fatalError()
+   }
+}
