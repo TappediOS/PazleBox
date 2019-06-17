@@ -16,6 +16,7 @@ import SwiftyStoreKit
 class Buy200CoinsButton: FUIButton {
    
    let ProductID = IAPCoinID()
+   let ProductValues = IAPCoinValue()
    let CoinsIAPMana = CoinIAPManager()
    var LockParchaseButton = false
    
@@ -42,7 +43,7 @@ class Buy200CoinsButton: FUIButton {
          return
       }
       NotificationCenter.default.post(name: .LockBuyCoinButton, object: nil, userInfo: nil)
-      CoinsIAPMana.purchase(PRODUCT_ID: ProductID.Buy200Coins, sharedSecret: ProductID.SECRET_CODE)
+      CoinsIAPMana.purchase(PRODUCT_ID: ProductID.Buy200Coins, sharedSecret: ProductID.SECRET_CODE, ProductValue: ProductValues.Buy200)
       
    }
    

@@ -15,3 +15,10 @@ struct IAPCoinID {
    let Buy1400Coins = "com.PuzzleBox.1400COINS"
    let SECRET_CODE = "c8bf5f01b42f4f80ad32ffd00349d92d"
 }
+
+struct IAPCoinValue {
+   
+   let Buy200 = 200
+   let Buy650 = 650
+   let Buy1400 = 1400
+}

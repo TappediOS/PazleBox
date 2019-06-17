@@ -16,8 +16,8 @@ import SwiftyStoreKit
 class Buy1400CoinsButton: FUIButton {
    
    let ProductID = IAPCoinID()
+   let ProductValues = IAPCoinValue()
    let CoinsIAPMana = CoinIAPManager()
-   
    var LockParchaseButton = false
    
    override init(frame: CGRect) {
@@ -43,7 +43,7 @@ class Buy1400CoinsButton: FUIButton {
          return
       }
       NotificationCenter.default.post(name: .LockBuyCoinButton, object: nil, userInfo: nil)
-      CoinsIAPMana.purchase(PRODUCT_ID: ProductID.Buy1400Coins, sharedSecret: ProductID.SECRET_CODE)
+      CoinsIAPMana.purchase(PRODUCT_ID: ProductID.Buy1400Coins, sharedSecret: ProductID.SECRET_CODE, ProductValue: ProductValues.Buy1400)
    }
    
    public func LockingParchaseButton() {
