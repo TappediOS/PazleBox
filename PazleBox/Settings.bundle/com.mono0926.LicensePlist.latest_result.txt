@@ -91,6 +91,10 @@ name: nanopb, nameSpecified:
 body: Copyright (c) 2011 P…
 version: 0.3.901
 
+name: NVActivityIndicatorView, nameSpecified: 
+body: The MIT License (MIT…
+version: 4.7.0
+
 name: Protobuf, nameSpecified: 
 body: Copyright 2008 Googl…
 version: 3.7.0

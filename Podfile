@@ -15,6 +15,7 @@ target 'PazleBox' do
   pod 'ChameleonFramework/Swift'
   pod 'FlatUIKit'
   pod 'lottie-ios'
+  pod 'NVActivityIndicatorView'
 
   pod 'RealmSwift'
   pod 'SwiftyStoreKit'
