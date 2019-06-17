@@ -13,6 +13,9 @@
 		BF0FD356224371CE00E8F387 /* PutParticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0FD355224371CE00E8F387 /* PutParticle.swift */; };
 		BF1A5EDB22B78609002C6733 /* BuyCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A5EDA22B78609002C6733 /* BuyCoinView.swift */; };
 		BF1A5EDD22B78616002C6733 /* CoinsID.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A5EDC22B78616002C6733 /* CoinsID.swift */; };
+		BF1A5EDF22B78759002C6733 /* Buy200CoinsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A5EDE22B78759002C6733 /* Buy200CoinsButton.swift */; };
+		BF1A5EE122B787B8002C6733 /* Buy650CoinsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A5EE022B787B8002C6733 /* Buy650CoinsButton.swift */; };
+		BF1A5EE322B787C2002C6733 /* Buy1400CoinsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A5EE222B787C2002C6733 /* Buy1400CoinsButton.swift */; };
 		BF1BD1EA2279A2620047496B /* EasyStageClearInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD1E92279A2620047496B /* EasyStageClearInfomation.swift */; };
 		BF1BD1EC2279C4060047496B /* NormalStageClearInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD1EB2279C4060047496B /* NormalStageClearInfomation.swift */; };
 		BF1BD1EE2279C4120047496B /* HardStageClearInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD1ED2279C4120047496B /* HardStageClearInfomation.swift */; };
@@ -674,6 +677,9 @@
 		BF0FD355224371CE00E8F387 /* PutParticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutParticle.swift; sourceTree = "<group>"; };
 		BF1A5EDA22B78609002C6733 /* BuyCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCoinView.swift; sourceTree = "<group>"; };
 		BF1A5EDC22B78616002C6733 /* CoinsID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsID.swift; sourceTree = "<group>"; };
+		BF1A5EDE22B78759002C6733 /* Buy200CoinsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buy200CoinsButton.swift; sourceTree = "<group>"; };
+		BF1A5EE022B787B8002C6733 /* Buy650CoinsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buy650CoinsButton.swift; sourceTree = "<group>"; };
+		BF1A5EE222B787C2002C6733 /* Buy1400CoinsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buy1400CoinsButton.swift; sourceTree = "<group>"; };
 		BF1BD1E92279A2620047496B /* EasyStageClearInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyStageClearInfomation.swift; sourceTree = "<group>"; };
 		BF1BD1EB2279C4060047496B /* NormalStageClearInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalStageClearInfomation.swift; sourceTree = "<group>"; };
 		BF1BD1ED2279C4120047496B /* HardStageClearInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardStageClearInfomation.swift; sourceTree = "<group>"; };
@@ -1365,6 +1371,9 @@
 			isa = PBXGroup;
 			children = (
 				BF1A5EDA22B78609002C6733 /* BuyCoinView.swift */,
+				BF1A5EDE22B78759002C6733 /* Buy200CoinsButton.swift */,
+				BF1A5EE022B787B8002C6733 /* Buy650CoinsButton.swift */,
+				BF1A5EE222B787C2002C6733 /* Buy1400CoinsButton.swift */,
 				BF1A5EDC22B78616002C6733 /* CoinsID.swift */,
 			);
 			path = BuyCoinView;
@@ -3058,6 +3067,7 @@
 				BF1A5EDD22B78616002C6733 /* CoinsID.swift in Sources */,
 				BF0FD356224371CE00E8F387 /* PutParticle.swift in Sources */,
 				BF332FB42249277A009B3042 /* N3.swift in Sources */,
+				BF1A5EE322B787C2002C6733 /* Buy1400CoinsButton.swift in Sources */,
 				BF552EE2226DDDF400756E16 /* N34.swift in Sources */,
 				BF552F14226DDEB800756E16 /* H29.swift in Sources */,
 				BF332F92224926D3009B3042 /* E6.swift in Sources */,
@@ -3078,6 +3088,7 @@
 				BF60AC53224C952E00D441D6 /* Hint.swift in Sources */,
 				BF552E96226DDD0C00756E16 /* E26.swift in Sources */,
 				BF552F2A226DDF0600756E16 /* H40.swift in Sources */,
+				BF1A5EDF22B78759002C6733 /* Buy200CoinsButton.swift in Sources */,
 				BF332FB82249278B009B3042 /* N5.swift in Sources */,
 				BF8ABFDA2279C6B900F275FA /* HardSellectStage.swift in Sources */,
 				BF60AC51224C8F1100D441D6 /* RePutButton.swift in Sources */,
@@ -3102,6 +3113,7 @@
 				BF552ECE226DDDAC00756E16 /* N25.swift in Sources */,
 				BFF889A3229F830C0056A839 /* FirebasePerformanceManager.swift in Sources */,
 				BF332FC6224927B1009B3042 /* N12.swift in Sources */,
+				BF1A5EE122B787B8002C6733 /* Buy650CoinsButton.swift in Sources */,
 				BF332FDC224927EF009B3042 /* H3.swift in Sources */,
 				BF552EBE226DDD6B00756E16 /* E46.swift in Sources */,
 				BF552E92226DDCFE00756E16 /* E24.swift in Sources */,
