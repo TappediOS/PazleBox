@@ -11,8 +11,13 @@ import UIKit
 import FlatUIKit
 import Firebase
 import ChameleonFramework
+import SwiftyStoreKit
 
 class Buy650CoinsButton: FUIButton {
+   
+   let ProductID = IAPCoinID()
+   let CoinsIAPMana = CoinIAPManager()
+   var LockParchaseButton = false
    
    override init(frame: CGRect) {
       super.init(frame: frame)
@@ -26,11 +31,19 @@ class Buy650CoinsButton: FUIButton {
       self.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       self.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
       self.setTitle(NSLocalizedString("650 coins", comment: ""), for: .normal)
-      self.addTarget(self, action: #selector(self.TapBuy200CoinsButton), for: .touchUpInside)
+      self.addTarget(self, action: #selector(self.TapBuy650CoinsButton), for: .touchUpInside)
    }
    
    @objc func TapBuy650CoinsButton(sender: FUIButton) {
-      
+      if LockParchaseButton { return }
+   }
+   
+   public func LockingParchaseButton() {
+      self.LockParchaseButton = true
+   }
+   
+   public func UnLockingParchaseButton() {
+      self.LockParchaseButton = false
    }
    
    
