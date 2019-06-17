@@ -12,7 +12,9 @@ import SwiftyStoreKit
 
 class CoinIAPManager {
    
-   func purchase(PRODUCT_ID:String, sharedSecret: String){
+   let UsersCoin = GameCoins()
+   
+   func purchase(PRODUCT_ID:String, sharedSecret: String, ProductValue: Int){
       SwiftyStoreKit.purchaseProduct(PRODUCT_ID, quantity: 1, atomically: true) { result in
          switch result {
          case .success(_):
