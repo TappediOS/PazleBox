@@ -33,6 +33,7 @@ class BuyCoinView: UIView {
       InitBuy650CoinButton()
       InitBuy1400CoinButton()
       InitNotificationCenter()
+
    }
    
    private func InitBackGroundColor() {

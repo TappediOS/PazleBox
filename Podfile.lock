@@ -110,6 +110,9 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - NVActivityIndicatorView (4.7.0):
+    - NVActivityIndicatorView/Presenter (= 4.7.0)
+  - NVActivityIndicatorView/Presenter (4.7.0)
   - Protobuf (3.7.0)
   - Realm (3.15.0):
     - Realm/Headers (= 3.15.0)
@@ -133,6 +136,7 @@ DEPENDENCIES:
   - FlatUIKit
   - LicensePlist
   - lottie-ios
+  - NVActivityIndicatorView
   - RealmSwift
   - SAConfettiView (from `https://github.com/gokhanakkurt/SAConfettiView`, branch `swift3`)
   - SCLAlertView
@@ -163,6 +167,7 @@ SPEC REPOS:
     - LicensePlist
     - lottie-ios
     - nanopb
+    - NVActivityIndicatorView
     - Protobuf
     - Realm
     - RealmSwift
@@ -203,6 +208,7 @@ SPEC CHECKSUMS:
   LicensePlist: e5f8f2e3465620e53ec4c669955a5a7d0692b9cb
   lottie-ios: d030b6cda141cfd8bbaa3db89264785e6fdf675a
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   Realm: 9b834e1be6062f544805252c812348872dc5d4ed
   RealmSwift: 8a41886f8ab6efef9eb8df97de2f2bb911561a79
@@ -212,6 +218,6 @@ SPEC CHECKSUMS:
   SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
   TapticEngine: ed6f5b4a2e9aa46d4e8fa69a72a7a0b6719bf8ac
 
-PODFILE CHECKSUM: a4279ab637e27bb5737ede766e5597f6ec28f85c
+PODFILE CHECKSUM: 34372728300945e9163c75a32d3f8c1039ee93d7
 
 COCOAPODS: 1.6.0

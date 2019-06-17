@@ -9,17 +9,34 @@
 import Foundation
 import UIKit
 import SwiftyStoreKit
+import SCLAlertView
 
 class CoinIAPManager {
    
    let UsersCoin = GameCoins()
    
+   //課金が完了した時に呼ばれる関数
+   private func CompleateBuyCoins(BuyCoinValue: String) {
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      ComleateView.addButton("OK"){
+         print("tap")
+         NotificationCenter.default.post(name: .UnLockBuyCoinButton, object: nil, userInfo: nil)
+      }
+      ComleateView.showSuccess(NSLocalizedString("Passed.", comment: ""), subTitle: "Purchase complete.\nGet \(BuyCoinValue) Coins!")
+   }
+   
    func purchase(PRODUCT_ID:String, sharedSecret: String, ProductValue: Int){
+      
+
+      
       SwiftyStoreKit.purchaseProduct(PRODUCT_ID, quantity: 1, atomically: true) { result in
          switch result {
          case .success(_):
             //購入成功
             //購入の検証
+            self.UsersCoin.EarnCoinWithIAP(EarnCoinValue: ProductValue)
+            self.CompleateBuyCoins(BuyCoinValue: String(ProductValue))
             self.verifyPurchase(PRODUCT_ID: PRODUCT_ID, sharedSecret: sharedSecret)
          case .error(_):
             //購入失敗

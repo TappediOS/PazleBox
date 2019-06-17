@@ -24,7 +24,7 @@ class GameCoins {
       print("現在の所持コインは\(String(describing: UsersCoins))です")
       print("ユーザが買いたいアイテムの値段は\(String(describing: SpendCoinValue))です")
       
-      UsersCoins! -= UsersCoins! - SpendCoinValue
+      UsersCoins! = UsersCoins! - SpendCoinValue
       print("支払い後の金額は\(String(describing: UsersCoins))です")
       userDefault.set(UsersCoins!, forKey: userDefaultCoinKey)
       
@@ -34,7 +34,7 @@ class GameCoins {
       print("現在の所持コインは\(String(describing: UsersCoins))です")
       print("ユーザがもうけたコインの金額は\(String(describing: EarnCoinValue))です")
       
-      UsersCoins! += UsersCoins! - EarnCoinValue
+      UsersCoins! = UsersCoins! + EarnCoinValue
       print("計算後の金額は\(String(describing: UsersCoins))です")
       userDefault.set(UsersCoins!, forKey: userDefaultCoinKey)
    }
@@ -43,7 +43,7 @@ class GameCoins {
       print("現在の所持コインは\(String(describing: UsersCoins))です")
       print("ユーザがもうけたコインの金額は\(String(describing: EarnCoinValue))です")
       
-      UsersCoins! += UsersCoins! - EarnCoinValue
+      UsersCoins! = UsersCoins! + EarnCoinValue
       print("計算後の金額は\(String(describing: UsersCoins))です")
       userDefault.set(UsersCoins!, forKey: userDefaultCoinKey)
    }
@@ -52,7 +52,7 @@ class GameCoins {
       print("現在の所持コインは\(String(describing: UsersCoins))です")
       print("ユーザがもうけたコインの金額は\(String(describing: EarnCoinValue))です")
       
-      UsersCoins! += UsersCoins! - EarnCoinValue
+      UsersCoins! = UsersCoins! + EarnCoinValue
       print("計算後の金額は\(String(describing: UsersCoins))です")
       userDefault.set(UsersCoins!, forKey: userDefaultCoinKey)
    }
