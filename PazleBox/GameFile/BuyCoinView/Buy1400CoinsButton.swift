@@ -33,6 +33,8 @@ class Buy1400CoinsButton: FUIButton {
       self.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
       self.setTitle(NSLocalizedString("1400 coins", comment: ""), for: .normal)
       self.addTarget(self, action: #selector(self.TapBuy1400CoinsButton), for: .touchUpInside)
+      
+      CoinsIAPMana.CheckIAPInfomation(ProductID: ProductID.Buy1400Coins)
    }
    
    @objc func TapBuy1400CoinsButton(sender: FUIButton) {

@@ -22,6 +22,7 @@ class CoinIAPManager {
          case .error(_):
             //購入失敗
             print("購入失敗")
+            NotificationCenter.default.post(name: .UnLockBuyCoinButton, object: nil, userInfo: nil)
          }
       }
    }
@@ -36,15 +37,32 @@ class CoinIAPManager {
             case .purchased:
                //リストアの成功
                print("購入の検証の成功")
-               
+               NotificationCenter.default.post(name: .UnLockBuyCoinButton, object: nil, userInfo: nil)
             case .notPurchased:
                //リストアの失敗
                print("購入の検証の失敗")
+               NotificationCenter.default.post(name: .UnLockBuyCoinButton, object: nil, userInfo: nil)
             }
          case .error:
             //エラー
             print("購入の懸賞での失敗")
-            
+            NotificationCenter.default.post(name: .UnLockBuyCoinButton, object: nil, userInfo: nil)
+         }
+      }
+   }
+   
+   func  CheckIAPInfomation(ProductID: String) {
+      SwiftyStoreKit.retrieveProductsInfo([ProductID]) { result in
+         if let product = result.retrievedProducts.first {
+            let priceString = product.localizedPrice!
+            print("\n ---- Product Infomation ----")
+            print("Product: \(product.localizedDescription), price: \(priceString)\n")
+         }
+         else if let invalidProductId = result.invalidProductIDs.first {
+            print("Invalid product identifier: \(invalidProductId)")
+         }
+         else {
+            print("Error: \(String(describing: result.error))")
          }
       }
    }
