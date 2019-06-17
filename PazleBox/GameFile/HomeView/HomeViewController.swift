@@ -18,10 +18,7 @@ import GameKit
 import Firebase
 import FlatUIKit
 
-
 class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
-   
-   
    
    @IBOutlet weak var EasyButton: FUIButton!
    @IBOutlet weak var NormalButton: FUIButton!
@@ -81,7 +78,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       SetEachButtonColor()
       SetTitileLabelText()
       FetchConfig()
-      
       StartBGM()
    }
    
@@ -93,7 +89,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       }
    }
    
-   
    private func InitViewSize() {
       ViewW = self.view.frame.width
       ViewH = self.view.frame.height
@@ -104,7 +99,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    //MARK: 通知の初期化
    private func InitNotificationCenter() {
       NotificationCenter.default.addObserver(self, selector: #selector(StopHomeBGMCatchNotification(notification:)), name: .StopHomeViewBGM, object: nil)
-
    }
    
    private func InitTitleLabel() {
@@ -210,7 +204,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       TitleLabel!.text = RemorteConfigs[RemoConName.TitileLabelText].stringValue!
    }
    
-   
    private func SetUpHomeEachSmallButton(sender: FUIButton) {
       sender.titleLabel?.adjustsFontSizeToFitWidth = true
       sender.titleLabel?.adjustsFontForContentSizeCategory = true
@@ -254,6 +247,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       self.view.addSubview(ContactusButton!)
    }
    
+   //MARK:- コンタクトアスボタン押された時の処理
    @objc func ContactUs() {
       GameSound.PlaySoundsTapButton()
       let url = URL(string: "https://forms.gle/mSEq7WwDz3fZNcqF6")
@@ -271,10 +265,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       }
       
    }
-   
-   
-   
-   
    
    //MARK:- FlatUIButtonをセットアップ
    private func SetUpSellectStageButton(sender: FUIButton) {
@@ -315,12 +305,11 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       GameBGM.fade(player: GameBGM.Hight_Tech, fromVolume: GameBGM.Hight_Tech.volume, toVolume: 0, overTime: 1.25)
    }
    
-   //MARK:- Main.storybordでつけたボタンのタッチイベント
+   //MARK:- Main.storybordでつけたボタンのタッチイベント -
    @IBAction func NextViewWithNum(_ sender: UIButton) {
       //遷移先のインスタンス
       //ユーティリティエリアで設定したStoryBoardIDをwithIdentifierに設定
       let vc2 = self.storyboard?.instantiateViewController(withIdentifier: "GameView") as! GameViewController
-      
 
       print("ステージレベルの送信開始")
       switch sender.tag {
@@ -348,7 +337,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       }
    }
    
-   
    //MARK:- スコアボードビューの表示
    @objc func ShowRankingView() {
       GameSound.PlaySoundsTapButton()
@@ -365,8 +353,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
       gameCenterViewController.dismiss(animated: true, completion: nil)
    }
-
-   
    
    private func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
    private func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
