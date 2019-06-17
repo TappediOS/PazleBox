@@ -39,9 +39,11 @@ class Buy650CoinsButton: FUIButton {
          print("現在650CoinボタンはLockされています")
          return
       }
-      
+      NotificationCenter.default.post(name: .LockBuyCoinButton, object: nil, userInfo: nil)
       CoinsIAPMana.purchase(PRODUCT_ID: ProductID.Buy650Coins, sharedSecret: ProductID.SECRET_CODE)
    }
+   
+
    
    public func LockingParchaseButton() {
       self.LockParchaseButton = true

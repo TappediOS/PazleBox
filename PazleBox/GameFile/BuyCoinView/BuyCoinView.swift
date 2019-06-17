@@ -32,11 +32,20 @@ class BuyCoinView: UIView {
       InitBuy200CoinButton()
       InitBuy650CoinButton()
       InitBuy1400CoinButton()
+      InitNotificationCenter()
    }
    
    private func InitBackGroundColor() {
       self.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
    }
+   
+   //MARK: 通知の初期化
+   private func InitNotificationCenter() {
+      NotificationCenter.default.addObserver(self, selector: #selector(LockAllBuyCoinButton(notification:)), name: .LockBuyCoinButton, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(UnLockAllBuyCoinButton(notification:)), name: .UnLockBuyCoinButton, object: nil)
+   }
+   
+   
    
    private func InitViewSize() {
       ViewH = self.frame.height
@@ -86,6 +95,20 @@ class BuyCoinView: UIView {
       self.fadeOut(type: .Normal){ [weak self] in
          self?.removeFromSuperview()
       }
+   }
+   
+   
+   //MARK:- 通知を受け取る関数
+   @objc func LockAllBuyCoinButton(notification: Notification) -> Void {
+      Buy200CoinButton?.LockingParchaseButton()
+      Buy650CoinButton?.LockingParchaseButton()
+      Buy1400CoinButton?.LockingParchaseButton()
+   }
+   
+   @objc func UnLockAllBuyCoinButton(notification: Notification) -> Void {
+      Buy200CoinButton?.UnLockingParchaseButton()
+      Buy650CoinButton?.UnLockingParchaseButton()
+      Buy1400CoinButton?.UnLockingParchaseButton()
    }
    
    required init?(coder aDecoder: NSCoder) {
