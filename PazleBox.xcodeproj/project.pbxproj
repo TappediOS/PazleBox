@@ -16,6 +16,7 @@
 		BF1A5EDF22B78759002C6733 /* Buy200CoinsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A5EDE22B78759002C6733 /* Buy200CoinsButton.swift */; };
 		BF1A5EE122B787B8002C6733 /* Buy650CoinsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A5EE022B787B8002C6733 /* Buy650CoinsButton.swift */; };
 		BF1A5EE322B787C2002C6733 /* Buy1400CoinsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A5EE222B787C2002C6733 /* Buy1400CoinsButton.swift */; };
+		BF1A5EE522B78A5C002C6733 /* CoinsIAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A5EE422B78A5C002C6733 /* CoinsIAPManager.swift */; };
 		BF1BD1EA2279A2620047496B /* EasyStageClearInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD1E92279A2620047496B /* EasyStageClearInfomation.swift */; };
 		BF1BD1EC2279C4060047496B /* NormalStageClearInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD1EB2279C4060047496B /* NormalStageClearInfomation.swift */; };
 		BF1BD1EE2279C4120047496B /* HardStageClearInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD1ED2279C4120047496B /* HardStageClearInfomation.swift */; };
@@ -680,6 +681,7 @@
 		BF1A5EDE22B78759002C6733 /* Buy200CoinsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buy200CoinsButton.swift; sourceTree = "<group>"; };
 		BF1A5EE022B787B8002C6733 /* Buy650CoinsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buy650CoinsButton.swift; sourceTree = "<group>"; };
 		BF1A5EE222B787C2002C6733 /* Buy1400CoinsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buy1400CoinsButton.swift; sourceTree = "<group>"; };
+		BF1A5EE422B78A5C002C6733 /* CoinsIAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsIAPManager.swift; sourceTree = "<group>"; };
 		BF1BD1E92279A2620047496B /* EasyStageClearInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyStageClearInfomation.swift; sourceTree = "<group>"; };
 		BF1BD1EB2279C4060047496B /* NormalStageClearInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalStageClearInfomation.swift; sourceTree = "<group>"; };
 		BF1BD1ED2279C4120047496B /* HardStageClearInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardStageClearInfomation.swift; sourceTree = "<group>"; };
@@ -1375,6 +1377,7 @@
 				BF1A5EE022B787B8002C6733 /* Buy650CoinsButton.swift */,
 				BF1A5EE222B787C2002C6733 /* Buy1400CoinsButton.swift */,
 				BF1A5EDC22B78616002C6733 /* CoinsID.swift */,
+				BF1A5EE422B78A5C002C6733 /* CoinsIAPManager.swift */,
 			);
 			path = BuyCoinView;
 			sourceTree = "<group>";
@@ -3232,6 +3235,7 @@
 				BF27D04A22B4E61800596644 /* HomeViewIAP.swift in Sources */,
 				BF552F0A226DDE9400756E16 /* H24.swift in Sources */,
 				BFF889A922A39A5A0056A839 /* NoAdsButton.swift in Sources */,
+				BF1A5EE522B78A5C002C6733 /* CoinsIAPManager.swift in Sources */,
 				BF1BD1EC2279C4060047496B /* NormalStageClearInfomation.swift in Sources */,
 				BF332FFA2249283C009B3042 /* H17.swift in Sources */,
 				BF332FB022492766009B3042 /* N1.swift in Sources */,

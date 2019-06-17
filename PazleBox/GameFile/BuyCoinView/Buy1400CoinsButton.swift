@@ -11,8 +11,14 @@ import UIKit
 import FlatUIKit
 import Firebase
 import ChameleonFramework
+import SwiftyStoreKit
 
 class Buy1400CoinsButton: FUIButton {
+   
+   let ProductID = IAPCoinID()
+   let CoinsIAPMana = CoinIAPManager()
+   
+   var LockParchaseButton = false
    
    override init(frame: CGRect) {
       super.init(frame: frame)
@@ -30,7 +36,16 @@ class Buy1400CoinsButton: FUIButton {
    }
    
    @objc func TapBuy1400CoinsButton(sender: FUIButton) {
+      if LockParchaseButton { return }
       
+   }
+   
+   public func LockingParchaseButton() {
+      self.LockParchaseButton = true
+   }
+   
+   public func UnLockingParchaseButton() {
+      self.LockParchaseButton = false
    }
    
    

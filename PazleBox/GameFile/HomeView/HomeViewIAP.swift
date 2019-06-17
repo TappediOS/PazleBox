@@ -69,11 +69,6 @@ extension HomeViewController {
             let purchaseResult = SwiftyStoreKit.verifyPurchase(productId: PRODUCT_ID, inReceipt: receipt)
             switch purchaseResult {
             case .purchased:
-               //               let defaults = UserDefaults.standard
-               //               defaults.set(true, forKey: "BuyRemoveAd")
-               //               print("購入成功！")
-               //
-               //               print("購入フラグを　\(defaults.bool(forKey: "BuyRemoveAd"))　に変更しました")
                print("購入の検証 成功")
                self.LockPurchasButton = false
                
