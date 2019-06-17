@@ -35,7 +35,12 @@ class Buy650CoinsButton: FUIButton {
    }
    
    @objc func TapBuy650CoinsButton(sender: FUIButton) {
-      if LockParchaseButton { return }
+      if LockParchaseButton {
+         print("現在650CoinボタンはLockされています")
+         return
+      }
+      
+      CoinsIAPMana.purchase(PRODUCT_ID: ProductID.Buy650Coins, sharedSecret: ProductID.SECRET_CODE)
    }
    
    public func LockingParchaseButton() {
