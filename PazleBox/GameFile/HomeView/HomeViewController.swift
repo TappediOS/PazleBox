@@ -29,6 +29,8 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    var ShowRankingViewButton: FUIButton?
    var ContactusButton: FUIButton?
+   
+   var GoPiceStoreButton: FUIButton?
    //MARK: リーダボードID
    let LEADERBOARD_ID = "ClearStageNumLeaderBoard"
    
@@ -71,6 +73,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       Inittestbutton()
       InitContactusButton()
       InitShowRankingViewButton()
+      InitGoPiceStoreButton()
       
       InitConfig()
       SetUpRemoteConfigDefaults()
@@ -247,6 +250,14 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       self.view.addSubview(ContactusButton!)
    }
    
+   private func InitGoPiceStoreButton() {
+      GoPiceStoreButton = FUIButton(frame: CGRect(x: FViewW * 1, y: FViewH * 25 - FViewH * 3 - 10, width: FViewW * 5, height: FViewH * 3))
+      GoPiceStoreButton?.setTitle(NSLocalizedString("Store", comment: ""), for: .normal)
+      GoPiceStoreButton?.addTarget(self, action: #selector(self.GoPiceStore), for: .touchUpInside)
+      SetUpHomeEachSmallButton(sender: GoPiceStoreButton!)
+      self.view.addSubview(GoPiceStoreButton!)
+   }
+   
    //MARK:- コンタクトアスボタン押された時の処理
    //FIXME:- とりあえず，CoinView出すから終わったら消せ
    @objc func ContactUs() {
@@ -354,6 +365,18 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       self.present(gcView, animated: true, completion: nil)
       
       //Analytics.logEvent("LoadRankingView", parameters: nil)
+   }
+   
+   //MARK:- ストアのViewControllerに行く関数
+   @objc func GoPiceStore() {
+      let PiceStoreViewController = self.storyboard?.instantiateViewController(withIdentifier: "PiceStoreViewController")
+      Play3DtouchLight()
+      GameSound.PlaySoundsTapButton()
+      
+      self.view.fadeOut(type: .Normal){ [weak self] in
+         self?.present(PiceStoreViewController!, animated: false, completion: nil)
+         self?.view.fadeIn(type: .Normal)
+      }
    }
    
    //MARK:- GKGameCenterControllerDelegate実装用

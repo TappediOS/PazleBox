@@ -103,6 +103,7 @@ PODS:
   - GoogleUtilities/UserDefaults (6.1.0):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.2)
+  - Hero (1.4.0)
   - LicensePlist (2.5.0)
   - lottie-ios (3.0.6)
   - nanopb (0.3.901):
@@ -135,6 +136,7 @@ DEPENDENCIES:
   - Firebase/Performance
   - Firebase/RemoteConfig
   - FlatUIKit
+  - Hero
   - LicensePlist
   - lottie-ios
   - NVActivityIndicatorView
@@ -166,6 +168,7 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GoogleUtilities
     - GTMSessionFetcher
+    - Hero
     - LicensePlist
     - lottie-ios
     - nanopb
@@ -208,6 +211,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: b3553629623a3b1bff17f555e736cd5a6d95ad55
   GoogleUtilities: 84df567c76ca84f67b7bb40e769fdd4acc746a10
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
+  Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   LicensePlist: e5f8f2e3465620e53ec4c669955a5a7d0692b9cb
   lottie-ios: d030b6cda141cfd8bbaa3db89264785e6fdf675a
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
@@ -222,6 +226,6 @@ SPEC CHECKSUMS:
   TapticEngine: ed6f5b4a2e9aa46d4e8fa69a72a7a0b6719bf8ac
   ViewAnimator: 173932c659a43c5a15c665878750d92801ae2cf1
 
-PODFILE CHECKSUM: 47ccf34a39c9ade2d22bea35692547c75ce3bebf
+PODFILE CHECKSUM: 359478164ad4acbdb386fa64594cb8271cbb251b
 
 COCOAPODS: 1.6.0

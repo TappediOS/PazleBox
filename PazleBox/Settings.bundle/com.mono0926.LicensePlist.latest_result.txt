@@ -77,6 +77,10 @@ body:
                    …
 version: 1.2.2
 
+name: Hero, nameSpecified: 
+body: The MIT License (MIT…
+version: 1.4.0
+
 name: LicensePlist, nameSpecified: 
 body: MIT License
 

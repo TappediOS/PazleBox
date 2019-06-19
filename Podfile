@@ -17,6 +17,7 @@ target 'PazleBox' do
   pod 'lottie-ios'
   pod 'NVActivityIndicatorView'
   pod "ViewAnimator"
+  pod 'Hero'
 
   pod 'RealmSwift'
   pod 'SwiftyStoreKit'
