@@ -26,7 +26,17 @@ class PiceStoreViewController: UIViewController, UICollectionViewDataSource, UIC
    }
    
    private func InitLayout() {
+      let Layout = UICollectionViewFlowLayout()
+      Layout.itemSize = CGSize(width: self.view.frame.width / 5, height: self.view.frame.width / 5)
       
+      //横の感覚
+      Layout.minimumInteritemSpacing = self.view.frame.width / 25
+      //縦の感覚
+      Layout.minimumLineSpacing = self.view.frame.width / 8
+      //余白
+      Layout.sectionInset = UIEdgeInsets(top: self.view.frame.width / 25, left: self.view.frame.width / 25, bottom: self.view.frame.width / 25, right: self.view.frame.width / 25)
+      
+      CollectionView.collectionViewLayout = Layout
    }
    
    
@@ -63,6 +73,13 @@ class PiceStoreViewController: UIViewController, UICollectionViewDataSource, UIC
       return photos.count;
    }
    
+   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+      print(indexPath.item)
+      
+      // Identifierが"Segue"のSegueを使って画面遷移する関数
+      
+   }
+   
    
    // Screenサイズに応じたセルサイズを返す
    // UICollectionViewDelegateFlowLayoutの設定が必要
@@ -71,10 +88,10 @@ class PiceStoreViewController: UIViewController, UICollectionViewDataSource, UIC
                        sizeForItemAt indexPath: IndexPath) -> CGSize {
       
       // 横方向のスペース調整
-      let horizontalSpace:CGFloat = 1
-      let cellSize:CGFloat = self.view.bounds.width / 4 - horizontalSpace
+      //let horizontalSpace:CGFloat = 1
+      let size = CGSize(width: self.view.frame.width / 4, height: self.view.frame.width / 4)
       // 正方形で返すためにwidth,heightを同じにする
-      return CGSize(width: cellSize, height: cellSize)
+      return size
    }
    
    

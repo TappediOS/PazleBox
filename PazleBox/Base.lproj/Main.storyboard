@@ -22,32 +22,41 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nd8-15-F5V">
-                                    <size key="itemSize" width="134" height="104"/>
+                                    <size key="itemSize" width="120" height="98"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="dea-c8-bTV">
-                                        <rect key="frame" x="0.0" y="0.0" width="134" height="104"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="98"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="134" height="104"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="98"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZN5-Nt-QPh">
-                                                    <rect key="frame" x="0.0" y="73" width="134" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZN5-Nt-QPh">
+                                                    <rect key="frame" x="0.0" y="75" width="120" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LLA-9m-4OD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="134" height="64"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LLA-9m-4OD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="67"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="67" id="Ep6-Yk-AUU"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="LLA-9m-4OD" secondAttribute="trailing" id="F7X-c5-XKO"/>
+                                            <constraint firstItem="LLA-9m-4OD" firstAttribute="top" secondItem="dea-c8-bTV" secondAttribute="top" id="RcN-nc-92v"/>
+                                            <constraint firstItem="LLA-9m-4OD" firstAttribute="trailing" secondItem="ZN5-Nt-QPh" secondAttribute="trailing" id="a8H-Wy-vg6"/>
+                                            <constraint firstItem="LLA-9m-4OD" firstAttribute="leading" secondItem="ZN5-Nt-QPh" secondAttribute="leading" id="fgH-1t-2xy"/>
+                                            <constraint firstItem="ZN5-Nt-QPh" firstAttribute="top" secondItem="LLA-9m-4OD" secondAttribute="bottom" constant="8" symbolic="YES" id="gy6-K2-TAH"/>
+                                            <constraint firstItem="LLA-9m-4OD" firstAttribute="leading" secondItem="dea-c8-bTV" secondAttribute="leading" id="uLu-7u-jSp"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                                         </userDefinedRuntimeAttributes>
