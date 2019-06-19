@@ -8,22 +8,35 @@
 
 import Foundation
 import UIKit
+import Hero
 
 class PiceStoreViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
    
    @IBOutlet weak var CollectionView: UICollectionView!
    
-   let photos = ["33p22Blue", "33p21Blue","43p21Blue","43p2Blue","43p23Blue",
-                 "43p34Blue","43p19Blue","43p12Blue","43p25Blue","43p14Blue"]
+   let photos = ["33p22Blue", "33p21Blue","43p21Blue","43p2Green","21p1Red",
+                 "43p34Blue","43p19Blue","43p12Red","23p12Blue","43p14Blue",
+                 "23p11Blue", "33p7Blue","43p8Green","43p5Blue","43p41Blue",
+                 "32p12Blue","43p16Blue","43p12Blue","43p25Blue","43p14Blue",
+                 "33p3Blue", "33p23Blue","43p21Green","43p26Blue","43p28Blue",
+                 "33p34Blue","43p35Blue","43p36Red","43p25Blue","43p31Blue"]
    
    override func viewDidLoad() {
       super.viewDidLoad()
       self.CollectionView.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
       self.CollectionView.delegate = self
       self.CollectionView.dataSource = self
+      self.hero.isEnabled = true
+      
+      CollectionView.hero.modifiers = [.cascade]
+      
+      print(CollectionView.frame)
+   
       
       InitLayout()
    }
+   
+
    
    private func InitLayout() {
       let Layout = UICollectionViewFlowLayout()
@@ -58,6 +71,8 @@ class PiceStoreViewController: UIViewController, UICollectionViewDataSource, UIC
       // Tag番号を使ってLabelのインスタンス生成
       let label = testCell.contentView.viewWithTag(2) as! UILabel
       label.text = photos[indexPath.row]
+      
+      testCell.hero.modifiers = [.fade, .scale(0.45)]
       
       return testCell
    }
