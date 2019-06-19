@@ -713,11 +713,11 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
  
    
    private func PlayGameBGM() {
-      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: 0, toVolume: GameBGM.SoundVolume, overTime: 6.5)
+      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: 0, toVolume: GameBGM.SoundVolume, overTime: 8.5)
    }
    
    private func StopGameBGM() {
-      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: GameBGM.SoundVolume, toVolume: 0, overTime: 2.5)
+      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: GameBGM.SoundVolume, toVolume: 0, overTime: 1.25)
    }
    
 

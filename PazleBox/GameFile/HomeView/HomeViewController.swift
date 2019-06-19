@@ -303,13 +303,13 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    private func StartBGM() {
       if !GameBGM.isPlayingHomeBGM() {
-         GameBGM.fade(player: GameBGM.Hight_Tech, fromVolume: 0, toVolume: GameBGM.SoundVolume, overTime: 2)
+         GameBGM.fade(player: GameBGM.Hight_Tech, fromVolume: 0, toVolume: GameBGM.SoundVolume, overTime: 3.25)
       }
    }
    
    //MARK:- BGM止めるようにしろってに通知きたよ
    @objc func StopHomeBGMCatchNotification(notification: Notification) -> Void {
-      GameBGM.fade(player: GameBGM.Hight_Tech, fromVolume: GameBGM.Hight_Tech.volume, toVolume: 0, overTime: 1.25)
+      GameBGM.fade(player: GameBGM.Hight_Tech, fromVolume: GameBGM.Hight_Tech.volume, toVolume: 0, overTime: 1)
    }
    
    //MARK:- Main.storybordでつけたボタンのタッチイベント -
