@@ -17,6 +17,7 @@ import Crashlytics
 import GameKit
 import Firebase
 import FlatUIKit
+import Hero
 
 class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
@@ -262,6 +263,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    //FIXME:- とりあえず，CoinView出すから終わったら消せ
    @objc func ContactUs() {
 
+      ContactusButton?.hero.id = "BackButton"
       let CoinView = BuyCoinView(frame: self.view.frame)
       self.view.addSubview(CoinView)
       
@@ -369,12 +371,13 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    //MARK:- ストアのViewControllerに行く関数
    @objc func GoPiceStore() {
-      let PiceStoreViewController = self.storyboard?.instantiateViewController(withIdentifier: "PiceStoreViewController")
+      let PiceStoreViewCon = self.storyboard?.instantiateViewController(withIdentifier: "PiceStore")
       Play3DtouchLight()
       GameSound.PlaySoundsTapButton()
       
+      
       self.view.fadeOut(type: .Normal){ [weak self] in
-         self?.present(PiceStoreViewController!, animated: false, completion: nil)
+         self?.present(PiceStoreViewCon!, animated: false, completion: nil)
          self?.view.fadeIn(type: .Normal)
       }
    }
