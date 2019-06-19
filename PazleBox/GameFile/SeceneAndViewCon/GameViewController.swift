@@ -657,6 +657,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       
       //課金してたらそのまま返す
       if userDefaults.bool(forKey: "BuyRemoveAd") == true {
+         StopGameBGM()
          self.view.fadeOut(type: .Slow){ [weak self] in
             self?.dismiss(animated: false, completion: nil)
          }
@@ -672,6 +673,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       }
       
       UpdateInterstitialCountANDUpdateLabelCount()
+      StopGameBGM()
       self.view.fadeOut(type: .Slow){ [weak self] in
          self?.dismiss(animated: false, completion: nil)
       }
@@ -711,7 +713,11 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
  
    
    private func PlayGameBGM() {
-      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: 0, toVolume: GameBGM.SoundVolume, overTime: 5)
+      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: 0, toVolume: GameBGM.SoundVolume, overTime: 6.5)
+   }
+   
+   private func StopGameBGM() {
+      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: GameBGM.SoundVolume, toVolume: 0, overTime: 2.5)
    }
    
 

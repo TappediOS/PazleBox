@@ -12,6 +12,7 @@ import UIKit
 import FlatUIKit
 import TapticEngine
 import Firebase
+import ViewAnimator
 
 
 class GameClearView: UIView, GADBannerViewDelegate {
@@ -75,15 +76,8 @@ class GameClearView: UIView, GADBannerViewDelegate {
       
       self.isUserInteractionEnabled = true
       self.alpha = 0.05
-      
-      StarViewWide = frame.width / 4
-      StarViewIntarnal = StarViewWide / 4
-      
-      ViewW = frame.width
-      ViewH = frame.height
-      
-      FoundViewH = (ViewH - 55) / 8
-      FoundViewW = ViewW / 8
+   
+      InitViewSize()
       
       InitReviewView(frame: frame)
       
@@ -114,6 +108,17 @@ class GameClearView: UIView, GADBannerViewDelegate {
       
    }
    
+   private func InitViewSize() {
+      StarViewWide = frame.width / 4
+      StarViewIntarnal = StarViewWide / 4
+      
+      ViewW = frame.width
+      ViewH = frame.height
+      
+      FoundViewH = (ViewH - 55) / 8
+      FoundViewW = ViewW / 8
+   }
+   
    private func InitReviewView(frame: CGRect) {
       let ReviewViewFrame = CGRect(x: FoundViewW, y: FoundViewH * 3 + FoundViewH / 2, width: FoundViewW * 6, height: FoundViewH * 2)
       
@@ -122,6 +127,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
       self.addSubview(ReviewedView!)
    }
    
+   //Ad Check
    private func InitAllADCheck() {
       if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false{
          InitBannerView()
@@ -131,7 +137,6 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    //MARK:- 初期化
-   
    private func InitGameClearLabel() {
       
       let StartX = ViewW / 16
@@ -435,11 +440,14 @@ class GameClearView: UIView, GADBannerViewDelegate {
    
    
    
+
    
    
    
+   //レビューしたハートの数の取得
    public func GetReView() -> Int { return ReviewedView!.GetUserSellectReviewNum() }
    
+   //レビューのリセット
    public func ReSetReView() {
       self.ReviewedView!.ResetReviewView()
    }
@@ -603,7 +611,6 @@ class GameClearView: UIView, GADBannerViewDelegate {
    private func Play3DtouchHeavy() {
       TapticEngine.impact.feedback(.heavy)
    }
-   
    
    
    

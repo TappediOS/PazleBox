@@ -124,6 +124,7 @@ PODS:
   - SpriteKitEasingSwift (0.14)
   - SwiftyStoreKit (0.15.0)
   - TapticEngine (1.2.0)
+  - ViewAnimator (2.5.1)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift
@@ -143,6 +144,7 @@ DEPENDENCIES:
   - SpriteKitEasingSwift
   - SwiftyStoreKit
   - TapticEngine
+  - ViewAnimator
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -175,6 +177,7 @@ SPEC REPOS:
     - SpriteKitEasingSwift
     - SwiftyStoreKit
     - TapticEngine
+    - ViewAnimator
 
 EXTERNAL SOURCES:
   SAConfettiView:
@@ -217,7 +220,8 @@ SPEC CHECKSUMS:
   SpriteKitEasingSwift: d389a59f5531399b69cc9c31f52c2e279c813688
   SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
   TapticEngine: ed6f5b4a2e9aa46d4e8fa69a72a7a0b6719bf8ac
+  ViewAnimator: 173932c659a43c5a15c665878750d92801ae2cf1
 
-PODFILE CHECKSUM: 34372728300945e9163c75a32d3f8c1039ee93d7
+PODFILE CHECKSUM: 47ccf34a39c9ade2d22bea35692547c75ce3bebf
 
 COCOAPODS: 1.6.0
