@@ -61,6 +61,8 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    private let GameBGM = BGM()
    let GameSound = GameSounds()
    
+   let HeroID = HeroIDs()
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       self.view.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
@@ -87,11 +89,12 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    }
    
    override func viewWillAppear(_ animated: Bool) {
+      //戻ってきた時についてなかったらさいせい
       if !GameBGM.Hight_Tech.isPlaying {
          StartBGM()
-      }else{
-         GameBGM.fade(player: GameBGM.Hight_Tech, fromVolume: GameBGM.Hight_Tech.volume, toVolume: GameBGM.SoundVolume, overTime: 3)
       }
+      //HeroIDを元に戻す
+      SetUpStageButtonHeroID()
    }
    
    private func InitViewSize() {
@@ -305,8 +308,21 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       SetUpSellectStageButton(sender: EasyButton)
       SetUpSellectStageButton(sender: NormalButton)
       SetUpSellectStageButton(sender: HardButton)
-      EasyButton.hero.id = "EasyButton"
+      
+      SetUpStageButtonHeroID()
       SetUpStageButtonPosition()
+   }
+   
+   private func SetUpStageButtonHeroID() {
+      EasyButton.hero.id = HeroID.BackEasyStage
+      NormalButton.hero.id = HeroID.TapNormalStage
+      HardButton.hero.id = HeroID.TapHardStage
+   }
+   
+   private func ChangeHeroIDForBack(){
+      EasyButton.hero.id = HeroID.BackEasyStage
+      NormalButton.hero.id = HeroID.BackNormalStage
+      HardButton.hero.id = HeroID.BackHardStage
    }
    
    private func SetUpStageButtonPosition() {
@@ -348,22 +364,16 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       Play3DtouchLight()
       GameSound.PlaySoundsTapButton()
       //GameBGM.ChangeHomeBGMVolume(ChangeVolumeFacter: 0.5)
-      GameBGM.fade(player: GameBGM.Hight_Tech, fromVolume: GameBGM.Hight_Tech.volume, toVolume: GameBGM.Hight_Tech.volume / 1.32, overTime: 3)
-      
       
       //FIXME:- hero使わんねんやったらreturnとろ
-      vc2.hero.isEnabled = true
-      self.present(vc2, animated: true, completion: nil)
-      return
-      
-      
-      //NavigationControllerを継承したViewControllerを遷移
-      print("GameViewControllerを表示します")
-      self.view.fadeOut(type: .Normal){ [weak self] in
-         self?.present(vc2, animated: false, completion: nil)
-         self?.view.fadeIn(type: .Normal)
-      }
+      self.present(vc2, animated: true, completion: {
+         print("プレゼント終わった")
+         self.ChangeHeroIDForBack()
+      })
+      //ChangeHeroIDForBack()
    }
+   
+   
    
    //MARK:- スコアボードビューの表示
    @objc func ShowRankingView() {
@@ -382,11 +392,9 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       let PiceStoreViewCon = self.storyboard?.instantiateViewController(withIdentifier: "PiceStore")
       Play3DtouchLight()
       GameSound.PlaySoundsTapButton()
+      
+      self.present(PiceStoreViewCon!, animated: true, completion: nil)
 
-      self.view.fadeOut(type: .Normal){ [weak self] in
-         self?.present(PiceStoreViewCon!, animated: false, completion: nil)
-         self?.view.fadeIn(type: .Normal)
-      }
    }
    
    //MARK:- GKGameCenterControllerDelegate実装用

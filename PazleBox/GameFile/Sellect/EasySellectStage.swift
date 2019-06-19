@@ -26,6 +26,8 @@ class SellectStageEasy: UIScrollView {
    let BadgeScale = AllBadgeScale()
    
    var TapLockedButton = false
+   
+   let HeroID = HeroIDs()
 
    override init(frame: CGRect) {
       super.init(frame: frame)
@@ -94,6 +96,7 @@ class SellectStageEasy: UIScrollView {
       BackB.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       BackB.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
       BackB.addTarget(self, action: #selector(self.TapBackButton(_:)), for: UIControl.Event.touchUpInside)
+      BackB.hero.id = HeroID.BackEasyStage
       self.addSubview(BackB)
    }
    
@@ -131,7 +134,9 @@ class SellectStageEasy: UIScrollView {
          let EasyNumberButton = StageSellectButton(frame: ButtonFrame)
          EasyNumberButton.Init(Tag: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum)
          EasyNumberButton.addTarget(self, action: #selector(self.SellectButton(_:)), for: UIControl.Event.touchUpInside)
-         EasyNumberButton.hero.id = "EasyButton"
+         //EasyNumberButton.hero.id = HeroID.TapEasyStage
+         EasyNumberButton.hero.modifiers = [.cascade, .fade, .scale(0), ]
+         
          self.addSubview(EasyNumberButton)
          
          

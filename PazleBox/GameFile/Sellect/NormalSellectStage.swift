@@ -13,6 +13,7 @@ import TapticEngine
 import RealmSwift
 import SCLAlertView
 import Firebase
+import Hero
 
 class SellectStageNormal: UIScrollView {
    
@@ -25,6 +26,8 @@ class SellectStageNormal: UIScrollView {
    let BadgeScale = AllBadgeScale()
    
    var TapLockedButton = false
+   
+   let HeroID = HeroIDs()
    
    override init(frame: CGRect) {
       super.init(frame: frame)
@@ -92,6 +95,7 @@ class SellectStageNormal: UIScrollView {
       BackB.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       BackB.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
       BackB.addTarget(self, action: #selector(self.TapBackButton(_:)), for: UIControl.Event.touchUpInside)
+      BackB.hero.id = HeroID.BackNormalStage
       self.addSubview(BackB)
    }
    
@@ -126,6 +130,7 @@ class SellectStageNormal: UIScrollView {
          let NormalNumberButton = StageSellectButton(frame: ButtonFrame)
          NormalNumberButton.Init(Tag: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum)
          NormalNumberButton.addTarget(self, action: #selector(self.SellectButton(_:)), for: UIControl.Event.touchUpInside)
+         NormalNumberButton.hero.id = HeroID.TapNormalStage
          self.addSubview(NormalNumberButton)
          
          

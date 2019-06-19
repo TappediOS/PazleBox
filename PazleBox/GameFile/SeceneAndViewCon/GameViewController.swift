@@ -547,11 +547,11 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       }else{ print("Nil きたよ") }
       
       //BGM小さくして，
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.174) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.075) {
          self.GameBGM.fade(player: self.GameBGM.FetchedPlayGameBGM,
                            fromVolume: self.GameBGM.FetchedPlayGameBGM.volume,
-                           toVolume: self.GameBGM.FetchedPlayGameBGM.volume * 0.215,
-                           overTime: 0.28)
+                           toVolume: self.GameBGM.FetchedPlayGameBGM.volume * 0.1,
+                           overTime: 0.1)
       }
       //降ってくるviewの開始
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.245) {
@@ -561,11 +561,11 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
          self.ClearView?.PlayGameClseraSounds()
          //クリア音を鳴らしたら，BGMを元の大きさに戻す
-         DispatchQueue.main.asyncAfter(deadline: .now() + 4.65) {
+         DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
             self.GameBGM.fade(player: self.GameBGM.FetchedPlayGameBGM,
                               fromVolume: self.GameBGM.FetchedPlayGameBGM.volume,
                               toVolume: self.GameBGM.SoundVolume,
-                              overTime: 3)
+                              overTime: 2)
          }
       }
       
