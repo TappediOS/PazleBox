@@ -16,6 +16,7 @@ target 'PazleBox' do
   pod 'FlatUIKit'
   pod 'lottie-ios'
   pod 'NVActivityIndicatorView'
+  pod "ViewAnimator"
 
   pod 'RealmSwift'
   pod 'SwiftyStoreKit'

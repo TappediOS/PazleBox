@@ -133,6 +133,10 @@ body: MIT License
 Copyrig…
 version: 1.2.0
 
+name: ViewAnimator, nameSpecified: 
+body: Copyright (c) 2018 m…
+version: 2.5.1
+
 add-version-numbers: false
 
 LicensePlist Version: 1.8.3

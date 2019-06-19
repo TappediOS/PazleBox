@@ -11,6 +11,7 @@ import UIKit
 import SwiftyStoreKit
 import SCLAlertView
 
+
 class CoinIAPManager {
    
    let UsersCoin = GameCoins()
