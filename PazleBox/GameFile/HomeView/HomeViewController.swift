@@ -64,6 +64,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    override func viewDidLoad() {
       super.viewDidLoad()
       self.view.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
+      self.hero.isEnabled = true
       
       InitViewSize()
       
@@ -304,7 +305,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       SetUpSellectStageButton(sender: EasyButton)
       SetUpSellectStageButton(sender: NormalButton)
       SetUpSellectStageButton(sender: HardButton)
-      
+      EasyButton.hero.id = "EasyButton"
       SetUpStageButtonPosition()
    }
    
@@ -349,6 +350,13 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       //GameBGM.ChangeHomeBGMVolume(ChangeVolumeFacter: 0.5)
       GameBGM.fade(player: GameBGM.Hight_Tech, fromVolume: GameBGM.Hight_Tech.volume, toVolume: GameBGM.Hight_Tech.volume / 1.32, overTime: 3)
       
+      
+      //FIXME:- hero使わんねんやったらreturnとろ
+      vc2.hero.isEnabled = true
+      self.present(vc2, animated: true, completion: nil)
+      return
+      
+      
       //NavigationControllerを継承したViewControllerを遷移
       print("GameViewControllerを表示します")
       self.view.fadeOut(type: .Normal){ [weak self] in
@@ -374,8 +382,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       let PiceStoreViewCon = self.storyboard?.instantiateViewController(withIdentifier: "PiceStore")
       Play3DtouchLight()
       GameSound.PlaySoundsTapButton()
-      
-      
+
       self.view.fadeOut(type: .Normal){ [weak self] in
          self?.present(PiceStoreViewCon!, animated: false, completion: nil)
          self?.view.fadeIn(type: .Normal)

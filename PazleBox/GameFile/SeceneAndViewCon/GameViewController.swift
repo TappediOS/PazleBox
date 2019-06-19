@@ -13,6 +13,7 @@ import GameplayKit
 import SAConfettiView
 import Firebase
 import RealmSwift
+import Hero
 
 class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADInterstitialDelegate {
    
@@ -82,6 +83,8 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
         super.viewDidLoad()
       
       ViewFrame = self.view.frame
+      self.hero.isEnabled = true
+      
       
       LoadStageLevel()
       
@@ -865,9 +868,12 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       print("インタースティシャル広告ボタンクリックした")
    }
    
+   //MARK:- ステージセレクト画面で戻るボタン押された時の処理
    @objc func SellectBackNotification(notification: Notification) -> Void {
+      self.dismiss(animated: true, completion: nil)
+      return
       self.view.fadeOut(type: .Slow){ [weak self] in
-         self?.dismiss(animated: false, completion: nil)
+         
       }
    }
    

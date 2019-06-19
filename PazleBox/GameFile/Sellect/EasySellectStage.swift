@@ -13,6 +13,7 @@ import TapticEngine
 import RealmSwift
 import SCLAlertView
 import Firebase
+import Hero
 
 class SellectStageEasy: UIScrollView {
    
@@ -116,6 +117,7 @@ class SellectStageEasy: UIScrollView {
       //プレイヤーが遊べるステージの最大ステージ番号を表す
       let PlayerCanPlayMaxStageNum = LastClearNum + 3
       
+      //あとはFor文を回しながらボタンを生成していく
       for tmp in 1 ...  AllStageNum {
          
          let x = (tmp - 1) % 4
@@ -129,6 +131,7 @@ class SellectStageEasy: UIScrollView {
          let EasyNumberButton = StageSellectButton(frame: ButtonFrame)
          EasyNumberButton.Init(Tag: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum)
          EasyNumberButton.addTarget(self, action: #selector(self.SellectButton(_:)), for: UIControl.Event.touchUpInside)
+         EasyNumberButton.hero.id = "EasyButton"
          self.addSubview(EasyNumberButton)
          
          
@@ -140,6 +143,7 @@ class SellectStageEasy: UIScrollView {
             continue
          }
          
+         //バッチのサイズ設定
          let BadgeSize = ButtonSize / 2
          let BadgeStartX = FirstX - (BadgeSize / 2)
          let BadgeStartY = FirstY - (BadgeSize / 2)
