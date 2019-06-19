@@ -9,6 +9,7 @@
 import UIKit
 import FlatUIKit
 import ChameleonFramework
+import Hero
 
 class BuyCoinView: UIView {
    
@@ -26,6 +27,7 @@ class BuyCoinView: UIView {
    
    override init(frame: CGRect) {
       super.init(frame: frame)
+      self.hero.isEnabled = true
       InitBackGroundColor()
       InitViewSize()
       InitBackToHomeButton()
@@ -33,6 +35,7 @@ class BuyCoinView: UIView {
       InitBuy650CoinButton()
       InitBuy1400CoinButton()
       InitNotificationCenter()
+      
 
    }
    
@@ -89,6 +92,7 @@ class BuyCoinView: UIView {
       BackToHomeButton?.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       BackToHomeButton?.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
       BackToHomeButton?.addTarget(self, action: #selector(self.TapBackToHomeButton(_:)), for: UIControl.Event.touchUpInside)
+      BackToHomeButton?.hero.id = "BackButton"
       self.addSubview(BackToHomeButton!)
    }
    
