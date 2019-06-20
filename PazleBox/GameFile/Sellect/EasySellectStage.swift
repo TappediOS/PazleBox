@@ -185,7 +185,6 @@ class SellectStageEasy: UIScrollView {
       for tmp in 1 ...  AllStageNum {
          let ButtonCreateQueue = DispatchQueue.main
          ButtonCreateQueue.async {
-            print("\(tmp)こ目のボタンを作成")
             self.InitEachButton(tmp: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum, ButtonColor: ButtonColor, ButtonShadowColor: ButtonShadowColor)
          }
       }

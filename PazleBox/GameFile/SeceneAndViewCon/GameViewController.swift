@@ -92,7 +92,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       LoadStageLevel()
    
       InitNotificationCenter()
-      InitStageSellectView()
+      InitStageSellectView() 
       
       InitConfettiView()
       
@@ -559,12 +559,14 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       //MARK:- クリアした時に音楽を鳴らす
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
          self.ClearView?.PlayGameClseraSounds()
-         //クリア音を鳴らしたら，BGMを元の大きさに戻す
+         //クリア音を鳴らしたら，BGMを元の大きさに戻す(止まってないとき.止まってたら，つまり，AD再生してたらつけない)
          DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
-            self.GameBGM.fade(player: self.GameBGM.FetchedPlayGameBGM,
-                              fromVolume: self.GameBGM.FetchedPlayGameBGM.volume,
-                              toVolume: self.GameBGM.SoundVolume,
-                              overTime: 2)
+            if self.GameBGM.FetchedPlayGameBGM.isPlaying {
+               self.GameBGM.fade(player: self.GameBGM.FetchedPlayGameBGM,
+                                 fromVolume: self.GameBGM.FetchedPlayGameBGM.volume,
+                                 toVolume: self.GameBGM.SoundVolume,
+                                 overTime: 2)
+            }
          }
       }
       
@@ -871,9 +873,9 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    @objc func SellectBackNotification(notification: Notification) -> Void {
       self.dismiss(animated: true, completion: nil)
       return
-      self.view.fadeOut(type: .Slow){ [weak self] in
-         
-      }
+//      self.view.fadeOut(type: .Slow){ [weak self] in
+//
+//      }
    }
    
     override var shouldAutorotate: Bool {return true}
