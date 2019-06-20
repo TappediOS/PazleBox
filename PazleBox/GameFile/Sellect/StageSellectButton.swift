@@ -20,13 +20,13 @@ class StageSellectButton: FUIButton {
    }
    
    
-   public func Init(Tag: Int, PlayerCanPlayMaxStageNum: Int) {
+   public func Init(Tag: Int, PlayerCanPlayMaxStageNum: Int, ButtonColor: UIColor, ButtonShadowColor: UIColor) {
       self.tag = Tag
       
       if Tag <= PlayerCanPlayMaxStageNum  {
          setTitle("Stage\(Tag)", for: UIControl.State.normal)
-         buttonColor = UIColor.turquoise()
-         shadowColor = UIColor.greenSea()
+         buttonColor = ButtonColor
+         shadowColor = ButtonShadowColor
          shadowHeight = 3.0
          cornerRadius = 6.0
          titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
@@ -38,8 +38,8 @@ class StageSellectButton: FUIButton {
       }
       
       setTitle("Stage\(Tag)", for: UIControl.State.normal)
-      buttonColor = UIColor.greenSea()
-      shadowColor = UIColor.greenSea()
+      buttonColor = ButtonShadowColor
+      shadowColor = ButtonShadowColor
       titleLabel?.adjustsFontSizeToFitWidth = true
       shadowHeight = 3.0
       cornerRadius = 6.0
