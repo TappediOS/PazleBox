@@ -81,14 +81,16 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    let GameBGM = BGM()
    
     override func viewDidLoad() {
-        super.viewDidLoad()
+      super.viewDidLoad()
+      
+      let InitVCTimePeformance = Performance.startTrace(name: "InitGameVCTime")
       
       ViewFrame = self.view.frame
       self.hero.isEnabled = true
       
       
       LoadStageLevel()
-      
+   
       InitNotificationCenter()
       InitStageSellectView()
       
@@ -103,7 +105,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          self.setNeedsUpdateOfHomeIndicatorAutoHidden()
       }
       
-      
+      InitVCTimePeformance?.stop()
    }
    
    
