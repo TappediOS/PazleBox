@@ -114,8 +114,7 @@ class SellectStageEasy: UIScrollView {
       let EasyNumberButton = StageSellectButton(frame: ButtonFrame)
       EasyNumberButton.Init(Tag: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum)
       EasyNumberButton.addTarget(self, action: #selector(self.SellectButton(_:)), for: UIControl.Event.touchUpInside)
-      //EasyNumberButton.hero.id = HeroID.TapEasyStage
-      EasyNumberButton.hero.modifiers = [.cascade, .fade, .scale(0), ]
+      EasyNumberButton.hero.modifiers = [.cascade, .fade, .scale(0.65), .delay(0.01 + Double(tmp) * 0.01)]
       
       self.addSubview(EasyNumberButton)
       
@@ -135,6 +134,7 @@ class SellectStageEasy: UIScrollView {
       
       let Badge = UIImageView(frame: BadgeFrame)
       Badge.isUserInteractionEnabled = false
+      Badge.hero.modifiers = [.cascade, .fade, .scale(0.65), .delay(0.01 + Double(tmp) * 0.01)]
       
       switch EasyStageInfo[tmp - 1].CountOfUsedHint {
       case 3:
@@ -158,7 +158,6 @@ class SellectStageEasy: UIScrollView {
       }
       
       self.addSubview(Badge)
-      print("\(tmp)こ目のボタンを終わり")
    }
 
    
@@ -189,7 +188,6 @@ class SellectStageEasy: UIScrollView {
             print("\(tmp)こ目のボタンを作成")
             self.InitEachButton(tmp: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum)
          }
-         
       }
    }
    

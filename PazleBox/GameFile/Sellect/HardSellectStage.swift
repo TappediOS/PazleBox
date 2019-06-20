@@ -98,6 +98,64 @@ class SellectStageHard: UIScrollView {
       self.addSubview(BackB)
    }
    
+   //ボタンをそれぞれ作成するよ
+   private func InitEachButton(tmp: Int, PlayerCanPlayMaxStageNum: Int) {
+      let x = (tmp - 1) % 4
+      let y = (tmp - 1) / 4
+      
+      let FirstX = Internal * CGFloat(x + 1) + ButtonSize * CGFloat(x)
+      let FirstY = Internal * CGFloat(y + 1) + ButtonSize * CGFloat(y) + ButtonSize
+      
+      let ButtonFrame = CGRect(x: FirstX, y: FirstY, width: ButtonSize, height: ButtonSize)
+      
+      let HardNumberButton = StageSellectButton(frame: ButtonFrame)
+      HardNumberButton.Init(Tag: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum)
+      HardNumberButton.addTarget(self, action: #selector(self.SellectButton(_:)), for: UIControl.Event.touchUpInside)
+      HardNumberButton.hero.modifiers = [.cascade, .fade, .scale(0.65), .delay(0.01 + Double(tmp) * 0.01)]
+      self.addSubview(HardNumberButton)
+      
+      
+      ////MARK: ここからバッジをつける
+      let HardStageInfo = realm.objects(HardStageClearInfomation.self)
+      
+      //クリアしてなくて遊べる状態なら続ける
+      if HardStageInfo[tmp - 1].CountOfUsedHint == 3 && tmp <= PlayerCanPlayMaxStageNum{
+         return
+      }
+      
+      let BadgeSize = ButtonSize / 2
+      let BadgeStartX = FirstX - (BadgeSize / 2)
+      let BadgeStartY = FirstY - (BadgeSize / 2)
+      let BadgeFrame = CGRect(x: BadgeStartX, y: BadgeStartY, width: BadgeSize, height: BadgeSize)
+      
+      let Badge = UIImageView(frame: BadgeFrame)
+      Badge.isUserInteractionEnabled = false
+      Badge.hero.modifiers = [.cascade, .fade, .scale(0.65), .delay(0.01 + Double(tmp) * 0.01)]
+      
+      switch HardStageInfo[tmp - 1].CountOfUsedHint {
+      case 3:
+         let BadgeImage = UIImage(named: "Lock_Badge.png")
+         Badge.image = BadgeImage
+         Badge.transform = CGAffineTransform(scaleX: BadgeScale.Lock, y: BadgeScale.Lock)
+      case 2:
+         let BadgeImage = UIImage(named: "Bronze_Badge.png")
+         Badge.image = BadgeImage
+         Badge.transform = CGAffineTransform(scaleX: BadgeScale.Bronze, y: BadgeScale.Bronze)
+      case 1:
+         let BadgeImage = UIImage(named: "Silver_Badge.png")
+         Badge.image = BadgeImage
+         Badge.transform = CGAffineTransform(scaleX: BadgeScale.Silver, y: BadgeScale.Silver)
+      case 0:
+         let BadgeImage = UIImage(named: "Gold_Badge.png")
+         Badge.image = BadgeImage
+         Badge.transform = CGAffineTransform(scaleX: BadgeScale.Gold, y: BadgeScale.Gold)
+      default:
+         fatalError("一体何が入ってんねん")
+      }
+      
+      self.addSubview(Badge)
+   }
+   
    private func InitButton() {
       let ClearOfNot = realm.objects(HardStageClearInfomation.self).filter("Clear == true")
       var LastClearNum: Int = 1
@@ -117,60 +175,11 @@ class SellectStageHard: UIScrollView {
       let PlayerCanPlayMaxStageNum = LastClearNum + 3
       
       for tmp in 1 ...  AllStageNum {
-         
-         let x = (tmp - 1) % 4
-         let y = (tmp - 1) / 4
-         
-         let FirstX = Internal * CGFloat(x + 1) + ButtonSize * CGFloat(x)
-         let FirstY = Internal * CGFloat(y + 1) + ButtonSize * CGFloat(y) + ButtonSize
-         
-         let ButtonFrame = CGRect(x: FirstX, y: FirstY, width: ButtonSize, height: ButtonSize)
-         
-         let HardNumberButton = StageSellectButton(frame: ButtonFrame)
-         HardNumberButton.Init(Tag: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum)
-         HardNumberButton.addTarget(self, action: #selector(self.SellectButton(_:)), for: UIControl.Event.touchUpInside)
-         HardNumberButton.hero.id = HeroID.TapHardStage
-         self.addSubview(HardNumberButton)
-         
-         
-         ////MARK: ここからバッジをつける
-         let HardStageInfo = realm.objects(HardStageClearInfomation.self)
-         
-         //クリアしてなくて遊べる状態なら続ける
-         if HardStageInfo[tmp - 1].CountOfUsedHint == 3 && tmp <= PlayerCanPlayMaxStageNum{
-            continue
+         let ButtonCreateQueue = DispatchQueue.main
+         ButtonCreateQueue.async {
+            print("\(tmp)こ目のボタンを作成")
+            self.InitEachButton(tmp: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum)
          }
-         
-         let BadgeSize = ButtonSize / 2
-         let BadgeStartX = FirstX - (BadgeSize / 2)
-         let BadgeStartY = FirstY - (BadgeSize / 2)
-         let BadgeFrame = CGRect(x: BadgeStartX, y: BadgeStartY, width: BadgeSize, height: BadgeSize)
-         
-         let Badge = UIImageView(frame: BadgeFrame)
-         Badge.isUserInteractionEnabled = false
-         
-         switch HardStageInfo[tmp - 1].CountOfUsedHint {
-         case 3:
-            let BadgeImage = UIImage(named: "Lock_Badge.png")
-            Badge.image = BadgeImage
-            Badge.transform = CGAffineTransform(scaleX: BadgeScale.Lock, y: BadgeScale.Lock)
-         case 2:
-            let BadgeImage = UIImage(named: "Bronze_Badge.png")
-            Badge.image = BadgeImage
-            Badge.transform = CGAffineTransform(scaleX: BadgeScale.Bronze, y: BadgeScale.Bronze)
-         case 1:
-            let BadgeImage = UIImage(named: "Silver_Badge.png")
-            Badge.image = BadgeImage
-            Badge.transform = CGAffineTransform(scaleX: BadgeScale.Silver, y: BadgeScale.Silver)
-         case 0:
-            let BadgeImage = UIImage(named: "Gold_Badge.png")
-            Badge.image = BadgeImage
-            Badge.transform = CGAffineTransform(scaleX: BadgeScale.Gold, y: BadgeScale.Gold)
-         default:
-            fatalError("一体何が入ってんねん")
-         }
-         
-         self.addSubview(Badge)
       }
    }
    
