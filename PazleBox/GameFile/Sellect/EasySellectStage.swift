@@ -78,8 +78,9 @@ class SellectStageEasy: UIScrollView {
       
       self.contentSize.height = ScrollViewHight
       
-      self.InitBackButton()
       self.InitButton()
+      self.InitBackButton()
+      
    }
    
    private func InitBackButton() {
@@ -99,6 +100,67 @@ class SellectStageEasy: UIScrollView {
       BackB.hero.id = HeroID.BackEasyStage
       self.addSubview(BackB)
    }
+   
+   //ボタンをそれぞれ作成するよ
+   private func InitEachButton(tmp: Int, PlayerCanPlayMaxStageNum: Int) {
+      let x = (tmp - 1) % 4
+      let y = (tmp - 1) / 4
+      
+      let FirstX = Internal * CGFloat(x + 1) + ButtonSize * CGFloat(x)
+      let FirstY = Internal * CGFloat(y + 1) + ButtonSize * CGFloat(y) + ButtonSize
+      
+      let ButtonFrame = CGRect(x: FirstX, y: FirstY, width: ButtonSize, height: ButtonSize)
+      
+      let EasyNumberButton = StageSellectButton(frame: ButtonFrame)
+      EasyNumberButton.Init(Tag: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum)
+      EasyNumberButton.addTarget(self, action: #selector(self.SellectButton(_:)), for: UIControl.Event.touchUpInside)
+      //EasyNumberButton.hero.id = HeroID.TapEasyStage
+      EasyNumberButton.hero.modifiers = [.cascade, .fade, .scale(0), ]
+      
+      self.addSubview(EasyNumberButton)
+      
+      ////MARK: ここからバッジをつける
+      let EasyStageInfo = realm.objects(EasyStageClearInfomation.self)
+      
+      //クリアしてなくて遊べる状態なら続ける
+      if EasyStageInfo[tmp - 1].CountOfUsedHint == 3 && tmp <= PlayerCanPlayMaxStageNum{
+         return
+      }
+      
+      //バッチのサイズ設定
+      let BadgeSize = ButtonSize / 2
+      let BadgeStartX = FirstX - (BadgeSize / 2)
+      let BadgeStartY = FirstY - (BadgeSize / 2)
+      let BadgeFrame = CGRect(x: BadgeStartX, y: BadgeStartY, width: BadgeSize, height: BadgeSize)
+      
+      let Badge = UIImageView(frame: BadgeFrame)
+      Badge.isUserInteractionEnabled = false
+      
+      switch EasyStageInfo[tmp - 1].CountOfUsedHint {
+      case 3:
+         let BadgeImage = UIImage(named: "Lock_Badge.png")
+         Badge.image = BadgeImage
+         Badge.transform = CGAffineTransform(scaleX: BadgeScale.Lock, y: BadgeScale.Lock)
+      case 2:
+         let BadgeImage = UIImage(named: "Bronze_Badge.png")
+         Badge.image = BadgeImage
+         Badge.transform = CGAffineTransform(scaleX: BadgeScale.Bronze, y: BadgeScale.Bronze)
+      case 1:
+         let BadgeImage = UIImage(named: "Silver_Badge.png")
+         Badge.image = BadgeImage
+         Badge.transform = CGAffineTransform(scaleX: BadgeScale.Silver, y: BadgeScale.Silver)
+      case 0:
+         let BadgeImage = UIImage(named: "Gold_Badge.png")
+         Badge.image = BadgeImage
+         Badge.transform = CGAffineTransform(scaleX: BadgeScale.Gold, y: BadgeScale.Gold)
+      default:
+         fatalError("一体何が入ってんねん")
+      }
+      
+      self.addSubview(Badge)
+      print("\(tmp)こ目のボタンを終わり")
+   }
+
    
    private func InitButton() {
       let ClearOfNot = realm.objects(EasyStageClearInfomation.self).filter("Clear == true")
@@ -122,63 +184,12 @@ class SellectStageEasy: UIScrollView {
       
       //あとはFor文を回しながらボタンを生成していく
       for tmp in 1 ...  AllStageNum {
-         
-         let x = (tmp - 1) % 4
-         let y = (tmp - 1) / 4
-         
-         let FirstX = Internal * CGFloat(x + 1) + ButtonSize * CGFloat(x)
-         let FirstY = Internal * CGFloat(y + 1) + ButtonSize * CGFloat(y) + ButtonSize
-         
-         let ButtonFrame = CGRect(x: FirstX, y: FirstY, width: ButtonSize, height: ButtonSize)
-         
-         let EasyNumberButton = StageSellectButton(frame: ButtonFrame)
-         EasyNumberButton.Init(Tag: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum)
-         EasyNumberButton.addTarget(self, action: #selector(self.SellectButton(_:)), for: UIControl.Event.touchUpInside)
-         //EasyNumberButton.hero.id = HeroID.TapEasyStage
-         EasyNumberButton.hero.modifiers = [.cascade, .fade, .scale(0), ]
-         
-         self.addSubview(EasyNumberButton)
-         
-         
-         ////MARK: ここからバッジをつける
-         let EasyStageInfo = realm.objects(EasyStageClearInfomation.self)
-         
-         //クリアしてなくて遊べる状態なら続ける
-         if EasyStageInfo[tmp - 1].CountOfUsedHint == 3 && tmp <= PlayerCanPlayMaxStageNum{
-            continue
+         let ButtonCreateQueue = DispatchQueue.main
+         ButtonCreateQueue.async {
+            print("\(tmp)こ目のボタンを作成")
+            self.InitEachButton(tmp: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum)
          }
          
-         //バッチのサイズ設定
-         let BadgeSize = ButtonSize / 2
-         let BadgeStartX = FirstX - (BadgeSize / 2)
-         let BadgeStartY = FirstY - (BadgeSize / 2)
-         let BadgeFrame = CGRect(x: BadgeStartX, y: BadgeStartY, width: BadgeSize, height: BadgeSize)
-         
-         let Badge = UIImageView(frame: BadgeFrame)
-         Badge.isUserInteractionEnabled = false
-         
-         switch EasyStageInfo[tmp - 1].CountOfUsedHint {
-         case 3:
-            let BadgeImage = UIImage(named: "Lock_Badge.png")
-            Badge.image = BadgeImage
-            Badge.transform = CGAffineTransform(scaleX: BadgeScale.Lock, y: BadgeScale.Lock)
-         case 2:
-            let BadgeImage = UIImage(named: "Bronze_Badge.png")
-            Badge.image = BadgeImage
-            Badge.transform = CGAffineTransform(scaleX: BadgeScale.Bronze, y: BadgeScale.Bronze)
-         case 1:
-            let BadgeImage = UIImage(named: "Silver_Badge.png")
-            Badge.image = BadgeImage
-            Badge.transform = CGAffineTransform(scaleX: BadgeScale.Silver, y: BadgeScale.Silver)
-         case 0:
-            let BadgeImage = UIImage(named: "Gold_Badge.png")
-            Badge.image = BadgeImage
-            Badge.transform = CGAffineTransform(scaleX: BadgeScale.Gold, y: BadgeScale.Gold)
-         default:
-            fatalError("一体何が入ってんねん")
-         }
-         
-         self.addSubview(Badge)
       }
    }
    

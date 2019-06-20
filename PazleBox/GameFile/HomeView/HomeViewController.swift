@@ -57,6 +57,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    let SECRET_CODE = "c8bf5f01b42f4f80ad32ffd00349d92d"
    
    var LockPurchasButton = false  //ロックされていたらappleのサーバに余計に請求しなくする
+   var CanSegeSellectView = true
    
    private let GameBGM = BGM()
    let GameSound = GameSounds()
@@ -344,6 +345,9 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    //MARK:- Main.storybordでつけたボタンのタッチイベント -
    @IBAction func NextViewWithNum(_ sender: UIButton) {
+      
+      if CanSegeSellectView == false { return }
+      CanSegeSellectView = false
       //遷移先のインスタンス
       //ユーティリティエリアで設定したStoryBoardIDをwithIdentifierに設定
       let vc2 = self.storyboard?.instantiateViewController(withIdentifier: "GameView") as! GameViewController
@@ -363,12 +367,14 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       
       Play3DtouchLight()
       GameSound.PlaySoundsTapButton()
+      
       //GameBGM.ChangeHomeBGMVolume(ChangeVolumeFacter: 0.5)
       
       //FIXME:- hero使わんねんやったらreturnとろ
       self.present(vc2, animated: true, completion: {
          print("プレゼント終わった")
          self.ChangeHeroIDForBack()
+         self.CanSegeSellectView = true
       })
       //ChangeHeroIDForBack()
    }
