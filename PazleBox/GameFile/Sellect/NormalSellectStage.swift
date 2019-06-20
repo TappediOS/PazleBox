@@ -28,6 +28,7 @@ class SellectStageNormal: UIScrollView {
    var TapLockedButton = false
    
    let HeroID = HeroIDs()
+
    
    override init(frame: CGRect) {
       super.init(frame: frame)
@@ -64,7 +65,7 @@ class SellectStageNormal: UIScrollView {
       }
    }
    
-   public func InitView(frame: CGRect) {
+   public func InitView(frame: CGRect, ButtonColor: UIColor, ButtonShadowColor: UIColor) {
       self.frame = frame
       
       ButtonSize = frame.width / 5
@@ -77,18 +78,18 @@ class SellectStageNormal: UIScrollView {
       
       self.contentSize.height = ScrollViewHight
       
-      self.InitBackButton()
-      self.InitButton()
+      self.InitButton(ButtonColor: ButtonColor, ButtonShadowColor: ButtonShadowColor)
+      self.InitBackButton(ButtonColor: ButtonShadowColor, ButtonShadowColor: ButtonShadowColor)
    }
    
-   private func InitBackButton() {
+   private func InitBackButton(ButtonColor: UIColor, ButtonShadowColor: UIColor) {
       let FirstX = Internal
       let FirstY = Internal
       let Frame = CGRect(x: FirstX, y: FirstY, width: ButtonSize, height: ButtonSize / 2)
       let BackB = FUIButton(frame: Frame)
       BackB.setTitle("←", for: UIControl.State.normal)
-      BackB.buttonColor = UIColor.greenSea()
-      BackB.shadowColor = UIColor.greenSea()
+      BackB.buttonColor = ButtonColor
+      BackB.shadowColor = ButtonShadowColor
       BackB.shadowHeight = 3.0
       BackB.cornerRadius = 6.0
       BackB.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
@@ -100,7 +101,7 @@ class SellectStageNormal: UIScrollView {
    }
    
    //ボタンをそれぞれ作成するよ
-   private func InitEachButton(tmp: Int, PlayerCanPlayMaxStageNum: Int) {
+   private func InitEachButton(tmp: Int, PlayerCanPlayMaxStageNum: Int, ButtonColor: UIColor, ButtonShadowColor: UIColor) {
       let x = (tmp - 1) % 4
       let y = (tmp - 1) / 4
       
@@ -110,7 +111,7 @@ class SellectStageNormal: UIScrollView {
       let ButtonFrame = CGRect(x: FirstX, y: FirstY, width: ButtonSize, height: ButtonSize)
       
       let NormalNumberButton = StageSellectButton(frame: ButtonFrame)
-      NormalNumberButton.Init(Tag: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum)
+      NormalNumberButtonInit(Tag: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum, ButtonColor: ButtonColor, ButtonShadowColor: ButtonShadowColor)
       NormalNumberButton.addTarget(self, action: #selector(self.SellectButton(_:)), for: UIControl.Event.touchUpInside)
       NormalNumberButton.hero.modifiers = [.cascade, .fade, .scale(0.65), .delay(0.01 + Double(tmp) * 0.01)]
       self.addSubview(NormalNumberButton)
@@ -157,7 +158,7 @@ class SellectStageNormal: UIScrollView {
       self.addSubview(Badge)
    }
    
-   private func InitButton() {
+   private func InitButton(ButtonColor: UIColor, ButtonShadowColor: UIColor) {
       let ClearOfNot = realm.objects(NormalStageClearInfomation.self).filter("Clear == true")
       var LastClearNum: Int = 1
       
@@ -179,7 +180,7 @@ class SellectStageNormal: UIScrollView {
          let ButtonCreateQueue = DispatchQueue.main
          ButtonCreateQueue.async {
             print("\(tmp)こ目のボタンを作成")
-            self.InitEachButton(tmp: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum)
+            self.InitEachButton(tmp: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum, ButtonColor: ButtonColor, ButtonShadowColor: ButtonShadowColor)
          }
       }
    }

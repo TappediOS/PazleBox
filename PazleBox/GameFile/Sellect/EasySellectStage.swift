@@ -28,7 +28,7 @@ class SellectStageEasy: UIScrollView {
    var TapLockedButton = false
    
    let HeroID = HeroIDs()
-
+  
    override init(frame: CGRect) {
       super.init(frame: frame)
       self.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
@@ -65,7 +65,7 @@ class SellectStageEasy: UIScrollView {
       }
    }
    
-   public func InitView(frame: CGRect) {
+   public func InitView(frame: CGRect, ButtonColor: UIColor, ButtonShadowColor: UIColor) {
       self.frame = frame
 
       ButtonSize = frame.width / 5
@@ -78,19 +78,19 @@ class SellectStageEasy: UIScrollView {
       
       self.contentSize.height = ScrollViewHight
       
-      self.InitButton()
-      self.InitBackButton()
+      self.InitButton(ButtonColor: ButtonColor, ButtonShadowColor: ButtonShadowColor)
+      self.InitBackButton(ButtonColor: ButtonShadowColor, ButtonShadowColor: ButtonShadowColor)
       
    }
    
-   private func InitBackButton() {
+   private func InitBackButton(ButtonColor: UIColor, ButtonShadowColor: UIColor) {
       let FirstX = Internal
       let FirstY = Internal
       let Frame = CGRect(x: FirstX, y: FirstY, width: ButtonSize, height: ButtonSize / 2)
       let BackB = FUIButton(frame: Frame)
       BackB.setTitle("←", for: UIControl.State.normal)
-      BackB.buttonColor = UIColor.greenSea()
-      BackB.shadowColor = UIColor.greenSea()
+      BackB.buttonColor = ButtonColor
+      BackB.shadowColor = ButtonShadowColor
       BackB.shadowHeight = 3.0
       BackB.cornerRadius = 6.0
       BackB.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
@@ -102,7 +102,7 @@ class SellectStageEasy: UIScrollView {
    }
    
    //ボタンをそれぞれ作成するよ
-   private func InitEachButton(tmp: Int, PlayerCanPlayMaxStageNum: Int) {
+   private func InitEachButton(tmp: Int, PlayerCanPlayMaxStageNum: Int, ButtonColor: UIColor, ButtonShadowColor: UIColor) {
       let x = (tmp - 1) % 4
       let y = (tmp - 1) / 4
       
@@ -112,7 +112,7 @@ class SellectStageEasy: UIScrollView {
       let ButtonFrame = CGRect(x: FirstX, y: FirstY, width: ButtonSize, height: ButtonSize)
       
       let EasyNumberButton = StageSellectButton(frame: ButtonFrame)
-      EasyNumberButton.Init(Tag: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum)
+      EasyNumberButton.Init(Tag: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum, ButtonColor: ButtonColor, ButtonShadowColor: ButtonShadowColor)
       EasyNumberButton.addTarget(self, action: #selector(self.SellectButton(_:)), for: UIControl.Event.touchUpInside)
       EasyNumberButton.hero.modifiers = [.cascade, .fade, .scale(0.65), .delay(0.01 + Double(tmp) * 0.01)]
       
@@ -161,7 +161,7 @@ class SellectStageEasy: UIScrollView {
    }
 
    
-   private func InitButton() {
+   private func InitButton(ButtonColor: UIColor, ButtonShadowColor: UIColor) {
       let ClearOfNot = realm.objects(EasyStageClearInfomation.self).filter("Clear == true")
       var LastClearNum: Int = 1
       
@@ -186,7 +186,7 @@ class SellectStageEasy: UIScrollView {
          let ButtonCreateQueue = DispatchQueue.main
          ButtonCreateQueue.async {
             print("\(tmp)こ目のボタンを作成")
-            self.InitEachButton(tmp: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum)
+            self.InitEachButton(tmp: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum, ButtonColor: ButtonColor, ButtonShadowColor: ButtonShadowColor)
          }
       }
    }

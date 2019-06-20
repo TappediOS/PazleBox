@@ -25,6 +25,13 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    
    var StageLevel: StageLevel = .Normal
    var SellectStageNumber = 0
+   
+   var EasySellectButtonColor = UIColor.turquoise()
+   var EasySellectButtonShadowColor = UIColor.greenSea()
+   var NormalSellectButtonColor = UIColor.turquoise()
+   var NormalSellectButtonShadowColor = UIColor.greenSea()
+   var HardllectButtonColor = UIColor.turquoise()
+   var HardllectButtonShadowColor = UIColor.greenSea()
 
    var EasySelect = SellectStageEasy()
    var NormalSelect = SellectStageNormal()
@@ -175,13 +182,13 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       //FIXME:- クラス作ったら直す
       switch StageLevel {
       case .Easy:
-         EasySelect.InitView(frame: self.view.frame)
+         EasySelect.InitView(frame: self.view.frame, ButtonColor: EasySellectButtonColor!, ButtonShadowColor: EasySellectButtonShadowColor!)
          self.view.addSubview(EasySelect)
       case .Normal:
-         NormalSelect.InitView(frame: self.view.frame)
+         NormalSelect.InitView(frame: self.view.frame, ButtonColor: NormalSellectButtonColor!, ButtonShadowColor: NormalSellectButtonShadowColor!)
          self.view.addSubview(NormalSelect)
       case .Hard:
-         HardSelect.InitView(frame: self.view.frame)
+         HardSelect.InitView(frame: self.view.frame, ButtonColor: HardllectButtonColor!, ButtonShadowColor: HardllectButtonShadowColor!)
          self.view.addSubview(HardSelect)
       }
    }

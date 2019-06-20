@@ -356,10 +356,16 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       switch sender.tag {
       case 1:
          vc2.StageLevel = .Easy
+         vc2.EasySellectButtonColor = self.EasyButton.buttonColor
+         vc2.EasySellectButtonShadowColor = self.EasyButton.shadowColor
       case 2:
          vc2.StageLevel = .Normal
+         vc2.NormalSellectButtonColor = self.NormalButton.buttonColor
+         vc2.NormalSellectButtonShadowColor = self.NormalButton.shadowColor
       case 3:
          vc2.StageLevel = .Hard
+         vc2.HardllectButtonColor = self.HardButton.buttonColor
+         vc2.HardllectButtonShadowColor = self.HardButton.shadowColor
       default:
          fatalError()
       }
