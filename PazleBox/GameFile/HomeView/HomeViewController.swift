@@ -316,15 +316,15 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    private func SetUpStageButtonHeroID() {
       EasyButton.hero.id = HeroID.BackEasyStage
-      NormalButton.hero.id = HeroID.TapNormalStage
-      HardButton.hero.id = HeroID.TapHardStage
-   }
-   
-   private func ChangeHeroIDForBack(){
-      EasyButton.hero.id = HeroID.BackEasyStage
       NormalButton.hero.id = HeroID.BackNormalStage
       HardButton.hero.id = HeroID.BackHardStage
    }
+   
+//   private func ChangeHeroIDForBack(){
+//      EasyButton.hero.id = HeroID.BackEasyStage
+//      NormalButton.hero.id = HeroID.BackNormalStage
+//      HardButton.hero.id = HeroID.BackHardStage
+//   }
    
    private func SetUpStageButtonPosition() {
       EasyButton.frame = CGRect(x: FViewW * 6, y: FViewH * 11, width: FViewW * 12, height: FViewH * 3)
@@ -368,15 +368,12 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       Play3DtouchLight()
       GameSound.PlaySoundsTapButton()
       
-      //GameBGM.ChangeHomeBGMVolume(ChangeVolumeFacter: 0.5)
-      
       //FIXME:- hero使わんねんやったらreturnとろ
       self.present(vc2, animated: true, completion: {
          print("プレゼント終わった")
-         self.ChangeHeroIDForBack()
+         //self.ChangeHeroIDForBack()
          self.CanSegeSellectView = true
       })
-      //ChangeHeroIDForBack()
    }
    
    
