@@ -45,8 +45,8 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    //GohomeButtonを押したとに広告表示する場合の判定
    var GoHomeForInstitialAD = false
    
+   //FIXME: 構造体にしとけよ...
    let MaxStageNum = 50
-   
    
    var Reward: GADRewardBasedVideoAd!
    let REWARD_TEST_ID = "ca-app-pub-3940256099942544/1712485313"
