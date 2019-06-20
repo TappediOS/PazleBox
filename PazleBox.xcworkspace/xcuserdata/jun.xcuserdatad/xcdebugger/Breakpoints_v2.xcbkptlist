@@ -1225,8 +1225,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "836"
             endingLineNumber = "836"
-            landmarkName = "GameScene"
-            landmarkType = "3">
+            landmarkName = "AdShowOrNot()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1241,7 +1241,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "847"
             endingLineNumber = "847"
-            landmarkName = "AdShowOrNot()"
+            landmarkName = "SetHint1()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1257,7 +1257,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "288"
             endingLineNumber = "288"
-            landmarkName = "LockAllNode()"
+            landmarkName = "UnLockAllNode()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1305,7 +1305,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "827"
             endingLineNumber = "827"
-            landmarkName = "ReSumeCatchNotification(notification:)"
+            landmarkName = "ShowAdPOSTMotification()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
