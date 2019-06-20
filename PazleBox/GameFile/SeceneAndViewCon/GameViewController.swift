@@ -65,12 +65,6 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    
    let ManageLeaderBoard = ManageLeadearBoards()
    
-   //   @available(iOS 11, *)
-   //   override var prefersHomeIndicatorAutoHidden: Bool {
-   //      get {
-   //         return true
-   //      }
-   //   }
    //スワイプ無効にするやつ
    @available(iOS 11, *)
    override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge{
@@ -133,7 +127,6 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    }
    
    private func InitInstitial() {
-      
       #if DEBUG
          print("インターステイシャル:テスト環境")
          Interstitial = GADInterstitial(adUnitID: INTERSTITIAL_TEST_ID)
@@ -163,10 +156,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       }
    }
    
-   
-   
    private func InitRewardView() {
-      
       Reward = GADRewardBasedVideoAd.sharedInstance()
       Reward?.delegate = self
       #if DEBUG
