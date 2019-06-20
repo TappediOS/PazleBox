@@ -25,7 +25,7 @@ class GameSounds {
    
    var GameClearSound: AVAudioPlayer! = nil
    
-   let SoundVolume: Float = 0.65
+   let SoundVolume: Float = 0.55
    
    
    init() {
@@ -205,7 +205,7 @@ class GameSounds {
          self.GameClearSound.volume = 0
          self.GameClearSound.stop()
          self.GameClearSound.currentTime = 0
-         self.GameClearSound.volume = self.SoundVolume / 1.5
+         self.GameClearSound.volume = self.SoundVolume / 1.25
          self.GameClearSound.play()
       }
       queue.addOperation(operation)
@@ -234,7 +234,7 @@ class GameSounds {
          self.audioPlayer1.volume = 0
          self.audioPlayer1.stop()
          self.audioPlayer1.currentTime = 0
-         self.audioPlayer1.volume = SoundVolume
+         self.audioPlayer1.volume = SoundVolume / 1.15
          self.audioPlayer1.play()
       case 2:
          self.audioPlayer2.volume = 0

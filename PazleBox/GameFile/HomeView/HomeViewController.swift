@@ -223,6 +223,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       sender.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
       sender.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       sender.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
+      //sender.hero.modifiers = [.translate(y:200)]
    }
    
    //ボタンの初期化
@@ -244,6 +245,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       ShowRankingViewButton = FUIButton(frame: CGRect(x: FViewW * 1, y: FViewH * 25, width: FViewW * 5, height: FViewH * 3))
       ShowRankingViewButton?.setTitle(NSLocalizedString("Ranking", comment: ""), for: .normal)
       ShowRankingViewButton?.addTarget(self, action: #selector(self.ShowRankingView), for: .touchUpInside)
+      ShowRankingViewButton?.hero.id = HeroID.GameCenterVC
       SetUpHomeEachSmallButton(sender: ShowRankingViewButton!)
       self.view.addSubview(ShowRankingViewButton!)
    }
@@ -391,9 +393,9 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       let gcView = GKGameCenterViewController()
       gcView.gameCenterDelegate = self
       gcView.viewState = GKGameCenterViewControllerState.leaderboards
+      gcView.hero.isEnabled = true
+      gcView.view.hero.id = HeroID.GameCenterVC
       self.present(gcView, animated: true, completion: nil)
-      
-      //Analytics.logEvent("LoadRankingView", parameters: nil)
    }
    
    //MARK:- ストアのViewControllerに行く関数

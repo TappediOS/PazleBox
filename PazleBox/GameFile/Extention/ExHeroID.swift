@@ -16,4 +16,6 @@ struct HeroIDs {
    let BackNormalStage = "BackNormalStage"
    let TapHardStage = "TapHardStage"
    let BackHardStage = "BackHardStage"
+   
+   let GameCenterVC = "GameCenterVC"
 }
