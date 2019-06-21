@@ -42,7 +42,7 @@ class HStage29 {
       
       Puzzle3 = puzzle(PX: 3, PY: 3, CustNum: 2, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p29", PuzzleColor: "Red", RespawnX: 6, RespawnY: 5)
       
-      Puzzle4 = puzzle(PX: 4, PY: 3, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p29", PuzzleColor: "Red", RespawnX: 5, RespawnY: 3)
+      Puzzle4 = puzzle(PX: 4, PY: 3, CustNum: 3, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "43p29", PuzzleColor: "Red", RespawnX: 4, RespawnY: 3)
       
       Puzzle5 = puzzle(PX: 3, PY: 3, CustNum: 4, ViewX: Int(SizeX), ViewY: Int(SizeY), PuzzleStyle: "33p3", PuzzleColor: "Blue", RespawnX: 0, RespawnY: 2)
       
