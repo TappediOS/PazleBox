@@ -304,14 +304,20 @@ class GameClearView: UIView, GADBannerViewDelegate {
       GameClearLabel?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.ClearLabelAnimationTime)
       ReviewedView!.StartReviewViewAnimation()
       CountOfNextADLabel?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.ADInfoLabelAnimationTime)
-      GoHomeButton?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.HomeButtonAnimationTime)
-      NextButton?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.NextButtonAnimationTime)
+      GoHomeButton?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.HomeButtonAnimationTime, completion: {
+         self.GoHomeButton?.isEnabled = true
+      })
+      NextButton?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.NextButtonAnimationTime, completion: {
+         self.NextButton?.isEnabled = true
+      })
       if let AdButton = NoAdButton {
-         AdButton.animate(animations: [AniManager.ShowAnimation], delay: AniManager.NoAdButtonAnimaitonTime)
+         AdButton.animate(animations: [AniManager.ShowAnimation], delay: AniManager.NoAdButtonAnimaitonTime, completion: {
+            self.NoAdButton?.isEnabled = true
+         })
       }
    }
    
-   //見えるようにする
+   //
    private func ShowEachObjectForAnimation() {
       GameClearLabel!.isHidden = false
       ReviewedView!.ShowEachObjectForAnimation()
@@ -332,6 +338,12 @@ class GameClearView: UIView, GADBannerViewDelegate {
       NextButton!.isHidden = true
       if let AdButton = NoAdButton {
          AdButton.isHidden = true
+      }
+      //touchでない
+      GoHomeButton!.isEnabled = false
+      NextButton!.isEnabled = false
+      if let AdButton = NoAdButton {
+         AdButton.isEnabled = false
       }
    }
    
