@@ -11,6 +11,7 @@
 		BF0FD352224364A900E8F387 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = BF0FD351224364A900E8F387 /* Star.png */; };
 		BF0FD35422436DF200E8F387 /* ExUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0FD35322436DF200E8F387 /* ExUIColor.swift */; };
 		BF0FD356224371CE00E8F387 /* PutParticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0FD355224371CE00E8F387 /* PutParticle.swift */; };
+		BF1648ED22BDFB1C000CD1AB /* AnimationTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1648EC22BDFB1C000CD1AB /* AnimationTimeManager.swift */; };
 		BF1A5EDB22B78609002C6733 /* BuyCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A5EDA22B78609002C6733 /* BuyCoinView.swift */; };
 		BF1A5EDD22B78616002C6733 /* CoinsID.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A5EDC22B78616002C6733 /* CoinsID.swift */; };
 		BF1A5EDF22B78759002C6733 /* Buy200CoinsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A5EDE22B78759002C6733 /* Buy200CoinsButton.swift */; };
@@ -679,6 +680,7 @@
 		BF0FD351224364A900E8F387 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
 		BF0FD35322436DF200E8F387 /* ExUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIColor.swift; sourceTree = "<group>"; };
 		BF0FD355224371CE00E8F387 /* PutParticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutParticle.swift; sourceTree = "<group>"; };
+		BF1648EC22BDFB1C000CD1AB /* AnimationTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTimeManager.swift; sourceTree = "<group>"; };
 		BF1A5EDA22B78609002C6733 /* BuyCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCoinView.swift; sourceTree = "<group>"; };
 		BF1A5EDC22B78616002C6733 /* CoinsID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsID.swift; sourceTree = "<group>"; };
 		BF1A5EDE22B78759002C6733 /* Buy200CoinsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buy200CoinsButton.swift; sourceTree = "<group>"; };
@@ -2372,6 +2374,7 @@
 			children = (
 				BFFB3AD42250F5E7000C90E1 /* GameClearView.swift */,
 				BFF6D79A229527C6000253A2 /* ReviewView.swift */,
+				BF1648EC22BDFB1C000CD1AB /* AnimationTimeManager.swift */,
 				BFF889A822A39A5A0056A839 /* NoAdsButton.swift */,
 				BFF6D79C22952C22000253A2 /* NotSellectReview.png */,
 				BFF6D79D22952C22000253A2 /* SellectReview.png */,
@@ -3280,6 +3283,7 @@
 				BF552F0E226DDEAB00756E16 /* H26.swift in Sources */,
 				BF332FE4224927FE009B3042 /* H7.swift in Sources */,
 				BFFA2A88223384120023BB71 /* NormalCreate.swift in Sources */,
+				BF1648ED22BDFB1C000CD1AB /* AnimationTimeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

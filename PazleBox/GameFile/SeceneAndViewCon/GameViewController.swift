@@ -325,6 +325,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.05 + StarAnimationBetTime * Double(2)) {
          self.ClearView?.StartAnimationView3()
+         self.ClearView?.StartButtonAnimation()
       }
    }
    
@@ -569,6 +570,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
             }
          }
       }
+      
       
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.645) {
          self.view.addSubview(self.ClearView!)
