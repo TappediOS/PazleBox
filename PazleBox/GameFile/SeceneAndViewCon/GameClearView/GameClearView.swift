@@ -69,6 +69,8 @@ class GameClearView: UIView, GADBannerViewDelegate {
    
    var NoAdButton: NoAdsButton?
    
+   let AniManager = AnimationTimeManager()
+   
    override init(frame: CGRect) {
       super.init(frame: frame)
       
@@ -295,12 +297,12 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    public func StartButtonAnimation() {
-      let ButtonAni = AnimationType.zoom(scale: 0)
+      
       //let waitani = AnimationType.
       GoHomeButton!.isHidden = false
       NextButton!.isHidden = false
       GoHomeButton?.animate(animations: [ButtonAni])
-      NextButton?.animate(animations: [ButtonAni])
+      NextButton?.animate(animations: [ButtonAni], delay: 0.3)
    }
    
    public func SetUpForAnimatiomToHideEachViewAndButton() {
@@ -309,7 +311,10 @@ class GameClearView: UIView, GADBannerViewDelegate {
       CountOfNextADLabel!.isHidden = true
       GoHomeButton!.isHidden = true
       NextButton!.isHidden = true
-      NoAdButton!.isHidden = true
+      if let AdButton = NoAdButton {
+         AdButton.isHidden = true
+      }
+      
    }
    
    private func InitNoAdsButton(frame: CGRect) {
