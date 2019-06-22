@@ -12,18 +12,18 @@ import ViewAnimator
 
 struct AnimationTimeManager {
    
-   let SmalToBigAnimation = AnimationType.zoom(scale: 1.5)
-   let BigToSmalAnimation = AnimationType.zoom(scale: 0)
+   let SmalToBigAnimation = AnimationType.zoom(scale: 0)
+   let BigToSmalAnimation = AnimationType.zoom(scale: 1.5)
    
-   let ClearLabelAnimationTime = 2.3
-   let StageReviewLabelAnimationTime = 2.5
-   let HartAnimationTime1 = 2.7
-   let HartAnimationTime2 = 2.8
-   let HartAnimationTime3 = 2.9
-   let HartAnimationTime4 = 3.0
-   let HartAnimationTime5 = 3.1
-   let ADInfoLabelAnimationTime = 3.3
-   let NextButtonAnimationTime = 3.5
-   let HomeButtonAnimationTime = 3.6
-   let NoAdButtonAnimaitonTime = 3.7
+   let ClearLabelAnimationTime = 1.5
+   let StageReviewLabelAnimationTime = 1.8
+   let HartAnimationTime1 = 2.0
+   let HartAnimationTime2 = 2.1
+   let HartAnimationTime3 = 2.2
+   let HartAnimationTime4 = 2.3
+   let HartAnimationTime5 = 2.4
+   let ADInfoLabelAnimationTime = 2.7
+   let NextButtonAnimationTime = 3.0
+   let HomeButtonAnimationTime = 3.15
+   let NoAdButtonAnimaitonTime = 3.3
 }
