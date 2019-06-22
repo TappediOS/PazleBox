@@ -324,6 +324,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       HardButton.hero.id = HeroID.BackHardStage
    }
    
+   
    private func SetUpHeroModifiersForEachStageButton() {
       EasyButton.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 3), y: 0, z: 0)]
       NormalButton.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 1), y: 0, z: 0)]
