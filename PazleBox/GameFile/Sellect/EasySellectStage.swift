@@ -115,7 +115,7 @@ class SellectStageEasy: UIScrollView {
       let EasyNumberButton = StageSellectButton(frame: ButtonFrame)
       EasyNumberButton.Init(Tag: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum, ButtonColor: ButtonColor, ButtonShadowColor: ButtonShadowColor)
       EasyNumberButton.addTarget(self, action: #selector(self.SellectButton(_:)), for: UIControl.Event.touchUpInside)
-      EasyNumberButton.hero.modifiers = [.cascade, .fade, .scale(0.65), .delay(0.01 + Double(tmp) * 0.01)]
+      EasyNumberButton.hero.modifiers = [.fade, .scale(0.45), .delay(Double(tmp) * 0.0115)]
       
       self.addSubview(EasyNumberButton)
       
@@ -135,7 +135,7 @@ class SellectStageEasy: UIScrollView {
       
       let Badge = UIImageView(frame: BadgeFrame)
       Badge.isUserInteractionEnabled = false
-      Badge.hero.modifiers = [.cascade, .fade, .scale(0.65), .delay(0.01 + Double(tmp) * 0.01)]
+      Badge.hero.modifiers = [.fade, .scale(0.45), .delay(Double(tmp) * 0.0115)]
       
       switch EasyStageInfo[tmp - 1].CountOfUsedHint {
       case 3:
