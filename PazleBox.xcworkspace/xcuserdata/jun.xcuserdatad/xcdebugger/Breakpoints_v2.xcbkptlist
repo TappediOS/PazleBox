@@ -1620,8 +1620,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
             endingLineNumber = "153"
-            landmarkName = "ReviewView"
-            landmarkType = "3">
+            landmarkName = "SetUpForAnimatiomToHideEachLabelAndImage()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

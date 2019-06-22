@@ -7,16 +7,20 @@
 //
 
 import Foundation
+import ViewAnimator
 
 
 struct AnimationTimeManager {
+   
+   let ShowAnimation = AnimationType.zoom(scale: 0)
+   
    let StartAnimationTime = 2
    let ClearLabelAnimationTime = 2.3
    let StageReviewLabelAnimationTime = 2.5
    let HartAnimationTime1 = 2.7
    let HartAnimationTime2 = 2.8
    let HartAnimationTime3 = 2.9
-   let HartAnimationTime4 = 3
+   let HartAnimationTime4 = 3.0
    let HartAnimationTime5 = 3.1
    let ADInfoLabelAnimationTime = 3.3
    let NextButtonAnimationTime = 3.5
