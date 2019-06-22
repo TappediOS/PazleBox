@@ -12,7 +12,7 @@ import ViewAnimator
 
 struct AnimationTimeManager {
    
-   let ShowAnimation = AnimationType.zoom(scale: 0)
+   let ShowAnimation = AnimationType.zoom(scale: 1.5)
    
    let StartAnimationTime = 2
    let ClearLabelAnimationTime = 2.3
