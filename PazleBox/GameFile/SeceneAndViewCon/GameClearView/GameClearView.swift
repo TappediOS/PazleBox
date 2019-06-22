@@ -301,17 +301,17 @@ class GameClearView: UIView, GADBannerViewDelegate {
    public func StartClearViewAnimation() {
       ShowEachObjectForAnimation()
 
-      GameClearLabel?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.ClearLabelAnimationTime)
+      GameClearLabel?.animate(animations: [AniManager.BigToSmalAnimation], delay: AniManager.ClearLabelAnimationTime)
       ReviewedView!.StartReviewViewAnimation()
-      CountOfNextADLabel?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.ADInfoLabelAnimationTime)
-      GoHomeButton?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.HomeButtonAnimationTime, completion: {
+      CountOfNextADLabel?.animate(animations: [AniManager.SmalToBigAnimation], delay: AniManager.ADInfoLabelAnimationTime)
+      GoHomeButton?.animate(animations: [AniManager.SmalToBigAnimation], delay: AniManager.HomeButtonAnimationTime, completion: {
          self.GoHomeButton?.isEnabled = true
       })
-      NextButton?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.NextButtonAnimationTime, completion: {
+      NextButton?.animate(animations: [AniManager.SmalToBigAnimation], delay: AniManager.NextButtonAnimationTime, completion: {
          self.NextButton?.isEnabled = true
       })
       if let AdButton = NoAdButton {
-         AdButton.animate(animations: [AniManager.ShowAnimation], delay: AniManager.NoAdButtonAnimaitonTime, completion: {
+         AdButton.animate(animations: [AniManager.SmalToBigAnimation], delay: AniManager.NoAdButtonAnimaitonTime, completion: {
             self.NoAdButton?.isEnabled = true
          })
       }
