@@ -225,8 +225,6 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    private func IniiNextButton(frame: CGRect) {
-      
-      
       let StartY = FoundViewH * 6
       let ButtonH = FoundViewH
       
@@ -239,7 +237,6 @@ class GameClearView: UIView, GADBannerViewDelegate {
          ButtonW = FoundViewW * 3
          StartX = ViewW / 16
       }
-      
       
       let Frame = CGRect(x: StartX, y: StartY, width: ButtonW, height: ButtonH)
       
@@ -307,7 +304,12 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    public func SetUpForAnimatiomToHideEachViewAndButton() {
-      
+      GameClearLabel!.isHidden = true
+      ReviewedView!.SetUpForAnimatiomToHideEachLabelAndImage()
+      CountOfNextADLabel!.isHidden = true
+      GoHomeButton!.isHidden = true
+      NextButton!.isHidden = true
+      NoAdButton!.isHidden = true
    }
    
    private func InitNoAdsButton(frame: CGRect) {

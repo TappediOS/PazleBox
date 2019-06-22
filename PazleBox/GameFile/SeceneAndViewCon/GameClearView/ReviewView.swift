@@ -125,6 +125,15 @@ class ReviewView : UIView {
    }
    
    
+   public func SetUpForAnimatiomToHideEachLabelAndImage() {
+      ReveiwLabel!.isHidden = true
+      FirstHart!.isHidden = true
+      SecontHart!.isHidden = true
+      ThirdHart!.isHidden = true
+      ForthHart!.isHidden = true
+      FifthHart!.isHidden = true
+   }
+   
    public func GetUserSellectReviewNum() -> Int {
       return self.UserSellectReviewNum
    }
