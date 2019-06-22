@@ -325,7 +325,6 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.05 + StarAnimationBetTime * Double(2)) {
          self.ClearView?.StartAnimationView3()
-         self.ClearView?.StartButtonAnimation()
       }
    }
    
@@ -584,6 +583,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          self.ClearView?.AddConfiView1()
          self.ClearView?.AddConfiView2()
          self.ClearView?.AddConfiView3()
+         self.ClearView?.StartClearViewAnimation()
          self.ClearView?.fadeIn(type: .Slow) { [weak self] in
             self?.ShowGameClearViewWithStar(CountOfUsedHint: CountOfUsedHint)
          }
@@ -687,7 +687,6 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    
    //MARK:- 次のステージに行くために，ClearView消したりアニメーション消したりする
    private func ShowNextGame() {
-      
       
       self.ClearView?.fadeOut(type: .Slow){ [weak self] in
          if self?.userDefaults.bool(forKey: "BuyRemoveAd") == false {

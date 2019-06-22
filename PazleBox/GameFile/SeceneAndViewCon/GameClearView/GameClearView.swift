@@ -298,7 +298,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    //MARK:- アニメーションスタート
-   public func StartButtonAnimation() {
+   public func StartClearViewAnimation() {
       ShowEachObjectForAnimation()
 
       GameClearLabel?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.ClearLabelAnimationTime)
@@ -333,7 +333,6 @@ class GameClearView: UIView, GADBannerViewDelegate {
       if let AdButton = NoAdButton {
          AdButton.isHidden = true
       }
-      
    }
    
    private func InitNoAdsButton(frame: CGRect) {
