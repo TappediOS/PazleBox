@@ -664,9 +664,10 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       //課金してたらそのまま返す
       if userDefaults.bool(forKey: "BuyRemoveAd") == true {
          StopGameBGM()
-         self.view.fadeOut(type: .Slow){ [weak self] in
-            self?.dismiss(animated: false, completion: nil)
-         }
+         self.dismiss(animated: true, completion: nil)
+//         self.view.fadeOut(type: .Slow){ [weak self] in
+//            self?.dismiss(animated: false, completion: nil)
+//         }
          return
       }
       

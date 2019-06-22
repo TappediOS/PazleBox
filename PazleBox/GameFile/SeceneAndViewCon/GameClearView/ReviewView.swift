@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Hero
 
 class ReviewView : UIView {
    
@@ -34,6 +35,7 @@ class ReviewView : UIView {
    public var UserSellectReviewNum = 0
    
    let AniManager = AnimationTimeManager()
+   let HeroID = HeroIDs()
    
    override init(frame: CGRect) {
       super.init(frame: frame)
@@ -81,6 +83,7 @@ class ReviewView : UIView {
       FirstHart!.backgroundColor = UIColor.white.withAlphaComponent(0)
       FirstHart!.isUserInteractionEnabled = true
       FirstHart!.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.TapFirstView(_:))))
+      FirstHart?.hero.id = HeroID.ClearHart1ToHomeView
       self.addSubview(FirstHart!)
    }
    
@@ -91,6 +94,7 @@ class ReviewView : UIView {
       SecontHart!.backgroundColor = UIColor.white.withAlphaComponent(0)
       SecontHart!.isUserInteractionEnabled = true
       SecontHart!.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.TapSecondView(_:))))
+      SecontHart?.hero.id = HeroID.ClearHart2ToHomeView
       self.addSubview(SecontHart!)
    }
    
@@ -101,6 +105,7 @@ class ReviewView : UIView {
       ThirdHart!.backgroundColor = UIColor.white.withAlphaComponent(0)
       ThirdHart!.isUserInteractionEnabled = true
       ThirdHart!.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.TapThirdView(_:))))
+      ThirdHart?.hero.id = HeroID.ClearHart3ToHomeView
       self.addSubview(ThirdHart!)
    }
    
@@ -111,6 +116,7 @@ class ReviewView : UIView {
       ForthHart!.backgroundColor = UIColor.white.withAlphaComponent(0)
       ForthHart!.isUserInteractionEnabled = true
       ForthHart!.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.TapForthView(_:))))
+      ForthHart?.hero.id = HeroID.ClearHart4ToHomeView
       self.addSubview(ForthHart!)
    }
    

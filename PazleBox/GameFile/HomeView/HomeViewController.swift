@@ -79,6 +79,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       InitContactusButton()
       InitShowRankingViewButton()
       InitGoPiceStoreButton()
+      SetUpHeroModifiersForEachSmallButton()
       
       InitConfig()
       SetUpRemoteConfigDefaults()
@@ -231,12 +232,14 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       PurchasButton = FUIButton(frame: CGRect(x: FViewW * 13, y: FViewH * 25, width: FViewW * 5, height: FViewH * 3))
       PurchasButton?.setTitle(NSLocalizedString("No Ads", comment: ""), for: .normal)
       PurchasButton?.addTarget(self, action: #selector(self.tapparchas), for: .touchUpInside)
+      PurchasButton?.hero.id = HeroID.ClearHart3ToHomeView
       SetUpHomeEachSmallButton(sender: PurchasButton!)
       self.view.addSubview(PurchasButton!)
       
       RestoreButton = FUIButton(frame: CGRect(x: FViewW * 19, y: FViewH * 25, width: FViewW * 5, height: FViewH * 3))
       RestoreButton?.setTitle(NSLocalizedString("Restore", comment: ""), for: .normal)
       RestoreButton?.addTarget(self, action: #selector(self.restore), for: .touchUpInside)
+      RestoreButton?.hero.id = HeroID.ClearHart2ToHomeView
       SetUpHomeEachSmallButton(sender: RestoreButton!)
       self.view.addSubview(RestoreButton!)
    }
@@ -246,6 +249,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       ShowRankingViewButton?.setTitle(NSLocalizedString("Ranking", comment: ""), for: .normal)
       ShowRankingViewButton?.addTarget(self, action: #selector(self.ShowRankingView), for: .touchUpInside)
       ShowRankingViewButton?.hero.id = HeroID.GameCenterVC
+      ShowRankingViewButton?.hero.id = HeroID.ClearHart4ToHomeView
       SetUpHomeEachSmallButton(sender: ShowRankingViewButton!)
       self.view.addSubview(ShowRankingViewButton!)
    }
@@ -254,6 +258,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       ContactusButton = FUIButton(frame: CGRect(x: FViewW * 7, y: FViewH * 25, width: FViewW * 5, height: FViewH * 3))
       ContactusButton?.setTitle(NSLocalizedString("Contact us", comment: ""), for: .normal)
       ContactusButton?.addTarget(self, action: #selector(self.ContactUs), for: .touchUpInside)
+      ContactusButton?.hero.id = HeroID.ClearHart2ToHomeView
       SetUpHomeEachSmallButton(sender: ContactusButton!)
       self.view.addSubview(ContactusButton!)
    }
@@ -326,17 +331,18 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    
    private func SetUpHeroModifiersForEachStageButton() {
-      EasyButton.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 3), y: 0, z: 0)]
-      NormalButton.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 1), y: 0, z: 0)]
-      HardButton.hero.modifiers = [.arc(), .translate(x: +(ViewW - FViewW * 6), y: 0, z: 0)]
+      EasyButton.hero.modifiers = [.arc(), .translate(x: +(ViewW - FViewW * 6), y: 0, z: 0)]
+      NormalButton.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 2), y: 0, z: 0)]
+      HardButton.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 11), y: 0, z: 0)]
    }
    
-//   private func ChangeHeroIDForBack(){
-//      EasyButton.hero.id = HeroID.BackEasyStage
-//      NormalButton.hero.id = HeroID.BackNormalStage
-//      HardButton.hero.id = HeroID.BackHardStage
-//   }
-   
+   private func SetUpHeroModifiersForEachSmallButton(){
+      ShowRankingViewButton!.hero.modifiers = [.arc(), .translate(x: 0, y: +(ViewH - FViewH * 25), z: 0)]
+      ContactusButton!.hero.modifiers = [.arc(), .translate(x: 0, y: +(ViewH - FViewH * 19), z: 0)]
+      PurchasButton!.hero.modifiers = [.arc(), .translate(x: 0, y: +(ViewH - FViewH * 8), z: 0)]
+      RestoreButton!.hero.modifiers = [.arc(), .translate(x: 0, y: +(ViewH + FViewH * 12), z: 0)]
+   }
+
    private func SetUpStageButtonPosition() {
       EasyButton.frame = CGRect(x: FViewW * 6, y: FViewH * 11, width: FViewW * 12, height: FViewH * 3)
       NormalButton.frame = CGRect(x: FViewW * 6, y: FViewH * 15, width: FViewW * 12, height: FViewH * 3)

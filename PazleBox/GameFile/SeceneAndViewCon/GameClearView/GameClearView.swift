@@ -13,7 +13,7 @@ import FlatUIKit
 import TapticEngine
 import Firebase
 import ViewAnimator
-
+import Hero
 
 class GameClearView: UIView, GADBannerViewDelegate {
    
@@ -70,6 +70,8 @@ class GameClearView: UIView, GADBannerViewDelegate {
    var NoAdButton: NoAdsButton?
    
    let AniManager = AnimationTimeManager()
+   
+   let HeroID = HeroIDs()
    
    override init(frame: CGRect) {
       super.init(frame: frame)
@@ -258,7 +260,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
       NextButton!.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
       NextButton!.addTarget(self, action: #selector(self.TapNextButton(_:)), for: UIControl.Event.touchUpInside)
       NextButton!.isHidden = true
-      
+      NextButton!.hero.id = HeroID.BackEasyStage
       self.addSubview(NextButton!)
    }
    
@@ -293,7 +295,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
       GoHomeButton!.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
       GoHomeButton!.addTarget(self, action: #selector(self.TapGoHomeButton(_:)), for: UIControl.Event.touchUpInside)
       GoHomeButton!.isHidden = true
-      
+      GoHomeButton!.hero.id = HeroID.BackNormalStage
       self.addSubview(GoHomeButton!)
    }
    
@@ -362,6 +364,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
       let Frame = CGRect(x: StartX, y: StartY, width: ButtonW, height: ButtonH)
       
       NoAdButton = NoAdsButton(frame: Frame)
+      NoAdButton!.hero.id = HeroID.BackHardStage
       self.addSubview(NoAdButton!)
    }
    
@@ -377,6 +380,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
       ConfView1.animationSpeed = ConfAniSpi
       //ConfView1.loopMode = .loop
       ConfView1.isUserInteractionEnabled = false
+      
    }
    
    private func InitConfeView2() {
