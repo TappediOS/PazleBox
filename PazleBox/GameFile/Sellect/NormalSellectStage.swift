@@ -97,6 +97,7 @@ class SellectStageNormal: UIScrollView {
       BackB.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
       BackB.addTarget(self, action: #selector(self.TapBackButton(_:)), for: UIControl.Event.touchUpInside)
       BackB.hero.id = HeroID.BackNormalStage
+      BackB.hero.modifiers = [.arc()]
       self.addSubview(BackB)
    }
    
