@@ -313,13 +313,22 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       SetUpSellectStageButton(sender: HardButton)
       
       SetUpStageButtonHeroID()
+      SetUpHeroModifiersForEachStageButton()
       SetUpStageButtonPosition()
    }
    
+   //MARK: ステージボタンのHEROIDつける -
    private func SetUpStageButtonHeroID() {
       EasyButton.hero.id = HeroID.BackEasyStage
       NormalButton.hero.id = HeroID.BackNormalStage
       HardButton.hero.id = HeroID.BackHardStage
+      
+   }
+   
+   private func SetUpHeroModifiersForEachStageButton() {
+      EasyButton.hero.modifiers = [.arc(), .translate(x: +(ViewW - FViewW * 6), y: 0, z: 0)]
+      NormalButton.hero.modifiers = [.arc(), .translate(x: +(ViewW - FViewW * 6), y: 0, z: 0)]
+      HardButton.hero.modifiers = [.arc(), .translate(x: +(ViewW - FViewW * 6), y: 0, z: 0)]
    }
    
 //   private func ChangeHeroIDForBack(){
