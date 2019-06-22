@@ -665,9 +665,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       if userDefaults.bool(forKey: "BuyRemoveAd") == true {
          StopGameBGM()
          self.dismiss(animated: true, completion: nil)
-//         self.view.fadeOut(type: .Slow){ [weak self] in
-//            self?.dismiss(animated: false, completion: nil)
-//         }
+
          return
       }
       
@@ -681,9 +679,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       
       UpdateInterstitialCountANDUpdateLabelCount()
       StopGameBGM()
-      self.view.fadeOut(type: .Slow){ [weak self] in
-         self?.dismiss(animated: false, completion: nil)
-      }
+      self.dismiss(animated: true, completion: nil)
    }
    
    //MARK:- 次のステージに行くために，ClearView消したりアニメーション消したりする
@@ -702,9 +698,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       //MARK:- 最後のステージプレイしてたらさようなら
       if self.SellectStageNumber == self.MaxStageNum{
          print("最後のステージ: \(self.MaxStageNum) をプレーしてたのでホームに帰ります")
-         self.view.fadeOut(type: .Slow){ [weak self] in
-            self?.dismiss(animated: false, completion: nil)
-         }
+         self.dismiss(animated: true, completion: nil)
          return
       }
     
@@ -854,9 +848,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          Analytics.logEvent("InterAdAndGoHome", parameters: nil)
          print("帰りたいから帰る")
          GoHomeForInstitialAD = false
-         self.view.fadeOut(type: .Slow){ [weak self] in
-            self?.dismiss(animated: false, completion: nil)
-         }
+         self.dismiss(animated: true, completion: nil)
          return
       }
       
@@ -876,9 +868,6 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    @objc func SellectBackNotification(notification: Notification) -> Void {
       self.dismiss(animated: true, completion: nil)
       return
-//      self.view.fadeOut(type: .Slow){ [weak self] in
-//
-//      }
    }
    
     override var shouldAutorotate: Bool {return true}
