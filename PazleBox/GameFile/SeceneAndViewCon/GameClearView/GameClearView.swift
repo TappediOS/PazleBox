@@ -108,6 +108,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
       
       InitAllADCheck()
       
+      SetUpForAnimatiomToHideEachViewAndButton()
    }
    
    private func InitViewSize() {
