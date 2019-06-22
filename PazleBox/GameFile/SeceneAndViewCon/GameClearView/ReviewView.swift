@@ -31,9 +31,9 @@ class ReviewView : UIView {
    
    var HartViewStartY: CGFloat = 0
    
-   
    public var UserSellectReviewNum = 0
    
+   let AniManager = AnimationTimeManager()
    
    override init(frame: CGRect) {
       super.init(frame: frame)
@@ -124,7 +124,29 @@ class ReviewView : UIView {
       self.addSubview(FifthHart!)
    }
    
+   //MARK:- アニメーションスタート
+   public func StartReviewViewAnimation() {
+      ShowEachObjectForAnimation()
    
+      ReveiwLabel?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.StageReviewLabelAnimationTime)
+      FirstHart?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.HartAnimationTime1)
+      SecontHart?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.HartAnimationTime2)
+      ThirdHart?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.HartAnimationTime3)
+      ForthHart?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.HartAnimationTime4)
+      FifthHart?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.HartAnimationTime5)
+   }
+   
+   //見えるようにする
+   public func ShowEachObjectForAnimation(){
+      ReveiwLabel!.isHidden = true
+      FirstHart!.isHidden = true
+      SecontHart!.isHidden = true
+      ThirdHart!.isHidden = true
+      ForthHart!.isHidden = true
+      FifthHart!.isHidden = true
+   }
+   
+   //見えないようにする。
    public func SetUpForAnimatiomToHideEachLabelAndImage() {
       ReveiwLabel!.isHidden = true
       FirstHart!.isHidden = true

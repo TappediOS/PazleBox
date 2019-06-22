@@ -296,15 +296,33 @@ class GameClearView: UIView, GADBannerViewDelegate {
       self.addSubview(GoHomeButton!)
    }
    
+   //MARK:- アニメーションスタート
    public func StartButtonAnimation() {
-      
-      //let waitani = AnimationType.
-      GoHomeButton!.isHidden = false
-      NextButton!.isHidden = false
-      GoHomeButton?.animate(animations: [ButtonAni])
-      NextButton?.animate(animations: [ButtonAni], delay: 0.3)
+      ShowEachObjectForAnimation()
+
+      GameClearLabel?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.ClearLabelAnimationTime)
+      ReviewedView!.StartReviewViewAnimation()
+      CountOfNextADLabel?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.ADInfoLabelAnimationTime)
+      GoHomeButton?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.HomeButtonAnimationTime)
+      NextButton?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.NextButtonAnimationTime)
+      if let AdButton = NoAdButton {
+         AdButton.animate(animations: [AniManager.ShowAnimation], delay: AniManager.NoAdButtonAnimaitonTime)
+      }
    }
    
+   //見えるようにする
+   private func ShowEachObjectForAnimation() {
+      GameClearLabel!.isHidden = false
+      ReviewedView!.ShowEachObjectForAnimation()
+      CountOfNextADLabel!.isHidden = false
+      GoHomeButton!.isHidden = false
+      NextButton!.isHidden = false
+      if let AdButton = NoAdButton {
+         AdButton.isHidden = false
+      }
+   }
+   
+   //見えないようにする
    public func SetUpForAnimatiomToHideEachViewAndButton() {
       GameClearLabel!.isHidden = true
       ReviewedView!.SetUpForAnimatiomToHideEachLabelAndImage()
