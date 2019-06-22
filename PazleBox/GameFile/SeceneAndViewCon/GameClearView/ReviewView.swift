@@ -138,12 +138,12 @@ class ReviewView : UIView {
    
    //見えるようにする
    public func ShowEachObjectForAnimation(){
-      ReveiwLabel!.isHidden = true
-      FirstHart!.isHidden = true
-      SecontHart!.isHidden = true
-      ThirdHart!.isHidden = true
-      ForthHart!.isHidden = true
-      FifthHart!.isHidden = true
+      ReveiwLabel!.isHidden = false
+      FirstHart!.isHidden = false
+      SecontHart!.isHidden = false
+      ThirdHart!.isHidden = false
+      ForthHart!.isHidden = false
+      FifthHart!.isHidden = false
    }
    
    //見えないようにする。
