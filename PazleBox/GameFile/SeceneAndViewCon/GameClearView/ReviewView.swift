@@ -128,12 +128,12 @@ class ReviewView : UIView {
    public func StartReviewViewAnimation() {
       ShowEachObjectForAnimation()
    
-      ReveiwLabel?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.StageReviewLabelAnimationTime)
-      FirstHart?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.HartAnimationTime1)
-      SecontHart?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.HartAnimationTime2)
-      ThirdHart?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.HartAnimationTime3)
-      ForthHart?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.HartAnimationTime4)
-      FifthHart?.animate(animations: [AniManager.ShowAnimation], delay: AniManager.HartAnimationTime5)
+      ReveiwLabel?.animate(animations: [AniManager.BigToSmalAnimation], delay: AniManager.StageReviewLabelAnimationTime)
+      FirstHart?.animate(animations: [AniManager.BigToSmalAnimation], delay: AniManager.HartAnimationTime1)
+      SecontHart?.animate(animations: [AniManager.BigToSmalAnimation], delay: AniManager.HartAnimationTime2)
+      ThirdHart?.animate(animations: [AniManager.BigToSmalAnimation], delay: AniManager.HartAnimationTime3)
+      ForthHart?.animate(animations: [AniManager.BigToSmalAnimation], delay: AniManager.HartAnimationTime4)
+      FifthHart?.animate(animations: [AniManager.BigToSmalAnimation], delay: AniManager.HartAnimationTime5)
    }
    
    //見えるようにする
