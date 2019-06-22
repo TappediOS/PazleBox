@@ -306,6 +306,10 @@ class GameClearView: UIView, GADBannerViewDelegate {
       NextButton?.animate(animations: [ButtonAni])
    }
    
+   public func SetUpForAnimatiomToHideEachViewAndButton() {
+      
+   }
+   
    private func InitNoAdsButton(frame: CGRect) {
       
       guard UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false else{

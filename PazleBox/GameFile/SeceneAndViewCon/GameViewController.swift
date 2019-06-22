@@ -695,6 +695,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          }
          self?.ClearView?.StopConfi()
          self?.ClearView?.StopStar()
+         self?.ClearView?.SetUpForAnimatiomToHideEachViewAndButton()
          self?.ClearView?.removeFromSuperview()
       }
       
