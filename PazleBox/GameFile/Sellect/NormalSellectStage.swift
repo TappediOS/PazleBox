@@ -114,7 +114,7 @@ class SellectStageNormal: UIScrollView {
       let NormalNumberButton = StageSellectButton(frame: ButtonFrame)
       NormalNumberButton.Init(Tag: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum, ButtonColor: ButtonColor, ButtonShadowColor: ButtonShadowColor)
       NormalNumberButton.addTarget(self, action: #selector(self.SellectButton(_:)), for: UIControl.Event.touchUpInside)
-      NormalNumberButton.hero.modifiers = [.cascade, .fade, .scale(0.65), .delay(0.01 + Double(tmp) * 0.01)]
+      NormalNumberButton.hero.modifiers = [.fade, .scale(0.45), .delay(Double(tmp) * 0.0115)]
       self.addSubview(NormalNumberButton)
       
       
@@ -133,7 +133,7 @@ class SellectStageNormal: UIScrollView {
       
       let Badge = UIImageView(frame: BadgeFrame)
       Badge.isUserInteractionEnabled = false
-      Badge.hero.modifiers = [.cascade, .fade, .scale(0.65), .delay(0.01 + Double(tmp) * 0.01)]
+      Badge.hero.modifiers = [.fade, .scale(0.45), .delay(Double(tmp) * 0.0115)]
       
       switch NormalStageInfo[tmp - 1].CountOfUsedHint {
       case 3:

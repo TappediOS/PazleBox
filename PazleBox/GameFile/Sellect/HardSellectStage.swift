@@ -112,7 +112,7 @@ class SellectStageHard: UIScrollView {
       let HardNumberButton = StageSellectButton(frame: ButtonFrame)
       HardNumberButton.Init(Tag: tmp, PlayerCanPlayMaxStageNum: PlayerCanPlayMaxStageNum, ButtonColor: ButtonColor, ButtonShadowColor: ButtonShadowColor)
       HardNumberButton.addTarget(self, action: #selector(self.SellectButton(_:)), for: UIControl.Event.touchUpInside)
-      HardNumberButton.hero.modifiers = [.cascade, .fade, .scale(0.65), .delay(0.01 + Double(tmp) * 0.01)]
+      HardNumberButton.hero.modifiers = [.fade, .scale(0.45), .delay(Double(tmp) * 0.0115)]
       self.addSubview(HardNumberButton)
       
       
@@ -131,7 +131,7 @@ class SellectStageHard: UIScrollView {
       
       let Badge = UIImageView(frame: BadgeFrame)
       Badge.isUserInteractionEnabled = false
-      Badge.hero.modifiers = [.cascade, .fade, .scale(0.65), .delay(0.01 + Double(tmp) * 0.01)]
+      Badge.hero.modifiers = [.fade, .scale(0.45), .delay(Double(tmp) * 0.0115)]
       
       switch HardStageInfo[tmp - 1].CountOfUsedHint {
       case 3:

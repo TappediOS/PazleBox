@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import Hero
 
 struct HeroIDs {
    let TapEasyStage = "TapEasyStage"
@@ -18,4 +18,6 @@ struct HeroIDs {
    let BackHardStage = "BackHardStage"
    
    let GameCenterVC = "GameCenterVC"
+   
+   let StageButtonAndBadgeMode = [HeroModifier.fade, HeroModifier.scale(0.45), HeroModifier.delay(Double(1) * 0.0115)]
 }
