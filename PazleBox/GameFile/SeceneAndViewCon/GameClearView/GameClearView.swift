@@ -257,7 +257,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
       NextButton!.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       NextButton!.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
       NextButton!.addTarget(self, action: #selector(self.TapNextButton(_:)), for: UIControl.Event.touchUpInside)
-   
+      NextButton!.isHidden = true
       
       self.addSubview(NextButton!)
    }
@@ -292,8 +292,18 @@ class GameClearView: UIView, GADBannerViewDelegate {
       GoHomeButton!.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       GoHomeButton!.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
       GoHomeButton!.addTarget(self, action: #selector(self.TapGoHomeButton(_:)), for: UIControl.Event.touchUpInside)
+      GoHomeButton!.isHidden = true
       
       self.addSubview(GoHomeButton!)
+   }
+   
+   public func StartButtonAnimation() {
+      let ButtonAni = AnimationType.zoom(scale: 0)
+      //let waitani = AnimationType.
+      GoHomeButton!.isHidden = false
+      NextButton!.isHidden = false
+      GoHomeButton?.animate(animations: [ButtonAni])
+      NextButton?.animate(animations: [ButtonAni])
    }
    
    private func InitNoAdsButton(frame: CGRect) {
