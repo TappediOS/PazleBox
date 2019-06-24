@@ -65,14 +65,14 @@ class NoAdsButton: FUIButton {
             print("購入成功！")
             print("購入フラグを　\(defaults.bool(forKey: "BuyRemoveAd"))　に変更しました")
             self.CompleateBuyRemoveADS()
-            self.LockPurchasButton = true
+            self.LockPurchasButton = false
             
             //購入の検証
             self.verifyPurchase(PRODUCT_ID: PRODUCT_ID)
          case .error(_):
             //購入失敗
             print("purchaseエラー")
-            self.LockPurchasButton = true
+            self.LockPurchasButton = false
          }
       }
    }
