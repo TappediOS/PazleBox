@@ -12,6 +12,8 @@
 		BF0FD35422436DF200E8F387 /* ExUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0FD35322436DF200E8F387 /* ExUIColor.swift */; };
 		BF0FD356224371CE00E8F387 /* PutParticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0FD355224371CE00E8F387 /* PutParticle.swift */; };
 		BF1648ED22BDFB1C000CD1AB /* AnimationTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1648EC22BDFB1C000CD1AB /* AnimationTimeManager.swift */; };
+		BF1648EF22C0C118000CD1AB /* DeviceChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1648EE22C0C118000CD1AB /* DeviceChecker.swift */; };
+		BF1648F222C0C2CC000CD1AB /* BackGroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1648F122C0C2CC000CD1AB /* BackGroundImageView.swift */; };
 		BF1A5EDB22B78609002C6733 /* BuyCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A5EDA22B78609002C6733 /* BuyCoinView.swift */; };
 		BF1A5EDD22B78616002C6733 /* CoinsID.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A5EDC22B78616002C6733 /* CoinsID.swift */; };
 		BF1A5EDF22B78759002C6733 /* Buy200CoinsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A5EDE22B78759002C6733 /* Buy200CoinsButton.swift */; };
@@ -681,6 +683,8 @@
 		BF0FD35322436DF200E8F387 /* ExUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIColor.swift; sourceTree = "<group>"; };
 		BF0FD355224371CE00E8F387 /* PutParticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutParticle.swift; sourceTree = "<group>"; };
 		BF1648EC22BDFB1C000CD1AB /* AnimationTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTimeManager.swift; sourceTree = "<group>"; };
+		BF1648EE22C0C118000CD1AB /* DeviceChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeviceChecker.swift; path = ../../DeviceChecker.swift; sourceTree = "<group>"; };
+		BF1648F122C0C2CC000CD1AB /* BackGroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackGroundImageView.swift; sourceTree = "<group>"; };
 		BF1A5EDA22B78609002C6733 /* BuyCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCoinView.swift; sourceTree = "<group>"; };
 		BF1A5EDC22B78616002C6733 /* CoinsID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsID.swift; sourceTree = "<group>"; };
 		BF1A5EDE22B78759002C6733 /* Buy200CoinsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buy200CoinsButton.swift; sourceTree = "<group>"; };
@@ -1377,6 +1381,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BF1648F022C0C29E000CD1AB /* BackGroundImage */ = {
+			isa = PBXGroup;
+			children = (
+				BF1648EE22C0C118000CD1AB /* DeviceChecker.swift */,
+				BF1648F122C0C2CC000CD1AB /* BackGroundImageView.swift */,
+			);
+			name = BackGroundImage;
+			path = ../GameIcons/BackGroundImage;
+			sourceTree = "<group>";
+		};
 		BF1A5ED922B785CF002C6733 /* BuyCoinView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1424,6 +1438,7 @@
 				BF60AC4F224C8EDA00D441D6 /* StatesBar */,
 				BF8A464C225081E90016F801 /* LottieJSON */,
 				BF89479222B9FCAB0014596B /* PieceViewController */,
+				BF1648F022C0C29E000CD1AB /* BackGroundImage */,
 				BF332F7E22491850009B3042 /* HomeView */,
 				BF95C63522B79C130037E063 /* Game Coins */,
 				BF1A5ED922B785CF002C6733 /* BuyCoinView */,
@@ -3095,6 +3110,7 @@
 				BF332F94224926DB009B3042 /* E7.swift in Sources */,
 				BF332F90224926CD009B3042 /* E5.swift in Sources */,
 				BFFB3AD52250F5E7000C90E1 /* GameClearView.swift in Sources */,
+				BF1648EF22C0C118000CD1AB /* DeviceChecker.swift in Sources */,
 				BF7CE797226083AD0040352D /* PouseTextureNode.swift in Sources */,
 				BF552ED6226DDDC900756E16 /* N28.swift in Sources */,
 				BF332FBE2249279C009B3042 /* N8.swift in Sources */,
@@ -3256,6 +3272,7 @@
 				BF552ECC226DDDA800756E16 /* N23.swift in Sources */,
 				BF552EAC226DDD4200756E16 /* E37.swift in Sources */,
 				BF33300622492B4C009B3042 /* ExGameSeceneHardP2.swift in Sources */,
+				BF1648F222C0C2CC000CD1AB /* BackGroundImageView.swift in Sources */,
 				BF1A5EDB22B78609002C6733 /* BuyCoinView.swift in Sources */,
 				BF552E9E226DDD1B00756E16 /* E30.swift in Sources */,
 				BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */,
