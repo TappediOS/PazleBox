@@ -10,6 +10,8 @@ import Foundation
 import AVFoundation
 import Firebase
 
+
+
 class BGM {
    
    //効果音素材：ポケットサウンド – https://pocket-se.info/
@@ -27,6 +29,8 @@ class BGM {
    var SoundVolume: Float = 0.185
    
    var isPlayHomeBGM = false
+   
+
    
    //リモートコンフィグろとるやつ
    var RemorteConfigs: RemoteConfig!
@@ -116,6 +120,7 @@ class BGM {
              fromVolume startVolume : Float,
              toVolume endVolume : Float,
              overTime time : TimeInterval) {
+
       
       let stepsPerSecond = 100
       // Update the volume every 1/100 of a second
