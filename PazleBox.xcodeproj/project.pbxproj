@@ -290,6 +290,7 @@
 		BF7CE797226083AD0040352D /* PouseTextureNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7CE796226083AD0040352D /* PouseTextureNode.swift */; };
 		BF7CE7992261E3840040352D /* Confe.json in Resources */ = {isa = PBXBuildFile; fileRef = BF7CE7982261E3840040352D /* Confe.json */; };
 		BF7CE7CE226882370040352D /* KiraKira.json in Resources */ = {isa = PBXBuildFile; fileRef = BF7CE7CD226882370040352D /* KiraKira.json */; };
+		BF849DFF22C0C560003E34CB /* BackGroundImageForIphoneXsMax.png in Resources */ = {isa = PBXBuildFile; fileRef = BF849DFE22C0C560003E34CB /* BackGroundImageForIphoneXsMax.png */; };
 		BF89479422B9FCDC0014596B /* PieceStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89479322B9FCDC0014596B /* PieceStoreViewController.swift */; };
 		BF8A464E2250829C0016F801 /* StarStar.json in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464D2250829C0016F801 /* StarStar.json */; };
 		BF8A4650225088EE0016F801 /* NoLike.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464F225088EE0016F801 /* NoLike.png */; };
@@ -972,6 +973,7 @@
 		BF7CE796226083AD0040352D /* PouseTextureNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouseTextureNode.swift; sourceTree = "<group>"; };
 		BF7CE7982261E3840040352D /* Confe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Confe.json; sourceTree = "<group>"; };
 		BF7CE7CD226882370040352D /* KiraKira.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = KiraKira.json; sourceTree = "<group>"; };
+		BF849DFE22C0C560003E34CB /* BackGroundImageForIphoneXsMax.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackGroundImageForIphoneXsMax.png; sourceTree = "<group>"; };
 		BF89479322B9FCDC0014596B /* PieceStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceStoreViewController.swift; sourceTree = "<group>"; };
 		BF8A464D2250829C0016F801 /* StarStar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StarStar.json; sourceTree = "<group>"; };
 		BF8A464F225088EE0016F801 /* NoLike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoLike.png; sourceTree = "<group>"; };
@@ -1386,6 +1388,7 @@
 			children = (
 				BF1648EE22C0C118000CD1AB /* DeviceChecker.swift */,
 				BF1648F122C0C2CC000CD1AB /* BackGroundImageView.swift */,
+				BF849DFE22C0C560003E34CB /* BackGroundImageForIphoneXsMax.png */,
 			);
 			name = BackGroundImage;
 			path = ../GameIcons/BackGroundImage;
@@ -2724,6 +2727,7 @@
 				BFF6D71222896610000253A2 /* 43p38Green.png in Resources */,
 				BFF6D70322896610000253A2 /* 43p38Red.png in Resources */,
 				BFCE25C1224A466B0099A775 /* 33p6Blue.png in Resources */,
+				BF849DFF22C0C560003E34CB /* BackGroundImageForIphoneXsMax.png in Resources */,
 				BFCE264B224A58A60099A775 /* 32p12Red.png in Resources */,
 				BFF6D71522896610000253A2 /* 43p44Red.png in Resources */,
 				BFCE25AE224A466B0099A775 /* 33p12Green.png in Resources */,

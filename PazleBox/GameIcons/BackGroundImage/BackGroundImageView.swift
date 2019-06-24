@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class BackGroundImageView: UIImageView {
+class BackGroundImageViews: UIImageView {
    
    var BackGroundImage: UIImage?
    let DeviceMane = DviceChecker()

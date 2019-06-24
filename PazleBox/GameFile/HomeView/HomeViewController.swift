@@ -63,7 +63,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    let GameSound = GameSounds()
    
    let HeroID = HeroIDs()
-   let DviceMane = DviceChecker()
+   var BackGroundImageView: BackGroundImageViews?
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -74,7 +74,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       
       CheckIAPInfomation()
       InitNotificationCenter()
-      InitBackgroundImage()
+      InitBackgroundImageView()
       InitTitleLabel()
       InitButton()
       Inittestbutton()
@@ -108,8 +108,10 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       FViewH = ViewH / 32
    }
    
-   private func InitBackgroundImage() {
-      
+   private func InitBackgroundImageView() {
+      BackGroundImageView = BackGroundImageViews(frame: self.view.frame)
+      self.view.addSubview(BackGroundImageView!)
+      self.view.sendSubviewToBack(BackGroundImageView!)
    }
    
    //MARK: 通知の初期化
