@@ -72,6 +72,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
    let AniManager = AnimationTimeManager()
    
    let HeroID = HeroIDs()
+   var BackGroundImageView: BackGroundImageViews?
    
    override init(frame: CGRect) {
       super.init(frame: frame)
@@ -82,6 +83,8 @@ class GameClearView: UIView, GADBannerViewDelegate {
       self.alpha = 0.05
    
       InitViewSize()
+      
+      InitBackgroundImageView()
       
       InitReviewView(frame: frame)
       
@@ -122,6 +125,13 @@ class GameClearView: UIView, GADBannerViewDelegate {
       
       FoundViewH = (ViewH - 55) / 8
       FoundViewW = ViewW / 8
+   }
+   
+   //MARK:- バックグラウンドimage を設定
+   private func InitBackgroundImageView() {
+      BackGroundImageView = BackGroundImageViews(frame: self.frame)
+      self.addSubview(BackGroundImageView!)
+      self.sendSubviewToBack(BackGroundImageView!)
    }
    
    private func InitReviewView(frame: CGRect) {
