@@ -632,6 +632,9 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    //MARK:- Nextボタン押されたよ
    @objc func TapNextNotification(notification: Notification) -> Void {
       
+      //ローディングアニメーションの再生
+      ClearView!.StartLoadingAnimation()
+      
       //レビュー飛ばす関数へ
       SentFirebaseStageReview()
       
@@ -691,6 +694,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          }
          self?.ClearView?.StopConfi()
          self?.ClearView?.StopStar()
+         self?.ClearView?.StopLoadingAnimation()
          self?.ClearView?.SetUpForAnimatiomToHideEachViewAndButton()
          self?.ClearView?.removeFromSuperview()
       }
