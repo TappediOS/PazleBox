@@ -318,7 +318,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
    private func InitLoadActivityView(frame: CGRect) {
       let Viewsize = frame.width / 10
       let StartX = frame.width / 10 * 9
-      let StartY = frame.height - 55 - Viewsize
+      let StartY = frame.height - 55 - Viewsize * 1.5
       let Rect = CGRect(x: StartX, y: StartY, width: Viewsize, height: Viewsize)
       LoadActivityView = NVActivityIndicatorView(frame: Rect, type: .ballSpinFadeLoader, color: UIColor.flatMint(), padding: 0)
       self.addSubview(LoadActivityView!)
