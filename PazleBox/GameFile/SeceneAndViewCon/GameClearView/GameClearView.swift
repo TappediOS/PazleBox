@@ -14,6 +14,7 @@ import TapticEngine
 import Firebase
 import ViewAnimator
 import Hero
+import NVActivityIndicatorView
 
 class GameClearView: UIView, GADBannerViewDelegate {
    
@@ -74,6 +75,8 @@ class GameClearView: UIView, GADBannerViewDelegate {
    let HeroID = HeroIDs()
    var BackGroundImageView: BackGroundImageViews?
    
+   var LoadActivityView: NVActivityIndicatorView?
+   
    override init(frame: CGRect) {
       super.init(frame: frame)
       
@@ -110,6 +113,8 @@ class GameClearView: UIView, GADBannerViewDelegate {
       
       InitGameClearLabel()
       InitCountOfNextADLabel()
+      
+      InitLoadActivityView(frame: frame)
       
       InitAllADCheck()
       
@@ -307,6 +312,16 @@ class GameClearView: UIView, GADBannerViewDelegate {
       GoHomeButton!.isHidden = true
       GoHomeButton!.hero.id = HeroID.BackNormalStage
       self.addSubview(GoHomeButton!)
+   }
+   
+   
+   private func InitLoadActivityView(frame: CGRect) {
+      let Viewsize = frame.width / 10
+      let StartX = frame.width / 10 * 9
+      let StartY = frame.height - 55 - Viewsize
+      let Rect = CGRect(x: StartX, y: StartY, width: Viewsize, height: Viewsize)
+      LoadActivityView = NVActivityIndicatorView(frame: Rect, type: .ballSpinFadeLoader, color: UIColor.flatMint(), padding: 0)
+      self.addSubview(LoadActivityView!)
    }
    
    //MARK:- アニメーションスタート
