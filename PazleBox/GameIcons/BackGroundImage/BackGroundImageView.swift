@@ -29,11 +29,11 @@ class BackGroundImageViews: UIImageView {
       }
       
       if DeviceMane.isIphoneXsOrIphoneXsMax() {
-         self.BackGroundImage = UIImage(named: "BackGroundImageForIphoneXsMax")
+         self.BackGroundImage = UIImage(named: "BackGroundImageForIphoneXsMaxVar2")
          return
       }
       
-      self.BackGroundImage = UIImage(named: "BackGroundImageForIphone8Plus")
+      self.BackGroundImage = UIImage(named: "BackGroundImageForIphone8PlusVar2")
       return
    }
    
