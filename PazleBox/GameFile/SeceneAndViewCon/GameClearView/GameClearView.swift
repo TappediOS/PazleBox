@@ -548,7 +548,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
    @objc func TapNextButton (_ sender: UIButton) {
       print("Tap NextButton")
       Play3DtouchMedium()
-      //ローディングアニメーションの再生
+      //MARK: ローディングアニメーションの再生
       StartLoadingAnimation()
       Analytics.logEvent("TapNextGameButton", parameters: nil)
       NotificationCenter.default.post(name: .TapNext, object: nil, userInfo: nil)
