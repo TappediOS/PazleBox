@@ -324,6 +324,14 @@ class GameClearView: UIView, GADBannerViewDelegate {
       self.addSubview(LoadActivityView!)
    }
    
+   public func StartLoadingAnimation() {
+      self.LoadActivityView?.startAnimating()
+   }
+   
+   public func StopLoadingAnimation() {
+      self.LoadActivityView?.stopAnimating()
+   }
+   
    //MARK:- アニメーションスタート
    public func StartClearViewAnimation() {
       ShowEachObjectForAnimation()
