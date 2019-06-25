@@ -324,12 +324,14 @@ class GameClearView: UIView, GADBannerViewDelegate {
       self.addSubview(LoadActivityView!)
    }
    
-   public func StartLoadingAnimation() {
+   private func StartLoadingAnimation() {
       self.LoadActivityView?.startAnimating()
    }
    
    public func StopLoadingAnimation() {
-      self.LoadActivityView?.stopAnimating()
+      if LoadActivityView?.isAnimating == true {
+         self.LoadActivityView?.stopAnimating()
+      }
    }
    
    //MARK:- アニメーションスタート
@@ -546,6 +548,8 @@ class GameClearView: UIView, GADBannerViewDelegate {
    @objc func TapNextButton (_ sender: UIButton) {
       print("Tap NextButton")
       Play3DtouchMedium()
+      //ローディングアニメーションの再生
+      StartLoadingAnimation()
       Analytics.logEvent("TapNextGameButton", parameters: nil)
       NotificationCenter.default.post(name: .TapNext, object: nil, userInfo: nil)
    }
