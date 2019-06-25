@@ -293,6 +293,8 @@
 		BF849DFF22C0C560003E34CB /* BackGroundImageForIphoneXsMax.png in Resources */ = {isa = PBXBuildFile; fileRef = BF849DFE22C0C560003E34CB /* BackGroundImageForIphoneXsMax.png */; };
 		BF849E0222C0CAA1003E34CB /* BackGroundImageForPad.png in Resources */ = {isa = PBXBuildFile; fileRef = BF849E0022C0CAA0003E34CB /* BackGroundImageForPad.png */; };
 		BF849E0322C0CAA1003E34CB /* BackGroundImageForIphone8Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = BF849E0122C0CAA0003E34CB /* BackGroundImageForIphone8Plus.png */; };
+		BF849E0622C25B20003E34CB /* BackGroundImageForIphoneXsMaxVar2.png in Resources */ = {isa = PBXBuildFile; fileRef = BF849E0422C25B20003E34CB /* BackGroundImageForIphoneXsMaxVar2.png */; };
+		BF849E0722C25B20003E34CB /* BackGroundImageForIphone8PlusVar2.png in Resources */ = {isa = PBXBuildFile; fileRef = BF849E0522C25B20003E34CB /* BackGroundImageForIphone8PlusVar2.png */; };
 		BF89479422B9FCDC0014596B /* PieceStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89479322B9FCDC0014596B /* PieceStoreViewController.swift */; };
 		BF8A464E2250829C0016F801 /* StarStar.json in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464D2250829C0016F801 /* StarStar.json */; };
 		BF8A4650225088EE0016F801 /* NoLike.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464F225088EE0016F801 /* NoLike.png */; };
@@ -978,6 +980,8 @@
 		BF849DFE22C0C560003E34CB /* BackGroundImageForIphoneXsMax.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackGroundImageForIphoneXsMax.png; sourceTree = "<group>"; };
 		BF849E0022C0CAA0003E34CB /* BackGroundImageForPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackGroundImageForPad.png; sourceTree = "<group>"; };
 		BF849E0122C0CAA0003E34CB /* BackGroundImageForIphone8Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackGroundImageForIphone8Plus.png; sourceTree = "<group>"; };
+		BF849E0422C25B20003E34CB /* BackGroundImageForIphoneXsMaxVar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackGroundImageForIphoneXsMaxVar2.png; sourceTree = "<group>"; };
+		BF849E0522C25B20003E34CB /* BackGroundImageForIphone8PlusVar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackGroundImageForIphone8PlusVar2.png; sourceTree = "<group>"; };
 		BF89479322B9FCDC0014596B /* PieceStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceStoreViewController.swift; sourceTree = "<group>"; };
 		BF8A464D2250829C0016F801 /* StarStar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StarStar.json; sourceTree = "<group>"; };
 		BF8A464F225088EE0016F801 /* NoLike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoLike.png; sourceTree = "<group>"; };
@@ -1393,6 +1397,8 @@
 				BF1648EE22C0C118000CD1AB /* DeviceChecker.swift */,
 				BF1648F122C0C2CC000CD1AB /* BackGroundImageView.swift */,
 				BF849DFE22C0C560003E34CB /* BackGroundImageForIphoneXsMax.png */,
+				BF849E0522C25B20003E34CB /* BackGroundImageForIphone8PlusVar2.png */,
+				BF849E0422C25B20003E34CB /* BackGroundImageForIphoneXsMaxVar2.png */,
 				BF849E0122C0CAA0003E34CB /* BackGroundImageForIphone8Plus.png */,
 				BF849E0022C0CAA0003E34CB /* BackGroundImageForPad.png */,
 			);
@@ -2671,6 +2677,7 @@
 				BFF6D73022896610000253A2 /* 43p16Red.png in Resources */,
 				BFF6D628228412D2000253A2 /* 33p31Red.png in Resources */,
 				BFF6D6722286C245000253A2 /* 33p44Red.png in Resources */,
+				BF849E0622C25B20003E34CB /* BackGroundImageForIphoneXsMaxVar2.png in Resources */,
 				BFF6D625228412D2000253A2 /* 33p35Blue.png in Resources */,
 				BFCE2644224A58A60099A775 /* 32p10Green.png in Resources */,
 				BFCE25D4224A466B0099A775 /* 33p21Blue.png in Resources */,
@@ -2693,6 +2700,7 @@
 				BFF6D71722896610000253A2 /* 43p14Blue.png in Resources */,
 				BF7CE7CE226882370040352D /* KiraKira.json in Resources */,
 				BFF6D72922896610000253A2 /* 43p27Red.png in Resources */,
+				BF849E0722C25B20003E34CB /* BackGroundImageForIphone8PlusVar2.png in Resources */,
 				BFCE2617224A557B0099A775 /* 23p8Green.png in Resources */,
 				BFCE25C2224A466B0099A775 /* 33p22Green.png in Resources */,
 				BFF6D72822896610000253A2 /* 43p20Green.png in Resources */,
