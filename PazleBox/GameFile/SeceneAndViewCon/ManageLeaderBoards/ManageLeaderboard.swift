@@ -14,6 +14,7 @@ import Realm
 import RealmSwift
 import Firebase
 import StoreKit
+import SCLAlertView
 
 class ManageLeadearBoards {
    
@@ -217,13 +218,48 @@ class ManageLeadearBoards {
    }
    
    private func AppStoreReview() {
-      if #available(iOS 10.3, *) {
-         SKStoreReviewController.requestReview()
-         Analytics.logEvent("AppStoreReviewOK", parameters: nil)
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      ComleateView.addButton(NSLocalizedString("ThankYou", comment: "")){
+         print("tap")
+         Analytics.logEvent("TapThanYouButtonFor10", parameters: nil)
+         if #available(iOS 10.3, *) {
+            SKStoreReviewController.requestReview()
+            Analytics.logEvent("AppStoreReviewOKFor10", parameters: nil)
+         }
+         else{
+            Analytics.logEvent("AppStoreReviewNOFor10", parameters: nil)
+         }
+         
       }
-      else{
-         Analytics.logEvent("AppStoreReviewNO", parameters: nil)
+      ComleateView.addButton(NSLocalizedString("Ohthankyou", comment: "")){
+         print("tap")
+         Analytics.logEvent("UserTap_OhThanks...For10", parameters: nil)
       }
+      ComleateView.showSuccess(NSLocalizedString("Clear10Stage", comment: ""), subTitle: NSLocalizedString("Congrats", comment: ""))
+
+   }
+   
+   private func CelebrationForClear100StageAndAppStoreReview() {
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      ComleateView.addButton(NSLocalizedString("ThankYou", comment: "")){
+         print("tap")
+         Analytics.logEvent("TapThanYouButtonFor100", parameters: nil)
+         if #available(iOS 10.3, *) {
+            SKStoreReviewController.requestReview()
+            Analytics.logEvent("AppStoreReviewOKFor100", parameters: nil)
+         }
+         else{
+            Analytics.logEvent("AppStoreReviewNOFor100", parameters: nil)
+         }
+         
+      }
+      ComleateView.addButton(NSLocalizedString("Ohthankyou", comment: "")){
+         print("tap")
+         Analytics.logEvent("UserTap_OhThanks...For100", parameters: nil)
+      }
+      ComleateView.showSuccess(NSLocalizedString("Clear10Stage", comment: ""), subTitle: NSLocalizedString("Congrats", comment: ""))
    }
    
    //MARK:- GameCneterのチャレンジが達成されたか見る
@@ -235,44 +271,72 @@ class ManageLeadearBoards {
             userDefaults.set(true, forKey: "Clear1")
             AchievedGameCenter(AchievedItemID: CLEAR1_ID)
             Analytics.logEvent("Achieve1Clear", parameters: nil)
+            Analytics.logEvent(AnalyticsEventUnlockAchievement, parameters: [
+               AnalyticsParameterAchievementID : CLEAR1_ID
+            ])
          }
       case 5:
          if userDefaults.object(forKey: "Clear5") as! Bool == false{
             userDefaults.set(true, forKey: "Clear5")
             AchievedGameCenter(AchievedItemID: CLEAR5_ID)
             Analytics.logEvent("Achieve5Clear", parameters: nil)
+            Analytics.logEvent(AnalyticsEventUnlockAchievement, parameters: [
+               AnalyticsParameterAchievementID : CLEAR5_ID
+               ])
             
-            AppStoreReview()
+            
          }
       case 10:
          if userDefaults.object(forKey: "Clear10") as! Bool == false{
             userDefaults.set(true, forKey: "Clear10")
             AchievedGameCenter(AchievedItemID: CLEAR10_ID)
             Analytics.logEvent("Achieve10Clear", parameters: nil)
+            Analytics.logEvent(AnalyticsEventUnlockAchievement, parameters: [
+               AnalyticsParameterAchievementID : CLEAR10_ID
+               ])
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.25) {
+               self.AppStoreReview()
+            }
          }
       case 25:
          if userDefaults.object(forKey: "Clear25") as! Bool == false{
             userDefaults.set(true, forKey: "Clear25")
             AchievedGameCenter(AchievedItemID: CLEAR25_ID)
             Analytics.logEvent("Achieve25Clear", parameters: nil)
+            Analytics.logEvent(AnalyticsEventUnlockAchievement, parameters: [
+               AnalyticsParameterAchievementID : CLEAR25_ID
+               ])
          }
       case 50:
          if userDefaults.object(forKey: "Clear50") as! Bool == false{
             userDefaults.set(true, forKey: "Clear50")
             AchievedGameCenter(AchievedItemID: CLEAR50_ID)
             Analytics.logEvent("Achieve50Clear", parameters: nil)
+            Analytics.logEvent(AnalyticsEventUnlockAchievement, parameters: [
+               AnalyticsParameterAchievementID : CLEAR50_ID
+               ])
          }
       case 100:
          if userDefaults.object(forKey: "Clear100") as! Bool == false{
             userDefaults.set(true, forKey: "Clear100")
             AchievedGameCenter(AchievedItemID: CLEAR100_ID)
             Analytics.logEvent("Achieve100Clear", parameters: nil)
+            Analytics.logEvent(AnalyticsEventUnlockAchievement, parameters: [
+               AnalyticsParameterAchievementID : CLEAR100_ID
+               ])
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.25) {
+               self.CelebrationForClear100StageAndAppStoreReview()
+            }
+            
          }
       case 150:
          if userDefaults.object(forKey: "Clear150") as! Bool == false{
             userDefaults.set(true, forKey: "Clear150")
             AchievedGameCenter(AchievedItemID: CLEAR150_ID)
             Analytics.logEvent("Achieve150Clear", parameters: nil)
+            Analytics.logEvent(AnalyticsEventUnlockAchievement, parameters: [
+               AnalyticsParameterAchievementID : CLEAR150_ID
+               ])
          }
          
       default:

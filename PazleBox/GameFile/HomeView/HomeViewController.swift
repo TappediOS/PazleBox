@@ -31,7 +31,8 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    var ShowRankingViewButton: FUIButton?
    var ContactusButton: FUIButton?
    
-   var GoPiceStoreButton: FUIButton?
+   //StoreButton
+   //var GoPiceStoreButton: FUIButton?
    //MARK: リーダボードID
    let LEADERBOARD_ID = "ClearStageNumLeaderBoard"
    
@@ -80,8 +81,9 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       Inittestbutton()
       InitContactusButton()
       InitShowRankingViewButton()
-      InitGoPiceStoreButton()
+      //InitGoPiceStoreButton()
       SetUpHeroModifiersForEachSmallButton()
+      SetUpHeroModifiersForTitleLabel()
       InitBGM()
       
       InitConfig()
@@ -132,7 +134,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       TitleLabel!.adjustsFontForContentSizeCategory = true
       TitleLabel!.minimumScaleFactor = 0.3
       TitleLabel!.textAlignment = NSTextAlignment.center
-      
+      TitleLabel!.hero.id = HeroID.ClearLabelAndHomeViewLabel
       self.view.addSubview(TitleLabel!)
    }
    
@@ -276,16 +278,16 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       self.view.addSubview(ContactusButton!)
    }
    
-   private func InitGoPiceStoreButton() {
-      GoPiceStoreButton = FUIButton(frame: CGRect(x: FViewW * 1, y: FViewH * 25 - FViewH * 3 - 10, width: FViewW * 5, height: FViewH * 3))
-      GoPiceStoreButton?.setTitle(NSLocalizedString("Store", comment: ""), for: .normal)
-      GoPiceStoreButton?.addTarget(self, action: #selector(self.GoPiceStore), for: .touchUpInside)
-      SetUpHomeEachSmallButton(sender: GoPiceStoreButton!)
-      self.view.addSubview(GoPiceStoreButton!)
-   }
+   //MARK:- Store Buttton Init
+//   private func InitGoPiceStoreButton() {
+//      GoPiceStoreButton = FUIButton(frame: CGRect(x: FViewW * 1, y: FViewH * 25 - FViewH * 3 - 10, width: FViewW * 5, height: FViewH * 3))
+//      GoPiceStoreButton?.setTitle(NSLocalizedString("Store", comment: ""), for: .normal)
+//      GoPiceStoreButton?.addTarget(self, action: #selector(self.GoPiceStore), for: .touchUpInside)
+//      SetUpHomeEachSmallButton(sender: GoPiceStoreButton!)
+//      self.view.addSubview(GoPiceStoreButton!)
+//   }
    
    //MARK:- コンタクトアスボタン押された時の処理
-   //FIXME:- とりあえず，CoinView出すから終わったら消せ
    @objc func ContactUs() {
 
       ContactusButton?.hero.id = "BackButton"
@@ -352,6 +354,10 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       PurchasButton!.hero.modifiers = [.arc(), .translate(x: 0, y: +(ViewH - FViewH * 8), z: 0)]
       RestoreButton!.hero.modifiers = [.arc(), .translate(x: 0, y: +(ViewH + FViewH * 12), z: 0)]
    }
+   
+   private func SetUpHeroModifiersForTitleLabel() {
+      TitleLabel!.hero.modifiers = [.arc(), .translate(x: 0, y: -(ViewH - FViewH * 10), z: 0)]
+   }
 
    private func SetUpStageButtonPosition() {
       EasyButton.frame = CGRect(x: FViewW * 6, y: FViewH * 11, width: FViewW * 12, height: FViewH * 3)
@@ -411,7 +417,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       Play3DtouchLight()
       GameSound.PlaySoundsTapButton()
       
-      //FIXME:- hero使わんねんやったらreturnとろ
       self.present(vc2, animated: true, completion: {
          print("プレゼント終わった")
          //self.ChangeHeroIDForBack()
@@ -424,6 +429,8 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    //MARK:- スコアボードビューの表示
    @objc func ShowRankingView() {
       GameSound.PlaySoundsTapButton()
+      ShowRankingViewButton?.hero.id = HeroID.GameCenterVC
+      
       Analytics.logEvent("ShowGameCenter", parameters: nil)
       let gcView = GKGameCenterViewController()
       gcView.gameCenterDelegate = self
@@ -435,6 +442,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    //MARK:- ストアのViewControllerに行く関数
    @objc func GoPiceStore() {
+      return
       let PiceStoreViewCon = self.storyboard?.instantiateViewController(withIdentifier: "PiceStore")
       Play3DtouchLight()
       GameSound.PlaySoundsTapButton()
@@ -445,7 +453,9 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    //MARK:- GKGameCenterControllerDelegate実装用
    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
-      gameCenterViewController.dismiss(animated: true, completion: nil)
+      gameCenterViewController.dismiss(animated: true, completion: {
+         self.ShowRankingViewButton?.hero.id = self.HeroID.ClearHart4ToHomeView
+      })
    }
    
    private func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }

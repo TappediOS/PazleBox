@@ -349,10 +349,6 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    
    //MARK:- リーダボードに送るかどうかのやつ
    private func ManageGameCenter() {
-      //FIXME: 出す前に消す
-      #if DEBUG
-      return
-      #endif
       ManageLeaderBoard.CheckUserUpdateNumberOfClearStage()
       ManageLeaderBoard.CheckUserUpdateNumberOfCollectedStar()
    }

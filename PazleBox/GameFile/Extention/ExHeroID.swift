@@ -24,6 +24,8 @@ struct HeroIDs {
    let ClearHart3ToHomeView = "ClearHart3ToHomeView"
    let ClearHart4ToHomeView = "ClearHart4ToHomeView"
    
+   let ClearLabelAndHomeViewLabel = "ClearLabelAndHomeViewLabel"
+   
    
    let StageButtonAndBadgeMode = [HeroModifier.fade, HeroModifier.scale(0.45), HeroModifier.delay(Double(1) * 0.0115)]
 }

@@ -174,7 +174,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
       GameClearLabel?.textAlignment = .center
       GameClearLabel?.adjustsFontSizeToFitWidth = true
       GameClearLabel?.adjustsFontForContentSizeCategory = true
-      
+      GameClearLabel?.hero.id = HeroID.ClearLabelAndHomeViewLabel
       self.addSubview(GameClearLabel!)
    }
    
@@ -317,7 +317,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
    
    private func InitLoadActivityView(frame: CGRect) {
       let Viewsize = frame.width / 10
-      let StartX = frame.width / 10 * 9
+      let StartX = frame.width / 10 * 9 - Viewsize / 2
       let StartY = frame.height - 55 - Viewsize * 1.5
       let Rect = CGRect(x: StartX, y: StartY, width: Viewsize, height: Viewsize)
       LoadActivityView = NVActivityIndicatorView(frame: Rect, type: .ballSpinFadeLoader, color: UIColor.flatMint(), padding: 0)
@@ -326,10 +326,8 @@ class GameClearView: UIView, GADBannerViewDelegate {
    
    //MARK:- ローディングアニメーション再生
    private func StartLoadingAnimation() {
-      DispatchQueue.main.async {
-         print("ローディングアニメーション再生")
-         self.LoadActivityView?.startAnimating()
-      }
+      print("ローディングアニメーション再生")
+      self.LoadActivityView?.startAnimating()
 
    }
    
