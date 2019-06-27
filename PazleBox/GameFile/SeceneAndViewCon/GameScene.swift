@@ -49,7 +49,6 @@ class GameScene: SKScene {
    var userDefaults = UserDefaults.standard
    
    private let GameSound = GameSounds()
-   private var GameBGM = BGM()
    
     override func sceneDidLoad() {
 

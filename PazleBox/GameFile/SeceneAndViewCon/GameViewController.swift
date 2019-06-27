@@ -708,13 +708,11 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       self.StopConfitti()
       self.InitGameViewAndShowView()
       
-      
-      //self.InitGameClearView()
    }
  
    
    private func PlayGameBGM() {
-      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: 0, toVolume: GameBGM.SoundVolume, overTime: 8.5)
+      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: 0, toVolume: GameBGM.SoundVolume, overTime: 2)
    }
    
    private func StopGameBGM() {
@@ -780,7 +778,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    
    func rewardBasedVideoAdDidOpen(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
       print("リワード広告開いたから，BGMストップする")
-      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: GameBGM.FetchedPlayGameBGM.volume, toVolume: 0, overTime: 1)
+      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: GameBGM.FetchedPlayGameBGM.volume, toVolume: 0, overTime: 0.5)
    }
    
    func rewardBasedVideoAdDidStartPlaying(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
@@ -794,7 +792,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    func rewardBasedVideoAdDidClose(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
       print("リワード広告が閉じられたよ")
       print("だから，BGM再生しますね")
-      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: 0, toVolume: GameBGM.SoundVolume, overTime: 4)
+      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: 0, toVolume: GameBGM.SoundVolume, overTime: 2)
       print("ついでにリワード広告の再読み込みするよ")
       #if DEBUG
       print("リワード再読み込み:テスト環境")
@@ -831,7 +829,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
       print("インタースティシャル広告開いた")
       print("インタースティシャル広告開いたから，BGMストップ")
-      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: GameBGM.FetchedPlayGameBGM.volume, toVolume: 0, overTime: 1)
+      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: GameBGM.FetchedPlayGameBGM.volume, toVolume: 0, overTime: 0.5)
       
    }
    //広告をクリックして開いた画面を閉じる直前
@@ -854,7 +852,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       
       //この下の処理はNextButtonを押した時の処理ね
       print("インタースティシャル広告終わったから，BGM再生しますね")
-      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: 0, toVolume: GameBGM.SoundVolume, overTime: 4)
+      GameBGM.fade(player: GameBGM.FetchedPlayGameBGM, fromVolume: 0, toVolume: GameBGM.SoundVolume, overTime: 2)
       Analytics.logEvent("InterAdAndNext", parameters: nil)
       print("ってことで次のステージに移動します")
       ShowNextGame()

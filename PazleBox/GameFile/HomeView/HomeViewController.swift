@@ -376,7 +376,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    @objc func StopHomeBGMCatchNotification(notification: Notification) -> Void {
       if let bgm = GameBGM {
          if !bgm.isPlayingHomeBGM() {
-            bgm.fade(player: bgm.Hight_Tech, fromVolume: bgm.Hight_Tech.volume, toVolume: 0, overTime: 1)
+            bgm.fade(player: bgm.Hight_Tech, fromVolume: bgm.Hight_Tech.volume, toVolume: 0, overTime: 0.45)
          }
       }else{
          print("BGM初期化できてないよ-")
