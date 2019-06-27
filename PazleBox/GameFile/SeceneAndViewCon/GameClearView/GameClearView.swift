@@ -545,8 +545,9 @@ class GameClearView: UIView, GADBannerViewDelegate {
          CountOfNextADLabel?.text = NSLocalizedString("AdNotFlow", comment: "")
          ResetBextButtonPosi()
          ResetGoHomeButtonPosi()
-
+         GameClearBannerView.removeFromSuperview()
       }
+
    }
    
    private func ResetBextButtonPosi() {
