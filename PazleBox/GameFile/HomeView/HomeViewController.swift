@@ -57,7 +57,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    let SECRET_CODE = "c8bf5f01b42f4f80ad32ffd00349d92d"
    
    var LockPurchasButton = false  //ロックされていたらappleのサーバに余計に請求しなくする
-   var CanSegeSellectView = true
+   var CanPresentToSegeSellectViewFromHomeView = true
    
    private var GameBGM: BGM?
    let GameSound = GameSounds()
@@ -289,11 +289,8 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    @objc func ContactUs() {
 
       ContactusButton?.hero.id = "BackButton"
-      let CoinView = BuyCoinView(frame: self.view.frame)
-      self.view.addSubview(CoinView)
-      
-      return
-      
+//      let CoinView = BuyCoinView(frame: self.view.frame)
+//      self.view.addSubview(CoinView)
       GameSound.PlaySoundsTapButton()
       let url = URL(string: "https://forms.gle/mSEq7WwDz3fZNcqF6")
       if let OpenURL = url {
@@ -386,8 +383,8 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    //MARK:- Main.storybordでつけたボタンのタッチイベント -
    @IBAction func NextViewWithNum(_ sender: UIButton) {
       
-      if CanSegeSellectView == false { return }
-      CanSegeSellectView = false
+      if CanPresentToSegeSellectViewFromHomeView == false { return }
+      CanPresentToSegeSellectViewFromHomeView = false
       //遷移先のインスタンス
       //ユーティリティエリアで設定したStoryBoardIDをwithIdentifierに設定
       let vc2 = self.storyboard?.instantiateViewController(withIdentifier: "GameView") as! GameViewController
@@ -418,7 +415,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       self.present(vc2, animated: true, completion: {
          print("プレゼント終わった")
          //self.ChangeHeroIDForBack()
-         self.CanSegeSellectView = true
+         self.CanPresentToSegeSellectViewFromHomeView = true
       })
    }
    

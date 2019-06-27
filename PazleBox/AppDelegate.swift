@@ -43,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       let fileopts = FirebaseOptions(contentsOfFile: filePath!)
 
       FirebaseApp.configure(options: fileopts!)
+     
       //--------------------FIREBASE-----------------------//
       
       //-----------バックグラウンドでの音の再生を許可------------//
@@ -133,6 +134,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       }
       application.registerForRemoteNotifications()
       //------------------- プッシュ通知-----------------//
+      
+      UIApplication.shared.applicationIconBadgeNumber = 0
       
       
       return true
