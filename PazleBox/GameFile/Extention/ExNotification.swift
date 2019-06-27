@@ -29,4 +29,5 @@ extension Notification.Name {
    static let StopHomeViewBGM = Notification.Name("StopHomeViewBGM")
    static let LockBuyCoinButton = Notification.Name("LockBuyCoinButton")
    static let UnLockBuyCoinButton = Notification.Name("UnLockBuyCoinButton")
+   static let BuyNoAdsInClearView = Notification.Name("BuyNoAdsInClearView")
 }

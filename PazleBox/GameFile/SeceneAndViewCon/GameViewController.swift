@@ -283,7 +283,6 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       NotificationCenter.default.addObserver(self, selector: #selector(RewardADNotification(notification:)), name: .RewardAD, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(TapNextNotification(notification:)), name: .TapNext, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(TapHomeNotification(notification:)), name: .TapHome, object: nil)
-      
    }
    
    //星が降ってくるVeiwの初期化

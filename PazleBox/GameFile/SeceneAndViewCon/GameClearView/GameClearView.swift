@@ -88,6 +88,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
       InitViewSize()
       
       InitBackgroundImageView()
+      InitNotificationCenter()
       
       InitReviewView(frame: frame)
       
@@ -130,6 +131,10 @@ class GameClearView: UIView, GADBannerViewDelegate {
       
       FoundViewH = (ViewH - 55) / 8
       FoundViewW = ViewW / 8
+   }
+   
+   private func InitNotificationCenter() {
+      NotificationCenter.default.addObserver(self, selector: #selector(CompleateBuyNoAdsInClearView(notification:)), name: .BuyNoAdsInClearView, object: nil)
    }
    
    //MARK:- バックグラウンドimage を設定
@@ -533,7 +538,45 @@ class GameClearView: UIView, GADBannerViewDelegate {
    
    
    
+   //MARK:- 広告作フォした
+   @objc func CompleateBuyNoAdsInClearView(notification: Notification) -> Void {
+      if let NoAdsButton = NoAdButton {
+         NoAdsButton.removeFromSuperview()
+         CountOfNextADLabel?.text = NSLocalizedString("AdNotFlow", comment: "")
+         ResetBextButtonPosi()
+         ResetGoHomeButtonPosi()
 
+      }
+   }
+   
+   private func ResetBextButtonPosi() {
+      let StartY = FoundViewH * 6
+      let ButtonH = FoundViewH
+      
+      var StartX: CGFloat = 0
+      var ButtonW: CGFloat = 0
+      
+      ButtonW = FoundViewW * 3
+      StartX = ViewW / 16
+      
+      let Frame = CGRect(x: StartX, y: StartY, width: ButtonW, height: ButtonH)
+
+      NextButton?.frame = Frame
+   }
+   
+   private func ResetGoHomeButtonPosi() {
+      var StartX: CGFloat = 0
+      let StartY = FoundViewH * 6
+      
+      var ButtonW: CGFloat = 0
+      let ButtonH = FoundViewH
+   
+      ButtonW = FoundViewW * 3
+      StartX = FoundViewW * 4.5
+      
+      let Frame = CGRect(x: StartX, y: StartY, width: ButtonW, height: ButtonH)
+      GoHomeButton?.frame = Frame
+   }
    
    
    

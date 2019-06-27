@@ -24,7 +24,7 @@ class BGM {
    
    var FetchedPlayGameBGM: AVAudioPlayer! = nil
    
-   var SoundVolume: Float = 0.195
+   var SoundVolume: Float = 0.2
    
    var isPlayHomeBGM = false
    

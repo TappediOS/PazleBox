@@ -49,6 +49,7 @@ class NoAdsButton: FUIButton {
       let ComleateView = SCLAlertView(appearance: Appearanse)
       ComleateView.addButton("OK"){
          print("tap")
+         NotificationCenter.default.post(name: .BuyNoAdsInClearView, object: nil, userInfo: nil)
          
       }
       ComleateView.showSuccess(NSLocalizedString("Passed.", comment: ""), subTitle: "Purchase complete")
