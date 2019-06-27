@@ -59,7 +59,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    var LockPurchasButton = false  //ロックされていたらappleのサーバに余計に請求しなくする
    var CanSegeSellectView = true
    
-   private let GameBGM = BGM()
+   private var GameBGM: BGM?
    let GameSound = GameSounds()
    
    let HeroID = HeroIDs()
@@ -82,6 +82,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       InitShowRankingViewButton()
       InitGoPiceStoreButton()
       SetUpHeroModifiersForEachSmallButton()
+      InitBGM()
       
       InitConfig()
       SetUpRemoteConfigDefaults()
@@ -94,7 +95,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    override func viewWillAppear(_ animated: Bool) {
       //戻ってきた時についてなかったらさいせい
-      if !GameBGM.Hight_Tech.isPlaying {
+      if !GameBGM!.Hight_Tech.isPlaying {
          StartBGM()
       }
       //HeroIDを元に戻す
@@ -106,6 +107,10 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       ViewH = self.view.frame.height
       FViewW = ViewW / 25
       FViewH = ViewH / 32
+   }
+   
+   private func InitBGM() {
+      self.GameBGM = BGM()
    }
    
    private func InitBackgroundImageView() {
@@ -358,14 +363,24 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    }
    
    private func StartBGM() {
-      if !GameBGM.isPlayingHomeBGM() {
-         GameBGM.fade(player: GameBGM.Hight_Tech, fromVolume: 0, toVolume: GameBGM.SoundVolume, overTime: 3.25)
+      if let bgm = GameBGM {
+         if !bgm.isPlayingHomeBGM() {
+            bgm.fade(player: bgm.Hight_Tech, fromVolume: 0, toVolume: bgm.SoundVolume, overTime: 3.25)
+         }
+      }else{
+         print("BGM初期化できてないよ-")
       }
    }
    
    //MARK:- BGM止めるようにしろってに通知きたよ
    @objc func StopHomeBGMCatchNotification(notification: Notification) -> Void {
-      GameBGM.fade(player: GameBGM.Hight_Tech, fromVolume: GameBGM.Hight_Tech.volume, toVolume: 0, overTime: 1)
+      if let bgm = GameBGM {
+         if !bgm.isPlayingHomeBGM() {
+            bgm.fade(player: bgm.Hight_Tech, fromVolume: bgm.Hight_Tech.volume, toVolume: 0, overTime: 1)
+         }
+      }else{
+         print("BGM初期化できてないよ-")
+      }
    }
    
    //MARK:- Main.storybordでつけたボタンのタッチイベント -

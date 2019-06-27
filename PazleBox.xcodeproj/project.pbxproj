@@ -28,7 +28,6 @@
 		BF1FF2B2223120650047ED23 /* AllStageInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FF2B1223120650047ED23 /* AllStageInfomation.swift */; };
 		BF1FF2B4223121BF0047ED23 /* Easy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FF2B3223121BF0047ED23 /* Easy.swift */; };
 		BF1FF2B6223122C80047ED23 /* EasyCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FF2B5223122C80047ED23 /* EasyCreate.swift */; };
-		BF2674E42227B6A3003D370F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2674E32227B6A3003D370F /* AppDelegate.swift */; };
 		BF2674E62227B6A3003D370F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2674E52227B6A3003D370F /* GameScene.sks */; };
 		BF2674E82227B6A3003D370F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2674E72227B6A3003D370F /* Actions.sks */; };
 		BF2674EA2227B6A3003D370F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2674E92227B6A3003D370F /* GameScene.swift */; };
@@ -114,6 +113,7 @@
 		BF33300222492B31009B3042 /* ExGameSeceneEasyP2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33300122492B31009B3042 /* ExGameSeceneEasyP2.swift */; };
 		BF33300422492B3E009B3042 /* ExGameSecenNormalP2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33300322492B3E009B3042 /* ExGameSecenNormalP2.swift */; };
 		BF33300622492B4C009B3042 /* ExGameSeceneHardP2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33300522492B4C009B3042 /* ExGameSeceneHardP2.swift */; };
+		BF399B8422C4A14C003DD18A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2674E32227B6A3003D370F /* AppDelegate.swift */; };
 		BF3EF63B2250988700D5534A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF3EF63A2250988700D5534A /* GoogleService-Info.plist */; };
 		BF46109022352423006F3DF1 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46108F22352423006F3DF1 /* Puzzle.swift */; };
 		BF519C69223CCBDE0087A4AC /* GetTilePOSITION.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */; };
@@ -3261,9 +3261,9 @@
 				BF552ED4226DDDC300756E16 /* N27.swift in Sources */,
 				BF552F1C226DDED000756E16 /* H33.swift in Sources */,
 				BF332FEC2249280D009B3042 /* H11.swift in Sources */,
-				BF2674E42227B6A3003D370F /* AppDelegate.swift in Sources */,
 				BF60AC55224C981A00D441D6 /* Pouse.swift in Sources */,
 				BF552EF8226DDE4E00756E16 /* N45.swift in Sources */,
+				BF399B8422C4A14C003DD18A /* AppDelegate.swift in Sources */,
 				BF519C7D223FAA470087A4AC /* GetPuzzleArry.swift in Sources */,
 				BFFA2A81223380720023BB71 /* EasyGet.swift in Sources */,
 				BF552F04226DDE8200756E16 /* H21.swift in Sources */,

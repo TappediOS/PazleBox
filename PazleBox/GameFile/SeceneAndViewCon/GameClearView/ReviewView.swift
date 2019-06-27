@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Hero
+import TapticEngine
 
 class ReviewView : UIView {
    
@@ -199,6 +200,7 @@ class ReviewView : UIView {
    private func Change5NotHart() { FifthHart?.image = NotFillHart }
    
    @objc func TapFirstView(_ sender: UITapGestureRecognizer) {
+      Play3DtouchLight()
       UserSellectReviewNum = 1
       Change1FillHart()
       
@@ -209,6 +211,7 @@ class ReviewView : UIView {
    }
    
    @objc func TapSecondView(_ sender: UITapGestureRecognizer) {
+      Play3DtouchMedium()
       UserSellectReviewNum = 2
       Change1FillHart()
       Change2FillHart()
@@ -216,10 +219,10 @@ class ReviewView : UIView {
       Change3NotHart()
       Change4NotHart()
       Change5NotHart()
-      
    }
    
    @objc func TapThirdView(_ sender: UITapGestureRecognizer) {
+      Play3DtouchMedium()
       UserSellectReviewNum = 3
       Change1FillHart()
       Change2FillHart()
@@ -227,10 +230,10 @@ class ReviewView : UIView {
       
       Change4NotHart()
       Change5NotHart()
-      
    }
    
    @objc func TapForthView(_ sender: UITapGestureRecognizer) {
+      Play3DtouchHeavy()
       UserSellectReviewNum = 4
       Change1FillHart()
       Change2FillHart()
@@ -241,13 +244,25 @@ class ReviewView : UIView {
    }
    
    @objc func TapFifthView(_ sender: UITapGestureRecognizer) {
+      Play3DtouchHeavy()
       UserSellectReviewNum = 5
       Change1FillHart()
       Change2FillHart()
       Change3FillHart()
       Change4FillHart()
       Change5FillHart()
-      
+   }
+   
+   private func Play3DtouchLight() {
+      TapticEngine.impact.feedback(.light)
+   }
+   
+   private func Play3DtouchMedium() {
+      TapticEngine.impact.feedback(.medium)
+   }
+   
+   private func Play3DtouchHeavy() {
+      TapticEngine.impact.feedback(.heavy)
    }
    
    required init?(coder aDecoder: NSCoder) {

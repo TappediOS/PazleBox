@@ -324,8 +324,13 @@ class GameClearView: UIView, GADBannerViewDelegate {
       self.addSubview(LoadActivityView!)
    }
    
+   //MARK:- ローディングアニメーション再生
    private func StartLoadingAnimation() {
-      self.LoadActivityView?.startAnimating()
+      DispatchQueue.main.async {
+         print("ローディングアニメーション再生")
+         self.LoadActivityView?.startAnimating()
+      }
+
    }
    
    public func StopLoadingAnimation() {
@@ -546,12 +551,15 @@ class GameClearView: UIView, GADBannerViewDelegate {
    
    //MARK:- タッチイベント
    @objc func TapNextButton (_ sender: UIButton) {
-      print("Tap NextButton")
-      Play3DtouchMedium()
-      //ローディングアニメーションの再生
-      StartLoadingAnimation()
-      Analytics.logEvent("TapNextGameButton", parameters: nil)
-      NotificationCenter.default.post(name: .TapNext, object: nil, userInfo: nil)
+      DispatchQueue.main.async {
+         print("Tap NextButton")
+         self.Play3DtouchMedium()
+         //ローディングアニメーションの再生
+         self.StartLoadingAnimation()
+         Analytics.logEvent("TapNextGameButton", parameters: nil)
+         NotificationCenter.default.post(name: .TapNext, object: nil, userInfo: nil)
+      }
+      
    }
    
    @objc func TapGoHomeButton (_ sender: UIButton) {

@@ -218,13 +218,11 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
 
    
    private func InitGameViewAndShowView() {
-      
       print("GameSene，GameViewの初期化開始")
       if let scene = GKScene(fileNamed: "GameScene") {
             
          // Get the SKScene from the loaded GKScene
          if let sceneNode = scene.rootNode as! GameScene? {
-            
             sceneNode.scaleMode = GetSceneScalaMode(DeviceHeight: UIScreen.main.nativeBounds.height)
             
             
@@ -236,7 +234,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
 
                view.ignoresSiblingOrder = true
                
-               let Tran = SKTransition.fade(withDuration: 2.35)
+               let Tran = SKTransition.fade(withDuration: 2.3)
                
 
                view.presentScene(sceneNode, transition: Tran)
