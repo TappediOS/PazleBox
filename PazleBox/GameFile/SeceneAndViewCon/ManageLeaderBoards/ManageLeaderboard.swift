@@ -18,6 +18,7 @@ import SCLAlertView
 
 class ManageLeadearBoards {
    
+   //構造体にしとけ
    let MaxStarCount = 450
    
    //ID一覧
