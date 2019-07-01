@@ -59,18 +59,10 @@ class puzzle: SKSpriteNode {
    
    private var PlayParticle = false
    
-   var SetParticles: PutParticle
-   var SetParticle = SKEmitterNode()
-   /// 初期化
-   ///
-   /// - Parameters:
-   ///   - PX: パズルの横幅
-   ///   - PY: パズルの縦幅
-   ///   - CustNum: 使ってない←
-   ///   - ViewX: 画面サイズwide
-   ///   - ViewY: 画面サイズheight
-   ///   - PuzzleStyle: パズルの形
-   ///   - PuzzleColor: パズルの色
+   //var SetParticles: PutParticle
+   //var SetParticle = SKEmitterNode()
+   
+   
    init(PX: Int, PY: Int, CustNum: Int, ViewX: Int, ViewY: Int, PuzzleStyle: String, PuzzleColor: String, RespawnX: Int, RespawnY: Int) {
       
       self.BirthDayNum = CustNum
@@ -107,11 +99,11 @@ class puzzle: SKSpriteNode {
       let TextureUIImage = UIImage(contentsOfFile: Bundle.main.path(forResource: TextureName, ofType: "png")!)
       
       texture = SKTexture(image: TextureUIImage!)
-      texture.usesMipmaps = true
+      texture.usesMipmaps = false
       
       
       
-      SetParticles = PutParticle(PX: PX, PY: PY, CustNum: CustNum, ViewX: ViewX, ViewY: ViewY)
+      //SetParticles = PutParticle(PX: PX, PY: PY, CustNum: CustNum, ViewX: ViewX, ViewY: ViewY)
       
       let NodeSize = CGSize(width: CGFloat(PazzleWideSize), height: CGFloat(PazzleHightSize))
       
@@ -141,7 +133,7 @@ class puzzle: SKSpriteNode {
       
       AlphaNode.alpha = 0.55
 
-      SetParticle = SetParticles.GetParticle()
+      //SetParticle = SetParticles.GetParticle()
       
       InitPazzle()
       
@@ -312,12 +304,12 @@ class puzzle: SKSpriteNode {
          return
       }
       
-      self.addChild(SetParticle)
-      PlayParticle = true
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-         self.removeChildren(in: [self.SetParticle])
-         self.PlayParticle = false
-      }
+//      self.addChild(SetParticle)
+//      PlayParticle = true
+//      DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//         self.removeChildren(in: [self.SetParticle])
+//         self.PlayParticle = false
+//      }
    }
    
    //MARK:- 自前のタッチイベント
