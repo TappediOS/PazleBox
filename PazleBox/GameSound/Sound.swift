@@ -25,7 +25,7 @@ class GameSounds {
    
    var GameClearSound: AVAudioPlayer! = nil
    
-   let SoundVolume: Float = 0.55
+   let SoundVolume: Float = 0.65
    
    
    init() {
