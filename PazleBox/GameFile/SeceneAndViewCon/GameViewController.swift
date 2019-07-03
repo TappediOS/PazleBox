@@ -100,7 +100,6 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       
       InitAllADCheck()
       
-      
       InitVCTimePeformance?.stop()
    }
    
