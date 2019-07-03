@@ -589,9 +589,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
       self.ReviewedView!.ResetReviewView()
    }
    
-   
-   
-   //MARK:- タッチイベント
+   //MARK:- タッチイベント開始
    @objc func TapNextButton (_ sender: UIButton) {
       DispatchQueue.main.async {
          print("Tap NextButton")
