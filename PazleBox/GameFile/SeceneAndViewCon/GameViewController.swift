@@ -101,10 +101,6 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       InitAllADCheck()
       
       
-      if #available(iOS 11.0, *) {
-         self.setNeedsUpdateOfHomeIndicatorAutoHidden()
-      }
-      
       InitVCTimePeformance?.stop()
    }
    
