@@ -601,7 +601,6 @@ class GameClearView: UIView, GADBannerViewDelegate {
          Analytics.logEvent("TapNextGameButton", parameters: nil)
          NotificationCenter.default.post(name: .TapNext, object: nil, userInfo: nil)
       }
-      
    }
    
    @objc func TapGoHomeButton (_ sender: UIButton) {
