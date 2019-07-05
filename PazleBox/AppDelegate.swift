@@ -194,7 +194,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       
       // Print message ID.
       if let messageID = userInfo["gcm.message_id"] {
-         print("Message ID: \(messageID)")
+         print("メッセージID: \(messageID)")
       }
       
       // Print full message.
@@ -214,7 +214,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
       let userInfo = notification.request.content.userInfo
       
       if let messageID = userInfo["gcm.message_id"] {
-         print("Message ID: \(messageID)")
+         print("メッセージID: \(messageID)")
       }
       
       print(userInfo)
@@ -227,7 +227,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                                withCompletionHandler completionHandler: @escaping () -> Void) {
       let userInfo = response.notification.request.content.userInfo
       if let messageID = userInfo["gcm.message_id"] {
-         print("Message ID: \(messageID)")
+         print("メッセージID: \(messageID)")
       }
       
       print(userInfo)
@@ -252,7 +252,7 @@ extension AppDelegate : MessagingDelegate {
    // アプリがフォアグラウンドにあるときに、iOS 10以降でデータメッセージをFCMから直接（APNをバイパスして）受信する。
    // To enable direct data messages, you can set Messaging.messaging().shouldEstablishDirectChannel to true.
    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-      print("Received data message: \(remoteMessage.appData)")
+      print("レシーブデータメッセージ: \(remoteMessage.appData)")
    }
    //MARK: END ios_10_data_message -
 }

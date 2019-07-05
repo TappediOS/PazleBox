@@ -2,6 +2,7 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - COSTouchVisualizer (1.0.6)
   - Crashlytics (3.13.2):
     - Fabric (~> 1.10.2)
   - Fabric (1.10.2)
@@ -129,6 +130,7 @@ PODS:
 
 DEPENDENCIES:
   - ChameleonFramework/Swift
+  - COSTouchVisualizer
   - Crashlytics
   - Firebase/AdMob
   - Firebase/Core
@@ -151,6 +153,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ChameleonFramework
+    - COSTouchVisualizer
     - Crashlytics
     - Fabric
     - Firebase
@@ -194,6 +197,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  COSTouchVisualizer: a398089327a6c02897823614d7447ccc97198997
   Crashlytics: 611738c7847f8291a1a51084e35987b86ba6b3ee
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   Firebase: 8432d732974498afd5987e9001a05f90f1a3d625
@@ -226,6 +230,6 @@ SPEC CHECKSUMS:
   TapticEngine: ed6f5b4a2e9aa46d4e8fa69a72a7a0b6719bf8ac
   ViewAnimator: 173932c659a43c5a15c665878750d92801ae2cf1
 
-PODFILE CHECKSUM: 359478164ad4acbdb386fa64594cb8271cbb251b
+PODFILE CHECKSUM: 2bd02bc6d92d91c1061da8aef39d6d65494885ec
 
 COCOAPODS: 1.6.0

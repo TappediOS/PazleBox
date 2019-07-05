@@ -289,7 +289,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    //MARK:- コンタクトアスボタン押された時の処理
    @objc func ContactUs() {
-
       ContactusButton?.hero.id = "BackButton"
 //      let CoinView = BuyCoinView(frame: self.view.frame)
 //      self.view.addSubview(CoinView)

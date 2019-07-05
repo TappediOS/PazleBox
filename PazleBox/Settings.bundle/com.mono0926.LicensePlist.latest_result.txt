@@ -2,6 +2,10 @@ name: ChameleonFramework, nameSpecified:
 body: ##The MIT License (M…
 version: 2.1.0
 
+name: COSTouchVisualizer, nameSpecified: 
+body: Copyright (c) 2014 J…
+version: 1.0.6
+
 name: Crashlytics, nameSpecified: 
 body: Fabric: Copyright 20…
 version: 3.13.2

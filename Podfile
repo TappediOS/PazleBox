@@ -33,4 +33,6 @@ target 'PazleBox' do
 
   pod 'LicensePlist'
 
+  pod "COSTouchVisualizer"  
+
 end
