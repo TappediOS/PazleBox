@@ -17,7 +17,6 @@ enum PerformanseEventName {
 class FIrebasePerformanceManager {
    
    
-   
    init () {
       
    }
