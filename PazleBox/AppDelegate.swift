@@ -13,12 +13,41 @@ import Crashlytics
 import SwiftyStoreKit
 import GameKit
 import UserNotifications
-
+import COSTouchVisualizer
+import ChameleonFramework
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowDelegate {
 
-   var window: UIWindow?
+   //MARK:- もしタップジェスチャー表示したかったら，importとDelegateとこれにする
+   lazy var window: UIWindow? = {
+      var customWindow = COSTouchVisualizerWindow(frame: UIScreen.main.bounds)
+      //これか確実にいるよね
+      customWindow.touchVisualizerWindowDelegate = self
+      //タッチカラーの設定
+//      customWindow.fillColor = UIColor.flatWatermelon()
+//      customWindow.strokeColor = UIColor.flatRed()
+      customWindow.touchAlpha = 0.5
+      //Ripple(さざ波)の設定
+      customWindow.rippleFillColor = UIColor.flatPurple()
+      //customWindow.rippleStrokeColor = UIColor.flatRed()
+      customWindow.rippleAlpha = 0.5
+      return customWindow
+   }()
+   
+   //var window: UIWindow?
+   
+   //MARK:- もし使わんねんやったら消す
+   func touchVisualizerWindowShouldAlwaysShowFingertip(_ window: COSTouchVisualizerWindow!) -> Bool {
+      return true
+   }
+   
+   func touchVisualizerWindowShouldShowFingertip(_ window: COSTouchVisualizerWindow!) -> Bool {
+      return true
+   }
+   
+   
+   //var window: UIWindow?
 
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
