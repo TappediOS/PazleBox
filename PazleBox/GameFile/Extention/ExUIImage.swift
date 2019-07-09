@@ -17,11 +17,27 @@ extension UIImage {
       
       let resizedSize = CGSize(width: size.width * ratio, height: size.height * ratio)
       
-      UIGraphicsBeginImageContextWithOptions(resizedSize, false, 0.0) // 変更
+      UIGraphicsBeginImageContextWithOptions(resizedSize, false, 0.0)
       draw(in: CGRect(origin: .zero, size: resizedSize))
       let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
       UIGraphicsEndImageContext()
       
       return resizedImage
    }
+
+   // 画質を担保したままResizeするクラスメソッド.
+   func ResizeUIImage(width : CGFloat, height : CGFloat)-> UIImage!{
+      
+      let size = CGSize(width: width, height: height)
+      
+      UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+      var context = UIGraphicsGetCurrentContext()
+      
+      self.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+      let image = UIGraphicsGetImageFromCurrentImageContext()
+      UIGraphicsEndImageContext()
+      
+      return image
+   }
+
 }

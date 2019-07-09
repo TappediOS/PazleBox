@@ -96,7 +96,7 @@ class puzzle: SKSpriteNode {
       let TextureName = PuzzleStyle + PuzzleColor
       
       //キャッシュ化しないようにcontentOfFiletで画像を取得
-      let TextureUIImage = UIImage(contentsOfFile: Bundle.main.path(forResource: TextureName, ofType: "png")!)
+      let TextureUIImage = UIImage(contentsOfFile: Bundle.main.path(forResource: TextureName, ofType: "png")!)?.ResizeUIImage(width: 256, height: 256)
       
       texture = SKTexture(image: TextureUIImage!)
       texture.usesMipmaps = false

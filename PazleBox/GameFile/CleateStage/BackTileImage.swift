@@ -27,7 +27,7 @@ class BackTileImage: UIImageView {
       super.init(frame: CGRect(x: x1, y: y1, width: TileWide, height: TileWide))
       
       //let BackTileImage = UIImage(named: "NullTile.png")
-      let BackTileImage = UIImage(contentsOfFile: Bundle.main.path(forResource: "NullTile", ofType: "png")!)
+      let BackTileImage = UIImage(contentsOfFile: Bundle.main.path(forResource: "NullTile", ofType: "png")!)?.ResizeUIImage(width: 32, height: 32)
       self.image = BackTileImage
       self.backgroundColor = UIColor.black
    }
