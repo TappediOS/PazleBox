@@ -290,9 +290,17 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    //MARK:- コンタクトアスボタン押された時の処理
    @objc func ContactUs() {
       ContactusButton?.hero.id = "BackButton"
-//      let CoinView = BuyCoinView(frame: self.view.frame)
-//      self.view.addSubview(CoinView)
       GameSound.PlaySoundsTapButton()
+      
+      //TODO:- 終わったら削除
+      let Storybord = UIStoryboard(name: "CleateStageSB", bundle: nil)
+      let VC = Storybord.instantiateViewController(withIdentifier: "SellectCreateStageViewController")
+      self.present(VC, animated: true, completion: nil)
+      return
+      //TODO:- 終わったら削除
+      
+      
+      
       let url = URL(string: "https://forms.gle/mSEq7WwDz3fZNcqF6")
       if let OpenURL = url {
          if UIApplication.shared.canOpenURL(OpenURL){

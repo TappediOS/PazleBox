@@ -115,6 +115,10 @@
 		BF33300622492B4C009B3042 /* ExGameSeceneHardP2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33300522492B4C009B3042 /* ExGameSeceneHardP2.swift */; };
 		BF399B8422C4A14C003DD18A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2674E32227B6A3003D370F /* AppDelegate.swift */; };
 		BF3EF63B2250988700D5534A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF3EF63A2250988700D5534A /* GoogleService-Info.plist */; };
+		BF4323C522D3568D008DF038 /* CleateStageSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4323C422D3568D008DF038 /* CleateStageSB.storyboard */; };
+		BF4323C722D35822008DF038 /* CreateStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4323C622D35822008DF038 /* CreateStageViewController.swift */; };
+		BF4323C922D35912008DF038 /* BackTileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4323C822D35912008DF038 /* BackTileImage.swift */; };
+		BF4323CB22D35F28008DF038 /* BackTileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4323CA22D35F28008DF038 /* BackTileImageView.swift */; };
 		BF46109022352423006F3DF1 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46108F22352423006F3DF1 /* Puzzle.swift */; };
 		BF519C69223CCBDE0087A4AC /* GetTilePOSITION.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */; };
 		BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C6A223F58920087A4AC /* ExNotification.swift */; };
@@ -802,6 +806,10 @@
 		BF33300322492B3E009B3042 /* ExGameSecenNormalP2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExGameSecenNormalP2.swift; sourceTree = "<group>"; };
 		BF33300522492B4C009B3042 /* ExGameSeceneHardP2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExGameSeceneHardP2.swift; sourceTree = "<group>"; };
 		BF3EF63A2250988700D5534A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		BF4323C422D3568D008DF038 /* CleateStageSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CleateStageSB.storyboard; sourceTree = "<group>"; };
+		BF4323C622D35822008DF038 /* CreateStageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStageViewController.swift; sourceTree = "<group>"; };
+		BF4323C822D35912008DF038 /* BackTileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackTileImage.swift; sourceTree = "<group>"; };
+		BF4323CA22D35F28008DF038 /* BackTileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackTileImageView.swift; sourceTree = "<group>"; };
 		BF46108F22352423006F3DF1 /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
 		BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTilePOSITION.swift; sourceTree = "<group>"; };
 		BF519C6A223F58920087A4AC /* ExNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNotification.swift; sourceTree = "<group>"; };
@@ -1441,6 +1449,7 @@
 		BF1FF2AB22311CC10047ED23 /* GameFile */ = {
 			isa = PBXGroup;
 			children = (
+				BF332F7D224917F3009B3042 /* Extention */,
 				BF1FF2B02231204F0047ED23 /* StageInfomation */,
 				BFFA2A8F2234CEED0023BB71 /* TilePick */,
 				BFC6C5D722428296007C8FA1 /* Particle */,
@@ -1457,7 +1466,7 @@
 				BF332F7E22491850009B3042 /* HomeView */,
 				BF95C63522B79C130037E063 /* Game Coins */,
 				BF1A5ED922B785CF002C6733 /* BuyCoinView */,
-				BF332F7D224917F3009B3042 /* Extention */,
+				BF4323C322D355E8008DF038 /* CleateStage */,
 			);
 			path = GameFile;
 			sourceTree = "<group>";
@@ -1805,6 +1814,25 @@
 				BF33300522492B4C009B3042 /* ExGameSeceneHardP2.swift */,
 			);
 			path = hard;
+			sourceTree = "<group>";
+		};
+		BF4323C322D355E8008DF038 /* CleateStage */ = {
+			isa = PBXGroup;
+			children = (
+				BF4323CC22D36733008DF038 /* SB */,
+				BF4323C622D35822008DF038 /* CreateStageViewController.swift */,
+				BF4323CA22D35F28008DF038 /* BackTileImageView.swift */,
+				BF4323C822D35912008DF038 /* BackTileImage.swift */,
+			);
+			path = CleateStage;
+			sourceTree = "<group>";
+		};
+		BF4323CC22D36733008DF038 /* SB */ = {
+			isa = PBXGroup;
+			children = (
+				BF4323C422D3568D008DF038 /* CleateStageSB.storyboard */,
+			);
+			path = SB;
 			sourceTree = "<group>";
 		};
 		BF60AC4F224C8EDA00D441D6 /* StatesBar */ = {
@@ -2674,6 +2702,7 @@
 				BF2674E62227B6A3003D370F /* GameScene.sks in Resources */,
 				BF2674F12227B6A4003D370F /* Assets.xcassets in Resources */,
 				BFF6D618228412D2000253A2 /* 33p28Green.png in Resources */,
+				BF4323C522D3568D008DF038 /* CleateStageSB.storyboard in Resources */,
 				BFF6D73022896610000253A2 /* 43p16Red.png in Resources */,
 				BFF6D628228412D2000253A2 /* 33p31Red.png in Resources */,
 				BFF6D6722286C245000253A2 /* 33p44Red.png in Resources */,
@@ -3129,6 +3158,7 @@
 				BF552EE6226DDE0600756E16 /* N36.swift in Sources */,
 				BF552F22226DDEEF00756E16 /* H36.swift in Sources */,
 				BF552EA8226DDD3A00756E16 /* E35.swift in Sources */,
+				BF4323C922D35912008DF038 /* BackTileImage.swift in Sources */,
 				BF332F94224926DB009B3042 /* E7.swift in Sources */,
 				BF332F90224926CD009B3042 /* E5.swift in Sources */,
 				BFFB3AD52250F5E7000C90E1 /* GameClearView.swift in Sources */,
@@ -3285,6 +3315,7 @@
 				BF552EEE226DDE3300756E16 /* N40.swift in Sources */,
 				BF640C092245100C00333782 /* E1.swift in Sources */,
 				BF2C14632276F3B000C7B8FB /* YesNode.swift in Sources */,
+				BF4323CB22D35F28008DF038 /* BackTileImageView.swift in Sources */,
 				BF552EE0226DDDF100756E16 /* N33.swift in Sources */,
 				BF332FE622492802009B3042 /* H8.swift in Sources */,
 				BF332FE2224927F8009B3042 /* H6.swift in Sources */,
@@ -3302,6 +3333,7 @@
 				BFDD3EED227D7E5200B9E6B0 /* BadgeScale.swift in Sources */,
 				BF552F34226DDF1800756E16 /* H45.swift in Sources */,
 				BF552EBA226DDD6100756E16 /* E44.swift in Sources */,
+				BF4323C722D35822008DF038 /* CreateStageViewController.swift in Sources */,
 				BF552F36226DDF1C00756E16 /* H46.swift in Sources */,
 				BF552EC4226DDD7B00756E16 /* E49.swift in Sources */,
 				BFF889A7229FC86A0056A839 /* ButtonColorManager.swift in Sources */,
