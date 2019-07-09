@@ -23,6 +23,7 @@
 		BF1BD1EA2279A2620047496B /* EasyStageClearInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD1E92279A2620047496B /* EasyStageClearInfomation.swift */; };
 		BF1BD1EC2279C4060047496B /* NormalStageClearInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD1EB2279C4060047496B /* NormalStageClearInfomation.swift */; };
 		BF1BD1EE2279C4120047496B /* HardStageClearInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD1ED2279C4120047496B /* HardStageClearInfomation.swift */; };
+		BF1CE88C22D4C1C000ACF7F8 /* ExUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE88B22D4C1C000ACF7F8 /* ExUIImage.swift */; };
 		BF1FF2AD22311CE60047ED23 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FF2AC22311CE60047ED23 /* Stage.swift */; };
 		BF1FF2AF22311FD40047ED23 /* StageContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FF2AE22311FD40047ED23 /* StageContents.swift */; };
 		BF1FF2B2223120650047ED23 /* AllStageInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FF2B1223120650047ED23 /* AllStageInfomation.swift */; };
@@ -703,6 +704,7 @@
 		BF1BD1E92279A2620047496B /* EasyStageClearInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyStageClearInfomation.swift; sourceTree = "<group>"; };
 		BF1BD1EB2279C4060047496B /* NormalStageClearInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalStageClearInfomation.swift; sourceTree = "<group>"; };
 		BF1BD1ED2279C4120047496B /* HardStageClearInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardStageClearInfomation.swift; sourceTree = "<group>"; };
+		BF1CE88B22D4C1C000ACF7F8 /* ExUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIImage.swift; sourceTree = "<group>"; };
 		BF1FF2AC22311CE60047ED23 /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
 		BF1FF2AE22311FD40047ED23 /* StageContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageContents.swift; sourceTree = "<group>"; };
 		BF1FF2B1223120650047ED23 /* AllStageInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStageInfomation.swift; sourceTree = "<group>"; };
@@ -1758,6 +1760,7 @@
 				BF519C6A223F58920087A4AC /* ExNotification.swift */,
 				BF93731622BA4F8D009DCEF6 /* ExHeroID.swift */,
 				BFFB3AD622510716000C90E1 /* ExUIView.swift */,
+				BF1CE88B22D4C1C000ACF7F8 /* ExUIImage.swift */,
 				BFF6D78F228FC9F2000253A2 /* ExUIViewController.swift */,
 				BF519C7A223FA8D60087A4AC /* ExTextureName.swift */,
 				BF0FD35322436DF200E8F387 /* ExUIColor.swift */,
@@ -3130,6 +3133,7 @@
 				BF46109022352423006F3DF1 /* Puzzle.swift in Sources */,
 				BF332FE0224927F5009B3042 /* H5.swift in Sources */,
 				BF552ECA226DDD9700756E16 /* N22.swift in Sources */,
+				BF1CE88C22D4C1C000ACF7F8 /* ExUIImage.swift in Sources */,
 				BF1FF2B2223120650047ED23 /* AllStageInfomation.swift in Sources */,
 				BF552E9C226DDD1700756E16 /* E29.swift in Sources */,
 				BF332F762248C043009B3042 /* StageSellectButton.swift in Sources */,
