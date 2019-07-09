@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension UIImage {
    func resize(size _size: CGSize) -> UIImage? {
