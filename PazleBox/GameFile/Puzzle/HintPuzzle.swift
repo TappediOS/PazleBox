@@ -77,7 +77,10 @@ class HintPuzzle: SKSpriteNode {
       //MARK: 画像の初期化
       let texture: SKTexture
       let TextureName = PuzzleStyle + PuzzleColor
-      texture = SKTexture(imageNamed: TextureName)
+      //キャッシュ化しないようにcontentOfFiletで画像を取得
+      let TextureUIImage = UIImage(contentsOfFile: Bundle.main.path(forResource: TextureName, ofType: "png")!)?.ResizeUIImage(width: 512, height: 512)
+      
+      texture = SKTexture(image: TextureUIImage!)
       texture.usesMipmaps = true
       
       //texture.
