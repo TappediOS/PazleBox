@@ -58,18 +58,15 @@ class GameTile: SKSpriteNode {
      
       switch TileCont {
       case .In:
-         //キャッシュ化しないようにcontentOfFiletで画像を取得
-         let TileImage = UIImage(contentsOfFile: Bundle.main.path(forResource: "BaseTile", ofType: "png")!)?.ResizeUIImage(width: 32, height: 32)
+         //ここはキャッシュのほうがいいかも
+         let TileImage = UIImage(named: "BaseTile.png")?.ResizeUIImage(width: 32, height: 32)
          texture = SKTexture(image: TileImage!)
-         
          break
       case .Out:
-         //キャッシュ化しないようにcontentOfFiletで画像を取得
-         let TileImage = UIImage(contentsOfFile: Bundle.main.path(forResource: "NullTile", ofType: "png")!)?.ResizeUIImage(width: 32, height: 32)
+         //ここはキャッシュのほうがいいかも
+         let TileImage = UIImage(named: "NullTile.png")?.ResizeUIImage(width: 32, height: 32)
          texture = SKTexture(image: TileImage!)
-         
          break
-         
       default:
          print("TileCont is \(TileCont)")
          fatalError("TileCont is NOT .In Or .Out")

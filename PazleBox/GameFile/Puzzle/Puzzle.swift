@@ -95,8 +95,8 @@ class puzzle: SKSpriteNode {
       let texture: SKTexture
       let TextureName = PuzzleStyle + PuzzleColor
       
-      //キャッシュ化しないようにcontentOfFiletで画像を取得
-      let TextureUIImage = UIImage(contentsOfFile: Bundle.main.path(forResource: TextureName, ofType: "png")!)?.ResizeUIImage(width: 256, height: 256)
+      //キャッシュ化しないようにcontentOfFiletで画像を取得 128 * 128 やったらぼやける
+      let TextureUIImage = UIImage(contentsOfFile: Bundle.main.path(forResource: TextureName, ofType: "png")!)?.ResizeUIImage(width: 200, height: 200)
       
       texture = SKTexture(image: TextureUIImage!)
       texture.usesMipmaps = false
@@ -131,7 +131,7 @@ class puzzle: SKSpriteNode {
       AlphaNode.zPosition = 6
       AlphaNode.isUserInteractionEnabled = false
       
-      AlphaNode.alpha = 0.55
+      AlphaNode.alpha = 0.575
 
       //SetParticle = SetParticles.GetParticle()
       
