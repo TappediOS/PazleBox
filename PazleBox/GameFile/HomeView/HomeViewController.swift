@@ -438,6 +438,11 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       GameSound.PlaySoundsTapButton()
       ShowRankingViewButton?.hero.id = HeroID.GameCenterVC
       
+      //FIXME: 終わったら消す
+      GoPiceStore()
+      return
+      
+      
       Analytics.logEvent("ShowGameCenter", parameters: nil)
       let gcView = GKGameCenterViewController()
       gcView.gameCenterDelegate = self
@@ -449,7 +454,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    
    //MARK:- ストアのViewControllerに行く関数
    @objc func GoPiceStore() {
-      return
       let PiceStoreViewCon = self.storyboard?.instantiateViewController(withIdentifier: "PiceStore")
       Play3DtouchLight()
       GameSound.PlaySoundsTapButton()

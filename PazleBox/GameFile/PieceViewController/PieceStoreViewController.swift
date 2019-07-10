@@ -64,7 +64,8 @@ class PiceStoreViewController: UIViewController, UICollectionViewDataSource, UIC
       // Tag番号を使ってImageViewのインスタンス生成
       let imageView = testCell.contentView.viewWithTag(1) as! UIImageView
       // 画像配列の番号で指定された要素の名前の画像をUIImageとする
-      let cellImage = UIImage(named: photos[indexPath.row])
+      
+      let cellImage = UIImage(contentsOfFile: Bundle.main.path(forResource: photos[indexPath.row], ofType: "png")!)?.ResizeUIImage(width: 200, height: 200)
       // UIImageをUIImageViewのimageとして設定
       imageView.image = cellImage
       
