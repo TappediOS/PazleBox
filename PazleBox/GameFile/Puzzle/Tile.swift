@@ -59,12 +59,12 @@ class GameTile: SKSpriteNode {
       switch TileCont {
       case .In:
          //ここはキャッシュのほうがいいかも
-         let TileImage = UIImage(named: "BaseTile.png")?.ResizeUIImage(width: 32, height: 32)
+         let TileImage = UIImage(named: "BaseTile.png")?.ResizeUIImage(width: 2, height: 2)
          texture = SKTexture(image: TileImage!)
          break
       case .Out:
          //ここはキャッシュのほうがいいかも
-         let TileImage = UIImage(named: "NullTile.png")?.ResizeUIImage(width: 32, height: 32)
+         let TileImage = UIImage(named: "NullTile.png")?.ResizeUIImage(width: 2, height: 2)
          texture = SKTexture(image: TileImage!)
          break
       default:
