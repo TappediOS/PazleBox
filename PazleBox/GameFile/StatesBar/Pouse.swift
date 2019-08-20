@@ -31,9 +31,10 @@ class PouseNode : SKSpriteNode {
       let y1 = -ViewY * 3 / 8 + yposi
       
       //MARK: 画像の初期化
+      let Image = UIImage(named: "Pouse.png")?.ResizeUIImage(width: 128, height: 128)
       let texture: SKTexture
-      texture = SKTexture(imageNamed: "Pouse.png")
-      texture.usesMipmaps = true
+      texture = SKTexture(image: Image!)
+      texture.usesMipmaps = false
       
       
       let NodeSize = CGSize(width: CGFloat(PazzleSizeFound), height: CGFloat(PazzleSizeFound))
