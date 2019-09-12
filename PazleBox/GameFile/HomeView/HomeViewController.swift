@@ -314,7 +314,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
          Analytics.logEvent("CantOpenURLWithNil", parameters: nil)
          print("URL 開こうとしたらNilやった")
       }
-      
    }
    
    //MARK:- FlatUIButtonをセットアップ
