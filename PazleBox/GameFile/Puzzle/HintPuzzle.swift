@@ -7,8 +7,6 @@
 //
 
 import Foundation
-
-import Foundation
 import SpriteKit
 import UIKit
 import TapticEngine
@@ -16,7 +14,6 @@ import SpriteKitEasingSwift
 import AVFoundation
 
 class HintPuzzle: SKSpriteNode {
-   
    
    var SerchpAllPosi = PArry()
    

@@ -46,8 +46,6 @@ class Buy650CoinsButton: FUIButton {
       CoinsIAPMana.purchase(PRODUCT_ID: ProductID.Buy650Coins, sharedSecret: ProductID.SECRET_CODE, ProductValue: ProductValues.Buy650)
    }
    
-
-   
    public func LockingParchaseButton() {
       self.LockParchaseButton = true
    }
