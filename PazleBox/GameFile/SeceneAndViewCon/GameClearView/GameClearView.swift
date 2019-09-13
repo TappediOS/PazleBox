@@ -333,7 +333,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
    private func StartLoadingAnimation() {
       print("ローディングアニメーション再生")
       self.LoadActivityView?.startAnimating()
-
+      return
    }
    
    public func StopLoadingAnimation() {
@@ -393,7 +393,6 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    private func InitNoAdsButton(frame: CGRect) {
-      
       guard UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false else{
          return
       }
@@ -412,7 +411,6 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    private func InitConfeView1() {
-
       let StartPosi = StarViewIntarnal * 3 + StarViewWide * 2
       let StartY = ViewH / 3
       
@@ -427,7 +425,6 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    private func InitConfeView2() {
-      
       let StartPosi = StarViewIntarnal
       let StartY = ViewH / 2
       
@@ -441,7 +438,6 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    private func InitConfeView3() {
-      
       let StartPosi = StarViewIntarnal * 3 + StarViewWide * 2
       let StartY = ViewH / 8 * 7
       
@@ -456,7 +452,6 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    private func InitStarView1() {
-      
       let StartPosi = StarViewIntarnal
       let StartY = ViewH / 5 * 1
       
@@ -469,7 +464,6 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    private func InitStarView2() {
-      
       let StartPosi = StarViewIntarnal * 2 + StarViewWide
       let StartY = ViewH / 5 * 1 - StarViewWide / 2
       
@@ -482,7 +476,6 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    private func InitStarView3() {
-      
       let StartPosi = StarViewIntarnal * 3 + StarViewWide * 2
       let StartY = ViewH / 5 * 1
       
@@ -495,7 +488,6 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    private func InitKiraView1() {
-      
       let StartPosi = StarViewIntarnal
       let StartY = ViewH / 5 * 1
       
@@ -509,7 +501,6 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    private func InitKiraView2() {
-      
       let StartPosi = StarViewIntarnal * 2 + StarViewWide
       let StartY = ViewH / 5 * 1 - StarViewWide / 2
       
@@ -523,7 +514,6 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    private func InitKiraView3() {
-      
       let StartPosi = StarViewIntarnal * 3 + StarViewWide * 2
       let StartY = ViewH / 5 * 1
       
@@ -536,8 +526,6 @@ class GameClearView: UIView, GADBannerViewDelegate {
       KiraView3.isUserInteractionEnabled = false
    }
    
-   
-   
    //MARK:- 広告作フォした
    @objc func CompleateBuyNoAdsInClearView(notification: Notification) -> Void {
       if let NoAdsButton = NoAdButton {
@@ -547,7 +535,6 @@ class GameClearView: UIView, GADBannerViewDelegate {
          ResetGoHomeButtonPosi()
          GameClearBannerView.removeFromSuperview()
       }
-
    }
    
    private func ResetBextButtonPosi() {
@@ -580,7 +567,6 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    
-   
    //レビューしたハートの数の取得
    public func GetReView() -> Int { return ReviewedView!.GetUserSellectReviewNum() }
    
@@ -591,14 +577,11 @@ class GameClearView: UIView, GADBannerViewDelegate {
    
    //MARK:- タッチイベント開始
    @objc func TapNextButton (_ sender: UIButton) {
-      DispatchQueue.main.async {
-         print("Tap NextButton")
-         self.Play3DtouchMedium()
-         //ローディングアニメーションの再生
-         self.StartLoadingAnimation()
-         Analytics.logEvent("TapNextGameButton", parameters: nil)
-         NotificationCenter.default.post(name: .TapNext, object: nil, userInfo: nil)
-      }
+      print("Tap NextButton")
+      self.StartLoadingAnimation()
+      self.Play3DtouchMedium()
+      Analytics.logEvent("TapNextGameButton", parameters: nil)
+      NotificationCenter.default.post(name: .TapNext, object: nil, userInfo: nil)
    }
    
    @objc func TapGoHomeButton (_ sender: UIButton) {

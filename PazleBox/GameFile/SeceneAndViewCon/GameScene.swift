@@ -20,8 +20,6 @@ class GameScene: SKScene {
    let Stage = HoldStage()
    
    var CheckedStage: [[Contents]] = Array()
-   
-
 
    var PuzzleBox = Array<Any>()
    var HintPuzzleBox = Array<Any>()

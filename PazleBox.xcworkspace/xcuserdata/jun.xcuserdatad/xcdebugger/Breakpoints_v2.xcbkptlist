@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "9278B0EC-C80F-46C6-AAE0-77BA436FE070"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "63F14217-D4AC-4860-A43E-EB929167AA0E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -22,6 +24,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "1B6865B3-7376-41E4-B0F3-A007DCC1CE47"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -38,6 +41,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "1CC95AC1-582E-49D5-9000-3B639FD780A5"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -54,6 +58,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "5493CAD8-29E2-4D9B-A645-5CD537269FA5"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -70,6 +75,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "E60ABC34-F10A-4D62-BEF3-9050864EB820"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -86,6 +92,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "B105E907-6590-470C-9ED8-DAB7A13E0EFD"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -102,6 +109,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "1D743BC2-8702-4EA7-AE02-9F4427C6EEFB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -118,6 +126,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "F899FF6C-0F1E-4EBC-88E1-9C52B30CFA57"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -134,6 +143,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "A9F932C9-6584-493D-9D77-269E93A5B07A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -150,6 +160,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "0C8D11BD-A6ED-4E8B-9133-2570E8946430"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -166,6 +177,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "9DE6EF0F-D974-48AA-8F89-D3E04FDFA8EF"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -182,6 +194,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "1A305F63-EC49-48BF-8725-B0D078C90441"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -198,6 +211,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "F5013FF0-133C-48B8-8226-27E832708D6F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -214,6 +228,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "1D88CC4A-90A8-43BF-949C-6526F658A6A1"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -230,6 +245,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "D2D9ECEC-E151-439B-8CA3-32E1E0FC7709"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -246,6 +262,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "3EA996F8-5214-4F8A-854D-C48BC819292D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -262,6 +279,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "AC61B846-169A-4D97-9BE6-34E14CD3D822"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -278,6 +296,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "6CCBDD95-05B1-45B8-A6CC-C7A2DB3DE70B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -294,6 +313,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "96D0EE85-421F-476D-ABA0-43936F1D9114"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -310,6 +330,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "6713F7AB-7E7C-4140-8DDD-F2B1EAE5C883"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -326,6 +347,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "25FA8414-0F7E-4779-960B-0A0092A6D67A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -342,6 +364,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "9DB257FE-A828-4B14-A7F6-F7870A514F71"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -358,6 +381,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "6BBE9DDB-6509-4180-895E-5C592A69C3B8"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -374,6 +398,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "F0480E93-E618-4BB6-A503-4D642D6C546C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -390,6 +415,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "31A00AB1-E1F4-4F14-A349-6D79BFF65F25"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -406,6 +432,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "63ED2F25-8218-4D85-BCC0-948526D4CEEF"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -422,6 +449,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "784D6F2A-9C1F-46E5-B48C-EC0B2F2AFA4B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -438,6 +466,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "A4BF8C7E-DB9E-4E18-97B8-BD533FB898F8"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -454,6 +483,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "E11DB879-4F6F-4262-8B50-4DE050D6F127"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -470,6 +500,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "EB9A569A-22E9-493C-8F32-06C88A4DADB2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -486,11 +517,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "72376835-2BBB-48C1-A203-57E9C87CB48A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
-            timestampString = "584275330.251282"
+            timestampString = "590041661.446735"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "194"
@@ -502,15 +534,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "D8211019-97ED-4C23-A5E9-66AB6BF7DA91"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameScene.swift"
-            timestampString = "586516871.756869"
+            timestampString = "590041661.4474109"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "InitStageLevel()"
             landmarkType = "7">
          </BreakpointContent>
@@ -518,6 +551,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -531,6 +565,7 @@
             landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -546,6 +581,7 @@
                   offsetFromSymbolStart = "64">
                </Location>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -561,6 +597,7 @@
                   offsetFromSymbolStart = "92">
                </Location>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -576,6 +613,7 @@
                   offsetFromSymbolStart = "236">
                </Location>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -591,6 +629,7 @@
                   offsetFromSymbolStart = "380">
                </Location>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -606,6 +645,7 @@
                   offsetFromSymbolStart = "524">
                </Location>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -621,6 +661,7 @@
                   offsetFromSymbolStart = "668">
                </Location>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -636,6 +677,7 @@
                   offsetFromSymbolStart = "812">
                </Location>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -651,6 +693,7 @@
                   offsetFromSymbolStart = "956">
                </Location>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -666,6 +709,7 @@
                   offsetFromSymbolStart = "1100">
                </Location>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -681,6 +725,7 @@
                   offsetFromSymbolStart = "1244">
                </Location>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -696,6 +741,7 @@
                   offsetFromSymbolStart = "1388">
                </Location>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -711,6 +757,7 @@
                   offsetFromSymbolStart = "1532">
                </Location>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -726,6 +773,7 @@
                   offsetFromSymbolStart = "1676">
                </Location>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -741,6 +789,7 @@
                   offsetFromSymbolStart = "1820">
                </Location>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -756,6 +805,7 @@
                   offsetFromSymbolStart = "1964">
                </Location>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -771,6 +821,7 @@
                   offsetFromSymbolStart = "2108">
                </Location>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -786,6 +837,7 @@
                   offsetFromSymbolStart = "2252">
                </Location>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -801,6 +853,7 @@
                   offsetFromSymbolStart = "2396">
                </Location>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -816,6 +869,7 @@
                   offsetFromSymbolStart = "2540">
                </Location>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -831,6 +885,7 @@
                   offsetFromSymbolStart = "2684">
                </Location>
                <Location
+                  uuid = "8918EECD-197F-4FD7-A7BF-26EA3FBE0EDA - b893869a5d4b5507"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -851,6 +906,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "862837BD-0811-4809-BF62-616906D20174"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -867,6 +923,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -880,6 +937,7 @@
             landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -895,6 +953,7 @@
                   offsetFromSymbolStart = "184">
                </Location>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -910,6 +969,7 @@
                   offsetFromSymbolStart = "220">
                </Location>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -925,6 +985,7 @@
                   offsetFromSymbolStart = "632">
                </Location>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -940,6 +1001,7 @@
                   offsetFromSymbolStart = "1044">
                </Location>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -955,6 +1017,7 @@
                   offsetFromSymbolStart = "1456">
                </Location>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -970,6 +1033,7 @@
                   offsetFromSymbolStart = "1868">
                </Location>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -985,6 +1049,7 @@
                   offsetFromSymbolStart = "2280">
                </Location>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1000,6 +1065,7 @@
                   offsetFromSymbolStart = "2692">
                </Location>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1015,6 +1081,7 @@
                   offsetFromSymbolStart = "3104">
                </Location>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1030,6 +1097,7 @@
                   offsetFromSymbolStart = "3516">
                </Location>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1045,6 +1113,7 @@
                   offsetFromSymbolStart = "3928">
                </Location>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1060,6 +1129,7 @@
                   offsetFromSymbolStart = "4340">
                </Location>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1075,6 +1145,7 @@
                   offsetFromSymbolStart = "4752">
                </Location>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1090,6 +1161,7 @@
                   offsetFromSymbolStart = "5164">
                </Location>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1105,6 +1177,7 @@
                   offsetFromSymbolStart = "5576">
                </Location>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1120,6 +1193,7 @@
                   offsetFromSymbolStart = "5980">
                </Location>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1135,6 +1209,7 @@
                   offsetFromSymbolStart = "6392">
                </Location>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1150,6 +1225,7 @@
                   offsetFromSymbolStart = "6804">
                </Location>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1165,6 +1241,7 @@
                   offsetFromSymbolStart = "7216">
                </Location>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1180,6 +1257,7 @@
                   offsetFromSymbolStart = "7628">
                </Location>
                <Location
+                  uuid = "B2DEA10E-1417-4DAF-824A-45DA98CD5D94 - b51a1f411714fb32"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1200,15 +1278,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "41E654E7-6DC4-4670-A056-6C2055C5B76C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
-            timestampString = "584275330.251909"
+            timestampString = "590041661.447603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "292"
-            endingLineNumber = "292"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
             landmarkName = "StartConfetti()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1216,15 +1295,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "974580A1-AF6D-4F1A-8078-4695EB53F227"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameScene.swift"
-            timestampString = "586516871.757889"
+            timestampString = "590041661.44794"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "835"
-            endingLineNumber = "835"
+            startingLineNumber = "833"
+            endingLineNumber = "833"
             landmarkName = "AdShowOrNot()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1232,15 +1312,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "64533AFB-CD8D-404D-962F-EA133472B7DD"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameScene.swift"
-            timestampString = "586516871.7581331"
+            timestampString = "590041661.447987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "846"
-            endingLineNumber = "846"
+            startingLineNumber = "844"
+            endingLineNumber = "844"
             landmarkName = "SetHint1()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1248,15 +1329,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "F3F1CE72-AA6B-4BF9-B4A4-6F1418E1B2D6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameScene.swift"
-            timestampString = "586516871.758352"
+            timestampString = "590041661.448029"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287"
+            startingLineNumber = "285"
+            endingLineNumber = "285"
             landmarkName = "UnLockAllNode()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1264,6 +1346,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "03C02D2E-B83B-467D-9C98-274899B8EB7D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1280,6 +1363,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "B8A3E5AF-548C-423D-BE94-45EE0A2FF392"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1296,15 +1380,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "C63A387E-E9D2-4E73-885A-A7DD5A763789"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameScene.swift"
-            timestampString = "586516871.75861"
+            timestampString = "590041661.448115"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "826"
-            endingLineNumber = "826"
+            startingLineNumber = "824"
+            endingLineNumber = "824"
             landmarkName = "ShowAdPOSTMotification()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1312,15 +1397,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "E6983CE9-B762-4570-8D9F-CB85840C53B9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameScene.swift"
-            timestampString = "586516871.758835"
+            timestampString = "590041661.448159"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "836"
-            endingLineNumber = "836"
+            startingLineNumber = "834"
+            endingLineNumber = "834"
             landmarkName = "AdShowOrNot()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1328,15 +1414,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "D9747A92-2D96-4E08-A54E-3635A8EDED5F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameScene.swift"
-            timestampString = "586516871.759051"
+            timestampString = "590041661.4482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "347"
-            endingLineNumber = "347"
+            startingLineNumber = "345"
+            endingLineNumber = "345"
             landmarkName = "GameSerPOSTMotification()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1344,6 +1431,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "AEA71704-E5A1-49D3-BB0E-3CC434B81CBF"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1360,6 +1448,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "38F23634-E836-4F08-90B0-3168D32F853A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1376,15 +1465,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "8EF08796-5ACE-4666-BD40-707B584BCA0F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
-            timestampString = "584275330.25227"
+            timestampString = "590041661.448308"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "655"
-            endingLineNumber = "655"
+            startingLineNumber = "654"
+            endingLineNumber = "654"
             landmarkName = "TapHomeNotification(notification:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1392,6 +1482,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "20795D7A-4DB0-48B8-9AA5-B977D97F408A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1408,15 +1499,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "EE720D15-58D5-4CEE-A800-7E03E13D95EF"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameScene.swift"
-            timestampString = "586516871.759318"
+            timestampString = "590041661.448625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
             landmarkName = "GameScene"
             landmarkType = "3">
          </BreakpointContent>
@@ -1424,6 +1516,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "9F6AC987-07CB-462E-8A11-326513207D17"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1440,6 +1533,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "B509D4A8-F7DD-40A1-9F91-B8174DD22635"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1456,6 +1550,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "AE0F27ED-E183-4CDF-8A8E-542CA7D1C948"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1472,6 +1567,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "A924FAEC-9FDE-435D-B69B-9D65EDD2D88E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1485,6 +1581,7 @@
             landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "A924FAEC-9FDE-435D-B69B-9D65EDD2D88E - 686243061fe0270a"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1500,6 +1597,7 @@
                   offsetFromSymbolStart = "240">
                </Location>
                <Location
+                  uuid = "A924FAEC-9FDE-435D-B69B-9D65EDD2D88E - 686243061fe0270a"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1515,6 +1613,7 @@
                   offsetFromSymbolStart = "572">
                </Location>
                <Location
+                  uuid = "A924FAEC-9FDE-435D-B69B-9D65EDD2D88E - 686243061fe0270a"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1530,6 +1629,7 @@
                   offsetFromSymbolStart = "844">
                </Location>
                <Location
+                  uuid = "A924FAEC-9FDE-435D-B69B-9D65EDD2D88E - 686243061fe0270a"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1545,6 +1645,7 @@
                   offsetFromSymbolStart = "1116">
                </Location>
                <Location
+                  uuid = "A924FAEC-9FDE-435D-B69B-9D65EDD2D88E - 686243061fe0270a"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1560,6 +1661,7 @@
                   offsetFromSymbolStart = "1388">
                </Location>
                <Location
+                  uuid = "A924FAEC-9FDE-435D-B69B-9D65EDD2D88E - 686243061fe0270a"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1575,6 +1677,7 @@
                   offsetFromSymbolStart = "1660">
                </Location>
                <Location
+                  uuid = "A924FAEC-9FDE-435D-B69B-9D65EDD2D88E - 686243061fe0270a"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1595,6 +1698,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "D7496F51-5526-4952-B4B6-63F7A32A0A11"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1611,22 +1715,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
-            timestampString = "584275330.252555"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "677"
-            endingLineNumber = "677"
-            landmarkName = "ShowNextGame()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
+            uuid = "C78D51B2-5D24-47E0-88AD-AB02AE3D05F7"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1643,11 +1732,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "AB7DD9D3-A288-479F-A20B-EA2C11D6348F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/HomeView/HomeViewController.swift"
-            timestampString = "584423449.817373"
+            timestampString = "590041661.44877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "183"
@@ -1659,11 +1749,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "7B860492-83DD-47B4-A918-8A7F25C0434F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/HomeView/HomeViewController.swift"
-            timestampString = "584423449.8180569"
+            timestampString = "590041661.448817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "184"
@@ -1675,11 +1766,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "68E882F1-2E1A-4667-A766-D70AD82831B9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameClearView/GameClearView.swift"
-            timestampString = "583995294.448487"
+            timestampString = "590041661.44886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "257"
@@ -1691,11 +1783,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "B85C84E8-67C1-40E6-B5AC-717C92DD203D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameClearView/GameClearView.swift"
-            timestampString = "583995294.44853"
+            timestampString = "590041661.448905"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "196"
@@ -1707,6 +1800,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "8E0F3113-730A-4393-A12D-DF482A827B03"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1723,11 +1817,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "96E5E8EF-D1BE-4D36-B94A-9696D21E958E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/HomeView/HomeViewController.swift"
-            timestampString = "584423449.818512"
+            timestampString = "590041661.448976"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
@@ -1739,6 +1834,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "1760A28C-2BE4-4F94-B381-BCD84673A177"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1755,15 +1851,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "965AFA1D-DB53-4F8C-B16E-312B16E7BFDF"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
-            timestampString = "584275330.252851"
+            timestampString = "590041661.449042"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "623"
-            endingLineNumber = "623"
+            startingLineNumber = "622"
+            endingLineNumber = "622"
             landmarkName = "TapNextNotification(notification:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1771,15 +1868,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "E22E747A-5E62-4540-893D-B5242999A2B9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameViewController.swift"
-            timestampString = "584275330.2530659"
+            timestampString = "590041661.449314"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "534"
-            endingLineNumber = "534"
+            startingLineNumber = "533"
+            endingLineNumber = "533"
             landmarkName = "GameClearCatchNotification(notification:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1787,6 +1885,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "DB5A92D7-A80B-4021-B1AB-33B07BA1B212"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1803,6 +1902,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "04351957-6E66-48B3-9834-38BCC488682F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1819,6 +1919,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "C4F71EBF-6021-4B0E-8214-09DE99C460F6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1835,6 +1936,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "535A3B9E-6CFD-46E2-9B94-7A65174D6F66"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1851,6 +1953,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "30D34299-BAE4-4559-9E09-EA9DBEC36160"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1867,6 +1970,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "672EA709-32F2-4F5F-8B66-11FB98B6EFD4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1883,6 +1987,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "7E6DB429-2EF0-466B-87E2-09C3A9F51579"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1899,6 +2004,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "335830BB-D86D-4B5D-8C43-B40AD43F2A1F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1915,6 +2021,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "222DCD14-C2C9-42D4-B02F-7F3140DEC868"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1931,11 +2038,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "11D096D1-0086-4B36-ACE5-1643048EE06B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/HomeView/HomeViewController.swift"
-            timestampString = "584423449.8189631"
+            timestampString = "590041661.449671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
@@ -1944,6 +2052,7 @@
             landmarkType = "3">
             <Locations>
                <Location
+                  uuid = "11D096D1-0086-4B36-ACE5-1643048EE06B - 9eb21d6e5e193b60"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1959,6 +2068,7 @@
                   offsetFromSymbolStart = "1676">
                </Location>
                <Location
+                  uuid = "11D096D1-0086-4B36-ACE5-1643048EE06B - 6f1363a8680ccdea"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1979,11 +2089,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "524B9035-05EB-4668-86F7-12330EAEE8F9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/HomeView/HomeViewController.swift"
-            timestampString = "584423449.81923"
+            timestampString = "590041661.449719"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
@@ -1995,15 +2106,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "9F8AD40F-5889-420A-969D-C0C504E0D112"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameClearView/GameClearView.swift"
-            timestampString = "583995294.449545"
+            timestampString = "590041661.449761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "336"
-            endingLineNumber = "336"
+            startingLineNumber = "337"
+            endingLineNumber = "337"
             landmarkName = "StartLoadingAnimation()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2011,11 +2123,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "CB4822F0-60E4-402F-A66B-C207232CDFFC"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameClearView/GameClearView.swift"
-            timestampString = "583995294.449586"
+            timestampString = "590041661.449806"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "325"
@@ -2027,6 +2140,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "2266C86C-E9B3-47DD-A2A3-B2A516589EE2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -2037,6 +2151,74 @@
             startingLineNumber = "18"
             endingLineNumber = "18"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "34781F97-1CED-43C6-9702-E5F4FC87C8EE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/GameFile/HomeView/HomeViewController.swift"
+            timestampString = "590041661.4498791"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4A1A636F-1D08-4723-945B-205C681DB3B8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/AppDelegate.swift"
+            timestampString = "0"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AF2AA147-CC38-4C6B-AE68-28B04F159C6D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/AppDelegate.swift"
+            timestampString = "0"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0FC450D7-6887-40FA-82E8-E75BD9F34721"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/AppDelegate.swift"
+            timestampString = "0"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

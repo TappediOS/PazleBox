@@ -220,7 +220,6 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          if let sceneNode = scene.rootNode as! GameScene? {
             sceneNode.scaleMode = GetSceneScalaMode(DeviceHeight: UIScreen.main.nativeBounds.height)
             
-            
             // Present the scene
             if let view = self.view as! SKView? {
                   
@@ -229,7 +228,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
 
                view.ignoresSiblingOrder = true
                
-               let Tran = SKTransition.fade(withDuration: 2.3)
+               let Tran = SKTransition.fade(withDuration: 2.4)
                
 
                view.presentScene(sceneNode, transition: Tran)
@@ -673,18 +672,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    
    //MARK:- 次のステージに行くために，ClearView消したりアニメーション消したりする
    private func ShowNextGame() {
-      
-      self.ClearView?.fadeOut(type: .Slow){ [weak self] in
-         if self?.userDefaults.bool(forKey: "BuyRemoveAd") == false {
-            self?.UpdateInterstitialCountANDUpdateLabelCount()
-         }
-         self?.ClearView?.StopConfi()
-         self?.ClearView?.StopStar()
-         self?.ClearView?.StopLoadingAnimation()
-         self?.ClearView?.SetUpForAnimatiomToHideEachViewAndButton()
-         self?.ClearView?.removeFromSuperview()
-      }
-      
+
       //MARK:- 最後のステージプレイしてたらさようなら
       if self.SellectStageNumber == self.MaxStageNum{
          print("最後のステージ: \(self.MaxStageNum) をプレーしてたのでホームに帰ります")
@@ -696,8 +684,31 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       self.SellectStageNumber += 1
       self.userDefaults.set(self.SellectStageNumber, forKey: "StageNum")
       self.StopConfitti()
-      self.InitGameViewAndShowView()
       
+      //並列処理するよ
+      let dispatchGroup = DispatchGroup()
+      let dispatchQueue = DispatchQueue.global(qos: .userInteractive)   //早いほうがいいからuserInteractive
+      
+      //エンターさせて，
+      dispatchGroup.enter()
+      dispatchQueue.async(group: dispatchGroup) {
+         [weak self] in
+         self?.InitGameViewAndShowView()
+         dispatchGroup.leave()   //おわったらleaveする
+      }
+      //全ての処理が終わったらClearViewnをfadeOutする
+      dispatchGroup.notify(queue: .main) {
+         self.ClearView?.fadeOut(type: .Slow){ [weak self] in
+            if self?.userDefaults.bool(forKey: "BuyRemoveAd") == false {
+               self?.UpdateInterstitialCountANDUpdateLabelCount()
+            }
+            self?.ClearView?.StopConfi()
+            self?.ClearView?.StopStar()
+            self?.ClearView?.StopLoadingAnimation()
+            self?.ClearView?.SetUpForAnimatiomToHideEachViewAndButton()
+            self?.ClearView?.removeFromSuperview()
+         }
+      }
    }
  
    

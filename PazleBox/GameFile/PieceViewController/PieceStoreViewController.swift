@@ -91,7 +91,9 @@ class PiceStoreViewController: UIViewController, UICollectionViewDataSource, UIC
    
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
       print(indexPath.item)
-      
+      if indexPath.item == 1 {
+         self.dismiss(animated: true, completion: nil)
+      }
       // Identifierが"Segue"のSegueを使って画面遷移する関数
       
    }
