@@ -11,9 +11,8 @@ import UIKit
 
 enum FadeType: TimeInterval {
    case
-   Normal = 0.2,
-   Slow = 0.85
-   
+   Normal = 0.85,
+   Slow = 2.52
 }
 
 extension UIView {

@@ -571,7 +571,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
          self.ClearView?.AddConfiView2()
          self.ClearView?.AddConfiView3()
          self.ClearView?.StartClearViewAnimation()
-         self.ClearView?.fadeIn(type: .Slow) { [weak self] in
+         self.ClearView?.fadeIn(type: .Normal) { [weak self] in
             self?.ShowGameClearViewWithStar(CountOfUsedHint: CountOfUsedHint)
          }
       }
