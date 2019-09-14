@@ -29,12 +29,6 @@ struct RemoteConfgName {
 
 
 
-
-
-
-
-
-
 //HomeViewで使ったろっておもたけどnilめんどくさいなー。
 class RemoteConfigManagerHomeView {
    
