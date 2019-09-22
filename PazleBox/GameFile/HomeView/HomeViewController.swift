@@ -422,6 +422,8 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       Play3DtouchLight()
       GameSound.PlaySoundsTapButton()
       
+      //これを追加して重ならないようにするiOS13以降に自動適用される。
+      vc2.modalPresentationStyle = .fullScreen
       self.present(vc2, animated: true, completion: {
          print("プレゼント終わった")
          //self.ChangeHeroIDForBack()
@@ -447,6 +449,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       gcView.viewState = GKGameCenterViewControllerState.leaderboards
       gcView.hero.isEnabled = true
       gcView.view.hero.id = HeroID.GameCenterVC
+      gcView.modalPresentationStyle = .fullScreen
       self.present(gcView, animated: true, completion: nil)
    }
    
@@ -457,7 +460,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       GameSound.PlaySoundsTapButton()
       
       self.present(PiceStoreViewCon!, animated: true, completion: nil)
-
    }
    
    //MARK:- GKGameCenterControllerDelegate実装用

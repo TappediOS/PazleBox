@@ -78,6 +78,22 @@
 		</dict>
 		<dict>
 			<key>File</key>
+			<string>com.mono0926.LicensePlist/FirebaseCoreDiagnostics</string>
+			<key>Title</key>
+			<string>FirebaseCoreDiagnostics</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/FirebaseCoreDiagnosticsInterop</string>
+			<key>Title</key>
+			<string>FirebaseCoreDiagnosticsInterop</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>com.mono0926.LicensePlist/FirebaseInstanceID</string>
 			<key>Title</key>
 			<string>FirebaseInstanceID</string>
@@ -129,6 +145,22 @@
 			<string>com.mono0926.LicensePlist/GoogleAppMeasurement</string>
 			<key>Title</key>
 			<string>GoogleAppMeasurement</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/GoogleDataTransport</string>
+			<key>Title</key>
+			<string>GoogleDataTransport</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/GoogleDataTransportCCTSupport</string>
+			<key>Title</key>
+			<string>GoogleDataTransportCCTSupport</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
