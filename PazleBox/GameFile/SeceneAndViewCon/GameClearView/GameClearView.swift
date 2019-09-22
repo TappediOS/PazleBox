@@ -46,6 +46,8 @@ class GameClearView: UIView, GADBannerViewDelegate {
    var NextButton: FUIButton?
    var GoHomeButton: FUIButton?
    
+   var isLockedNextButton: Bool = false
+   
    var ViewW: CGFloat = 0
    var ViewH: CGFloat = 0
    
@@ -575,9 +577,20 @@ class GameClearView: UIView, GADBannerViewDelegate {
       self.ReviewedView!.ResetReviewView()
    }
    
+   public func UnLockisLocedNextButton() {
+      print("NextButtonがアンロックされました.")
+      self.isLockedNextButton = false
+   }
+   
    //MARK:- タッチイベント開始
    @objc func TapNextButton (_ sender: UIButton) {
       print("Tap NextButton")
+      guard isLockedNextButton == false else {
+         print("ボタンはロックされています。")
+         return
+      }
+      isLockedNextButton = true
+      
       self.StartLoadingAnimation()
       self.Play3DtouchMedium()
       Analytics.logEvent("TapNextGameButton", parameters: nil)

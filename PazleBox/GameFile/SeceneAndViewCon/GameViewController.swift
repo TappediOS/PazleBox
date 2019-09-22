@@ -702,6 +702,7 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
             if self?.userDefaults.bool(forKey: "BuyRemoveAd") == false {
                self?.UpdateInterstitialCountANDUpdateLabelCount()
             }
+            self?.ClearView?.UnLockisLocedNextButton()
             self?.ClearView?.StopConfi()
             self?.ClearView?.StopStar()
             self?.ClearView?.StopLoadingAnimation()
