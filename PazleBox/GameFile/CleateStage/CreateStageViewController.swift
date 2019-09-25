@@ -92,9 +92,9 @@ class CleateStageViewController: UIViewController {
       let PiceName: String = photos[CellNum].pregReplace(pattern: "(Green|Blue|Red)", with: "")
       print("TapName = \(PiceName)")
       
-      let GreenPiceImageView = PiceImageView(frame: GreenFlame, name: PiceName + "Green")
-      let RedPiceImageView = PiceImageView(frame: RedFlame, name: PiceName + "Red")
-      let BluePiceImageView = PiceImageView(frame: BlueFlame, name: PiceName + "Blue")
+      let GreenPiceImageView = PiceImageView(frame: GreenFlame, name: PiceName + "Green", WindowFlame: view.frame)
+      let RedPiceImageView = PiceImageView(frame: RedFlame, name: PiceName + "Red", WindowFlame: view.frame)
+      let BluePiceImageView = PiceImageView(frame: BlueFlame, name: PiceName + "Blue", WindowFlame: view.frame)
       
       GreenPiceImageView.SetUPAlphaImageView()
       RedPiceImageView.SetUPAlphaImageView()

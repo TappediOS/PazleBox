@@ -20,21 +20,26 @@ class PiceImageView : UIImageView {
    var PiceFlameToStage: CGRect?
    var AlphaImageView: UIImageView
    
-   init(frame: CGRect, name: String) {
+   var PicePosi: GetPicePosi
+   
+   init(frame: CGRect, name: String, WindowFlame: CGRect) {
+      
       AlphaImageView = UIImageView(frame: frame)
+      self.PicePosi = GetPicePosi(ViewX: WindowFlame.width, ViewY: WindowFlame.height)
+      
       super.init(frame: frame)
       
       SetImage(name: name)
-      InitTileInfo(frame: frame)
+      InitTileInfo(iPhoneWide: WindowFlame.width)
       InitPiceInfo(name: name)
       InitPiceFlameToStage()
       
       self.isUserInteractionEnabled = true
    }
    
-   private func InitTileInfo(frame: CGRect) {
-      TileWide = frame.width / 10
-      TileInter = frame.width / 100
+   private func InitTileInfo(iPhoneWide: CGFloat) {
+      TileWide = iPhoneWide / 10
+      TileInter = iPhoneWide / 100
    }
    
    private func InitPiceInfo(name: String) {
@@ -48,13 +53,13 @@ class PiceImageView : UIImageView {
    }
    
    private func InitPiceFlameToStage() {
-      let Width = CGFloat(TileWide * PiceWideNum + TileInter * (PiceWideNum - 1))
-      let Height = CGFloat(TileWide * PiceHeightNum + TileInter * (PiceHeightNum - 1))
+      let Width = TileWide! * CGFloat(PiceWideNum) + TileInter! * CGFloat(PiceWideNum)
+      let Height = TileWide! * CGFloat(PiceHeightNum) + TileInter! * CGFloat(PiceHeightNum)
       PiceFlameToStage = CGRect(x: 0, y: 0, width: Width, height: Height)
    }
    
    private func SetImage(name: String) {
-      self.image = UIImage(named: name)?.ResizeUIImage(width: 64, height: 64)
+      self.image = UIImage(named: name)?.ResizeUIImage(width: 128, height: 128)
       
    }
    
@@ -69,7 +74,8 @@ class PiceImageView : UIImageView {
    
    
    private func PiceToBeLarge() {
-      self.frame = PiceFlameToStage!
+      self.frame = CGRect(x: frame.minX, y: frame.minY, width: PiceFlameToStage!.width, height: PiceFlameToStage!.height)
+      AlphaImageView.frame = CGRect(x: 0, y: 0, width: PiceFlameToStage!.width, height: PiceFlameToStage!.height)
    }
    
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -87,8 +93,9 @@ class PiceImageView : UIImageView {
       let dx = newDx - preDx
       let dy = newDy - preDy
 
-      AlphaImageView.center.x += dx
-      AlphaImageView.center.y += dy
+      self.center.x += dx
+      self.center.y += dy
+      
       
    }
    

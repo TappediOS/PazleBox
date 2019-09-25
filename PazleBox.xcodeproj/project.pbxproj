@@ -116,6 +116,7 @@
 		BF33300622492B4C009B3042 /* ExGameSeceneHardP2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33300522492B4C009B3042 /* ExGameSeceneHardP2.swift */; };
 		BF33CE08233A208900AD488A /* ExString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33CE07233A208900AD488A /* ExString.swift */; };
 		BF33CE0A233A243A00AD488A /* PiceImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33CE09233A243A00AD488A /* PiceImageView.swift */; };
+		BF33CE0E233B319000AD488A /* GetPiceposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33CE0D233B319000AD488A /* GetPiceposition.swift */; };
 		BF399B8422C4A14C003DD18A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2674E32227B6A3003D370F /* AppDelegate.swift */; };
 		BF3EF63B2250988700D5534A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF3EF63A2250988700D5534A /* GoogleService-Info.plist */; };
 		BF4323C522D3568D008DF038 /* CleateStageSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4323C422D3568D008DF038 /* CleateStageSB.storyboard */; };
@@ -811,6 +812,7 @@
 		BF33300522492B4C009B3042 /* ExGameSeceneHardP2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExGameSeceneHardP2.swift; sourceTree = "<group>"; };
 		BF33CE07233A208900AD488A /* ExString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExString.swift; sourceTree = "<group>"; };
 		BF33CE09233A243A00AD488A /* PiceImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiceImageView.swift; sourceTree = "<group>"; };
+		BF33CE0D233B319000AD488A /* GetPiceposition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPiceposition.swift; sourceTree = "<group>"; };
 		BF3EF63A2250988700D5534A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		BF4323C422D3568D008DF038 /* CleateStageSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CleateStageSB.storyboard; sourceTree = "<group>"; };
 		BF4323C622D35822008DF038 /* CreateStageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStageViewController.swift; sourceTree = "<group>"; };
@@ -1830,6 +1832,7 @@
 				BF4323CC22D36733008DF038 /* SB */,
 				BF4323C622D35822008DF038 /* CreateStageViewController.swift */,
 				BF33CE09233A243A00AD488A /* PiceImageView.swift */,
+				BF33CE0D233B319000AD488A /* GetPiceposition.swift */,
 				BF4323CA22D35F28008DF038 /* BackTileImageView.swift */,
 				BF4323C822D35912008DF038 /* BackTileImage.swift */,
 			);
@@ -3264,6 +3267,7 @@
 				BF552F1C226DDED000756E16 /* H33.swift in Sources */,
 				BF332FEC2249280D009B3042 /* H11.swift in Sources */,
 				BF60AC55224C981A00D441D6 /* Pouse.swift in Sources */,
+				BF33CE0E233B319000AD488A /* GetPiceposition.swift in Sources */,
 				BF552EF8226DDE4E00756E16 /* N45.swift in Sources */,
 				BF399B8422C4A14C003DD18A /* AppDelegate.swift in Sources */,
 				BF519C7D223FAA470087A4AC /* GetPuzzleArry.swift in Sources */,
