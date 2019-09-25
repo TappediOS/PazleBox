@@ -11,37 +11,78 @@ import UIKit
 
 class PiceImageView : UIImageView {
    
-   override init(frame: CGRect) {
+   var TileWide: CGFloat?
+   var TileInter: CGFloat?
+   
+   var PiceWideNum = 0
+   var PiceHeightNum = 0
+   
+   var PiceFlameToStage: CGRect?
+   var AlphaImageView: UIImageView
+   
+   init(frame: CGRect, name: String) {
+      AlphaImageView = UIImageView(frame: frame)
       super.init(frame: frame)
+      
+      SetImage(name: name)
+      InitTileInfo(frame: frame)
+      InitPiceInfo(name: name)
+      
       
       self.isUserInteractionEnabled = true
    }
    
-   
-   public func SetImage(name: String) {
-      self.image = UIImage(named: name)?.ResizeUIImage(width: 64, height: 64)
+   private func InitTileInfo(frame: CGRect) {
+      TileWide = frame.width / 10
+      TileInter = frame.width / 100
    }
    
-   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+   private func InitPiceInfo(name: String) {
+      if let PiceNumber = Int(name.pregReplace(pattern: "p[0-9]+(Green|Blue|Red)", with: "")) {
+         PiceHeightNum = PiceNumber % 10
+         PiceWideNum = (PiceNumber - PiceHeightNum) / 10
+         print("(横，縦) = (\(PiceWideNum),\(PiceWideNum))")
+      }else{
+         fatalError("正規表現でint型を取得できない")
+      }
+   }
+   
+   private func SetImage(name: String) {
+      self.image = UIImage(named: name)?.ResizeUIImage(width: 64, height: 64)
       
    }
    
+   public func SetUPAlphaImageView() {
+      AlphaImageView.image = self.image
+      AlphaImageView.alpha = 0.4
+      AlphaImageView.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
+      AlphaImageView.isUserInteractionEnabled = false
+      addSubview(AlphaImageView)
+      AlphaImageView.bringSubviewToFront(self)
+   }
+   
+   
+   private func PiceToBeLarge() {
+      //self.frame = CGRect(x: frame.minX, y: frame.minY, width: frame.width * 1.5, height: frame.height * 1.5)
+   }
+   
+   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      PiceToBeLarge()
+   }
+   
    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-       let touchEvent = touches.first!
-       
-       // ドラッグ前の座標, Swift 1.2 から
+      let touchEvent = touches.first!
+
       let preDx = touchEvent.previousLocation(in: self).x
-       let preDy = touchEvent.previousLocation(in: self).y
-       
-       // ドラッグ後の座標
-       let newDx = touchEvent.location(in: self).x
-       let newDy = touchEvent.location(in: self).y
+      let preDy = touchEvent.previousLocation(in: self).y
+      let newDx = touchEvent.location(in: self).x
+      let newDy = touchEvent.location(in: self).y
        
       let dx = newDx - preDx
       let dy = newDy - preDy
 
-      self.center.x += dx
-      self.center.y += dy
+      AlphaImageView.center.x += dx
+      AlphaImageView.center.y += dy
       
    }
    
