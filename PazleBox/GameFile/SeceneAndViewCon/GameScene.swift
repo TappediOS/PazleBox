@@ -88,10 +88,7 @@ class GameScene: SKScene {
       //MARK:- ココのトレースは，FirebaseがConfigurしてないとクラッシュする
       print("初期化終わり")
       InitTimePeformance?.stop()
-      
-      let p = SKEmitterNode.init(fileNamed: "GameSetParticle")
-      p?.position.y += ViewSizeY! / 2
-      //addChild(p!)
+
     }
    
  

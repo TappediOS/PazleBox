@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -114,6 +114,8 @@
 		BF33300222492B31009B3042 /* ExGameSeceneEasyP2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33300122492B31009B3042 /* ExGameSeceneEasyP2.swift */; };
 		BF33300422492B3E009B3042 /* ExGameSecenNormalP2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33300322492B3E009B3042 /* ExGameSecenNormalP2.swift */; };
 		BF33300622492B4C009B3042 /* ExGameSeceneHardP2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33300522492B4C009B3042 /* ExGameSeceneHardP2.swift */; };
+		BF33CE08233A208900AD488A /* ExString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33CE07233A208900AD488A /* ExString.swift */; };
+		BF33CE0A233A243A00AD488A /* PiceImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33CE09233A243A00AD488A /* PiceImageView.swift */; };
 		BF399B8422C4A14C003DD18A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2674E32227B6A3003D370F /* AppDelegate.swift */; };
 		BF3EF63B2250988700D5534A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF3EF63A2250988700D5534A /* GoogleService-Info.plist */; };
 		BF4323C522D3568D008DF038 /* CleateStageSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4323C422D3568D008DF038 /* CleateStageSB.storyboard */; };
@@ -807,6 +809,8 @@
 		BF33300122492B31009B3042 /* ExGameSeceneEasyP2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExGameSeceneEasyP2.swift; sourceTree = "<group>"; };
 		BF33300322492B3E009B3042 /* ExGameSecenNormalP2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExGameSecenNormalP2.swift; sourceTree = "<group>"; };
 		BF33300522492B4C009B3042 /* ExGameSeceneHardP2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExGameSeceneHardP2.swift; sourceTree = "<group>"; };
+		BF33CE07233A208900AD488A /* ExString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExString.swift; sourceTree = "<group>"; };
+		BF33CE09233A243A00AD488A /* PiceImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiceImageView.swift; sourceTree = "<group>"; };
 		BF3EF63A2250988700D5534A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		BF4323C422D3568D008DF038 /* CleateStageSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CleateStageSB.storyboard; sourceTree = "<group>"; };
 		BF4323C622D35822008DF038 /* CreateStageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStageViewController.swift; sourceTree = "<group>"; };
@@ -1765,6 +1769,7 @@
 				BF519C7A223FA8D60087A4AC /* ExTextureName.swift */,
 				BF0FD35322436DF200E8F387 /* ExUIColor.swift */,
 				BF332F7F22491F8D009B3042 /* ExEnum.swift */,
+				BF33CE07233A208900AD488A /* ExString.swift */,
 				BF332F712248AEAF009B3042 /* StageLevel.swift */,
 				BF1FF2AE22311FD40047ED23 /* StageContents.swift */,
 			);
@@ -1824,6 +1829,7 @@
 			children = (
 				BF4323CC22D36733008DF038 /* SB */,
 				BF4323C622D35822008DF038 /* CreateStageViewController.swift */,
+				BF33CE09233A243A00AD488A /* PiceImageView.swift */,
 				BF4323CA22D35F28008DF038 /* BackTileImageView.swift */,
 				BF4323C822D35912008DF038 /* BackTileImage.swift */,
 			);
@@ -3113,6 +3119,7 @@
 				BF332FA422492704009B3042 /* E15.swift in Sources */,
 				BF1FF2B4223121BF0047ED23 /* Easy.swift in Sources */,
 				BF552EBC226DDD6400756E16 /* E45.swift in Sources */,
+				BF33CE08233A208900AD488A /* ExString.swift in Sources */,
 				BF552F24226DDEF800756E16 /* H37.swift in Sources */,
 				BF332FBA2249278F009B3042 /* N6.swift in Sources */,
 				BF552F3C226DDF4700756E16 /* H49.swift in Sources */,
@@ -3276,6 +3283,7 @@
 				BFF6D79B229527C6000253A2 /* ReviewView.swift in Sources */,
 				BF552EEA226DDE1800756E16 /* N38.swift in Sources */,
 				BF552EEE226DDE3300756E16 /* N40.swift in Sources */,
+				BF33CE0A233A243A00AD488A /* PiceImageView.swift in Sources */,
 				BF640C092245100C00333782 /* E1.swift in Sources */,
 				BF2C14632276F3B000C7B8FB /* YesNode.swift in Sources */,
 				BF4323CB22D35F28008DF038 /* BackTileImageView.swift in Sources */,

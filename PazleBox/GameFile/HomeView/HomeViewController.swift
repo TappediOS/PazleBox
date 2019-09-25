@@ -292,9 +292,10 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       ContactusButton?.hero.id = "BackButton"
       GameSound.PlaySoundsTapButton()
       
-      //TODO:- 終わったら削除
+      //FIXME:- 終わったら削除
       let Storybord = UIStoryboard(name: "CleateStageSB", bundle: nil)
       let VC = Storybord.instantiateViewController(withIdentifier: "SellectCreateStageViewController")
+      VC.modalPresentationStyle = .fullScreen
       self.present(VC, animated: true, completion: nil)
       return
       //TODO:- 終わったら削除
@@ -432,16 +433,12 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    }
    
    
-   
    //MARK:- スコアボードビューの表示
    @objc func ShowRankingView() {
       GameSound.PlaySoundsTapButton()
       ShowRankingViewButton?.hero.id = HeroID.GameCenterVC
       
-      //FIXME: 終わったら消す
-      GoPiceStore()
-      return
-      
+      //GoPiceStore()
       
       Analytics.logEvent("ShowGameCenter", parameters: nil)
       let gcView = GKGameCenterViewController()
