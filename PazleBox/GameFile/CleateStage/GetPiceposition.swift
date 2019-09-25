@@ -93,4 +93,38 @@ class GetPicePosi {
          fatalError()
       }
    }
+   
+   public func GetAlphasYPosi(AlPosiY: CGFloat, SizeHight: Int) -> Int {
+      
+      let MinY = 0 + (SizeHight - 1)
+      
+      switch AlPosiY {
+      case let y where y <= Y[0]:
+         return GetBiggerNum(First: 0, Secand: MinY)
+      case Y[0] ..< Y[1]:
+         return GetBiggerNum(First: 1, Secand: MinY)
+      case Y[1] ..< Y[2]:
+         return GetBiggerNum(First: 2, Secand: MinY)
+      case Y[2] ..< Y[3]:
+         return GetBiggerNum(First: 3, Secand: MinY)
+      case Y[3] ..< Y[4]:
+         return GetBiggerNum(First: 4, Secand: MinY)
+      case Y[4] ..< Y[5]:
+         return GetBiggerNum(First: 5, Secand: MinY)
+      case Y[5] ..< Y[6]:
+         return GetBiggerNum(First: 6, Secand: MinY)
+      case Y[6] ..< Y[7]:
+         return GetBiggerNum(First: 7, Secand: MinY)
+      case Y[7] ..< Y[8]:
+         return GetBiggerNum(First: 8, Secand: MinY)
+      case Y[8] ..< Y[9]:
+         return GetBiggerNum(First: 9, Secand: MinY)
+      case Y[9] ..< Y[10]:
+         return GetBiggerNum(First: 10, Secand: MinY)
+      case let x where x >= Y[11]:
+         return GetBiggerNum(First: 11, Secand: MinY)
+      default:
+         fatalError()
+      }
+   }
 }

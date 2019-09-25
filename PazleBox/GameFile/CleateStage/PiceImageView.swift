@@ -22,10 +22,16 @@ class PiceImageView : UIImageView {
    
    var PicePosi: GetPicePosi
    
+   var PositionX: Int? = nil
+   var PositionY: Int? = nil
+   var BeforePositionX: Int? = nil
+   var BeforePositionY: Int? = nil
+   
+   
    init(frame: CGRect, name: String, WindowFlame: CGRect) {
       
       AlphaImageView = UIImageView(frame: frame)
-      self.PicePosi = GetPicePosi(ViewX: WindowFlame.width, ViewY: WindowFlame.height)
+      self.PicePosi = GetPicePosi(ViewX: Int(WindowFlame.width), ViewY: Int(WindowFlame.height))
       
       super.init(frame: frame)
       
@@ -96,11 +102,15 @@ class PiceImageView : UIImageView {
       self.center.x += dx
       self.center.y += dy
       
-      
+      PositionX = PicePosi.GetAlphasXPosi(AlPosiX: frame.minX, SizeWidth: PiceWideNum)
+      PositionY = PicePosi.GetAlphasYPosi(AlPosiY: frame.minY, SizeHight: PiceHeightNum)
    }
    
    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-      
+      let XPosi = PicePosi.GetAnyPosiX(PositionX)
+      let YPosi = PicePosi.GetAnyPosiX(PositionY)
+      let Flame = CGRect(x: XPosi, y: YPosi, width: frame.width, height: frame.width)
+      self.frame = Flame
    }
    
    required init?(coder: NSCoder) {
