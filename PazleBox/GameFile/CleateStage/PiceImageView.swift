@@ -27,7 +27,7 @@ class PiceImageView : UIImageView {
       SetImage(name: name)
       InitTileInfo(frame: frame)
       InitPiceInfo(name: name)
-      
+      InitPiceFlameToStage()
       
       self.isUserInteractionEnabled = true
    }
@@ -47,6 +47,12 @@ class PiceImageView : UIImageView {
       }
    }
    
+   private func InitPiceFlameToStage() {
+      let Width = CGFloat(TileWide * PiceWideNum + TileInter * (PiceWideNum - 1))
+      let Height = CGFloat(TileWide * PiceHeightNum + TileInter * (PiceHeightNum - 1))
+      PiceFlameToStage = CGRect(x: 0, y: 0, width: Width, height: Height)
+   }
+   
    private func SetImage(name: String) {
       self.image = UIImage(named: name)?.ResizeUIImage(width: 64, height: 64)
       
@@ -63,7 +69,7 @@ class PiceImageView : UIImageView {
    
    
    private func PiceToBeLarge() {
-      //self.frame = CGRect(x: frame.minX, y: frame.minY, width: frame.width * 1.5, height: frame.height * 1.5)
+      self.frame = PiceFlameToStage!
    }
    
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
