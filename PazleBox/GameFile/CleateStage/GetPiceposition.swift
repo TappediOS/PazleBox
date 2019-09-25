@@ -52,6 +52,14 @@ class GetPicePosi {
         }
      }
    
+   public func GetAnyPosiX(xpoint: Int) -> CGFloat {
+      return X[xpoint]
+   }
+   
+   public func GetAnyPosiY(ypoint:Int) -> CGFloat {
+      return Y[ypoint]
+   }
+   
    private func GetSmallerNum(First: Int, Secand: Int) ->Int {
       if First <= Secand {
          return First

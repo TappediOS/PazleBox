@@ -60,13 +60,7 @@ class TilePosi {
       return CGPoint(x: X[xpoint], y: Y[ypoint])
    }
    
-   public func GetAnyPosiX(xpoint: Int) -> CGFloat {
-      return X[xpoint]
-   }
    
-   public func GetAnyPosiY(ypoint:Int) -> CGFloat {
-      return Y[ypoint]
-   }
    
    //let y1 = -ViewY * 3 / 8 + Intarnal * TilePosiX + TileWide * (TilePosiX - 1)
    
