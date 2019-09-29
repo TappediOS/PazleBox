@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import TapticEngine
 
 class PiceImageView : UIImageView {
    
@@ -27,11 +28,14 @@ class PiceImageView : UIImageView {
    var BeforePositionX: Int? = nil
    var BeforePositionY: Int? = nil
    
+   var PositionForHapTicX = 11
+   var PositionForHapTicY = 11
+   
    
    init(frame: CGRect, name: String, WindowFlame: CGRect) {
       
       AlphaImageView = UIImageView(frame: frame)
-      self.PicePosi = GetPicePosi(ViewX: Int(WindowFlame.width), ViewY: Int(WindowFlame.height))
+      self.PicePosi = GetPicePosi(ViewX: WindowFlame.width, ViewY: WindowFlame.height)
       
       super.init(frame: frame)
       
@@ -104,16 +108,29 @@ class PiceImageView : UIImageView {
       
       PositionX = PicePosi.GetAlphasXPosi(AlPosiX: frame.minX, SizeWidth: PiceWideNum)
       PositionY = PicePosi.GetAlphasYPosi(AlPosiY: frame.minY, SizeHight: PiceHeightNum)
+      
+      if PositionX != PositionForHapTicX || PositionY != PositionForHapTicY {
+         Play3DtouchLight()
+         PositionForHapTicX = PositionX!
+         PositionForHapTicY = PositionY!
+      }
    }
    
    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-      let XPosi = PicePosi.GetAnyPosiX(PositionX)
-      let YPosi = PicePosi.GetAnyPosiX(PositionY)
-      let Flame = CGRect(x: XPosi, y: YPosi, width: frame.width, height: frame.width)
+      //FIXME:- kyouseiannrappuwotoru
+      let XPosi = PicePosi.GetAnyPosiX(xpoint: PositionX!)
+      let YPosi = PicePosi.GetAnyPosiY(ypoint: PositionY!)
+      let Flame = CGRect(x: XPosi, y: YPosi, width: frame.width, height: frame.height)
       self.frame = Flame
+      
+      Play3DtouchMedium()
    }
    
    required init?(coder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
    }
+   
+   private func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
+   private func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
+   private func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
 }

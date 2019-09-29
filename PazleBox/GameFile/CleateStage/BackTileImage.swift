@@ -20,13 +20,12 @@ class BackTileImage: UIImageView {
       let x1 = PosiIntarnalX + PositionWideX
       
       let PosiIntarnalY = Intarnal * TilePosiY
-      let PositionWideY = TileWide * (TilePosiY - 1)
+      let PositionWideY = TileWide * TilePosiY
       
       let y1 = PosiIntarnalY + PositionWideY
       
       super.init(frame: CGRect(x: x1, y: y1, width: TileWide, height: TileWide))
       
-      //let BackTileImage = UIImage(named: "NullTile.png")
       let BackTileImage = UIImage(contentsOfFile: Bundle.main.path(forResource: "NullTile", ofType: "png")!)?.ResizeUIImage(width: 1, height: 1)
       self.image = BackTileImage
       self.backgroundColor = UIColor.black

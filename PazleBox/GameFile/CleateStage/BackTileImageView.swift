@@ -17,7 +17,13 @@ class BackTileImageView:UIView {
       let Inter = TileWide / 10
       
       let ViewHeight = 12 * (TileWide + Inter)
-      let ViewStartY = frame.height - ViewHeight
+      //もし　- TileWide / 2　をしないと，一番したのば画像がすれすれになるから，
+      //画像の半分だけ上に上げてる。
+      //もしここの部分を変更するなら，GetPiceposition.swfitにある
+      //同じ部分も同様に変更する必要がある。
+      let ViewStartY = frame.height - ViewHeight - TileWide / 2
+      
+      print("StartY = \(ViewStartY)")
       
       let Frame = CGRect(x: 0, y: ViewStartY, width: frame.width, height: ViewHeight)
       super.init(frame: Frame)
