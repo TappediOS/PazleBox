@@ -51,6 +51,26 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BFDCDB9923408FFA00AD6E4F"
+               BuildableName = "PazleBoxUITests.xctest"
+               BlueprintName = "PazleBoxUITests"
+               ReferencedContainer = "container:PazleBox.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BFDCDBA72340900200AD6E4F"
+               BuildableName = "PazleBoxTests.xctest"
+               BlueprintName = "PazleBoxTests"
+               ReferencedContainer = "container:PazleBox.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

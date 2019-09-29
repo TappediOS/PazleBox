@@ -433,6 +433,8 @@
 		BFCE2649224A58A60099A775 /* 32p12Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE2637224A58A40099A775 /* 32p12Green.png */; };
 		BFCE264A224A58A60099A775 /* 32p9Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE2638224A58A50099A775 /* 32p9Blue.png */; };
 		BFCE264B224A58A60099A775 /* 32p12Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE2639224A58A60099A775 /* 32p12Red.png */; };
+		BFDCDB9D23408FFA00AD6E4F /* PazleBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCDB9C23408FFA00AD6E4F /* PazleBoxUITests.swift */; };
+		BFDCDBAB2340900200AD6E4F /* PazleBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCDBAA2340900200AD6E4F /* PazleBoxTests.swift */; };
 		BFDD3EE7227D6B3200B9E6B0 /* Gold_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE4227D6B3100B9E6B0 /* Gold_Badge.png */; };
 		BFDD3EE8227D6B3200B9E6B0 /* Bronze_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE5227D6B3200B9E6B0 /* Bronze_Badge.png */; };
 		BFDD3EE9227D6B3200B9E6B0 /* Silver_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE6227D6B3200B9E6B0 /* Silver_Badge.png */; };
@@ -686,11 +688,36 @@
 		BFFB3AD52250F5E7000C90E1 /* GameClearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB3AD42250F5E7000C90E1 /* GameClearView.swift */; };
 		BFFB3AD722510716000C90E1 /* ExUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB3AD622510716000C90E1 /* ExUIView.swift */; };
 		C568DD1EF47C3315C5F1E752 /* Pods_PazleBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E806537451A9DDED852EEBA6 /* Pods_PazleBox.framework */; };
+		CF530AA7D5EFD9726AC80043 /* libPods-PazleBoxTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6E1CE586D7C5D4357E6C2E /* libPods-PazleBoxTests.a */; };
+		F1DFBC55DBE62EDEE7B7528F /* libPods-PazleBoxUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6806776E72A18B5A17F737CF /* libPods-PazleBoxUITests.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BFDCDB9F23408FFA00AD6E4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF2674D82227B6A3003D370F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF2674DF2227B6A3003D370F;
+			remoteInfo = PazleBox;
+		};
+		BFDCDBAD2340900200AD6E4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF2674D82227B6A3003D370F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF2674DF2227B6A3003D370F;
+			remoteInfo = PazleBox;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		23639FCB16B4DCCF8E13A1D3 /* Pods-PazleBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PazleBox.debug.xcconfig"; path = "Target Support Files/Pods-PazleBox/Pods-PazleBox.debug.xcconfig"; sourceTree = "<group>"; };
+		3880DF550D8F9E4D6589B7D5 /* Pods-PazleBoxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PazleBoxTests.debug.xcconfig"; path = "Target Support Files/Pods-PazleBoxTests/Pods-PazleBoxTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5DD2F4A7C1B5734493821052 /* Pods-PazleBoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PazleBoxTests.release.xcconfig"; path = "Target Support Files/Pods-PazleBoxTests/Pods-PazleBoxTests.release.xcconfig"; sourceTree = "<group>"; };
+		6806776E72A18B5A17F737CF /* libPods-PazleBoxUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PazleBoxUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D6E1CE586D7C5D4357E6C2E /* libPods-PazleBoxTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PazleBoxTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAD3C59F802BE51801EEF22B /* Pods-PazleBoxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PazleBoxUITests.release.xcconfig"; path = "Target Support Files/Pods-PazleBoxUITests/Pods-PazleBoxUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AC63FB0A53E7131595C10607 /* Pods-PazleBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PazleBox.release.xcconfig"; path = "Target Support Files/Pods-PazleBox/Pods-PazleBox.release.xcconfig"; sourceTree = "<group>"; };
+		AD7D7F04FB8319111C9B228B /* Pods-PazleBoxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PazleBoxUITests.debug.xcconfig"; path = "Target Support Files/Pods-PazleBoxUITests/Pods-PazleBoxUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF0FD34F224363A800E8F387 /* PutPuzzleParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PutPuzzleParticle.sks; sourceTree = "<group>"; };
 		BF0FD351224364A900E8F387 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
 		BF0FD35322436DF200E8F387 /* ExUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIColor.swift; sourceTree = "<group>"; };
@@ -1129,6 +1156,12 @@
 		BFCE2637224A58A40099A775 /* 32p12Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32p12Green.png; sourceTree = "<group>"; };
 		BFCE2638224A58A50099A775 /* 32p9Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32p9Blue.png; sourceTree = "<group>"; };
 		BFCE2639224A58A60099A775 /* 32p12Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32p12Red.png; sourceTree = "<group>"; };
+		BFDCDB9A23408FFA00AD6E4F /* PazleBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PazleBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFDCDB9C23408FFA00AD6E4F /* PazleBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PazleBoxUITests.swift; sourceTree = "<group>"; };
+		BFDCDB9E23408FFA00AD6E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFDCDBA82340900200AD6E4F /* PazleBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PazleBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFDCDBAA2340900200AD6E4F /* PazleBoxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PazleBoxTests.swift; sourceTree = "<group>"; };
+		BFDCDBAC2340900200AD6E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFDD3EE4227D6B3100B9E6B0 /* Gold_Badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gold_Badge.png; sourceTree = "<group>"; };
 		BFDD3EE5227D6B3200B9E6B0 /* Bronze_Badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bronze_Badge.png; sourceTree = "<group>"; };
 		BFDD3EE6227D6B3200B9E6B0 /* Silver_Badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Silver_Badge.png; sourceTree = "<group>"; };
@@ -1395,6 +1428,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BFDCDB9723408FFA00AD6E4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1DFBC55DBE62EDEE7B7528F /* libPods-PazleBoxUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFDCDBA52340900200AD6E4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF530AA7D5EFD9726AC80043 /* libPods-PazleBoxTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -1403,6 +1452,10 @@
 			children = (
 				23639FCB16B4DCCF8E13A1D3 /* Pods-PazleBox.debug.xcconfig */,
 				AC63FB0A53E7131595C10607 /* Pods-PazleBox.release.xcconfig */,
+				3880DF550D8F9E4D6589B7D5 /* Pods-PazleBoxTests.debug.xcconfig */,
+				5DD2F4A7C1B5734493821052 /* Pods-PazleBoxTests.release.xcconfig */,
+				AD7D7F04FB8319111C9B228B /* Pods-PazleBoxUITests.debug.xcconfig */,
+				AAD3C59F802BE51801EEF22B /* Pods-PazleBoxUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1495,6 +1548,8 @@
 			isa = PBXGroup;
 			children = (
 				BF2674E22227B6A3003D370F /* PazleBox */,
+				BFDCDB9B23408FFA00AD6E4F /* PazleBoxUITests */,
+				BFDCDBA92340900200AD6E4F /* PazleBoxTests */,
 				BF2674E12227B6A3003D370F /* Products */,
 				24F90365DBF1E45B93001052 /* Pods */,
 				F18F91965E347613F23DE2B0 /* Frameworks */,
@@ -1505,6 +1560,8 @@
 			isa = PBXGroup;
 			children = (
 				BF2674E02227B6A3003D370F /* PazleBox.app */,
+				BFDCDB9A23408FFA00AD6E4F /* PazleBoxUITests.xctest */,
+				BFDCDBA82340900200AD6E4F /* PazleBoxTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2428,6 +2485,24 @@
 			path = P43;
 			sourceTree = "<group>";
 		};
+		BFDCDB9B23408FFA00AD6E4F /* PazleBoxUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BFDCDB9C23408FFA00AD6E4F /* PazleBoxUITests.swift */,
+				BFDCDB9E23408FFA00AD6E4F /* Info.plist */,
+			);
+			path = PazleBoxUITests;
+			sourceTree = "<group>";
+		};
+		BFDCDBA92340900200AD6E4F /* PazleBoxTests */ = {
+			isa = PBXGroup;
+			children = (
+				BFDCDBAA2340900200AD6E4F /* PazleBoxTests.swift */,
+				BFDCDBAC2340900200AD6E4F /* Info.plist */,
+			);
+			path = PazleBoxTests;
+			sourceTree = "<group>";
+		};
 		BFDD3EE3227D6B1900B9E6B0 /* Clear_Badge */ = {
 			isa = PBXGroup;
 			children = (
@@ -2511,6 +2586,8 @@
 				BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */,
 				BFFA2A7C22336D760023BB71 /* TapticEngine.framework */,
 				E806537451A9DDED852EEBA6 /* Pods_PazleBox.framework */,
+				6D6E1CE586D7C5D4357E6C2E /* libPods-PazleBoxTests.a */,
+				6806776E72A18B5A17F737CF /* libPods-PazleBoxUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2538,13 +2615,53 @@
 			productReference = BF2674E02227B6A3003D370F /* PazleBox.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BFDCDB9923408FFA00AD6E4F /* PazleBoxUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFDCDBA323408FFA00AD6E4F /* Build configuration list for PBXNativeTarget "PazleBoxUITests" */;
+			buildPhases = (
+				2DDBFE96F1BC2CFF34C6BFE2 /* [CP] Check Pods Manifest.lock */,
+				BFDCDB9623408FFA00AD6E4F /* Sources */,
+				BFDCDB9723408FFA00AD6E4F /* Frameworks */,
+				BFDCDB9823408FFA00AD6E4F /* Resources */,
+				A98401DB5209952036288651 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFDCDBA023408FFA00AD6E4F /* PBXTargetDependency */,
+			);
+			name = PazleBoxUITests;
+			productName = PazleBoxUITests;
+			productReference = BFDCDB9A23408FFA00AD6E4F /* PazleBoxUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		BFDCDBA72340900200AD6E4F /* PazleBoxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFDCDBAF2340900200AD6E4F /* Build configuration list for PBXNativeTarget "PazleBoxTests" */;
+			buildPhases = (
+				E96078D8C5C8AA0AFB39BC67 /* [CP] Check Pods Manifest.lock */,
+				BFDCDBA42340900200AD6E4F /* Sources */,
+				BFDCDBA52340900200AD6E4F /* Frameworks */,
+				BFDCDBA62340900200AD6E4F /* Resources */,
+				84AD8AB561A7D5C494CA89A6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFDCDBAE2340900200AD6E4F /* PBXTargetDependency */,
+			);
+			name = PazleBoxTests;
+			productName = PazleBoxTests;
+			productReference = BFDCDBA82340900200AD6E4F /* PazleBoxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		BF2674D82227B6A3003D370F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = jun;
 				TargetAttributes = {
@@ -2555,6 +2672,14 @@
 								enabled = 1;
 							};
 						};
+					};
+					BFDCDB9923408FFA00AD6E4F = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = BF2674DF2227B6A3003D370F;
+					};
+					BFDCDBA72340900200AD6E4F = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = BF2674DF2227B6A3003D370F;
 					};
 				};
 			};
@@ -2575,6 +2700,8 @@
 			projectRoot = "";
 			targets = (
 				BF2674DF2227B6A3003D370F /* PazleBox */,
+				BFDCDB9923408FFA00AD6E4F /* PazleBoxUITests */,
+				BFDCDBA72340900200AD6E4F /* PazleBoxTests */,
 			);
 		};
 /* End PBXProject section */
@@ -3031,6 +3158,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BFDCDB9823408FFA00AD6E4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFDCDBA62340900200AD6E4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -3056,6 +3197,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		2DDBFE96F1BC2CFF34C6BFE2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PazleBoxUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7485616176AF9BD2A7C327AD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3071,6 +3234,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PazleBox/Pods-PazleBox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84AD8AB561A7D5C494CA89A6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PazleBoxTests/Pods-PazleBoxTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PazleBoxTests/Pods-PazleBoxTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PazleBoxTests/Pods-PazleBoxTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A98401DB5209952036288651 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PazleBoxUITests/Pods-PazleBoxUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PazleBoxUITests/Pods-PazleBoxUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PazleBoxUITests/Pods-PazleBoxUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BF60EE002227B9C0006BF4B7 /* ShellScript */ = {
@@ -3089,6 +3286,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n${PODS_ROOT}/SwiftLint/swiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\nif [ $CONFIGURATION = \"Debug\" ]; then\n${PODS_ROOT}/LicensePlist/license-plist --output-path $PRODUCT_NAME/Settings.bundle\nfi\n";
+		};
+		E96078D8C5C8AA0AFB39BC67 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PazleBoxTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -3333,7 +3552,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BFDCDB9623408FFA00AD6E4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFDCDB9D23408FFA00AD6E4F /* PazleBoxUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFDCDBA42340900200AD6E4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFDCDBAB2340900200AD6E4F /* PazleBoxTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BFDCDBA023408FFA00AD6E4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF2674DF2227B6A3003D370F /* PazleBox */;
+			targetProxy = BFDCDB9F23408FFA00AD6E4F /* PBXContainerItemProxy */;
+		};
+		BFDCDBAE2340900200AD6E4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF2674DF2227B6A3003D370F /* PazleBox */;
+			targetProxy = BFDCDBAD2340900200AD6E4F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BF2674ED2227B6A3003D370F /* Main.storyboard */ = {
@@ -3539,6 +3787,92 @@
 			};
 			name = Release;
 		};
+		BFDCDBA123408FFA00AD6E4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD7D7F04FB8319111C9B228B /* Pods-PazleBoxUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9R4W53MKG7;
+				INFOPLIST_FILE = PazleBoxUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Taped.PazleBoxUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PazleBox;
+			};
+			name = Debug;
+		};
+		BFDCDBA223408FFA00AD6E4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAD3C59F802BE51801EEF22B /* Pods-PazleBoxUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9R4W53MKG7;
+				INFOPLIST_FILE = PazleBoxUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Taped.PazleBoxUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PazleBox;
+			};
+			name = Release;
+		};
+		BFDCDBB02340900200AD6E4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3880DF550D8F9E4D6589B7D5 /* Pods-PazleBoxTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9R4W53MKG7;
+				INFOPLIST_FILE = PazleBoxTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Taped.PazleBoxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PazleBox.app/PazleBox";
+			};
+			name = Debug;
+		};
+		BFDCDBB12340900200AD6E4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DD2F4A7C1B5734493821052 /* Pods-PazleBoxTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9R4W53MKG7;
+				INFOPLIST_FILE = PazleBoxTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Taped.PazleBoxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PazleBox.app/PazleBox";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -3556,6 +3890,24 @@
 			buildConfigurations = (
 				BF2674F92227B6A4003D370F /* Debug */,
 				BF2674FA2227B6A4003D370F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFDCDBA323408FFA00AD6E4F /* Build configuration list for PBXNativeTarget "PazleBoxUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFDCDBA123408FFA00AD6E4F /* Debug */,
+				BFDCDBA223408FFA00AD6E4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFDCDBAF2340900200AD6E4F /* Build configuration list for PBXNativeTarget "PazleBoxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFDCDBB02340900200AD6E4F /* Debug */,
+				BFDCDBB12340900200AD6E4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
