@@ -79,6 +79,14 @@ class CleateStageViewController: UIViewController {
       OnPiceView.isHidden = true
       view.addSubview(OnPiceView)
    }
+   
+   private func ShowOnPiceView() {
+      self.OnPiceView.isHidden = false
+   }
+   
+   private func NotShowOnPiceView() {
+      self.OnPiceView.isHidden = true
+   }
 
    private func InitRedFlame() {
       let Flame = CGRect(x: OnPiceView.frame.width / 25 * 9 + view.frame.width / 20, y: OnPiceView.frame.minY + 5, width: view.frame.width / 25 * 7, height: OnPiceView.frame.height - 5)
@@ -105,15 +113,28 @@ class CleateStageViewController: UIViewController {
       }
    }
    
+   private func WorkForPiceUserPiceUp() {
+      if WoriPlacePiceImageArray.count != 1 {
+         fatalError("選択されてないPice削除したのに作業用の配列の数が1でない。")
+      }
+      
+      for tmp in WoriPlacePiceImageArray {
+         print(tmp.selfName)
+      }
+      
+      PiceImageArray.append(WoriPlacePiceImageArray.first!)
+   }
+   
    @objc func PiceUpPiceImageView(notification: Notification) -> Void {
       if let userInfo = notification.userInfo {
          let PiceName = userInfo["PiceName"] as! String
          print("選択されたPiceName = \(PiceName)")
          //選択されたPice以外を削除する
          RemovePiceUserDontPiceUp(PiceName: PiceName)
-         //残ったPice(1つ)を作業用の配列に格納する
-         
-         //
+         //残ったPice(1つ)に対して情報を操作する
+         WorkForPiceUserPiceUp()
+         ////OnPiceViewを非表示に
+         NotShowOnPiceView()
       }else{ print("Nil きたよ") }
    }
    
@@ -141,7 +162,7 @@ class CleateStageViewController: UIViewController {
       WoriPlacePiceImageArray.append(BluePiceImageView)
       
       
-      OnPiceView.isHidden = false
+      ShowOnPiceView()
    }
 }
 
