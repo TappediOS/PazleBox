@@ -96,10 +96,23 @@ class CleateStageViewController: UIViewController {
       
    }
    
+   private func RemovePiceUserDontPiceUp(PiceName: String) {
+      for Pice in PiceImageArray {
+         if Pice.selfName != PiceName {
+            Pice.removeFromSuperview()
+         }
+      }
+   }
+   
    @objc func PiceUpPiceImageView(notification: Notification) -> Void {
       if let userInfo = notification.userInfo {
          let PiceName = userInfo["PiceName"] as! String
          print("選択されたPiceName = \(PiceName)")
+         //選択されたPice以外を削除する
+         RemovePiceUserDontPiceUp(PiceName: PiceName)
+         //残ったPice(1つ)を作業用の配列に格納する
+         
+         //
       }else{ print("Nil きたよ") }
    }
    
