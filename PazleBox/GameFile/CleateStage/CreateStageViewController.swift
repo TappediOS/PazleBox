@@ -195,17 +195,33 @@ extension CleateStageViewController: UICollectionViewDataSource, UICollectionVie
       
       let ImageView = UIImageView()
       ImageView.frame = cell.contentView.frame
-      ImageView.image = UIImage(named: photos[indexPath.item])?.ResizeUIImage(width: 64, height: 64)
+      ImageView.image = UIImage(contentsOfFile: Bundle.main.path(forResource: photos[indexPath.item], ofType: "png")!)?.ResizeUIImage(width: 64, height: 64)
       
       cell.contentView.addSubview(ImageView)
       
       return cell
    }
    
+   func RemoveAllFromWorkArry() {
+      guard WorkPlacePiceImageArray.count != 0 else { return }
+      
+      //Viewからけして
+      for Pice in WorkPlacePiceImageArray {
+         Pice.removeFromSuperview()
+      }
+      //配列きれいにして
+      WorkPlacePiceImageArray.removeAll()
+      //OnViewもけしす
+      NotShowOnPiceView()
+   }
+   
    // Cell が選択された場合
    // ここで値を渡して画面遷移を行なっている。
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
       print("Cell tap \(indexPath.item)")
+      
+      ///もしCellタップしたときにOnViewがあったら全部消す。
+      RemoveAllFromWorkArry()
       
       TappedCell(CellNum: indexPath.item)
 //      if let TappedCell = collectionView.cellForItem(at: indexPath) {

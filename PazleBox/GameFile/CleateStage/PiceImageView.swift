@@ -83,8 +83,7 @@ class PiceImageView : UIImageView {
    /// 引数からImageを生成する
    /// - Parameter name: Piceの名前
    private func SetImage(name: String) {
-      self.image = UIImage(named: name)?.ResizeUIImage(width: 128, height: 128)
-      
+      self.image = UIImage(contentsOfFile: Bundle.main.path(forResource: name, ofType: "png")!)?.ResizeUIImage(width: 128, height: 128)
    }
    
    /// Alpha Imageの生成
@@ -111,6 +110,11 @@ class PiceImageView : UIImageView {
    
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       PiceToBeLarge()
+      //もし地震がPickUPされてなければ，VCに対して送信を行う
+      if isPiceUp == false {
+         let SentObject: [String : Any] = ["PiceName": selfName as String]
+         NotificationCenter.default.post(name: .PickUpPiceImageView, object: nil, userInfo: SentObject)
+      }
    }
    
    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -127,6 +131,11 @@ class PiceImageView : UIImageView {
       self.center.x += dx
       self.center.y += dy
       
+      //これはCPU使いまくる場合はなくてもいいかもしれない
+      AlphaImageView.center.x -= dx
+      AlphaImageView.center.y -= dy
+      //これはCPU使いまくる場合はなくてもいいかもしれない
+      
       PositionX = PicePosi.GetAlphasXPosi(AlPosiX: frame.minX, SizeWidth: PiceWideNum)
       PositionY = PicePosi.GetAlphasYPosi(AlPosiY: frame.minY, SizeHight: PiceHeightNum)
       
@@ -134,6 +143,13 @@ class PiceImageView : UIImageView {
          Play3DtouchLight()
          PositionForHapTicX = PositionX!
          PositionForHapTicY = PositionY!
+         
+         //これはCPU使いまくる場合はなくてもいいかもしれない
+         let XPosi = PicePosi.GetAnyPosiX(xpoint: PositionX!)
+         let YPosi = PicePosi.GetAnyPosiY(ypoint: PositionY!)
+         let Flame = CGRect(x: XPosi - frame.minX, y: YPosi - frame.minY, width: frame.width, height: frame.height)
+         AlphaImageView.frame = Flame
+         //これはCPU使いまくる場合はなくてもいいかもしれない
       }
    }
    
@@ -144,12 +160,11 @@ class PiceImageView : UIImageView {
       let Flame = CGRect(x: XPosi, y: YPosi, width: frame.width, height: frame.height)
       self.frame = Flame
       
+      let AlphaViewFlame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
+      AlphaImageView.frame = AlphaViewFlame
+      
       Play3DtouchMedium()
-      //もし地震がPickUPされてなければ，VCに対して送信を行う
-      if isPiceUp == false {
-         let SentObject: [String : Any] = ["PiceName": selfName as String]
-         NotificationCenter.default.post(name: .PickUpPiceImageView, object: nil, userInfo: SentObject)
-      }
+      
    }
    
    required init?(coder: NSCoder) {
