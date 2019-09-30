@@ -35,6 +35,9 @@ class PiceImageView : UIImageView {
    //じしんのpiceの名前
    var selfName: String = ""
    
+   //フィールドに出ているかどうか
+   var isPiceUp: Bool = false
+   
    init(frame: CGRect, name: String, WindowFlame: CGRect) {
       
       AlphaImageView = UIImageView(frame: frame)
@@ -92,6 +95,10 @@ class PiceImageView : UIImageView {
       AlphaImageView.frame = CGRect(x: 0, y: 0, width: PiceFlameToStage!.width, height: PiceFlameToStage!.height)
    }
    
+   public func ChangeTRUEisPiceUp() {
+      self.isPiceUp = true
+   }
+   
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       PiceToBeLarge()
    }
@@ -128,9 +135,11 @@ class PiceImageView : UIImageView {
       self.frame = Flame
       
       Play3DtouchMedium()
-      
-      let SentObject: [String : Any] = ["PiceName": selfName as String]
-      NotificationCenter.default.post(name: .PickUpPiceImageView, object: nil, userInfo: SentObject)
+      //もし地震がPickUPされてなければ，VCに対して送信を行う
+      if isPiceUp == false {
+         let SentObject: [String : Any] = ["PiceName": selfName as String]
+         NotificationCenter.default.post(name: .PickUpPiceImageView, object: nil, userInfo: SentObject)
+      }
    }
    
    required init?(coder: NSCoder) {

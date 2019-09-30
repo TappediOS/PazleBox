@@ -120,13 +120,10 @@ class CleateStageViewController: UIViewController {
       if WorkPlacePiceImageArray.count != 1 {
          fatalError("選択されてないPice削除したのに作業用の配列の数が1でない。")
       }
-      
-      for tmp in WorkPlacePiceImageArray {
-         print(tmp.selfName)
-      }
-      
       //PickUpされたら専用の配列に格納
       PiceImageArray.append(WorkPlacePiceImageArray.first!)
+      //PickUpしたPiceに対してBoolをtrueにしチェックされた状態にする
+      WorkPlacePiceImageArray.first?.ChangeTRUEisPiceUp()
       //作業用の配列は全削除
       WorkPlacePiceImageArray.removeAll()
    }
