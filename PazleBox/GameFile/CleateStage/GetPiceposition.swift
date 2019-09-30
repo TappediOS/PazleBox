@@ -51,6 +51,10 @@ class GetPicePosi {
       }
    }
    
+   public func GetAnyPostionXY(xpoint: Int, ypoint:Int) -> CGPoint {
+      return CGPoint(x: X[xpoint], y: Y[ypoint])
+   }
+   
    public func GetAnyPosiX(xpoint: Int) -> CGFloat {
       return X[xpoint]
    }

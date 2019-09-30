@@ -135,6 +135,28 @@ class PiceImageView : UIImageView {
       NotificationCenter.default.post(name: .PiceMoved, object: nil, userInfo: SentObject)
    }
    
+   public func isBeforPositionIsNothing() -> Bool {
+      if (BeforePositionX == nil || BeforePositionY == nil) { return true }
+      return false
+   }
+   
+   public func ReBackPicePosition() {
+      self.PositionX! = BeforePositionX!
+      self.PositionY! = BeforePositionY!
+      
+      let BeforePoint = PicePosi.GetAnyPostionXY(xpoint: self.PositionX!, ypoint: self.PositionY!)
+      
+      let Flame = CGRect(x: BeforePoint.x, y: BeforePoint.y, width: frame.width, height: frame.height)
+      self.frame = Flame
+      //TODO:- Alphaも白
+      //self.AlphaNode.position = BeforePoint
+      
+      Play3DtouchHeavy()
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+         self.Play3DtouchHeavy()
+      }
+   }
+   
    public func GetOfInfomation() -> [String : Any] {
       let AllInfomation: [String : Any] = ["StartPointX": self.PositionX! as Int,
                                            "StartPointY": self.PositionY! as Int,
@@ -143,6 +165,10 @@ class PiceImageView : UIImageView {
                                            "PArry": self.pAllPosi as Array]
       
       return AllInfomation
+   }
+   
+   public func GetArryNum() -> Int {
+      self.ArryNum!
    }
    
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

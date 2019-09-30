@@ -73,6 +73,7 @@ class CleateStageViewController: UIViewController {
    
    private func InitNotification() {
       NotificationCenter.default.addObserver(self, selector: #selector(PiceUpPiceImageView(notification:)), name: .PickUpPiceImageView, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(MovedPiceCatchNotification(notification:)), name: .PiceMoved, object: nil)
    }
    
    private func InitOnPiceView() {
@@ -134,6 +135,79 @@ class CleateStageViewController: UIViewController {
          print("PiceImageView.selfName = \(tmp.selfName)")
          print("-> (X , Y) = (\(String(describing: tmp.PositionX)) , \(String(describing: tmp.PositionY)))")
       }
+   }
+   
+   private func SentCheckedStageFill(StageObject: [String : Any]) -> Bool {
+      let StartX = StageObject["StartPointX"] as! Int
+      let StartY = StageObject["StartPointY"] as! Int
+      
+      let PuzzleWide = StageObject["PuzzleWide"] as! Int
+      let PuzzleHight = StageObject["PuzzleHight"] as! Int
+      let PArry = StageObject["PArry"] as! [[Contents]]
+      
+      let LeftUpX = StartX
+      let LeftUpY = StartY
+      
+      let RightDownX = StartX + (PuzzleWide - 1)
+      let RightDownY = StartY - (PuzzleHight - 1)
+      
+      for x in LeftUpX ... RightDownX {
+         for y in RightDownY ... LeftUpY {
+            let ReverseY = (LeftUpY - y) + RightDownY
+            if CheckedStage[ReverseY][x] == .In && PArry[y - RightDownY][x - LeftUpX] == .In {
+               return true
+            }
+         }
+      }
+      return false
+   }
+   
+   //MARK:- パズルが被ってるかを判定
+   private func OverRapped(ArryNum: Int) -> Bool {
+      let SentPice = PiceImageArray[ArryNum]
+      let SentPuzzleInfo = SentPice.GetOfInfomation()
+      
+      //はみ出てたらそもそもアウト
+      //if CheckdPuzzleFillSentPazzle(StageObject: SentPuzzleInfo) == false { return true }
+      
+      for Pice in PiceImageArray {
+         //自分は調べないからcontinueで飛ばす
+         if Pice == SentPice {
+            print("かぶった。番号-> \(Pice.GetArryNum())")
+            continue
+         }
+         
+         let PiceInfo = Pice.GetOfInfomation()
+         
+         //かぶってたらReturn true
+         if SentCheckedStageFill(StageObject: PiceInfo) == true { return true }
+      }
+      // 被りなし。
+      return false
+   }
+   
+   //MARK:- 通知を受け取る
+   @objc func MovedPiceCatchNotification(notification: Notification) -> Void {
+      print("--- Fin Move notification ---")
+      CrearCheckedStage()
+         
+      if let userInfo = notification.userInfo {
+         let SentNum = userInfo["ArryNum"] as! Int
+         print("送信者番号: \(SentNum)")
+         
+         //Nodeを置いた場所に他のノードがいたら，元に戻ってもらう。
+         if OverRapped(ArryNum: SentNum) == true {
+            if PiceImageArray[SentNum].isBeforPositionIsNothing() {
+               print("Before未設定なので消します")
+               PiceImageArray[SentNum].removeFromSuperview()
+               PiceImageArray.remove(at: SentNum)
+            }else{
+               PiceImageArray[SentNum].ReBackPicePosition()
+            }
+         }
+   
+         CrearCheckedStage()
+      }else{ print("通知受け取ったけど、中身nilやった。") }
    }
    
    private func RemovePiceUserDontPiceUp(PiceName: String) {
