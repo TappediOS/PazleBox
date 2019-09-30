@@ -11,6 +11,9 @@ import UIKit
 import TapticEngine
 
 class PiceImageView : UIImageView {
+
+   var pAllPosi: [[Contents]] = Array()
+   var SerchpAllPosi = PArry() //こいつは重いぞー
    
    var TileWide: CGFloat?
    var TileInter: CGFloat?
@@ -89,11 +92,10 @@ class PiceImageView : UIImageView {
    /// Alpha Imageの生成
    public func SetUPAlphaImageView() {
       AlphaImageView.image = self.image
-      AlphaImageView.alpha = 0.4
+      AlphaImageView.alpha = 0.25
       AlphaImageView.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
       AlphaImageView.isUserInteractionEnabled = false
       addSubview(AlphaImageView)
-      AlphaImageView.bringSubviewToFront(self)
    }
    
    /// Piceを大きくする
