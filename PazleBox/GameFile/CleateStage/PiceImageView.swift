@@ -61,7 +61,6 @@ class PiceImageView : UIImageView {
       TileInter = iPhoneWide / 100
    }
    
-   
    /// 縦と横の長さカウントを取得する
    /// - Parameter name: PICEの名前
    private func InitPiceInfo(name: String) {
@@ -74,7 +73,6 @@ class PiceImageView : UIImageView {
       }
    }
    
-   
    /// PiceのしんのFlameを設定する
    private func InitPiceFlameToStage() {
       let Width = TileWide! * CGFloat(PiceWideNum) + TileInter! * CGFloat(PiceWideNum)
@@ -82,14 +80,12 @@ class PiceImageView : UIImageView {
       PiceFlameToStage = CGRect(x: 0, y: 0, width: Width, height: Height)
    }
    
-   
    /// 引数からImageを生成する
    /// - Parameter name: Piceの名前
    private func SetImage(name: String) {
       self.image = UIImage(named: name)?.ResizeUIImage(width: 128, height: 128)
       
    }
-   
    
    /// Alpha Imageの生成
    public func SetUPAlphaImageView() {
@@ -101,13 +97,11 @@ class PiceImageView : UIImageView {
       AlphaImageView.bringSubviewToFront(self)
    }
    
-   
    /// Piceを大きくする
    private func PiceToBeLarge() {
       self.frame = CGRect(x: frame.minX, y: frame.minY, width: PiceFlameToStage!.width, height: PiceFlameToStage!.height)
       AlphaImageView.frame = CGRect(x: 0, y: 0, width: PiceFlameToStage!.width, height: PiceFlameToStage!.height)
    }
-   
    
    /// Piceが選択された状態にする
    /// これはVCから操作される
