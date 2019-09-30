@@ -25,6 +25,10 @@ class CleateStageViewController: UIViewController {
    var WorkPlacePiceImageArray: [PiceImageView] = Array()
    var PiceImageArray: [PiceImageView] = Array()
    
+   //Piceがかぶってないかをチェックする配列
+   var CheckedStage: [[Contents]] = Array()
+   let CleanCheckedStage = CleanCheckStage()
+   
    let photos = ["33p22Blue", "33p21Blue","43p21Blue","43p2Green","21p1Red",
    "43p34Blue","43p19Blue","43p12Red","23p12Blue","43p14Blue",
    "23p11Blue", "33p7Blue","43p8Green","43p5Blue","43p41Blue",
@@ -48,6 +52,8 @@ class CleateStageViewController: UIViewController {
       InitRedFlame()
       InitGreenFlame()
       InitBlueFlame()
+      
+      CrearCheckedStage()
       
       InitMochUserSellectedImageView()
       
@@ -97,6 +103,27 @@ class CleateStageViewController: UIViewController {
       let Flame = CGRect(x: OnPiceView.frame.width / 25 * 17 + view.frame.width / 20, y: OnPiceView.frame.minY + 5, width: view.frame.width / 25 * 7, height: OnPiceView.frame.height - 5)
       BlueFlame = Flame
    }
+   
+   //MARK:- チェックする配列を初期化する
+   private func CrearCheckedStage() {
+      CheckedStage = CleanCheckedStage.Checked
+   }
+   
+   //MARK:- 配列の情報を出力
+   private func ShowCheckStage() {
+      for x in 0 ... 11 {
+         print()
+         for y in 0 ... 8 {
+            if CheckedStage[11 - x][y] == .Out {
+               print("\(CheckedStage[11 - x][y]) ", terminator: "")
+            }else{
+               print("\(CheckedStage[11 - x][y])  ", terminator: "")
+            }
+         }
+      }
+      print()
+      print()
+   }
 
    private func InitMochUserSellectedImageView() {
       
@@ -120,12 +147,19 @@ class CleateStageViewController: UIViewController {
       }
    }
    
+   private func ArryNumOfPiceViewUpdateFromPiceImageArry() {
+      for tmp in 0 ... PiceImageArray.count - 1{
+         PiceImageArray[tmp].UpdateArryNum(ArryNum: tmp)
+      }
+   }
+   
    private func WorkForPiceUserPiceUp() {
       if WorkPlacePiceImageArray.count != 1 {
          fatalError("選択されてないPice削除したのに作業用の配列の数が1でない。")
       }
       //PickUpされたら専用の配列に格納
       PiceImageArray.append(WorkPlacePiceImageArray.first!)
+      ArryNumOfPiceViewUpdateFromPiceImageArry()
       //PickUpしたPiceに対してBoolをtrueにしチェックされた状態にする
       WorkPlacePiceImageArray.first?.ChangeTRUEisPiceUp()
       //作業用の配列は全削除

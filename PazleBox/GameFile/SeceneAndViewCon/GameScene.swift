@@ -15,7 +15,6 @@ import Firebase
 
 class GameScene: SKScene {
    
-   
    let AllStage = AllStageInfo()
    let Stage = HoldStage()
    
@@ -297,7 +296,6 @@ class GameScene: SKScene {
    
    //MARK:- 配列の情報を出力
    private func ShowCheckStage() {
-      
       guard Debug else { return }
       
       for x in 0 ... 11 {
@@ -436,7 +434,7 @@ class GameScene: SKScene {
       return
    }
    
-   //MARK: なんかこれおんなじことしてていらんような気がする。
+   //MARK: Piceを置いたときに最初にChek配列にそいつを埋める
    private func CheckdPuzzleFillSentPazzle(StageObject: [String : Any]) -> Bool {
       
       let StartX = StageObject["StartPointX"] as! Int
@@ -507,7 +505,6 @@ class GameScene: SKScene {
    
    //MARK:- パズルが被ってるかを判定
    private func OverRapped(BirthDay: Int) -> Bool {
-      
       let SentPazzle: puzzle = PuzzleBox[BirthDay] as! puzzle
       let SentPuzzleInfo = SentPazzle.GetOfInfomation()
       
@@ -515,7 +512,7 @@ class GameScene: SKScene {
       if CheckdPuzzleFillSentPazzle(StageObject: SentPuzzleInfo) == false { return true }
       
       for Puzzle in PuzzleBox {
-         
+         //自分は調べないからcontinueで飛ばす
          if (Puzzle as! puzzle) == SentPazzle {
             print("かぶった。番号-> \((Puzzle as! puzzle).GetBirthDayNum())")
             continue

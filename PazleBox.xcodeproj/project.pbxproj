@@ -435,6 +435,7 @@
 		BFCE264B224A58A60099A775 /* 32p12Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE2639224A58A60099A775 /* 32p12Red.png */; };
 		BFDCDB9D23408FFA00AD6E4F /* PazleBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCDB9C23408FFA00AD6E4F /* PazleBoxUITests.swift */; };
 		BFDCDBAB2340900200AD6E4F /* PazleBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCDBAA2340900200AD6E4F /* PazleBoxTests.swift */; };
+		BFDCDBB3234205AA00AD6E4F /* CleanChackStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCDBB2234205AA00AD6E4F /* CleanChackStage.swift */; };
 		BFDD3EE7227D6B3200B9E6B0 /* Gold_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE4227D6B3100B9E6B0 /* Gold_Badge.png */; };
 		BFDD3EE8227D6B3200B9E6B0 /* Bronze_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE5227D6B3200B9E6B0 /* Bronze_Badge.png */; };
 		BFDD3EE9227D6B3200B9E6B0 /* Silver_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE6227D6B3200B9E6B0 /* Silver_Badge.png */; };
@@ -1162,6 +1163,7 @@
 		BFDCDBA82340900200AD6E4F /* PazleBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PazleBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDCDBAA2340900200AD6E4F /* PazleBoxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PazleBoxTests.swift; sourceTree = "<group>"; };
 		BFDCDBAC2340900200AD6E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFDCDBB2234205AA00AD6E4F /* CleanChackStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanChackStage.swift; sourceTree = "<group>"; };
 		BFDD3EE4227D6B3100B9E6B0 /* Gold_Badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gold_Badge.png; sourceTree = "<group>"; };
 		BFDD3EE5227D6B3200B9E6B0 /* Bronze_Badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bronze_Badge.png; sourceTree = "<group>"; };
 		BFDD3EE6227D6B3200B9E6B0 /* Silver_Badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Silver_Badge.png; sourceTree = "<group>"; };
@@ -1892,6 +1894,7 @@
 				BF33CE0D233B319000AD488A /* GetPiceposition.swift */,
 				BF4323CA22D35F28008DF038 /* BackTileImageView.swift */,
 				BF4323C822D35912008DF038 /* BackTileImage.swift */,
+				BFDCDBB2234205AA00AD6E4F /* CleanChackStage.swift */,
 			);
 			path = CleateStage;
 			sourceTree = "<group>";
@@ -3539,6 +3542,7 @@
 				BFF889A922A39A5A0056A839 /* NoAdsButton.swift in Sources */,
 				BF1A5EE522B78A5C002C6733 /* CoinsIAPManager.swift in Sources */,
 				BF1BD1EC2279C4060047496B /* NormalStageClearInfomation.swift in Sources */,
+				BFDCDBB3234205AA00AD6E4F /* CleanChackStage.swift in Sources */,
 				BF332FFA2249283C009B3042 /* H17.swift in Sources */,
 				BF332FB022492766009B3042 /* N1.swift in Sources */,
 				BF332FCE224927C3009B3042 /* N16.swift in Sources */,

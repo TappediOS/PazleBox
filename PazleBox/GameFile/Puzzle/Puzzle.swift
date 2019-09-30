@@ -177,7 +177,6 @@ class puzzle: SKSpriteNode {
    }
    
    public func GetOfInfomation() -> [String : Any] {
-      
       let AllInfomation: [String : Any] = ["StartPointX": self.CenterX as Int,
                                            "StartPointY": self.CenterY as Int,
                                            "PuzzleWide": self.PuzzleWide as Int,
@@ -185,11 +184,9 @@ class puzzle: SKSpriteNode {
                                            "PArry": self.pAllPosi as Array]
       
       return AllInfomation
-      
    }
    
    private func PuzzleTouchStartPostNotification(touches: Set<UITouch>, X: Int, Y: Int) {
-      
       print("わたし \(self.BirthDayNum)が透明部を触ったことを通知します。")
       print("タップした座標: \(String(describing: touches.first?.location(in: self)))")
       
@@ -202,7 +199,6 @@ class puzzle: SKSpriteNode {
       
       print("")
       NotificationCenter.default.post(name: .PuzzleTouchStart, object: nil, userInfo: SentObject)
-      
    }
    
    private func PuzzleTouchMovedPostNotification(Dx: CGFloat, Dy: CGFloat) {
@@ -282,8 +278,6 @@ class puzzle: SKSpriteNode {
    }
    
    private func TouchPointIsAlpha(X: Int, Y: Int) -> Bool {
-      
-      
       if self.pAllPosi[Y][X] == .Out {
          print("透明部分をタップしました。")
          return true
@@ -293,23 +287,9 @@ class puzzle: SKSpriteNode {
    }
    
    public func PlayParticleForRightSet() {
-      
       Play3DtouchHeavy()
-      
-      
       return
       //FIXME:- だだしい場所に置いた時にパーティクルを出すときは以下を変更
-      
-      guard PlayParticle == false else {
-         return
-      }
-      
-//      self.addChild(SetParticle)
-//      PlayParticle = true
-//      DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//         self.removeChildren(in: [self.SetParticle])
-//         self.PlayParticle = false
-//      }
    }
    
    //MARK:- 自前のタッチイベント
@@ -331,7 +311,6 @@ class puzzle: SKSpriteNode {
    }
    
    public func SelfTouchEnded(){
-      
       self.zPosition -= 2
       UpdateSelfPosi()
       FinishMoveTilePOSTMotification()
@@ -344,8 +323,6 @@ class puzzle: SKSpriteNode {
    public func UnLockPuzzle() {
       self.isLocked = false
    }
-   
-   
    
    //MARK:- タッチイベント
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

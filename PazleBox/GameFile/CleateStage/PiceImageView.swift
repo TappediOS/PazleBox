@@ -15,6 +15,8 @@ class PiceImageView : UIImageView {
    var pAllPosi: [[Contents]] = Array()
    var SerchpAllPosi = PArry() //こいつは重いぞー
    
+   var ArryNum: Int? = 0
+   
    var TileWide: CGFloat?
    var TileInter: CGFloat?
    
@@ -53,6 +55,8 @@ class PiceImageView : UIImageView {
       InitTileInfo(iPhoneWide: WindowFlame.width)
       InitPiceInfo(name: name)
       InitPiceFlameToStage()
+      
+      InitPiceArry(name: name)
       
       self.isUserInteractionEnabled = true
    }
@@ -98,6 +102,11 @@ class PiceImageView : UIImageView {
       addSubview(AlphaImageView)
    }
    
+   private func InitPiceArry(name: String) {
+      let PiceName = name.pregReplace(pattern: "(Green|Blue|Red)", with: "")
+      self.pAllPosi = SerchpAllPosi.GerPArry(PuzzleStyle: PiceName)
+   }
+   
    /// Piceを大きくする
    private func PiceToBeLarge() {
       self.frame = CGRect(x: frame.minX, y: frame.minY, width: PiceFlameToStage!.width, height: PiceFlameToStage!.height)
@@ -108,6 +117,32 @@ class PiceImageView : UIImageView {
    /// これはVCから操作される
    public func ChangeTRUEisPiceUp() {
       self.isPiceUp = true
+   }
+   
+   public func UpdateArryNum(ArryNum: Int) {
+      self.ArryNum = ArryNum
+   }
+   
+   //MARK:- 通知を送信
+   //FIXME:- もしかしたら，SentObjectいらんかも
+   private func FinishMoveTilePOSTMotification() {
+      if self.ArryNum == nil {
+         fatalError("配列番号がnilやのに置いてる")
+      }
+      let SentObject: [String : Any] = ["ArryNum": self.ArryNum!]
+      
+      print("")
+      NotificationCenter.default.post(name: .PiceMoved, object: nil, userInfo: SentObject)
+   }
+   
+   public func GetOfInfomation() -> [String : Any] {
+      let AllInfomation: [String : Any] = ["StartPointX": self.PositionX! as Int,
+                                           "StartPointY": self.PositionY! as Int,
+                                           "PuzzleWide": self.PiceHeightNum as Int,
+                                           "PuzzleHight": self.PiceHeightNum as Int,
+                                           "PArry": self.pAllPosi as Array]
+      
+      return AllInfomation
    }
    
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
