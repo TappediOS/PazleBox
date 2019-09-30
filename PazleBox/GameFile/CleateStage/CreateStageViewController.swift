@@ -97,7 +97,10 @@ class CleateStageViewController: UIViewController {
    }
    
    @objc func PiceUpPiceImageView(notification: Notification) -> Void {
-      
+      if let userInfo = notification.userInfo {
+         let PiceName = userInfo["PiceName"] as! String
+         print("選択されたPiceName = \(PiceName)")
+      }else{ print("Nil きたよ") }
    }
    
    func TappedCell(CellNum: Int) {

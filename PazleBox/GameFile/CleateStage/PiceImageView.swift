@@ -28,14 +28,18 @@ class PiceImageView : UIImageView {
    var BeforePositionX: Int? = nil
    var BeforePositionY: Int? = nil
    
+   //HapTIcを鳴らすための変数
    var PositionForHapTicX = 11
    var PositionForHapTicY = 11
    
+   //じしんのpiceの名前
+   var selfName: String = ""
    
    init(frame: CGRect, name: String, WindowFlame: CGRect) {
       
       AlphaImageView = UIImageView(frame: frame)
       self.PicePosi = GetPicePosi(ViewX: WindowFlame.width, ViewY: WindowFlame.height)
+      selfName = name
       
       super.init(frame: frame)
       
@@ -124,6 +128,9 @@ class PiceImageView : UIImageView {
       self.frame = Flame
       
       Play3DtouchMedium()
+      
+       let SentObject: [String : Any] = ["PiceName": selfName as String]
+      NotificationCenter.default.post(name: .PickUpPiceImageView, object: SentObject)
    }
    
    required init?(coder: NSCoder) {
