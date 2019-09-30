@@ -105,6 +105,13 @@ class CleateStageViewController: UIViewController {
       
    }
    
+   private func ShowPiceImageArryInfo() {
+      for tmp in PiceImageArray {
+         print("PiceImageView.selfName = \(tmp.selfName)")
+         print("-> (X , Y) = (\(String(describing: tmp.PositionX)) , \(String(describing: tmp.PositionY)))")
+      }
+   }
+   
    private func RemovePiceUserDontPiceUp(PiceName: String) {
       var DeleArryDec = 0 //swiftの配列は削除したら自動的に前に詰めるからforで回したときにズレをふせぐ
       for tmp in 0 ... WorkPlacePiceImageArray.count - 1 {
@@ -138,6 +145,10 @@ class CleateStageViewController: UIViewController {
          WorkForPiceUserPiceUp()
          ////OnPiceViewを非表示に
          NotShowOnPiceView()
+         #if DEBUG
+         //配列の情報の表示
+         ShowPiceImageArryInfo()
+         #endif
       }else{ print("Nil きたよ") }
    }
    
