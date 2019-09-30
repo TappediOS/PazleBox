@@ -24,6 +24,8 @@ class CleateStageViewController: UIViewController {
    
    var MochUserSellectedImageView = UIImageView()
    
+   var PiceImageArray: [PiceImageView] = Array()
+   
    
    let photos = ["33p22Blue", "33p21Blue","43p21Blue","43p2Green","21p1Red",
    "43p34Blue","43p19Blue","43p12Red","23p12Blue","43p14Blue",
@@ -41,6 +43,8 @@ class CleateStageViewController: UIViewController {
       super.viewDidLoad()
       
       InitBackTileImageView()
+      
+      InitNotification()
       
       InitOnPiceView()
       InitRedFlame()
@@ -61,6 +65,10 @@ class CleateStageViewController: UIViewController {
    private func InitBackTileImageView() {
       let BackImageView = BackTileImageView(frame: self.view.frame)
       self.view.addSubview(BackImageView)
+   }
+   
+   private func InitNotification() {
+      NotificationCenter.default.addObserver(self, selector: #selector(PiceUpPiceImageView(notification:)), name: .PickUpPiceImageView, object: nil)
    }
    
    private func InitOnPiceView() {
@@ -88,6 +96,10 @@ class CleateStageViewController: UIViewController {
       
    }
    
+   @objc func PiceUpPiceImageView(notification: Notification) -> Void {
+      
+   }
+   
    func TappedCell(CellNum: Int) {
       let PiceName: String = photos[CellNum].pregReplace(pattern: "(Green|Blue|Red)", with: "")
       print("TapName = \(PiceName)")
@@ -103,6 +115,11 @@ class CleateStageViewController: UIViewController {
       view.addSubview(GreenPiceImageView)
       view.addSubview(RedPiceImageView)
       view.addSubview(BluePiceImageView)
+      
+      PiceImageArray.append(GreenPiceImageView)
+      PiceImageArray.append(RedPiceImageView)
+      PiceImageArray.append(BluePiceImageView)
+      
       
       OnPiceView.isHidden = false
 
