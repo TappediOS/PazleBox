@@ -125,7 +125,10 @@ class CleateStageViewController: UIViewController {
          print(tmp.selfName)
       }
       
+      //PickUpされたら専用の配列に格納
       PiceImageArray.append(WorkPlacePiceImageArray.first!)
+      //作業用の配列は全削除
+      WorkPlacePiceImageArray.removeAll()
    }
    
    @objc func PiceUpPiceImageView(notification: Notification) -> Void {
