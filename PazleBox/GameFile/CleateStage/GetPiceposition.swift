@@ -60,7 +60,6 @@ class GetPicePosi {
    }
    
    public func GetAnyPosiY(ypoint:Int) -> CGFloat {
-      print("指話したときのIntは　\(ypoint)")
       return Y[ypoint]
    }
    

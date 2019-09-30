@@ -117,9 +117,12 @@ class CleateStageViewController: UIViewController {
    }
    
    func TappedCell(CellNum: Int) {
+      //画像の名前を色を除いて取得
+      //例えば，23p43Blueの場合は23p43を抽出する
       let PiceName: String = photos[CellNum].pregReplace(pattern: "(Green|Blue|Red)", with: "")
       print("TapName = \(PiceName)")
       
+      //画像を3つ表示
       let GreenPiceImageView = PiceImageView(frame: GreenFlame, name: PiceName + "Green", WindowFlame: view.frame)
       let RedPiceImageView = PiceImageView(frame: RedFlame, name: PiceName + "Red", WindowFlame: view.frame)
       let BluePiceImageView = PiceImageView(frame: BlueFlame, name: PiceName + "Blue", WindowFlame: view.frame)
@@ -138,7 +141,6 @@ class CleateStageViewController: UIViewController {
       
       
       OnPiceView.isHidden = false
-
    }
 }
 

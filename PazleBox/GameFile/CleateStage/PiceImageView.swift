@@ -129,8 +129,8 @@ class PiceImageView : UIImageView {
       
       Play3DtouchMedium()
       
-       let SentObject: [String : Any] = ["PiceName": selfName as String]
-      NotificationCenter.default.post(name: .PickUpPiceImageView, object: SentObject)
+      let SentObject: [String : Any] = ["PiceName": selfName as String]
+      NotificationCenter.default.post(name: .PickUpPiceImageView, object: nil, userInfo: SentObject)
    }
    
    required init?(coder: NSCoder) {
