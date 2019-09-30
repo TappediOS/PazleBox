@@ -106,10 +106,13 @@ class CleateStageViewController: UIViewController {
    }
    
    private func RemovePiceUserDontPiceUp(PiceName: String) {
+      var DeleArryDec = 0 //swiftの配列は削除したら自動的に前に詰めるから
+                          //forで回したときにズレをふせぐ
       for tmp in 0 ... WoriPlacePiceImageArray.count - 1 {
-         if WoriPlacePiceImageArray[tmp].selfName != PiceName {
-            WoriPlacePiceImageArray[tmp].removeFromSuperview()
-            WoriPlacePiceImageArray.remove(at: tmp)
+         if WoriPlacePiceImageArray[tmp - DeleArryDec].selfName != PiceName {
+            WoriPlacePiceImageArray[tmp - DeleArryDec].removeFromSuperview()
+            WoriPlacePiceImageArray.remove(at: tmp - DeleArryDec)
+            DeleArryDec += 1
          }
       }
    }
