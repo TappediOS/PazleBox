@@ -24,7 +24,7 @@ class CleateStageViewController: UIViewController {
    
    var MochUserSellectedImageView = UIImageView()
    
-   var WoriPlacePiceImageArray: [PiceImageView] = Array()
+   var WorkPlacePiceImageArray: [PiceImageView] = Array()
    var PiceImageArray: [PiceImageView] = Array()
    
    
@@ -106,27 +106,26 @@ class CleateStageViewController: UIViewController {
    }
    
    private func RemovePiceUserDontPiceUp(PiceName: String) {
-      var DeleArryDec = 0 //swiftの配列は削除したら自動的に前に詰めるから
-                          //forで回したときにズレをふせぐ
-      for tmp in 0 ... WoriPlacePiceImageArray.count - 1 {
-         if WoriPlacePiceImageArray[tmp - DeleArryDec].selfName != PiceName {
-            WoriPlacePiceImageArray[tmp - DeleArryDec].removeFromSuperview()
-            WoriPlacePiceImageArray.remove(at: tmp - DeleArryDec)
+      var DeleArryDec = 0 //swiftの配列は削除したら自動的に前に詰めるからforで回したときにズレをふせぐ
+      for tmp in 0 ... WorkPlacePiceImageArray.count - 1 {
+         if WorkPlacePiceImageArray[tmp - DeleArryDec].selfName != PiceName {
+            WorkPlacePiceImageArray[tmp - DeleArryDec].removeFromSuperview()
+            WorkPlacePiceImageArray.remove(at: tmp - DeleArryDec)
             DeleArryDec += 1
          }
       }
    }
    
    private func WorkForPiceUserPiceUp() {
-      if WoriPlacePiceImageArray.count != 1 {
+      if WorkPlacePiceImageArray.count != 1 {
          fatalError("選択されてないPice削除したのに作業用の配列の数が1でない。")
       }
       
-      for tmp in WoriPlacePiceImageArray {
+      for tmp in WorkPlacePiceImageArray {
          print(tmp.selfName)
       }
       
-      PiceImageArray.append(WoriPlacePiceImageArray.first!)
+      PiceImageArray.append(WorkPlacePiceImageArray.first!)
    }
    
    @objc func PiceUpPiceImageView(notification: Notification) -> Void {
@@ -161,9 +160,9 @@ class CleateStageViewController: UIViewController {
       view.addSubview(RedPiceImageView)
       view.addSubview(BluePiceImageView)
       
-      WoriPlacePiceImageArray.append(GreenPiceImageView)
-      WoriPlacePiceImageArray.append(RedPiceImageView)
-      WoriPlacePiceImageArray.append(BluePiceImageView)
+      WorkPlacePiceImageArray.append(GreenPiceImageView)
+      WorkPlacePiceImageArray.append(RedPiceImageView)
+      WorkPlacePiceImageArray.append(BluePiceImageView)
       
       
       ShowOnPiceView()
