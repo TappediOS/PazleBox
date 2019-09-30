@@ -22,14 +22,12 @@ class GetPicePosi {
    private var X: [CGFloat] = Array()
    private var Y: [CGFloat] = Array()
    
-   init(ViewX: CGFloat, ViewY: CGFloat){
-      
+   init(ViewX: CGFloat, ViewY: CGFloat) {
       FoundX = ViewX / 10
       Intarnal = FoundX / 10
       
       let AllPiceViewHeight = 12 * (FoundX + Intarnal)
       ViewStartY = ViewY - AllPiceViewHeight - FoundX / 2
-      
       
       SetUpX()
       SetUpY()
@@ -41,7 +39,6 @@ class GetPicePosi {
          SetY += FoundX * CGFloat(y - 1)
          SetY -= Intarnal / 2
          Y.append(CGFloat(SetY))
-         print("Y[\(y - 1)] = \(Y[y - 1])")
       }
    }
      
@@ -51,7 +48,6 @@ class GetPicePosi {
          SetX += FoundX * CGFloat(x - 1)
          SetX -= Intarnal / 2
          X.append(CGFloat(SetX))
-         print("X[\(x - 1)] = \(X[x - 1])")
       }
    }
    
@@ -108,7 +104,6 @@ class GetPicePosi {
    }
    
    public func GetAlphasYPosi(AlPosiY: CGFloat, SizeHight: Int) -> Int {
-      
       let MaxY = 11 - (SizeHight - 1)
       let Dif = FoundX / 2 + Intarnal / 2
       

@@ -54,32 +54,44 @@ class PiceImageView : UIImageView {
       self.isUserInteractionEnabled = true
    }
    
+   /// タイルの大きさ設定
+   /// - Parameter iPhoneWide: userのデバイスの横画面
    private func InitTileInfo(iPhoneWide: CGFloat) {
       TileWide = iPhoneWide / 10
       TileInter = iPhoneWide / 100
    }
    
+   
+   /// 縦と横の長さカウントを取得する
+   /// - Parameter name: PICEの名前
    private func InitPiceInfo(name: String) {
+      //正規表現で23p11とかの初めの2文字をInt型で取得
       if let PiceNumber = Int(name.pregReplace(pattern: "p[0-9]+(Green|Blue|Red)", with: "")) {
          PiceHeightNum = PiceNumber % 10
          PiceWideNum = (PiceNumber - PiceHeightNum) / 10
-         print("(横，縦) = (\(PiceWideNum),\(PiceWideNum))")
       }else{
          fatalError("正規表現でint型を取得できない")
       }
    }
    
+   
+   /// PiceのしんのFlameを設定する
    private func InitPiceFlameToStage() {
       let Width = TileWide! * CGFloat(PiceWideNum) + TileInter! * CGFloat(PiceWideNum)
       let Height = TileWide! * CGFloat(PiceHeightNum) + TileInter! * CGFloat(PiceHeightNum)
       PiceFlameToStage = CGRect(x: 0, y: 0, width: Width, height: Height)
    }
    
+   
+   /// 引数からImageを生成する
+   /// - Parameter name: Piceの名前
    private func SetImage(name: String) {
       self.image = UIImage(named: name)?.ResizeUIImage(width: 128, height: 128)
       
    }
    
+   
+   /// Alpha Imageの生成
    public func SetUPAlphaImageView() {
       AlphaImageView.image = self.image
       AlphaImageView.alpha = 0.4
@@ -90,11 +102,15 @@ class PiceImageView : UIImageView {
    }
    
    
+   /// Piceを大きくする
    private func PiceToBeLarge() {
       self.frame = CGRect(x: frame.minX, y: frame.minY, width: PiceFlameToStage!.width, height: PiceFlameToStage!.height)
       AlphaImageView.frame = CGRect(x: 0, y: 0, width: PiceFlameToStage!.width, height: PiceFlameToStage!.height)
    }
    
+   
+   /// Piceが選択された状態にする
+   /// これはVCから操作される
    public func ChangeTRUEisPiceUp() {
       self.isPiceUp = true
    }

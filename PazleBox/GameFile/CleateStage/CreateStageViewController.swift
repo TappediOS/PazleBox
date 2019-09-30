@@ -12,8 +12,6 @@ import ChameleonFramework
 
 class CleateStageViewController: UIViewController {
    
-   
-   
    @IBOutlet weak var collectionView: UICollectionView!
    
    var OnPiceView = UIView()
@@ -26,7 +24,6 @@ class CleateStageViewController: UIViewController {
    
    var WorkPlacePiceImageArray: [PiceImageView] = Array()
    var PiceImageArray: [PiceImageView] = Array()
-   
    
    let photos = ["33p22Blue", "33p21Blue","43p21Blue","43p2Green","21p1Red",
    "43p34Blue","43p19Blue","43p12Red","23p12Blue","43p14Blue",
@@ -181,8 +178,6 @@ class CleateStageViewController: UIViewController {
 }
 
 extension CleateStageViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-   
-   //cellの個数設定
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
       print("データベースのデータ数は,\(photos.count)")
       return photos.count

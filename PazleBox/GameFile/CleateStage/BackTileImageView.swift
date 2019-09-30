@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 
 class BackTileImageView:UIView {
-   
-   
+
    override init(frame: CGRect) {
       let TileWide = frame.width / 10
       let Inter = TileWide / 10
@@ -31,8 +30,6 @@ class BackTileImageView:UIView {
       InitBackTileImage()
    }
    
-
-   
    func InitBackTileImage() {
       print("タイルの表示開始")
       for y in 0 ... 11 {
@@ -43,8 +40,6 @@ class BackTileImageView:UIView {
       }
       print("タイルの表示完了")
    }
-   
-   
    
    required init?(coder aDecoder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
