@@ -106,9 +106,10 @@ class CleateStageViewController: UIViewController {
    }
    
    private func RemovePiceUserDontPiceUp(PiceName: String) {
-      for Pice in WoriPlacePiceImageArray {
-         if Pice.selfName != PiceName {
-            Pice.removeFromSuperview()
+      for tmp in 0 ... WoriPlacePiceImageArray.count - 1 {
+         if WoriPlacePiceImageArray[tmp].selfName != PiceName {
+            WoriPlacePiceImageArray[tmp].removeFromSuperview()
+            WoriPlacePiceImageArray.remove(at: tmp)
          }
       }
    }
