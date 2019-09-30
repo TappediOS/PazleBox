@@ -227,7 +227,7 @@ class PiceImageView : UIImageView {
       AlphaImageView.frame = AlphaViewFlame
       
       Play3DtouchMedium()
-      
+      FinishMoveTilePOSTMotification()
    }
    
    required init?(coder: NSCoder) {
