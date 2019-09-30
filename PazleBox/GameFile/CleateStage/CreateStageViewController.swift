@@ -24,6 +24,7 @@ class CleateStageViewController: UIViewController {
    
    var MochUserSellectedImageView = UIImageView()
    
+   var WoriPlacePiceImageArray: [PiceImageView] = Array()
    var PiceImageArray: [PiceImageView] = Array()
    
    
@@ -97,7 +98,7 @@ class CleateStageViewController: UIViewController {
    }
    
    private func RemovePiceUserDontPiceUp(PiceName: String) {
-      for Pice in PiceImageArray {
+      for Pice in WoriPlacePiceImageArray {
          if Pice.selfName != PiceName {
             Pice.removeFromSuperview()
          }
@@ -135,9 +136,9 @@ class CleateStageViewController: UIViewController {
       view.addSubview(RedPiceImageView)
       view.addSubview(BluePiceImageView)
       
-      PiceImageArray.append(GreenPiceImageView)
-      PiceImageArray.append(RedPiceImageView)
-      PiceImageArray.append(BluePiceImageView)
+      WoriPlacePiceImageArray.append(GreenPiceImageView)
+      WoriPlacePiceImageArray.append(RedPiceImageView)
+      WoriPlacePiceImageArray.append(BluePiceImageView)
       
       
       OnPiceView.isHidden = false
