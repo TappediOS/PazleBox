@@ -33,4 +33,7 @@ extension Notification.Name {
    static let PickUpPiceImageView = Notification.Name("PickUpPiceImageView")
    
    static let PiceMoved = Notification.Name("PiceMoved")
+   static let PiceTouchStarted = Notification.Name("PiceTouchStart")
+   static let PiceTouchMoved = Notification.Name("PiceTouchMoved")
+   static let PiceTouchEnded = Notification.Name("PiceTouchEnded")
 }

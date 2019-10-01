@@ -43,6 +43,9 @@ class PiceImageView : UIImageView {
    //フィールドに出ているかどうか
    var isPiceUp: Bool = false
    
+   private var isLocked = false
+   var MoveMyself = true
+   
    init(frame: CGRect, name: String, WindowFlame: CGRect) {
       
       AlphaImageView = UIImageView(frame: frame)
@@ -171,17 +174,112 @@ class PiceImageView : UIImageView {
       self.ArryNum!
    }
    
+   public func ChangeTRUEMoveMyself() {
+      self.MoveMyself = true
+   }
+   
+   private func SaveSelfPosition() {
+      self.BeforePositionX = self.PositionX
+      self.BeforePositionY = self.PositionY
+   }
+   
    public func UpdateBeforXY() {
       BeforePositionX = PositionX
       BeforePositionY = PositionY
    }
    
+   private func TouchPointIsAlpha(X: Int, Y: Int) -> Bool {
+        if self.pAllPosi[Y][X] == .Out {
+           print("透明部分をタップしました。")
+           return true
+        }
+        return false
+   }
+   
+   private func PuzzleTouchStartPostNotification(touches: Set<UITouch>, X: Int, Y: Int) {
+      print("わたし \(self.ArryNum)が透明部を触ったことを通知します。")
+      print("タップした座標: \(String(describing: touches.first?.location(in: self)))")
+      
+      let TouchPoint: CGPoint = touches.first!.location(in: self)
+      
+      let SentObject: [String : Any] = ["ArryNum": self.ArryNum!,
+                                        "TapPosi": TouchPoint as CGPoint,
+                                        "X": X as Int,
+                                        "Y": Y as Int]
+      
+      print("")
+      NotificationCenter.default.post(name: .PuzzleTouchStart, object: nil, userInfo: SentObject)
+   }
+   
+   private func PuzzleTouchMovedPostNotification(Dx: CGFloat, Dy: CGFloat) {
+      let SentObject: [String : Any] = ["Dx": Dx as CGFloat,
+                                        "Dy": Dy as CGFloat]
+      
+      NotificationCenter.default.post(name: .PuzzleTouchMoved, object: nil, userInfo: SentObject)
+   }
+   
+   private func PuzzleTouchEndedPostNotification() {
+      NotificationCenter.default.post(name: .PuzzleTouchEnded, object: nil, userInfo: nil)
+   }
+   
+   //MARK:- 自前のタッチイベント
+   public func SelfTouchBegan(){
+      SaveSelfPosition()
+   }
+
+   public func SelfTouchMoved(Dx: CGFloat, Dy: CGFloat){
+      guard MoveMyself == true else {
+         return
+      }
+      self.center.x += Dx
+      self.center.y += Dy
+      //UpdateAlphaNodePosi()
+   }
+   
+   public func SelfTouchEnded(){
+      let XPosi = PicePosi.GetAnyPosiX(xpoint: PositionX!)
+      let YPosi = PicePosi.GetAnyPosiY(ypoint: PositionY!)
+      let Flame = CGRect(x: XPosi, y: YPosi, width: frame.width, height: frame.height)
+      self.frame = Flame
+      
+      let AlphaViewFlame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
+      AlphaImageView.frame = AlphaViewFlame
+      
+      Play3DtouchMedium()
+      FinishMoveTilePOSTMotification()
+   }
+   
+   public func LockPuzzle() {
+      self.isLocked = true
+   }
+   
+   public func UnLockPuzzle() {
+      self.isLocked = false
+   }
+   
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       PiceToBeLarge()
-      //もし地震がPickUPされてなければ，VCに対して送信を行う
+      //もし地震がPickUPされてなければ，VCに対して他のPiceを削除する送信を行う
       if isPiceUp == false {
          let SentObject: [String : Any] = ["PiceName": selfName as String]
          NotificationCenter.default.post(name: .PickUpPiceImageView, object: nil, userInfo: SentObject)
+      }
+      
+      //CGFloat(PiceWideNum) / 2  は 左上に揃えるためにしてる
+      let TapPosiX = touches.first!.location(in: self).x + CGFloat(TileWide!) / 2
+      let TapPosiY = -touches.first!.location(in: self).y + CGFloat(TileWide!) / 2
+      
+      let PosiX = Int(TapPosiX / CGFloat(TileWide!))
+      let PosiY = Int(TapPosiY / CGFloat(TileWide!))
+
+      print("TapPosi = (\(TapPosiX), \(TapPosiY))")
+      print("Posi    = (\(PosiX), \(PosiY))")
+      
+      if TouchPointIsAlpha(X: PosiX, Y: PosiY) == true {
+         MoveMyself = false
+         SaveSelfPosition()
+         PuzzleTouchStartPostNotification(touches: touches, X: PosiX, Y: PosiY)
+         return
       }
    }
    
@@ -195,6 +293,13 @@ class PiceImageView : UIImageView {
        
       let dx = newDx - preDx
       let dy = newDy - preDy
+      
+      //パズルの空白をタッチしてて，そこに違うパズルがあったら，そいつを移動させないとあかんから
+      //ココでパズルの移動量をGameSceneに送る
+      guard MoveMyself == true else {
+         PuzzleTouchMovedPostNotification(Dx: dx, Dy: dy)
+         return
+      }
 
       self.center.x += dx
       self.center.y += dy
@@ -227,6 +332,12 @@ class PiceImageView : UIImageView {
          PositionX = PicePosi.GetAlphasXPosi(AlPosiX: frame.minX, SizeWidth: PiceWideNum)
          PositionY = PicePosi.GetAlphasYPosi(AlPosiY: frame.minY, SizeHight: PiceHeightNum)
       }
+      
+      guard MoveMyself == true else {
+         PuzzleTouchEndedPostNotification()
+         return
+      }
+      
       let XPosi = PicePosi.GetAnyPosiX(xpoint: PositionX!)
       let YPosi = PicePosi.GetAnyPosiY(ypoint: PositionY!)
       let Flame = CGRect(x: XPosi, y: YPosi, width: frame.width, height: frame.height)

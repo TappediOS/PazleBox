@@ -436,7 +436,6 @@ class GameScene: SKScene {
    
    //MARK: Piceを置いたときに最初にChek配列にそいつを埋める
    private func CheckdPuzzleFillSentPazzle(StageObject: [String : Any]) -> Bool {
-      
       let StartX = StageObject["StartPointX"] as! Int
       let StartY = StageObject["StartPointY"] as! Int
       
@@ -672,11 +671,10 @@ class GameScene: SKScene {
       return
    }
    
-   //MARK: ナニコノカンスウ？
+   //MARK: .OUTをタップしたときにPuzzleからくる関数
    @objc func PuzzleTouchStartCatchNotification(notification: Notification) -> Void {
       print("--- Alpha Tap notification ---")
-      
-      
+
       if let userInfo = notification.userInfo {
          let SentNum = userInfo["BirthDay"] as! Int
          let TapPosi = userInfo["TapPosi"] as! CGPoint

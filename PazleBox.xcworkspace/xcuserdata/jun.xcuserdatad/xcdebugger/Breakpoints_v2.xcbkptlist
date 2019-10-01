@@ -1303,10 +1303,10 @@
             timestampString = "590043379.050149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "833"
-            endingLineNumber = "833"
-            landmarkName = "AdShowOrNot()"
-            landmarkType = "7">
+            startingLineNumber = "832"
+            endingLineNumber = "832"
+            landmarkName = "GameScene"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1320,10 +1320,10 @@
             timestampString = "590043379.050208"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "844"
-            endingLineNumber = "844"
-            landmarkName = "SetHint1()"
-            landmarkType = "7">
+            startingLineNumber = "843"
+            endingLineNumber = "843"
+            landmarkName = "GameScene"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1388,8 +1388,8 @@
             timestampString = "590043379.050367"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "824"
-            endingLineNumber = "824"
+            startingLineNumber = "823"
+            endingLineNumber = "823"
             landmarkName = "AdShowOrNot()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1405,10 +1405,10 @@
             timestampString = "590043379.050423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "834"
-            endingLineNumber = "834"
-            landmarkName = "GameScene"
-            landmarkType = "3">
+            startingLineNumber = "833"
+            endingLineNumber = "833"
+            landmarkName = "SetHint1()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

@@ -43,9 +43,7 @@ class puzzle: SKSpriteNode {
    
    private var isLocked = false
    
-   
    private var AlphaNode = SKSpriteNode()
-   
    
    //割って場所を特定する
    var SerchPlace: CGFloat
@@ -263,7 +261,6 @@ class puzzle: SKSpriteNode {
       self.AlphaNode.position = Tilep.GetAnyPostionXY(xpoint: self.CenterX, ypoint: self.CenterY)
    }
    
-   
    private func SaveSelfPosition() {
       self.BeforeCenterX = self.CenterX
       self.BeforeCenterY = self.CenterY
@@ -386,7 +383,6 @@ class puzzle: SKSpriteNode {
       
    }
    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-      
       if isLocked == true {
          return
       }

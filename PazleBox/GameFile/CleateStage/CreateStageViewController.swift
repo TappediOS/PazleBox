@@ -75,6 +75,9 @@ class CleateStageViewController: UIViewController {
    private func InitNotification() {
       NotificationCenter.default.addObserver(self, selector: #selector(PiceUpPiceImageView(notification:)), name: .PickUpPiceImageView, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(MovedPiceCatchNotification(notification:)), name: .PiceMoved, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(PiceTouchStartCatchNotification(notification:)), name: .PiceTouchStarted, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(PiceTouchMovedCatchNotification(notification:)), name: .PiceTouchMoved, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(PiceTouchEndedCatchNotification(notification:)), name: .PiceTouchEnded, object: nil)
    }
    
    private func InitOnPiceView() {
@@ -237,6 +240,62 @@ class CleateStageViewController: UIViewController {
    
          CrearCheckedStage()
       }else{ print("通知受け取ったけど、中身nilやった。") }
+   }
+   
+   //MARK: .OUTをタップしたときにPuzzleからくる関数
+   @objc func PiceTouchStartCatchNotification(notification: Notification) -> Void {
+      print("--- Alpha Tap notification ---")
+
+      if let userInfo = notification.userInfo {
+         let SentNum = userInfo["BirthDay"] as! Int
+         let TapPosi = userInfo["TapPosi"] as! CGPoint
+         let X = userInfo["X"] as! Int
+         let Y = userInfo["Y"] as! Int
+         print("送信者番号: \(SentNum)")
+         print("タップした座標: \(TapPosi)")
+         
+         let SerchX = PiceImageArray[SentNum].PositionX! + X
+         let SerchY = PiceImageArray[SentNum].PositionY! - Y
+         
+         print("SerchPoint: (\(SerchX), \(SerchY))")
+         
+         if ExsitsPuzzle(SerchX: SerchX, SerchY: SerchY, SentNum: SentNum) == true {
+            print("探したらPiceあったよ.")
+            DontMoveNodeNum = PiceImageArray[SentNum].GetArryNum()
+            print("SoudlNum = \(ShouldMoveNodeNum)")
+            print("DontNum  = \(DontMoveNodeNum)")
+            PiceImageArray[SentNum].SelfTouchBegan()
+         }else{
+            print("探したけどほかのPiceなかったよ。")
+            PiceImageArray[SentNum].ChangeTRUEMoveMyself()
+            return
+         }
+         
+      }else{
+         print("通知受け取ったけど、中身nilやった。")
+      }
+      
+      return
+   }
+   
+   @objc func PiceTouchMovedCatchNotification(notification: Notification) -> Void {
+      if let userInfo = notification.userInfo {
+         let Dx = userInfo["Dx"] as! CGFloat
+         let Dy = userInfo["Dy"] as! CGFloat
+         
+         let ShouldMovedNode = PuzzleBox[ShouldMoveNodeNum] as! puzzle
+         
+         ShouldMovedNode.SelfTouchMoved(Dx: Dx, Dy: Dy)
+      }
+   }
+   
+   @objc func PiceTouchEndedCatchNotification(notification: Notification) -> Void {
+      let ShouldMovedNode = PuzzleBox[ShouldMoveNodeNum] as! puzzle
+      let DontMoveNode = PuzzleBox[DontMoveNodeNum] as! puzzle
+      
+      ShouldMovedNode.SelfTouchEnded()
+      
+      DontMoveNode.ChangeTRUEMoveMyself()
    }
    
    private func RemovePiceUserDontPiceUp(PiceName: String) {
