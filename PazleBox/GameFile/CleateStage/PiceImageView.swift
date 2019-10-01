@@ -160,7 +160,7 @@ class PiceImageView : UIImageView {
    public func GetOfInfomation() -> [String : Any] {
       let AllInfomation: [String : Any] = ["StartPointX": self.PositionX! as Int,
                                            "StartPointY": self.PositionY! as Int,
-                                           "PuzzleWide": self.PiceHeightNum as Int,
+                                           "PuzzleWide": self.PiceWideNum as Int,
                                            "PuzzleHight": self.PiceHeightNum as Int,
                                            "PArry": self.pAllPosi as Array]
       
@@ -169,6 +169,11 @@ class PiceImageView : UIImageView {
    
    public func GetArryNum() -> Int {
       self.ArryNum!
+   }
+   
+   public func UpdateBeforXY() {
+      BeforePositionX = PositionX
+      BeforePositionY = PositionY
    }
    
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -217,7 +222,11 @@ class PiceImageView : UIImageView {
    }
    
    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-      //FIXME:- kyouseiannrappuwotoru
+      //touchMove経由しなかったら，つまり，タップしたときにnilを防ぐ
+      if PositionX == nil || PositionY == nil {
+         PositionX = PicePosi.GetAlphasXPosi(AlPosiX: frame.minX, SizeWidth: PiceWideNum)
+         PositionY = PicePosi.GetAlphasYPosi(AlPosiY: frame.minY, SizeHight: PiceHeightNum)
+      }
       let XPosi = PicePosi.GetAnyPosiX(xpoint: PositionX!)
       let YPosi = PicePosi.GetAnyPosiY(ypoint: PositionY!)
       let Flame = CGRect(x: XPosi, y: YPosi, width: frame.width, height: frame.height)
@@ -237,4 +246,5 @@ class PiceImageView : UIImageView {
    private func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
    private func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
    private func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
+   private func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
 }

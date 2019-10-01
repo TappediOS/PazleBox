@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import ChameleonFramework
+import TapticEngine
 
 class CleateStageViewController: UIViewController {
    
@@ -149,12 +150,12 @@ class CleateStageViewController: UIViewController {
       let LeftUpY = StartY
       
       let RightDownX = StartX + (PuzzleWide - 1)
-      let RightDownY = StartY - (PuzzleHight - 1)
+      let RightDownY = StartY + (PuzzleHight - 1)
       
       for x in LeftUpX ... RightDownX {
-         for y in RightDownY ... LeftUpY {
-            let ReverseY = (LeftUpY - y) + RightDownY
-            if CheckedStage[ReverseY][x] == .In && PArry[y - RightDownY][x - LeftUpX] == .In {
+         for y in LeftUpY ... RightDownY {
+            //let ReverseY = (LeftUpY - y) + RightDownY
+            if CheckedStage[y][x] == .In && PArry[y - LeftUpY][x - LeftUpX] == .In {
                return true
             }
          }
@@ -162,13 +163,34 @@ class CleateStageViewController: UIViewController {
       return false
    }
    
+   private func CheckdPuzzleFillSentPazzle(StageObject: [String : Any]) {
+      let StartX = StageObject["StartPointX"] as! Int
+      let StartY = StageObject["StartPointY"] as! Int
+        
+      let PuzzleWide = StageObject["PuzzleWide"] as! Int
+      let PuzzleHight = StageObject["PuzzleHight"] as! Int
+      let PArry = StageObject["PArry"] as! [[Contents]]
+      
+      let LeftUpX = StartX
+      let LeftUpY = StartY
+      
+      let RightDownX = StartX + (PuzzleWide - 1)
+      let RightDownY = StartY + (PuzzleHight - 1)
+        
+      for x in LeftUpX ... RightDownX {
+         for y in LeftUpY ... RightDownY {
+            //let ReverseY = (LeftUpY - y) + RightDownY
+            CheckedStage[y][x] = PArry[y - LeftUpY][x - LeftUpX]
+         }
+      }
+  }
+   
    //MARK:- パズルが被ってるかを判定
    private func OverRapped(ArryNum: Int) -> Bool {
       let SentPice = PiceImageArray[ArryNum]
       let SentPuzzleInfo = SentPice.GetOfInfomation()
       
-      //はみ出てたらそもそもアウト
-      //if CheckdPuzzleFillSentPazzle(StageObject: SentPuzzleInfo) == false { return true }
+      CheckdPuzzleFillSentPazzle(StageObject: SentPuzzleInfo)
       
       for Pice in PiceImageArray {
          //自分は調べないからcontinueで飛ばす
@@ -182,6 +204,8 @@ class CleateStageViewController: UIViewController {
          //かぶってたらReturn true
          if SentCheckedStageFill(StageObject: PiceInfo) == true { return true }
       }
+      
+      ShowCheckStage()
       // 被りなし。
       return false
    }
@@ -197,13 +221,18 @@ class CleateStageViewController: UIViewController {
          
          //Nodeを置いた場所に他のノードがいたら，元に戻ってもらう。
          if OverRapped(ArryNum: SentNum) == true {
+            //って言ってもBefor設定してなかったら削除する
             if PiceImageArray[SentNum].isBeforPositionIsNothing() {
                print("Before未設定なので消します")
                PiceImageArray[SentNum].removeFromSuperview()
                PiceImageArray.remove(at: SentNum)
+               Play3DtouchError()
             }else{
+               //Befor設定してたら帰る
                PiceImageArray[SentNum].ReBackPicePosition()
             }
+         }else{
+            PiceImageArray[SentNum].UpdateBeforXY()
          }
    
          CrearCheckedStage()
@@ -283,6 +312,11 @@ class CleateStageViewController: UIViewController {
       
       ShowOnPiceView()
    }
+   
+   private func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
+   private func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
+   private func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
+   private func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
 }
 
 extension CleateStageViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
