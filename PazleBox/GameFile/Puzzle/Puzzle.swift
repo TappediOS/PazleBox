@@ -253,7 +253,6 @@ class puzzle: SKSpriteNode {
       Play3DtouchMedium()
    }
    
-   
    public func PositionToRespown() {
       self.CenterX = self.RespawnX
       self.CenterY = self.RespawnY
@@ -323,7 +322,6 @@ class puzzle: SKSpriteNode {
    
    //MARK:- タッチイベント
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-      
       if isLocked == true {
          return
       }

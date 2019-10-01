@@ -543,7 +543,6 @@ class GameScene: SKScene {
    }
    
    private func ExsitsPuzzle(SerchX: Int, SerchY: Int, SentNum: Int) -> Bool {
-      
       for Puzzle in PuzzleBox {
          //送信者と一致したらcontinue
          if Puzzle as! puzzle == (PuzzleBox[SentNum] as! puzzle){
@@ -562,7 +561,7 @@ class GameScene: SKScene {
             print("Puzzle:\((Puzzle as! puzzle).GetBirthDayNum()) 離れすぎ")
             continue
          }
-         
+      
          //配列の座標に変換
          let x = -AwayNumX
          let y = AwayNumY

@@ -30,6 +30,9 @@ class CleateStageViewController: UIViewController {
    var CheckedStage: [[Contents]] = Array()
    let CleanCheckedStage = CleanCheckStage()
    
+   var DontMoveNodeNum = 0
+   var ShouldMoveNodeNum = 0
+   
    let photos = ["33p22Blue", "33p21Blue","43p21Blue","43p2Green","21p1Red",
    "43p34Blue","43p19Blue","43p12Red","23p12Blue","43p14Blue",
    "23p11Blue", "33p7Blue","43p8Green","43p5Blue","43p41Blue",
@@ -188,6 +191,57 @@ class CleateStageViewController: UIViewController {
       }
   }
    
+   //MARK:- 送信された座標に他のパズル(.In)があるかどうかを判定。
+   private func PuzzleAwayyy(AwayX: Int, AwayY: Int, Pice: PiceImageView) -> Bool {
+      if AwayX > 0 { return true }
+      if AwayY < 0 { return true }
+      
+      let PuzzleWide = Pice.PiceWideNum
+      let PuzzleHight = Pice.PiceHeightNum
+      
+      if PuzzleWide + AwayX  <= 0 { return true }
+      if PuzzleHight - AwayY <= 0 { return true }
+      
+      return false
+   }
+   
+   private func ExsitsPuzzle(SerchX: Int, SerchY: Int, SentNum: Int) -> Bool {
+      for Pice in PiceImageArray {
+         //送信者と一致したらcontinue
+         if Pice == PiceImageArray[SentNum] {
+            print("Puzzle:\((Pice as! puzzle).GetBirthDayNum()) は送信者やからパス")
+            continue
+         }
+         
+         //上下左右にどれだけ離れてる。右が正，上が正
+         let AwayNumX = (Pice as! puzzle).CenterX - SerchX
+         let AwayNumY = (Pice as! puzzle).CenterY - SerchY
+         
+         print("AwayNum: (\(AwayNumX), \(AwayNumY))")
+         
+         //離れすぎてたらcontinue
+         if PuzzleAwayyy(AwayX: AwayNumX, AwayY: AwayNumY, Pice: Pice) == true {
+            print("Pice:\(Pice.GetArryNum()) は離れすぎ")
+            continue
+         }
+      
+         //配列の座標に変換
+         let x = -AwayNumX
+         let y = AwayNumY
+         
+         //一致してたら，そいつの番号を保存してTRUEを返す。
+         if Pice.pAllPosi[y][x] == .In {
+            ShouldMoveNodeNum = Pice.GetArryNum()
+            print(".Inでした。こいつ動かします。")
+            return true
+         }else{
+            print("あったけど .Out やったわ")
+         }
+      }
+      
+      return false
+   }
+   
    //MARK:- パズルが被ってるかを判定
    private func OverRapped(ArryNum: Int) -> Bool {
       let SentPice = PiceImageArray[ArryNum]
@@ -283,15 +337,15 @@ class CleateStageViewController: UIViewController {
          let Dx = userInfo["Dx"] as! CGFloat
          let Dy = userInfo["Dy"] as! CGFloat
          
-         let ShouldMovedNode = PuzzleBox[ShouldMoveNodeNum] as! puzzle
+         let ShouldMovedNode = PiceImageArray[ShouldMoveNodeNum]
          
          ShouldMovedNode.SelfTouchMoved(Dx: Dx, Dy: Dy)
       }
    }
    
    @objc func PiceTouchEndedCatchNotification(notification: Notification) -> Void {
-      let ShouldMovedNode = PuzzleBox[ShouldMoveNodeNum] as! puzzle
-      let DontMoveNode = PuzzleBox[DontMoveNodeNum] as! puzzle
+      let ShouldMovedNode = PiceImageArray[ShouldMoveNodeNum]
+      let DontMoveNode = PiceImageArray[DontMoveNodeNum]
       
       ShouldMovedNode.SelfTouchEnded()
       
