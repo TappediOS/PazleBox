@@ -91,7 +91,7 @@ class CleateStageViewController: UIViewController {
    }
    
    private func InitFinishCreatePuzzleButton() {
-      FinishCreatePuzzleButton = FUIButton(frame: CGRect(x: view.frame.width / 20 * 5, y: 50, width: view.frame.width / 20 * 5, height: 50))
+      FinishCreatePuzzleButton = FUIButton(frame: CGRect(x: view.frame.width / 20 * 5, y: 150, width: view.frame.width / 20 * 5, height: 50))
       FinishCreatePuzzleButton?.setTitle(NSLocalizedString("No Ads", comment: ""), for: .normal)
       FinishCreatePuzzleButton?.addTarget(self, action: #selector(self.TapFinishiButton), for: .touchUpInside)
       FinishCreatePuzzleButton?.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -489,6 +489,12 @@ class CleateStageViewController: UIViewController {
    }
    
    @objc func TapFinishiButton() {
+      print("FinButtonタップされたよ")
+      guard PiceImageArray.count != 0 else {
+         print("Piceが1つも選ばれてません")
+         return
+      }
+      
       
    }
    

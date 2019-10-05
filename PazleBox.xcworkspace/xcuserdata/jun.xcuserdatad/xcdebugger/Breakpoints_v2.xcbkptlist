@@ -2148,10 +2148,10 @@
             timestampString = "584280060.431403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "photos"
-            landmarkType = "24">
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2264,9 +2264,9 @@
             filePath = "PazleBox/GameFile/CleateStage/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "278"
-            endingLineNumber = "278"
-            landmarkName = "OverRapped(ArryNum:)"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
+            landmarkName = "isPiceOnGarbageBox(SentNum:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2280,9 +2280,9 @@
             filePath = "PazleBox/GameFile/CleateStage/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "279"
-            endingLineNumber = "279"
-            landmarkName = "OverRapped(ArryNum:)"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
+            landmarkName = "isPiceOnGarbageBox(SentNum:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2296,9 +2296,9 @@
             filePath = "PazleBox/GameFile/CleateStage/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
-            landmarkName = "OverRapped(ArryNum:)"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
+            landmarkName = "isPiceOnGarbageBox(SentNum:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

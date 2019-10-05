@@ -312,6 +312,9 @@
 		BF8ABFDE227AE48000F275FA /* StarSound.caf in Resources */ = {isa = PBXBuildFile; fileRef = BF8ABFDD227AE47D00F275FA /* StarSound.caf */; };
 		BF93731722BA4F8D009DCEF6 /* ExHeroID.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93731622BA4F8D009DCEF6 /* ExHeroID.swift */; };
 		BF95C63722B79C540037E063 /* GameCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C63622B79C540037E063 /* GameCoin.swift */; };
+		BFAC25352348A02D00038594 /* ChousetRespownStage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFAC25342348A02D00038594 /* ChousetRespownStage.storyboard */; };
+		BFAC25372348A0AB00038594 /* ChouseResViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC25362348A0AB00038594 /* ChouseResViewController.swift */; };
+		BFAC25392348A1E200038594 /* BackTileImageViewIncludeFillImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC25382348A1E200038594 /* BackTileImageViewIncludeFillImage.swift */; };
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
 		BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D422428287007C8FA1 /* Assets.xcassets */; };
 		BFC6C5D9224283BD007C8FA1 /* Test.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D8224283BD007C8FA1 /* Test.sks */; };
@@ -1036,6 +1039,9 @@
 		BF93731622BA4F8D009DCEF6 /* ExHeroID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExHeroID.swift; sourceTree = "<group>"; };
 		BF95C63622B79C540037E063 /* GameCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCoin.swift; sourceTree = "<group>"; };
 		BFA61D0522B5040D002C8EDD /* PazleBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PazleBox.entitlements; sourceTree = "<group>"; };
+		BFAC25342348A02D00038594 /* ChousetRespownStage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChousetRespownStage.storyboard; sourceTree = "<group>"; };
+		BFAC25362348A0AB00038594 /* ChouseResViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChouseResViewController.swift; sourceTree = "<group>"; };
+		BFAC25382348A1E200038594 /* BackTileImageViewIncludeFillImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackTileImageViewIncludeFillImage.swift; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
 		BFC6C5D422428287007C8FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC6C5D8224283BD007C8FA1 /* Test.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Test.sks; sourceTree = "<group>"; };
@@ -1530,6 +1536,7 @@
 				BF95C63522B79C130037E063 /* Game Coins */,
 				BF1A5ED922B785CF002C6733 /* BuyCoinView */,
 				BF4323C322D355E8008DF038 /* CleateStage */,
+				BFAC253223489FE400038594 /* FinCreateAndSellectStage */,
 			);
 			path = GameFile;
 			sourceTree = "<group>";
@@ -2128,6 +2135,24 @@
 				BF95C63622B79C540037E063 /* GameCoin.swift */,
 			);
 			path = "Game Coins";
+			sourceTree = "<group>";
+		};
+		BFAC253223489FE400038594 /* FinCreateAndSellectStage */ = {
+			isa = PBXGroup;
+			children = (
+				BFAC25332348A00D00038594 /* StoryBoard */,
+				BFAC25362348A0AB00038594 /* ChouseResViewController.swift */,
+				BFAC25382348A1E200038594 /* BackTileImageViewIncludeFillImage.swift */,
+			);
+			path = FinCreateAndSellectStage;
+			sourceTree = "<group>";
+		};
+		BFAC25332348A00D00038594 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				BFAC25342348A02D00038594 /* ChousetRespownStage.storyboard */,
+			);
+			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 		BFC6C5D722428296007C8FA1 /* Particle */ = {
@@ -2918,6 +2943,7 @@
 				BFCE25AE224A466B0099A775 /* 33p12Green.png in Resources */,
 				BFCE25DB224A466B0099A775 /* 33p14Blue.png in Resources */,
 				BFCE2645224A58A60099A775 /* 32p10Red.png in Resources */,
+				BFAC25352348A02D00038594 /* ChousetRespownStage.storyboard in Resources */,
 				BFF6D72122896610000253A2 /* 43p43Red.png in Resources */,
 				BFF6D77D22896610000253A2 /* 43p31Blue.png in Resources */,
 				BFF6D71322896610000253A2 /* 43p42Red.png in Resources */,
@@ -3332,6 +3358,7 @@
 				BF1FF2B6223122C80047ED23 /* EasyCreate.swift in Sources */,
 				BF93731722BA4F8D009DCEF6 /* ExHeroID.swift in Sources */,
 				BF332FA0224926F7009B3042 /* E13.swift in Sources */,
+				BFAC25392348A1E200038594 /* BackTileImageViewIncludeFillImage.swift in Sources */,
 				BF332F882249235D009B3042 /* ExGameSeceneNorma.swift in Sources */,
 				BF519C69223CCBDE0087A4AC /* GetTilePOSITION.swift in Sources */,
 				BF1FF2AF22311FD40047ED23 /* StageContents.swift in Sources */,
@@ -3405,6 +3432,7 @@
 				BF332FA2224926FF009B3042 /* E14.swift in Sources */,
 				BF332F98224926E6009B3042 /* E9.swift in Sources */,
 				BF33300222492B31009B3042 /* ExGameSeceneEasyP2.swift in Sources */,
+				BFAC25372348A0AB00038594 /* ChouseResViewController.swift in Sources */,
 				BF332F8E224926CA009B3042 /* E4.swift in Sources */,
 				BF552EA2226DDD2B00756E16 /* E32.swift in Sources */,
 				BF552EA6226DDD3700756E16 /* E34.swift in Sources */,
