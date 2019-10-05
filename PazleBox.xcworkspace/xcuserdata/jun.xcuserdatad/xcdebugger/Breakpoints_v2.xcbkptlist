@@ -1305,7 +1305,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "830"
             endingLineNumber = "830"
-            landmarkName = "SetHint1()"
+            landmarkName = "AdShowOrNot()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1322,7 +1322,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "841"
             endingLineNumber = "841"
-            landmarkName = "SetHint2()"
+            landmarkName = "SetHint1()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1407,8 +1407,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "831"
             endingLineNumber = "831"
-            landmarkName = "SetHint1()"
-            landmarkType = "7">
+            landmarkName = "GameScene"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

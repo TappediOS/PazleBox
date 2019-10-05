@@ -1,5 +1,5 @@
 //
-//  BackTileImageViewIncludeFillImage.swift
+//  BackTileImageIncludeFillImage.swift
 //  PazleBox
 //
 //  Created by jun on 2019/10/05.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class BackTileImageViewIncludeFillImage: UIImageView {
+class BackTileImageIncludeFillImage: UIImageView {
    
    init(TilePosiY: CGFloat, TilePosiX: CGFloat, ViewX: CGFloat, ViewY: CGFloat, Content: Contents) {
       let TileWide = ViewX / 10
@@ -35,8 +35,6 @@ class BackTileImageViewIncludeFillImage: UIImageView {
       }else{
          fatalError("InでもOutでもないんですけど")
       }
-      
-      
    }
    
    required init?(coder aDecoder: NSCoder) {

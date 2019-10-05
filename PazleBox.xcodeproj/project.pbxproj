@@ -314,7 +314,8 @@
 		BF95C63722B79C540037E063 /* GameCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C63622B79C540037E063 /* GameCoin.swift */; };
 		BFAC25352348A02D00038594 /* ChousetRespownStage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFAC25342348A02D00038594 /* ChousetRespownStage.storyboard */; };
 		BFAC25372348A0AB00038594 /* ChouseResViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC25362348A0AB00038594 /* ChouseResViewController.swift */; };
-		BFAC25392348A1E200038594 /* BackTileImageViewIncludeFillImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC25382348A1E200038594 /* BackTileImageViewIncludeFillImage.swift */; };
+		BFAC25392348A1E200038594 /* BackTileImageIncludeFillImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC25382348A1E200038594 /* BackTileImageIncludeFillImage.swift */; };
+		BFAC253B2348A2F400038594 /* BackTileImageViewIncludeBaseImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC253A2348A2F400038594 /* BackTileImageViewIncludeBaseImage.swift */; };
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
 		BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D422428287007C8FA1 /* Assets.xcassets */; };
 		BFC6C5D9224283BD007C8FA1 /* Test.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D8224283BD007C8FA1 /* Test.sks */; };
@@ -1041,7 +1042,8 @@
 		BFA61D0522B5040D002C8EDD /* PazleBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PazleBox.entitlements; sourceTree = "<group>"; };
 		BFAC25342348A02D00038594 /* ChousetRespownStage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChousetRespownStage.storyboard; sourceTree = "<group>"; };
 		BFAC25362348A0AB00038594 /* ChouseResViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChouseResViewController.swift; sourceTree = "<group>"; };
-		BFAC25382348A1E200038594 /* BackTileImageViewIncludeFillImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackTileImageViewIncludeFillImage.swift; sourceTree = "<group>"; };
+		BFAC25382348A1E200038594 /* BackTileImageIncludeFillImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackTileImageIncludeFillImage.swift; sourceTree = "<group>"; };
+		BFAC253A2348A2F400038594 /* BackTileImageViewIncludeBaseImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackTileImageViewIncludeBaseImage.swift; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
 		BFC6C5D422428287007C8FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC6C5D8224283BD007C8FA1 /* Test.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Test.sks; sourceTree = "<group>"; };
@@ -2142,7 +2144,8 @@
 			children = (
 				BFAC25332348A00D00038594 /* StoryBoard */,
 				BFAC25362348A0AB00038594 /* ChouseResViewController.swift */,
-				BFAC25382348A1E200038594 /* BackTileImageViewIncludeFillImage.swift */,
+				BFAC25382348A1E200038594 /* BackTileImageIncludeFillImage.swift */,
+				BFAC253A2348A2F400038594 /* BackTileImageViewIncludeBaseImage.swift */,
 			);
 			path = FinCreateAndSellectStage;
 			sourceTree = "<group>";
@@ -3358,7 +3361,7 @@
 				BF1FF2B6223122C80047ED23 /* EasyCreate.swift in Sources */,
 				BF93731722BA4F8D009DCEF6 /* ExHeroID.swift in Sources */,
 				BF332FA0224926F7009B3042 /* E13.swift in Sources */,
-				BFAC25392348A1E200038594 /* BackTileImageViewIncludeFillImage.swift in Sources */,
+				BFAC25392348A1E200038594 /* BackTileImageIncludeFillImage.swift in Sources */,
 				BF332F882249235D009B3042 /* ExGameSeceneNorma.swift in Sources */,
 				BF519C69223CCBDE0087A4AC /* GetTilePOSITION.swift in Sources */,
 				BF1FF2AF22311FD40047ED23 /* StageContents.swift in Sources */,
@@ -3438,6 +3441,7 @@
 				BF552EA6226DDD3700756E16 /* E34.swift in Sources */,
 				BF552EF6226DDE4900756E16 /* N44.swift in Sources */,
 				BF552F38226DDF2D00756E16 /* H47.swift in Sources */,
+				BFAC253B2348A2F400038594 /* BackTileImageViewIncludeBaseImage.swift in Sources */,
 				BF332FEA2249280A009B3042 /* H10.swift in Sources */,
 				BF552ECE226DDDAC00756E16 /* N25.swift in Sources */,
 				BFF889A3229F830C0056A839 /* FirebasePerformanceManager.swift in Sources */,
