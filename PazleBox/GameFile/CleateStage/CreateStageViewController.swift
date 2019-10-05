@@ -268,6 +268,24 @@ class CleateStageViewController: UIViewController {
       return false
    }
    
+   //指話したときにゴミ箱の上かどうかチェックする関数
+   private func isPiceOnGarbageBox(SentNum: Int) -> Bool {
+      let PiceX = PiceImageArray[SentNum].center.x
+      let PiceY = PiceImageArray[SentNum].center.y
+      
+      if (PiceX > 100 && PiceX < 200) || (PiceY > 0 && PiceY < 100) {
+         print("ゴミ箱の上にあった. PiceArryNum = \(SentNum)")
+         return true
+      }
+      return false
+   }
+   
+   //指話したときにゴミ箱の上やったから削除する関数
+   private func DeletePiceOnGarbageBox(SentNum: Int) {
+      PiceImageArray[SentNum].removeFromSuperview()
+      PiceImageArray.remove(at: SentNum)
+   }
+   
    //MARK:- 通知を受け取る
    @objc func MovedPiceCatchNotification(notification: Notification) -> Void {
       print("--- Fin Move notification ---")
@@ -276,6 +294,12 @@ class CleateStageViewController: UIViewController {
       if let userInfo = notification.userInfo {
          let SentNum = userInfo["ArryNum"] as! Int
          print("送信者番号: \(SentNum)")
+         
+         //もしPiceがゴミ箱の上に乗ってたら
+         if isPiceOnGarbageBox(SentNum: SentNum) == true {
+            DeletePiceOnGarbageBox(SentNum: SentNum)
+            return
+         }
          
          //Nodeを置いた場所に他のノードがいたら，元に戻ってもらう。
          if OverRapped(ArryNum: SentNum) == true {
