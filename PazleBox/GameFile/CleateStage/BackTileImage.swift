@@ -11,7 +11,7 @@ import UIKit
 
 class BackTileImage: UIImageView {
    
-   init(TilePosiY: CGFloat, TilePosiX: CGFloat, ViewX: CGFloat, ViewY: CGFloat) {
+   init(TilePosiY: CGFloat, TilePosiX: CGFloat, ViewX: CGFloat, ViewY: CGFloat, Content: Contents) {
       let TileWide = ViewX / 10
       let Intarnal = TileWide / 10
       
@@ -26,9 +26,16 @@ class BackTileImage: UIImageView {
       
       super.init(frame: CGRect(x: x1, y: y1, width: TileWide, height: TileWide))
       
-      let BackTileImage = UIImage(contentsOfFile: Bundle.main.path(forResource: "NullTile", ofType: "png")!)?.ResizeUIImage(width: 1, height: 1)
-      self.image = BackTileImage
-      self.backgroundColor = UIColor.black
+      if Content == .In {
+         let BackTileImage = UIImage(contentsOfFile: Bundle.main.path(forResource: "BaseTile", ofType: "png")!)?.ResizeUIImage(width: 1, height: 1)
+         self.image = BackTileImage
+      }else if Content == .Out {
+         let BackTileImage = UIImage(contentsOfFile: Bundle.main.path(forResource: "NullTile", ofType: "png")!)?.ResizeUIImage(width: 1, height: 1)
+         self.image = BackTileImage
+      }else{
+         fatalError("InでもOutでもないんですけど")
+      }
+   
    }
    
    required init?(coder aDecoder: NSCoder) {

@@ -15,15 +15,20 @@ import FlatUIKit
 class ChouseResViewController: UIViewController {
    
    var PiceImageArray: [PiceImageView] = Array()
+   var ContentsArry: [[Contents]] = Array()
    
    override func viewDidLoad() {
       super.viewDidLoad()
       
       InitBackTileImageView()
+      SetUpPutPiceImageBasedOnBeforeView()
    }
    
    private func InitBackTileImageView() {
-      let BackImageView = BackTileImageView(frame: self.view.frame)
+      let BackImageView = BackTileImageViewIncludeBaseImage(frame: self.view.frame, ContentArry: ContentsArry)
       self.view.addSubview(BackImageView)
+   }
+   
+   private func SetUpPutPiceImageBasedOnBeforeView() {
    }
 }

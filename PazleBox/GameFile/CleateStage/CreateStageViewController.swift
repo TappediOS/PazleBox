@@ -33,6 +33,8 @@ class CleateStageViewController: UIViewController {
    var CheckedStage: [[Contents]] = Array()
    let CleanCheckedStage = CleanCheckStage()
    
+   var FillContentsArray: [[Contents]] = Array()
+   
    var DontMoveNodeNum = 0
    var ShouldMoveNodeNum = 0
    
@@ -488,6 +490,28 @@ class CleateStageViewController: UIViewController {
       ShowOnPiceView()
    }
    
+   private func CompleteFillContentsArray(StageObject: [String: Any]) {
+      let StartX = StageObject["StartPointX"] as! Int
+      let StartY = StageObject["StartPointY"] as! Int
+        
+      let PuzzleWide = StageObject["PuzzleWide"] as! Int
+      let PuzzleHight = StageObject["PuzzleHight"] as! Int
+      let PArry = StageObject["PArry"] as! [[Contents]]
+      
+      let LeftUpX = StartX
+      let LeftUpY = StartY
+      
+      let RightDownX = StartX + (PuzzleWide - 1)
+      let RightDownY = StartY + (PuzzleHight - 1)
+        
+      for x in LeftUpX ... RightDownX {
+         for y in LeftUpY ... RightDownY {
+            //let ReverseY = (LeftUpY - y) + RightDownY
+            FillContentsArray[y][x] = PArry[y - LeftUpY][x - LeftUpX]
+         }
+      }
+   }
+   
    @objc func TapFinishiButton() {
       print("FinButtonタップされたよ")
       guard PiceImageArray.count != 0 else {
@@ -495,7 +519,14 @@ class CleateStageViewController: UIViewController {
          return
       }
       
+      FillContentsArray = CleanCheckedStage.Checked
       
+      for Pice in PiceImageArray {
+         let PiceInfo = Pice.GetOfInfomation()
+         CompleteFillContentsArray(StageObject: PiceInfo)
+      }
+      
+      print(FillContentsArray)
    }
    
    private func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }

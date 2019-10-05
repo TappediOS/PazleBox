@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 
 class BackTileImageView:UIView {
+   
+   var ContentArray: [[Contents]] = Array()
+   var BackImageViewArray: [[BackTileImage]] = Array()
 
    override init(frame: CGRect) {
       let TileWide = frame.width / 10
@@ -34,7 +37,28 @@ class BackTileImageView:UIView {
       print("タイルの表示開始")
       for y in 0 ... 11 {
          for x in 0 ... 8 {
-            let ImageView = BackTileImage(TilePosiY: CGFloat(y), TilePosiX: CGFloat(x), ViewX: self.frame.width, ViewY: self.frame.height)
+            let ImageView = BackTileImage(TilePosiY: CGFloat(y), TilePosiX: CGFloat(x), ViewX: self.frame.width, ViewY: self.frame.height, Content: Contents.Out)
+            BackImageViewArray[x].append(ImageView)
+            self.addSubview(ImageView)
+         }
+         //からの配列を追加することにより2次元配列として使える
+         //これがなかったら Index out of rangeでエラー
+         BackImageViewArray.append([])
+      }
+      print("タイルの表示完了")
+   }
+   
+   public func GetContentArray(GetContentsArry: [[Contents]]) {
+      ContentArray = GetContentsArry
+   }
+   
+   public func ReSetUpBackTileImage() {
+      print("タイルの表示開始")
+      for y in 0 ... 11 {
+         for x in 0 ... 8 {
+            BackImageViewArray[x][y].removeFromSuperview()
+            let ImageView = BackTileImage(TilePosiY: CGFloat(y), TilePosiX: CGFloat(x), ViewX: self.frame.width, ViewY: self.frame.height, Content: ContentArray[x][y])
+            BackImageViewArray[x][y] = ImageView
             self.addSubview(ImageView)
          }
       }
