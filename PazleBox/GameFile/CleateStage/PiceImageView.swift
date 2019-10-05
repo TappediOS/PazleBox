@@ -123,6 +123,7 @@ class PiceImageView : UIImageView {
    }
    
    public func UpdateArryNum(ArryNum: Int) {
+      print("UpdateArryNum : \(ArryNum)")
       self.ArryNum = ArryNum
    }
    
@@ -257,15 +258,6 @@ class PiceImageView : UIImageView {
    }
    
    public func SelfTouchEnded(){
-      let XPosi = PicePosi.GetAnyPosiX(xpoint: PositionX!)
-      let YPosi = PicePosi.GetAnyPosiY(ypoint: PositionY!)
-      let Flame = CGRect(x: XPosi, y: YPosi, width: frame.width, height: frame.height)
-      self.frame = Flame
-      
-      let AlphaViewFlame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
-      AlphaImageView.frame = AlphaViewFlame
-      
-      Play3DtouchMedium()
       FinishMoveTilePOSTMotification()
    }
    
@@ -339,6 +331,11 @@ class PiceImageView : UIImageView {
          return
       }
       
+      
+      FinishMoveTilePOSTMotification()
+   }
+   
+   public func touchEndAndPutPice() {
       let XPosi = PicePosi.GetAnyPosiX(xpoint: PositionX!)
       let YPosi = PicePosi.GetAnyPosiY(ypoint: PositionY!)
       let Flame = CGRect(x: XPosi, y: YPosi, width: frame.width, height: frame.height)
@@ -348,7 +345,6 @@ class PiceImageView : UIImageView {
       AlphaImageView.frame = AlphaViewFlame
       
       Play3DtouchMedium()
-      FinishMoveTilePOSTMotification()
    }
    
    required init?(coder: NSCoder) {

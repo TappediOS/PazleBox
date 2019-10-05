@@ -10,12 +10,15 @@ import Foundation
 import UIKit
 import ChameleonFramework
 import TapticEngine
+import FlatUIKit
 
 class CleateStageViewController: UIViewController {
    
    @IBOutlet weak var collectionView: UICollectionView!
    
    var OnPiceView = UIView()
+   
+   var FinishCreatePuzzleButton: FUIButton?
    
    var RedFlame = CGRect()
    var GreenFlame = CGRect()
@@ -52,6 +55,8 @@ class CleateStageViewController: UIViewController {
       
       InitNotification()
       
+      InitFinishCreatePuzzleButton()
+      
       InitOnPiceView()
       InitRedFlame()
       InitGreenFlame()
@@ -75,12 +80,30 @@ class CleateStageViewController: UIViewController {
       self.view.addSubview(BackImageView)
    }
    
+   
+   
    private func InitNotification() {
       NotificationCenter.default.addObserver(self, selector: #selector(PiceUpPiceImageView(notification:)), name: .PickUpPiceImageView, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(MovedPiceCatchNotification(notification:)), name: .PiceMoved, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(PiceTouchStartCatchNotification(notification:)), name: .PiceTouchStarted, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(PiceTouchMovedCatchNotification(notification:)), name: .PiceTouchMoved, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(PiceTouchEndedCatchNotification(notification:)), name: .PiceTouchEnded, object: nil)
+   }
+   
+   private func InitFinishCreatePuzzleButton() {
+      FinishCreatePuzzleButton = FUIButton(frame: CGRect(x: view.frame.width / 20 * 5, y: 50, width: view.frame.width / 20 * 5, height: 50))
+      FinishCreatePuzzleButton?.setTitle(NSLocalizedString("No Ads", comment: ""), for: .normal)
+      FinishCreatePuzzleButton?.addTarget(self, action: #selector(self.TapFinishiButton), for: .touchUpInside)
+      FinishCreatePuzzleButton?.titleLabel?.adjustsFontSizeToFitWidth = true
+      FinishCreatePuzzleButton?.titleLabel?.adjustsFontForContentSizeCategory = true
+      FinishCreatePuzzleButton?.buttonColor = UIColor.turquoise()
+      FinishCreatePuzzleButton?.shadowColor = UIColor.greenSea()
+      FinishCreatePuzzleButton?.shadowHeight = 3.0
+      FinishCreatePuzzleButton?.cornerRadius = 6.0
+      FinishCreatePuzzleButton?.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
+      FinishCreatePuzzleButton?.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
+      FinishCreatePuzzleButton?.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
+      view.addSubview(FinishCreatePuzzleButton!)
    }
    
    private func InitOnPiceView() {
@@ -268,13 +291,16 @@ class CleateStageViewController: UIViewController {
       return false
    }
    
-   //指話したときにゴミ箱の上かどうかチェックする関数
+   //MARK:- 指話したときにゴミ箱の上かどうかチェックする関数
    private func isPiceOnGarbageBox(SentNum: Int) -> Bool {
       let PiceX = PiceImageArray[SentNum].center.x
-      let PiceY = PiceImageArray[SentNum].center.y
+      let PiceY = PiceImageArray[SentNum].frame.minY
       
-      if (PiceX > 100 && PiceX < 200) || (PiceY > 0 && PiceY < 100) {
-         print("ゴミ箱の上にあった. PiceArryNum = \(SentNum)")
+      print("(\(PiceX) , \(PiceY))\n")
+      
+      if (PiceX > 100 && PiceX < 200) && (PiceY > 0 && PiceY < 100) {
+         print("\nゴミ箱の上にあった. PiceArryNum = \(SentNum)")
+         print("(\(PiceX) , \(PiceY)\n)")
          return true
       }
       return false
@@ -284,6 +310,15 @@ class CleateStageViewController: UIViewController {
    private func DeletePiceOnGarbageBox(SentNum: Int) {
       PiceImageArray[SentNum].removeFromSuperview()
       PiceImageArray.remove(at: SentNum)
+      Play3DtouchSuccess()
+   }
+   
+   private func UpdateAllPiceArryNum() {
+      var SetNum = 0
+      for Pice in PiceImageArray {
+         Pice.UpdateArryNum(ArryNum: SetNum)
+         SetNum += 1
+      }
    }
    
    //MARK:- 通知を受け取る
@@ -298,8 +333,11 @@ class CleateStageViewController: UIViewController {
          //もしPiceがゴミ箱の上に乗ってたら
          if isPiceOnGarbageBox(SentNum: SentNum) == true {
             DeletePiceOnGarbageBox(SentNum: SentNum)
+            UpdateAllPiceArryNum()
             return
          }
+         
+         PiceImageArray[SentNum].touchEndAndPutPice()
          
          //Nodeを置いた場所に他のノードがいたら，元に戻ってもらう。
          if OverRapped(ArryNum: SentNum) == true {
@@ -450,10 +488,15 @@ class CleateStageViewController: UIViewController {
       ShowOnPiceView()
    }
    
+   @objc func TapFinishiButton() {
+      
+   }
+   
    private func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
    private func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
    private func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
    private func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
+   private func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
 }
 
 extension CleateStageViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
