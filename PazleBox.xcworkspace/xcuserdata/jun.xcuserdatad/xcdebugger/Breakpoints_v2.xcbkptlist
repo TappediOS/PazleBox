@@ -2148,10 +2148,10 @@
             timestampString = "584280060.431403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "CleateStageViewController"
-            landmarkType = "3">
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2264,8 +2264,8 @@
             filePath = "PazleBox/GameFile/CleateStage/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "303"
-            endingLineNumber = "303"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
             landmarkName = "isPiceOnGarbageBox(SentNum:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2280,8 +2280,8 @@
             filePath = "PazleBox/GameFile/CleateStage/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "304"
-            endingLineNumber = "304"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
             landmarkName = "isPiceOnGarbageBox(SentNum:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2296,8 +2296,8 @@
             filePath = "PazleBox/GameFile/CleateStage/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302"
+            startingLineNumber = "304"
+            endingLineNumber = "304"
             landmarkName = "isPiceOnGarbageBox(SentNum:)"
             landmarkType = "7">
          </BreakpointContent>

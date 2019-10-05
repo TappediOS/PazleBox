@@ -508,7 +508,8 @@ class CleateStageViewController: UIViewController {
         
       for x in LeftUpX ... RightDownX {
          for y in LeftUpY ... RightDownY {
-            //let ReverseY = (LeftUpY - y) + RightDownY
+            //すでにIn入ってる場合はOutで塗りつぶされるのを防ぐためにifsiteru
+            if FillContentsArray[y][x] == .In { continue }
             FillContentsArray[y][x] = PArry[y - LeftUpY][x - LeftUpX]
          }
       }
