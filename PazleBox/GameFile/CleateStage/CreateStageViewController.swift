@@ -18,6 +18,8 @@ class CleateStageViewController: UIViewController {
    
    var OnPiceView = UIView()
    
+   var BackImageView: BackTileImageView?
+   
    var FinishCreatePuzzleButton: FUIButton?
    
    var RedFlame = CGRect()
@@ -78,8 +80,8 @@ class CleateStageViewController: UIViewController {
    }
    
    private func InitBackTileImageView() {
-      let BackImageView = BackTileImageView(frame: self.view.frame)
-      self.view.addSubview(BackImageView)
+      BackImageView = BackTileImageView(frame: self.view.frame)
+      self.view.addSubview(BackImageView!)
    }
    
    
@@ -526,7 +528,11 @@ class CleateStageViewController: UIViewController {
          CompleteFillContentsArray(StageObject: PiceInfo)
       }
       
-      print(FillContentsArray)
+      //print(FillContentsArray)
+      
+      BackImageView!.GetContentArray(GetContentsArry: FillContentsArray)
+      BackImageView!.ReSetUpBackTileImage()
+      
    }
    
    private func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }

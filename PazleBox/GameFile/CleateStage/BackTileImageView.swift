@@ -36,14 +36,14 @@ class BackTileImageView:UIView {
    func InitBackTileImage() {
       print("タイルの表示開始")
       for y in 0 ... 11 {
-         for x in 0 ... 8 {
-            let ImageView = BackTileImage(TilePosiY: CGFloat(y), TilePosiX: CGFloat(x), ViewX: self.frame.width, ViewY: self.frame.height, Content: Contents.Out)
-            BackImageViewArray[x].append(ImageView)
-            self.addSubview(ImageView)
-         }
          //からの配列を追加することにより2次元配列として使える
          //これがなかったら Index out of rangeでエラー
          BackImageViewArray.append([])
+         for x in 0 ... 8 {
+            let ImageView = BackTileImage(TilePosiY: CGFloat(y), TilePosiX: CGFloat(x), ViewX: self.frame.width, ViewY: self.frame.height, Content: Contents.Out)
+            BackImageViewArray[y].append(ImageView)
+            self.addSubview(ImageView)
+         }
       }
       print("タイルの表示完了")
    }
@@ -56,9 +56,9 @@ class BackTileImageView:UIView {
       print("タイルの表示開始")
       for y in 0 ... 11 {
          for x in 0 ... 8 {
-            BackImageViewArray[x][y].removeFromSuperview()
-            let ImageView = BackTileImage(TilePosiY: CGFloat(y), TilePosiX: CGFloat(x), ViewX: self.frame.width, ViewY: self.frame.height, Content: ContentArray[x][y])
-            BackImageViewArray[x][y] = ImageView
+            BackImageViewArray[y][x].removeFromSuperview()
+            let ImageView = BackTileImage(TilePosiY: CGFloat(y), TilePosiX: CGFloat(x), ViewX: self.frame.width, ViewY: self.frame.height, Content: ContentArray[y][x])
+            BackImageViewArray[y][x] = ImageView
             self.addSubview(ImageView)
          }
       }
