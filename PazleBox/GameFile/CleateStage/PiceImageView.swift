@@ -343,6 +343,7 @@ class PiceImageView : UIImageView {
       
       let AlphaViewFlame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
       AlphaImageView.frame = AlphaViewFlame
+ 
       
       Play3DtouchMedium()
    }
