@@ -194,13 +194,13 @@ class CleateStageViewController: UIViewController {
    //MARK:- 送信された座標に他のパズル(.In)があるかどうかを判定。
    private func PuzzleAwayyy(AwayX: Int, AwayY: Int, Pice: PiceImageView) -> Bool {
       if AwayX > 0 { return true }
-      if AwayY < 0 { return true }
+      if AwayY > 0 { return true }
       
       let PuzzleWide = Pice.PiceWideNum
       let PuzzleHight = Pice.PiceHeightNum
       
       if PuzzleWide + AwayX  <= 0 { return true }
-      if PuzzleHight - AwayY <= 0 { return true }
+      if PuzzleHight + AwayY <= 0 { return true }
       
       return false
    }
@@ -209,14 +209,15 @@ class CleateStageViewController: UIViewController {
       for Pice in PiceImageArray {
          //送信者と一致したらcontinue
          if Pice == PiceImageArray[SentNum] {
-            print("Puzzle:\((Pice as! puzzle).GetBirthDayNum()) は送信者やからパス")
+            print("Puzzle:\(Pice.GetArryNum()) は送信者やからパス")
             continue
          }
          
-         //上下左右にどれだけ離れてる。右が正，上が正
-         let AwayNumX = (Pice as! puzzle).CenterX - SerchX
-         let AwayNumY = (Pice as! puzzle).CenterY - SerchY
+         let AwayNumX = Pice.PositionX! - SerchX
+         let AwayNumY = Pice.PositionY! - SerchY
          
+         print("PiceXY: (\(Pice.PositionX!), \(Pice.PositionY!))")
+         print("SerchXY: (\(SerchX), \(SerchY))")
          print("AwayNum: (\(AwayNumX), \(AwayNumY))")
          
          //離れすぎてたらcontinue
@@ -227,7 +228,7 @@ class CleateStageViewController: UIViewController {
       
          //配列の座標に変換
          let x = -AwayNumX
-         let y = AwayNumY
+         let y = -AwayNumY
          
          //一致してたら，そいつの番号を保存してTRUEを返す。
          if Pice.pAllPosi[y][x] == .In {
@@ -299,9 +300,8 @@ class CleateStageViewController: UIViewController {
    //MARK: .OUTをタップしたときにPuzzleからくる関数
    @objc func PiceTouchStartCatchNotification(notification: Notification) -> Void {
       print("--- Alpha Tap notification ---")
-
       if let userInfo = notification.userInfo {
-         let SentNum = userInfo["BirthDay"] as! Int
+         let SentNum = userInfo["ArryNum"] as! Int
          let TapPosi = userInfo["TapPosi"] as! CGPoint
          let X = userInfo["X"] as! Int
          let Y = userInfo["Y"] as! Int
@@ -309,7 +309,7 @@ class CleateStageViewController: UIViewController {
          print("タップした座標: \(TapPosi)")
          
          let SerchX = PiceImageArray[SentNum].PositionX! + X
-         let SerchY = PiceImageArray[SentNum].PositionY! - Y
+         let SerchY = PiceImageArray[SentNum].PositionY! + Y
          
          print("SerchPoint: (\(SerchX), \(SerchY))")
          
@@ -394,7 +394,7 @@ class CleateStageViewController: UIViewController {
          NotShowOnPiceView()
          #if DEBUG
          //配列の情報の表示
-         ShowPiceImageArryInfo()
+         //ShowPiceImageArryInfo()
          #endif
       }else{ print("Nil きたよ") }
    }

@@ -53,20 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
 
 
       //--------------------FIREBASE-----------------------//
-//      #if DEBUG
-//      let fileName = "GoogleService-Info"
-//      print("テスト環境")
-//      #else
-//      let fileName = "GoogleService-Info"
-//      print("本番のfirebaseにアクセス")
-//
-//      let filePath = Bundle.main.path(forResource: fileName, ofType: "plist")
-//      let fileopts = FirebaseOptions(contentsOfFile: filePath!)
-//
-//      FirebaseApp.configure(options: fileopts!)
-//      #endif
-      
-      print("本番のfirebaseにアクセス")
+      print("firebaseにアクセス")
       let fileName = "GoogleService-Info"
       let filePath = Bundle.main.path(forResource: fileName, ofType: "plist")
       let fileopts = FirebaseOptions(contentsOfFile: filePath!)
@@ -80,9 +67,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       try! audioSession.setCategory(AVAudioSession.Category.ambient)
       //-----------バックグラウンドでの音の再生を許可------------//
       
-      
+      //--------------------ADMOB-----------------------//
       GADMobileAds.sharedInstance().start(completionHandler: nil)
-      
+      //--------------------ADMOB-----------------------//
       
       
       //--------------------STORE KIT-----------------------//
@@ -102,7 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       //--------------------STORE KIT-----------------------//
       
       //-------------------User First Open-----------------//
-      //-------------------Init Ad Flag-------------------//
+      //-------------------Init Ad Flag On Users Devise-------------------//
       UserDefaults.standard.register(defaults: ["BuyRemoveAd": false])
       if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == true {
          print("\n--- ユーザーは広告削除の課金をしています ---\n")
@@ -110,10 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
          print("\n ---ユーザーは広告削除の課金をしてない. ---\n")
       }
       //-------------------User First Open-----------------//
-      //-------------------Init Ad Flag-------------------//
-      
-      
-      
+      //-------------------Init Ad Flag On Users Devise-------------------//
       
       
       //-------------------Game Center-----------------//
@@ -164,8 +148,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       application.registerForRemoteNotifications()
       //------------------- プッシュ通知-----------------//
       
+      //------------------- プッシュ通知の赤いやつ消す-----------------//
       UIApplication.shared.applicationIconBadgeNumber = 0
-      
+      //------------------- プッシュ通知の赤いやつ消す-----------------//
       
       return true
    }

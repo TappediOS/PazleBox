@@ -208,18 +208,40 @@ class PiceImageView : UIImageView {
                                         "Y": Y as Int]
       
       print("")
-      NotificationCenter.default.post(name: .PuzzleTouchStart, object: nil, userInfo: SentObject)
+      NotificationCenter.default.post(name: .PiceTouchStarted, object: nil, userInfo: SentObject)
    }
    
    private func PuzzleTouchMovedPostNotification(Dx: CGFloat, Dy: CGFloat) {
       let SentObject: [String : Any] = ["Dx": Dx as CGFloat,
                                         "Dy": Dy as CGFloat]
       
-      NotificationCenter.default.post(name: .PuzzleTouchMoved, object: nil, userInfo: SentObject)
+      NotificationCenter.default.post(name: .PiceTouchMoved, object: nil, userInfo: SentObject)
    }
    
    private func PuzzleTouchEndedPostNotification() {
-      NotificationCenter.default.post(name: .PuzzleTouchEnded, object: nil, userInfo: nil)
+      NotificationCenter.default.post(name: .PiceTouchEnded, object: nil, userInfo: nil)
+   }
+   
+   private func UpdatePositionForTouchMove(dx: CGFloat, dy: CGFloat) {
+      self.center.x += dx
+      self.center.y += dy
+      
+      AlphaImageView.center.x -= dx
+      AlphaImageView.center.y -= dy
+      
+      PositionX = PicePosi.GetAlphasXPosi(AlPosiX: frame.minX, SizeWidth: PiceWideNum)
+      PositionY = PicePosi.GetAlphasYPosi(AlPosiY: frame.minY, SizeHight: PiceHeightNum)
+      
+      if PositionX != PositionForHapTicX || PositionY != PositionForHapTicY {
+         Play3DtouchLight()
+         PositionForHapTicX = PositionX!
+         PositionForHapTicY = PositionY!
+         
+         let XPosi = PicePosi.GetAnyPosiX(xpoint: PositionX!)
+         let YPosi = PicePosi.GetAnyPosiY(ypoint: PositionY!)
+         let Flame = CGRect(x: XPosi - frame.minX, y: YPosi - frame.minY, width: frame.width, height: frame.height)
+         AlphaImageView.frame = Flame
+      }
    }
    
    //MARK:- 自前のタッチイベント
@@ -231,9 +253,7 @@ class PiceImageView : UIImageView {
       guard MoveMyself == true else {
          return
       }
-      self.center.x += Dx
-      self.center.y += Dy
-      //UpdateAlphaNodePosi()
+      UpdatePositionForTouchMove(dx: Dx, dy: Dy)
    }
    
    public func SelfTouchEnded(){
@@ -263,11 +283,12 @@ class PiceImageView : UIImageView {
       if isPiceUp == false {
          let SentObject: [String : Any] = ["PiceName": selfName as String]
          NotificationCenter.default.post(name: .PickUpPiceImageView, object: nil, userInfo: SentObject)
+         return
       }
       
       //CGFloat(PiceWideNum) / 2  は 左上に揃えるためにしてる
-      let TapPosiX = touches.first!.location(in: self).x + CGFloat(TileWide!) / 2
-      let TapPosiY = -touches.first!.location(in: self).y + CGFloat(TileWide!) / 2
+      let TapPosiX = touches.first!.location(in: self).x - CGFloat(TileWide!) / 2
+      let TapPosiY = touches.first!.location(in: self).y - CGFloat(TileWide!) / 2
       
       let PosiX = Int(TapPosiX / CGFloat(TileWide!))
       let PosiY = Int(TapPosiY / CGFloat(TileWide!))
@@ -300,30 +321,10 @@ class PiceImageView : UIImageView {
          PuzzleTouchMovedPostNotification(Dx: dx, Dy: dy)
          return
       }
+      
+      UpdatePositionForTouchMove(dx: dx, dy: dy)
 
-      self.center.x += dx
-      self.center.y += dy
-      
-      //これはCPU使いまくる場合はなくてもいいかもしれない
-      AlphaImageView.center.x -= dx
-      AlphaImageView.center.y -= dy
-      //これはCPU使いまくる場合はなくてもいいかもしれない
-      
-      PositionX = PicePosi.GetAlphasXPosi(AlPosiX: frame.minX, SizeWidth: PiceWideNum)
-      PositionY = PicePosi.GetAlphasYPosi(AlPosiY: frame.minY, SizeHight: PiceHeightNum)
-      
-      if PositionX != PositionForHapTicX || PositionY != PositionForHapTicY {
-         Play3DtouchLight()
-         PositionForHapTicX = PositionX!
-         PositionForHapTicY = PositionY!
-         
-         //これはCPU使いまくる場合はなくてもいいかもしれない
-         let XPosi = PicePosi.GetAnyPosiX(xpoint: PositionX!)
-         let YPosi = PicePosi.GetAnyPosiY(ypoint: PositionY!)
-         let Flame = CGRect(x: XPosi - frame.minX, y: YPosi - frame.minY, width: frame.width, height: frame.height)
-         AlphaImageView.frame = Flame
-         //これはCPU使いまくる場合はなくてもいいかもしれない
-      }
+
    }
    
    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
