@@ -253,6 +253,7 @@
 		BF640C092245100C00333782 /* E1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF640C082245100C00333782 /* E1.swift */; };
 		BF640C0B2245103500333782 /* E2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF640C0A2245103500333782 /* E2.swift */; };
 		BF640C0D224513DF00333782 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF640C0C224513DF00333782 /* HomeViewController.swift */; };
+		BF73C2F22349C03F00745C7F /* UserCreateStageDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F12349C03F00745C7F /* UserCreateStageDB.swift */; };
 		BF7CD91C2240B56300F8302B /* 12p1Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD9192240B56100F8302B /* 12p1Red.png */; };
 		BF7CD91D2240B56300F8302B /* 12p1Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD91A2240B56200F8302B /* 12p1Green.png */; };
 		BF7CD91E2240B56300F8302B /* 12p1Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD91B2240B56300F8302B /* 12p1Blue.png */; };
@@ -980,6 +981,7 @@
 		BF640C082245100C00333782 /* E1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E1.swift; sourceTree = "<group>"; };
 		BF640C0A2245103500333782 /* E2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E2.swift; sourceTree = "<group>"; };
 		BF640C0C224513DF00333782 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BF73C2F12349C03F00745C7F /* UserCreateStageDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreateStageDB.swift; sourceTree = "<group>"; };
 		BF7CD9192240B56100F8302B /* 12p1Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12p1Red.png; sourceTree = "<group>"; };
 		BF7CD91A2240B56200F8302B /* 12p1Green.png */ = {isa = PBXFileReference; explicitFileType = image.png; path = 12p1Green.png; sourceTree = "<group>"; };
 		BF7CD91B2240B56300F8302B /* 12p1Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12p1Blue.png; sourceTree = "<group>"; };
@@ -1900,6 +1902,7 @@
 				BF4323CC22D36733008DF038 /* SB */,
 				BF4323C622D35822008DF038 /* CreateStageViewController.swift */,
 				BF33CE09233A243A00AD488A /* PiceImageView.swift */,
+				BF73C2F12349C03F00745C7F /* UserCreateStageDB.swift */,
 				BF33CE0D233B319000AD488A /* GetPiceposition.swift */,
 				BF4323CA22D35F28008DF038 /* BackTileImageView.swift */,
 				BF4323C822D35912008DF038 /* BackTileImage.swift */,
@@ -3555,6 +3558,7 @@
 				BF552EAC226DDD4200756E16 /* E37.swift in Sources */,
 				BF33300622492B4C009B3042 /* ExGameSeceneHardP2.swift in Sources */,
 				BF1648F222C0C2CC000CD1AB /* BackGroundImageView.swift in Sources */,
+				BF73C2F22349C03F00745C7F /* UserCreateStageDB.swift in Sources */,
 				BF1A5EDB22B78609002C6733 /* BuyCoinView.swift in Sources */,
 				BF552E9E226DDD1B00756E16 /* E30.swift in Sources */,
 				BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */,

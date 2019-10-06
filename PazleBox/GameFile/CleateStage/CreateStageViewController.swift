@@ -607,34 +607,34 @@ class CleateStageViewController: UIViewController {
        return trimImage
    }
    
-   private func SaveStageViewUseScreenshot() {
+   private func SaveStageViewUseScreenshot() -> NSData {
       print(BackImageView!.frame)
-      
-      
-      
       //コンテキスト開始
       UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0.0)
       //viewを書き出す
       self.view.drawHierarchy(in: view.frame, afterScreenUpdates: false)
       // imageにコンテキストの内容を書き出す
-      let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+      let GetAllViewImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
       //コンテキストを閉じる
       UIGraphicsEndImageContext()
-      
-      let rect = (BackImageView?.frame)!
-      
-      if let useimage = image.cropping(to: ( BackImageView?.GetRectForScreenshot() )!) {
-         let imageview = UIImageView(frame: (BackImageView?.frame)!)
-         imageview.image = useimage
-         self.view.addSubview(imageview)
+            
+      if let UseImage = GetAllViewImage.cropping(to: ( BackImageView?.GetRectForScreenshot() )!) {
+         let CropImageView = UIImageView(frame: (BackImageView?.frame)!)
+         CropImageView.image = UseImage
+         //TODO:- 別にhozonnsuruhituyougaaru
+         self.view.addSubview(CropImageView)
+         return UseImage as! NSData
       }else{
-         print("nil入ってる")
+         fatalError()
       }
-      
    }
    
    private func SaveStageUserCreated() {
-      SaveStageViewUseScreenshot()
+      let SaveDataBase = UserCreateStageDataBase()
+      let ImageData: NSData = SaveStageViewUseScreenshot()
+      
+      SaveDataBase.AddStage(StageArrayForContents: FillContentsArray, MaxPiceNum: PiceImageArray.count,
+                            PiceArry: PiceImageArray, ImageData: ImageData)
    }
    
    private func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }

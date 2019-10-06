@@ -11,9 +11,11 @@ import Foundation
 class CleanCheckStage {
    
    var Checked: [[Contents]] = Array()
+   var FinIntArray: [[Int]] = Array()
    
    init() {
       InitCheckd()
+      InitFinIntArray()
    }
    
    private func InitCheckd() {
@@ -29,5 +31,20 @@ class CleanCheckStage {
                  [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
                  [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out],
                  [.Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out, .Out]]
+   }
+   
+   private func InitFinIntArray() {
+      FinIntArray = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
+                     [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                     [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                     [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                     [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                     [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                     [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                     [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                     [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                     [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                     [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                     [0, 0, 0, 0, 0, 0, 0, 0, 0]]
    }
 }
