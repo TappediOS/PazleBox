@@ -583,21 +583,58 @@ class CleateStageViewController: UIViewController {
    @objc func TapFinChouseResPuzzleButton() {
       print("FinChoseResタップされたよ")
       
-      
       CrearCheckedStage()
       
       for Pice in PiceImageArray {
          let PiceInfo = Pice.GetOfInfomation()
          CompleteFillContentsArrayUseCheckedStage(StageObject: PiceInfo)
       }
-
       
       if FillContentsArray == CheckedStage {
          print("変更しましょう")
          return
       }
       
-      FinishChouseResPuzzleButton?.isHidden = false
+      FinishChouseResPuzzleButton?.isHidden = true
+      
+      
+      SaveStageUserCreated()
+   }
+   
+   func trimmingImage(_ image: UIImage, trimmingArea: CGRect) -> UIImage {
+       let imgRef = image.cgImage?.cropping(to: trimmingArea)
+       let trimImage = UIImage(cgImage: imgRef!, scale: image.scale, orientation: image.imageOrientation)
+       return trimImage
+   }
+   
+   private func SaveStageViewUseScreenshot() {
+      print(BackImageView!.frame)
+      
+      
+      
+      //コンテキスト開始
+      UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0.0)
+      //viewを書き出す
+      self.view.drawHierarchy(in: view.frame, afterScreenUpdates: false)
+      // imageにコンテキストの内容を書き出す
+      let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+      //コンテキストを閉じる
+      UIGraphicsEndImageContext()
+      
+      let rect = (BackImageView?.frame)!
+      
+      if let useimage = image.cropping(to: ( BackImageView?.GetRectForScreenshot() )!) {
+         let imageview = UIImageView(frame: (BackImageView?.frame)!)
+         imageview.image = useimage
+         self.view.addSubview(imageview)
+      }else{
+         print("nil入ってる")
+      }
+      
+   }
+   
+   private func SaveStageUserCreated() {
+      SaveStageViewUseScreenshot()
    }
    
    private func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }

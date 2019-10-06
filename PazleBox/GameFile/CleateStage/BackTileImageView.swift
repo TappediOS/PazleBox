@@ -9,14 +9,18 @@
 import Foundation
 import UIKit
 
-class BackTileImageView:UIView {
+class BackTileImageView: UIView {
    
    var ContentArray: [[Contents]] = Array()
    var BackImageViewArray: [[BackTileImage]] = Array()
+   
+   var ViewInter: CGFloat = 0
 
    override init(frame: CGRect) {
       let TileWide = frame.width / 10
       let Inter = TileWide / 10
+      
+      ViewInter = Inter
       
       let ViewHeight = 12 * (TileWide + Inter)
       //もし　- TileWide / 2　をしないと，一番したのば画像がすれすれになるから，
@@ -63,6 +67,12 @@ class BackTileImageView:UIView {
          }
       }
       print("タイルの表示完了")
+   }
+   
+   public func GetRectForScreenshot() -> CGRect {
+      let StartY = self.frame.minY - ViewInter
+      let Height = self.frame.height + ViewInter
+      return CGRect(x: frame.minX, y: StartY, width: frame.width, height: Height)
    }
    
    required init?(coder aDecoder: NSCoder) {
