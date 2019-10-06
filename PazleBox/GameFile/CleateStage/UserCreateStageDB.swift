@@ -9,13 +9,13 @@
 import Foundation
 import RealmSwift
 
-struct PiceInfo {
-   var PiceW = 0
-   var PiceH = 0
-   var ResX = 0
-   var ResY = 0
-   var PiceName: String = ""
-   var PiceColor: String = ""
+class PiceInfo: Object {
+   @objc dynamic var PiceW = 0
+   @objc dynamic var PiceH = 0
+   @objc dynamic var ResX = 0
+   @objc dynamic var ResY = 0
+   @objc dynamic var PiceName: String = ""
+   @objc dynamic var PiceColor: String = ""
    
 }
 
@@ -25,6 +25,8 @@ class UserCreateStageData: Object{
    @objc dynamic var MaxPiceNum: Int = 0
          dynamic var PiceSet: [PiceInfo] = Array()
    @objc dynamic var ImageData: NSData? = nil
+   
+   let Pices = List<PiceInfo>()
 }
 
 class UserCreateStageDataBase {
@@ -48,10 +50,14 @@ class UserCreateStageDataBase {
          }
       }
       
-      var AllPice: [PiceInfo] = Array()
+      
+      let AddData = UserCreateStageData()
+      AddData.StageArray = StageArray
+      AddData.MaxPiceNum = MaxPiceNum
+      AddData.ImageData = ImageData
       
       for Pice in PiceArry {
-         var UsePice = PiceInfo()
+         let UsePice = PiceInfo()
          UsePice.PiceW = Pice.PiceWideNum
          UsePice.PiceH = Pice.PiceHeightNum
          UsePice.ResX = Pice.PositionX!
@@ -60,16 +66,10 @@ class UserCreateStageDataBase {
          print("Color    = \(Pice.selfName.pregReplace(pattern: "[0-9]+p[0-9]+", with: ""))")
          UsePice.PiceName = Pice.selfName.pregReplace(pattern: "(Green|Blue|Red)", with: "")
          UsePice.PiceColor = Pice.selfName.pregReplace(pattern: "[0-9]+p[0-9]+", with: "")
-         AllPice.append(UsePice)
+         AddData.Pices.append(UsePice)
       }
       
-      
-      let AddData = UserCreateStageData()
-      AddData.StageArray = StageArray
-      AddData.MaxPiceNum = MaxPiceNum
-      AddData.PiceSet = AllPice
-      AddData.ImageData = ImageData
-      
+
       try! realm.write {
          realm.add(AddData)
       }
