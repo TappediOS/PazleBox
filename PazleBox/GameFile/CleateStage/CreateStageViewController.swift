@@ -621,9 +621,9 @@ class CleateStageViewController: UIViewController {
       if let UseImage = GetAllViewImage.cropping(to: ( BackImageView?.GetRectForScreenshot() )!) {
          let CropImageView = UIImageView(frame: (BackImageView?.frame)!)
          CropImageView.image = UseImage
-         //TODO:- 別にhozonnsuruhituyougaaru
+         
          self.view.addSubview(CropImageView)
-         return UseImage as! NSData
+         return UseImage.pngData() as! NSData
       }else{
          fatalError()
       }

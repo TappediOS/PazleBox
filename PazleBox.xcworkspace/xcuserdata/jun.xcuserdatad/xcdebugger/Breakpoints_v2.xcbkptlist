@@ -2328,8 +2328,8 @@
             filePath = "PazleBox/GameFile/CleateStage/UserCreateStageDB.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "AddStage(StageArrayForContents:MaxPiceNum:PiceArry:ImageData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2344,8 +2344,8 @@
             filePath = "PazleBox/GameFile/CleateStage/UserCreateStageDB.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "AddStage(StageArrayForContents:MaxPiceNum:PiceArry:ImageData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2353,15 +2353,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "98ABDF69-BD53-465D-BF66-D2B79264DCCB"
+            uuid = "2A19495E-EF24-4955-9D9C-5B99CBD49340"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/CleateStage/UserCreateStageDB.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "AddStage(StageArrayForContents:MaxPiceNum:PiceArry:ImageData:)"
             landmarkType = "7">
          </BreakpointContent>
