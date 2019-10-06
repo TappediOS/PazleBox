@@ -21,6 +21,7 @@ class CleateStageViewController: UIViewController {
    var BackImageView: BackTileImageView?
    
    var FinishCreatePuzzleButton: FUIButton?
+   var FinishChouseResPuzzleButton: FUIButton?
    
    var RedFlame = CGRect()
    var GreenFlame = CGRect()
@@ -60,6 +61,7 @@ class CleateStageViewController: UIViewController {
       InitNotification()
       
       InitFinishCreatePuzzleButton()
+      InitFinishChouseResPuzzleButton()
       
       InitOnPiceView()
       InitRedFlame()
@@ -108,6 +110,23 @@ class CleateStageViewController: UIViewController {
       FinishCreatePuzzleButton?.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       FinishCreatePuzzleButton?.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
       view.addSubview(FinishCreatePuzzleButton!)
+   }
+   
+   private func InitFinishChouseResPuzzleButton() {
+      FinishChouseResPuzzleButton = FUIButton(frame: CGRect(x: view.frame.width / 20 * 5, y: 150, width: view.frame.width / 20 * 5, height: 50))
+      FinishChouseResPuzzleButton?.setTitle(NSLocalizedString("No Ads", comment: ""), for: .normal)
+      FinishChouseResPuzzleButton?.addTarget(self, action: #selector(self.TapFinChouseResPuzzleButton), for: .touchUpInside)
+      FinishChouseResPuzzleButton?.titleLabel?.adjustsFontSizeToFitWidth = true
+      FinishChouseResPuzzleButton?.titleLabel?.adjustsFontForContentSizeCategory = true
+      FinishChouseResPuzzleButton?.buttonColor = UIColor.turquoise()
+      FinishChouseResPuzzleButton?.shadowColor = UIColor.greenSea()
+      FinishChouseResPuzzleButton?.shadowHeight = 3.0
+      FinishChouseResPuzzleButton?.cornerRadius = 6.0
+      FinishChouseResPuzzleButton?.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
+      FinishChouseResPuzzleButton?.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
+      FinishChouseResPuzzleButton?.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
+      FinishChouseResPuzzleButton?.isHidden = true
+      view.addSubview(FinishChouseResPuzzleButton!)
    }
    
    private func InitOnPiceView() {
@@ -492,7 +511,7 @@ class CleateStageViewController: UIViewController {
       ShowOnPiceView()
    }
    
-   private func CompleteFillContentsArray(StageObject: [String: Any]) {
+   private func CompleteFillContentsArrayUseFillContentsArray(StageObject: [String: Any]) {
       let StartX = StageObject["StartPointX"] as! Int
       let StartY = StageObject["StartPointY"] as! Int
         
@@ -515,8 +534,31 @@ class CleateStageViewController: UIViewController {
       }
    }
    
+   private func CompleteFillContentsArrayUseCheckedStage(StageObject: [String: Any]) {
+      let StartX = StageObject["StartPointX"] as! Int
+      let StartY = StageObject["StartPointY"] as! Int
+        
+      let PuzzleWide = StageObject["PuzzleWide"] as! Int
+      let PuzzleHight = StageObject["PuzzleHight"] as! Int
+      let PArry = StageObject["PArry"] as! [[Contents]]
+      
+      let LeftUpX = StartX
+      let LeftUpY = StartY
+      
+      let RightDownX = StartX + (PuzzleWide - 1)
+      let RightDownY = StartY + (PuzzleHight - 1)
+        
+      for x in LeftUpX ... RightDownX {
+         for y in LeftUpY ... RightDownY {
+            //すでにIn入ってる場合はOutで塗りつぶされるのを防ぐためにifsiteru
+            if CheckedStage[y][x] == .In { continue }
+            CheckedStage[y][x] = PArry[y - LeftUpY][x - LeftUpX]
+         }
+      }
+   }
+   
    @objc func TapFinishiButton() {
-      print("FinButtonタップされたよ")
+      print("FinPutButtonタップされたよ")
       guard PiceImageArray.count != 0 else {
          print("Piceが1つも選ばれてません")
          return
@@ -526,7 +568,7 @@ class CleateStageViewController: UIViewController {
       
       for Pice in PiceImageArray {
          let PiceInfo = Pice.GetOfInfomation()
-         CompleteFillContentsArray(StageObject: PiceInfo)
+         CompleteFillContentsArrayUseFillContentsArray(StageObject: PiceInfo)
       }
       
       //print(FillContentsArray)
@@ -534,6 +576,28 @@ class CleateStageViewController: UIViewController {
       BackImageView!.GetContentArray(GetContentsArry: FillContentsArray)
       BackImageView!.ReSetUpBackTileImage()
       
+      FinishCreatePuzzleButton?.isHidden = true
+      FinishChouseResPuzzleButton?.isHidden = false
+   }
+   
+   @objc func TapFinChouseResPuzzleButton() {
+      print("FinChoseResタップされたよ")
+      
+      
+      CrearCheckedStage()
+      
+      for Pice in PiceImageArray {
+         let PiceInfo = Pice.GetOfInfomation()
+         CompleteFillContentsArrayUseCheckedStage(StageObject: PiceInfo)
+      }
+
+      
+      if FillContentsArray == CheckedStage {
+         print("変更しましょう")
+         return
+      }
+      
+      FinishChouseResPuzzleButton?.isHidden = false
    }
    
    private func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
