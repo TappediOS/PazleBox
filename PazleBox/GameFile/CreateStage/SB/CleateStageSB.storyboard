@@ -21,6 +21,9 @@
                                 <rect key="frame" x="92" y="280" width="259" height="164"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="作ったステージ"/>
+                                <connections>
+                                    <segue destination="XcZ-8x-GJ4" kind="presentation" id="sAA-2h-Oa0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCS-tJ-dt8">
                                 <rect key="frame" x="64" y="452" width="294" height="316"/>
@@ -38,6 +41,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IUE-Lh-ttJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-691.304347826087" y="113.83928571428571"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="NzI-gR-prC">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="XcZ-8x-GJ4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xp8-U0-fGf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="R78-Xq-M2U"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="et7-PA-Usc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="488" y="-687"/>
         </scene>
         <!--Cleate Stage View Controller-->
         <scene sceneID="i6G-Sb-UtW">

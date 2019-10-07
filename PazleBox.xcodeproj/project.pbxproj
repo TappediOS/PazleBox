@@ -1539,7 +1539,7 @@
 				BF332F7E22491850009B3042 /* HomeView */,
 				BF95C63522B79C130037E063 /* Game Coins */,
 				BF1A5ED922B785CF002C6733 /* BuyCoinView */,
-				BF4323C322D355E8008DF038 /* CleateStage */,
+				BF4323C322D355E8008DF038 /* CreateStage */,
 				BFAC253223489FE400038594 /* FinCreateAndSellectStage */,
 			);
 			path = GameFile;
@@ -1896,7 +1896,7 @@
 			path = hard;
 			sourceTree = "<group>";
 		};
-		BF4323C322D355E8008DF038 /* CleateStage */ = {
+		BF4323C322D355E8008DF038 /* CreateStage */ = {
 			isa = PBXGroup;
 			children = (
 				BF4323CC22D36733008DF038 /* SB */,
@@ -1908,7 +1908,7 @@
 				BF4323C822D35912008DF038 /* BackTileImage.swift */,
 				BFDCDBB2234205AA00AD6E4F /* CleanChackStage.swift */,
 			);
-			path = CleateStage;
+			path = CreateStage;
 			sourceTree = "<group>";
 		};
 		BF4323CC22D36733008DF038 /* SB */ = {
