@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="-691.304347826087" y="113.83928571428571"/>
         </scene>
-        <!--View Controller-->
+        <!--Sellect Create Stage View Controller-->
         <scene sceneID="NzI-gR-prC">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="XcZ-8x-GJ4" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="XcZ-8x-GJ4" customClass="SellectCreateStageViewController" customModule="PazleBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xp8-U0-fGf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
