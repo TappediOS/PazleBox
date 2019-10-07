@@ -25,9 +25,7 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    
    var SellectStageNumber = 0
 
-   var EasySelect = SellectStageEasy()
-   var NormalSelect = SellectStageNormal()
-   var HardSelect = SellectStageHard()
+
    var ViewFrame: CGRect?
    
    let GameSound = GameSounds()
@@ -60,6 +58,9 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    let SentLeadarbord = SentLearderBords()
    
    let ManageLeaderBoard = ManageLeadearBoards()
+   
+   var UserStageArray: [[Contents]] = Array()
+   var UserPiceArray: [PiceInfo] = Array()
    
    //スワイプ無効にするやつ
    @available(iOS 11, *)
@@ -154,23 +155,37 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       SellectStageNumber = Num
       userDefaults.set(Num, forKey: "StageNum")
    }
+   
+   public func LoadStageArray(StageArray: [[Contents]]) {
+      self.UserStageArray = StageArray
+   }
+   
+   public func LoadPiceArray(PiceArray: [PiceInfo]) {
+      self.UserPiceArray = PiceArray
+   }
 
 
    
    private func InitGameViewAndShowView() {
       print("GameSene，GameViewの初期化開始")
       if let scene = GKScene(fileNamed: "GameScene") {
-            
+         
+         
          // Get the SKScene from the loaded GKScene
          if let sceneNode = scene.rootNode as! UsersGameScene? {
             sceneNode.scaleMode = GetSceneScalaMode(DeviceHeight: UIScreen.main.nativeBounds.height)
+            
+            
+            sceneNode.InitPuzzleArrayBoforeScene(SizeX: view.frame.width, SizeY: view.frame.height, PiceArray: UserPiceArray)
+            sceneNode.SetStageArrayBeforeScene(StageArray: UserStageArray)
+            
             
             // Present the scene
             if let view = self.view as! SKView? {
                   
                sceneNode.userData = NSMutableDictionary()
                
-               sceneNode.
+               
 
                view.ignoresSiblingOrder = true
                

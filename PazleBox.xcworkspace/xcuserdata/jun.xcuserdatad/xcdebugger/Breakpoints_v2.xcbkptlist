@@ -2338,7 +2338,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "DB9F1517-9DBD-48C1-9817-6FB7CDFA5110"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SellectCreateStage/SellectCreateStageViewController.swift"

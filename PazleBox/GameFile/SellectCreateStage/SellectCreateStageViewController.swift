@@ -26,6 +26,9 @@ class SellectCreateStageViewController: UIViewController {
       MaxDataNumInDB = SavedStageDataBase.GetMAXDataNumOfDataBaseDataCount()
       
       let ImageData = SavedStageDataBase.GetImageDataFromDataNumberASNSData(DataNum: 0)
+      
+      
+      
       let ImageView = UIImageView(frame: CGRect(x: 30, y: 200, width: 300, height: 450))
       
       if let data = ImageData {

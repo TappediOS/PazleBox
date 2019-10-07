@@ -128,7 +128,7 @@ class UsersGameScene: SKScene {
    
    //MARK: パズルを初期化する。
    //Px Py に1片の長さを入れる
-   public func InitPuzzleArrayBoforeScene(SizeX: CGFloat?, SizeY: CGFloat?, PiceArray: [PiceInfo]){
+   public func InitPuzzleArrayBoforeScene(SizeX: CGFloat, SizeY: CGFloat, PiceArray: [PiceInfo]){
       print("パズルBoxの初期化開始")
       for tmp in 0 ... PiceArray.count - 1 {
          let Pice = PiceArray[tmp]
