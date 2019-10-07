@@ -57,6 +57,21 @@
             </objects>
             <point key="canvasLocation" x="488" y="-687"/>
         </scene>
+        <!--Users Game View Controller-->
+        <scene sceneID="b7b-ri-FlF">
+            <objects>
+                <viewController id="LhB-zZ-Biq" customClass="UsersGameViewController" customModule="PazleBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1qQ-Pm-wzG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="tTa-dp-DYS"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iy5-ez-Pt9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1954" y="-516"/>
+        </scene>
         <!--Cleate Stage View Controller-->
         <scene sceneID="i6G-Sb-UtW">
             <objects>

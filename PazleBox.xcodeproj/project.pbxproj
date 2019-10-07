@@ -255,6 +255,8 @@
 		BF640C0D224513DF00333782 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF640C0C224513DF00333782 /* HomeViewController.swift */; };
 		BF73C2F22349C03F00745C7F /* UserCreateStageDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F12349C03F00745C7F /* UserCreateStageDB.swift */; };
 		BF73C2F5234AD86700745C7F /* SellectCreateStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F4234AD86700745C7F /* SellectCreateStageViewController.swift */; };
+		BF73C2F8234B319200745C7F /* UsersGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F7234B319200745C7F /* UsersGameScene.swift */; };
+		BF73C2FA234B31A200745C7F /* UsersGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F9234B31A200745C7F /* UsersGameViewController.swift */; };
 		BF7CD91C2240B56300F8302B /* 12p1Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD9192240B56100F8302B /* 12p1Red.png */; };
 		BF7CD91D2240B56300F8302B /* 12p1Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD91A2240B56200F8302B /* 12p1Green.png */; };
 		BF7CD91E2240B56300F8302B /* 12p1Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD91B2240B56300F8302B /* 12p1Blue.png */; };
@@ -980,6 +982,8 @@
 		BF640C0C224513DF00333782 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BF73C2F12349C03F00745C7F /* UserCreateStageDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreateStageDB.swift; sourceTree = "<group>"; };
 		BF73C2F4234AD86700745C7F /* SellectCreateStageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectCreateStageViewController.swift; sourceTree = "<group>"; };
+		BF73C2F7234B319200745C7F /* UsersGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersGameScene.swift; sourceTree = "<group>"; };
+		BF73C2F9234B31A200745C7F /* UsersGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersGameViewController.swift; sourceTree = "<group>"; };
 		BF7CD9192240B56100F8302B /* 12p1Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12p1Red.png; sourceTree = "<group>"; };
 		BF7CD91A2240B56200F8302B /* 12p1Green.png */ = {isa = PBXFileReference; explicitFileType = image.png; path = 12p1Green.png; sourceTree = "<group>"; };
 		BF7CD91B2240B56300F8302B /* 12p1Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12p1Blue.png; sourceTree = "<group>"; };
@@ -1579,6 +1583,7 @@
 				BFA61D0522B5040D002C8EDD /* PazleBox.entitlements */,
 				BF1FF2AA22311C8D0047ED23 /* GemFile */,
 				BF1FF2AB22311CC10047ED23 /* GameFile */,
+				BF73C2F6234B316A00745C7F /* UserStageSecenAndVC */,
 				BF60AC61224DD1B500D441D6 /* GameIcons */,
 				BF60AC56224CA2A000D441D6 /* GameSound */,
 				BF2674E32227B6A3003D370F /* AppDelegate.swift */,
@@ -1957,6 +1962,15 @@
 				BF332F7922490D4F009B3042 /* Hard */,
 			);
 			path = StageOfPuzzle;
+			sourceTree = "<group>";
+		};
+		BF73C2F6234B316A00745C7F /* UserStageSecenAndVC */ = {
+			isa = PBXGroup;
+			children = (
+				BF73C2F9234B31A200745C7F /* UsersGameViewController.swift */,
+				BF73C2F7234B319200745C7F /* UsersGameScene.swift */,
+			);
+			path = UserStageSecenAndVC;
 			sourceTree = "<group>";
 		};
 		BF7CD9142240B41500F8302B /* P12 */ = {
@@ -3553,6 +3567,7 @@
 				BF552E9A226DDD1400756E16 /* E28.swift in Sources */,
 				BFF889A5229FC0CA0056A839 /* RemotConfigManagerHomeView.swift in Sources */,
 				BF27D04A22B4E61800596644 /* HomeViewIAP.swift in Sources */,
+				BF73C2F8234B319200745C7F /* UsersGameScene.swift in Sources */,
 				BF552F0A226DDE9400756E16 /* H24.swift in Sources */,
 				BFF889A922A39A5A0056A839 /* NoAdsButton.swift in Sources */,
 				BF1A5EE522B78A5C002C6733 /* CoinsIAPManager.swift in Sources */,
@@ -3561,6 +3576,7 @@
 				BF332FFA2249283C009B3042 /* H17.swift in Sources */,
 				BF332FB022492766009B3042 /* N1.swift in Sources */,
 				BF332FCE224927C3009B3042 /* N16.swift in Sources */,
+				BF73C2FA234B31A200745C7F /* UsersGameViewController.swift in Sources */,
 				BF332FD8224927E2009B3042 /* H1.swift in Sources */,
 				BF552EB0226DDD4C00756E16 /* E39.swift in Sources */,
 				BF552EF0226DDE3700756E16 /* N41.swift in Sources */,

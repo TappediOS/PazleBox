@@ -33,6 +33,7 @@ class FieldYInfo: Object {
 class UserCreateStageData: Object{
    //@objc dynamic var StageArray: [[Int]] = Array()
    @objc dynamic var MaxPiceNum: Int = 0
+   @objc dynamic var isClear = false
    @objc dynamic var ImageData: NSData? = nil
    
    let Pices = List<PiceInfo>()
@@ -46,6 +47,7 @@ class UserCreateStageDataBase {
    public func AddStage(StageArrayForContents: [[Contents]], MaxPiceNum: Int, PiceArry: [PiceImageView], ImageData: NSData?) {
       let AddData = UserCreateStageData()
       AddData.MaxPiceNum = MaxPiceNum
+      AddData.isClear = false
       AddData.ImageData = ImageData
       
       //Piceの保存
