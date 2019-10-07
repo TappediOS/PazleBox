@@ -44,31 +44,11 @@ class UserCreateStageDataBase {
    let CleanArray = CleanCheckStage()
    
    public func AddStage(StageArrayForContents: [[Contents]], MaxPiceNum: Int, PiceArry: [PiceImageView], ImageData: NSData?) {
-      var StageArray: [[Int]] = Array()
-      StageArray = CleanArray.FinIntArray
-      
-      
-      print()
-      
-      for x in 0 ... 11 {
-         print()
-         for y in 0 ... 8 {
-            if StageArrayForContents[11 - x][y] == .Out {
-               StageArray[11 - x][y] = 0
-               print("\(StageArray[11 - x][y]) ", terminator: "")
-            }else{
-               StageArray[11 - x][y] = 1
-               print("\(StageArray[11 - x][y])  ", terminator: "")
-            }
-         }
-      }
-      
-      
       let AddData = UserCreateStageData()
-      //AddData.StageArray = StageArray
       AddData.MaxPiceNum = MaxPiceNum
       AddData.ImageData = ImageData
       
+      //Piceの保存
       for Pice in PiceArry {
          let UsePice = PiceInfo()
          UsePice.PiceW = Pice.PiceWideNum
@@ -82,6 +62,7 @@ class UserCreateStageDataBase {
          AddData.Pices.append(UsePice)
       }
       
+      //初期位置の保存
       for x in 0 ... 11 {
          let UseFieldInfo = FieldYInfo()
          for y in 0 ... 8 {
@@ -121,7 +102,30 @@ class UserCreateStageDataBase {
       }
    }
    
-   public func DeleteCanDoCellInfomation(at index: Int) {
+   public func GetMaxPiceNum(DataNum: Int) -> Int {
+      return realm.objects(UserCreateStageData.self)[DataNum].MaxPiceNum
+   }
+   
+   public func GetMAXDataNumOfDataBaseDataCount() -> Int {
+      return realm.objects(UserCreateStageData.self).count
+   }
+   
+   public func GetPiceFromDataNumberASList(DataNum: Int) -> List<PiceInfo> {
+      return realm.objects(UserCreateStageData.self)[DataNum].Pices
+   }
+   
+   public func GetFieldYFromDataNumberASList(DataNum: Int) -> List<FieldYInfo> {
+      return realm.objects(UserCreateStageData.self)[DataNum].FieldY
+   }
+   
+   public func GetImageDataFromDataNumberASNSData(DataNum: Int) -> NSData? {
+      return realm.objects(UserCreateStageData.self)[DataNum].ImageData
+   }
+   
+   
+   /// 任意のRealmの中身を削除する
+   /// - Parameter index: 配列番号を表す '0'から始まることに注意!
+   public func DeleteUserCreateStageDataBase(at index: Int) {
       let result = realm.objects(UserCreateStageData.self)[index]
       print("\(result.MaxPiceNum)の削除を開始します")
       try! realm.write {
