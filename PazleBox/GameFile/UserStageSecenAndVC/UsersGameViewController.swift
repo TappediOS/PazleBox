@@ -85,6 +85,10 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       
       InitAllADCheck()
       
+      GameSound.PlaySoundsTapButton()
+      InitGameViewAndShowView()
+      PlayGameBGM()
+      
       InitVCTimePeformance?.stop()
    }
    
@@ -143,9 +147,10 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
          print("広告の表示するまでの回数: \(self.InterstitialCount)")
       }
    }
-
    
-   private func LoadStageNumber(Num: Int) {
+   //MARK:- 選択画面でVC生成したらPresentする前にyobu
+   //読み込み前に実行する
+   public func LoadStageNumber(Num: Int) {
       SellectStageNumber = Num
       userDefaults.set(Num, forKey: "StageNum")
    }
@@ -164,11 +169,12 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
             if let view = self.view as! SKView? {
                   
                sceneNode.userData = NSMutableDictionary()
+               
+               sceneNode.
 
                view.ignoresSiblingOrder = true
                
                let Tran = SKTransition.fade(withDuration: 2.4)
-               
 
                view.presentScene(sceneNode, transition: Tran)
                
@@ -211,7 +217,6 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    //MARK: 通知の初期化
    private func InitNotificationCenter() {
       NotificationCenter.default.addObserver(self, selector: #selector(GameClearCatchNotification(notification:)), name: .GameClear, object: nil)
-      NotificationCenter.default.addObserver(self, selector: #selector(SellectStageNotification(notification:)), name: .SellectStage, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(SellectBackNotification(notification:)), name: .SellectBack, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(TapNextNotification(notification:)), name: .TapNext, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(TapHomeNotification(notification:)), name: .TapHome, object: nil)
@@ -447,30 +452,7 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
          }
       }
    }
-   
-   //MARK:- ゲームのステージを選択したって通知を受け取る関数
-   @objc func SellectStageNotification(notification: Notification) -> Void {
-      
-      if let userInfo = notification.userInfo {
-         let SentNum = userInfo["StageNum"] as! Int
-         print("送信者番号: \(SentNum)")
-         
-         GameSound.PlaySoundsTapButton()
-         
-         LoadStageNumber(Num: SentNum)
-         InitGameViewAndShowView()
-         
-  
-         
-         //HomeViewに対してBGMを消してって通知を送る
-         NotificationCenter.default.post(name: .StopHomeViewBGM, object: nil, userInfo: nil)
-         //したら，こっちはこっちでBGMスタートさせる
-         PlayGameBGM()
-         
-      }else{
-         print("通知受け取ったけど、中身nilやった。")
-      }
-   }
+
    
 
    //MARK:- Nextボタン押されたよ

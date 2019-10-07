@@ -35,9 +35,7 @@ class UsersGameScene: SKScene {
    var PouseViewNode: PouseView?
    
    
-   
    var PostedStageNum = 1
-   var StageLebel: StageLevel = .Easy
    
    var userDefaults = UserDefaults.standard
    
@@ -57,11 +55,9 @@ class UsersGameScene: SKScene {
 
       InitBackGroundColor()
       
-      InitStageLevel()
       InitStageNumber()
       
       InitStageSize(SizeX: ViewSizeX, SizeY: ViewSizeY)
-      SetStage(StageNum: self.PostedStageNum)
       
       ShowTile()
       
@@ -70,7 +66,6 @@ class UsersGameScene: SKScene {
       
       InitPouseViewNode(SizeX: ViewSizeX, SizeY: ViewSizeY)
       
-      InitPuzzle(SizeX: ViewSizeX, SizeY: ViewSizeY)
       
       puzzleInit()
       AddPuzzle()
@@ -114,24 +109,9 @@ class UsersGameScene: SKScene {
       print("ステージ番号の取得開始")
       self.PostedStageNum = userDefaults.integer(forKey: "StageNum")
       print("ステージ番号の取得完了: \(self.PostedStageNum)")
-      //self.PostedStageNum = self.userData?.value(forKey: "StageNum") as! Int
    }
    
-   private func InitStageLevel() {
-      print("ステージ難易度の取得開始")
-      switch userDefaults.integer(forKey: "SelectedStageLevel") {
-      case 1:
-         self.StageLebel = .Easy
-      case 2:
-         self.StageLebel = .Normal
-      case 3:
-         self.StageLebel = .Hard
-      default:
-         fatalError()
-      }
-      print("ステージ難易度の取得完了: \(self.StageLebel)")
-      
-   }
+
    
    
    private func InitNotification() {
@@ -148,11 +128,16 @@ class UsersGameScene: SKScene {
    
    //MARK: パズルを初期化する。
    //Px Py に1片の長さを入れる
-   private func InitPuzzle(SizeX: CGFloat?, SizeY: CGFloat?){
+   public func InitPuzzleArrayBoforeScene(SizeX: CGFloat?, SizeY: CGFloat?, PiceArray: [PiceInfo]){
       print("パズルBoxの初期化開始")
-      //FIXME:- ここにPiceArrayを代入
-      //PuzzleBox =
-       print("パズルBoxの初期化完了")
+      for tmp in 0 ... PiceArray.count - 1 {
+         let Pice = PiceArray[tmp]
+         let Puzzle = puzzle(PX: Pice.PiceW, PY: Pice.PiceH, CustNum: tmp, ViewX: Int(SizeX), ViewY: Int(SizeY),
+                             PuzzleStyle: Pice.PiceName, PuzzleColor: Pice.PiceColor, RespawnX: Pice.ResX, RespawnY: Pice.ResY)
+         
+         PuzzleBox.append(Puzzle)
+      }
+      print("パズルBoxの初期化完了")
    }
    
 
@@ -163,11 +148,11 @@ class UsersGameScene: SKScene {
    }
    
    //MARK: ステージの配列の取得
-   private func SetStage(StageNum: Int){
+   //MARK:- ここはScene遷移する前にする
+   public func SetStageArrayBeforeScene(StageArray: [[Contents]]){
       //FIXME:- ココの右辺は変数にするのがいいかも
       print("ステージの初期化開始")
-      
-
+      Stage.GStage = StageArray
       print("ステージの初期化完了")
    }
    
@@ -184,8 +169,8 @@ class UsersGameScene: SKScene {
       print("全てのパズルの表示完了")
    }
    
-   //配列に入れて行ってる
-   private func AddPuzzle() { }
+   //元もファイルでも使用していない
+   private func AddPuzzle() {}
    
    //背景色を決める
    private func InitBackGroundColor() {

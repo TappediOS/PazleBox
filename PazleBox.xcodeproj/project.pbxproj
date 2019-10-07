@@ -1539,6 +1539,7 @@
 				BF1A5ED922B785CF002C6733 /* BuyCoinView */,
 				BF4323C322D355E8008DF038 /* CreateStage */,
 				BFAC253223489FE400038594 /* SellectCreateStage */,
+				BF73C2F6234B316A00745C7F /* UserStageSecenAndVC */,
 			);
 			path = GameFile;
 			sourceTree = "<group>";
@@ -1583,7 +1584,6 @@
 				BFA61D0522B5040D002C8EDD /* PazleBox.entitlements */,
 				BF1FF2AA22311C8D0047ED23 /* GemFile */,
 				BF1FF2AB22311CC10047ED23 /* GameFile */,
-				BF73C2F6234B316A00745C7F /* UserStageSecenAndVC */,
 				BF60AC61224DD1B500D441D6 /* GameIcons */,
 				BF60AC56224CA2A000D441D6 /* GameSound */,
 				BF2674E32227B6A3003D370F /* AppDelegate.swift */,
