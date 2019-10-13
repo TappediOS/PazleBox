@@ -14,6 +14,7 @@ import SAConfettiView
 import Firebase
 import RealmSwift
 import Hero
+import ChameleonFramework
 
 class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    
@@ -54,11 +55,7 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    
    let realm = try! Realm()
    
-   //FIXME- こいつ要らん
-   let SentLeadarbord = SentLearderBords()
-   
-   let ManageLeaderBoard = ManageLeadearBoards()
-   
+      
    var UserStageArray: [[Contents]] = Array()
    var UserPiceArray: [PiceInfo] = Array()
    
@@ -73,7 +70,9 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
     override func viewDidLoad() {
       super.viewDidLoad()
       
-      let InitVCTimePeformance = Performance.startTrace(name: "InitGameVCTime")
+      let InitVCTimePeformance = Performance.startTrace(name: "InitUsersGameVCTime")
+      
+      self.view.backgroundColor = UIColor.flatRed()
       
       ViewFrame = self.view.frame
       self.hero.isEnabled = true
@@ -121,10 +120,10 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    
    private func InitInstitial() {
       #if DEBUG
-         print("インターステイシャル:テスト環境")
+         print("Users インターステイシャル:テスト環境")
          Interstitial = GADInterstitial(adUnitID: INTERSTITIAL_TEST_ID)
          if let ADID = Interstitial.adUnitID {
-            print("インタースティシャルテスト広告ID読み込み完了")
+            print("Usersインタースティシャルテスト広告ID読み込み完了")
             print("TestID = \(ADID)")
          }else{
             print("インタースティシャルテスト広告ID読み込み失敗")
@@ -167,8 +166,8 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
 
    
    private func InitGameViewAndShowView() {
-      print("GameSene，GameViewの初期化開始")
-      if let scene = GKScene(fileNamed: "GameScene") {
+      print("Users GameSene，GameViewの初期化開始")
+      if let scene = GKScene(fileNamed: "UsersGameScene") {
          
          
          // Get the SKScene from the loaded GKScene
@@ -176,7 +175,7 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
             sceneNode.scaleMode = GetSceneScalaMode(DeviceHeight: UIScreen.main.nativeBounds.height)
             
             
-            sceneNode.InitPuzzleArrayBoforeScene(SizeX: view.frame.width, SizeY: view.frame.height, PiceArray: UserPiceArray)
+            sceneNode.InitPuzzleArrayBoforeScene(SizeX: sceneNode.frame.width, SizeY: sceneNode.frame.height, PiceArray: UserPiceArray)
             sceneNode.SetStageArrayBeforeScene(StageArray: UserStageArray)
             
             
@@ -207,10 +206,10 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
                   view.showsFPS = false
                   view.showsNodeCount = false
                #endif
-            }
-         }
-      }
-      print("GameSene，GameViewの初期化完了")
+            }else{fatalError()}
+         }else{fatalError()}
+      }else{fatalError()}
+      print("Users GameSene，GameViewの初期化完了")
    }
    
    private func GetSceneScalaMode(DeviceHeight: CGFloat) -> SKSceneScaleMode {

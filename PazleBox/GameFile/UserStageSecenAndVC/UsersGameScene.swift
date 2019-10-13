@@ -49,8 +49,8 @@ class UsersGameScene: SKScene {
       
       
       //MARK:- ココのトレースは，FirebaseがConfigurしてないとクラッシュする
-      print("初期化開始")
-      let InitTimePeformance = Performance.startTrace(name: "InitGameSeceneTime")
+      print("Users 初期化開始")
+      let InitTimePeformance = Performance.startTrace(name: "InitUsersGameSeceneTime")
       
 
       InitBackGroundColor()
@@ -59,7 +59,7 @@ class UsersGameScene: SKScene {
       
       InitStageSize(SizeX: ViewSizeX, SizeY: ViewSizeY)
       
-      ShowTile()
+      //ShowTile()
       
       InitRePutButton(SizeX: ViewSizeX, SizeY: ViewSizeY)
       InitPouseButton(SizeX: ViewSizeX, SizeY: ViewSizeY)
@@ -67,7 +67,7 @@ class UsersGameScene: SKScene {
       InitPouseViewNode(SizeX: ViewSizeX, SizeY: ViewSizeY)
       
       
-      puzzleInit()
+      //puzzleInit()
       AddPuzzle()
       
       CrearCheckedStage()
@@ -75,7 +75,7 @@ class UsersGameScene: SKScene {
       InitNotification()
       
       //MARK:- ココのトレースは，FirebaseがConfigurしてないとクラッシュする
-      print("初期化終わり")
+      print("Users初期化終わり")
       InitTimePeformance?.stop()
 
     }
@@ -106,16 +106,16 @@ class UsersGameScene: SKScene {
    
  
    private func InitStageNumber() {
-      print("ステージ番号の取得開始")
+      print("Users ステージ番号の取得開始")
       self.PostedStageNum = userDefaults.integer(forKey: "StageNum")
-      print("ステージ番号の取得完了: \(self.PostedStageNum)")
+      print("Users ステージ番号の取得完了: \(self.PostedStageNum)")
    }
    
 
    
    
    private func InitNotification() {
-      print("通知センター初期化開始")
+      print("Users 通知センター初期化開始")
       NotificationCenter.default.addObserver(self, selector: #selector(MovedTileCatchNotification(notification:)), name: .TileMoved, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(PuzzleTouchStartCatchNotification(notification:)), name: .PuzzleTouchStart, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(PuzzleTouchMovedCatchNotification(notification:)), name: .PuzzleTouchMoved, object: nil)
@@ -123,13 +123,13 @@ class UsersGameScene: SKScene {
       NotificationCenter.default.addObserver(self, selector: #selector(RePutCatchNotification(notification:)), name: .RePut, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(PouseCatchNotification(notification:)), name: .Pouse, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(ReSumeCatchNotification(notification:)), name: .ReSume, object: nil)
-      print("通知センター初期化完了")
+      print("Users 通知センター初期化完了")
    }
    
    //MARK: パズルを初期化する。
    //Px Py に1片の長さを入れる
    public func InitPuzzleArrayBoforeScene(SizeX: CGFloat, SizeY: CGFloat, PiceArray: [PiceInfo]){
-      print("パズルBoxの初期化開始")
+      print("Users パズルBoxの初期化開始")
       for tmp in 0 ... PiceArray.count - 1 {
          let Pice = PiceArray[tmp]
          let Puzzle = puzzle(PX: Pice.PiceW, PY: Pice.PiceH, CustNum: tmp, ViewX: Int(SizeX), ViewY: Int(SizeY),
@@ -137,7 +137,9 @@ class UsersGameScene: SKScene {
          
          PuzzleBox.append(Puzzle)
       }
-      print("パズルBoxの初期化完了")
+      print("Users パズルBoxの初期化完了")
+      
+      puzzleInit()
    }
    
 
@@ -151,22 +153,20 @@ class UsersGameScene: SKScene {
    //MARK:- ここはScene遷移する前にする
    public func SetStageArrayBeforeScene(StageArray: [[Contents]]){
       //FIXME:- ココの右辺は変数にするのがいいかも
-      print("ステージの初期化開始")
+      print("Users ステージの初期化開始")
       Stage.GStage = StageArray
-      print("ステージの初期化完了")
+      print("Users ステージの初期化完了")
+      ShowTile()
    }
    
    
    private func puzzleInit() {
-      //ココの引数は特に使ってない。場所の位置変更で使ってもいいかも。
-      //pAllArryの初期化をしてるね。
-      //
-      print("全てのパズルの表示開始")
+      print("Users 全てのパズルの表示開始")
       for Puzzle in PuzzleBox {
          addChild((Puzzle as! puzzle))
          addChild((Puzzle as! puzzle).GetAlhpaNode())
       }
-      print("全てのパズルの表示完了")
+      print("Users 全てのパズルの表示完了")
    }
    
    //元もファイルでも使用していない
@@ -179,18 +179,18 @@ class UsersGameScene: SKScene {
    
    //MARK: 背景のタイルを表示してる。
    private func ShowTile(){
-      print("タイルの表示開始")
+      print("Users タイルの表示開始")
       for x in 0 ... 11 {
          for y in 0 ... 8 {
             addChild(Stage.getAllTile(x: x, y: y))
          }
       }
-      print("タイルの表示完了")
+      print("Users タイルの表示完了")
    }
 
    //MARK: ステージサイズを初期化してる。クラスにしても良さそう。
    private func InitStageSize(SizeX: CGFloat?, SizeY: CGFloat?){
-       print("ステージサイズの初期化開始")
+       print("Users ステージサイズの初期化開始")
       if let X = SizeX {
          Stage.SetStageSizeX(SizeX: X)
       }else{
@@ -201,7 +201,7 @@ class UsersGameScene: SKScene {
       }else{
          fatalError("ビューの縦を初期化できませんでした。")
       }
-      print("ステージサイズの初期化完了")
+      print("Users ステージサイズの初期化完了")
    }
    
    

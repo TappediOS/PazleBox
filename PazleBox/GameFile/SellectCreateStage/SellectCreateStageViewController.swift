@@ -19,10 +19,14 @@ class SellectCreateStageViewController: UIViewController {
    var PiceArray: [PiceInfo] = Array()
    var StageArray: [[Contents]] = Array()
    
+   
+   
    override func viewDidLoad() {
       super.viewDidLoad()
+      self.view.backgroundColor = .white
       
       InitSavedStageDataFromDB()
+      InitButton()
    }
    
    private func GetPiceArrayFromPiceList(PiceList: List<PiceInfo>) -> [PiceInfo] {
@@ -32,7 +36,9 @@ class SellectCreateStageViewController: UIViewController {
          PiceInfomation.PiceW = Pice.PiceW
          PiceInfomation.PiceH = Pice.PiceH
          PiceInfomation.ResX = Pice.ResX
-         PiceInfomation.ResY = Pice.ResY
+         //転置してるから11から引く必要がある
+         //ResPownはのYは下から数えるから
+         PiceInfomation.ResY = 11 - Pice.ResY
          PiceInfomation.PiceName = Pice.PiceName
          PiceInfomation.PiceColor = Pice.PiceColor
          PiceArray.append(PiceInfomation)
@@ -117,12 +123,33 @@ class SellectCreateStageViewController: UIViewController {
          view.addSubview(ImageView)
       }
       
-      //遷移先のインスタンス
-      //ユーティリティエリアで設定したStoryBoardIDをwithIdentifierに設定
+      
+      
+   }
+   
+   private func InitButton() {
+      let addNumberButton = UIButton()
+      addNumberButton.backgroundColor = UIColor.blue
+      addNumberButton.setTitle("+", for: UIControl.State.normal)
+      let viewWidth = self.view.frame.width
+      let viewHeight = self.view.frame.height
+      addNumberButton.frame = CGRect(x: viewWidth/2, y: viewHeight/2, width: 160, height: 80)
+      addNumberButton.center = self.view.center
+      addNumberButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+      self.view.addSubview(addNumberButton)
+   }
+   
+   @objc func didTapButton() {
+      NotificationCenter.default.post(name: .StopHomeViewBGM, object: nil, userInfo: nil)
+          
+         //遷移先のインスタンス
+         //ユーティリティエリアで設定したStoryBoardIDをwithIdentifierに設定
+          
       let vc2 = self.storyboard?.instantiateViewController(withIdentifier: "UsersGameView") as! UsersGameViewController
 
-
-      
+      vc2.LoadPiceArray(PiceArray: PiceArray)
+      vc2.LoadStageArray(StageArray: StageArray)
+         
       //これを追加して重ならないようにするiOS13以降に自動適用される。
       vc2.modalPresentationStyle = .fullScreen
       self.present(vc2, animated: true, completion: {
@@ -130,6 +157,5 @@ class SellectCreateStageViewController: UIViewController {
          //self.ChangeHeroIDForBack()
          //self.CanPresentToSegeSellectViewFromHomeView = true
       })
-      
    }
 }
