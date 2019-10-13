@@ -28,9 +28,7 @@ class SellectCreateStageViewController: UIViewController {
       
       self.StageCollectionView.delegate = self
       self.StageCollectionView.dataSource = self
-
    }
-   
    
    private func LoadStageInfomation(CellNum: Int) {
       let PiceList = SavedStageDataBase.GetPiceFromDataNumberASList(DataNum: CellNum)
@@ -41,73 +39,14 @@ class SellectCreateStageViewController: UIViewController {
    }
    
    private func PresentGameViewController() {
-      let vc2 = self.storyboard?.instantiateViewController(withIdentifier: "UsersGameView") as! UsersGameViewController
+      let GameVC = self.storyboard?.instantiateViewController(withIdentifier: "UsersGameView") as! UsersGameViewController
 
-      vc2.LoadPiceArray(PiceArray: PiceArray)
-      vc2.LoadStageArray(StageArray: StageArray)
-         
-      //これを追加して重ならないようにするiOS13以降に自動適用される。
-      vc2.modalPresentationStyle = .fullScreen
-      self.present(vc2, animated: true, completion: {
+      GameVC.LoadPiceArray(PiceArray: PiceArray)
+      GameVC.LoadStageArray(StageArray: StageArray)
+      GameVC.modalPresentationStyle = .fullScreen
+      self.present(GameVC, animated: true, completion: {
          print("プレゼント終わった")
       })
    }
 }
 
-
-extension SellectCreateStageViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-      print("Cellタップされた Cell: \(indexPath.item)")
-      LoadStageInfomation(CellNum: indexPath.item)
-      PresentGameViewController()
-    }
-}
-
-extension SellectCreateStageViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      print("ステージ数の合計: \(SavedStageDataBase.GetMAXDataNumOfDataBaseDataCount())")
-      return SavedStageDataBase.GetMAXDataNumOfDataBaseDataCount()
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserStagesCell", for: indexPath)
-        
-      let ImageData = SavedStageDataBase.GetImageDataFromDataNumberASNSData(DataNum: indexPath.item)
-      
-      if let data = ImageData {
-         let Image = UIImage(data: data as Data)
-      
-         if let imageView = cell.contentView.viewWithTag(1) as? UIImageView {
-            imageView.image = Image
-            
-          }else{
-            fatalError("Cellの中のImageviewが存在しない")
-         }
-      }
-      
-      cell.layer.borderColor = UIColor.black.cgColor
-      cell.layer.borderWidth = 1
-
-        return cell
-    }
-}
-
-extension SellectCreateStageViewController: UICollectionViewDelegateFlowLayout {
-   // Screenサイズに応じたセルサイズを返す
-   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-       let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-       let availableWidth = view.frame.width - paddingSpace
-       let widthPerItem = availableWidth / itemsPerRow
-       return CGSize(width: widthPerItem, height: widthPerItem + 42)
-   }
-
-   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-       return sectionInsets
-   }
-
-   // セルの行間の設定
-   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-       return 10.0
-   }
-}
