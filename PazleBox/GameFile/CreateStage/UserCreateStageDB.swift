@@ -57,8 +57,6 @@ class UserCreateStageDataBase {
          UsePice.PiceH = Pice.PiceHeightNum
          UsePice.ResX = Pice.PositionX!
          UsePice.ResY = Pice.PositionY!
-         print("PiceName = \(Pice.selfName.pregReplace(pattern: "(Green|Blue|Red)", with: ""))")
-         print("Color    = \(Pice.selfName.pregReplace(pattern: "[0-9]+p[0-9]+", with: ""))")
          UsePice.PiceName = Pice.selfName.pregReplace(pattern: "(Green|Blue|Red)", with: "")
          UsePice.PiceColor = Pice.selfName.pregReplace(pattern: "[0-9]+p[0-9]+", with: "")
          AddData.Pices.append(UsePice)
@@ -93,14 +91,12 @@ class UserCreateStageDataBase {
                }
             }
          }
-         print(UseFieldInfo)
          AddData.FieldY.append(UseFieldInfo)
       }
       
 
       try! realm.write {
          realm.add(AddData)
-         print(AddData)
       }
    }
    
