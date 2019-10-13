@@ -316,6 +316,7 @@
 		BF8ABFDC227AD2AD00F275FA /* TapButton.caf in Resources */ = {isa = PBXBuildFile; fileRef = BF8ABFDB227AD2A500F275FA /* TapButton.caf */; };
 		BF8ABFDE227AE48000F275FA /* StarSound.caf in Resources */ = {isa = PBXBuildFile; fileRef = BF8ABFDD227AE47D00F275FA /* StarSound.caf */; };
 		BF93731722BA4F8D009DCEF6 /* ExHeroID.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93731622BA4F8D009DCEF6 /* ExHeroID.swift */; };
+		BF94BDDC2352ED98001ACD11 /* ExSellectStageCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF94BDDB2352ED98001ACD11 /* ExSellectStageCreateViewController.swift */; };
 		BF95C63722B79C540037E063 /* GameCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C63622B79C540037E063 /* GameCoin.swift */; };
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
 		BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D422428287007C8FA1 /* Assets.xcassets */; };
@@ -1044,6 +1045,7 @@
 		BF8ABFDB227AD2A500F275FA /* TapButton.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TapButton.caf; sourceTree = "<group>"; };
 		BF8ABFDD227AE47D00F275FA /* StarSound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = StarSound.caf; sourceTree = "<group>"; };
 		BF93731622BA4F8D009DCEF6 /* ExHeroID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExHeroID.swift; sourceTree = "<group>"; };
+		BF94BDDB2352ED98001ACD11 /* ExSellectStageCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSellectStageCreateViewController.swift; sourceTree = "<group>"; };
 		BF95C63622B79C540037E063 /* GameCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCoin.swift; sourceTree = "<group>"; };
 		BFA61D0522B5040D002C8EDD /* PazleBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PazleBox.entitlements; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
@@ -2157,6 +2159,7 @@
 			isa = PBXGroup;
 			children = (
 				BF73C2F4234AD86700745C7F /* SellectCreateStageViewController.swift */,
+				BF94BDDB2352ED98001ACD11 /* ExSellectStageCreateViewController.swift */,
 			);
 			path = SellectCreateStage;
 			sourceTree = "<group>";
@@ -3499,6 +3502,7 @@
 				BF332FE822492805009B3042 /* H9.swift in Sources */,
 				BF332F9A224926EB009B3042 /* E10.swift in Sources */,
 				BF2C14652276F3B700C7B8FB /* NoNode.swift in Sources */,
+				BF94BDDC2352ED98001ACD11 /* ExSellectStageCreateViewController.swift in Sources */,
 				BF552EFE226DDE6100756E16 /* N48.swift in Sources */,
 				BF1BD1EE2279C4120047496B /* HardStageClearInfomation.swift in Sources */,
 				BF7CE793226083920040352D /* GoHomeNode.swift in Sources */,

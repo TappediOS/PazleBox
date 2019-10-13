@@ -49,13 +49,51 @@
                     <view key="view" contentMode="scaleToFill" id="xp8-U0-fGf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ik9-aM-wke">
+                                <rect key="frame" x="0.0" y="64" width="414" height="798"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Az1-BX-dXG">
+                                    <size key="itemSize" width="130" height="202"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UserStagesCell" id="YeG-Y0-h6c">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="202"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="urE-zH-u4h">
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="202"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ac-aC-vRE">
+                                                    <rect key="frame" x="13" y="8" width="107" height="161"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="130" height="202"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ik9-aM-wke" firstAttribute="top" secondItem="R78-Xq-M2U" secondAttribute="top" constant="20" id="QAr-Nk-vdb"/>
+                            <constraint firstItem="ik9-aM-wke" firstAttribute="leading" secondItem="R78-Xq-M2U" secondAttribute="leading" id="XHS-pq-Gcd"/>
+                            <constraint firstItem="ik9-aM-wke" firstAttribute="bottom" secondItem="R78-Xq-M2U" secondAttribute="bottom" id="cuO-rG-OSu"/>
+                            <constraint firstItem="ik9-aM-wke" firstAttribute="trailing" secondItem="R78-Xq-M2U" secondAttribute="trailing" id="lIW-Dy-frx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="R78-Xq-M2U"/>
                     </view>
+                    <connections>
+                        <outlet property="StageCollectionView" destination="ik9-aM-wke" id="CdJ-DS-SLa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="et7-PA-Usc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="488" y="-687"/>
+            <point key="canvasLocation" x="486.95652173913049" y="-687.05357142857144"/>
         </scene>
         <!--Users Game View Controller-->
         <scene sceneID="b7b-ri-FlF">

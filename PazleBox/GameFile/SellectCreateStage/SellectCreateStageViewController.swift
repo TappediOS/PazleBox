@@ -14,137 +14,30 @@ import RealmSwift
 class SellectCreateStageViewController: UIViewController {
    
    let SavedStageDataBase = UserCreateStageDataBase()
-   var MaxDataNumInDB: Int = 0
    
    var PiceArray: [PiceInfo] = Array()
    var StageArray: [[Contents]] = Array()
    
-   
+   @IBOutlet weak var StageCollectionView: UICollectionView!
    
    override func viewDidLoad() {
       super.viewDidLoad()
       self.view.backgroundColor = .white
       
-      InitSavedStageDataFromDB()
-      InitButton()
+      self.StageCollectionView.delegate = self
+      self.StageCollectionView.dataSource = self
    }
    
-   private func GetPiceArrayFromPiceList(PiceList: List<PiceInfo>) -> [PiceInfo] {
-      var PiceArray: [PiceInfo] = Array()
-      for Pice in PiceList {
-         let PiceInfomation = PiceInfo()
-         PiceInfomation.PiceW = Pice.PiceW
-         PiceInfomation.PiceH = Pice.PiceH
-         PiceInfomation.ResX = Pice.ResX
-         //転置してるから11から引く必要がある
-         //ResPownはのYは下から数えるから
-         PiceInfomation.ResY = 11 - Pice.ResY
-         PiceInfomation.PiceName = Pice.PiceName
-         PiceInfomation.PiceColor = Pice.PiceColor
-         PiceArray.append(PiceInfomation)
-      }
-      return PiceArray
-   }
    
-   private func GetPiceArrayFromPiceList(FieldYList: List<FieldYInfo>) -> [[Contents]] {
-      var StageArry: [[Contents]] = Array()
-      for FieldY in FieldYList {
-         var StageXInfo: [Contents] = Array()
-         
-         if FieldY.X0 == 0 {
-            StageXInfo.append(Contents.Out)
-         }else{
-            StageXInfo.append(Contents.In)
-         }
-         if FieldY.X1 == 0 {
-            StageXInfo.append(Contents.Out)
-         }else{
-            StageXInfo.append(Contents.In)
-         }
-         if FieldY.X2 == 0 {
-            StageXInfo.append(Contents.Out)
-         }else{
-            StageXInfo.append(Contents.In)
-         }
-         if FieldY.X3 == 0 {
-            StageXInfo.append(Contents.Out)
-         }else{
-            StageXInfo.append(Contents.In)
-         }
-         if FieldY.X4 == 0 {
-            StageXInfo.append(Contents.Out)
-         }else{
-            StageXInfo.append(Contents.In)
-         }
-         if FieldY.X5 == 0 {
-            StageXInfo.append(Contents.Out)
-         }else{
-            StageXInfo.append(Contents.In)
-         }
-         if FieldY.X6 == 0 {
-            StageXInfo.append(Contents.Out)
-         }else{
-            StageXInfo.append(Contents.In)
-         }
-         if FieldY.X7 == 0 {
-            StageXInfo.append(Contents.Out)
-         }else{
-            StageXInfo.append(Contents.In)
-         }
-         if FieldY.X8 == 0 {
-            StageXInfo.append(Contents.Out)
-         }else{
-            StageXInfo.append(Contents.In)
-         }
-         
-         
-         StageArry.append(StageXInfo)
-      }
-      return StageArry
-   }
-   
-   private func InitSavedStageDataFromDB() {
-      MaxDataNumInDB = SavedStageDataBase.GetMAXDataNumOfDataBaseDataCount()
-      
-      let ImageData = SavedStageDataBase.GetImageDataFromDataNumberASNSData(DataNum: 0)
-      
-      let PiceList = SavedStageDataBase.GetPiceFromDataNumberASList(DataNum: 0)
+   private func LoadStageInfomation(CellNum: Int) {
+      let PiceList = SavedStageDataBase.GetPiceFromDataNumberASList(DataNum: CellNum)
+      let FieldYList = SavedStageDataBase.GetFieldYFromDataNumberASList(DataNum: CellNum)
+      //EXファイルに存在している
       PiceArray = GetPiceArrayFromPiceList(PiceList: PiceList)
-      
-      let FieldYList = SavedStageDataBase.GetFieldYFromDataNumberASList(DataNum: 0)
       StageArray = GetPiceArrayFromPiceList(FieldYList: FieldYList)
-      
-      let ImageView = UIImageView(frame: CGRect(x: 30, y: 200, width: 300, height: 450))
-      
-      if let data = ImageData {
-         let Image = UIImage(data: data as Data)
-         ImageView.image = Image
-         
-         view.addSubview(ImageView)
-      }
-      
-      
-      
    }
    
-   private func InitButton() {
-      let addNumberButton = UIButton()
-      addNumberButton.backgroundColor = UIColor.blue
-      addNumberButton.setTitle("+", for: UIControl.State.normal)
-      let viewWidth = self.view.frame.width
-      let viewHeight = self.view.frame.height
-      addNumberButton.frame = CGRect(x: viewWidth/2, y: viewHeight/2, width: 160, height: 80)
-      addNumberButton.center = self.view.center
-      addNumberButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-      self.view.addSubview(addNumberButton)
-   }
-   
-   @objc func didTapButton() {
-      NotificationCenter.default.post(name: .StopHomeViewBGM, object: nil, userInfo: nil)
-          
-         //遷移先のインスタンス
-         //ユーティリティエリアで設定したStoryBoardIDをwithIdentifierに設定
-          
+   private func PresentGameViewController() {
       let vc2 = self.storyboard?.instantiateViewController(withIdentifier: "UsersGameView") as! UsersGameViewController
 
       vc2.LoadPiceArray(PiceArray: PiceArray)
@@ -154,8 +47,40 @@ class SellectCreateStageViewController: UIViewController {
       vc2.modalPresentationStyle = .fullScreen
       self.present(vc2, animated: true, completion: {
          print("プレゼント終わった")
-         //self.ChangeHeroIDForBack()
-         //self.CanPresentToSegeSellectViewFromHomeView = true
       })
    }
+}
+
+
+extension SellectCreateStageViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+      print("Cellタップされた Cell: \(indexPath.item)")
+      LoadStageInfomation(CellNum: indexPath.item)
+      PresentGameViewController()
+    }
+}
+
+extension SellectCreateStageViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+      print("ステージ数の合計: \(SavedStageDataBase.GetMAXDataNumOfDataBaseDataCount())")
+      return SavedStageDataBase.GetMAXDataNumOfDataBaseDataCount()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserStagesCell", for: indexPath)
+        
+      let ImageData = SavedStageDataBase.GetImageDataFromDataNumberASNSData(DataNum: indexPath.item)
+      
+      if let data = ImageData {
+         let Image = UIImage(data: data as Data)
+      
+         if let imageView = cell.contentView.viewWithTag(1) as? UIImageView {
+            imageView.image = Image
+         }else{
+            fatalError("Cellの中のImageviewが存在しない")
+         }
+      }
+
+        return cell
+    }
 }
