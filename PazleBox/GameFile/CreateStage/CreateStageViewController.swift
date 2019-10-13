@@ -608,7 +608,6 @@ class CleateStageViewController: UIViewController {
    }
    
    private func SaveStageViewUseScreenshot() -> NSData {
-      print(BackImageView!.frame)
       //コンテキスト開始
       UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0.0)
       //viewを書き出す
@@ -619,11 +618,10 @@ class CleateStageViewController: UIViewController {
       UIGraphicsEndImageContext()
             
       if let UseImage = GetAllViewImage.cropping(to: ( BackImageView?.GetRectForScreenshot() )!) {
-         let CropImageView = UIImageView(frame: (BackImageView?.frame)!)
-         CropImageView.image = UseImage
-         
-         self.view.addSubview(CropImageView)
-         return UseImage.pngData() as! NSData
+         let ResizeW = UseImage.size.width * 0.65
+         let ResizeH = UseImage.size.height * 0.65
+         let RetruenImage = UseImage.ResizeUIImage(width: ResizeW, height: ResizeH)
+         return RetruenImage?.pngData() as! NSData
       }else{
          fatalError()
       }
@@ -635,6 +633,10 @@ class CleateStageViewController: UIViewController {
       
       SaveDataBase.AddStage(StageArrayForContents: FillContentsArray, MaxPiceNum: PiceImageArray.count,
                             PiceArry: PiceImageArray, ImageData: ImageData)
+      
+      self.dismiss(animated: true, completion: {
+         print("セーブ完了")
+      })
    }
    
    private func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }

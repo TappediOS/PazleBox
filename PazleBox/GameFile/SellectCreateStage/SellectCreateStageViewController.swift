@@ -19,6 +19,8 @@ class SellectCreateStageViewController: UIViewController {
    var StageArray: [[Contents]] = Array()
    
    @IBOutlet weak var StageCollectionView: UICollectionView!
+   private let sectionInsets = UIEdgeInsets(top: 10.0, left: 6.0, bottom: 5.0, right: 6.0)
+   private let itemsPerRow: CGFloat = 3
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -26,6 +28,7 @@ class SellectCreateStageViewController: UIViewController {
       
       self.StageCollectionView.delegate = self
       self.StageCollectionView.dataSource = self
+
    }
    
    
@@ -76,11 +79,35 @@ extension SellectCreateStageViewController: UICollectionViewDataSource {
       
          if let imageView = cell.contentView.viewWithTag(1) as? UIImageView {
             imageView.image = Image
-         }else{
+            
+          }else{
             fatalError("Cellの中のImageviewが存在しない")
          }
       }
+      
+      cell.layer.borderColor = UIColor.black.cgColor
+      cell.layer.borderWidth = 1
 
         return cell
     }
+}
+
+extension SellectCreateStageViewController: UICollectionViewDelegateFlowLayout {
+   // Screenサイズに応じたセルサイズを返す
+   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+       let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+       let availableWidth = view.frame.width - paddingSpace
+       let widthPerItem = availableWidth / itemsPerRow
+       return CGSize(width: widthPerItem, height: widthPerItem + 42)
+   }
+
+   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+       return sectionInsets
+   }
+
+   // セルの行間の設定
+   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+       return 10.0
+   }
 }
