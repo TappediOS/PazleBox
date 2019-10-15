@@ -30,10 +30,10 @@ extension SellectCreateStageViewController: UICollectionViewDataSource {
       
       if let data = ImageData {
          let Image = UIImage(data: data as Data)
-      
+         
+         //CollectionViewのImageViewのアンラップ
          if let imageView = cell.contentView.viewWithTag(1) as? UIImageView {
             imageView.image = Image
-            
           }else{
             fatalError("Cellの中のImageviewが存在しない")
          }
@@ -53,6 +53,7 @@ extension SellectCreateStageViewController: UICollectionViewDelegateFlowLayout {
        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
        let availableWidth = view.frame.width - paddingSpace
        let widthPerItem = availableWidth / itemsPerRow
+      
        return CGSize(width: widthPerItem, height: widthPerItem + 42)
    }
 
