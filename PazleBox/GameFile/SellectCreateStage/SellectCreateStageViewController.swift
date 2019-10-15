@@ -19,8 +19,8 @@ class SellectCreateStageViewController: UIViewController {
    var StageArray: [[Contents]] = Array()
    
    @IBOutlet weak var StageCollectionView: UICollectionView!
-   private let sectionInsets = UIEdgeInsets(top: 10.0, left: 6.0, bottom: 5.0, right: 6.0)
-   private let itemsPerRow: CGFloat = 3
+   let sectionInsets = UIEdgeInsets(top: 10.0, left: 6.0, bottom: 5.0, right: 6.0)
+   let itemsPerRow: CGFloat = 3
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -30,7 +30,7 @@ class SellectCreateStageViewController: UIViewController {
       self.StageCollectionView.dataSource = self
    }
    
-   private func LoadStageInfomation(CellNum: Int) {
+   func LoadStageInfomation(CellNum: Int) {
       let PiceList = SavedStageDataBase.GetPiceFromDataNumberASList(DataNum: CellNum)
       let FieldYList = SavedStageDataBase.GetFieldYFromDataNumberASList(DataNum: CellNum)
       //EXファイルに存在している
@@ -38,7 +38,7 @@ class SellectCreateStageViewController: UIViewController {
       StageArray = GetPiceArrayFromPiceList(FieldYList: FieldYList)
    }
    
-   private func PresentGameViewController() {
+   func PresentGameViewController() {
       let GameVC = self.storyboard?.instantiateViewController(withIdentifier: "UsersGameView") as! UsersGameViewController
 
       GameVC.LoadPiceArray(PiceArray: PiceArray)
