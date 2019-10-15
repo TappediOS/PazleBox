@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import RealmSwift
 
+//データを取得するExtention集
 extension SellectCreateStageViewController {
    func GetPiceArrayFromPiceList(PiceList: List<PiceInfo>) -> [PiceInfo] {
       var PiceArray: [PiceInfo] = Array()

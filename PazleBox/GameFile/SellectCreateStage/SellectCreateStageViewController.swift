@@ -19,8 +19,9 @@ class SellectCreateStageViewController: UIViewController {
    var StageArray: [[Contents]] = Array()
    
    @IBOutlet weak var StageCollectionView: UICollectionView!
+   //こいつがCollecti on viewのレイアウトを決めている
    let sectionInsets = UIEdgeInsets(top: 10.0, left: 6.0, bottom: 5.0, right: 6.0)
-   let itemsPerRow: CGFloat = 3
+   let itemsPerRow: CGFloat = 3 //Cellを横に何個入れるか
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -30,6 +31,9 @@ class SellectCreateStageViewController: UIViewController {
       self.StageCollectionView.dataSource = self
    }
    
+   
+   /// Collection ViewのCellがタップされた後にステージ情報を取得する関数
+   /// - Parameter CellNum: セル番号
    func LoadStageInfomation(CellNum: Int) {
       let PiceList = SavedStageDataBase.GetPiceFromDataNumberASList(DataNum: CellNum)
       let FieldYList = SavedStageDataBase.GetFieldYFromDataNumberASList(DataNum: CellNum)
@@ -38,6 +42,8 @@ class SellectCreateStageViewController: UIViewController {
       StageArray = GetPiceArrayFromPiceList(FieldYList: FieldYList)
    }
    
+   
+   /// GameVCをプレゼントする関数
    func PresentGameViewController() {
       let GameVC = self.storyboard?.instantiateViewController(withIdentifier: "UsersGameView") as! UsersGameViewController
 
