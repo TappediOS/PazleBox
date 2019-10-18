@@ -100,6 +100,7 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    
    private func InitGameClearView() {
       ClearView = GameClearView(frame: ViewFrame!)
+      ClearView?.ChangeNextButtonNameForUsersGameClearView()
       if userDefaults.bool(forKey: "BuyRemoveAd") == false{
          ClearView?.InitBannerViewGetRootViewController(SelfViewCon: self)
          ClearView?.InitBannerViewRequest()
@@ -165,11 +166,8 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
             sceneNode.InitPuzzleArrayBoforeScene(SizeX: sceneNode.frame.width, SizeY: sceneNode.frame.height, PiceArray: UserPiceArray)
             sceneNode.SetStageArrayBeforeScene(StageArray: UserStageArray)
             
-            
-            // Present the scene
             if let view = self.view as! SKView? {
                   
-               sceneNode.userData = NSMutableDictionary()
                view.ignoresSiblingOrder = true
                let Tran = SKTransition.fade(withDuration: 2.4)
 
@@ -374,17 +372,6 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    
    //MARK:- 次のステージに行くために，ClearView消したりアニメーション消したりする
    private func ShowNextGame() {
-      //MARK:- 最後のステージプレイしてたらさようなら
-      if self.SellectStageNumber == self.MaxStageNum{
-         print("最後のステージ: \(self.MaxStageNum) をプレーしてたのでホームに帰ります")
-         self.dismiss(animated: true, completion: {
-         NotificationCenter.default.post(name: .StartHomeViewBGM, object: nil)})
-         return
-      }
-    
-      //MARK:- 次のステージ行くねんからステージナンバーインクリメントするね -
-      self.SellectStageNumber += 1
-      self.userDefaults.set(self.SellectStageNumber, forKey: "StageNum")
       self.StopConfitti()
       
       //並列処理するよ

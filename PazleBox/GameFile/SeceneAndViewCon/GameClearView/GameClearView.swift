@@ -286,6 +286,10 @@ class GameClearView: UIView, GADBannerViewDelegate {
       self.addSubview(NextButton!)
    }
    
+   public func ChangeNextButtonNameForUsersGameClearView() {
+      NextButton!.setTitle(NSLocalizedString("PlayAgain", comment: ""), for: UIControl.State.normal)
+   }
+   
    private func InitGoHomeButton(frame: CGRect) {
       var StartX: CGFloat = 0
       let StartY = FoundViewH * 6
