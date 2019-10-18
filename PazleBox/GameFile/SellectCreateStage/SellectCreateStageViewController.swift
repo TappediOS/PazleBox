@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import ChameleonFramework
 import RealmSwift
+import TapticEngine
 
 class SellectCreateStageViewController: UIViewController {
    
@@ -64,5 +65,10 @@ class SellectCreateStageViewController: UIViewController {
          print("プレゼント終わった")
       })
    }
+   
+   func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
+   func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
+   func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
+   
 }
 

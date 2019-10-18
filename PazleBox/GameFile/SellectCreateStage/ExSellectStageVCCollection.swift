@@ -19,6 +19,7 @@ extension SellectCreateStageViewController: UICollectionViewDelegate {
       print("Cellタップされた Cell: \(indexPath.item)")
       LoadStageInfomation(CellNum: indexPath.item)
       PresentGameViewController()
+      Play3DtouchMedium()
     }
 }
 
