@@ -423,7 +423,6 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
          }
       }
       
-      
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.645) {
          self.view.addSubview(self.ClearView!)
          self.view.bringSubviewToFront(self.ConfettiView)
@@ -444,25 +443,19 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       }
    }
 
-   
-
    //MARK:- Nextボタン押されたよ
    @objc func TapNextNotification(notification: Notification) -> Void {
-      
       GameSound.PlaySoundsTapButton()
-      
       //課金してたらそのまま次のステージに
       if userDefaults.bool(forKey: "BuyRemoveAd") == true {
          ShowNextGame()
          return
       }
-      
       //ヒント表示カウントが1やったら広告表示してカウンタアプデして帰る
       if userDefaults.integer(forKey: "InterstitialCount") == 0 {
          ShowInterstitial()
          return
       }
-      
       //それ以外やったらカウンタアプデして次のステージ表示
       ShowNextGame()
       return
@@ -470,14 +463,12 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    
    //MARK:- Homeボタンタップされたよ
    @objc func TapHomeNotification(notification: Notification) -> Void {
-
       GameSound.PlaySoundsTapButton()
       
       //課金してたらそのまま返す
       if userDefaults.bool(forKey: "BuyRemoveAd") == true {
          StopGameBGM()
          self.dismiss(animated: true, completion: nil)
-
          return
       }
       
@@ -496,7 +487,6 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    
    //MARK:- 次のステージに行くために，ClearView消したりアニメーション消したりする
    private func ShowNextGame() {
-
       //MARK:- 最後のステージプレイしてたらさようなら
       if self.SellectStageNumber == self.MaxStageNum{
          print("最後のステージ: \(self.MaxStageNum) をプレーしてたのでホームに帰ります")
@@ -550,7 +540,6 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    //インステーシャル広告表示するのはNextボタン押した時とHomeボタン押した時の2通りあるね.
    //
    private func ShowInterstitial(){
-      
       if Interstitial.isReady {
          print("インタースティシャル広告の準備できてるからpresentする!")
          Interstitial.present(fromRootViewController: self)
@@ -563,7 +552,6 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
          self.dismiss(animated: false, completion: nil)
          return
       }
-         
       print("インタースティシャル広告準備できてないから次のステージに進みます")
       ShowNextGame()
    }
@@ -582,16 +570,6 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       
       InitInstitialLabelOFClearView()
    }
-   
-   
-   
-   
-   private func PostNotificationFinAdWatch() {
-      NotificationCenter.default.post(name: .FinRewardWatch, object: nil, userInfo: nil)
-   }
-   
-
-   
    
    //MARK:- 広告のデリゲート群
    //広告の読み込みが完了した時
@@ -648,14 +626,11 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       return
    }
    
-    override var shouldAutorotate: Bool {return true}
+    override var shouldAutorotate: Bool { return true }
 
    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
+      if UIDevice.current.userInterfaceIdiom == .phone { return .allButUpsideDown }
+      return .all
     }
 
     override var prefersStatusBarHidden: Bool { return true }
