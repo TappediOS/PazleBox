@@ -11,6 +11,7 @@ import UIKit
 import ChameleonFramework
 import RealmSwift
 import TapticEngine
+import FlatUIKit
 
 class SellectCreateStageViewController: UIViewController {
    
@@ -26,7 +27,7 @@ class SellectCreateStageViewController: UIViewController {
    
    //ステージが選択できるかどうか
    var CanSellectStage: Bool = true
-   
+      
    override func viewDidLoad() {
       super.viewDidLoad()
       self.view.backgroundColor = .white
@@ -38,6 +39,30 @@ class SellectCreateStageViewController: UIViewController {
    override func viewWillAppear(_ animated: Bool) {
       print("ステージ選択できる状態にします。")
       CanSellectStage = true
+   }
+   
+   private func InitBackButton(ButtonColor: UIColor, ButtonShadowColor: UIColor) {
+      let FirstX = view.frame.width / 25
+      let FirstY = view.frame.width / 25
+      let width = view.frame.width / 5
+      let Frame = CGRect(x: FirstX, y: FirstY, width: width, height: width / 2)
+      let BackB = FUIButton(frame: Frame)
+      BackB.setTitle("←", for: UIControl.State.normal)
+      BackB.buttonColor = ButtonColor
+      BackB.shadowColor = ButtonShadowColor
+      BackB.shadowHeight = 3.0
+      BackB.cornerRadius = 6.0
+      BackB.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
+      BackB.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
+      BackB.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
+      BackB.addTarget(self, action: #selector(self.TapBackButton(_:)), for: UIControl.Event.touchUpInside)
+      BackB.hero.modifiers = [.arc()]
+      view.addSubview(BackB)
+   }
+   
+   @objc func TapBackButton(_ sender: FUIButton) {
+      Play3DtouchMedium()
+      self.dismiss(animated: true, completion: nil)
    }
    
    

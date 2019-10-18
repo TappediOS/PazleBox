@@ -2116,8 +2116,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "341"
             endingLineNumber = "341"
-            landmarkName = "GameClearView"
-            landmarkType = "3">
+            landmarkName = "StartLoadingAnimation()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2133,7 +2133,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "329"
             endingLineNumber = "329"
-            landmarkName = "InitGoHomeButton(frame:)"
+            landmarkName = "InitLoadActivityView(frame:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
