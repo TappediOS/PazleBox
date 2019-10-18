@@ -169,7 +169,6 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       print("Users GameSene，GameViewの初期化開始")
       if let scene = GKScene(fileNamed: "UsersGameScene") {
          
-         
          // Get the SKScene from the loaded GKScene
          if let sceneNode = scene.rootNode as! UsersGameScene? {
             sceneNode.scaleMode = GetSceneScalaMode(DeviceHeight: UIScreen.main.nativeBounds.height)
@@ -183,11 +182,7 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
             if let view = self.view as! SKView? {
                   
                sceneNode.userData = NSMutableDictionary()
-               
-               
-
                view.ignoresSiblingOrder = true
-               
                let Tran = SKTransition.fade(withDuration: 2.4)
 
                view.presentScene(sceneNode, transition: Tran)
@@ -196,13 +191,11 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
                #if DEBUG
                   view.showsDrawCount = true
                   view.showsQuadCount = true
-                  
                   view.showsFPS = true
                   view.showsNodeCount = true
                #else
                   view.showsDrawCount = false
                   view.showsQuadCount = false
-               
                   view.showsFPS = false
                   view.showsNodeCount = false
                #endif
@@ -213,7 +206,6 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    }
    
    private func GetSceneScalaMode(DeviceHeight: CGFloat) -> SKSceneScaleMode {
-      
       if UIDevice.current.userInterfaceIdiom == .pad { return .fill }
       
       switch DeviceHeight {
