@@ -26,10 +26,10 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    
    var SellectStageNumber = 0
 
-
    var ViewFrame: CGRect?
    
    let GameSound = GameSounds()
+   let GameBGM = BGM()
    
    let StarAnimationBetTime = 0.4659
    
@@ -48,14 +48,11 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    var InterstitialCount = 3
    var InterstitialCountBase = 3
    
-   
    //MARK: user defaults
    var userDefaults: UserDefaults = UserDefaults.standard
 
-   
    let realm = try! Realm()
    
-      
    var UserStageArray: [[Contents]] = Array()
    var UserPiceArray: [PiceInfo] = Array()
    
@@ -65,15 +62,13 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       return .bottom
    }
    
-   let GameBGM = BGM()
+  
    
     override func viewDidLoad() {
       super.viewDidLoad()
       
       let InitVCTimePeformance = Performance.startTrace(name: "InitUsersGameVCTime")
-      
-      self.view.backgroundColor = UIColor.flatRed()
-      
+
       ViewFrame = self.view.frame
       self.hero.isEnabled = true
    
@@ -158,8 +153,6 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       self.UserPiceArray = PiceArray
    }
 
-
-   
    private func InitGameViewAndShowView() {
       print("Users GameSene，GameViewの初期化開始")
       if let scene = GKScene(fileNamed: "UsersGameScene") {
@@ -167,8 +160,6 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
          // Get the SKScene from the loaded GKScene
          if let sceneNode = scene.rootNode as! UsersGameScene? {
             sceneNode.scaleMode = GetSceneScalaMode(DeviceHeight: UIScreen.main.nativeBounds.height)
-            
-            
             sceneNode.InitPuzzleArrayBoforeScene(SizeX: sceneNode.frame.width, SizeY: sceneNode.frame.height, PiceArray: UserPiceArray)
             sceneNode.SetStageArrayBeforeScene(StageArray: UserStageArray)
             
@@ -202,7 +193,6 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    
    private func GetSceneScalaMode(DeviceHeight: CGFloat) -> SKSceneScaleMode {
       if UIDevice.current.userInterfaceIdiom == .pad { return .fill }
-      
       switch DeviceHeight {
       case 2436.0:
          return .fill
@@ -278,121 +268,6 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       self.StartConfeAnimation(CountOfUsedHint: CountOfUsedHint)
       
    }
-   
- 
-
-   
-  
-   //クリアしたステージのヒントの使用回数の保存をするかどうか
-   private func SaveEasyStage(CountOfUsedHint: Int) -> Bool {
-      //クリアしたステージのセルを取得
-      let result = realm.objects(EasyStageClearInfomation.self).filter("StageNum == \(self.SellectStageNumber)")
-      
-      if result.isEmpty == true{
-         print(result)
-         fatalError("なんで空っぽやねん。フザケンナ")
-      }
-      
-      if result.count != 1 {
-         print("result.count = \(result.count)")
-         fatalError("なんで1個以上入ってんねん。")
-      }
-      
-      if let result = result.first {
-         
-         if result.Clear == true && result.CountOfUsedHint <= CountOfUsedHint{
-            print("クリアしてて，ヒント使用回数更新しませんでした。")
-            print("保存してる回数:\(result.CountOfUsedHint)  ,今回使ったヒント回数:\(CountOfUsedHint)")
-            return false
-         }else{
-            print("ヒント使用回数更新しました。")
-            print("保存してる回数:\(result.CountOfUsedHint)  ,今回使ったヒント回数:\(CountOfUsedHint)")
-         }
-         
-         do {
-            try realm.write {
-               result.Clear = true
-               result.CountOfUsedHint = CountOfUsedHint
-            }
-         }catch{  print("\n\n-----------------ream 保存失敗------------------\n\n") }
-      }
-      return true
-   }
-   
-   private func SaveNormalStage(CountOfUsedHint: Int)-> Bool {
-      let result = realm.objects(NormalStageClearInfomation.self).filter("StageNum == \(self.SellectStageNumber)")
-      
-      if result.isEmpty == true{
-         print(result)
-         fatalError("なんで空っぽやねん。フザケンナ")
-      }
-      
-      if result.count != 1 {
-         print("result.count = \(result.count)")
-         fatalError("なんで1個以上入ってんねん。")
-      }
-      
-      if let result = result.first {
-         if result.Clear == true && result.CountOfUsedHint <= CountOfUsedHint{
-            print("クリアしてて，ヒント使用回数更新しませんでした。")
-            print("保存してる回数:\(result.CountOfUsedHint)  ,今回使ったヒント回数:\(CountOfUsedHint)")
-            return false
-         }else{
-            print("ヒント使用回数更新しました。")
-            print("保存してる回数:\(result.CountOfUsedHint)  ,今回使ったヒント回数:\(CountOfUsedHint)")
-         }
-         
-         do {
-            try realm.write {
-               result.Clear = true
-               result.CountOfUsedHint = CountOfUsedHint
-            }
-         }catch{  print("\n\n-----------------ream 保存失敗------------------\n\n") }
-      }
-      
-      return true
-   }
-   
-   private func SaveHardStage(CountOfUsedHint: Int) -> Bool {
-      let result = realm.objects(HardStageClearInfomation.self).filter("StageNum == \(self.SellectStageNumber)")
-      
-      if result.isEmpty == true{
-         print(result)
-         fatalError("なんで空っぽやねん。フザケンナ")
-      }
-      
-      if result.count != 1 {
-         print("result.count = \(result.count)")
-         fatalError("なんで1個以上入ってんねん。")
-      }
-      
-      if let result = result.first {
-         if result.Clear == true && result.CountOfUsedHint <= CountOfUsedHint{
-            print("クリアしてて，ヒント使用回数更新しませんでした。")
-            print("保存してる回数:\(result.CountOfUsedHint)  ,今回使ったヒント回数:\(CountOfUsedHint)")
-            return false
-         }else{
-            print("ヒント使用回数更新しました。")
-            print("保存してる回数:\(result.CountOfUsedHint)  ,今回使ったヒント回数:\(CountOfUsedHint)")
-         }
-         
-         do {
-            try realm.write {
-               result.Clear = true
-               result.CountOfUsedHint = CountOfUsedHint
-            }
-         }catch{  print("\n\n-----------------ream 保存失敗------------------\n\n") }
-      }
-      
-      return true
-   }
-   
-
-   
-
-   
-   
-   
    
    //MARK:- ゲームクリアして通知を受け取る関数
    @objc func GameClearCatchNotification(notification: Notification) -> Void {
@@ -635,5 +510,3 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
 
     override var prefersStatusBarHidden: Bool { return true }
 }
-
-
