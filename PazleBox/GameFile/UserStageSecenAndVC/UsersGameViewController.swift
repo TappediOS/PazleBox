@@ -438,7 +438,7 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
          self.ClearView?.AddConfiView3()
          self.ClearView?.StartClearViewAnimation()
          self.ClearView?.fadeIn(type: .Normal) { [weak self] in
-            //Hintを用意してないから0にする
+            //Hintを用意してないから0nisuru
             self?.ShowGameClearViewWithStar(CountOfUsedHint: 0)
          }
       }
