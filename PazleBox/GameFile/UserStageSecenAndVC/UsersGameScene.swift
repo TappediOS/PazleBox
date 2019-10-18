@@ -270,8 +270,7 @@ class UsersGameScene: SKScene {
    
    //MARK:- ゲーム終わって通知を送る関数
    private func GameSerPOSTMotification() {
-      //FIXME:-　ここの処理もなおす
-      //NotificationCenter.default.post(name: .GameClear, object: nil, userInfo: SentObject)
+      NotificationCenter.default.post(name: .UsersGameClear, object: nil, userInfo: nil)
    }
    
    //MARK:- ゲームのチェックを行う関数群
@@ -694,13 +693,7 @@ class UsersGameScene: SKScene {
       GameSound.PlaySoundsTapButton()
    }
    
-   private func ShowAdPOSTMotification() {
-      NotificationCenter.default.post(name: .RewardAD, object: nil, userInfo: nil)
-   }
-   
-
-   
-
+ 
 
     override func update(_ currentTime: TimeInterval) { }
 }

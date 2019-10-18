@@ -2376,8 +2376,8 @@
             filePath = "PazleBox/GameFile/UserStageSecenAndVC/UsersGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "InitGameViewAndShowView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2392,8 +2392,8 @@
             filePath = "PazleBox/GameFile/UserStageSecenAndVC/UsersGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2408,8 +2408,8 @@
             filePath = "PazleBox/GameFile/UserStageSecenAndVC/UsersGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "InitGameViewAndShowView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2424,8 +2424,8 @@
             filePath = "PazleBox/GameFile/UserStageSecenAndVC/UsersGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "InitGameViewAndShowView()"
             landmarkType = "7">
          </BreakpointContent>

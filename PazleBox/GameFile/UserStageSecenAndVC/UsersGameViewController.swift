@@ -78,9 +78,7 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       self.hero.isEnabled = true
    
       InitNotificationCenter()
-      
       InitConfettiView()
-      
       InitGameClearView()
       
       InitAllADCheck()
@@ -92,9 +90,6 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       InitVCTimePeformance?.stop()
    }
    
-   
-   
-
    
    private func InitAllADCheck() {
       if userDefaults.bool(forKey: "BuyRemoveAd") == false{
@@ -222,7 +217,7 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    
    //MARK: 通知の初期化
    private func InitNotificationCenter() {
-      NotificationCenter.default.addObserver(self, selector: #selector(GameClearCatchNotification(notification:)), name: .GameClear, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(GameClearCatchNotification(notification:)), name: .UsersGameClear, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(SellectBackNotification(notification:)), name: .SellectBack, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(TapNextNotification(notification:)), name: .TapNext, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(TapHomeNotification(notification:)), name: .TapHome, object: nil)
@@ -254,15 +249,11 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
          self.ClearView?.StartAnimationView1()
       }
-      
       if CountOfUsedHint == 2 { return }
-      
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.05 + StarAnimationBetTime) {
          self.ClearView?.StartAnimationView2()
       }
-      
       if CountOfUsedHint == 1 { return }
-      
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.05 + StarAnimationBetTime * Double(2)) {
          self.ClearView?.StartAnimationView3()
       }
@@ -273,7 +264,6 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
          self.ClearView?.StartConfe1()
       }
       if CountOfUsedHint == 2 { return }
-      
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.05 + StarAnimationBetTime) {
          self.ClearView?.StartConfe2()
       }
@@ -407,13 +397,7 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    //MARK:- ゲームクリアして通知を受け取る関数
    @objc func GameClearCatchNotification(notification: Notification) -> Void {
       guard ShowGameClearView == false else { return }
-      var CountOfUsedHint = 0
-      
-      //セーブする関数に飛ばす
-      if let userInfo = notification.userInfo {
-         CountOfUsedHint = userInfo["CountOfUsedHint"] as! Int
-      }else{ print("Nil きたよ") }
-      
+
       //BGM小さくして，
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.075) {
          self.GameBGM.fade(player: self.GameBGM.FetchedPlayGameBGM,
@@ -454,7 +438,8 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
          self.ClearView?.AddConfiView3()
          self.ClearView?.StartClearViewAnimation()
          self.ClearView?.fadeIn(type: .Normal) { [weak self] in
-            self?.ShowGameClearViewWithStar(CountOfUsedHint: CountOfUsedHint)
+            //Hintを用意してないから0にする
+            self?.ShowGameClearViewWithStar(CountOfUsedHint: 0)
          }
       }
    }
