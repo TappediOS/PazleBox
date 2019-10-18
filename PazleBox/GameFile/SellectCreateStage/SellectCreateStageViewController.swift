@@ -23,12 +23,20 @@ class SellectCreateStageViewController: UIViewController {
    let sectionInsets = UIEdgeInsets(top: 10.0, left: 6.0, bottom: 5.0, right: 6.0)
    let itemsPerRow: CGFloat = 3 //Cellを横に何個入れるか
    
+   //ステージが選択できるかどうか
+   var CanSellectStage: Bool = true
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       self.view.backgroundColor = .white
       
       self.StageCollectionView.delegate = self
       self.StageCollectionView.dataSource = self
+   }
+   
+   override func viewWillAppear(_ animated: Bool) {
+      print("ステージ選択できる状態にします。")
+      CanSellectStage = true
    }
    
    
@@ -50,6 +58,8 @@ class SellectCreateStageViewController: UIViewController {
       GameVC.LoadPiceArray(PiceArray: PiceArray)
       GameVC.LoadStageArray(StageArray: StageArray)
       GameVC.modalPresentationStyle = .fullScreen
+      //HomeViewに対してBGMを消してって通知を送る
+      NotificationCenter.default.post(name: .StopHomeViewBGM, object: nil, userInfo: nil)
       self.present(GameVC, animated: true, completion: {
          print("プレゼント終わった")
       })

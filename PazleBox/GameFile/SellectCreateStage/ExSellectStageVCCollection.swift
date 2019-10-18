@@ -11,6 +11,11 @@ import UIKit
 
 extension SellectCreateStageViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+      guard CanSellectStage == true else {
+         print("ステージを選べません")
+         return
+      }
+      CanSellectStage = false
       print("Cellタップされた Cell: \(indexPath.item)")
       LoadStageInfomation(CellNum: indexPath.item)
       PresentGameViewController()

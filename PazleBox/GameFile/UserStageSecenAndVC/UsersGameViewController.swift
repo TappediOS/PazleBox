@@ -56,6 +56,8 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    var UserStageArray: [[Contents]] = Array()
    var UserPiceArray: [PiceInfo] = Array()
    
+   var isLockedHomeFunction: Bool = false
+   
    //スワイプ無効にするやつ
    @available(iOS 11, *)
    override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge{
@@ -340,10 +342,18 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    @objc func TapHomeNotification(notification: Notification) -> Void {
       GameSound.PlaySoundsTapButton()
       
+      guard isLockedHomeFunction == false else {
+         print("HomeButtonの2度押し禁止！")
+         return
+      }
+      isLockedHomeFunction = true
       //課金してたらそのまま返す
       if userDefaults.bool(forKey: "BuyRemoveAd") == true {
          StopGameBGM()
-         self.dismiss(animated: true, completion: nil)
+         
+         self.dismiss(animated: true, completion: {
+            NotificationCenter.default.post(name: .StartHomeViewBGM, object: nil)
+         })
          return
       }
       
@@ -357,7 +367,9 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       
       UpdateInterstitialCountANDUpdateLabelCount()
       StopGameBGM()
-      self.dismiss(animated: true, completion: nil)
+      self.dismiss(animated: true, completion: {
+         NotificationCenter.default.post(name: .StartHomeViewBGM, object: nil)
+      })
    }
    
    //MARK:- 次のステージに行くために，ClearView消したりアニメーション消したりする
@@ -365,7 +377,8 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       //MARK:- 最後のステージプレイしてたらさようなら
       if self.SellectStageNumber == self.MaxStageNum{
          print("最後のステージ: \(self.MaxStageNum) をプレーしてたのでホームに帰ります")
-         self.dismiss(animated: true, completion: nil)
+         self.dismiss(animated: true, completion: {
+         NotificationCenter.default.post(name: .StartHomeViewBGM, object: nil)})
          return
       }
     
@@ -424,7 +437,8 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       if Interstitial.isReady == false && GoHomeForInstitialAD == true {
          print("インタースティシャル広告準備できてないし，帰りたいから帰る")
          GoHomeForInstitialAD = false
-         self.dismiss(animated: false, completion: nil)
+         self.dismiss(animated: false, completion: {
+         NotificationCenter.default.post(name: .StartHomeViewBGM, object: nil)})
          return
       }
       print("インタースティシャル広告準備できてないから次のステージに進みます")
@@ -479,7 +493,8 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
          Analytics.logEvent("InterAdAndGoHome", parameters: nil)
          print("帰りたいから帰る")
          GoHomeForInstitialAD = false
-         self.dismiss(animated: true, completion: nil)
+         self.dismiss(animated: true, completion: {
+         NotificationCenter.default.post(name: .StartHomeViewBGM, object: nil)})
          return
       }
       

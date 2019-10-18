@@ -1473,8 +1473,8 @@
             timestampString = "590138766.4210629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "654"
-            endingLineNumber = "654"
+            startingLineNumber = "653"
+            endingLineNumber = "653"
             landmarkName = "TapHomeNotification(notification:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1859,8 +1859,8 @@
             timestampString = "590138766.42171"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "622"
-            endingLineNumber = "622"
+            startingLineNumber = "621"
+            endingLineNumber = "621"
             landmarkName = "TapNextNotification(notification:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2392,8 +2392,8 @@
             filePath = "PazleBox/GameFile/UserStageSecenAndVC/UsersGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2408,8 +2408,8 @@
             filePath = "PazleBox/GameFile/UserStageSecenAndVC/UsersGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "InitGameViewAndShowView()"
             landmarkType = "7">
          </BreakpointContent>

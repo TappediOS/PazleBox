@@ -98,6 +98,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    override func viewWillAppear(_ animated: Bool) {
       //戻ってきた時についてなかったらさいせい
       if !GameBGM!.Hight_Tech.isPlaying {
+         print("BGMついてないから再生します。")
          StartBGM()
       }
       //HeroIDを元に戻す
@@ -124,6 +125,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    //MARK: 通知の初期化
    private func InitNotificationCenter() {
       NotificationCenter.default.addObserver(self, selector: #selector(StopHomeBGMCatchNotification(notification:)), name: .StopHomeViewBGM, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(StartHomeBGMCatchNotification(notification:)), name: .StartHomeViewBGM, object: nil)
    }
    
    private func InitTitleLabel() {
@@ -389,6 +391,13 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
          }
       }else{
          print("BGM初期化できてないよ-")
+      }
+   }
+   
+   @objc func StartHomeBGMCatchNotification(notification: Notification) -> Void {
+      if !GameBGM!.Hight_Tech.isPlaying {
+         print("BGMついてないから再生します。")
+         StartBGM()
       }
    }
    

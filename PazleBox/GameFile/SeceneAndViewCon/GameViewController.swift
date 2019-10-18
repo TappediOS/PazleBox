@@ -579,7 +579,6 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    
    //MARK:- ゲームのステージを選択したって通知を受け取る関数
    @objc func SellectStageNotification(notification: Notification) -> Void {
-      
       if let userInfo = notification.userInfo {
          let SentNum = userInfo["StageNum"] as! Int
          print("送信者番号: \(SentNum)")
@@ -758,9 +757,6 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
       
       InitInstitialLabelOFClearView()
    }
-   
-   
-   
    
    private func PostNotificationFinAdWatch() {
       NotificationCenter.default.post(name: .FinRewardWatch, object: nil, userInfo: nil)
