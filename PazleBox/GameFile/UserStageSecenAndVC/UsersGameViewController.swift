@@ -376,7 +376,7 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       
       //並列処理するよ
       let dispatchGroup = DispatchGroup()
-      let dispatchQueue = DispatchQueue.global(qos: .userInteractive)   //早いほうがいいからuserInteractive
+      let dispatchQueue = DispatchQueue.main
       
       //エンターさせて，
       dispatchGroup.enter()
