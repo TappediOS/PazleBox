@@ -53,6 +53,9 @@ class CleateStageViewController: UIViewController {
    "32p12Blue","43p16Blue","43p12Blue","43p25Blue","43p14Blue",
    "33p3Blue", "33p23Blue","43p21Green","43p26Blue","43p28Blue"]
    
+   let sectionInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+   let itemsPerRow: CGFloat = 1 //Cellを横に何個入れるか
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       

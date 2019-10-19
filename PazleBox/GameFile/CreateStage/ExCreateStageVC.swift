@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension CleateStageViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension CleateStageViewController: UICollectionViewDataSource {
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
       print("データベースのデータ数は,\(photos.count)")
       return photos.count
@@ -54,12 +54,45 @@ extension CleateStageViewController: UICollectionViewDataSource, UICollectionVie
       
       ///もしCellタップしたときにOnViewがあったら全部消す。
       RemoveAllFromWorkArry()
-      
       TappedCell(CellNum: indexPath.item)
    }
    
-   func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-       return 5
+ 
+}
+
+extension CleateStageViewController: UICollectionViewDelegateFlowLayout {
+   
+   // Screenサイズに応じたセルサイズを返す
+   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+      var PiceHeightNum: CGFloat = 0
+      var PiceWideNum: CGFloat = 0
+      if let PiceNumber = Int(photos[indexPath.item].pregReplace(pattern: "p[0-9]+(Green|Blue|Red)", with: "")) {
+         PiceHeightNum = CGFloat(PiceNumber % 10)
+         PiceWideNum = (CGFloat(PiceNumber) - PiceHeightNum) / 10
+      }else{
+         fatalError("正規表現でint型を取得できない")
+      }
+      
+      let PiceSizePidding = PiceWideNum / PiceHeightNum
+      
+      print("Hei = \(PiceHeightNum), wid = \(PiceWideNum), Pidding = \(PiceSizePidding)")
+
+       let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+       let availableWidth = view.frame.width - paddingSpace
+       let widthPerItem = availableWidth / itemsPerRow
+      
+       //return CGSize(width: widthPerItem, height: widthPerItem + 42)
+      return CGSize(width: 50 * PiceSizePidding, height: 50)
+   }
+
+   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+       return sectionInsets
+   }
+
+   // セルの行間の設定
+   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+       return 10.0
    }
 }
 
