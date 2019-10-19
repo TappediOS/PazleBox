@@ -23,10 +23,13 @@ class CreateHomeViewController: UIViewController {
    var FViewW: CGFloat = 0
    var FViewH: CGFloat = 0
    
+   var BackGroundImageView: BackGroundImageViews?
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
       InitViewSize()
+      InitBackgroundImageView()
       InitEachButton()
    }
    
@@ -35,6 +38,12 @@ class CreateHomeViewController: UIViewController {
       ViewH = self.view.frame.height
       FViewW = ViewW / 25
       FViewH = ViewH / 32
+   }
+   
+   private func InitBackgroundImageView() {
+      BackGroundImageView = BackGroundImageViews(frame: self.view.frame)
+      self.view.addSubview(BackGroundImageView!)
+      self.view.sendSubviewToBack(BackGroundImageView!)
    }
    
    private func InitEachButton() {
