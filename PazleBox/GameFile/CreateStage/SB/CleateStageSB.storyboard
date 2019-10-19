@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmg-hS-je9">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmg-hS-je9" customClass="FUIButton">
                                 <rect key="frame" x="92" y="280" width="259" height="164"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="作ったステージ"/>
@@ -25,7 +25,7 @@
                                     <segue destination="XcZ-8x-GJ4" kind="presentation" id="sAA-2h-Oa0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCS-tJ-dt8">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCS-tJ-dt8" customClass="FUIButton">
                                 <rect key="frame" x="64" y="452" width="294" height="316"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="作る"/>
@@ -33,10 +33,23 @@
                                     <segue destination="miw-3O-gsW" kind="presentation" modalPresentationStyle="overFullScreen" id="nsr-D5-BTc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9W-4O-T85" customClass="FUIButton">
+                                <rect key="frame" x="20" y="44" width="117" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="←"/>
+                                <connections>
+                                    <action selector="TapBackButton:" destination="Shq-YE-a8h" eventType="touchUpInside" id="WQ5-en-fxE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9RH-C0-ZW1"/>
                     </view>
+                    <connections>
+                        <outlet property="BackHomeButton" destination="X9W-4O-T85" id="pUI-dv-qjg"/>
+                        <outlet property="CreateStageButton" destination="wCS-tJ-dt8" id="8Ji-Ig-e6T"/>
+                        <outlet property="SellectStageButton" destination="nmg-hS-je9" id="p8W-z4-iK9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IUE-Lh-ttJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
