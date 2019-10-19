@@ -78,7 +78,6 @@ class SellectCreateStageViewController: UIViewController {
       StageArray = GetPiceArrayFromPiceList(FieldYList: FieldYList)
    }
    
-   
    /// GameVCをプレゼントする関数
    func PresentGameViewController() {
       let GameVC = self.storyboard?.instantiateViewController(withIdentifier: "UsersGameView") as! UsersGameViewController
@@ -96,6 +95,4 @@ class SellectCreateStageViewController: UIViewController {
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
    func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
    func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
-   
 }
-

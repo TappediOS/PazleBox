@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Create Home View Controller-->
         <scene sceneID="wC1-Ms-Scm">
             <objects>
-                <viewController storyboardIdentifier="SellectCreateStageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Shq-YE-a8h" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SellectCreateStageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Shq-YE-a8h" customClass="CreateHomeViewController" customModule="PazleBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9eB-md-1WS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
