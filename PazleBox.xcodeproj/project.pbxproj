@@ -449,6 +449,7 @@
 		BFDD3EEB227D7A9A00B9E6B0 /* Lock_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EEA227D7A9A00B9E6B0 /* Lock_Badge.png */; };
 		BFDD3EED227D7E5200B9E6B0 /* BadgeScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDD3EEC227D7E5200B9E6B0 /* BadgeScale.swift */; };
 		BFE0AB18235AB82E003B2C58 /* CreateHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0AB17235AB82E003B2C58 /* CreateHomeViewController.swift */; };
+		BFE0AB1A235AC04B003B2C58 /* ExCreateStageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0AB19235AC04B003B2C58 /* ExCreateStageVC.swift */; };
 		BFF6D5CE227D9323000253A2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D5CD227D9323000253A2 /* Settings.bundle */; };
 		BFF6D5D4227ED73A000253A2 /* 33p23Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D5D1227ED73A000253A2 /* 33p23Green.png */; };
 		BFF6D5D5227ED73A000253A2 /* 33p23Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D5D2227ED73A000253A2 /* 33p23Red.png */; };
@@ -1185,6 +1186,7 @@
 		BFDD3EEA227D7A9A00B9E6B0 /* Lock_Badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lock_Badge.png; sourceTree = "<group>"; };
 		BFDD3EEC227D7E5200B9E6B0 /* BadgeScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeScale.swift; sourceTree = "<group>"; };
 		BFE0AB17235AB82E003B2C58 /* CreateHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHomeViewController.swift; sourceTree = "<group>"; };
+		BFE0AB19235AC04B003B2C58 /* ExCreateStageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCreateStageVC.swift; sourceTree = "<group>"; };
 		BFF6D5CD227D9323000253A2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		BFF6D5D1227ED73A000253A2 /* 33p23Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 33p23Green.png; sourceTree = "<group>"; };
 		BFF6D5D2227ED73A000253A2 /* 33p23Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 33p23Red.png; sourceTree = "<group>"; };
@@ -1910,6 +1912,7 @@
 			children = (
 				BF4323CC22D36733008DF038 /* SB */,
 				BF4323C622D35822008DF038 /* CreateStageViewController.swift */,
+				BFE0AB19235AC04B003B2C58 /* ExCreateStageVC.swift */,
 				BF33CE09233A243A00AD488A /* PiceImageView.swift */,
 				BF73C2F12349C03F00745C7F /* UserCreateStageDB.swift */,
 				BF33CE0D233B319000AD488A /* GetPiceposition.swift */,
@@ -3588,6 +3591,7 @@
 				BF552EC4226DDD7B00756E16 /* E49.swift in Sources */,
 				BFF889A7229FC86A0056A839 /* ButtonColorManager.swift in Sources */,
 				BF332FF222492827009B3042 /* H13.swift in Sources */,
+				BFE0AB1A235AC04B003B2C58 /* ExCreateStageVC.swift in Sources */,
 				BF552E9A226DDD1400756E16 /* E28.swift in Sources */,
 				BFF889A5229FC0CA0056A839 /* RemotConfigManagerHomeView.swift in Sources */,
 				BF27D04A22B4E61800596644 /* HomeViewIAP.swift in Sources */,
