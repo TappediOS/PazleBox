@@ -48,18 +48,18 @@ class SellectCreateStageViewController: UIViewController {
       let FirstY = view.frame.width / 25
       let width = view.frame.width / 5
       let Frame = CGRect(x: FirstX, y: FirstY * 1.95, width: width, height: width / 2.2)
-      let BackB = FUIButton(frame: Frame)
-      BackB.setTitle("←", for: UIControl.State.normal)
-      BackB.buttonColor = UIColor.flatMintColorDark()
-      BackB.shadowColor = UIColor.flatMintColorDark()
-      BackB.shadowHeight = 3.0
-      BackB.cornerRadius = 6.0
-      BackB.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
-      BackB.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
-      BackB.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
-      BackB.addTarget(self, action: #selector(self.TapBackButton(_:)), for: UIControl.Event.touchUpInside)
-      BackB.hero.modifiers = [.arc()]
-      view.addSubview(BackB)
+      let BackButton = FUIButton(frame: Frame)
+      BackButton.setTitle("←", for: UIControl.State.normal)
+      BackButton.buttonColor = UIColor.flatMintColorDark()
+      BackButton.shadowColor = UIColor.flatMintColorDark()
+      BackButton.shadowHeight = 3.0
+      BackButton.cornerRadius = 6.0
+      BackButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
+      BackButton.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
+      BackButton.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
+      BackButton.addTarget(self, action: #selector(self.TapBackButton(_:)), for: UIControl.Event.touchUpInside)
+      BackButton.hero.modifiers = [.arc()]
+      view.addSubview(BackButton)
    }
    
    @objc func TapBackButton(_ sender: FUIButton) {
