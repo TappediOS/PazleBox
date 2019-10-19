@@ -639,10 +639,10 @@ class CleateStageViewController: UIViewController {
       })
    }
    
-   private func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
-   private func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
-   private func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
-   private func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
-   private func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
+   func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
+   func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
+   func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
+   func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
+   func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
 }
 
