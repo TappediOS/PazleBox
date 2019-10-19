@@ -34,6 +34,8 @@ class SellectCreateStageViewController: UIViewController {
       
       self.StageCollectionView.delegate = self
       self.StageCollectionView.dataSource = self
+      
+      InitBackButton()
    }
    
    override func viewWillAppear(_ animated: Bool) {
@@ -41,15 +43,15 @@ class SellectCreateStageViewController: UIViewController {
       CanSellectStage = true
    }
    
-   private func InitBackButton(ButtonColor: UIColor, ButtonShadowColor: UIColor) {
+   private func InitBackButton() {
       let FirstX = view.frame.width / 25
       let FirstY = view.frame.width / 25
       let width = view.frame.width / 5
-      let Frame = CGRect(x: FirstX, y: FirstY, width: width, height: width / 2)
+      let Frame = CGRect(x: FirstX, y: FirstY * 1.95, width: width, height: width / 2.2)
       let BackB = FUIButton(frame: Frame)
       BackB.setTitle("←", for: UIControl.State.normal)
-      BackB.buttonColor = ButtonColor
-      BackB.shadowColor = ButtonShadowColor
+      BackB.buttonColor = UIColor.flatMintColorDark()
+      BackB.shadowColor = UIColor.flatMintColorDark()
       BackB.shadowHeight = 3.0
       BackB.cornerRadius = 6.0
       BackB.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)

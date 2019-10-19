@@ -51,7 +51,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ik9-aM-wke">
-                                <rect key="frame" x="0.0" y="74" width="414" height="822"/>
+                                <rect key="frame" x="0.0" y="89" width="414" height="807"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Az1-BX-dXG">
                                     <size key="itemSize" width="95" height="138"/>
@@ -80,10 +80,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="ik9-aM-wke" firstAttribute="top" secondItem="R78-Xq-M2U" secondAttribute="top" constant="30" id="689-Cv-dFA"/>
-                            <constraint firstItem="ik9-aM-wke" firstAttribute="leading" secondItem="R78-Xq-M2U" secondAttribute="leading" id="G6K-fb-F0M"/>
-                            <constraint firstItem="ik9-aM-wke" firstAttribute="trailing" secondItem="R78-Xq-M2U" secondAttribute="trailing" id="fag-c5-X2c"/>
-                            <constraint firstAttribute="bottom" secondItem="ik9-aM-wke" secondAttribute="bottom" id="kEU-vp-tp9"/>
+                            <constraint firstAttribute="bottom" secondItem="ik9-aM-wke" secondAttribute="bottom" id="4Mr-zO-KZc"/>
+                            <constraint firstItem="ik9-aM-wke" firstAttribute="trailing" secondItem="R78-Xq-M2U" secondAttribute="trailing" id="WOF-tN-FJv"/>
+                            <constraint firstItem="ik9-aM-wke" firstAttribute="top" secondItem="R78-Xq-M2U" secondAttribute="top" constant="45" id="d64-VL-Zxy"/>
+                            <constraint firstItem="ik9-aM-wke" firstAttribute="leading" secondItem="R78-Xq-M2U" secondAttribute="leading" id="oMY-h6-V2y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R78-Xq-M2U"/>
                     </view>
