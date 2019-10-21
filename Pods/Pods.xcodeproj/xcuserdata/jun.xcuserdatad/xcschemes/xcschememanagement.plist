@@ -209,6 +209,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SnapKit-framework.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SnapKit-library.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SpriteKitEasingSwift-framework.xcscheme</key>
 		<dict>
 			<key>isShown</key>

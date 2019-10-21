@@ -137,6 +137,7 @@ PODS:
     - Realm (= 3.19.0)
   - SAConfettiView (0.1.8)
   - SCLAlertView (0.8)
+  - SnapKit (4.2.0)
   - SpriteKitEasingSwift (0.14)
   - SwiftyStoreKit (0.15.0)
   - TapticEngine (1.2.0)
@@ -159,6 +160,7 @@ DEPENDENCIES:
   - RealmSwift
   - SAConfettiView (from `https://github.com/gokhanakkurt/SAConfettiView`, branch `swift3`)
   - SCLAlertView
+  - SnapKit
   - SpriteKitEasingSwift
   - SwiftyStoreKit
   - TapticEngine
@@ -198,6 +200,7 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - SCLAlertView
+    - SnapKit
     - SpriteKitEasingSwift
     - SwiftyStoreKit
     - TapticEngine
@@ -247,11 +250,12 @@ SPEC CHECKSUMS:
   RealmSwift: 35f284a537989f2187b413e5917091948cb87a3f
   SAConfettiView: c87031a2280659261b730fce3669fb10e73636ee
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SpriteKitEasingSwift: d389a59f5531399b69cc9c31f52c2e279c813688
   SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
   TapticEngine: ed6f5b4a2e9aa46d4e8fa69a72a7a0b6719bf8ac
   ViewAnimator: 173932c659a43c5a15c665878750d92801ae2cf1
 
-PODFILE CHECKSUM: da8a65f461ae03f69ef70004b292be914474bf6c
+PODFILE CHECKSUM: ea35c2b49d28eafc5aa609cdddb2460ae2ed3cd0
 
 COCOAPODS: 1.8.0

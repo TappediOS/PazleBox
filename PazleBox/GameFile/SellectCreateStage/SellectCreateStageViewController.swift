@@ -22,7 +22,7 @@ class SellectCreateStageViewController: UIViewController {
    
    @IBOutlet weak var StageCollectionView: UICollectionView!
    //こいつがCollecti on viewのレイアウトを決めている
-   let sectionInsets = UIEdgeInsets(top: 10.0, left: 6.0, bottom: 5.0, right: 6.0)
+   let sectionInsets = UIEdgeInsets(top: 13.0, left: 6.0, bottom: 5.0, right: 6.0)
    let itemsPerRow: CGFloat = 3 //Cellを横に何個入れるか
    
    //ステージが選択できるかどうか

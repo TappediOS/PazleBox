@@ -33,6 +33,8 @@ target 'PazleBox' do
 
   pod 'LicensePlist'
 
+  pod 'SnapKit'
+
   pod "COSTouchVisualizer"  
 
 end
@@ -52,6 +54,7 @@ target 'PazleBoxTests' do
   pod 'NVActivityIndicatorView'
   pod "ViewAnimator"
 
+  pod 'SnapKit'
 
   pod 'SCLAlertView'
 
@@ -75,6 +78,7 @@ target 'PazleBoxUITests' do
   pod 'NVActivityIndicatorView'
   pod "ViewAnimator"
 
+  pod 'SnapKit'
 
   pod 'SwiftyStoreKit'
 

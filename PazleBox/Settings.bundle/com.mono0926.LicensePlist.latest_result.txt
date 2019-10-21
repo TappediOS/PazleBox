@@ -193,6 +193,18 @@ name: SCLAlertView, nameSpecified:
 body: Copyright (c) 2013-2…
 version: 0.8
 
+name: SnapKit, nameSpecified: 
+body: Copyright (c) 2011-P…
+version: 4.2.0
+
+name: SnapKit, nameSpecified: 
+body: Copyright (c) 2011-P…
+version: 4.2.0
+
+name: SnapKit, nameSpecified: 
+body: Copyright (c) 2011-P…
+version: 4.2.0
+
 name: SpriteKitEasingSwift, nameSpecified: 
 body: Copyright (c) 2017 c…
 version: 0.14

@@ -11,6 +11,7 @@ import UIKit
 import ChameleonFramework
 import TapticEngine
 import FlatUIKit
+import SnapKit
 
 class CleateStageViewController: UIViewController {
    
@@ -22,6 +23,8 @@ class CleateStageViewController: UIViewController {
    
    var FinishCreatePuzzleButton: FUIButton?
    var FinishChouseResPuzzleButton: FUIButton?
+   
+   var TrashImageView = UIImageView()
    
    var RedFlame = CGRect()
    var GreenFlame = CGRect()
@@ -53,7 +56,7 @@ class CleateStageViewController: UIViewController {
    "32p12Blue","43p16Blue","43p12Blue","43p25Blue","43p14Blue",
    "33p3Blue", "33p23Blue","43p21Green","43p26Blue","43p28Blue"]
    
-   let sectionInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+   let sectionInsets = UIEdgeInsets(top: 0, left: 17, bottom: 0, right: -17)
    let itemsPerRow: CGFloat = 1 //Cellを横に何個入れるか
    
    override func viewDidLoad() {
@@ -65,6 +68,7 @@ class CleateStageViewController: UIViewController {
       
       InitFinishCreatePuzzleButton()
       InitFinishChouseResPuzzleButton()
+      InitTrashView()
       
       InitOnPiceView()
       InitRedFlame()
@@ -101,7 +105,7 @@ class CleateStageViewController: UIViewController {
    
    private func InitFinishCreatePuzzleButton() {
       FinishCreatePuzzleButton = FUIButton(frame: CGRect(x: view.frame.width / 20 * 5, y: 150, width: view.frame.width / 20 * 5, height: 50))
-      FinishCreatePuzzleButton?.setTitle(NSLocalizedString("No Ads", comment: ""), for: .normal)
+      FinishCreatePuzzleButton?.setTitle("owari", for: .normal)
       FinishCreatePuzzleButton?.addTarget(self, action: #selector(self.TapFinishiButton), for: .touchUpInside)
       FinishCreatePuzzleButton?.titleLabel?.adjustsFontSizeToFitWidth = true
       FinishCreatePuzzleButton?.titleLabel?.adjustsFontForContentSizeCategory = true
@@ -117,7 +121,7 @@ class CleateStageViewController: UIViewController {
    
    private func InitFinishChouseResPuzzleButton() {
       FinishChouseResPuzzleButton = FUIButton(frame: CGRect(x: view.frame.width / 20 * 5, y: 150, width: view.frame.width / 20 * 5, height: 50))
-      FinishChouseResPuzzleButton?.setTitle(NSLocalizedString("No Ads", comment: ""), for: .normal)
+      FinishChouseResPuzzleButton?.setTitle("onn", for: .normal)
       FinishChouseResPuzzleButton?.addTarget(self, action: #selector(self.TapFinChouseResPuzzleButton), for: .touchUpInside)
       FinishChouseResPuzzleButton?.titleLabel?.adjustsFontSizeToFitWidth = true
       FinishChouseResPuzzleButton?.titleLabel?.adjustsFontForContentSizeCategory = true
@@ -130,6 +134,24 @@ class CleateStageViewController: UIViewController {
       FinishChouseResPuzzleButton?.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
       FinishChouseResPuzzleButton?.isHidden = true
       view.addSubview(FinishChouseResPuzzleButton!)
+   }
+   
+   private func InitTrashView() {
+      //TrashImageView.addTarget(self, action: #selector(self.TapOptionButton), for: .touchUpInside)
+      TrashImageView.image = UIImage(named: "Trash_Black128.png")
+
+      view.addSubview(TrashImageView)
+      
+      TrashImageView.snp.makeConstraints{ make in
+         make.height.equalTo(50)
+         make.width.equalTo(50)
+         make.trailing.equalTo(self.view.snp.trailing).offset(-8)
+         if #available(iOS 11, *) {
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(7)
+         } else {
+           make.top.equalTo(self.view.snp.top).offset(7)
+         }
+      }
    }
    
    private func InitOnPiceView() {
@@ -558,6 +580,10 @@ class CleateStageViewController: UIViewController {
             CheckedStage[y][x] = PArry[y - LeftUpY][x - LeftUpX]
          }
       }
+   }
+   
+   @objc func TapOptionButton() {
+      print("Tap OptionButton")
    }
    
    @objc func TapFinishiButton() {
