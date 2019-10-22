@@ -49,7 +49,7 @@ class PiceImageView : UIImageView {
    init(frame: CGRect, name: String, WindowFlame: CGRect) {
       
       AlphaImageView = UIImageView(frame: frame)
-      self.PicePosi = GetPicePosi(ViewX: WindowFlame.width, ViewY: WindowFlame.height)
+      self.PicePosi = GetPicePosi(ViewX: WindowFlame.width, ViewY: WindowFlame.height) 
       selfName = name
       
       super.init(frame: frame)
