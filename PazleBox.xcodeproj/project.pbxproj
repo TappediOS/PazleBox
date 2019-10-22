@@ -1913,9 +1913,7 @@
 			isa = PBXGroup;
 			children = (
 				BF4323CC22D36733008DF038 /* SB */,
-				BF4323C622D35822008DF038 /* CreateStageViewController.swift */,
-				BF67C2A4235DB9D200EBFB00 /* ExCreateStageDidLayoutSubviews.swift */,
-				BFE0AB19235AC04B003B2C58 /* ExCreateStageVC.swift */,
+				BF67C2A6235EB6C800EBFB00 /* CleateStageViewControllerFile */,
 				BF33CE09233A243A00AD488A /* PiceImageView.swift */,
 				BF73C2F12349C03F00745C7F /* UserCreateStageDB.swift */,
 				BF33CE0D233B319000AD488A /* GetPiceposition.swift */,
@@ -1978,6 +1976,16 @@
 				BF332F7922490D4F009B3042 /* Hard */,
 			);
 			path = StageOfPuzzle;
+			sourceTree = "<group>";
+		};
+		BF67C2A6235EB6C800EBFB00 /* CleateStageViewControllerFile */ = {
+			isa = PBXGroup;
+			children = (
+				BF4323C622D35822008DF038 /* CreateStageViewController.swift */,
+				BF67C2A4235DB9D200EBFB00 /* ExCreateStageDidLayoutSubviews.swift */,
+				BFE0AB19235AC04B003B2C58 /* ExCreateStageVC.swift */,
+			);
+			path = CleateStageViewControllerFile;
 			sourceTree = "<group>";
 		};
 		BF73C2F6234B316A00745C7F /* UserStageSecenAndVC */ = {
