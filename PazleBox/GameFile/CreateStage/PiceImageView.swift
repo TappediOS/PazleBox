@@ -49,7 +49,7 @@ class PiceImageView : UIImageView {
    init(frame: CGRect, name: String, WindowFlame: CGRect) {
       
       AlphaImageView = UIImageView(frame: frame)
-      self.PicePosi = GetPicePosi(ViewX: WindowFlame.width, ViewY: WindowFlame.height)
+      self.PicePosi = GetPicePosi(ViewX: WindowFlame.width, ViewY: WindowFlame.height)
       selfName = name
       
       super.init(frame: frame)
@@ -93,7 +93,7 @@ class PiceImageView : UIImageView {
    /// 引数からImageを生成する
    /// - Parameter name: Piceの名前
    private func SetImage(name: String) {
-      self.image = UIImage(contentsOfFile: Bundle.main.path(forResource: name, ofType: "png")!)?.ResizeUIImage(width: 128, height: 128)
+      self.image = UIImage(contentsOfFile: Bundle.main.path(forResource: name, ofType: "png")!)?.ResizeUIImage(width: 180, height: 180)
    }
    
    /// Alpha Imageの生成

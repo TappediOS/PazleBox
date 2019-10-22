@@ -26,9 +26,28 @@ class CleateStageViewController: UIViewController {
    
    var TrashImageView = UIImageView()
    
-   var RedFlame = CGRect()
+   
+   var StartBackImageViewY: CGFloat = 0
+   
    var GreenFlame = CGRect()
+   var RedFlame = CGRect()
    var BlueFlame = CGRect()
+   
+   var RedFlame1_1 = CGRect()
+   var GreenFlame1_1 = CGRect()
+   var BlueFlame1_1 = CGRect()
+   
+   var RedFlame2_3 = CGRect()
+   var GreenFlame2_3 = CGRect()
+   var BlueFlame2_3 = CGRect()
+   
+   var RedFlame3_2 = CGRect()
+   var GreenFlame3_2 = CGRect()
+   var BlueFlame3_2 = CGRect()
+   
+   var RedFlame4_3 = CGRect()
+   var GreenFlame4_3 = CGRect()
+   var BlueFlame4_3 = CGRect()
    
    var MochUserSellectedImageView = UIImageView()
    
@@ -44,13 +63,13 @@ class CleateStageViewController: UIViewController {
    var DontMoveNodeNum = 0
    var ShouldMoveNodeNum = 0
    
-   let photos = ["33p22Blue", "33p21Blue","43p21Blue","43p2Green","21p1Red",
+   let photos = ["33p22Blue", "33p21Blue","43p21Blue","43p2Green","23p5Red",
    "43p34Blue","43p19Blue","43p12Red","23p12Blue","43p14Blue",
    "23p11Blue", "33p7Blue","43p8Green","43p5Blue","43p41Blue",
    "32p12Blue","43p16Blue","43p12Blue","43p25Blue","43p14Blue",
    "33p3Blue", "33p23Blue","43p21Green","43p26Blue","43p28Blue",
    "33p34Blue","43p35Blue","43p36Red","43p25Blue","43p31Blue",
-   "33p22Blue", "33p21Blue","43p21Blue","43p2Green","21p1Red",
+   "33p22Blue", "33p21Blue","43p21Blue","43p2Green","32p3Red",
    "43p34Blue","43p19Blue","43p12Red","23p12Blue","43p14Blue",
    "23p11Blue", "33p7Blue","43p8Green","43p5Blue","43p41Blue",
    "32p12Blue","43p16Blue","43p12Blue","43p25Blue","43p14Blue",
@@ -63,6 +82,7 @@ class CleateStageViewController: UIViewController {
       super.viewDidLoad()
       
       InitBackTileImageView()
+      GetStartBackImageViewY()
       
       InitNotification()
       
@@ -71,9 +91,6 @@ class CleateStageViewController: UIViewController {
       InitTrashView()
       
       InitOnPiceView()
-      InitRedFlame()
-      InitGreenFlame()
-      InitBlueFlame()
       
       CrearCheckedStage()
       
@@ -88,12 +105,39 @@ class CleateStageViewController: UIViewController {
       collectionView.collectionViewLayout.invalidateLayout()
    }
    
+   override func viewDidLayoutSubviews() {
+      super.viewDidLayoutSubviews()
+      
+      ReSetUpOnPiceView()
+      InitRedFlame1_1()
+      InitGreenFlame1_1()
+      InitBlueFlame1_1()
+      
+      InitRedFlame2_3()
+      InitGreenFlame2_3()
+      InitBlueFlame2_3()
+      
+      InitRedFlame3_2()
+      InitGreenFlame3_2()
+      InitBlueFlame3_2()
+      
+      InitRedFlame4_3()
+      InitGreenFlame4_3()
+      InitBlueFlame4_3()
+   }
+   
    private func InitBackTileImageView() {
       BackImageView = BackTileImageView(frame: self.view.frame)
       self.view.addSubview(BackImageView!)
    }
    
-   
+   private func GetStartBackImageViewY() {
+      let TileWide = self.view.frame.width / 10
+      let Inter = TileWide / 10
+      let ViewHeight = 12 * (TileWide + Inter)
+      StartBackImageViewY = self.view.frame.height - ViewHeight - TileWide / 2
+      print("BackView開始のY座標は　\(StartBackImageViewY)")
+   }
    
    private func InitNotification() {
       NotificationCenter.default.addObserver(self, selector: #selector(PiceUpPiceImageView(notification:)), name: .PickUpPiceImageView, object: nil)
@@ -155,11 +199,36 @@ class CleateStageViewController: UIViewController {
    }
    
    private func InitOnPiceView() {
-      let Flame = CGRect(x: view.frame.width / 20, y: 150, width: view.frame.width / 25 * 23, height: 85)
+      let Flame = CGRect(x: view.frame.width / 20, y: 50, width: view.frame.width / 25 * 23, height: 50)
       OnPiceView = UIView(frame: Flame)
       OnPiceView.backgroundColor = UIColor.flatWhite()
       OnPiceView.isHidden = true
       view.addSubview(OnPiceView)
+   }
+   
+   private func ReSetUpOnPiceView() {
+      let SafeAreaTop: CGFloat = self.view.safeAreaInsets.top
+      print("safeareaのトップは　\(SafeAreaTop)")
+      let CollectionviewHeight = collectionView.frame.height
+      print("CollectionViewの高さは \(CollectionviewHeight)")
+      let SafeAndCollectionH = SafeAreaTop + CollectionviewHeight
+      let CanUseAreaHeight = StartBackImageViewY - SafeAndCollectionH
+      print("使える高さは \(CanUseAreaHeight)")
+      
+      var ViewPedding: CGFloat = 0
+      
+      if SafeAreaTop > 40 {
+         ViewPedding = 38
+      }else{
+         ViewPedding = 3
+      }
+      
+      let StartY = SafeAndCollectionH + ViewPedding
+      let Height = CanUseAreaHeight - ViewPedding * 2
+      
+      
+      let Flame = CGRect(x: view.frame.width / 25, y: StartY, width: view.frame.width / 25 * 23, height: Height)
+      OnPiceView.frame = Flame
    }
    
    private func ShowOnPiceView() {
@@ -170,18 +239,6 @@ class CleateStageViewController: UIViewController {
       self.OnPiceView.isHidden = true
    }
 
-   private func InitRedFlame() {
-      let Flame = CGRect(x: OnPiceView.frame.width / 25 * 9 + view.frame.width / 20, y: OnPiceView.frame.minY + 5, width: view.frame.width / 25 * 7, height: OnPiceView.frame.height - 5)
-      RedFlame = Flame
-   }
-   private func InitGreenFlame() {
-      let Flame = CGRect(x: OnPiceView.frame.width / 25 + view.frame.width / 20, y: OnPiceView.frame.minY + 5, width: view.frame.width / 25 * 7, height: OnPiceView.frame.height - 5)
-      GreenFlame = Flame
-   }
-   private func InitBlueFlame() {
-      let Flame = CGRect(x: OnPiceView.frame.width / 25 * 17 + view.frame.width / 20, y: OnPiceView.frame.minY + 5, width: view.frame.width / 25 * 7, height: OnPiceView.frame.height - 5)
-      BlueFlame = Flame
-   }
    
    //MARK:- チェックする配列を初期化する
    private func CrearCheckedStage() {
@@ -341,14 +398,17 @@ class CleateStageViewController: UIViewController {
    
    //MARK:- 指話したときにゴミ箱の上かどうかチェックする関数
    private func isPiceOnGarbageBox(SentNum: Int) -> Bool {
-      let PiceX = PiceImageArray[SentNum].center.x
-      let PiceY = PiceImageArray[SentNum].frame.minY
+      let PiceEndX = PiceImageArray[SentNum].frame.maxX
+      let PiceStarY = PiceImageArray[SentNum].frame.minY
+      let CheckStandardX: CGFloat = self.view.frame.width - 60
+      let CheckStandardY: CGFloat = self.view.safeAreaInsets.top + 50
       
-      print("(\(PiceX) , \(PiceY))\n")
+      print("(\(PiceEndX) , \(PiceStarY))\n")
+      print("(\(CheckStandardX) , \(CheckStandardY))\n")
       
-      if (PiceX > 100 && PiceX < 200) && (PiceY > 0 && PiceY < 100) {
+      if (PiceEndX > CheckStandardX) && (PiceStarY < CheckStandardY) {
          print("\nゴミ箱の上にあった. PiceArryNum = \(SentNum)")
-         print("(\(PiceX) , \(PiceY)\n)")
+         print("(\(PiceEndX) , \(PiceStarY)\n)")
          return true
       }
       return false
@@ -515,6 +575,31 @@ class CleateStageViewController: UIViewController {
       let PiceName: String = photos[CellNum].pregReplace(pattern: "(Green|Blue|Red)", with: "")
       print("TapName = \(PiceName)")
       
+      
+      
+      let PiceStyle = photos[CellNum].pregReplace(pattern: "p[0-9]+(Green|Blue|Red)", with: "")
+      print("PiceStyle = \(PiceStyle)")
+      switch  PiceStyle{
+      case "23":
+         GreenFlame = GreenFlame2_3
+         RedFlame = RedFlame2_3
+         BlueFlame = BlueFlame2_3
+      case "32":
+         GreenFlame = GreenFlame4_3
+         RedFlame = RedFlame4_3
+         BlueFlame = BlueFlame4_3
+      case "33":
+         GreenFlame = GreenFlame1_1
+         RedFlame = RedFlame1_1
+         BlueFlame = BlueFlame1_1
+      case "43":
+         GreenFlame = GreenFlame4_3
+         RedFlame = RedFlame4_3
+         BlueFlame = BlueFlame4_3
+      default:
+         fatalError()
+      }
+      
       //画像を3つ表示
       let GreenPiceImageView = PiceImageView(frame: GreenFlame, name: PiceName + "Green", WindowFlame: view.frame)
       let RedPiceImageView = PiceImageView(frame: RedFlame, name: PiceName + "Red", WindowFlame: view.frame)
@@ -531,6 +616,8 @@ class CleateStageViewController: UIViewController {
       WorkPlacePiceImageArray.append(GreenPiceImageView)
       WorkPlacePiceImageArray.append(RedPiceImageView)
       WorkPlacePiceImageArray.append(BluePiceImageView)
+      
+
       
       
       ShowOnPiceView()
