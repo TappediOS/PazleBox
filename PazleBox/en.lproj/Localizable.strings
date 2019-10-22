@@ -37,3 +37,12 @@
 
 "ThankYou" = "Thank You!";
 "Ohthankyou" = "Oh, thanks...";
+
+"SelectPice" = "Select the pieces and place them";
+"PutOneMorePice" = "Please place at least one piece";
+"DecideInitPosi" = "Let's decide the initial position";
+"ShiftPice" = "Please shift the position of one or more pieces!";
+"TrashPice" = "Drag and drop unused pieces to the trash";
+
+"OK" = "End";
+"Done" = "Done";

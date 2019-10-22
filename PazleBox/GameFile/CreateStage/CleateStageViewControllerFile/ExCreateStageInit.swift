@@ -35,7 +35,7 @@ extension CleateStageViewController {
     
      func InitFinishCreatePuzzleButton() {
        FinishCreatePuzzleButton = FUIButton(frame: CGRect(x: view.frame.width / 20 * 5, y: 150, width: view.frame.width / 20 * 5, height: 50))
-       FinishCreatePuzzleButton?.setTitle("owari", for: .normal)
+       FinishCreatePuzzleButton?.setTitle(NSLocalizedString("OK", comment: ""), for: .normal)
        FinishCreatePuzzleButton?.addTarget(self, action: #selector(self.TapFinishiButton), for: .touchUpInside)
        FinishCreatePuzzleButton?.titleLabel?.adjustsFontSizeToFitWidth = true
        FinishCreatePuzzleButton?.titleLabel?.adjustsFontForContentSizeCategory = true
@@ -51,7 +51,7 @@ extension CleateStageViewController {
     
      func InitFinishChouseResPuzzleButton() {
        FinishChouseResPuzzleButton = FUIButton(frame: CGRect(x: view.frame.width / 20 * 5, y: 150, width: view.frame.width / 20 * 5, height: 50))
-       FinishChouseResPuzzleButton?.setTitle("onn", for: .normal)
+       FinishChouseResPuzzleButton?.setTitle(NSLocalizedString("Done", comment: ""), for: .normal)
        FinishChouseResPuzzleButton?.addTarget(self, action: #selector(self.TapFinChouseResPuzzleButton), for: .touchUpInside)
        FinishChouseResPuzzleButton?.titleLabel?.adjustsFontSizeToFitWidth = true
        FinishChouseResPuzzleButton?.titleLabel?.adjustsFontForContentSizeCategory = true
@@ -68,7 +68,9 @@ extension CleateStageViewController {
     
      func InitTrashView() {
        TrashImageView.image = UIImage(named: "Trash_Black128.png")
-
+      
+      TrashImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(CleateStageViewController.TapTrashView(_:))))
+      TrashImageView.isUserInteractionEnabled = true
        view.addSubview(TrashImageView)
        
        TrashImageView.snp.makeConstraints{ make in
@@ -103,7 +105,7 @@ extension CleateStageViewController {
    func InitInfoLabel() {
       InfoLabel.adjustsFontSizeToFitWidth = true
       InfoLabel.font = UIFont(name: "AppleSDGothicNeo-Light", size: 14)
-      InfoLabel.text = "if you cant use Picep"
+      InfoLabel.text = NSLocalizedString("SelectPice", comment: "")
       InfoLabel.textColor = UIColor.flatBlack()
       InfoLabel.numberOfLines = 0;
       InfoLabel.sizeToFit()

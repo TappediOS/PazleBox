@@ -36,3 +36,12 @@
 
 "ThankYou" = "고맙습니다!";
 "Ohthankyou" = "오 감사...";
+
+"SelectPice" = "조각을 선택하고 배치하십시오";
+"PutOneMorePice" = "적어도 한 장을 놓으십시오";
+"DecideInitPosi" = "초기 위치를 결정하겠습니다";
+"ShiftPice" = "하나 이상의 조각 위치를 이동하십시오!";
+"TrashPice" = "사용하지 않은 조각을 휴지통으로 드래그 앤 드롭";
+
+"OK" = "종료";
+"Done" = "끝난";

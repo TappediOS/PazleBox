@@ -36,3 +36,12 @@
 
 "ThankYou" = "ありがとう!";
 "Ohthankyou" = "Oh, thanks...";
+
+"SelectPice" = "ピースをえらんで配置する";
+"PutOneMorePice" = "ピースは1こ以上は配置してください";
+"DecideInitPosi" = "初期位置をきめよう";
+"ShiftPice" = "1こ以上はピースの位置をずらしてください！";
+"TrashPice" = "使わないピースはゴミ箱にドラッグ&ドロップ";
+
+"OK" = "終了";
+"Done" = "完了";

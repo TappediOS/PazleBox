@@ -36,3 +36,12 @@
 
 "ThankYou" = "謝謝！";
 "Ohthankyou" = "哦謝謝...";
+
+"SelectPice" = "選擇並放置它們";
+"PutOneMorePice" = "請至少放置一張";
+"DecideInitPosi" = "讓我們決定初始位置";
+"ShiftPice" = "請轉移一個或多個零件的位置！";
+"TrashPice" = "將未使用的碎片拖放到垃圾箱中";
+
+"OK" = "結束";
+"Done" = "完成";

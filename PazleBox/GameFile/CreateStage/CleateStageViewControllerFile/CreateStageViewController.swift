@@ -332,7 +332,12 @@ class CleateStageViewController: UIViewController {
    @objc func MovedPiceCatchNotification(notification: Notification) -> Void {
       print("--- Fin Move notification ---")
       CrearCheckedStage()
-         
+      
+      if FinishChouseResPuzzleButton?.isHidden == true {
+         InfoLabel.text = NSLocalizedString("SelectPice", comment: "")
+      }
+      
+      
       if let userInfo = notification.userInfo {
          let SentNum = userInfo["ArryNum"] as! Int
          print("送信者番号: \(SentNum)")
@@ -565,12 +570,20 @@ class CleateStageViewController: UIViewController {
       print("Tap OptionButton")
    }
    
+   @objc func TapTrashView(_ sender: UITapGestureRecognizer) {
+      print("Tap TrashView")
+      InfoLabel.text = NSLocalizedString("TrashPice", comment: "")
+   }
+   
    @objc func TapFinishiButton() {
       print("FinPutButtonタップされたよ")
       guard PiceImageArray.count != 0 else {
          print("Piceが1つも選ばれてません")
+         InfoLabel.text = NSLocalizedString("PutOneMorePice", comment: "")
          return
       }
+      
+      InfoLabel.text = NSLocalizedString("DecideInitPosi", comment: "")
       
       FillContentsArray = CleanCheckedStage.Checked
       
@@ -600,6 +613,7 @@ class CleateStageViewController: UIViewController {
       
       if FillContentsArray == CheckedStage {
          print("変更しましょう")
+         InfoLabel.text = NSLocalizedString("ShiftPice", comment: "")
          return
       }
       
