@@ -254,6 +254,7 @@
 		BF640C0B2245103500333782 /* E2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF640C0A2245103500333782 /* E2.swift */; };
 		BF640C0D224513DF00333782 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF640C0C224513DF00333782 /* HomeViewController.swift */; };
 		BF67C2A5235DB9D200EBFB00 /* ExCreateStageDidLayoutSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67C2A4235DB9D200EBFB00 /* ExCreateStageDidLayoutSubviews.swift */; };
+		BF67C2A8235EB70800EBFB00 /* ExCreateStageInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67C2A7235EB70800EBFB00 /* ExCreateStageInit.swift */; };
 		BF73C2F22349C03F00745C7F /* UserCreateStageDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F12349C03F00745C7F /* UserCreateStageDB.swift */; };
 		BF73C2F5234AD86700745C7F /* SellectCreateStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F4234AD86700745C7F /* SellectCreateStageViewController.swift */; };
 		BF73C2F8234B319200745C7F /* UsersGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F7234B319200745C7F /* UsersGameScene.swift */; };
@@ -987,6 +988,7 @@
 		BF640C0A2245103500333782 /* E2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E2.swift; sourceTree = "<group>"; };
 		BF640C0C224513DF00333782 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BF67C2A4235DB9D200EBFB00 /* ExCreateStageDidLayoutSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCreateStageDidLayoutSubviews.swift; sourceTree = "<group>"; };
+		BF67C2A7235EB70800EBFB00 /* ExCreateStageInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCreateStageInit.swift; sourceTree = "<group>"; };
 		BF73C2F12349C03F00745C7F /* UserCreateStageDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreateStageDB.swift; sourceTree = "<group>"; };
 		BF73C2F4234AD86700745C7F /* SellectCreateStageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectCreateStageViewController.swift; sourceTree = "<group>"; };
 		BF73C2F7234B319200745C7F /* UsersGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersGameScene.swift; sourceTree = "<group>"; };
@@ -1982,8 +1984,9 @@
 			isa = PBXGroup;
 			children = (
 				BF4323C622D35822008DF038 /* CreateStageViewController.swift */,
-				BF67C2A4235DB9D200EBFB00 /* ExCreateStageDidLayoutSubviews.swift */,
 				BFE0AB19235AC04B003B2C58 /* ExCreateStageVC.swift */,
+				BF67C2A4235DB9D200EBFB00 /* ExCreateStageDidLayoutSubviews.swift */,
+				BF67C2A7235EB70800EBFB00 /* ExCreateStageInit.swift */,
 			);
 			path = CleateStageViewControllerFile;
 			sourceTree = "<group>";
@@ -3529,6 +3532,7 @@
 				BF1BD1EA2279A2620047496B /* EasyStageClearInfomation.swift in Sources */,
 				BFE0AB18235AB82E003B2C58 /* CreateHomeViewController.swift in Sources */,
 				BFFA2A86223383B60023BB71 /* Normal.swift in Sources */,
+				BF67C2A8235EB70800EBFB00 /* ExCreateStageInit.swift in Sources */,
 				BF33300422492B3E009B3042 /* ExGameSecenNormalP2.swift in Sources */,
 				BF332FE822492805009B3042 /* H9.swift in Sources */,
 				BF332F9A224926EB009B3042 /* E10.swift in Sources */,
