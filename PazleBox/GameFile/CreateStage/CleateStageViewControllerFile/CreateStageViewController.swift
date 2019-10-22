@@ -27,6 +27,8 @@ class CleateStageViewController: UIViewController {
    var TrashImageView = UIImageView()
    var OptionButton = UIButton()
    
+   var InfoLabel = UILabel()
+   
    var StartBackImageViewY: CGFloat = 0
    
    var GreenFlame = CGRect()
@@ -92,6 +94,7 @@ class CleateStageViewController: UIViewController {
       InitFinishChouseResPuzzleButton()
       InitTrashView()
       InitOptionButton()
+      InitInfoLabel()
       
       InitOnPiceView()
       
@@ -114,6 +117,7 @@ class CleateStageViewController: UIViewController {
       SNPOptionButton()
       SNPFinishCreatePuzzleButton()
       SNPFinishChouseResPuzzleButton()
+      SNPFInfoLabel()
       
       InitRedFlame1_1()
       InitGreenFlame1_1()

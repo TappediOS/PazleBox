@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import FlatUIKit
+import ChameleonFramework
 
 extension CleateStageViewController {
     func InitBackTileImageView() {
@@ -98,4 +99,15 @@ extension CleateStageViewController {
        OnPiceView.isHidden = true
        view.addSubview(OnPiceView)
     }
+   
+   func InitInfoLabel() {
+      InfoLabel.adjustsFontSizeToFitWidth = true
+      InfoLabel.font = UIFont(name: "AppleSDGothicNeo-Light", size: 14)
+      InfoLabel.text = "if you cant use Picep"
+      InfoLabel.textColor = UIColor.flatBlack()
+      InfoLabel.numberOfLines = 0;
+      InfoLabel.sizeToFit()
+      InfoLabel.lineBreakMode = .byWordWrapping
+      view.addSubview(InfoLabel)
+   }
 }

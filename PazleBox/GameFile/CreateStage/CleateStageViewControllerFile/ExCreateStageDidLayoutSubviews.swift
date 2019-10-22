@@ -210,7 +210,7 @@ extension CleateStageViewController {
    func SNPFinishCreatePuzzleButton() {
       FinishCreatePuzzleButton!.snp.makeConstraints{ make in
          let Height:CGFloat = 55
-         let Width:CGFloat = 90
+         let Width:CGFloat = 85
          make.height.equalTo(Height)
          make.width.equalTo(Width)
          make.leading.equalTo(self.view.snp.leading).offset(10)
@@ -225,10 +225,25 @@ extension CleateStageViewController {
    func SNPFinishChouseResPuzzleButton() {
       FinishChouseResPuzzleButton!.snp.makeConstraints{ make in
          let Height:CGFloat = 55
-         let Width:CGFloat = 90
+         let Width:CGFloat = 85
          make.height.equalTo(Height)
          make.width.equalTo(Width)
          make.leading.equalTo(self.view.snp.leading).offset(10)
+         if #available(iOS 11, *) {
+            make.top.equalTo(self.collectionView.snp.bottom).offset((CanUseAreaHeight - Height) / 2)
+         } else {
+            make.top.equalTo(self.collectionView.snp.bottom).offset((CanUseAreaHeight - Height) / 2)
+         }
+      }
+   }
+   
+   func SNPFInfoLabel() {
+      InfoLabel.snp.makeConstraints { make in
+         let Height:CGFloat = 55
+         let Offset:CGFloat = 11
+         make.height.equalTo(Height)
+         make.leading.equalTo(self.FinishChouseResPuzzleButton!.snp.trailing).offset(Offset)
+         make.trailing.equalTo(self.OptionButton.snp.leading).offset(-Offset)
          if #available(iOS 11, *) {
             make.top.equalTo(self.collectionView.snp.bottom).offset((CanUseAreaHeight - Height) / 2)
          } else {
