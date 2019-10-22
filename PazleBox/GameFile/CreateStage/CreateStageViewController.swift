@@ -181,7 +181,6 @@ class CleateStageViewController: UIViewController {
    }
    
    private func InitTrashView() {
-      //TrashImageView.addTarget(self, action: #selector(self.TapOptionButton), for: .touchUpInside)
       TrashImageView.image = UIImage(named: "Trash_Black128.png")
 
       view.addSubview(TrashImageView)
@@ -573,12 +572,7 @@ class CleateStageViewController: UIViewController {
       //画像の名前を色を除いて取得
       //例えば，23p43Blueの場合は23p43を抽出する
       let PiceName: String = photos[CellNum].pregReplace(pattern: "(Green|Blue|Red)", with: "")
-      print("TapName = \(PiceName)")
-      
-      
-      
       let PiceStyle = photos[CellNum].pregReplace(pattern: "p[0-9]+(Green|Blue|Red)", with: "")
-      print("PiceStyle = \(PiceStyle)")
       switch  PiceStyle{
       case "23":
          GreenFlame = GreenFlame2_3
@@ -616,9 +610,7 @@ class CleateStageViewController: UIViewController {
       WorkPlacePiceImageArray.append(GreenPiceImageView)
       WorkPlacePiceImageArray.append(RedPiceImageView)
       WorkPlacePiceImageArray.append(BluePiceImageView)
-      
 
-      
       
       ShowOnPiceView()
    }
