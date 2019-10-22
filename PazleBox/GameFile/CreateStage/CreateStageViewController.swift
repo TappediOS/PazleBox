@@ -25,7 +25,7 @@ class CleateStageViewController: UIViewController {
    var FinishChouseResPuzzleButton: FUIButton?
    
    var TrashImageView = UIImageView()
-   
+   var OptionButton = UIButton()
    
    var StartBackImageViewY: CGFloat = 0
    
@@ -78,6 +78,8 @@ class CleateStageViewController: UIViewController {
    let sectionInsets = UIEdgeInsets(top: 0, left: 17, bottom: 0, right: -17)
    let itemsPerRow: CGFloat = 1 //Cellを横に何個入れるか
    
+   var CanUseAreaHeight: CGFloat = 0
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -89,6 +91,7 @@ class CleateStageViewController: UIViewController {
       InitFinishCreatePuzzleButton()
       InitFinishChouseResPuzzleButton()
       InitTrashView()
+      InitOptionButton()
       
       InitOnPiceView()
       
@@ -109,6 +112,11 @@ class CleateStageViewController: UIViewController {
       super.viewDidLayoutSubviews()
       
       ReSetUpOnPiceView()
+      
+      SNPOptionButton()
+      SNPFinishCreatePuzzleButton()
+      SNPFinishChouseResPuzzleButton()
+      
       InitRedFlame1_1()
       InitGreenFlame1_1()
       InitBlueFlame1_1()
@@ -197,6 +205,15 @@ class CleateStageViewController: UIViewController {
       }
    }
    
+   private func InitOptionButton() {
+      OptionButton.addTarget(self, action: #selector(self.TapOptionButton), for: .touchUpInside)
+      let Image = UIImage(named: "Pouse.png")?.ResizeUIImage(width: 128, height: 128)
+      OptionButton.setImage(Image, for: .normal)
+      view.addSubview(OptionButton)
+      
+  
+   }
+   
    private func InitOnPiceView() {
       let Flame = CGRect(x: view.frame.width / 20, y: 50, width: view.frame.width / 25 * 23, height: 50)
       OnPiceView = UIView(frame: Flame)
@@ -205,30 +222,9 @@ class CleateStageViewController: UIViewController {
       view.addSubview(OnPiceView)
    }
    
-   private func ReSetUpOnPiceView() {
-      let SafeAreaTop: CGFloat = self.view.safeAreaInsets.top
-      print("safeareaのトップは　\(SafeAreaTop)")
-      let CollectionviewHeight = collectionView.frame.height
-      print("CollectionViewの高さは \(CollectionviewHeight)")
-      let SafeAndCollectionH = SafeAreaTop + CollectionviewHeight
-      let CanUseAreaHeight = StartBackImageViewY - SafeAndCollectionH
-      print("使える高さは \(CanUseAreaHeight)")
-      
-      var ViewPedding: CGFloat = 0
-      
-      if SafeAreaTop > 40 {
-         ViewPedding = 38
-      }else{
-         ViewPedding = 3
-      }
-      
-      let StartY = SafeAndCollectionH + ViewPedding
-      let Height = CanUseAreaHeight - ViewPedding * 2
-      
-      
-      let Flame = CGRect(x: view.frame.width / 25, y: StartY, width: view.frame.width / 25 * 23, height: Height)
-      OnPiceView.frame = Flame
-   }
+
+   
+   
    
    private func ShowOnPiceView() {
       self.OnPiceView.isHidden = false

@@ -1,5 +1,5 @@
 //
-//  ExCreateStage.swift
+//  ExCreateStageDidLayoutSubviews.swift
 //  PazleBox
 //
 //  Created by jun on 2019/10/21.
@@ -10,6 +10,32 @@ import Foundation
 import UIKit
 
 extension CleateStageViewController {
+   
+   private func ReSetUpOnPiceView() {
+     let SafeAreaTop: CGFloat = self.view.safeAreaInsets.top
+     print("safeareaのトップは　\(SafeAreaTop)")
+     let CollectionviewHeight = collectionView.frame.height
+     print("CollectionViewの高さは \(CollectionviewHeight)")
+     let SafeAndCollectionH = SafeAreaTop + CollectionviewHeight
+     self.CanUseAreaHeight = StartBackImageViewY - SafeAndCollectionH
+     print("使える高さは \(self.CanUseAreaHeight)")
+      
+      var ViewPedding: CGFloat = 0
+      
+      if SafeAreaTop > 40 {
+         ViewPedding = 39
+      }else{
+         ViewPedding = 2
+      }
+      
+      let StartY = SafeAndCollectionH + ViewPedding
+      let Height = CanUseAreaHeight - ViewPedding * 2
+      
+      let Flame = CGRect(x: view.frame.width / 40, y: StartY, width: view.frame.width / 40 * 38, height: Height)
+      OnPiceView.frame = Flame
+   }
+   
+   
    func InitRedFlame1_1() {
       let PiceH = OnPiceView.frame.height / 10 * 8
       let PiceW = PiceH * 1
@@ -164,5 +190,48 @@ extension CleateStageViewController {
       
       print(Flame)
       BlueFlame4_3 = Flame
+   }
+   
+   
+   func SNPOptionButton() {
+      OptionButton.snp.makeConstraints{ make in
+         let Height:CGFloat = 50
+         make.height.equalTo(Height)
+         make.width.equalTo(Height)
+         make.trailing.equalTo(self.view.snp.trailing).offset(-8)
+         if #available(iOS 11, *) {
+            make.top.equalTo(self.collectionView.snp.bottom).offset((CanUseAreaHeight - Height) / 2)
+         } else {
+            make.top.equalTo(self.collectionView.snp.bottom).offset((CanUseAreaHeight - Height) / 2)
+         }
+      }
+   }
+   
+   func SNPFinishCreatePuzzleButton() {
+      FinishCreatePuzzleButton!.snp.makeConstraints{ make in
+         let Height:CGFloat = 50
+         make.height.equalTo(Height)
+         make.width.equalTo(Height)
+         make.leading.equalTo(self.view.snp.leading).offset(10)
+         if #available(iOS 11, *) {
+            make.top.equalTo(self.collectionView.snp.bottom).offset((CanUseAreaHeight - Height) / 2)
+         } else {
+            make.top.equalTo(self.collectionView.snp.bottom).offset((CanUseAreaHeight - Height) / 2)
+         }
+      }
+   }
+   
+   func SNPFinishChouseResPuzzleButton() {
+      FinishChouseResPuzzleButton!.snp.makeConstraints{ make in
+         let Height:CGFloat = 50
+         make.height.equalTo(Height)
+         make.width.equalTo(Height)
+         make.leading.equalTo(self.view.snp.leading).offset(10)
+         if #available(iOS 11, *) {
+            make.top.equalTo(self.collectionView.snp.bottom).offset((CanUseAreaHeight - Height) / 2)
+         } else {
+            make.top.equalTo(self.collectionView.snp.bottom).offset((CanUseAreaHeight - Height) / 2)
+         }
+      }
    }
 }
