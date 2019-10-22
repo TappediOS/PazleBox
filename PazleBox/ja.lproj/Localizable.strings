@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   PazleBox
 
@@ -45,3 +45,8 @@
 
 "OK" = "終了";
 "Done" = "完了";
+
+
+"IfGoHome" = "Homeに戻った場合，内容は保存されません。";
+
+"saved" = "保存完了";

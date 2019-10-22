@@ -12,6 +12,7 @@ import ChameleonFramework
 import TapticEngine
 import FlatUIKit
 import SnapKit
+import SCLAlertView
 
 class CleateStageViewController: UIViewController {
    
@@ -81,6 +82,8 @@ class CleateStageViewController: UIViewController {
    let itemsPerRow: CGFloat = 1 //Cellを横に何個入れるか
    
    var CanUseAreaHeight: CGFloat = 0
+   
+   var isLockColleViewANDTrashPice = false
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -342,8 +345,8 @@ class CleateStageViewController: UIViewController {
          let SentNum = userInfo["ArryNum"] as! Int
          print("送信者番号: \(SentNum)")
          
-         //もしPiceがゴミ箱の上に乗ってたら
-         if isPiceOnGarbageBox(SentNum: SentNum) == true {
+         //もしPiceがゴミ箱の上に乗ってて，かつ，ロックされてなかったら
+         if isPiceOnGarbageBox(SentNum: SentNum) == true && isLockColleViewANDTrashPice == false {
             DeletePiceOnGarbageBox(SentNum: SentNum)
             UpdateAllPiceArryNum()
             return
@@ -568,7 +571,17 @@ class CleateStageViewController: UIViewController {
    
    @objc func TapOptionButton() {
       print("Tap OptionButton")
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: true)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+
+      ComleateView.addButton(NSLocalizedString("Home", comment: "")){
+         self.dismiss(animated: true)
+         
+      }
+      ComleateView.showInfo(NSLocalizedString("Pouse", comment: ""), subTitle: NSLocalizedString("IfGoHome", comment: ""))
    }
+   
+   
    
    @objc func TapTrashView(_ sender: UITapGestureRecognizer) {
       print("Tap TrashView")
@@ -582,6 +595,10 @@ class CleateStageViewController: UIViewController {
          InfoLabel.text = NSLocalizedString("PutOneMorePice", comment: "")
          return
       }
+      //Lockをかける
+      isLockColleViewANDTrashPice = true
+      collectionView.alpha = 0.45
+      TrashImageView.alpha = 0.45
       
       InfoLabel.text = NSLocalizedString("DecideInitPosi", comment: "")
       
@@ -656,9 +673,19 @@ class CleateStageViewController: UIViewController {
       SaveDataBase.AddStage(StageArrayForContents: FillContentsArray, MaxPiceNum: PiceImageArray.count,
                             PiceArry: PiceImageArray, ImageData: ImageData)
       
-      self.dismiss(animated: true, completion: {
-         print("セーブ完了")
-      })
+      ShowCompleteSaveAlertView()
+      
+   }
+
+   
+   private func ShowCompleteSaveAlertView() {
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      ComleateView.addButton("OK"){
+         self.dismiss(animated: true)
+         
+      }
+      ComleateView.showSuccess(NSLocalizedString("Saved", comment: ""), subTitle: "")
    }
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }

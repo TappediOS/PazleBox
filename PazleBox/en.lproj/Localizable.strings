@@ -46,3 +46,8 @@
 
 "OK" = "End";
 "Done" = "Done";
+
+
+"IfGoHome" = "The contents are not saved when you return to Home.";
+
+"Saved" = "Saved";

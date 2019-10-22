@@ -55,6 +55,10 @@ extension CleateStageViewController: UICollectionViewDataSource {
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
       print("Cell tap \(indexPath.item)")
       ///もしCellタップしたときにOnViewがあったら全部消す。
+      guard isLockColleViewANDTrashPice == false else {
+         print("Locked")
+         return
+      }
       collectionView.reloadData()
       RemoveAllFromWorkArry()
       TappedCell(CellNum: indexPath.item)
