@@ -11,7 +11,7 @@ import UIKit
 
 extension CleateStageViewController {
    
-   private func ReSetUpOnPiceView() {
+   func ReSetUpOnPiceView() {
      let SafeAreaTop: CGFloat = self.view.safeAreaInsets.top
      print("safeareaのトップは　\(SafeAreaTop)")
      let CollectionviewHeight = collectionView.frame.height
