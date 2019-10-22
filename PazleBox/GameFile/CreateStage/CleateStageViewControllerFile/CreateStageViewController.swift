@@ -97,8 +97,6 @@ class CleateStageViewController: UIViewController {
       
       CrearCheckedStage()
       
-      InitMochUserSellectedImageView()
-      
       collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
  
       collectionView.backgroundColor = UIColor.flatWhite()
@@ -134,12 +132,6 @@ class CleateStageViewController: UIViewController {
       InitBlueFlame4_3()
    }
    
-   
-   
-
-   
-   
-   
    private func ShowOnPiceView() {
       self.OnPiceView.isHidden = false
    }
@@ -169,10 +161,7 @@ class CleateStageViewController: UIViewController {
       print()
       print()
    }
-
-   private func InitMochUserSellectedImageView() {
-      
-   }
+   
    
    private func ShowPiceImageArryInfo() {
       for tmp in PiceImageArray {
@@ -276,7 +265,6 @@ class CleateStageViewController: UIViewController {
             print("あったけど .Out やったわ")
          }
       }
-      
       return false
    }
    
@@ -293,9 +281,7 @@ class CleateStageViewController: UIViewController {
             print("かぶった。番号-> \(Pice.GetArryNum())")
             continue
          }
-         
          let PiceInfo = Pice.GetOfInfomation()
-         
          //かぶってたらReturn true
          if SentCheckedStageFill(StageObject: PiceInfo) == true { return true }
       }
