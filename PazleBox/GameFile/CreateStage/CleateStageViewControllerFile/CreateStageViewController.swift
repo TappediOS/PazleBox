@@ -610,7 +610,6 @@ class CleateStageViewController: UIViewController {
          return
       }
       Play3DtouchHeavy()
-      GameSound.PlaySoundsTapButton()
       InfoLabel.text = NSLocalizedString("TrashPice", comment: "")
    }
    
@@ -718,7 +717,8 @@ class CleateStageViewController: UIViewController {
       let ComleateView = SCLAlertView(appearance: Appearanse)
       ComleateView.addButton("OK"){
          self.dismiss(animated: true)
-         
+         self.Play3DtouchHeavy()
+         self.GameSound.PlaySoundsTapButton()
       }
       ComleateView.showSuccess(NSLocalizedString("Saved", comment: ""), subTitle: "")
    }
