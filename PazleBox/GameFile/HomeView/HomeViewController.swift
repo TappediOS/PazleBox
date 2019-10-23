@@ -294,14 +294,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       ContactusButton?.hero.id = "BackButton"
       GameSound.PlaySoundsTapButton()
       
-      //FIXME:- 終わったら削除
-      let Storybord = UIStoryboard(name: "CleateStageSB", bundle: nil)
-      let VC = Storybord.instantiateViewController(withIdentifier: "SellectCreateStageViewController")
-      VC.modalPresentationStyle = .fullScreen
-      self.present(VC, animated: true, completion: nil)
-      return
-      //TODO:- 終わったら削除
-      
       
       
       let url = URL(string: "https://forms.gle/mSEq7WwDz3fZNcqF6")

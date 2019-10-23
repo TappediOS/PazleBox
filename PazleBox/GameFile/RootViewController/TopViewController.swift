@@ -1,5 +1,5 @@
 //
-//  RootViewController.swift
+//  TopViewController.swift
 //  PazleBox
 //
 //  Created by jun on 2019/10/23.
@@ -19,10 +19,12 @@ import Firebase
 import FlatUIKit
 import Hero
 
-class RootViewController: UIViewController, GKGameCenterControllerDelegate {
+class TopViewController: UIViewController, GKGameCenterControllerDelegate {
    
+
    @IBOutlet weak var PlayButton: FUIButton!
    @IBOutlet weak var CreateButton: FUIButton!
+   
    
    var PurchasButton: FUIButton?
    var RestoreButton: FUIButton?
@@ -265,11 +267,34 @@ class RootViewController: UIViewController, GKGameCenterControllerDelegate {
    
    @IBAction func TapPlayButton(_ sender: Any) {
       print("Tap PlayButton")
-   }
-   
-   
-   @IBAction func TapCreateButton(_ sender: Any) {
-      print("Tap CreateButton")
+      Play3DtouchLight()
+      GameSound.PlaySoundsTapButton()
+      
+      let HomeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeView") as! HomeViewController
+      HomeVC.modalPresentationStyle = .fullScreen
+      self.present(HomeVC, animated: true, completion: {
+         print("Home VCにプレゼント完了")
+         
+      })
+      
+      
       
    }
+   
+   
+   @IBAction func TapCreateButton(_ sender: FUIButton) {
+      print("Tap CreateButton")
+      let Storybord = UIStoryboard(name: "CleateStageSB", bundle: nil)
+      let VC = Storybord.instantiateViewController(withIdentifier: "SellectCreateStageViewController")
+      VC.modalPresentationStyle = .fullScreen
+      Play3DtouchLight()
+      GameSound.PlaySoundsTapButton()
+      self.present(VC, animated: true, completion: nil)
+      return
+   }
+   
+   
+   private func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
+     private func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
+     private func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
 }

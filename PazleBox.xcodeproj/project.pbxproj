@@ -321,8 +321,8 @@
 		BF94BDDC2352ED98001ACD11 /* ExSellectStageCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF94BDDB2352ED98001ACD11 /* ExSellectStageCreateViewController.swift */; };
 		BF94BDDE2352FC33001ACD11 /* ExSellectStageVCCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF94BDDD2352FC33001ACD11 /* ExSellectStageVCCollection.swift */; };
 		BF95C63722B79C540037E063 /* GameCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C63622B79C540037E063 /* GameCoin.swift */; };
-		BF9F80AA236010A6003512B0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F80A9236010A6003512B0 /* RootViewController.swift */; };
-		BF9F80AC236013F6003512B0 /* RootViewIAP.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F80AB236013F6003512B0 /* RootViewIAP.swift */; };
+		BF9F80AA236010A6003512B0 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F80A9236010A6003512B0 /* TopViewController.swift */; };
+		BF9F80AC236013F6003512B0 /* TopViewIAP.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F80AB236013F6003512B0 /* TopViewIAP.swift */; };
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
 		BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D422428287007C8FA1 /* Assets.xcassets */; };
 		BFC6C5D9224283BD007C8FA1 /* Test.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D8224283BD007C8FA1 /* Test.sks */; };
@@ -1057,8 +1057,8 @@
 		BF94BDDB2352ED98001ACD11 /* ExSellectStageCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSellectStageCreateViewController.swift; sourceTree = "<group>"; };
 		BF94BDDD2352FC33001ACD11 /* ExSellectStageVCCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSellectStageVCCollection.swift; sourceTree = "<group>"; };
 		BF95C63622B79C540037E063 /* GameCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCoin.swift; sourceTree = "<group>"; };
-		BF9F80A9236010A6003512B0 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		BF9F80AB236013F6003512B0 /* RootViewIAP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewIAP.swift; sourceTree = "<group>"; };
+		BF9F80A9236010A6003512B0 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		BF9F80AB236013F6003512B0 /* TopViewIAP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewIAP.swift; sourceTree = "<group>"; };
 		BFA61D0522B5040D002C8EDD /* PazleBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PazleBox.entitlements; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
 		BFC6C5D422428287007C8FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -2185,8 +2185,8 @@
 		BF9F80A82360108B003512B0 /* RootViewController */ = {
 			isa = PBXGroup;
 			children = (
-				BF9F80A9236010A6003512B0 /* RootViewController.swift */,
-				BF9F80AB236013F6003512B0 /* RootViewIAP.swift */,
+				BF9F80A9236010A6003512B0 /* TopViewController.swift */,
+				BF9F80AB236013F6003512B0 /* TopViewIAP.swift */,
 			);
 			path = RootViewController;
 			sourceTree = "<group>";
@@ -3514,7 +3514,7 @@
 				BF552EF4226DDE3F00756E16 /* N43.swift in Sources */,
 				BF332FFE2249284F009B3042 /* H19.swift in Sources */,
 				BF552EB2226DDD5000756E16 /* E40.swift in Sources */,
-				BF9F80AA236010A6003512B0 /* RootViewController.swift in Sources */,
+				BF9F80AA236010A6003512B0 /* TopViewController.swift in Sources */,
 				BF332FF622492834009B3042 /* H15.swift in Sources */,
 				BF552F10226DDEB000756E16 /* H27.swift in Sources */,
 				BF552EC2226DDD7600756E16 /* E48.swift in Sources */,
@@ -3628,7 +3628,7 @@
 				BF27D04A22B4E61800596644 /* HomeViewIAP.swift in Sources */,
 				BF73C2F8234B319200745C7F /* UsersGameScene.swift in Sources */,
 				BF552F0A226DDE9400756E16 /* H24.swift in Sources */,
-				BF9F80AC236013F6003512B0 /* RootViewIAP.swift in Sources */,
+				BF9F80AC236013F6003512B0 /* TopViewIAP.swift in Sources */,
 				BFF889A922A39A5A0056A839 /* NoAdsButton.swift in Sources */,
 				BF1A5EE522B78A5C002C6733 /* CoinsIAPManager.swift in Sources */,
 				BF1BD1EC2279C4060047496B /* NormalStageClearInfomation.swift in Sources */,

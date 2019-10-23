@@ -12,7 +12,7 @@ import SwiftyStoreKit
 import Firebase
 
 //課金処理の関数はここに書くよ
-extension RootViewController {
+extension TopViewController {
    
    //リストア完了した時にViewを表示する関数
    private func CompleateRestore() {
