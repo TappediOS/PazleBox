@@ -666,7 +666,7 @@ class CleateStageViewController: UIViewController {
          return
       }
       
-      Play3DtouchHeavy()()
+      Play3DtouchHeavy()
       GameSound.PlaySoundsTapButton()
       
       FinishChouseResPuzzleButton?.isHidden = true
