@@ -585,6 +585,9 @@ class CleateStageViewController: UIViewController {
    
    @objc func TapTrashView(_ sender: UITapGestureRecognizer) {
       print("Tap TrashView")
+      guard isLockColleViewANDTrashPice == false else {
+         return
+      }
       InfoLabel.text = NSLocalizedString("TrashPice", comment: "")
    }
    

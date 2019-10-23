@@ -104,7 +104,7 @@ extension CleateStageViewController {
    
    func InitInfoLabel() {
       InfoLabel.adjustsFontSizeToFitWidth = true
-      InfoLabel.font = UIFont(name: "AppleSDGothicNeo-Light", size: 14)
+      InfoLabel.font = UIFont(name: "AppleSDGothicNeo-Light", size: 15)
       InfoLabel.text = NSLocalizedString("SelectPice", comment: "")
       InfoLabel.textColor = UIColor.flatBlack()
       InfoLabel.numberOfLines = 0;
