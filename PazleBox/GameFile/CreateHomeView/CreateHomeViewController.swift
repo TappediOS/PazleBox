@@ -17,6 +17,9 @@ class CreateHomeViewController: UIViewController {
    @IBOutlet weak var SellectStageButton: FUIButton!
    @IBOutlet weak var CreateStageButton: FUIButton!
    @IBOutlet weak var BackHomeButton: FUIButton!
+   @IBOutlet weak var InternetUsersStageButton: FUIButton!
+   
+   
    
    var ViewW: CGFloat = 0
    var ViewH: CGFloat = 0
@@ -49,6 +52,7 @@ class CreateHomeViewController: UIViewController {
    private func InitEachButton() {
       InitButton(SellectStageButton)
       InitButton(CreateStageButton)
+      InitButton(InternetUsersStageButton)
       InitButton(BackHomeButton)
       SetUpButtonColor()
       SetUpButtonPosition()
@@ -71,14 +75,17 @@ class CreateHomeViewController: UIViewController {
       SellectStageButton.shadowColor = UIColor.flatPlumColorDark()
       CreateStageButton.buttonColor = UIColor.flatTeal()
       CreateStageButton.shadowColor = UIColor.flatTealColorDark()
-      BackHomeButton.buttonColor = UIColor.flatCoffee()
-      BackHomeButton.shadowColor = UIColor.flatCoffeeColorDark()
+      InternetUsersStageButton.buttonColor = UIColor.flatOrange()
+      InternetUsersStageButton.shadowColor = UIColor.flatOrangeColorDark()
+      BackHomeButton.buttonColor = UIColor.flatMaroonColorDark()
+      BackHomeButton.shadowColor = UIColor.flatMaroonColorDark()
    }
    
    private func SetUpButtonPosition() {
       SellectStageButton.frame = CGRect(x: FViewW * 6, y: FViewH * 11, width: FViewW * 12, height: FViewH * 3)
       CreateStageButton.frame = CGRect(x: FViewW * 6, y: FViewH * 15, width: FViewW * 12, height: FViewH * 3)
-      BackHomeButton.frame = CGRect(x: FViewW * 6, y: FViewH * 19, width: FViewW * 12, height: FViewH * 3)
+      InternetUsersStageButton.frame = CGRect(x: FViewW * 6, y: FViewH * 19, width: FViewW * 12, height: FViewH * 3)
+      BackHomeButton.frame = CGRect(x: FViewW * 1, y: FViewH * 2.5, width: FViewW * 5, height: FViewH * 3 / 2)
    }
    
    

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmg-hS-je9" customClass="FUIButton">
-                                <rect key="frame" x="92" y="280" width="259" height="164"/>
+                                <rect key="frame" x="78" y="405" width="259" height="164"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="作ったステージ"/>
                                 <connections>
@@ -26,7 +26,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCS-tJ-dt8" customClass="FUIButton">
-                                <rect key="frame" x="64" y="452" width="294" height="316"/>
+                                <rect key="frame" x="60" y="154" width="294" height="182"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="作る"/>
                                 <connections>
@@ -41,6 +41,11 @@
                                     <action selector="TapBackButton:" destination="Shq-YE-a8h" eventType="touchUpInside" id="WQ5-en-fxE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXG-cm-a2S" customClass="FUIButton">
+                                <rect key="frame" x="43" y="607" width="294" height="173"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="世界中のステージ"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9RH-C0-ZW1"/>
@@ -48,6 +53,7 @@
                     <connections>
                         <outlet property="BackHomeButton" destination="X9W-4O-T85" id="pUI-dv-qjg"/>
                         <outlet property="CreateStageButton" destination="wCS-tJ-dt8" id="8Ji-Ig-e6T"/>
+                        <outlet property="InternetUsersStageButton" destination="BXG-cm-a2S" id="aDT-9W-RnN"/>
                         <outlet property="SellectStageButton" destination="nmg-hS-je9" id="p8W-z4-iK9"/>
                     </connections>
                 </viewController>
