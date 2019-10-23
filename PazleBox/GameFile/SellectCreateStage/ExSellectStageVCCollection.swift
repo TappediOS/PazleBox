@@ -47,6 +47,11 @@ extension SellectCreateStageViewController: UICollectionViewDataSource {
       
       cell.layer.borderColor = UIColor.black.cgColor
       cell.layer.borderWidth = 1
+      
+      //heroつけた
+      //消すんやったらInitHeroID()のCollecti onVie
+      //のIDも削除したほうがいい
+      cell.hero.modifiers = [.fade, .scale(0.5)]
 
         return cell
     }

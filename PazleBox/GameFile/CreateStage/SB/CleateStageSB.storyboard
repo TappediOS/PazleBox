@@ -22,6 +22,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="作ったステージ"/>
                                 <connections>
+                                    <action selector="TapSellectStageButton:" destination="Shq-YE-a8h" eventType="touchUpInside" id="8Nw-vf-miz"/>
                                     <segue destination="XcZ-8x-GJ4" kind="presentation" id="sAA-2h-Oa0"/>
                                 </connections>
                             </button>
@@ -30,6 +31,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="作る"/>
                                 <connections>
+                                    <action selector="TapCreateButton:" destination="Shq-YE-a8h" eventType="touchUpInside" id="krW-YM-COU"/>
                                     <segue destination="miw-3O-gsW" kind="presentation" modalPresentationStyle="overFullScreen" id="nsr-D5-BTc"/>
                                 </connections>
                             </button>
@@ -45,6 +47,9 @@
                                 <rect key="frame" x="43" y="607" width="294" height="173"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="世界中のステージ"/>
+                                <connections>
+                                    <action selector="TapInterNetButton:" destination="Shq-YE-a8h" eventType="touchUpInside" id="pvD-fk-YOF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

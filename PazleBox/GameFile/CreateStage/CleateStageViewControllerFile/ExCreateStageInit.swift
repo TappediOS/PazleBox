@@ -12,6 +12,12 @@ import FlatUIKit
 import ChameleonFramework
 
 extension CleateStageViewController {
+   func InitBackgroundImageView() {
+      BackGroundImageView = BackGroundImageViews(frame: self.view.frame)
+      self.view.addSubview(BackGroundImageView!)
+      self.view.sendSubviewToBack(BackGroundImageView!)
+   }
+   
     func InitBackTileImageView() {
        BackImageView = BackTileImageView(frame: self.view.frame)
        self.view.addSubview(BackImageView!)
@@ -104,12 +110,21 @@ extension CleateStageViewController {
    
    func InitInfoLabel() {
       InfoLabel.adjustsFontSizeToFitWidth = true
-      InfoLabel.font = UIFont(name: "AppleSDGothicNeo-Light", size: 15)
+      InfoLabel.font = UIFont(name: "AppleSDGothicNeo-Light", size: 16)
       InfoLabel.text = NSLocalizedString("SelectPice", comment: "")
       InfoLabel.textColor = UIColor.flatBlack()
       InfoLabel.numberOfLines = 0;
       InfoLabel.sizeToFit()
       InfoLabel.lineBreakMode = .byWordWrapping
       view.addSubview(InfoLabel)
+   }
+   
+   func InitHeroID() {
+      collectionView.hero.modifiers = [.cascade]
+      
+      TrashImageView.hero.id = HeroID.CreateCreateAndCreatingTrash
+      FinishCreatePuzzleButton?.hero.id = HeroID.CreateBackAndCreatingFinButton
+      InfoLabel.hero.id = HeroID.CreateInternetAndCreatingInfoLabel
+      OptionButton.hero.id = HeroID.CreateFinCreateAndCreatingOption
    }
 }

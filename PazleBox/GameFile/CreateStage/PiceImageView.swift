@@ -61,6 +61,8 @@ class PiceImageView : UIImageView {
       
       InitPiceArry(name: name)
       
+      self.hero.modifiers = [.fade, .scale(0.5)]
+      
       self.isUserInteractionEnabled = true
    }
    

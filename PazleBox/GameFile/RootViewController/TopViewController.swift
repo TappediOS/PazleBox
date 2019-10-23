@@ -62,6 +62,7 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       
       
       CheckIAPInfomation()
+      InitNotificationCenter()
       InitTitleLabel()
       InitButton()
       InitEachIAPButton()
@@ -88,6 +89,12 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       ViewH = self.view.frame.height
       FViewW = ViewW / 25
       FViewH = ViewH / 32
+   }
+   
+   //MARK: 通知の初期化
+   private func InitNotificationCenter() {
+      NotificationCenter.default.addObserver(self, selector: #selector(StopHomeBGMCatchNotification(notification:)), name: .StopHomeViewBGM, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(StartHomeBGMCatchNotification(notification:)), name: .StartHomeViewBGM, object: nil)
    }
    
    private func InitTitleLabel() {
@@ -168,7 +175,7 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
    //MARK: ステージボタンのHEROIDつける -
    private func SetUpStageButtonHeroID() {
       PlayButton.hero.id = HeroID.BackEasyStage
-      CreateButton.hero.id = HeroID.BackNormalStage
+      CreateButton.hero.id = HeroID.BackHardStage
    }
    
    private func SetUpHeroModifiersForEachStageButton() {
@@ -189,8 +196,8 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
    }
 
    private func SetUpStageButtonPosition() {
-      PlayButton.frame = CGRect(x: FViewW * 6, y: FViewH * 11, width: FViewW * 12, height: FViewH * 3)
-      CreateButton.frame = CGRect(x: FViewW * 6, y: FViewH * 19, width: FViewW * 12, height: FViewH * 3)
+      PlayButton.frame = CGRect(x: FViewW * 6, y: FViewH * 13, width: FViewW * 12, height: FViewH * 3)
+      CreateButton.frame = CGRect(x: FViewW * 6, y: FViewH * 17, width: FViewW * 12, height: FViewH * 3)
    }
    
    
@@ -260,6 +267,24 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       }
    }
    
+   //MARK:- BGM止めるようにしろってに通知きたよ
+   @objc func StopHomeBGMCatchNotification(notification: Notification) -> Void {
+      if let bgm = GameBGM {
+         if !bgm.isPlayingHomeBGM() {
+            bgm.fade(player: bgm.Hight_Tech, fromVolume: bgm.Hight_Tech.volume, toVolume: 0, overTime: 0.45)
+         }
+      }else{
+         print("BGM初期化できてないよ-")
+      }
+   }
+   
+   @objc func StartHomeBGMCatchNotification(notification: Notification) -> Void {
+      if !GameBGM!.Hight_Tech.isPlaying {
+         print("BGMついてないから再生します。")
+         StartBGM()
+      }
+   }
+   
    //MARK:- GKGameCenterControllerDelegate実装用
    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
       gameCenterViewController.dismiss(animated: true, completion: {
@@ -275,6 +300,10 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       
       if CanPresentAnotherVC == false { return }
       CanPresentAnotherVC = false
+      
+      PlayButton.hero.id = HeroID.BackEasyStage
+      CreateButton.hero.id = HeroID.BackHardStage
+      TitleLabel?.hero.id = HeroID.TopVCTitleANDHomeVCBack
       
       let HomeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeView") as! HomeViewController
       HomeVC.modalPresentationStyle = .fullScreen
@@ -294,6 +323,11 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       
       if CanPresentAnotherVC == false { return }
       CanPresentAnotherVC = false
+      
+      PlayButton.hero.id = HeroID.TopPlayAndCreateCreate
+      CreateButton.hero.id = HeroID.TopCreateAndCreateFinCreate
+      TitleLabel?.hero.id = HeroID.TopTitleAndCreateBack
+      
       let Storybord = UIStoryboard(name: "CleateStageSB", bundle: nil)
       let VC = Storybord.instantiateViewController(withIdentifier: "SellectCreateStageViewController")
       VC.modalPresentationStyle = .fullScreen

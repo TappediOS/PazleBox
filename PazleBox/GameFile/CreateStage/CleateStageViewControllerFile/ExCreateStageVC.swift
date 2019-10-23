@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Hero
 
 extension CleateStageViewController: UICollectionViewDataSource {
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -33,6 +34,11 @@ extension CleateStageViewController: UICollectionViewDataSource {
       ImageView.image = UIImage(contentsOfFile: Bundle.main.path(forResource: photos[indexPath.item], ofType: "png")!)?.ResizeUIImage(width: 64, height: 64)
       
       cell.contentView.addSubview(ImageView)
+      
+      //heroつけた
+      //消すんやったらInitHeroID()のCollecti onVie
+      //のIDも削除したほうがいい
+      cell.hero.modifiers = [.fade, .scale(0.5)]
       
       return cell
    }

@@ -29,14 +29,24 @@ class CreateHomeViewController: UIViewController {
    
    var BackGroundImageView: BackGroundImageViews?
    
+   let HeroID = HeroIDs()
+   
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+      self.hero.isEnabled = true
       
       InitViewSize()
       InitBackgroundImageView()
       InitEachButton()
       
       InitComminSoonLabel()
+      
+      InitHeroID()
+   }
+   
+   override func viewWillAppear(_ animated: Bool) {
+      InitHeroID()
    }
    
    private func InitViewSize() {
@@ -107,9 +117,38 @@ class CreateHomeViewController: UIViewController {
    }
    
    
+   private func InitHeroID() {
+      BackHomeButton.hero.id = HeroID.TopTitleAndCreateBack
+      CreateStageButton.hero.id = HeroID.TopPlayAndCreateCreate
+      SellectStageButton.hero.id = HeroID.TopCreateAndCreateFinCreate
+      CreateStageButton.hero.modifiers = [.arc(), .translate(x: +(ViewW - FViewW * 6), y: 0, z: 0)]
+      SellectStageButton.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 2), y: 0, z: 0)]
+      InternetUsersStageButton.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 11), y: 0, z: 0)]
+      CominSoonLabel.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 11), y: 0, z: 0)]
+   }
+   
+   
+   @IBAction func TapCreateButton(_ sender: FUIButton) {
+      CreateStageButton?.hero.id = HeroID.CreateCreateAndCreatingTrash
+      SellectStageButton?.hero.id = HeroID.CreateFinCreateAndCreatingOption
+      InternetUsersStageButton?.hero.id = HeroID.CreateInternetAndCreatingInfoLabel
+      BackHomeButton?.hero.id = HeroID.CreateBackAndCreatingFinButton
+   }
+   
+   
+   @IBAction func TapSellectStageButton(_ sender: Any) {
+      SellectStageButton.hero.id = HeroID.CreateFinCreateAndSellectBack
+   }
+   
+   @IBAction func TapInterNetButton(_ sender: Any) {
+      return
+   }
    
    
    @IBAction func TapBackButton(_ sender: Any) {
+      BackHomeButton.hero.id = HeroID.TopTitleAndCreateBack
+      CreateStageButton.hero.id = HeroID.TopPlayAndCreateCreate
+      SellectStageButton.hero.id = HeroID.TopCreateAndCreateFinCreate
       dismiss(animated: true, completion: nil)
    }
 }

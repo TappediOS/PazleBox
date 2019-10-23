@@ -45,6 +45,7 @@ class BackTileImageView: UIView {
          BackImageViewArray.append([])
          for x in 0 ... 8 {
             let ImageView = BackTileImage(TilePosiY: CGFloat(y), TilePosiX: CGFloat(x), ViewX: self.frame.width, ViewY: self.frame.height, Content: Contents.Out)
+            ImageView.hero.modifiers = [.fade, .scale(0.45), .delay(Double(y * 10 + x) * 0.0042)]
             BackImageViewArray[y].append(ImageView)
             self.addSubview(ImageView)
          }
@@ -63,6 +64,7 @@ class BackTileImageView: UIView {
             BackImageViewArray[y][x].removeFromSuperview()
             let ImageView = BackTileImage(TilePosiY: CGFloat(y), TilePosiX: CGFloat(x), ViewX: self.frame.width, ViewY: self.frame.height, Content: ContentArray[y][x])
             BackImageViewArray[y][x] = ImageView
+            ImageView.hero.modifiers = [.fade, .scale(0.45), .delay(Double(y * 10 + x) * 0.0042)]
             self.addSubview(ImageView)
          }
       }

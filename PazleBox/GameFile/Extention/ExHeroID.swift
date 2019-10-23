@@ -28,5 +28,16 @@ struct HeroIDs {
    
    let TopVCTitleANDHomeVCBack = "TopVCTitleANDHomeVCBack"
    
+   let TopPlayAndCreateCreate = "TopPlayAndCreateCreate"
+   let TopCreateAndCreateFinCreate = "TopCreateAndCreateFinCreate"
+   let TopTitleAndCreateBack = "TopTitleAndCreateBack"
+   
+   let CreateFinCreateAndSellectBack = "CreateFinCreateAndSellectBack"
+   
+   let CreateCreateAndCreatingTrash = "CreateCreateAndCreatingTrash"
+   let CreateFinCreateAndCreatingOption = "CreateFinCreateAndCreatingOption"
+   let CreateInternetAndCreatingInfoLabel = "CreateInternetAndCreatingInfoLabel"
+   let CreateBackAndCreatingFinButton = "CreateBackAndCreatingFinButton"
+   
    let StageButtonAndBadgeMode = [HeroModifier.fade, HeroModifier.scale(0.45), HeroModifier.delay(Double(1) * 0.0115)]
 }

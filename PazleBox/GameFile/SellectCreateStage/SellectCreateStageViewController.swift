@@ -12,6 +12,7 @@ import ChameleonFramework
 import RealmSwift
 import TapticEngine
 import FlatUIKit
+import Hero
 
 class SellectCreateStageViewController: UIViewController {
    
@@ -27,15 +28,23 @@ class SellectCreateStageViewController: UIViewController {
    
    //ステージが選択できるかどうか
    var CanSellectStage: Bool = true
+   
+   var BackButton: FUIButton?
+   
+   let HeroID = HeroIDs()
       
    override func viewDidLoad() {
       super.viewDidLoad()
-      self.view.backgroundColor = .white
+      self.view.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
       
+      self.hero.isEnabled = true
+      
+      self.StageCollectionView.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
       self.StageCollectionView.delegate = self
       self.StageCollectionView.dataSource = self
       
       InitBackButton()
+      InitHeroID()
    }
    
    override func viewWillAppear(_ animated: Bool) {
@@ -48,18 +57,23 @@ class SellectCreateStageViewController: UIViewController {
       let FirstY = view.frame.width / 25
       let width = view.frame.width / 5
       let Frame = CGRect(x: FirstX, y: FirstY * 1.95, width: width, height: width / 2.2)
-      let BackButton = FUIButton(frame: Frame)
-      BackButton.setTitle("←", for: UIControl.State.normal)
-      BackButton.buttonColor = UIColor.flatMintColorDark()
-      BackButton.shadowColor = UIColor.flatMintColorDark()
-      BackButton.shadowHeight = 3.0
-      BackButton.cornerRadius = 6.0
-      BackButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
-      BackButton.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
-      BackButton.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
-      BackButton.addTarget(self, action: #selector(self.TapBackButton(_:)), for: UIControl.Event.touchUpInside)
-      BackButton.hero.modifiers = [.arc()]
-      view.addSubview(BackButton)
+      BackButton = FUIButton(frame: Frame)
+      BackButton?.setTitle("←", for: UIControl.State.normal)
+      BackButton?.buttonColor = UIColor.flatMintColorDark()
+      BackButton?.shadowColor = UIColor.flatMintColorDark()
+      BackButton?.shadowHeight = 3.0
+      BackButton?.cornerRadius = 6.0
+      BackButton?.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
+      BackButton?.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
+      BackButton?.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
+      BackButton?.addTarget(self, action: #selector(self.TapBackButton(_:)), for: UIControl.Event.touchUpInside)
+      BackButton?.hero.modifiers = [.arc()]
+      view.addSubview(BackButton!)
+   }
+   
+   func InitHeroID() {
+      BackButton?.hero.id = HeroID.CreateFinCreateAndSellectBack
+      StageCollectionView.hero.modifiers = [.cascade]
    }
    
    @objc func TapBackButton(_ sender: FUIButton) {
@@ -91,6 +105,8 @@ class SellectCreateStageViewController: UIViewController {
          print("プレゼント終わった")
       })
    }
+   
+   
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
    func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }

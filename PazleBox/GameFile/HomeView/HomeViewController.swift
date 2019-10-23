@@ -61,7 +61,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    var LockPurchasButton = false  //ロックされていたらappleのサーバに余計に請求しなくする
    var CanPresentToSegeSellectViewFromHomeView = true
    
-   private var GameBGM: BGM?
    let GameSound = GameSounds()
    
    let HeroID = HeroIDs()
@@ -75,7 +74,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       InitViewSize()
       
       CheckIAPInfomation()
-      InitNotificationCenter()
+      
       InitBackgroundImageView()
       InitButton()
       Inittestbutton()
@@ -84,22 +83,17 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       InitBackButton()
       //InitGoPiceStoreButton()
       SetUpHeroModifiersForEachSmallButton()
-      InitBGM()
       
       InitConfig()
       SetUpRemoteConfigDefaults()
       SetEachStageButtonName()
       SetEachButtonColor()
       FetchConfig()
-      StartBGM()
    }
    
    override func viewWillAppear(_ animated: Bool) {
-      //戻ってきた時についてなかったらさいせい
-      if !GameBGM!.Hight_Tech.isPlaying {
-         print("BGMついてないから再生します。")
-         StartBGM()
-      }
+      //Topに対し音鳴らすように通知
+      NotificationCenter.default.post(name: .StartHomeViewBGM, object: nil)
       //HeroIDを元に戻す
       SetUpStageButtonHeroID()
    }
@@ -111,21 +105,14 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       FViewH = ViewH / 32
    }
    
-   private func InitBGM() {
-      self.GameBGM = BGM()
-   }
-   
+
    private func InitBackgroundImageView() {
       BackGroundImageView = BackGroundImageViews(frame: self.view.frame)
       self.view.addSubview(BackGroundImageView!)
       self.view.sendSubviewToBack(BackGroundImageView!)
    }
    
-   //MARK: 通知の初期化
-   private func InitNotificationCenter() {
-      NotificationCenter.default.addObserver(self, selector: #selector(StopHomeBGMCatchNotification(notification:)), name: .StopHomeViewBGM, object: nil)
-      NotificationCenter.default.addObserver(self, selector: #selector(StartHomeBGMCatchNotification(notification:)), name: .StartHomeViewBGM, object: nil)
-   }
+   
    
    
    
@@ -370,33 +357,9 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       HardButton.frame = CGRect(x: FViewW * 6, y: FViewH * 19, width: FViewW * 12, height: FViewH * 3)
    }
    
-   private func StartBGM() {
-      if let bgm = GameBGM {
-         if !bgm.isPlayingHomeBGM() {
-            bgm.fade(player: bgm.Hight_Tech, fromVolume: 0, toVolume: bgm.SoundVolume, overTime: 3.25)
-         }
-      }else{
-         print("BGM初期化できてないよ-")
-      }
-   }
+
    
-   //MARK:- BGM止めるようにしろってに通知きたよ
-   @objc func StopHomeBGMCatchNotification(notification: Notification) -> Void {
-      if let bgm = GameBGM {
-         if !bgm.isPlayingHomeBGM() {
-            bgm.fade(player: bgm.Hight_Tech, fromVolume: bgm.Hight_Tech.volume, toVolume: 0, overTime: 0.45)
-         }
-      }else{
-         print("BGM初期化できてないよ-")
-      }
-   }
    
-   @objc func StartHomeBGMCatchNotification(notification: Notification) -> Void {
-      if !GameBGM!.Hight_Tech.isPlaying {
-         print("BGMついてないから再生します。")
-         StartBGM()
-      }
-   }
    
    //MARK:- Main.storybordでつけたボタンのタッチイベント -
    @IBAction func NextViewWithNum(_ sender: UIButton) {
