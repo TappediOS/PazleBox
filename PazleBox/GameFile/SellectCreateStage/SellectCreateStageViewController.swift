@@ -32,6 +32,7 @@ class SellectCreateStageViewController: UIViewController {
    var BackButton: FUIButton?
    
    let HeroID = HeroIDs()
+   let GameSound = GameSounds()
       
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -78,6 +79,7 @@ class SellectCreateStageViewController: UIViewController {
    
    @objc func TapBackButton(_ sender: FUIButton) {
       Play3DtouchMedium()
+      GameSound.PlaySoundsTapButton()
       self.dismiss(animated: true, completion: nil)
    }
    

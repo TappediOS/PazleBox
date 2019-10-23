@@ -86,6 +86,7 @@ class CleateStageViewController: UIViewController {
    var isLockColleViewANDTrashPice = false
    
    let HeroID = HeroIDs()
+   let GameSound = GameSounds()
    
    var BackGroundImageView: BackGroundImageViews?
    
@@ -585,6 +586,8 @@ class CleateStageViewController: UIViewController {
    
    @objc func TapOptionButton() {
       print("Tap OptionButton")
+      Play3DtouchLight()
+      GameSound.PlaySoundsTapButton()
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: true)
       let ComleateView = SCLAlertView(appearance: Appearanse)
 
@@ -593,7 +596,8 @@ class CleateStageViewController: UIViewController {
             self.FinishChouseResPuzzleButton?.hero.id = self.HeroID.CreateBackAndCreatingFinButton
          }
          self.dismiss(animated: true)
-         
+         self.Play3DtouchHeavy()
+         self.GameSound.PlaySoundsTapButton()
       }
       ComleateView.showInfo(NSLocalizedString("Pouse", comment: ""), subTitle: NSLocalizedString("IfGoHome", comment: ""))
    }
@@ -605,6 +609,8 @@ class CleateStageViewController: UIViewController {
       guard isLockColleViewANDTrashPice == false else {
          return
       }
+      Play3DtouchHeavy()
+      GameSound.PlaySoundsTapButton()
       InfoLabel.text = NSLocalizedString("TrashPice", comment: "")
    }
    
@@ -613,8 +619,12 @@ class CleateStageViewController: UIViewController {
       guard PiceImageArray.count != 0 else {
          print("Piceが1つも選ばれてません")
          InfoLabel.text = NSLocalizedString("PutOneMorePice", comment: "")
+         Play3DtouchError()
+         GameSound.PlaySoundsTapButton()
          return
       }
+      Play3DtouchMedium()
+      GameSound.PlaySoundsTapButton()
       //Lockをかける
       isLockColleViewANDTrashPice = true
       collectionView.alpha = 0.45
@@ -651,8 +661,13 @@ class CleateStageViewController: UIViewController {
       if FillContentsArray == CheckedStage {
          print("変更しましょう")
          InfoLabel.text = NSLocalizedString("ShiftPice", comment: "")
+         Play3DtouchError()
+         GameSound.PlaySoundsTapButton()
          return
       }
+      
+      Play3DtouchHeavy()()
+      GameSound.PlaySoundsTapButton()
       
       FinishChouseResPuzzleButton?.isHidden = true
       

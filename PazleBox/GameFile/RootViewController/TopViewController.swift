@@ -80,6 +80,10 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
          print("BGMついてないから再生します。")
          StartBGM()
       }
+      
+   }
+   
+   override func viewDidAppear(_ animated: Bool) {
       //HeroIDを元に戻す
       SetUpStageButtonHeroID()
    }

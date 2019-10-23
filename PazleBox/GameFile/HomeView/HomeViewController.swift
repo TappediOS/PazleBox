@@ -299,8 +299,9 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       }
    }
    
-   //MARK:- コンタクトアスボタン押された時の処理
+   //MARK:- バックボタン押された時の処理
    @objc func TapBackButton() {
+      Play3DtouchLight()
       GameSound.PlaySoundsTapButton()
       self.dismiss(animated: true, completion: nil)
    }

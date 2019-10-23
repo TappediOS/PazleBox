@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import ChameleonFramework
 import FlatUIKit
+import TapticEngine
 
 class CreateHomeViewController: UIViewController {
    
@@ -30,6 +31,7 @@ class CreateHomeViewController: UIViewController {
    var BackGroundImageView: BackGroundImageViews?
    
    let HeroID = HeroIDs()
+   let GameSound = GameSounds()
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -45,7 +47,7 @@ class CreateHomeViewController: UIViewController {
       InitHeroID()
    }
    
-   override func viewWillAppear(_ animated: Bool) {
+   override func viewDidAppear(_ animated: Bool) {
       InitHeroID()
    }
    
@@ -129,6 +131,8 @@ class CreateHomeViewController: UIViewController {
    
    
    @IBAction func TapCreateButton(_ sender: FUIButton) {
+      Play3DtouchLight()
+      GameSound.PlaySoundsTapButton()
       CreateStageButton?.hero.id = HeroID.CreateCreateAndCreatingTrash
       SellectStageButton?.hero.id = HeroID.CreateFinCreateAndCreatingOption
       InternetUsersStageButton?.hero.id = HeroID.CreateInternetAndCreatingInfoLabel
@@ -137,10 +141,14 @@ class CreateHomeViewController: UIViewController {
    
    
    @IBAction func TapSellectStageButton(_ sender: Any) {
+      Play3DtouchLight()
+      GameSound.PlaySoundsTapButton()
       SellectStageButton.hero.id = HeroID.CreateFinCreateAndSellectBack
    }
    
    @IBAction func TapInterNetButton(_ sender: Any) {
+      Play3DtouchError()
+      GameSound.PlaySoundsTapButton()
       return
    }
    
@@ -149,6 +157,14 @@ class CreateHomeViewController: UIViewController {
       BackHomeButton.hero.id = HeroID.TopTitleAndCreateBack
       CreateStageButton.hero.id = HeroID.TopPlayAndCreateCreate
       SellectStageButton.hero.id = HeroID.TopCreateAndCreateFinCreate
+      
+      Play3DtouchLight()
+      GameSound.PlaySoundsTapButton()
       dismiss(animated: true, completion: nil)
    }
+   
+   private func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
+   private func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
+   private func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
+   private func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
 }
