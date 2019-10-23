@@ -78,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="-1452" y="1376.600985221675"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Top View Controller-->
         <scene sceneID="NNv-zY-AMg">
             <objects>
-                <viewController id="wue-Kn-Uko" customClass="RootViewController" sceneMemberID="viewController">
+                <viewController id="wue-Kn-Uko" customClass="TopViewController" customModule="PazleBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tMH-bS-vpL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -90,11 +90,17 @@
                                 <rect key="frame" x="105" y="291" width="164" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="TapPlayButton:" destination="wue-Kn-Uko" eventType="touchUpInside" id="cRM-wi-zmi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Z4-rY-8ae" customClass="FUIButton">
                                 <rect key="frame" x="99" y="474" width="176" height="116"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create"/>
+                                <connections>
+                                    <action selector="TapCreateButton:" destination="wue-Kn-Uko" eventType="touchUpInside" id="sui-fH-1fw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

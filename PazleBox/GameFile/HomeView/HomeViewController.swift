@@ -31,6 +31,8 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    var ShowRankingViewButton: FUIButton?
    var ContactusButton: FUIButton?
    
+   var BackButton: FUIButton?
+   
    //StoreButton
    //var GoPiceStoreButton: FUIButton?
    //MARK: リーダボードID
@@ -51,7 +53,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    var FViewW: CGFloat = 0
    var FViewH: CGFloat = 0
    
-   var TitleLabel: UILabel?
    
    //この2つは課金で使う
    let IAP_PRO_ID = "NO_ADS"
@@ -76,21 +77,19 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       CheckIAPInfomation()
       InitNotificationCenter()
       InitBackgroundImageView()
-      InitTitleLabel()
       InitButton()
       Inittestbutton()
       InitContactusButton()
       InitShowRankingViewButton()
+      InitBackButton()
       //InitGoPiceStoreButton()
       SetUpHeroModifiersForEachSmallButton()
-      SetUpHeroModifiersForTitleLabel()
       InitBGM()
       
       InitConfig()
       SetUpRemoteConfigDefaults()
       SetEachStageButtonName()
       SetEachButtonColor()
-      SetTitileLabelText()
       FetchConfig()
       StartBGM()
    }
@@ -128,17 +127,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       NotificationCenter.default.addObserver(self, selector: #selector(StartHomeBGMCatchNotification(notification:)), name: .StartHomeViewBGM, object: nil)
    }
    
-   private func InitTitleLabel() {
-      TitleLabel = UILabel(frame: CGRect(x: FViewW * 6, y: FViewH * 3, width: FViewW * 13, height: FViewH * 3))
-      TitleLabel!.text = "Relaxing puzzle"
-      TitleLabel!.font = UIFont(name: "HiraMaruProN-W4", size: 50)
-      TitleLabel!.adjustsFontSizeToFitWidth = true
-      TitleLabel!.adjustsFontForContentSizeCategory = true
-      TitleLabel!.minimumScaleFactor = 0.3
-      TitleLabel!.textAlignment = NSTextAlignment.center
-      TitleLabel!.hero.id = HeroID.ClearLabelAndHomeViewLabel
-      self.view.addSubview(TitleLabel!)
-   }
+   
    
    //MARK:- Remote ConfigのInitするよ-
    //MARK: RemoteConfigのdefaultをセットする
@@ -227,9 +216,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       ContactusButton!.shadowColor = ButtonClorMane.GetButtonFlatShadowColor(RemoConButtonColorValue: RemorteConfigs[RemoConName.ContactUsButtonColor].stringValue!)
    }
    
-   private func SetTitileLabelText() {
-      TitleLabel!.text = RemorteConfigs[RemoConName.TitileLabelText].stringValue!
-   }
+
    
    private func SetUpHomeEachSmallButton(sender: FUIButton) {
       sender.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -280,6 +267,23 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       self.view.addSubview(ContactusButton!)
    }
    
+   private func InitBackButton() {
+      BackButton = FUIButton(frame: CGRect(x: FViewW * 1, y: FViewH * 2.5, width: FViewW * 5, height: FViewH * 3 / 2))
+      BackButton?.setTitle("←", for: .normal)
+      BackButton?.addTarget(self, action: #selector(self.TapBackButton), for: .touchUpInside)
+      BackButton?.hero.id = HeroID.TopVCTitleANDHomeVCBack
+      BackButton?.titleLabel?.adjustsFontSizeToFitWidth = true
+      BackButton?.titleLabel?.adjustsFontForContentSizeCategory = true
+      BackButton?.buttonColor = UIColor.greenSea()
+      BackButton?.shadowColor = UIColor.greenSea()
+      BackButton?.shadowHeight = 3.0
+      BackButton?.cornerRadius = 6.0
+      BackButton?.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
+      BackButton?.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
+      BackButton?.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
+      self.view.addSubview(BackButton!)
+   }
+   
    //MARK:- Store Buttton Init
 //   private func InitGoPiceStoreButton() {
 //      GoPiceStoreButton = FUIButton(frame: CGRect(x: FViewW * 1, y: FViewH * 25 - FViewH * 3 - 10, width: FViewW * 5, height: FViewH * 3))
@@ -293,9 +297,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    @objc func ContactUs() {
       ContactusButton?.hero.id = "BackButton"
       GameSound.PlaySoundsTapButton()
-      
-      
-      
       let url = URL(string: "https://forms.gle/mSEq7WwDz3fZNcqF6")
       if let OpenURL = url {
          if UIApplication.shared.canOpenURL(OpenURL){
@@ -309,6 +310,12 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
          Analytics.logEvent("CantOpenURLWithNil", parameters: nil)
          print("URL 開こうとしたらNilやった")
       }
+   }
+   
+   //MARK:- コンタクトアスボタン押された時の処理
+   @objc func TapBackButton() {
+      GameSound.PlaySoundsTapButton()
+      self.dismiss(animated: true, completion: nil)
    }
    
    //MARK:- FlatUIButtonをセットアップ
@@ -355,9 +362,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       RestoreButton!.hero.modifiers = [.arc(), .translate(x: 0, y: +(ViewH + FViewH * 12), z: 0)]
    }
    
-   private func SetUpHeroModifiersForTitleLabel() {
-      TitleLabel!.hero.modifiers = [.arc(), .translate(x: 0, y: -(ViewH - FViewH * 10), z: 0)]
-   }
+
 
    private func SetUpStageButtonPosition() {
       EasyButton.frame = CGRect(x: FViewW * 6, y: FViewH * 11, width: FViewW * 12, height: FViewH * 3)

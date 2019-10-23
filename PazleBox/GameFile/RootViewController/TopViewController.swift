@@ -50,7 +50,7 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
    let SECRET_CODE = "c8bf5f01b42f4f80ad32ffd00349d92d"
    
    var LockPurchasButton = false  //ロックされていたらappleのサーバに余計に請求しなくする
-   var CanPresentToSegeSellectViewFromHomeView = true
+   var CanPresentAnotherVC = true
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -62,6 +62,7 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       
       
       CheckIAPInfomation()
+      InitTitleLabel()
       InitButton()
       InitEachIAPButton()
       InitContactusButton()
@@ -87,6 +88,18 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       ViewH = self.view.frame.height
       FViewW = ViewW / 25
       FViewH = ViewH / 32
+   }
+   
+   private func InitTitleLabel() {
+      TitleLabel = UILabel(frame: CGRect(x: FViewW * 6, y: FViewH * 3, width: FViewW * 13, height: FViewH * 3))
+      TitleLabel!.text = "Puzzle Meker"
+      TitleLabel!.font = UIFont(name: "HiraMaruProN-W4", size: 50)
+      TitleLabel!.adjustsFontSizeToFitWidth = true
+      TitleLabel!.adjustsFontForContentSizeCategory = true
+      TitleLabel!.minimumScaleFactor = 0.3
+      TitleLabel!.textAlignment = NSTextAlignment.center
+      TitleLabel!.hero.id = HeroID.TopVCTitleANDHomeVCBack
+      self.view.addSubview(TitleLabel!)
    }
    
    private func InitBGM() {
@@ -232,16 +245,6 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       ContactusButton?.hero.id = "BackButton"
       GameSound.PlaySoundsTapButton()
       
-      //FIXME:- 終わったら削除
-      let Storybord = UIStoryboard(name: "CleateStageSB", bundle: nil)
-      let VC = Storybord.instantiateViewController(withIdentifier: "SellectCreateStageViewController")
-      VC.modalPresentationStyle = .fullScreen
-      self.present(VC, animated: true, completion: nil)
-      return
-      //TODO:- 終わったら削除
-      
-      
-      
       let url = URL(string: "https://forms.gle/mSEq7WwDz3fZNcqF6")
       if let OpenURL = url {
          if UIApplication.shared.canOpenURL(OpenURL){
@@ -265,31 +268,39 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
    }
    
    
-   @IBAction func TapPlayButton(_ sender: Any) {
+   @IBAction func TapPlayButton(_ sender: FUIButton) {
       print("Tap PlayButton")
       Play3DtouchLight()
       GameSound.PlaySoundsTapButton()
+      
+      if CanPresentAnotherVC == false { return }
+      CanPresentAnotherVC = false
       
       let HomeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeView") as! HomeViewController
       HomeVC.modalPresentationStyle = .fullScreen
       self.present(HomeVC, animated: true, completion: {
          print("Home VCにプレゼント完了")
-         
+         self.CanPresentAnotherVC = true
       })
-      
-      
-      
    }
    
    
+
    @IBAction func TapCreateButton(_ sender: FUIButton) {
       print("Tap CreateButton")
+      
+      Play3DtouchLight()
+      GameSound.PlaySoundsTapButton()
+      
+      if CanPresentAnotherVC == false { return }
+      CanPresentAnotherVC = false
       let Storybord = UIStoryboard(name: "CleateStageSB", bundle: nil)
       let VC = Storybord.instantiateViewController(withIdentifier: "SellectCreateStageViewController")
       VC.modalPresentationStyle = .fullScreen
-      Play3DtouchLight()
-      GameSound.PlaySoundsTapButton()
-      self.present(VC, animated: true, completion: nil)
+      
+      self.present(VC, animated: true, completion: {
+         self.CanPresentAnotherVC = true
+      })
       return
    }
    

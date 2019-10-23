@@ -26,6 +26,7 @@ struct HeroIDs {
    
    let ClearLabelAndHomeViewLabel = "ClearLabelAndHomeViewLabel"
    
+   let TopVCTitleANDHomeVCBack = "TopVCTitleANDHomeVCBack"
    
    let StageButtonAndBadgeMode = [HeroModifier.fade, HeroModifier.scale(0.45), HeroModifier.delay(Double(1) * 0.0115)]
 }

@@ -23,13 +23,13 @@ class DviceChecker {
          print("iPhone 6+/6S+/7+/8+")
          return false
       case 2436:
-         print("iPhone X, XS")
+         print("iPhone X, XS, 11")
          return true
       case 2688:
-         print("iPhone XS Max")
+         print("iPhone XS/11 Max")
          return true
       case 1792:
-         print("iPhone XR")
+         print("iPhone XR / 11")
          return true
       default:
          print("Unknown")
