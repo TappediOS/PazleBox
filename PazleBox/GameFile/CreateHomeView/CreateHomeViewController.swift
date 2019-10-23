@@ -19,6 +19,7 @@ class CreateHomeViewController: UIViewController {
    @IBOutlet weak var BackHomeButton: FUIButton!
    @IBOutlet weak var InternetUsersStageButton: FUIButton!
    
+   var CominSoonLabel = UILabel()
    
    
    var ViewW: CGFloat = 0
@@ -34,6 +35,8 @@ class CreateHomeViewController: UIViewController {
       InitViewSize()
       InitBackgroundImageView()
       InitEachButton()
+      
+      InitComminSoonLabel()
    }
    
    private func InitViewSize() {
@@ -54,6 +57,7 @@ class CreateHomeViewController: UIViewController {
       InitButton(CreateStageButton)
       InitButton(InternetUsersStageButton)
       InitButton(BackHomeButton)
+      InternetUsersStageButton.alpha = 0.385
       SetUpButtonColor()
       SetUpButtonPosition()
    }
@@ -70,6 +74,20 @@ class CreateHomeViewController: UIViewController {
       sender.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
    }
    
+   private func InitComminSoonLabel() {
+      CominSoonLabel = UILabel(frame: CGRect(x: FViewW * 6, y: FViewH * 19, width: FViewW * 12, height: FViewH * 3))
+      CominSoonLabel.text = "Coming Soon"
+      CominSoonLabel.alpha = 0.9
+      CominSoonLabel.font = UIFont(name: "AppleSDGothicNeo-Light", size: 20)
+      CominSoonLabel.adjustsFontSizeToFitWidth = true
+      CominSoonLabel.textColor = UIColor.flatBlack()
+      CominSoonLabel.textAlignment = .center
+      CominSoonLabel.sizeToFit()
+      CominSoonLabel.lineBreakMode = .byWordWrapping
+      CominSoonLabel.center.x = InternetUsersStageButton.center.x
+      view.addSubview(CominSoonLabel)
+   }
+   
    private func SetUpButtonColor() {
       SellectStageButton.buttonColor = UIColor.flatPlum()
       SellectStageButton.shadowColor = UIColor.flatPlumColorDark()
@@ -82,11 +100,13 @@ class CreateHomeViewController: UIViewController {
    }
    
    private func SetUpButtonPosition() {
-      SellectStageButton.frame = CGRect(x: FViewW * 6, y: FViewH * 11, width: FViewW * 12, height: FViewH * 3)
-      CreateStageButton.frame = CGRect(x: FViewW * 6, y: FViewH * 15, width: FViewW * 12, height: FViewH * 3)
+      SellectStageButton.frame = CGRect(x: FViewW * 6, y: FViewH * 15, width: FViewW * 12, height: FViewH * 3)
+      CreateStageButton.frame = CGRect(x: FViewW * 6, y: FViewH * 11, width: FViewW * 12, height: FViewH * 3)
       InternetUsersStageButton.frame = CGRect(x: FViewW * 6, y: FViewH * 19, width: FViewW * 12, height: FViewH * 3)
       BackHomeButton.frame = CGRect(x: FViewW * 1, y: FViewH * 2.5, width: FViewW * 5, height: FViewH * 3 / 2)
    }
+   
+   
    
    
    @IBAction func TapBackButton(_ sender: Any) {
