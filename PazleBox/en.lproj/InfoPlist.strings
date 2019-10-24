@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  PazleBox
+
+  Created by jun on 2019/10/24.
+  Copyright © 2019 jun. All rights reserved.
+*/
+
+CFBundleDisplayName = "Puzzle Maker";

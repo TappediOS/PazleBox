@@ -78,9 +78,9 @@ class CreateHomeViewController: UIViewController {
    }
    
    private func SetUpButtonTitile() {
-      CreateStageButton.titleLabel?.text = NSLocalizedString("Create", comment: "")
-      SellectStageButton.titleLabel?.text = NSLocalizedString("StageYouMade", comment: "")
-      InternetUsersStageButton.titleLabel?.text = NSLocalizedString("StageInTheWorld", comment: "")
+      CreateStageButton.setTitle(NSLocalizedString("Create", comment: ""), for: .normal)
+      SellectStageButton.setTitle(NSLocalizedString("StageYouMade", comment: ""), for: .normal)
+      InternetUsersStageButton.setTitle(NSLocalizedString("StageInTheWorld", comment: ""), for: .normal)
    }
    
    private func InitButton(_ sender: FUIButton) {

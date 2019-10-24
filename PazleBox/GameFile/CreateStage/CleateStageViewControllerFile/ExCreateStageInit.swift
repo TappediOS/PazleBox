@@ -45,8 +45,8 @@ extension CleateStageViewController {
        FinishCreatePuzzleButton?.addTarget(self, action: #selector(self.TapFinishiButton), for: .touchUpInside)
        FinishCreatePuzzleButton?.titleLabel?.adjustsFontSizeToFitWidth = true
        FinishCreatePuzzleButton?.titleLabel?.adjustsFontForContentSizeCategory = true
-       FinishCreatePuzzleButton?.buttonColor = UIColor.turquoise()
-       FinishCreatePuzzleButton?.shadowColor = UIColor.greenSea()
+       FinishCreatePuzzleButton?.buttonColor = UIColor.flatLime()
+       FinishCreatePuzzleButton?.shadowColor = UIColor.flatLimeColorDark()
        FinishCreatePuzzleButton?.shadowHeight = 3.0
        FinishCreatePuzzleButton?.cornerRadius = 6.0
        FinishCreatePuzzleButton?.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
@@ -61,8 +61,8 @@ extension CleateStageViewController {
        FinishChouseResPuzzleButton?.addTarget(self, action: #selector(self.TapFinChouseResPuzzleButton), for: .touchUpInside)
        FinishChouseResPuzzleButton?.titleLabel?.adjustsFontSizeToFitWidth = true
        FinishChouseResPuzzleButton?.titleLabel?.adjustsFontForContentSizeCategory = true
-       FinishChouseResPuzzleButton?.buttonColor = UIColor.turquoise()
-       FinishChouseResPuzzleButton?.shadowColor = UIColor.greenSea()
+       FinishChouseResPuzzleButton?.buttonColor = UIColor.flatBlue()
+       FinishChouseResPuzzleButton?.shadowColor = UIColor.flatBlueColorDark()
        FinishChouseResPuzzleButton?.shadowHeight = 3.0
        FinishChouseResPuzzleButton?.cornerRadius = 6.0
        FinishChouseResPuzzleButton?.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)

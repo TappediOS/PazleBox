@@ -69,6 +69,9 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       InitContactusButton()
       InitShowRankingViewButton()
       
+      SetUpHeroModifiersForTitleLabel()
+      SetUpHeroModifiersForEachSmallButton()
+      
       InitBackgroundImageView()
       InitBGM()
       StartBGM()
@@ -102,10 +105,10 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
    }
    
    private func InitTitleLabel() {
-      TitleLabel = UILabel(frame: CGRect(x: FViewW * 6, y: FViewH * 3, width: FViewW * 13, height: FViewH * 3))
-      TitleLabel!.text = "Puzzle Meker"
+      TitleLabel = UILabel(frame: CGRect(x: FViewW * 6, y: FViewH * 3, width: FViewW * 13, height: FViewH * 4.5))
+      TitleLabel!.text = "Puzzle Maker"
       TitleLabel!.textColor = .black
-      TitleLabel!.font = UIFont(name: "HiraMaruProN-W4", size: 50)
+      TitleLabel!.font = UIFont(name: "HiraMaruProN-W4", size: 52)
       TitleLabel!.adjustsFontSizeToFitWidth = true
       TitleLabel!.adjustsFontForContentSizeCategory = true
       TitleLabel!.minimumScaleFactor = 0.3
@@ -142,15 +145,19 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       PurchasButton = FUIButton(frame: CGRect(x: FViewW * 13, y: FViewH * 25, width: FViewW * 5, height: FViewH * 3))
       PurchasButton?.setTitle(NSLocalizedString("No Ads", comment: ""), for: .normal)
       PurchasButton?.addTarget(self, action: #selector(self.tapparchas), for: .touchUpInside)
-      PurchasButton?.hero.id = HeroID.ClearHart3ToHomeView
+      //PurchasButton?.hero.id = HeroID.ClearHart3ToHomeView
       SetUpHomeEachSmallButton(sender: PurchasButton!)
+      PurchasButton?.buttonColor = UIColor.flatCoffee()
+      PurchasButton?.shadowColor = UIColor.flatCoffeeColorDark()
       self.view.addSubview(PurchasButton!)
       
       RestoreButton = FUIButton(frame: CGRect(x: FViewW * 19, y: FViewH * 25, width: FViewW * 5, height: FViewH * 3))
       RestoreButton?.setTitle(NSLocalizedString("Restore", comment: ""), for: .normal)
       RestoreButton?.addTarget(self, action: #selector(self.restore), for: .touchUpInside)
-      RestoreButton?.hero.id = HeroID.ClearHart2ToHomeView
+      //RestoreButton?.hero.id = HeroID.ClearHart2ToHomeView
       SetUpHomeEachSmallButton(sender: RestoreButton!)
+      RestoreButton?.buttonColor = UIColor.flatCoffee()
+      RestoreButton?.shadowColor = UIColor.flatCoffeeColorDark()
       self.view.addSubview(RestoreButton!)
    }
    
@@ -172,6 +179,11 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       SetUpSellectStageButton(sender: PlayButton)
       SetUpSellectStageButton(sender: CreateButton)
       
+      PlayButton?.buttonColor = UIColor.flatRed()
+      PlayButton?.shadowColor = UIColor.flatRedColorDark()
+      CreateButton?.buttonColor = UIColor.flatSkyBlue()
+      CreateButton?.shadowColor = UIColor.flatSkyBlueColorDark()
+      
       SetUpButtonTitile()
       SetUpStageButtonHeroID()
       SetUpHeroModifiersForEachStageButton()
@@ -179,9 +191,8 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
    }
    
    private func SetUpButtonTitile() {
-      PlayButton.titleLabel?.text = NSLocalizedString("Play", comment: "")
-      CreateButton.titleLabel?.text = NSLocalizedString("Create", comment: "")
-
+      PlayButton?.setTitle(NSLocalizedString("Play", comment: ""), for: .normal)
+      CreateButton?.setTitle(NSLocalizedString("Create", comment: ""), for: .normal)
    }
    
    //MARK: ステージボタンのHEROIDつける -
@@ -227,9 +238,11 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       ShowRankingViewButton = FUIButton(frame: CGRect(x: FViewW * 1, y: FViewH * 25, width: FViewW * 5, height: FViewH * 3))
       ShowRankingViewButton?.setTitle(NSLocalizedString("Ranking", comment: ""), for: .normal)
       ShowRankingViewButton?.addTarget(self, action: #selector(self.ShowRankingView), for: .touchUpInside)
-      ShowRankingViewButton?.hero.id = HeroID.GameCenterVC
-      ShowRankingViewButton?.hero.id = HeroID.ClearHart4ToHomeView
+      //ShowRankingViewButton?.hero.id = HeroID.GameCenterVC
+      //ShowRankingViewButton?.hero.id = HeroID.ClearHart4ToHomeView
       SetUpHomeEachSmallButton(sender: ShowRankingViewButton!)
+      ShowRankingViewButton?.buttonColor = UIColor.flatCoffee()
+      ShowRankingViewButton?.shadowColor = UIColor.flatCoffeeColorDark()
       self.view.addSubview(ShowRankingViewButton!)
    }
    
@@ -237,8 +250,10 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       ContactusButton = FUIButton(frame: CGRect(x: FViewW * 7, y: FViewH * 25, width: FViewW * 5, height: FViewH * 3))
       ContactusButton?.setTitle(NSLocalizedString("Contact us", comment: ""), for: .normal)
       ContactusButton?.addTarget(self, action: #selector(self.ContactUs), for: .touchUpInside)
-      ContactusButton?.hero.id = HeroID.ClearHart2ToHomeView
+      //ContactusButton?.hero.id = HeroID.ClearHart2ToHomeView
       SetUpHomeEachSmallButton(sender: ContactusButton!)
+      ContactusButton?.buttonColor = UIColor.flatCoffee()
+      ContactusButton?.shadowColor = UIColor.flatCoffeeColorDark()
       self.view.addSubview(ContactusButton!)
    }
    
@@ -300,7 +315,7 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
    //MARK:- GKGameCenterControllerDelegate実装用
    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
       gameCenterViewController.dismiss(animated: true, completion: {
-         self.ShowRankingViewButton?.hero.id = self.HeroID.ClearHart4ToHomeView
+         //self.ShowRankingViewButton?.hero.id = self.HeroID.ClearHart4ToHomeView
       })
    }
    
