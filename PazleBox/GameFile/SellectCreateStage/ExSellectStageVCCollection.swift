@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 extension SellectCreateStageViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -20,6 +21,7 @@ extension SellectCreateStageViewController: UICollectionViewDelegate {
       LoadStageInfomation(CellNum: indexPath.item)
       PresentGameViewController()
       Play3DtouchMedium()
+      Analytics.logEvent("PlayCreateStageCount", parameters: nil)
     }
 }
 

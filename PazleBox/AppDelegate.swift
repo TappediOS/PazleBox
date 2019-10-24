@@ -20,22 +20,22 @@ import ChameleonFramework
 class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowDelegate {
 
    //MARK:- もしタップジェスチャー表示したかったら，importとDelegateとこれにする
-   lazy var window: UIWindow? = {
-      var customWindow = COSTouchVisualizerWindow(frame: UIScreen.main.bounds)
-      //これか確実にいるよね
-      customWindow.touchVisualizerWindowDelegate = self
-      //タッチカラーの設定
-//      customWindow.fillColor = UIColor.flatWatermelon()
-//      customWindow.strokeColor = UIColor.flatRed()
-      customWindow.touchAlpha = 0.5
-      //Ripple(さざ波)の設定
-      customWindow.rippleFillColor = UIColor.flatPurple()
-      //customWindow.rippleStrokeColor = UIColor.flatRed()
-      customWindow.rippleAlpha = 0.5
-      return customWindow
-   }()
+//   lazy var window: UIWindow? = {
+//      var customWindow = COSTouchVisualizerWindow(frame: UIScreen.main.bounds)
+//      //これか確実にいるよね
+//      customWindow.touchVisualizerWindowDelegate = self
+//      //タッチカラーの設定
+////      customWindow.fillColor = UIColor.flatWatermelon()
+////      customWindow.strokeColor = UIColor.flatRed()
+//      customWindow.touchAlpha = 0.5
+//      //Ripple(さざ波)の設定
+//      customWindow.rippleFillColor = UIColor.flatPurple()
+//      //customWindow.rippleStrokeColor = UIColor.flatRed()
+//      customWindow.rippleAlpha = 0.5
+//      return customWindow
+//   }()
    
-   //var window: UIWindow?
+   var window: UIWindow?
    
    //MARK:- もし使わんねんやったら消す
    func touchVisualizerWindowShouldAlwaysShowFingertip(_ window: COSTouchVisualizerWindow!) -> Bool {

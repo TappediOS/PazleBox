@@ -13,6 +13,7 @@ import TapticEngine
 import FlatUIKit
 import SnapKit
 import SCLAlertView
+import Firebase
 
 class CleateStageViewController: UIViewController {
    
@@ -708,6 +709,7 @@ class CleateStageViewController: UIViewController {
                             PiceArry: PiceImageArray, ImageData: ImageData)
       
       ShowCompleteSaveAlertView()
+      Analytics.logEvent("CreateStageCount", parameters: nil)
       
    }
 

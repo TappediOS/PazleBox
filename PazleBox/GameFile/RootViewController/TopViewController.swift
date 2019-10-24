@@ -264,7 +264,7 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       
       //GoPiceStore()
       
-      Analytics.logEvent("ShowGameCenter", parameters: nil)
+      Analytics.logEvent("TopShowGameCenter", parameters: nil)
       let gcView = GKGameCenterViewController()
       gcView.gameCenterDelegate = self
       gcView.viewState = GKGameCenterViewControllerState.leaderboards
@@ -282,14 +282,14 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       let url = URL(string: "https://forms.gle/mSEq7WwDz3fZNcqF6")
       if let OpenURL = url {
          if UIApplication.shared.canOpenURL(OpenURL){
-            Analytics.logEvent("OpenContactUsURL", parameters: nil)
+            Analytics.logEvent("TopOpenContactUsURL", parameters: nil)
             UIApplication.shared.open(OpenURL)
          }else{
-            Analytics.logEvent("CantOpenURL", parameters: nil)
+            Analytics.logEvent("TopCantOpenURL", parameters: nil)
             print("URL nil ちゃうのにひらけない")
          }
       }else{
-         Analytics.logEvent("CantOpenURLWithNil", parameters: nil)
+         Analytics.logEvent("TopCantOpenURLWithNil", parameters: nil)
          print("URL 開こうとしたらNilやった")
       }
    }
@@ -334,6 +334,8 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       CreateButton.hero.id = HeroID.BackHardStage
       TitleLabel?.hero.id = HeroID.TopVCTitleANDHomeVCBack
       
+      Analytics.logEvent("TapTopPlayButton", parameters: nil)
+      
       let HomeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeView") as! HomeViewController
       HomeVC.modalPresentationStyle = .fullScreen
       self.present(HomeVC, animated: true, completion: {
@@ -358,6 +360,8 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       PlayButton.hero.id = HeroID.TopPlayAndCreateCreate
       CreateButton.hero.id = HeroID.TopCreateAndCreateFinCreate
       TitleLabel?.hero.id = HeroID.TopTitleAndCreateBack
+      
+       Analytics.logEvent("TapTopCreateButton", parameters: nil)
       
       let Storybord = UIStoryboard(name: "CleateStageSB", bundle: nil)
       let VC = Storybord.instantiateViewController(withIdentifier: "SellectCreateStageViewController")

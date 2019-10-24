@@ -11,6 +11,7 @@ import UIKit
 import ChameleonFramework
 import FlatUIKit
 import TapticEngine
+import Firebase
 
 class CreateHomeViewController: UIViewController {
    
@@ -150,6 +151,8 @@ class CreateHomeViewController: UIViewController {
       InternetUsersStageButton?.hero.id = HeroID.CreateInternetAndCreatingInfoLabel
       BackHomeButton?.hero.id = HeroID.CreateBackAndCreatingFinButton
       
+      Analytics.logEvent("TapCreateButton", parameters: nil)
+      
       let CreateStageVC = self.storyboard?.instantiateViewController(withIdentifier: "CreateStageVC") as! CleateStageViewController
       CreateStageVC.modalPresentationStyle = .fullScreen
       self.present(CreateStageVC, animated: true, completion: {
@@ -165,6 +168,8 @@ class CreateHomeViewController: UIViewController {
       isLockButton = true
       GameSound.PlaySoundsTapButton()
       SellectStageButton.hero.id = HeroID.CreateFinCreateAndSellectBack
+      
+      Analytics.logEvent("TapSellectStageButton", parameters: nil)
       
       let SellectCreateStageVC = self.storyboard?.instantiateViewController(withIdentifier: "SellectCreateStageVC") as! SellectCreateStageViewController
       SellectCreateStageVC.modalPresentationStyle = .fullScreen
