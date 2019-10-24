@@ -33,6 +33,8 @@ class CreateHomeViewController: UIViewController {
    let HeroID = HeroIDs()
    let GameSound = GameSounds()
    
+   var isLockButton = false
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -72,6 +74,13 @@ class CreateHomeViewController: UIViewController {
       InternetUsersStageButton.alpha = 0.385
       SetUpButtonColor()
       SetUpButtonPosition()
+      SetUpButtonTitile()
+   }
+   
+   private func SetUpButtonTitile() {
+      CreateStageButton.titleLabel?.text = NSLocalizedString("Create", comment: "")
+      SellectStageButton.titleLabel?.text = NSLocalizedString("StageYouMade", comment: "")
+      InternetUsersStageButton.titleLabel?.text = NSLocalizedString("StageInTheWorld", comment: "")
    }
    
    private func InitButton(_ sender: FUIButton) {
@@ -132,18 +141,37 @@ class CreateHomeViewController: UIViewController {
    
    @IBAction func TapCreateButton(_ sender: FUIButton) {
       Play3DtouchLight()
+      if isLockButton == true { return }
+      isLockButton = true
+      
       GameSound.PlaySoundsTapButton()
       CreateStageButton?.hero.id = HeroID.CreateCreateAndCreatingTrash
       SellectStageButton?.hero.id = HeroID.CreateFinCreateAndCreatingOption
       InternetUsersStageButton?.hero.id = HeroID.CreateInternetAndCreatingInfoLabel
       BackHomeButton?.hero.id = HeroID.CreateBackAndCreatingFinButton
+      
+      let CreateStageVC = self.storyboard?.instantiateViewController(withIdentifier: "CreateStageVC") as! CleateStageViewController
+      CreateStageVC.modalPresentationStyle = .fullScreen
+      self.present(CreateStageVC, animated: true, completion: {
+         print("CreateStageVCにプレゼント完了")
+         self.isLockButton = false
+      })
    }
    
    
    @IBAction func TapSellectStageButton(_ sender: Any) {
       Play3DtouchLight()
+      if isLockButton == true { return }
+      isLockButton = true
       GameSound.PlaySoundsTapButton()
       SellectStageButton.hero.id = HeroID.CreateFinCreateAndSellectBack
+      
+      let SellectCreateStageVC = self.storyboard?.instantiateViewController(withIdentifier: "SellectCreateStageVC") as! SellectCreateStageViewController
+      SellectCreateStageVC.modalPresentationStyle = .fullScreen
+      self.present(SellectCreateStageVC, animated: true, completion: {
+         print("SellectCreateStageVCにプレゼント完了")
+         self.isLockButton = false
+      })
    }
    
    @IBAction func TapInterNetButton(_ sender: Any) {

@@ -45,9 +45,16 @@
 "TrashPice" = "Drag and drop unused pieces to the trash";
 
 "OK" = "End";
-"Done" = "Done";
+"Done" = "Complete";
 
 
 "IfGoHome" = "The contents are not saved when you return to Home.";
 
 "Saved" = "Saved";
+
+
+"Play" = "Play";
+"Create" = "Create";
+
+"StageYouMade" = "Stage You Made";
+"StageInTheWorld" = "Stage in the World";

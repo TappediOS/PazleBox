@@ -23,12 +23,8 @@ extension CleateStageViewController: UICollectionViewDataSource {
       for subview in cell.contentView.subviews{
          subview.removeFromSuperview()
       }
-      
       print("セルの生成します \(indexPath.item)")
-      print("\(cell.contentView.frame)\n")
-      
-      
-      
+   
       let ImageView = UIImageView()
       ImageView.frame = cell.contentView.frame
       ImageView.image = UIImage(contentsOfFile: Bundle.main.path(forResource: photos[indexPath.item], ofType: "png")!)?.ResizeUIImage(width: 64, height: 64)

@@ -49,3 +49,10 @@
 "IfGoHome" = "返回首頁時，不會保存內容。";
 
 "Saved" = "已保存";
+
+
+"Play" = "재생";
+"Create" = "만들기";
+
+"StageYouMade" = "내가 만든 무대";
+"StageInTheWorld" = "세계의 무대";

@@ -44,8 +44,15 @@
 "TrashPice" = "사용하지 않은 조각을 휴지통으로 드래그 앤 드롭";
 
 "OK" = "종료";
-"Done" = "끝난";
+"Done" = "완전한";
 
 "IfGoHome" = "집으로 돌아갈 때 내용이 저장되지 않습니다.";
 
 "Saved" = "저장";
+
+
+"Play" = "播放";
+"Create" = "創建";
+
+"StageYouMade" = "您完成的階段";
+"StageInTheWorld" = "世界的舞台";

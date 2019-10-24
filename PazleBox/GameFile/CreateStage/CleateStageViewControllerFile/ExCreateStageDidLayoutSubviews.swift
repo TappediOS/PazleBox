@@ -45,7 +45,7 @@ extension CleateStageViewController {
 
       let Flame = CGRect(x: OnPiceView.frame.minX + PiceX, y: OnPiceView.frame.minY + PiceY, width: PiceW, height: PiceH)
       
-      print(Flame)
+      //print(Flame)
       RedFlame1_1 = Flame
    }
    func InitGreenFlame1_1() {
@@ -67,7 +67,7 @@ extension CleateStageViewController {
       let PiceX = PicePedding * 3 + PiceW * 2
 
       let Flame = CGRect(x: OnPiceView.frame.minX + PiceX, y: OnPiceView.frame.minY + PiceY, width: PiceW, height: PiceH)
-      print(Flame)
+      //print(Flame)
       BlueFlame1_1 = Flame
    }
    
@@ -84,7 +84,7 @@ extension CleateStageViewController {
 
       let Flame = CGRect(x: OnPiceView.frame.minX + PiceX, y: OnPiceView.frame.minY + PiceY, width: PiceW, height: PiceH)
       
-      print(Flame)
+      //print(Flame)
       RedFlame2_3 = Flame
    }
    func InitGreenFlame2_3() {
@@ -95,7 +95,7 @@ extension CleateStageViewController {
       let PiceX = PicePedding * 2 + PiceW * 1
 
       let Flame = CGRect(x: OnPiceView.frame.minX + PiceX, y: OnPiceView.frame.minY + PiceY, width: PiceW, height: PiceH)
-      print(Flame)
+      //print(Flame)
       GreenFlame2_3 = Flame
    }
    func InitBlueFlame2_3() {
@@ -106,7 +106,7 @@ extension CleateStageViewController {
       let PiceX = PicePedding * 3 + PiceW * 2
 
       let Flame = CGRect(x: OnPiceView.frame.minX + PiceX, y: OnPiceView.frame.minY + PiceY, width: PiceW, height: PiceH)
-      print(Flame)
+      //print(Flame)
       BlueFlame2_3 = Flame
    }
    
@@ -123,7 +123,7 @@ extension CleateStageViewController {
 
       let Flame = CGRect(x: OnPiceView.frame.minX + PiceX, y: OnPiceView.frame.minY + PiceY, width: PiceW, height: PiceH)
       
-      print(Flame)
+      ///print(Flame)
       RedFlame3_2 = Flame
    }
    func InitGreenFlame3_2() {
@@ -135,7 +135,7 @@ extension CleateStageViewController {
 
       let Flame = CGRect(x: OnPiceView.frame.minX + PiceX, y: OnPiceView.frame.minY + PiceY, width: PiceW, height: PiceH)
       
-      print(Flame)
+      //print(Flame)
       GreenFlame3_2 = Flame
    }
    func InitBlueFlame3_2() {
@@ -147,7 +147,7 @@ extension CleateStageViewController {
 
       let Flame = CGRect(x: OnPiceView.frame.minX + PiceX, y: OnPiceView.frame.minY + PiceY, width: PiceW, height: PiceH)
       
-      print(Flame)
+      //print(Flame)
       BlueFlame3_2 = Flame
    }
    
@@ -164,7 +164,7 @@ extension CleateStageViewController {
 
       let Flame = CGRect(x: OnPiceView.frame.minX + PiceX, y: OnPiceView.frame.minY + PiceY, width: PiceW, height: PiceH)
       
-      print(Flame)
+      //print(Flame)
       RedFlame4_3 = Flame
    }
    func InitGreenFlame4_3() {
@@ -176,7 +176,7 @@ extension CleateStageViewController {
 
       let Flame = CGRect(x: OnPiceView.frame.minX + PiceX, y: OnPiceView.frame.minY + PiceY, width: PiceW, height: PiceH)
       
-      print(Flame)
+      //print(Flame)
       GreenFlame4_3 = Flame
    }
    func InitBlueFlame4_3() {
@@ -188,7 +188,7 @@ extension CleateStageViewController {
 
       let Flame = CGRect(x: OnPiceView.frame.minX + PiceX, y: OnPiceView.frame.minY + PiceY, width: PiceW, height: PiceH)
       
-      print(Flame)
+     // print(Flame)
       BlueFlame4_3 = Flame
    }
    

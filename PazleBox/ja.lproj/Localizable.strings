@@ -44,9 +44,15 @@
 "TrashPice" = "使わないピースはゴミ箱にドラッグ&ドロップ";
 
 "OK" = "終了";
-"Done" = "完了";
+"Done" = "完成";
 
 
 "IfGoHome" = "Homeに戻った場合，内容は保存されません。";
 
-"saved" = "保存完了";
+"Saved" = "保存完了";
+
+"Play" = "あそぶ";
+"Create" = "つくる";
+
+"StageYouMade" = "つくったステージ";
+"StageInTheWorld" = "世界中のステージ";

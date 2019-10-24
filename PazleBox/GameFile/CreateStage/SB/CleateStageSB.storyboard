@@ -23,7 +23,6 @@
                                 <state key="normal" title="作ったステージ"/>
                                 <connections>
                                     <action selector="TapSellectStageButton:" destination="Shq-YE-a8h" eventType="touchUpInside" id="8Nw-vf-miz"/>
-                                    <segue destination="XcZ-8x-GJ4" kind="presentation" id="sAA-2h-Oa0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCS-tJ-dt8" customClass="FUIButton">
@@ -32,7 +31,6 @@
                                 <state key="normal" title="作る"/>
                                 <connections>
                                     <action selector="TapCreateButton:" destination="Shq-YE-a8h" eventType="touchUpInside" id="krW-YM-COU"/>
-                                    <segue destination="miw-3O-gsW" kind="presentation" modalPresentationStyle="overFullScreen" id="nsr-D5-BTc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9W-4O-T85" customClass="FUIButton">
@@ -69,7 +67,7 @@
         <!--Sellect Create Stage View Controller-->
         <scene sceneID="NzI-gR-prC">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="XcZ-8x-GJ4" customClass="SellectCreateStageViewController" customModule="PazleBox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SellectCreateStageVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XcZ-8x-GJ4" customClass="SellectCreateStageViewController" customModule="PazleBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xp8-U0-fGf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,7 +135,7 @@
         <!--Cleate Stage View Controller-->
         <scene sceneID="i6G-Sb-UtW">
             <objects>
-                <viewController id="miw-3O-gsW" customClass="CleateStageViewController" customModule="PazleBox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateStageVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="miw-3O-gsW" customClass="CleateStageViewController" customModule="PazleBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tuT-Qu-vbY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

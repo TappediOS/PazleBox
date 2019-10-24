@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BF2674DF2227B6A3003D370F"
-               BuildableName = "PazleBox.app"
+               BuildableName = "Pick Up Puzzle.app"
                BlueprintName = "PazleBox"
                ReferencedContainer = "container:PazleBox.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF2674DF2227B6A3003D370F"
-            BuildableName = "PazleBox.app"
+            BuildableName = "Pick Up Puzzle.app"
             BlueprintName = "PazleBox"
             ReferencedContainer = "container:PazleBox.xcodeproj">
          </BuildableReference>
@@ -88,7 +88,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF2674DF2227B6A3003D370F"
-            BuildableName = "PazleBox.app"
+            BuildableName = "Pick Up Puzzle.app"
             BlueprintName = "PazleBox"
             ReferencedContainer = "container:PazleBox.xcodeproj">
          </BuildableReference>
@@ -111,7 +111,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF2674DF2227B6A3003D370F"
-            BuildableName = "PazleBox.app"
+            BuildableName = "Pick Up Puzzle.app"
             BlueprintName = "PazleBox"
             ReferencedContainer = "container:PazleBox.xcodeproj">
          </BuildableReference>

@@ -104,6 +104,7 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
    private func InitTitleLabel() {
       TitleLabel = UILabel(frame: CGRect(x: FViewW * 6, y: FViewH * 3, width: FViewW * 13, height: FViewH * 3))
       TitleLabel!.text = "Puzzle Meker"
+      TitleLabel!.textColor = .black
       TitleLabel!.font = UIFont(name: "HiraMaruProN-W4", size: 50)
       TitleLabel!.adjustsFontSizeToFitWidth = true
       TitleLabel!.adjustsFontForContentSizeCategory = true
@@ -171,9 +172,16 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       SetUpSellectStageButton(sender: PlayButton)
       SetUpSellectStageButton(sender: CreateButton)
       
+      SetUpButtonTitile()
       SetUpStageButtonHeroID()
       SetUpHeroModifiersForEachStageButton()
       SetUpStageButtonPosition()
+   }
+   
+   private func SetUpButtonTitile() {
+      PlayButton.titleLabel?.text = NSLocalizedString("Play", comment: "")
+      CreateButton.titleLabel?.text = NSLocalizedString("Create", comment: "")
+
    }
    
    //MARK: ステージボタンのHEROIDつける -
@@ -300,10 +308,12 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
    @IBAction func TapPlayButton(_ sender: FUIButton) {
       print("Tap PlayButton")
       Play3DtouchLight()
-      GameSound.PlaySoundsTapButton()
+      
       
       if CanPresentAnotherVC == false { return }
       CanPresentAnotherVC = false
+      
+      GameSound.PlaySoundsTapButton()
       
       PlayButton.hero.id = HeroID.BackEasyStage
       CreateButton.hero.id = HeroID.BackHardStage
@@ -323,10 +333,12 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       print("Tap CreateButton")
       
       Play3DtouchLight()
-      GameSound.PlaySoundsTapButton()
+      
       
       if CanPresentAnotherVC == false { return }
       CanPresentAnotherVC = false
+      
+      GameSound.PlaySoundsTapButton()
       
       PlayButton.hero.id = HeroID.TopPlayAndCreateCreate
       CreateButton.hero.id = HeroID.TopCreateAndCreateFinCreate
