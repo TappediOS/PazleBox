@@ -15,7 +15,6 @@ import Firebase
 
 class CreateHomeViewController: UIViewController {
    
-   
    @IBOutlet weak var SellectStageButton: FUIButton!
    @IBOutlet weak var CreateStageButton: FUIButton!
    @IBOutlet weak var BackHomeButton: FUIButton!
@@ -48,6 +47,7 @@ class CreateHomeViewController: UIViewController {
       InitComminSoonLabel()
       
       InitHeroID()
+      InitAccessibilityIdentifires()
    }
    
    override func viewDidAppear(_ animated: Bool) {
@@ -59,6 +59,13 @@ class CreateHomeViewController: UIViewController {
       ViewH = self.view.frame.height
       FViewW = ViewW / 25
       FViewH = ViewH / 32
+   }
+   
+   private func  InitAccessibilityIdentifires() {
+      SellectStageButton?.accessibilityIdentifier = "CreateHomeVC_SellectStageButton"
+      CreateStageButton?.accessibilityIdentifier = "CreateHomeVC_CreateStageButton"
+      BackHomeButton?.accessibilityIdentifier = "CreateHomeVC_BackHomeButton"
+      InternetUsersStageButton?.accessibilityIdentifier = "CreateHomeVC_InternetUsersStageButton"
    }
    
    private func InitBackgroundImageView() {

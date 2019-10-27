@@ -127,4 +127,14 @@ extension CleateStageViewController {
       InfoLabel.hero.id = HeroID.CreateInternetAndCreatingInfoLabel
       OptionButton.hero.id = HeroID.CreateFinCreateAndCreatingOption
    }
+   
+   func InitAccessibilityIdentifires() {
+      collectionView?.accessibilityIdentifier = "CleateStageVC_collectionView"
+      TrashImageView.accessibilityIdentifier = "CleateStageVC_TrashImageView"
+      FinishCreatePuzzleButton?.accessibilityIdentifier = "CleateStageVC_FinishCreatePuzzleButton"
+      FinishChouseResPuzzleButton?.accessibilityIdentifier = "CleateStageVC_FinishChouseResPuzzleButton"
+      InfoLabel.accessibilityIdentifier = "CleateStageVC_InfoLabel"
+      OptionButton.accessibilityIdentifier = "CleateStageVC_OptionButton"
+      BackImageView?.accessibilityIdentifier = "CleateStageVC_BackImageView"
+   }
 }

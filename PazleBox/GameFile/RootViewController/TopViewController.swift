@@ -73,6 +73,7 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       SetUpHeroModifiersForEachSmallButton()
       
       InitBackgroundImageView()
+      InitAccessibilityIdentifires()
       InitBGM()
       StartBGM()
    }
@@ -96,6 +97,16 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       ViewH = self.view.frame.height
       FViewW = ViewW / 25
       FViewH = ViewH / 32
+   }
+   
+   private func  InitAccessibilityIdentifires() {
+      PlayButton.accessibilityIdentifier = "TopVC_PlayButton"
+      CreateButton.accessibilityIdentifier = "TopVC_CreateButton"
+      PurchasButton?.accessibilityIdentifier = "TopVC_PurchasButton"
+      ContactusButton?.accessibilityIdentifier = "TopVC_ContactusButton"
+      ShowRankingViewButton?.accessibilityIdentifier = "TopVC_ShowRankingViewButton"
+      RestoreButton?.accessibilityIdentifier = "RestoreButton"
+      TitleLabel?.accessibilityIdentifier = "TopVC_TitleLabel"
    }
    
    //MARK: 通知の初期化

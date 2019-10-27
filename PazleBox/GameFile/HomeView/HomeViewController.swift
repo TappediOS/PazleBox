@@ -83,6 +83,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       InitBackButton()
       //InitGoPiceStoreButton()
       SetUpHeroModifiersForEachSmallButton()
+      InitAccessibilityIdentifires()
       
       InitConfig()
       SetUpRemoteConfigDefaults()
@@ -113,7 +114,16 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    }
    
    
-   
+   private func  InitAccessibilityIdentifires() {
+      EasyButton?.accessibilityIdentifier = "HomeVC_EasyButton"
+      NormalButton?.accessibilityIdentifier = "HomeVC_NormalButton"
+      HardButton?.accessibilityIdentifier = "HomeVC_HardButton"
+      BackButton?.accessibilityIdentifier = "HomeVC_BackButton"
+      PurchasButton?.accessibilityIdentifier = "HomeVC_PurchasButton"
+      ContactusButton?.accessibilityIdentifier = "HomeVC_ContactusButton"
+      ShowRankingViewButton?.accessibilityIdentifier = "HomeVC_ShowRankingViewButton"
+      RestoreButton?.accessibilityIdentifier = "HomeVC_RestoreButton"
+   }
    
    
    //MARK:- Remote ConfigのInitするよ-

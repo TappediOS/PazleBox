@@ -126,6 +126,7 @@ class CleateStageViewController: UIViewController {
       collectionView.backgroundColor = UIColor.flatWhite().withAlphaComponent(0.5)
       
       InitHeroID()
+      InitAccessibilityIdentifires()
    }
    
    override func viewDidLayoutSubviews() {

@@ -47,11 +47,17 @@ class SellectCreateStageViewController: UIViewController {
       
       InitBackButton()
       InitHeroID()
+      InitAccessibilityIdentifires()
    }
    
    override func viewWillAppear(_ animated: Bool) {
       print("ステージ選択できる状態にします。")
       CanSellectStage = true
+   }
+   
+   private func  InitAccessibilityIdentifires() {
+      StageCollectionView?.accessibilityIdentifier = "SellectCreateStageVC_StageCollectionView"
+      BackButton?.accessibilityIdentifier = "SellectCreateStageVC_BackButton"
    }
    
    private func InitBackButton() {
