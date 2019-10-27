@@ -25,7 +25,6 @@ class PazleBoxUITests: XCTestCase {
    //TopVCの表示テスト
    func testTopVC() {
       let app = XCUIApplication()
-      app.launch()
       app.buttons["TopVC_CreateButton"].tap()
       snapshot("TopVC")
    }
@@ -33,7 +32,6 @@ class PazleBoxUITests: XCTestCase {
    //contact us button　押したときにちゃんと表示されるかのテスト
    func testTapContactUsButton() {
       let app = XCUIApplication()
-      app.launch()
       app.buttons["TopVC_ContactusButton"].tap()
       snapshot("TapContactUsButton")
    }
@@ -41,7 +39,6 @@ class PazleBoxUITests: XCTestCase {
    //ShowRankingButton押したときのテスト
    func testTapShowRankingViewButton() {
       let app = XCUIApplication()
-      app.launch()
       app.buttons["TopVC_ShowRankingViewButton"].tap()
       snapshot("TapShowRankingButton")
    }
@@ -49,7 +46,6 @@ class PazleBoxUITests: XCTestCase {
    //CreateHomeVCの表示テスト
    func testCreateHomeVC() {
       let app = XCUIApplication()
-      app.launch()
       app.buttons["TopVC_CreateButton"].tap()
       snapshot("HomeVC")
    }
@@ -57,7 +53,6 @@ class PazleBoxUITests: XCTestCase {
    //CreateStageVCの表示テスト
    func testCreateStageVC() {
       let app = XCUIApplication()
-      app.launch()
       app.buttons["TopVC_CreateButton"].tap()
       app.buttons["CreateHomeVC_CreateStageButton"].tap()
       snapshot("CreateStageVC")
@@ -66,7 +61,6 @@ class PazleBoxUITests: XCTestCase {
    //CreateStageVCでCollectionView cell をタップしたときの表示テスト
    func testTapCollectionViewCell_2_InCreateStageVC() {
       let app = XCUIApplication()
-      app.launch()
       app.buttons["TopVC_CreateButton"].tap()
       app.buttons["CreateHomeVC_CreateStageButton"].tap()
       let cell = app.collectionViews["CleateStageVC_collectionView"].cells.element(boundBy: 2)
@@ -74,19 +68,18 @@ class PazleBoxUITests: XCTestCase {
       snapshot("TapCellInCreateStageVC")
    }
    
+   //ゴミ箱タップしたときの表示テスト
    func testTapTrashImageViewInCreateStageVC() {
       let app = XCUIApplication()
-      app.launch()
       app.buttons["TopVC_CreateButton"].tap()
       app.buttons["CreateHomeVC_CreateStageButton"].tap()
       app.images["CleateStageVC_TrashImageView"].tap()
       snapshot("TapTrashImageView")
    }
    
-   
+   //オプションボタン押したときの表示テスト
    func testTapOptionButtonInCreateStageVC() {
       let app = XCUIApplication()
-      app.launch()
       app.buttons["TopVC_CreateButton"].tap()
       app.buttons["CreateHomeVC_CreateStageButton"].tap()
       app.buttons["CleateStageVC_OptionButton"].tap()
@@ -96,7 +89,6 @@ class PazleBoxUITests: XCTestCase {
    //ピースがおかれてないときにFinボタンタップされたときの表示テスト
    func testTapFinFinishCreatePuzzleButton_PiceIsNOTSellected_InCreateStageVC() {
       let app = XCUIApplication()
-      app.launch()
       app.buttons["TopVC_CreateButton"].tap()
       app.buttons["CreateHomeVC_CreateStageButton"].tap()
       app.buttons["CleateStageVC_FinishCreatePuzzleButton"].tap()
@@ -106,7 +98,6 @@ class PazleBoxUITests: XCTestCase {
    //SellectStageVCの表示テスト
    func testSellectStageVC() {
       let app = XCUIApplication()
-      app.launch()
       app.buttons["TopVC_CreateButton"].tap()
       app.buttons["CreateHomeVC_SellectStageButton"].tap()
       snapshot("SellectStageVC")
@@ -115,18 +106,16 @@ class PazleBoxUITests: XCTestCase {
    //BackHomeButton押したときにちゃんと戻れるかのテスト
    func testCreateHomeVCToTopVCFromBackButton() {
       let app = XCUIApplication()
-      app.launch()
       app.buttons["TopVC_CreateButton"].tap()
       app.buttons["CreateHomeVC_SellectStageButton"].tap()
       snapshot("CreateHomeVCから戻る前")
-      app.buttons["CreateHomeVC_BackHomeButton"].tap()
+      app.buttons["SellectCreateStageVC_BackButton"].tap()
       snapshot("CreateHomeVCから戻った後")
    }
    
    //HomeVCの表示テスト
    func testHomeVC() {
       let app = XCUIApplication()
-      app.launch()
       app.buttons["TopVC_PlayButton"].tap()
       snapshot("HomeVC")
    }
@@ -134,7 +123,6 @@ class PazleBoxUITests: XCTestCase {
    //EasyButton押された時の表示テスト
    func testTapEasyButton() {
       let app = XCUIApplication()
-      app.launch()
       app.buttons["TopVC_PlayButton"].tap()
       app.buttons["HomeVC_EasyButton"].tap()
       snapshot("EasyButton")
@@ -143,7 +131,6 @@ class PazleBoxUITests: XCTestCase {
    //NormalButton押された時の表示テスト
    func testTapNormalButton() {
       let app = XCUIApplication()
-      app.launch()
       app.buttons["TopVC_PlayButton"].tap()
       app.buttons["HomeVC_NormalButton"].tap()
       snapshot("NormalButton")
@@ -152,7 +139,6 @@ class PazleBoxUITests: XCTestCase {
    //HardButton押された時の表示テスト
    func testTapHardButton() {
       let app = XCUIApplication()
-      app.launch()
       app.buttons["TopVC_PlayButton"].tap()
       app.buttons["HomeVC_HardButton"].tap()
       snapshot("HardButton")
