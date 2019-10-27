@@ -256,6 +256,7 @@
 		BF67C2A5235DB9D200EBFB00 /* ExCreateStageDidLayoutSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67C2A4235DB9D200EBFB00 /* ExCreateStageDidLayoutSubviews.swift */; };
 		BF67C2A8235EB70800EBFB00 /* ExCreateStageInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67C2A7235EB70800EBFB00 /* ExCreateStageInit.swift */; };
 		BF72916C2361866E00E8D947 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF72916E2361866E00E8D947 /* InfoPlist.strings */; };
+		BF7291742365A85E00E8D947 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7291732365A85E00E8D947 /* SnapshotHelper.swift */; };
 		BF73C2F22349C03F00745C7F /* UserCreateStageDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F12349C03F00745C7F /* UserCreateStageDB.swift */; };
 		BF73C2F5234AD86700745C7F /* SellectCreateStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F4234AD86700745C7F /* SellectCreateStageViewController.swift */; };
 		BF73C2F8234B319200745C7F /* UsersGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F7234B319200745C7F /* UsersGameScene.swift */; };
@@ -996,6 +997,7 @@
 		BF72916F2361867600E8D947 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		BF7291702361867800E8D947 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BF7291712361867900E8D947 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BF7291732365A85E00E8D947 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		BF73C2F12349C03F00745C7F /* UserCreateStageDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreateStageDB.swift; sourceTree = "<group>"; };
 		BF73C2F4234AD86700745C7F /* SellectCreateStageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectCreateStageViewController.swift; sourceTree = "<group>"; };
 		BF73C2F7234B319200745C7F /* UsersGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersGameScene.swift; sourceTree = "<group>"; };
@@ -2568,6 +2570,7 @@
 		BFDCDB9B23408FFA00AD6E4F /* PazleBoxUITests */ = {
 			isa = PBXGroup;
 			children = (
+				BF7291732365A85E00E8D947 /* SnapshotHelper.swift */,
 				BFDCDB9C23408FFA00AD6E4F /* PazleBoxUITests.swift */,
 				BFDCDB9E23408FFA00AD6E4F /* Info.plist */,
 			);
@@ -3660,6 +3663,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFDCDB9D23408FFA00AD6E4F /* PazleBoxUITests.swift in Sources */,
+				BF7291742365A85E00E8D947 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3859,7 +3863,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PazleBox/PazleBox.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9R4W53MKG7;
 				INFOPLIST_FILE = PazleBox/Info.plist;
@@ -3884,7 +3888,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PazleBox/PazleBox.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9R4W53MKG7;
 				INFOPLIST_FILE = PazleBox/Info.plist;

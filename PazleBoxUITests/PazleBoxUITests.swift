@@ -11,27 +11,154 @@ import XCTest
 class PazleBoxUITests: XCTestCase {
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+      continueAfterFailure = false
+      let app = XCUIApplication()
+      setupSnapshot(app)
+      app.launch()
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
+   
+   //TopVCの表示テスト
+   func testTopVC() {
+      let app = XCUIApplication()
+      app.launch()
+      app.buttons["TopVC_CreateButton"].tap()
+      snapshot("TopVC")
+   }
+   
+   //contact us button　押したときにちゃんと表示されるかのテスト
+   func testTapContactUsButton() {
+      let app = XCUIApplication()
+      app.launch()
+      app.buttons["TopVC_ContactusButton"].tap()
+      snapshot("TapContactUsButton")
+   }
+   
+   //ShowRankingButton押したときのテスト
+   func testTapShowRankingViewButton() {
+      let app = XCUIApplication()
+      app.launch()
+      app.buttons["TopVC_ShowRankingViewButton"].tap()
+      snapshot("TapShowRankingButton")
+   }
+   
+   //CreateHomeVCの表示テスト
+   func testCreateHomeVC() {
+      let app = XCUIApplication()
+      app.launch()
+      app.buttons["TopVC_CreateButton"].tap()
+      snapshot("HomeVC")
+   }
+   
+   //CreateStageVCの表示テスト
+   func testCreateStageVC() {
+      let app = XCUIApplication()
+      app.launch()
+      app.buttons["TopVC_CreateButton"].tap()
+      app.buttons["CreateHomeVC_CreateStageButton"].tap()
+      snapshot("CreateStageVC")
+   }
+   
+   //CreateStageVCでCollectionView cell をタップしたときの表示テスト
+   func testTapCollectionViewCell_2_InCreateStageVC() {
+      let app = XCUIApplication()
+      app.launch()
+      app.buttons["TopVC_CreateButton"].tap()
+      app.buttons["CreateHomeVC_CreateStageButton"].tap()
+      let cell = app.collectionViews["CleateStageVC_collectionView"].cells.element(boundBy: 2)
+      cell.tap()
+      snapshot("TapCellInCreateStageVC")
+   }
+   
+   func testTapTrashImageViewInCreateStageVC() {
+      let app = XCUIApplication()
+      app.launch()
+      app.buttons["TopVC_CreateButton"].tap()
+      app.buttons["CreateHomeVC_CreateStageButton"].tap()
+      app.images["CleateStageVC_TrashImageView"].tap()
+      snapshot("TapTrashImageView")
+   }
+   
+   
+   func testTapOptionButtonInCreateStageVC() {
+      let app = XCUIApplication()
+      app.launch()
+      app.buttons["TopVC_CreateButton"].tap()
+      app.buttons["CreateHomeVC_CreateStageButton"].tap()
+      app.buttons["CleateStageVC_OptionButton"].tap()
+      snapshot("TapOptionButton")
+   }
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+   //ピースがおかれてないときにFinボタンタップされたときの表示テスト
+   func testTapFinFinishCreatePuzzleButton_PiceIsNOTSellected_InCreateStageVC() {
+      let app = XCUIApplication()
+      app.launch()
+      app.buttons["TopVC_CreateButton"].tap()
+      app.buttons["CreateHomeVC_CreateStageButton"].tap()
+      app.buttons["CleateStageVC_FinishCreatePuzzleButton"].tap()
+      snapshot("TapFinFinishCreatePuzzleButton")
+   }
+   
+   //SellectStageVCの表示テスト
+   func testSellectStageVC() {
+      let app = XCUIApplication()
+      app.launch()
+      app.buttons["TopVC_CreateButton"].tap()
+      app.buttons["CreateHomeVC_SellectStageButton"].tap()
+      snapshot("SellectStageVC")
+   }
+   
+   //BackHomeButton押したときにちゃんと戻れるかのテスト
+   func testCreateHomeVCToTopVCFromBackButton() {
+      let app = XCUIApplication()
+      app.launch()
+      app.buttons["TopVC_CreateButton"].tap()
+      app.buttons["CreateHomeVC_SellectStageButton"].tap()
+      snapshot("CreateHomeVCから戻る前")
+      app.buttons["CreateHomeVC_BackHomeButton"].tap()
+      snapshot("CreateHomeVCから戻った後")
+   }
+   
+   //HomeVCの表示テスト
+   func testHomeVC() {
+      let app = XCUIApplication()
+      app.launch()
+      app.buttons["TopVC_PlayButton"].tap()
+      snapshot("HomeVC")
+   }
+   
+   //EasyButton押された時の表示テスト
+   func testTapEasyButton() {
+      let app = XCUIApplication()
+      app.launch()
+      app.buttons["TopVC_PlayButton"].tap()
+      app.buttons["HomeVC_EasyButton"].tap()
+      snapshot("EasyButton")
+   }
+   
+   //NormalButton押された時の表示テスト
+   func testTapNormalButton() {
+      let app = XCUIApplication()
+      app.launch()
+      app.buttons["TopVC_PlayButton"].tap()
+      app.buttons["HomeVC_NormalButton"].tap()
+      snapshot("NormalButton")
+   }
+   
+   //HardButton押された時の表示テスト
+   func testTapHardButton() {
+      let app = XCUIApplication()
+      app.launch()
+      app.buttons["TopVC_PlayButton"].tap()
+      app.buttons["HomeVC_HardButton"].tap()
+      snapshot("HardButton")
+   }
 
+   
     func testLaunchPerformance() {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.
