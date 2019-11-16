@@ -2566,8 +2566,8 @@
             filePath = "PazleBox/GameFile/SellectCreateStage/SellectView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "init(frame:Image:)"
             landmarkType = "7">
             <Locations>
@@ -2614,10 +2614,42 @@
             filePath = "PazleBox/GameFile/SellectCreateStage/SellectView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "init(coder:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8E7753C0-0FA2-4697-838E-D17640FB8CBC - 741b7e85640d35fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.SellectView.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;PazleBox.SellectView&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SellectCreateStage/SellectView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "8E7753C0-0FA2-4697-838E-D17640FB8CBC - e633184b30e0b478"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PazleBox.SellectView.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;PazleBox.SellectView&gt;"
+                  moduleName = "PazleBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun/xcode/PazleBox/PazleBox/GameFile/SellectCreateStage/SellectView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "116">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

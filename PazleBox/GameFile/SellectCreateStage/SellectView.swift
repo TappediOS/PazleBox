@@ -19,7 +19,12 @@ class SellectView: UIView {
    @IBOutlet weak var SellectImageView: UIImageView!
    @IBOutlet weak var PlayButton: UIButton!
    @IBOutlet weak var DeleteButton: UIButton!
+   @IBOutlet weak var CloseButton: UIButton!
    
+   let ButtonShadow = CGSize(width: 0.1, height: 0.2)
+   let ButtonShadowColor = UIColor.black.cgColor
+   let ButtonShadowOpacity: Float = 0.6
+   let ButtonCornerRadius: CGFloat = 7
 
    init(frame: CGRect, Image: UIImage) {
       super.init(frame: frame)
@@ -28,13 +33,19 @@ class SellectView: UIView {
       InitView()
       InitPlayButton()
       InitDeleteButton()
+      InitCloseButton()
       InitImageView(Image: Image)
    }
      
+   override func awakeFromNib() {
+      
+   }
      
    private func InitView() {
-      self.layer.cornerRadius = 20
-      self.layer.masksToBounds = true
+      self.layer.shadowOffset = CGSize(width: 10, height: 10)
+      self.layer.shadowColor = UIColor.black.cgColor
+      self.layer.shadowOpacity = 0.74
+      self.layer.cornerRadius = 8
    }
      
    private func InitPlayButton() {
@@ -43,8 +54,12 @@ class SellectView: UIView {
       PlayButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
       PlayButton.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       PlayButton.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
-      PlayButton.layer.cornerRadius = 5
+      PlayButton.layer.shadowOffset = ButtonShadow
+      PlayButton.layer.shadowColor = ButtonShadowColor
+      PlayButton.layer.shadowOpacity = ButtonShadowOpacity
+      PlayButton.layer.cornerRadius = ButtonCornerRadius
       PlayButton.clipsToBounds = true
+      
    }
      
    private func InitDeleteButton() {
@@ -53,13 +68,32 @@ class SellectView: UIView {
       DeleteButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
       DeleteButton.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       DeleteButton.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
-      DeleteButton.layer.cornerRadius = 5
+      PlayButton.layer.shadowOffset = ButtonShadow
+      PlayButton.layer.shadowColor = ButtonShadowColor
+      PlayButton.layer.shadowOpacity = ButtonShadowOpacity
+      PlayButton.layer.cornerRadius = ButtonCornerRadius
       DeleteButton.clipsToBounds = true
+   }
+   
+   private func InitCloseButton() {
+      CloseButton.titleLabel?.adjustsFontSizeToFitWidth = true
+      CloseButton.titleLabel?.adjustsFontForContentSizeCategory = true
+      CloseButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
+      CloseButton.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
+      CloseButton.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
+      CloseButton.layer.shadowOffset = ButtonShadow
+      CloseButton.layer.shadowColor = ButtonShadowColor
+      CloseButton.layer.shadowOpacity = ButtonShadowOpacity
+      CloseButton.layer.cornerRadius = ButtonCornerRadius
+      CloseButton.clipsToBounds = true
    }
      
    private func InitImageView(Image: UIImage) {
       self.SellectImageView.image = Image
-      SellectImageView.layer.cornerRadius = SellectImageView.frame.size.width * 0.1
+      SellectImageView.layer.shadowOffset = ButtonShadow
+      SellectImageView.layer.shadowColor = ButtonShadowColor
+      SellectImageView.layer.shadowOpacity = ButtonShadowOpacity
+      SellectImageView.layer.cornerRadius = ButtonCornerRadius
       SellectImageView.clipsToBounds = true
    }
      
@@ -68,6 +102,7 @@ class SellectView: UIView {
       let bundle = Bundle(for: type(of: self))
       let nib = UINib(nibName: "SellectView", bundle: bundle)
       let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
+      view.frame = self.bounds
       addSubview(view)
    }
      
@@ -76,6 +111,27 @@ class SellectView: UIView {
       LoadNib()
    }
 
+   
+   @IBAction func TapPlayButton(_ sender: Any) {
+   }
+   
+   
+   
+   
+   @IBAction func TapDeleteButton(_ sender: Any) {
+   }
+   
+   @IBAction func TapCloseButton(_ sender: Any) {
+   }
+   
+   
+   
+   
+   
+   
+   
+   
+   
    
    
    // viewの枠線の色
