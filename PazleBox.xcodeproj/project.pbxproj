@@ -25,7 +25,7 @@
 		BF1BD1EE2279C4120047496B /* HardStageClearInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD1ED2279C4120047496B /* HardStageClearInfomation.swift */; };
 		BF1CE88C22D4C1C000ACF7F8 /* ExUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE88B22D4C1C000ACF7F8 /* ExUIImage.swift */; };
 		BF1DBD5A237FC34700F6B2D1 /* SellectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1DBD59237FC34700F6B2D1 /* SellectView.xib */; };
-		BF1DBD5C237FC55800F6B2D1 /* SellectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1DBD5B237FC55800F6B2D1 /* SellectView.swift */; };
+		BF1DBD5E237FCD5A00F6B2D1 /* SellectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1DBD5D237FCD5A00F6B2D1 /* SellectView.swift */; };
 		BF1FF2AD22311CE60047ED23 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FF2AC22311CE60047ED23 /* Stage.swift */; };
 		BF1FF2AF22311FD40047ED23 /* StageContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FF2AE22311FD40047ED23 /* StageContents.swift */; };
 		BF1FF2B2223120650047ED23 /* AllStageInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FF2B1223120650047ED23 /* AllStageInfomation.swift */; };
@@ -754,7 +754,7 @@
 		BF1BD1ED2279C4120047496B /* HardStageClearInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardStageClearInfomation.swift; sourceTree = "<group>"; };
 		BF1CE88B22D4C1C000ACF7F8 /* ExUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIImage.swift; sourceTree = "<group>"; };
 		BF1DBD59237FC34700F6B2D1 /* SellectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellectView.xib; sourceTree = "<group>"; };
-		BF1DBD5B237FC55800F6B2D1 /* SellectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectView.swift; sourceTree = "<group>"; };
+		BF1DBD5D237FCD5A00F6B2D1 /* SellectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectView.swift; sourceTree = "<group>"; };
 		BF1FF2AC22311CE60047ED23 /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
 		BF1FF2AE22311FD40047ED23 /* StageContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageContents.swift; sourceTree = "<group>"; };
 		BF1FF2B1223120650047ED23 /* AllStageInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStageInfomation.swift; sourceTree = "<group>"; };
@@ -2209,7 +2209,7 @@
 				BF73C2F4234AD86700745C7F /* SellectCreateStageViewController.swift */,
 				BF94BDDD2352FC33001ACD11 /* ExSellectStageVCCollection.swift */,
 				BF1DBD59237FC34700F6B2D1 /* SellectView.xib */,
-				BF1DBD5B237FC55800F6B2D1 /* SellectView.swift */,
+				BF1DBD5D237FCD5A00F6B2D1 /* SellectView.swift */,
 				BF94BDDB2352ED98001ACD11 /* ExSellectStageCreateViewController.swift */,
 			);
 			path = SellectCreateStage;
@@ -3614,7 +3614,7 @@
 				BF552EEE226DDE3300756E16 /* N40.swift in Sources */,
 				BF33CE0A233A243A00AD488A /* PiceImageView.swift in Sources */,
 				BF640C092245100C00333782 /* E1.swift in Sources */,
-				BF1DBD5C237FC55800F6B2D1 /* SellectView.swift in Sources */,
+				BF1DBD5E237FCD5A00F6B2D1 /* SellectView.swift in Sources */,
 				BF2C14632276F3B000C7B8FB /* YesNode.swift in Sources */,
 				BF4323CB22D35F28008DF038 /* BackTileImageView.swift in Sources */,
 				BF552EE0226DDDF100756E16 /* N33.swift in Sources */,
