@@ -25,7 +25,7 @@ extension CleateStageViewController {
       if SafeAreaTop > 40 {
          ViewPedding = 39
       }else{
-         ViewPedding = 2
+         ViewPedding = 1.5
       }
       
       let StartY = SafeAndCollectionH + ViewPedding
@@ -195,7 +195,10 @@ extension CleateStageViewController {
    
    func SNPOptionButton() {
       OptionButton.snp.makeConstraints{ make in
-         let Height:CGFloat = 50
+         var Height:CGFloat = 50
+         if CanUseAreaHeight - Height < 0 {
+            Height = CanUseAreaHeight - 8
+         }
          make.height.equalTo(Height)
          make.width.equalTo(Height)
          make.trailing.equalTo(self.view.snp.trailing).offset(-8)
@@ -209,8 +212,12 @@ extension CleateStageViewController {
    
    func SNPFinishCreatePuzzleButton() {
       FinishCreatePuzzleButton!.snp.makeConstraints{ make in
-         let Height:CGFloat = 55
-         let Width:CGFloat = 85
+         var Height:CGFloat = 53
+         var Width:CGFloat = 85
+         if CanUseAreaHeight - Height < 0 {
+            Height = CanUseAreaHeight - 8
+            Width = Height * 1.5
+         }
          make.height.equalTo(Height)
          make.width.equalTo(Width)
          make.leading.equalTo(self.view.snp.leading).offset(10)
@@ -224,8 +231,12 @@ extension CleateStageViewController {
    
    func SNPFinishChouseResPuzzleButton() {
       FinishChouseResPuzzleButton!.snp.makeConstraints{ make in
-         let Height:CGFloat = 55
-         let Width:CGFloat = 85
+         var Height:CGFloat = 53
+         var Width:CGFloat = 85
+         if CanUseAreaHeight - Height < 0 {
+            Height = CanUseAreaHeight - 6
+            Width = Height * 1.5
+         }
          make.height.equalTo(Height)
          make.width.equalTo(Width)
          make.leading.equalTo(self.view.snp.leading).offset(10)
