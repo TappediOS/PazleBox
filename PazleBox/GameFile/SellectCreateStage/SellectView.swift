@@ -51,8 +51,8 @@ class SellectView: UIView {
    private func InitView() {
       self.layer.shadowOffset = CGSize(width: 10, height: 10)
       self.layer.shadowColor = UIColor.black.cgColor
-      self.layer.shadowOpacity = 0.73
-      self.layer.cornerRadius = 9.85
+      self.layer.shadowOpacity = 0.7
+      self.layer.cornerRadius = 12
    }
      
    private func InitPlayButton() {
