@@ -38,4 +38,8 @@ extension Notification.Name {
    static let PiceTouchMoved = Notification.Name("PiceTouchMoved")
    static let PiceTouchEnded = Notification.Name("PiceTouchEnded")
    static let UsersGameClear = Notification.Name("UsersGameClear")
+   
+   static let TapPlayButton = Notification.Name("TapPlayButton")
+   static let TapDeleteButton  = Notification.Name("TapDeleteButton")
+   static let TapCloseButton = Notification.Name("TapCloseButton")
 }

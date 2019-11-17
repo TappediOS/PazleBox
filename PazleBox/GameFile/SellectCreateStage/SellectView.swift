@@ -15,19 +15,26 @@ import TapticEngine
 @IBDesignable
 class SellectView: UIView {
    
+   var CellNum: Int = 0
    
    @IBOutlet weak var SellectImageView: UIImageView!
    @IBOutlet weak var PlayButton: UIButton!
    @IBOutlet weak var DeleteButton: UIButton!
    @IBOutlet weak var CloseButton: UIButton!
    
-   let ButtonShadow = CGSize(width: 0.1, height: 0.2)
+   let ButtonShadow = CGSize(width: 0.3, height: 1.75)
    let ButtonShadowColor = UIColor.black.cgColor
    let ButtonShadowOpacity: Float = 0.6
    let ButtonCornerRadius: CGFloat = 7
 
-   init(frame: CGRect, Image: UIImage) {
+   init(frame: CGRect, Image: UIImage, CellNum: Int) {
       super.init(frame: frame)
+      
+      if #available(iOS 13.0, *) {
+         self.overrideUserInterfaceStyle = .light
+      }
+      
+      self.CellNum = CellNum
         
       LoadNib()
       InitView()
@@ -44,8 +51,8 @@ class SellectView: UIView {
    private func InitView() {
       self.layer.shadowOffset = CGSize(width: 10, height: 10)
       self.layer.shadowColor = UIColor.black.cgColor
-      self.layer.shadowOpacity = 0.74
-      self.layer.cornerRadius = 8
+      self.layer.shadowOpacity = 0.73
+      self.layer.cornerRadius = 9.85
    }
      
    private func InitPlayButton() {
@@ -58,7 +65,7 @@ class SellectView: UIView {
       PlayButton.layer.shadowColor = ButtonShadowColor
       PlayButton.layer.shadowOpacity = ButtonShadowOpacity
       PlayButton.layer.cornerRadius = ButtonCornerRadius
-      PlayButton.clipsToBounds = true
+      //PlayButton.clipsToBounds = true
       
    }
      
@@ -68,11 +75,8 @@ class SellectView: UIView {
       DeleteButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
       DeleteButton.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       DeleteButton.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
-      PlayButton.layer.shadowOffset = ButtonShadow
-      PlayButton.layer.shadowColor = ButtonShadowColor
-      PlayButton.layer.shadowOpacity = ButtonShadowOpacity
-      PlayButton.layer.cornerRadius = ButtonCornerRadius
-      DeleteButton.clipsToBounds = true
+      DeleteButton.layer.cornerRadius = ButtonCornerRadius
+      //DeleteButton.clipsToBounds = true
    }
    
    private func InitCloseButton() {
@@ -85,7 +89,6 @@ class SellectView: UIView {
       CloseButton.layer.shadowColor = ButtonShadowColor
       CloseButton.layer.shadowOpacity = ButtonShadowOpacity
       CloseButton.layer.cornerRadius = ButtonCornerRadius
-      CloseButton.clipsToBounds = true
    }
      
    private func InitImageView(Image: UIImage) {
@@ -94,7 +97,6 @@ class SellectView: UIView {
       SellectImageView.layer.shadowColor = ButtonShadowColor
       SellectImageView.layer.shadowOpacity = ButtonShadowOpacity
       SellectImageView.layer.cornerRadius = ButtonCornerRadius
-      SellectImageView.clipsToBounds = true
    }
      
      
@@ -113,26 +115,35 @@ class SellectView: UIView {
 
    
    @IBAction func TapPlayButton(_ sender: Any) {
+      print("Tap PlayButton")
+      
+      let SentObject: [String : Int] = ["CellNum": CellNum]
+      NotificationCenter.default.post(name: .TapPlayButton, object: nil, userInfo: SentObject)
+      
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1.25) {
+         self.removeFromSuperview()
+      }
    }
-   
-   
    
    
    @IBAction func TapDeleteButton(_ sender: Any) {
+      print("Tap DeleteButton")
+      let SentObject: [String : Int] = ["CellNum": CellNum]
+      Play3DtouchHeavy()
+      NotificationCenter.default.post(name: .TapDeleteButton, object: nil, userInfo: SentObject)
+      self.removeFromSuperview()
    }
    
    @IBAction func TapCloseButton(_ sender: Any) {
+      print("Tap CloseButton")
+      self.removeFromSuperview()
+      Play3DtouchLight()
+      NotificationCenter.default.post(name: .TapCloseButton, object: nil)
+     
    }
    
    
-   
-   
-   
-   
-   
-   
-   
-   
+
    
    // viewの枠線の色
    @IBInspectable var borderColor: UIColor = UIColor.clear {
@@ -156,5 +167,9 @@ class SellectView: UIView {
        }
    }
    
+   
+   func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
+   func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
+   func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
 
 }

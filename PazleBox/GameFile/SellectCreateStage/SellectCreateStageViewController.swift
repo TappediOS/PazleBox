@@ -14,6 +14,7 @@ import TapticEngine
 import FlatUIKit
 import Hero
 import Firebase
+import SCLAlertView
 
 class SellectCreateStageViewController: UIViewController {
    
@@ -48,6 +49,8 @@ class SellectCreateStageViewController: UIViewController {
       InitBackButton()
       InitHeroID()
       InitAccessibilityIdentifires()
+      
+      InitNotificationCenter()
    }
    
    override func viewWillAppear(_ animated: Bool) {
@@ -90,6 +93,76 @@ class SellectCreateStageViewController: UIViewController {
       self.dismiss(animated: true, completion: nil)
    }
    
+   private func InitNotificationCenter() {
+      NotificationCenter.default.addObserver(self, selector: #selector(TapPlayButtonCatchNotification(notification:)), name: .TapPlayButton, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(TapDeleteButtonCatchNotification(notification:)), name: .TapDeleteButton, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(TapCloseButtonCatchNotification(notification:)), name: .TapCloseButton, object: nil)
+   }
+   
+   @objc func TapPlayButtonCatchNotification(notification: Notification) -> Void {
+      print("TapPlayButton Catch Notification")
+      
+      if let userInfo = notification.userInfo {
+         let SentNum = userInfo["CellNum"] as! Int
+         print("送信されたCellNum: \(SentNum)")
+         
+         LoadStageInfomation(CellNum: SentNum)
+         PresentGameViewController()
+         Analytics.logEvent("PlayCreateStageCount", parameters: nil)
+      }else{
+         print("誰が来たからからない")
+      }
+   }
+   
+   @objc func TapDeleteButtonCatchNotification(notification: Notification) -> Void {
+      print("TapDeleteButton Catch Notification")
+      if let userInfo = notification.userInfo {
+         let SentNum = userInfo["CellNum"] as! Int
+         print("送信されたCellNum: \(SentNum)")
+         
+         ShowDeleteView(CellNum: SentNum)
+         
+         GameSound.PlaySoundsTapButton()
+         
+         
+      }else{
+         print("誰が来たからからない")
+      }
+   }
+   
+   @objc func TapCloseButtonCatchNotification(notification: Notification) -> Void {
+      print("TapCloseButton Catch Notification")
+      self.GameSound.PlaySoundsTapButton()
+      CanSellectStage = true
+   }
+   
+   private func  ShowDeleteView(CellNum: Int) {
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+
+      ComleateView.addButton(NSLocalizedString("Delete", comment: "")){
+         self.Play3DtouchHeavy()
+         self.GameSound.PlaySoundsTapButton()
+         self.DeleteCell(CellNum: CellNum)
+         ComleateView.removeFromParent()
+      }
+      ComleateView.addButton(NSLocalizedString("Cancel", comment: "")){
+         self.Play3DtouchHeavy()
+         ComleateView.removeFromParent()
+         self.CanSellectStage = true
+      }
+      ComleateView.showWarning("ステージの削除", subTitle: "削除したステージは復元できません")
+   }
+    
+   private func DeleteCell(CellNum: Int) {
+      SavedStageDataBase.DeleteUserCreateStageDataBase(at: CellNum)
+      self.StageCollectionView.reloadData()
+      
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: true)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      ComleateView.showSuccess("Success", subTitle: "ステージ削除完了")
+      self.CanSellectStage = true
+   }
    
    /// Collection ViewのCellがタップされた後にステージ情報を取得する関数
    /// - Parameter CellNum: セル番号
