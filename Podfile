@@ -30,6 +30,9 @@ target 'PazleBox' do
   pod 'Firebase/RemoteConfig'
   pod 'Firebase/Performance'
   pod 'Firebase/Messaging'
+  
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Auth'
 
   pod 'LicensePlist'
 

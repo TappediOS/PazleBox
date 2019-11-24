@@ -35,6 +35,8 @@ class CreateHomeViewController: UIViewController {
    
    var isLockButton = false
    
+   var handle: AuthStateDidChangeListenerHandle?
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -53,6 +55,7 @@ class CreateHomeViewController: UIViewController {
    override func viewDidAppear(_ animated: Bool) {
       InitHeroID()
    }
+  
    
    private func InitViewSize() {
       ViewW = self.view.frame.width

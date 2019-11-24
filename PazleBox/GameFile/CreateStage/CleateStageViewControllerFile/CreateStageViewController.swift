@@ -67,17 +67,14 @@ class CleateStageViewController: UIViewController {
    var DontMoveNodeNum = 0
    var ShouldMoveNodeNum = 0
    
-   let photos = ["33p22Blue", "33p21Blue","43p21Blue","43p2Green","23p5Red",
-   "43p34Blue","43p19Blue","43p12Red","23p12Blue","43p14Blue",
-   "23p11Blue", "33p7Blue","43p8Green","43p5Blue","43p41Blue",
-   "32p12Blue","43p16Blue","43p12Blue","43p25Blue","43p14Blue",
-   "33p3Blue", "33p23Blue","43p21Green","43p26Blue","43p28Blue",
-   "33p34Blue","43p35Blue","43p36Red","43p25Blue","43p31Blue",
-   "33p22Blue", "33p21Blue","43p21Blue","43p2Green","32p3Red",
-   "43p34Blue","43p19Blue","43p12Red","23p12Blue","43p14Blue",
-   "23p11Blue", "33p7Blue","43p8Green","43p5Blue","43p41Blue",
-   "32p12Blue","43p16Blue","43p12Blue","43p25Blue","43p14Blue",
-   "33p3Blue", "33p23Blue","43p21Green","43p26Blue","43p28Blue"]
+   let photos = ["33p7Red", "33p21Blue","43p27Green","43p10Red","23p5Red",
+   "43p34Green","43p19Red","43p12Red","23p12Green","23p11Red",
+   "43p26Blue", "33p8Green","43p8Green","43p5Blue","43p41Green",
+   "32p12Blue","43p16Red","43p32Blue","43p25Red","43p14Red",
+   "33p3Blue", "33p23Green","43p21Green","43p26Blue","43p28Blue",
+   "33p34Red","43p35Green","43p36Red","43p25Blue","43p31Green",
+   "33p16Blue", "33p11Red","43p7Red","23p7Green","32p3Red",
+   "43p34Blue","43p19Green","43p12Red","23p12Blue","43p14Green"]
    
    let sectionInsets = UIEdgeInsets(top: 0, left: 17, bottom: 0, right: -17)
    let itemsPerRow: CGFloat = 1 //Cellを横に何個入れるか
@@ -90,7 +87,7 @@ class CleateStageViewController: UIViewController {
    let GameSound = GameSounds()
    
    var BackGroundImageView: BackGroundImageViews?
-   
+      
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -156,6 +153,15 @@ class CleateStageViewController: UIViewController {
       InitBlueFlame4_3()
    }
    
+   override func viewDidAppear(_ animated: Bool) {
+
+   }
+   
+   override func viewWillDisappear(_ animated: Bool) {
+      super.viewWillDisappear(animated)
+
+   }
+   
    private func ShowOnPiceView() {
       self.OnPiceView.isHidden = false
    }
@@ -164,7 +170,6 @@ class CleateStageViewController: UIViewController {
       self.OnPiceView.isHidden = true
    }
 
-   
    //MARK:- チェックする配列を初期化する
    private func CrearCheckedStage() {
       CheckedStage = CleanCheckedStage.Checked
@@ -185,7 +190,6 @@ class CleateStageViewController: UIViewController {
       print()
       print()
    }
-   
    
    private func ShowPiceImageArryInfo() {
       for tmp in PiceImageArray {
@@ -493,6 +497,7 @@ class CleateStageViewController: UIViewController {
       }else{ print("Nil きたよ") }
    }
    
+   //MARK:- コレクションViewのCellをタップした時の関数
    func TappedCell(CellNum: Int) {
       //画像の名前を色を除いて取得
       //例えば，23p43Blueの場合は23p43を抽出する
@@ -651,7 +656,6 @@ class CleateStageViewController: UIViewController {
    
    @objc func TapFinChouseResPuzzleButton() {
       print("FinChoseResタップされたよ")
-      
       CrearCheckedStage()
       
       for Pice in PiceImageArray {
@@ -682,6 +686,7 @@ class CleateStageViewController: UIViewController {
        return trimImage
    }
    
+   //UIImageをDataにして返す関数
    private func SaveStageViewUseScreenshot() -> NSData {
       //コンテキスト開始
       UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0.0)
@@ -693,8 +698,8 @@ class CleateStageViewController: UIViewController {
       UIGraphicsEndImageContext()
             
       if let UseImage = GetAllViewImage.cropping(to: ( BackImageView?.GetRectForScreenshot() )!) {
-         let ResizeW = UseImage.size.width * 0.65
-         let ResizeH = UseImage.size.height * 0.65
+         let ResizeW = UseImage.size.width * 0.3
+         let ResizeH = UseImage.size.height * 0.3
          let RetruenImage = UseImage.ResizeUIImage(width: ResizeW, height: ResizeH)
          return RetruenImage?.pngData() as! NSData
       }else{
@@ -702,12 +707,20 @@ class CleateStageViewController: UIViewController {
       }
    }
    
+   
+   //MARK:- 保存する関数
    private func SaveStageUserCreated() {
       let SaveDataBase = UserCreateStageDataBase()
       let ImageData: NSData = SaveStageViewUseScreenshot()
       
       SaveDataBase.AddStage(StageArrayForContents: FillContentsArray, MaxPiceNum: PiceImageArray.count,
                             PiceArry: PiceImageArray, ImageData: ImageData)
+      
+      let UID = UserDefaults.standard.object(forKey: "UID") as! String
+      let FireStore = Firestores(uid: UID)
+      
+      FireStore.AddStageData(StageArrayForContents: FillContentsArray, MaxPiceNum: PiceImageArray.count,
+                             PiceArry: PiceImageArray, ImageData: ImageData)
       
       ShowCompleteSaveAlertView()
       Analytics.logEvent("CreateStageCount", parameters: nil)

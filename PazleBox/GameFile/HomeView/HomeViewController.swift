@@ -38,7 +38,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    //MARK: リーダボードID
    let LEADERBOARD_ID = "ClearStageNumLeaderBoard"
    
-   //リモートコンフィグろとるやつ
+   //リモートコンフィグろとるやつ
    var RemorteConfigs: RemoteConfig!
    
    let EasyStageNameKey = "Easy"

@@ -161,6 +161,7 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/COSTouchVisualizer/COSTouchVisualizer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ChameleonFramework-framework/ChameleonFramework.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FlatUIKit-framework/FlatUIKit.framework"
@@ -179,10 +180,14 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyStoreKit-framework/SwiftyStoreKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TapticEngine-framework/TapticEngine.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ViewAnimator-framework/ViewAnimator.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/lottie-ios-framework/Lottie.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/COSTouchVisualizer/COSTouchVisualizer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ChameleonFramework-framework/ChameleonFramework.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FlatUIKit-framework/FlatUIKit.framework"
@@ -201,6 +206,9 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyStoreKit-framework/SwiftyStoreKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TapticEngine-framework/TapticEngine.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ViewAnimator-framework/ViewAnimator.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/lottie-ios-framework/Lottie.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
 fi

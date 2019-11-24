@@ -59,8 +59,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       let fileopts = FirebaseOptions(contentsOfFile: filePath!)
 
       FirebaseApp.configure(options: fileopts!)
-     
       //--------------------FIREBASE-----------------------//
+      
+      //--------------------ログイン-----------------------//
+      Auth.auth().signInAnonymously() { (authResult, error) in
+         guard let user = authResult?.user else { return }
+         let isAnonymous = user.isAnonymous
+         let uid = user.uid
+         let db = Firestore.firestore()
+         print("\n------------ログイン情報--------------")
+         print("匿名認証: \(isAnonymous)")
+         print("uid:     \(uid)")
+         
+         UserDefaults.standard.set(uid, forKey: "UID")
+         UserDefaults.standard.register(defaults: ["Logined": false])
+         
+         if UserDefaults.standard.bool(forKey: "Logined") == true {
+            print("\n--- ユーザーはログインしています ---\n")
+            db.collection("objects").document(uid).updateData([
+               "LastLogin": Timestamp(date: Date()),
+               ]) { err in
+                   if let err = err {
+                       print("Error updating document: \(err)")
+                   } else {
+                       print("Document successfully updated")
+                   }
+               }
+         }else{
+            print("\n--- ユーザーの初めてのログイン ---\n")
+            db.collection("users").document(uid).setData([
+               "name": "NoName",
+               "LastLogin": Timestamp(date: Date()),
+               "CreateStageNum": 0,
+               "ClearStageCount": 0
+            ]) { err in
+               if let err = err {
+                  print("Error writing document: \(err)")
+               } else {
+                  print("Document successfully written!")
+                  UserDefaults.standard.set(true, forKey: "Logined")
+               }
+            }
+         }
+         print("------------ログイン情報--------------\n")
+      }
+      //--------------------ログイン-----------------------//
+      
+      
       
       //-----------バックグラウンドでの音の再生を許可------------//
       let audioSession : AVAudioSession = AVAudioSession.sharedInstance()
@@ -101,6 +146,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       
       
       //-------------------Game Center-----------------//
+      print("\n------------Game Center--------------")
       if let rootView = self.window?.rootViewController {
          let player = GKLocalPlayer.local
          
@@ -125,6 +171,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
             }
          }
       }
+      print("------------Game Center--------------\n")
       //------------------- Game Center-----------------//
       
       

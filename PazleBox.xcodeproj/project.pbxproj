@@ -26,6 +26,7 @@
 		BF1CE88C22D4C1C000ACF7F8 /* ExUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE88B22D4C1C000ACF7F8 /* ExUIImage.swift */; };
 		BF1DBD5A237FC34700F6B2D1 /* SellectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1DBD59237FC34700F6B2D1 /* SellectView.xib */; };
 		BF1DBD5E237FCD5A00F6B2D1 /* SellectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1DBD5D237FCD5A00F6B2D1 /* SellectView.swift */; };
+		BF1DBD61238A445500F6B2D1 /* FireStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1DBD60238A445500F6B2D1 /* FireStores.swift */; };
 		BF1FF2AD22311CE60047ED23 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FF2AC22311CE60047ED23 /* Stage.swift */; };
 		BF1FF2AF22311FD40047ED23 /* StageContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FF2AE22311FD40047ED23 /* StageContents.swift */; };
 		BF1FF2B2223120650047ED23 /* AllStageInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FF2B1223120650047ED23 /* AllStageInfomation.swift */; };
@@ -755,6 +756,7 @@
 		BF1CE88B22D4C1C000ACF7F8 /* ExUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIImage.swift; sourceTree = "<group>"; };
 		BF1DBD59237FC34700F6B2D1 /* SellectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellectView.xib; sourceTree = "<group>"; };
 		BF1DBD5D237FCD5A00F6B2D1 /* SellectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectView.swift; sourceTree = "<group>"; };
+		BF1DBD60238A445500F6B2D1 /* FireStores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStores.swift; sourceTree = "<group>"; };
 		BF1FF2AC22311CE60047ED23 /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
 		BF1FF2AE22311FD40047ED23 /* StageContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageContents.swift; sourceTree = "<group>"; };
 		BF1FF2B1223120650047ED23 /* AllStageInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStageInfomation.swift; sourceTree = "<group>"; };
@@ -1537,6 +1539,14 @@
 			path = ClearInfomation;
 			sourceTree = "<group>";
 		};
+		BF1DBD5F238A443700F6B2D1 /* FireStore */ = {
+			isa = PBXGroup;
+			children = (
+				BF1DBD60238A445500F6B2D1 /* FireStores.swift */,
+			);
+			path = FireStore;
+			sourceTree = "<group>";
+		};
 		BF1FF2AA22311C8D0047ED23 /* GemFile */ = {
 			isa = PBXGroup;
 			children = (
@@ -1931,6 +1941,7 @@
 		BF4323C322D355E8008DF038 /* CreateStage */ = {
 			isa = PBXGroup;
 			children = (
+				BF1DBD5F238A443700F6B2D1 /* FireStore */,
 				BF4323CC22D36733008DF038 /* SB */,
 				BF67C2A6235EB6C800EBFB00 /* CleateStageViewControllerFile */,
 				BF33CE09233A243A00AD488A /* PiceImageView.swift */,
@@ -3601,6 +3612,7 @@
 				BF552EEC226DDE2700756E16 /* N39.swift in Sources */,
 				BF552F2E226DDF0D00756E16 /* H42.swift in Sources */,
 				BF332F8C224926C1009B3042 /* E3.swift in Sources */,
+				BF1DBD61238A445500F6B2D1 /* FireStores.swift in Sources */,
 				BF332FF022492819009B3042 /* H12.swift in Sources */,
 				BF332FD2224927CC009B3042 /* N18.swift in Sources */,
 				BF60AC5C224CA2E000D441D6 /* Sound.swift in Sources */,
