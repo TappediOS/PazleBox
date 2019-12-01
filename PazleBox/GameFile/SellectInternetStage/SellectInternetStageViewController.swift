@@ -47,6 +47,8 @@ class SellectInternetStageViewController: UIViewController {
       
       SetUpFireStoreSetting()
       
+      SetUpStageDataFromDataBase()
+      
       InitBackButton()
       InitHeroID()
       InitAccessibilityIdentifires()
@@ -68,12 +70,21 @@ class SellectInternetStageViewController: UIViewController {
    }
    
    private func SetUpFireStoreSetting() {
-      // [START setup]
       let settings = FirestoreSettings()
-
       Firestore.firestore().settings = settings
-      // [END setup]
       db = Firestore.firestore()
+   }
+   
+   private func SetUpStageDataFromDataBase() {
+      db.collection("Stages").getDocuments() { (querySnapshot, err) in
+         if let err = err {
+            print("Error getting documents: \(err)")
+         } else {
+            for document in querySnapshot!.documents {
+               print("\(document.documentID) -> \(document.data())")
+            }
+         }
+      }
    }
    
    private func  InitAccessibilityIdentifires() {

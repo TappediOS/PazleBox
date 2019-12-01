@@ -198,7 +198,7 @@ class CreateHomeViewController: UIViewController {
       
       Analytics.logEvent("TapSellectStageButton", parameters: nil)
       
-      let SellectCreateStageVC = self.storyboard?.instantiateViewController(withIdentifier: "SellectIntarnetStageVC") as! SellectCreateStageViewController
+      let SellectCreateStageVC = self.storyboard?.instantiateViewController(withIdentifier: "SellectIntarnetStageVC") as! SellectInternetStageViewController
       SellectCreateStageVC.modalPresentationStyle = .fullScreen
       self.present(SellectCreateStageVC, animated: true, completion: {
          print("SellectCreateStageVCにプレゼント完了")
