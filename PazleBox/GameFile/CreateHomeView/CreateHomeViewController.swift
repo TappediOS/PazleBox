@@ -201,7 +201,7 @@ class CreateHomeViewController: UIViewController {
       let SellectCreateStageVC = self.storyboard?.instantiateViewController(withIdentifier: "SellectIntarnetStageVC") as! SellectInternetStageViewController
       SellectCreateStageVC.modalPresentationStyle = .fullScreen
       self.present(SellectCreateStageVC, animated: true, completion: {
-         print("SellectCreateStageVCにプレゼント完了")
+         print("SellectIntarnetStageVCにプレゼント完了")
          self.isLockButton = false
       })
    }

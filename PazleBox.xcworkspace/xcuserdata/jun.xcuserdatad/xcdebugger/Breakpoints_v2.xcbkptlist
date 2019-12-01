@@ -3080,7 +3080,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "E85CA884-A9D9-4D46-9720-8A3028DBCF59"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/SellectInternetStage/ExSellectInternetStageViewController.swift"

@@ -45,11 +45,7 @@ extension SellectInternetStageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InternetStagesCell", for: indexPath)
         
-      let ImageData = SavedStageDataBase.GetImageDataFromDataNumberASNSData(DataNum: indexPath.item)
-      
-      //let ImageDataRef = StageDatas[indexPath]
-      
-      //let ImageDat = ImageDataRef
+      let ImageData = StageDatas[indexPath.item]["ImageData"] as? NSData
       
       if let data = ImageData {
          let Image = UIImage(data: data as Data)
