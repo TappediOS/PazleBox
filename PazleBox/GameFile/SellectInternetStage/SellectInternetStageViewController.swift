@@ -93,6 +93,7 @@ class SellectInternetStageViewController: UIViewController {
          StageData.updateValue(value, forKey: "addUser")
       }
       
+      //FIXME:- これはなんか取得できてない
       if let value = document["addDate"] as? Data {
          StageData.updateValue(value, forKey: "addDate")
       }
@@ -141,17 +142,12 @@ class SellectInternetStageViewController: UIViewController {
             }
          }
          
-         self.SetUpStageData()
+         //読み取りが終わってからデリゲードを入れる必要がある
          self.StageCollectionView.delegate = self
          self.StageCollectionView.dataSource = self
       }
    }
    
-   private func SetUpStageData() {
-      for stage in StageDatas {
-         //print(stage)
-      }
-   }
    
    private func  InitAccessibilityIdentifires() {
       StageCollectionView?.accessibilityIdentifier = "SellectInternetStageVC_StageCollectionView"
