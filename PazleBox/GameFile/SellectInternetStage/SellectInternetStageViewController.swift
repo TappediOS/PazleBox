@@ -51,7 +51,6 @@ class SellectInternetStageViewController: UIViewController {
       
       GetStageDataFromDataBase()
       
-      SetUpStageData()
       
       InitBackButton()
       InitHeroID()
@@ -69,8 +68,7 @@ class SellectInternetStageViewController: UIViewController {
       self.hero.isEnabled = true
       self.view.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
       self.StageCollectionView.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
-      self.StageCollectionView.delegate = self
-      self.StageCollectionView.dataSource = self
+      
    }
    
    private func SetUpFireStoreSetting() {
@@ -80,7 +78,7 @@ class SellectInternetStageViewController: UIViewController {
    }
    
    private func GetRawData(document: DocumentSnapshot) {
-      var StageData: [String: Any] =  ["addUser": "nil"]
+      var StageData: [String: Any] =  ["documentID": document.documentID]
       var maxPiceNum: Int = 1
       
       if let value = document["ReviewAve"] as? Int {
@@ -127,6 +125,7 @@ class SellectInternetStageViewController: UIViewController {
       for data in StageData {
          print("\(data.key) -> \(data.value)")
       }
+      print()
       StageDatas.append(StageData)
    }
    
@@ -141,12 +140,16 @@ class SellectInternetStageViewController: UIViewController {
                self.GetRawData(document: document)
             }
          }
+         
+         self.SetUpStageData()
+         self.StageCollectionView.delegate = self
+         self.StageCollectionView.dataSource = self
       }
    }
    
    private func SetUpStageData() {
       for stage in StageDatas {
-         print(stage)
+         //print(stage)
       }
    }
    

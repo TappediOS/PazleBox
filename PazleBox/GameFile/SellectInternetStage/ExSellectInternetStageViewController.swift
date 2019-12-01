@@ -38,14 +38,18 @@ extension SellectInternetStageViewController: UICollectionViewDelegate {
 
 extension SellectInternetStageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      print("ステージ数の合計: \(SavedStageDataBase.GetMAXDataNumOfDataBaseDataCount())")
-      return SavedStageDataBase.GetMAXDataNumOfDataBaseDataCount()
+      print("ステージ数の合計: \(StageDatas.count)")
+      return StageDatas.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserStagesCell", for: indexPath)
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InternetStagesCell", for: indexPath)
         
       let ImageData = SavedStageDataBase.GetImageDataFromDataNumberASNSData(DataNum: indexPath.item)
+      
+      //let ImageDataRef = StageDatas[indexPath]
+      
+      //let ImageDat = ImageDataRef
       
       if let data = ImageData {
          let Image = UIImage(data: data as Data)
