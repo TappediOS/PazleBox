@@ -93,5 +93,3 @@ extension SellectInternetStageViewController: UICollectionViewDelegateFlowLayout
        return 10.0
    }
 }
-
-

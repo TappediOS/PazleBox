@@ -34,6 +34,7 @@ extension SellectInternetStageViewController {
       return PiceArray
    }
    
+   
    func GetPiceArrayFromDataBase(StageDic: [String: Any]) -> [[Contents]] {
       var StageArry: [[Contents]] = Array()
       var StageXInfo: [Contents] = Array()
