@@ -203,7 +203,7 @@ class SellectInternetStageViewController: UIViewController {
          
          LoadStageInfomation(CellNum: SentNum)
          PresentGameViewController()
-         Analytics.logEvent("PlayCreateStageCount", parameters: nil)
+         Analytics.logEvent("PlayInternetStageCount", parameters: nil)
       }else{
          print("誰が来たからからない")
       }
@@ -267,8 +267,8 @@ class SellectInternetStageViewController: UIViewController {
       let FieldYList = SavedStageDataBase.GetFieldYFromDataNumberASList(DataNum: CellNum)
       //EXファイルに存在している
       //FIXME:- ココをFirest oreにする
-      //PiceArray = GetPiceArrayFromPiceList(PiceList: PiceList)
-      //StageArray = GetPiceArrayFromPiceList(FieldYList: FieldYList)
+      PiceArray = GetPiceArrayFromDataBase(StageDic: StageDatas[CellNum])
+      StageArray = GetPiceArrayFromDataBase(StageDic: StageDatas[CellNum])
    }
    
    /// GameVCをプレゼントする関数

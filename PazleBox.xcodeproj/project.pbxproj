@@ -317,6 +317,7 @@
 		BF849E0722C25B20003E34CB /* BackGroundImageForIphone8PlusVar2.png in Resources */ = {isa = PBXBuildFile; fileRef = BF849E0522C25B20003E34CB /* BackGroundImageForIphone8PlusVar2.png */; };
 		BF85D54423935EB1005E564B /* SellectInternetStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85D54323935EB1005E564B /* SellectInternetStageViewController.swift */; };
 		BF85D54623935FDE005E564B /* ExSellectInternetStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85D54523935FDE005E564B /* ExSellectInternetStageViewController.swift */; };
+		BF85D54823937BD1005E564B /* ExSellectInternetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85D54723937BD1005E564B /* ExSellectInternetVC.swift */; };
 		BF89479422B9FCDC0014596B /* PieceStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89479322B9FCDC0014596B /* PieceStoreViewController.swift */; };
 		BF8A464E2250829C0016F801 /* StarStar.json in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464D2250829C0016F801 /* StarStar.json */; };
 		BF8A4650225088EE0016F801 /* NoLike.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464F225088EE0016F801 /* NoLike.png */; };
@@ -1063,6 +1064,7 @@
 		BF849E0522C25B20003E34CB /* BackGroundImageForIphone8PlusVar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackGroundImageForIphone8PlusVar2.png; sourceTree = "<group>"; };
 		BF85D54323935EB1005E564B /* SellectInternetStageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectInternetStageViewController.swift; sourceTree = "<group>"; };
 		BF85D54523935FDE005E564B /* ExSellectInternetStageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSellectInternetStageViewController.swift; sourceTree = "<group>"; };
+		BF85D54723937BD1005E564B /* ExSellectInternetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSellectInternetVC.swift; sourceTree = "<group>"; };
 		BF89479322B9FCDC0014596B /* PieceStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceStoreViewController.swift; sourceTree = "<group>"; };
 		BF8A464D2250829C0016F801 /* StarStar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StarStar.json; sourceTree = "<group>"; };
 		BF8A464F225088EE0016F801 /* NoLike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoLike.png; sourceTree = "<group>"; };
@@ -2189,6 +2191,7 @@
 			children = (
 				BF85D54323935EB1005E564B /* SellectInternetStageViewController.swift */,
 				BF85D54523935FDE005E564B /* ExSellectInternetStageViewController.swift */,
+				BF85D54723937BD1005E564B /* ExSellectInternetVC.swift */,
 			);
 			path = SellectInternetStage;
 			sourceTree = "<group>";
@@ -3538,6 +3541,7 @@
 				BF552ECE226DDDAC00756E16 /* N25.swift in Sources */,
 				BFF889A3229F830C0056A839 /* FirebasePerformanceManager.swift in Sources */,
 				BF332FC6224927B1009B3042 /* N12.swift in Sources */,
+				BF85D54823937BD1005E564B /* ExSellectInternetVC.swift in Sources */,
 				BF1A5EE122B787B8002C6733 /* Buy650CoinsButton.swift in Sources */,
 				BF332FDC224927EF009B3042 /* H3.swift in Sources */,
 				BF552EBE226DDD6B00756E16 /* E46.swift in Sources */,
