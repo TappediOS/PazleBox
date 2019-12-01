@@ -190,9 +190,20 @@ class CreateHomeViewController: UIViewController {
    }
    
    @IBAction func TapInterNetButton(_ sender: Any) {
-      Play3DtouchError()
+      Play3DtouchLight()
+      if isLockButton == true { return }
+      isLockButton = true
       GameSound.PlaySoundsTapButton()
-      return
+      SellectStageButton.hero.id = HeroID.CreateFinCreateAndSellectBack
+      
+      Analytics.logEvent("TapSellectStageButton", parameters: nil)
+      
+      let SellectCreateStageVC = self.storyboard?.instantiateViewController(withIdentifier: "SellectIntarnetStageVC") as! SellectCreateStageViewController
+      SellectCreateStageVC.modalPresentationStyle = .fullScreen
+      self.present(SellectCreateStageVC, animated: true, completion: {
+         print("SellectCreateStageVCにプレゼント完了")
+         self.isLockButton = false
+      })
    }
    
    

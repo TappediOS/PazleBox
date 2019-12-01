@@ -315,6 +315,8 @@
 		BF849E0322C0CAA1003E34CB /* BackGroundImageForIphone8Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = BF849E0122C0CAA0003E34CB /* BackGroundImageForIphone8Plus.png */; };
 		BF849E0622C25B20003E34CB /* BackGroundImageForIphoneXsMaxVar2.png in Resources */ = {isa = PBXBuildFile; fileRef = BF849E0422C25B20003E34CB /* BackGroundImageForIphoneXsMaxVar2.png */; };
 		BF849E0722C25B20003E34CB /* BackGroundImageForIphone8PlusVar2.png in Resources */ = {isa = PBXBuildFile; fileRef = BF849E0522C25B20003E34CB /* BackGroundImageForIphone8PlusVar2.png */; };
+		BF85D54423935EB1005E564B /* SellectInternetStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85D54323935EB1005E564B /* SellectInternetStageViewController.swift */; };
+		BF85D54623935FDE005E564B /* ExSellectInternetStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85D54523935FDE005E564B /* ExSellectInternetStageViewController.swift */; };
 		BF89479422B9FCDC0014596B /* PieceStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89479322B9FCDC0014596B /* PieceStoreViewController.swift */; };
 		BF8A464E2250829C0016F801 /* StarStar.json in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464D2250829C0016F801 /* StarStar.json */; };
 		BF8A4650225088EE0016F801 /* NoLike.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464F225088EE0016F801 /* NoLike.png */; };
@@ -1059,6 +1061,8 @@
 		BF849E0122C0CAA0003E34CB /* BackGroundImageForIphone8Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackGroundImageForIphone8Plus.png; sourceTree = "<group>"; };
 		BF849E0422C25B20003E34CB /* BackGroundImageForIphoneXsMaxVar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackGroundImageForIphoneXsMaxVar2.png; sourceTree = "<group>"; };
 		BF849E0522C25B20003E34CB /* BackGroundImageForIphone8PlusVar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackGroundImageForIphone8PlusVar2.png; sourceTree = "<group>"; };
+		BF85D54323935EB1005E564B /* SellectInternetStageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectInternetStageViewController.swift; sourceTree = "<group>"; };
+		BF85D54523935FDE005E564B /* ExSellectInternetStageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSellectInternetStageViewController.swift; sourceTree = "<group>"; };
 		BF89479322B9FCDC0014596B /* PieceStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceStoreViewController.swift; sourceTree = "<group>"; };
 		BF8A464D2250829C0016F801 /* StarStar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StarStar.json; sourceTree = "<group>"; };
 		BF8A464F225088EE0016F801 /* NoLike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoLike.png; sourceTree = "<group>"; };
@@ -1581,6 +1585,7 @@
 				BFE0AB16235AB7EB003B2C58 /* CreateHomeView */,
 				BF4323C322D355E8008DF038 /* CreateStage */,
 				BFAC253223489FE400038594 /* SellectCreateStage */,
+				BF85D54223935E7A005E564B /* SellectInternetStage */,
 				BF73C2F6234B316A00745C7F /* UserStageSecenAndVC */,
 			);
 			path = GameFile;
@@ -2177,6 +2182,15 @@
 				BF7CE792226083920040352D /* GoHomeNode.swift */,
 			);
 			path = PouseView;
+			sourceTree = "<group>";
+		};
+		BF85D54223935E7A005E564B /* SellectInternetStage */ = {
+			isa = PBXGroup;
+			children = (
+				BF85D54323935EB1005E564B /* SellectInternetStageViewController.swift */,
+				BF85D54523935FDE005E564B /* ExSellectInternetStageViewController.swift */,
+			);
+			path = SellectInternetStage;
 			sourceTree = "<group>";
 		};
 		BF89479222B9FCAB0014596B /* PieceViewController */ = {
@@ -3625,6 +3639,7 @@
 				BF552EEA226DDE1800756E16 /* N38.swift in Sources */,
 				BF552EEE226DDE3300756E16 /* N40.swift in Sources */,
 				BF33CE0A233A243A00AD488A /* PiceImageView.swift in Sources */,
+				BF85D54623935FDE005E564B /* ExSellectInternetStageViewController.swift in Sources */,
 				BF640C092245100C00333782 /* E1.swift in Sources */,
 				BF1DBD5E237FCD5A00F6B2D1 /* SellectView.swift in Sources */,
 				BF2C14632276F3B000C7B8FB /* YesNode.swift in Sources */,
@@ -3651,6 +3666,7 @@
 				BF552F36226DDF1C00756E16 /* H46.swift in Sources */,
 				BF552EC4226DDD7B00756E16 /* E49.swift in Sources */,
 				BFF889A7229FC86A0056A839 /* ButtonColorManager.swift in Sources */,
+				BF85D54423935EB1005E564B /* SellectInternetStageViewController.swift in Sources */,
 				BF332FF222492827009B3042 /* H13.swift in Sources */,
 				BFE0AB1A235AC04B003B2C58 /* ExCreateStageVC.swift in Sources */,
 				BF552E9A226DDD1400756E16 /* E28.swift in Sources */,
