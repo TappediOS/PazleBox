@@ -2990,9 +2990,9 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/SellectInternetStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "GetRawData(document:)"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "GetStageDataFromDataBase()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3006,9 +3006,9 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/SellectInternetStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "GetStageDataFromDataBase()"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "SetUpStageData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3022,9 +3022,9 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/SellectInternetStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "GetStageDataFromDataBase()"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "SetUpStageData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
