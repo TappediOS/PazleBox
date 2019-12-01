@@ -20,6 +20,8 @@ class SellectInternetStageViewController: UIViewController {
    
    let SavedStageDataBase = UserCreateStageDataBase()
    
+   var StageDatas: [([String: Any])] = Array()
+   
    var PiceArray: [PiceInfo] = Array()
    var StageArray: [[Contents]] = Array()
    
@@ -47,7 +49,9 @@ class SellectInternetStageViewController: UIViewController {
       
       SetUpFireStoreSetting()
       
-      SetUpStageDataFromDataBase()
+      GetStageDataFromDataBase()
+      
+      SetUpStageData()
       
       InitBackButton()
       InitHeroID()
@@ -75,15 +79,74 @@ class SellectInternetStageViewController: UIViewController {
       db = Firestore.firestore()
    }
    
-   private func SetUpStageDataFromDataBase() {
+   private func GetRawData(document: DocumentSnapshot) {
+      var StageData: [String: Any] =  ["addUser": "nil"]
+      var maxPiceNum: Int = 1
+      
+      if let value = document["ReviewAve"] as? Int {
+         StageData.updateValue(value, forKey: "ReviewAve")
+      }
+      
+      if let value = document["PlayCount"] as? Int {
+         StageData.updateValue(value, forKey: "PlayCount")
+      }
+      
+      if let value = document["addUser"] as? String {
+         StageData.updateValue(value, forKey: "addUser")
+      }
+      
+      if let value = document["addDate"] as? Data {
+         StageData.updateValue(value, forKey: "addDate")
+      }
+      
+      if let value = document["MaxPiceNum"] as? Int {
+         StageData.updateValue(value, forKey: "MaxPiceNum")
+         maxPiceNum = value
+      }
+      
+      if let value = document["ImageData"] as? Data {
+         StageData.updateValue(value, forKey: "ImageData")
+      }
+      
+      for tmp in 1 ... 12 {
+         let FieldName = "Field" + String(tmp)
+         if let value = document[FieldName] as? Array<Int> {
+            StageData.updateValue(value, forKey: FieldName)
+         }
+      }
+      
+      for tmp in 1 ... maxPiceNum {
+         let PiceName = "PiceInfo" + String(tmp)
+         if let value = document[PiceName] as? Array<Any> {
+            StageData.updateValue(value, forKey: PiceName)
+         }
+      }
+      
+      
+      
+      for data in StageData {
+         print("\(data.key) -> \(data.value)")
+      }
+      StageDatas.append(StageData)
+   }
+   
+   //データベースからデータゲットして配列に格納
+   private func GetStageDataFromDataBase() {
       db.collection("Stages").getDocuments() { (querySnapshot, err) in
          if let err = err {
-            print("Error getting documents: \(err)")
+            print("データベースからのデータ取得エラー: \(err)")
          } else {
             for document in querySnapshot!.documents {
-               print("\(document.documentID) -> \(document.data())")
+               //print("\(document.documentID) -> \(document.data())")
+               self.GetRawData(document: document)
             }
          }
+      }
+   }
+   
+   private func SetUpStageData() {
+      for stage in StageDatas {
+         print(stage)
       }
    }
    
@@ -182,7 +245,8 @@ class SellectInternetStageViewController: UIViewController {
       }
       ComleateView.showWarning("ステージの削除", subTitle: "削除したステージは復元できません")
    }
-    
+   
+   //MARK:- 削除するのをFirestoreにする
    private func DeleteCell(CellNum: Int) {
       SavedStageDataBase.DeleteUserCreateStageDataBase(at: CellNum)
       self.StageCollectionView.reloadData()
