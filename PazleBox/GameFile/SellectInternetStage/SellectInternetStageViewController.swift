@@ -16,6 +16,7 @@ import Hero
 import Firebase
 import SCLAlertView
 
+
 class SellectInternetStageViewController: UIViewController {
    
    let SavedStageDataBase = UserCreateStageDataBase()
@@ -40,6 +41,8 @@ class SellectInternetStageViewController: UIViewController {
    
    let HeroID = HeroIDs()
    let GameSound = GameSounds()
+   
+   var PlayStageData = PlayStageRefInfo()
       
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -49,7 +52,7 @@ class SellectInternetStageViewController: UIViewController {
       
       SetUpFireStoreSetting()
       
-      GetStageDataFromDataBase()
+      GetALLStageDataFromDataBase()
       
       
       InitBackButton()
@@ -131,7 +134,25 @@ class SellectInternetStageViewController: UIViewController {
    }
    
    //データベースからデータゲットして配列に格納
-   private func GetStageDataFromDataBase() {
+   private func GetALLStageDataFromDataBase() {
+      db.collection("Stages").getDocuments() { (querySnapshot, err) in
+         if let err = err {
+            print("データベースからのデータ取得エラー: \(err)")
+         } else {
+            for document in querySnapshot!.documents {
+               //print("\(document.documentID) -> \(document.data())")
+               self.GetRawData(document: document)
+            }
+         }
+         
+         //読み取りが終わってからデリゲードを入れる必要がある
+         self.StageCollectionView.delegate = self
+         self.StageCollectionView.dataSource = self
+      }
+   }
+   
+   //データベースからデータゲットして配列に格納
+   private func GetLEATESTStageDataFromDataBase() {
       db.collection("Stages").getDocuments() { (querySnapshot, err) in
          if let err = err {
             print("データベースからのデータ取得エラー: \(err)")
@@ -265,6 +286,7 @@ class SellectInternetStageViewController: UIViewController {
       //FIXME:- ココをFirest oreにする
       PiceArray = GetPiceArrayFromDataBase(StageDic: StageDatas[CellNum])
       StageArray = GetPiceArrayFromDataBase(StageDic: StageDatas[CellNum])
+      PlayStageData = GetPlayStageInfoFromDataBase(StageDic: StageDatas[CellNum])
    }
    
    /// GameVCをプレゼントする関数
@@ -273,6 +295,7 @@ class SellectInternetStageViewController: UIViewController {
 
       GameVC.LoadPiceArray(PiceArray: PiceArray)
       GameVC.LoadStageArray(StageArray: StageArray)
+      GameVC.LoadPlayStageData(StageData: PlayStageData)
       GameVC.modalPresentationStyle = .fullScreen
       //HomeViewに対してBGMを消してって通知を送る
       NotificationCenter.default.post(name: .StopHomeViewBGM, object: nil, userInfo: nil)

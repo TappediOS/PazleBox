@@ -310,6 +310,7 @@
 		BF7CE797226083AD0040352D /* PouseTextureNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7CE796226083AD0040352D /* PouseTextureNode.swift */; };
 		BF7CE7992261E3840040352D /* Confe.json in Resources */ = {isa = PBXBuildFile; fileRef = BF7CE7982261E3840040352D /* Confe.json */; };
 		BF7CE7CE226882370040352D /* KiraKira.json in Resources */ = {isa = PBXBuildFile; fileRef = BF7CE7CD226882370040352D /* KiraKira.json */; };
+		BF7F44C02394DC3B0004CE60 /* PlayStageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F44BF2394DC3B0004CE60 /* PlayStageInfo.swift */; };
 		BF849DFF22C0C560003E34CB /* BackGroundImageForIphoneXsMax.png in Resources */ = {isa = PBXBuildFile; fileRef = BF849DFE22C0C560003E34CB /* BackGroundImageForIphoneXsMax.png */; };
 		BF849E0222C0CAA1003E34CB /* BackGroundImageForPad.png in Resources */ = {isa = PBXBuildFile; fileRef = BF849E0022C0CAA0003E34CB /* BackGroundImageForPad.png */; };
 		BF849E0322C0CAA1003E34CB /* BackGroundImageForIphone8Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = BF849E0122C0CAA0003E34CB /* BackGroundImageForIphone8Plus.png */; };
@@ -1057,6 +1058,7 @@
 		BF7CE796226083AD0040352D /* PouseTextureNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouseTextureNode.swift; sourceTree = "<group>"; };
 		BF7CE7982261E3840040352D /* Confe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Confe.json; sourceTree = "<group>"; };
 		BF7CE7CD226882370040352D /* KiraKira.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = KiraKira.json; sourceTree = "<group>"; };
+		BF7F44BF2394DC3B0004CE60 /* PlayStageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStageInfo.swift; sourceTree = "<group>"; };
 		BF849DFE22C0C560003E34CB /* BackGroundImageForIphoneXsMax.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackGroundImageForIphoneXsMax.png; sourceTree = "<group>"; };
 		BF849E0022C0CAA0003E34CB /* BackGroundImageForPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackGroundImageForPad.png; sourceTree = "<group>"; };
 		BF849E0122C0CAA0003E34CB /* BackGroundImageForIphone8Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackGroundImageForIphone8Plus.png; sourceTree = "<group>"; };
@@ -2190,6 +2192,7 @@
 			isa = PBXGroup;
 			children = (
 				BF85D54323935EB1005E564B /* SellectInternetStageViewController.swift */,
+				BF7F44BF2394DC3B0004CE60 /* PlayStageInfo.swift */,
 				BF85D54523935FDE005E564B /* ExSellectInternetStageViewController.swift */,
 				BF85D54723937BD1005E564B /* ExSellectInternetVC.swift */,
 			);
@@ -3640,6 +3643,7 @@
 				BF332FC0224927A0009B3042 /* N9.swift in Sources */,
 				BF7CE79022607FEA0040352D /* PouseView.swift in Sources */,
 				BFF6D79B229527C6000253A2 /* ReviewView.swift in Sources */,
+				BF7F44C02394DC3B0004CE60 /* PlayStageInfo.swift in Sources */,
 				BF552EEA226DDE1800756E16 /* N38.swift in Sources */,
 				BF552EEE226DDE3300756E16 /* N40.swift in Sources */,
 				BF33CE0A233A243A00AD488A /* PiceImageView.swift in Sources */,

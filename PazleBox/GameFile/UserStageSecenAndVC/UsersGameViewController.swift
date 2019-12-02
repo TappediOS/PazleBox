@@ -58,6 +58,11 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    
    var isLockedHomeFunction: Bool = false
    
+   //RefID Playcount? ReviewAve? 入ってるやつ
+   var PlayStageData = PlayStageRefInfo()
+   
+   var db: Firestore = Firestore.firestore()
+   
    //スワイプ無効にするやつ
    @available(iOS 11, *)
    override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge{
@@ -154,6 +159,10 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    
    public func LoadPiceArray(PiceArray: [PiceInfo]) {
       self.UserPiceArray = PiceArray
+   }
+   
+   public func LoadPlayStageData(StageData: PlayStageRefInfo) {
+      self.PlayStageData = StageData
    }
 
    private func InitGameViewAndShowView() {
@@ -269,9 +278,76 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       
    }
    
+   private func SaveStageInfoToFireStore() {
+      let RefID = PlayStageData.RefID
+      let ThisStageReview = ClearView!.GetReView()
+      let StageReviewAve = PlayStageData.ReviewAve
+      let playCount = PlayStageData.PlayCount
+      let Ref = db.collection("Stages").document(RefID)
+      
+      print("FireStoreに送信開始")
+      print("RefID = \(RefID)")
+      
+      //PlayCountを1だけアップ
+      Ref.updateData([
+         "PlayCount": FieldValue.increment(Int64(1))
+      ])
+           
+      if ThisStageReview == 0 {
+         print("\nステージレビューをしていません")
+         return
+      }
+      
+      if let count = playCount, let reviAve = StageReviewAve {
+         if count == 0 {
+            //0の時はそのまま書き込みを行う。
+            Ref.updateData([
+               "ReviewAve": ThisStageReview
+            ]) { err in
+               if let err = err {
+                  print("Error: ドキュメントアップデート: \(err)")
+               } else {
+                  print("Ave書き込み成功 -> \(ThisStageReview)")
+               }
+            }
+            //0の時はそのまま書き込みを行う。
+         } else {
+            //0以外の時は平均をとって送信
+            let CGCount = CGFloat(count)
+            let CGCount_Add1 = CGFloat(count + 1)
+            let CGThisStageAve = CGFloat(ThisStageReview)
+            
+            var Average: CGFloat = reviAve + (CGThisStageAve / CGCount)
+            Average *= CGCount / CGCount_Add1
+            
+            print("\n元々の評価平均 -> \(reviAve)")
+            print("その後の評価平均  -> \(Average)")
+            
+            
+            Ref.updateData([
+               "ReviewAve": Average
+            ]) { err in
+               if let err = err {
+                  print("Error: ドキュメントアップデート: \(err)")
+               } else {
+                  print("Ave書き込み成功 -> \(ThisStageReview)")
+               }
+            }
+             //0以外の時は平均をとって送信
+         }
+      } else {
+         print("PlayCountがnilだったから更新しない")
+         return
+      }
+   }
+   
    //MARK:- ゲームクリアして通知を受け取る関数
    @objc func GameClearCatchNotification(notification: Notification) -> Void {
       guard ShowGameClearView == false else { return }
+      
+      
+      //データをFireBaseに飛ばす
+      SaveStageInfoToFireStore()
 
       //BGM小さくして，
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.075) {
