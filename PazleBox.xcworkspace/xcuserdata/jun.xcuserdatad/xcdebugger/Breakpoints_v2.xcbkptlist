@@ -2335,22 +2335,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8F383CAF-6F3D-4D58-82B3-A975F0BBA797"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PazleBox/GameFile/UserStageSecenAndVC/UsersGameViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
-            landmarkName = "LoadPlayStageData(StageData:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "41448E8A-4D39-4C4A-8AE7-C1A46B472970"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -2390,9 +2374,9 @@
             filePath = "PazleBox/GameFile/UserStageSecenAndVC/UsersGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
-            landmarkName = "InitGameViewAndShowView()"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
+            landmarkName = "LoadPlayStageData(RefID:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2662,8 +2646,8 @@
             filePath = "PazleBox/GameFile/CreateStage/FireStore/FireStores.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "AddStageData(StageArrayForContents:MaxPiceNum:PiceArry:ImageData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2990,8 +2974,8 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/SellectInternetStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "GetALLStageDataFromDataBase()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3006,8 +2990,8 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/SellectInternetStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
             landmarkName = "TapDeleteButtonCatchNotification(notification:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3022,8 +3006,8 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/SellectInternetStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "SellectInternetStageViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -3118,10 +3102,42 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/SellectInternetStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "SellectInternetStageViewController"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "97CA55E8-1C04-482A-8126-E699DF4BC391"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/GameFile/UserStageSecenAndVC/UsersGameViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "347"
+            endingLineNumber = "347"
+            landmarkName = "ReviewUpdate(newValue:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "90C4C7F0-A849-4525-AE42-9816300DA098"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/GameFile/SellectInternetStage/SellectInternetStageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

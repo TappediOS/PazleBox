@@ -161,8 +161,27 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       self.UserPiceArray = PiceArray
    }
    
-   public func LoadPlayStageData(StageData: PlayStageRefInfo) {
-      self.PlayStageData = StageData
+   public func LoadPlayStageData(RefID: String, stageDataForNoDocExsist: PlayStageRefInfo) {
+      let Ref = db.collection("Stages").document(RefID)
+      
+      Ref.getDocument { (document, error) in
+         if let document = document, document.exists, let doc = document.data() {
+            self.PlayStageData.RefID = RefID
+            self.PlayStageData.PlayCount = doc["PlayCount"] as? Int
+            self.PlayStageData.ReviewCount = doc["ReviewCount"] as? Int
+            self.PlayStageData.ReviewAve = doc["ReviewAve"] as? CGFloat
+            
+            print("\nstageInfo = {")
+            print("  RefId       = \(self.PlayStageData.RefID)")
+            print("  PlayCount   = \(self.PlayStageData.PlayCount)")
+            print("  ReviewCount = \(self.PlayStageData.ReviewCount)")
+            print("  ReviewAve   = \(self.PlayStageData.ReviewAve)")
+            print("}\n")
+         } else {
+            print("Document does not exist")
+            self.PlayStageData = stageDataForNoDocExsist
+         }
+      }
    }
 
    private func InitGameViewAndShowView() {
@@ -278,39 +297,81 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       
    }
    
-   private func SaveStageInfoToFireStore() {
+   private func SavePlayStageCountToFireStore() {
+      let RefID = PlayStageData.RefID
+      let Ref = db.collection("Stages").document(RefID)
+      let playCount = PlayStageData.PlayCount
+      
+      print("FireStoreにPlayCount送信開始")
+      print("RefID = \(RefID)")
+      //PlayCountを1だけアップ
+      Ref.updateData([
+         "PlayCount": FieldValue.increment(Int64(1))
+      ]) { err in
+         if let err = err {
+            print("Error: PlayCountアップデート: \(err)")
+         } else {
+            print("PlayCount書き込み成功! -> \(String(describing: playCount))")
+         }
+      }
+   }
+   
+   private func ReviewUpdate(newValue: CGFloat) {
+      let RefID = PlayStageData.RefID
+      let Ref = db.collection("Stages").document(RefID)
+      
+      Ref.updateData([
+         "ReviewAve": newValue
+      ]) { err in
+         if let err = err {
+            print("Error: ドキュメントアップデート: \(err)")
+         } else {
+            print("Ave書き込み成功 -> \(newValue)")
+         }
+      }
+   }
+   
+   private func ReviewCountUpdate() {
+      let ReivewCount = PlayStageData.ReviewCount
+      let RefID = PlayStageData.RefID
+      let Ref = db.collection("Stages").document(RefID)
+      
+      Ref.updateData([
+         "ReviewCount": FieldValue.increment(Int64(1))
+      ]) { err in
+         if let err = err {
+            print("Error: ドキュメントアップデート: \(err)")
+            self.GoBackViewController()
+         } else {
+            print("Ave書き込み成功 -> \(String(describing: ReivewCount))")
+            self.GoBackViewController()
+         }
+      }
+   }
+   
+   private func SaveReviewAveCountToFireStore() {
       let RefID = PlayStageData.RefID
       let ThisStageReview = ClearView!.GetReView()
       let StageReviewAve = PlayStageData.ReviewAve
       let playCount = PlayStageData.PlayCount
+      let reviewCount = PlayStageData.ReviewCount
       let Ref = db.collection("Stages").document(RefID)
       
-      print("FireStoreに送信開始")
+      print("FireStoreにReview送信開始")
       print("RefID = \(RefID)")
       
-      //PlayCountを1だけアップ
-      Ref.updateData([
-         "PlayCount": FieldValue.increment(Int64(1))
-      ])
-           
       if ThisStageReview == 0 {
          print("\nステージレビューをしていません")
+         self.GoBackViewController()
          return
       }
       
-      if let count = playCount, let reviAve = StageReviewAve {
-         if count == 0 {
-            //0の時はそのまま書き込みを行う。
-            Ref.updateData([
-               "ReviewAve": ThisStageReview
-            ]) { err in
-               if let err = err {
-                  print("Error: ドキュメントアップデート: \(err)")
-               } else {
-                  print("Ave書き込み成功 -> \(ThisStageReview)")
-               }
-            }
-            //0の時はそのまま書き込みを行う。
+      if let count = reviewCount, let reviAve = StageReviewAve {
+         if reviAve == 0 {
+            //reviAve 0の時はそのまま書き込みを行う。
+            ReviewUpdate(newValue: CGFloat(ThisStageReview))
+            ReviewCountUpdate()
+            //reviAve0の時はそのまま書き込みを行う。
          } else {
             //0以外の時は平均をとって送信
             let CGCount = CGFloat(count)
@@ -319,20 +380,9 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
             
             var Average: CGFloat = reviAve + (CGThisStageAve / CGCount)
             Average *= CGCount / CGCount_Add1
-            
-            print("\n元々の評価平均 -> \(reviAve)")
-            print("その後の評価平均  -> \(Average)")
-            
-            
-            Ref.updateData([
-               "ReviewAve": Average
-            ]) { err in
-               if let err = err {
-                  print("Error: ドキュメントアップデート: \(err)")
-               } else {
-                  print("Ave書き込み成功 -> \(ThisStageReview)")
-               }
-            }
+          
+            ReviewUpdate(newValue: Average)
+            ReviewCountUpdate()
              //0以外の時は平均をとって送信
          }
       } else {
@@ -340,14 +390,14 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
          return
       }
    }
-   
+
    //MARK:- ゲームクリアして通知を受け取る関数
    @objc func GameClearCatchNotification(notification: Notification) -> Void {
       guard ShowGameClearView == false else { return }
       
       
       //データをFireBaseに飛ばす
-      SaveStageInfoToFireStore()
+      SavePlayStageCountToFireStore()
 
       //BGM小さくして，
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.075) {
@@ -397,6 +447,7 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    //MARK:- Nextボタン押されたよ
    @objc func TapNextNotification(notification: Notification) -> Void {
       GameSound.PlaySoundsTapButton()
+
       //課金してたらそのまま次のステージに
       if userDefaults.bool(forKey: "BuyRemoveAd") == true {
          ShowNextGame()
@@ -421,6 +472,14 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
          return
       }
       isLockedHomeFunction = true
+      
+      //Firestoreに保存
+      //Homeに帰る処理はGoBackViewController()にきさい。
+      //つまり，したの関数から飛ばす
+      SaveReviewAveCountToFireStore()
+   }
+   
+   private func GoBackViewController() {
       //課金してたらそのまま返す
       if userDefaults.bool(forKey: "BuyRemoveAd") == true {
          StopGameBGM()

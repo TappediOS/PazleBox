@@ -28,7 +28,8 @@ class Firestores {
       var docData: [String: Any] = ["addUser" : self.UID,
                                     "addDate" : Timestamp(date: Date()),
                                     "PlayCount" : 0,
-                                    "ReviewAve" : 0]
+                                    "ReviewAve" : 0,
+                                    "ReviewCount" : 0]
       
       docData.updateValue(MaxPiceNum, forKey: "MaxPiceNum")
       docData.updateValue(ImageData!, forKey: "ImageData")

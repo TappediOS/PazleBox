@@ -12,5 +12,6 @@ import UIKit
 struct PlayStageRefInfo {
    var RefID: String = ""
    var PlayCount: Int?
+   var ReviewCount: Int?
    var ReviewAve: CGFloat?
 }

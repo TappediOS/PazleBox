@@ -65,6 +65,7 @@ class SellectInternetStageViewController: UIViewController {
    override func viewWillAppear(_ animated: Bool) {
       print("ステージ選択できる状態にします。")
       CanSellectStage = true
+      GetALLStageDataFromDataBase()
    }
    
    private func InitViewSetting() {
@@ -84,12 +85,16 @@ class SellectInternetStageViewController: UIViewController {
       var StageData: [String: Any] =  ["documentID": document.documentID]
       var maxPiceNum: Int = 1
       
-      if let value = document["ReviewAve"] as? Int {
+      if let value = document["ReviewAve"] as? CGFloat {
          StageData.updateValue(value, forKey: "ReviewAve")
       }
       
       if let value = document["PlayCount"] as? Int {
          StageData.updateValue(value, forKey: "PlayCount")
+      }
+      
+      if let value = document["ReviewCount"] as? Int {
+         StageData.updateValue(value, forKey: "ReviewCount")
       }
       
       if let value = document["addUser"] as? String {
@@ -127,7 +132,7 @@ class SellectInternetStageViewController: UIViewController {
       
       
       for data in StageData {
-         print("\(data.key) -> \(data.value)")
+         //print("\(data.key) -> \(data.value)")
       }
       print()
       StageDatas.append(StageData)
@@ -280,10 +285,7 @@ class SellectInternetStageViewController: UIViewController {
    /// Collection ViewのCellがタップされた後にステージ情報を取得する関数
    /// - Parameter CellNum: セル番号
    func LoadStageInfomation(CellNum: Int) {
-      let PiceList = SavedStageDataBase.GetPiceFromDataNumberASList(DataNum: CellNum)
-      let FieldYList = SavedStageDataBase.GetFieldYFromDataNumberASList(DataNum: CellNum)
       //EXファイルに存在している
-      //FIXME:- ココをFirest oreにする
       PiceArray = GetPiceArrayFromDataBase(StageDic: StageDatas[CellNum])
       StageArray = GetPiceArrayFromDataBase(StageDic: StageDatas[CellNum])
       PlayStageData = GetPlayStageInfoFromDataBase(StageDic: StageDatas[CellNum])
@@ -295,7 +297,7 @@ class SellectInternetStageViewController: UIViewController {
 
       GameVC.LoadPiceArray(PiceArray: PiceArray)
       GameVC.LoadStageArray(StageArray: StageArray)
-      GameVC.LoadPlayStageData(StageData: PlayStageData)
+      GameVC.LoadPlayStageData(RefID: PlayStageData.RefID, stageDataForNoDocExsist: self.PlayStageData)
       GameVC.modalPresentationStyle = .fullScreen
       //HomeViewに対してBGMを消してって通知を送る
       NotificationCenter.default.post(name: .StopHomeViewBGM, object: nil, userInfo: nil)

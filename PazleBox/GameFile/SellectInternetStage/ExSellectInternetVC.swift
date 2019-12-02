@@ -64,22 +64,19 @@ extension SellectInternetStageViewController {
       return StageArry
    }
    
+   
    func GetPlayStageInfoFromDataBase(StageDic: [String: Any]) -> PlayStageRefInfo {
       var stageInfo = PlayStageRefInfo()
       
       let refID = StageDic["documentID"] as! String
       let playCount = StageDic["PlayCount"] as! Int
+      let reviewCount = StageDic["ReviewCount"] as! Int
       let reviewAve = StageDic["ReviewAve"] as! CGFloat
       
       stageInfo.RefID = refID
       stageInfo.PlayCount = playCount
+      stageInfo.ReviewCount = reviewCount
       stageInfo.ReviewAve = reviewAve
-      
-      print("\nstageInfo = {")
-      print("  RefId = \(stageInfo.RefID)")
-      print("  PlayCount = \(stageInfo.PlayCount)")
-      print("  ReviewAve = \(stageInfo.ReviewAve)")
-      print("}\n")
       
       return stageInfo
    }
