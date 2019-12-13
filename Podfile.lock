@@ -193,6 +193,7 @@ PODS:
   - SpriteKitEasingSwift (0.14)
   - SwiftyStoreKit (0.15.0)
   - TapticEngine (1.2.0)
+  - TwicketSegmentedControl (0.1.2)
   - ViewAnimator (2.7.0)
 
 DEPENDENCIES:
@@ -218,6 +219,7 @@ DEPENDENCIES:
   - SpriteKitEasingSwift
   - SwiftyStoreKit
   - TapticEngine
+  - TwicketSegmentedControl
   - ViewAnimator
 
 SPEC REPOS:
@@ -265,6 +267,7 @@ SPEC REPOS:
     - SpriteKitEasingSwift
     - SwiftyStoreKit
     - TapticEngine
+    - TwicketSegmentedControl
     - ViewAnimator
 
 EXTERNAL SOURCES:
@@ -322,8 +325,9 @@ SPEC CHECKSUMS:
   SpriteKitEasingSwift: d389a59f5531399b69cc9c31f52c2e279c813688
   SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
   TapticEngine: ed6f5b4a2e9aa46d4e8fa69a72a7a0b6719bf8ac
+  TwicketSegmentedControl: 6d7a4cf243657e0ac3f00d06d873a25334c04042
   ViewAnimator: 5af1c6f3b310f012bf081259c43717aa54fbae73
 
-PODFILE CHECKSUM: 9ad116c0a1d056affbb3a4d1480b300364ffa3ea
+PODFILE CHECKSUM: 14863aef1e3d7943ff3f8596ef0bed1af0f000ee
 
 COCOAPODS: 1.8.4

@@ -40,6 +40,8 @@ target 'PazleBox' do
 
   pod "COSTouchVisualizer"  
 
+  pod 'TwicketSegmentedControl'
+
 end
 
 target 'PazleBoxTests' do
@@ -86,5 +88,7 @@ target 'PazleBoxUITests' do
   pod 'SwiftyStoreKit'
 
   pod 'SCLAlertView'
+
+  pod 'TwicketSegmentedControl'
 
 end

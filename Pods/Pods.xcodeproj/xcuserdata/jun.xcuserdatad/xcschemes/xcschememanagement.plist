@@ -269,6 +269,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TwicketSegmentedControl-framework.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>TwicketSegmentedControl-library.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ViewAnimator-framework.xcscheme</key>
 		<dict>
 			<key>isShown</key>

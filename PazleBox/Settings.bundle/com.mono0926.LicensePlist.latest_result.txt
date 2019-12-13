@@ -277,6 +277,14 @@ body: MIT License
 Copyrig…
 version: 1.2.0
 
+name: TwicketSegmentedControl, nameSpecified: 
+body: The MIT License (MIT…
+version: 0.1.2
+
+name: TwicketSegmentedControl, nameSpecified: 
+body: The MIT License (MIT…
+version: 0.1.2
+
 name: ViewAnimator, nameSpecified: 
 body: Copyright (c) 2018 m…
 version: 2.7.0
