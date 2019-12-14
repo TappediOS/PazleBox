@@ -333,6 +333,8 @@
 		BF9F80AA236010A6003512B0 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F80A9236010A6003512B0 /* TopViewController.swift */; };
 		BF9F80AC236013F6003512B0 /* TopViewIAP.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F80AB236013F6003512B0 /* TopViewIAP.swift */; };
 		BFADC63E23A4866200AC6768 /* ExSellectForSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFADC63D23A4866200AC6768 /* ExSellectForSegmentedControl.swift */; };
+		BFADC64023A4A10A00AC6768 /* InternetSellect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFADC63F23A4A10A00AC6768 /* InternetSellect.swift */; };
+		BFADC64223A4A11700AC6768 /* InterNetSellect.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFADC64123A4A11700AC6768 /* InterNetSellect.xib */; };
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
 		BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D422428287007C8FA1 /* Assets.xcassets */; };
 		BFC6C5D9224283BD007C8FA1 /* Test.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D8224283BD007C8FA1 /* Test.sks */; };
@@ -1083,6 +1085,8 @@
 		BF9F80AB236013F6003512B0 /* TopViewIAP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewIAP.swift; sourceTree = "<group>"; };
 		BFA61D0522B5040D002C8EDD /* PazleBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PazleBox.entitlements; sourceTree = "<group>"; };
 		BFADC63D23A4866200AC6768 /* ExSellectForSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSellectForSegmentedControl.swift; sourceTree = "<group>"; };
+		BFADC63F23A4A10A00AC6768 /* InternetSellect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetSellect.swift; sourceTree = "<group>"; };
+		BFADC64123A4A11700AC6768 /* InterNetSellect.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterNetSellect.xib; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
 		BFC6C5D422428287007C8FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC6C5D8224283BD007C8FA1 /* Test.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Test.sks; sourceTree = "<group>"; };
@@ -2195,6 +2199,8 @@
 			children = (
 				BF85D54323935EB1005E564B /* UsingStageDatas.swift */,
 				BF7F44BF2394DC3B0004CE60 /* PlayStageInfo.swift */,
+				BFADC64123A4A11700AC6768 /* InterNetSellect.xib */,
+				BFADC63F23A4A10A00AC6768 /* InternetSellect.swift */,
 				BF85D54523935FDE005E564B /* ExSellectInternetStageViewController.swift */,
 				BFADC63D23A4866200AC6768 /* ExSellectForSegmentedControl.swift */,
 				BF85D54723937BD1005E564B /* ExSellectInternetVC.swift */,
@@ -3155,6 +3161,7 @@
 				BF7CD95E2240BBD500F8302B /* 23p4Red.png in Resources */,
 				BFF6D66A2286BC74000253A2 /* 33p43Red.png in Resources */,
 				BFF6D78922896610000253A2 /* 43p22Blue.png in Resources */,
+				BFADC64223A4A11700AC6768 /* InterNetSellect.xib in Resources */,
 				BFF6D64D22841643000253A2 /* 43p3Green.png in Resources */,
 				BF640C022244F8FD00333782 /* 32p4Red.png in Resources */,
 				BFF6D70622896610000253A2 /* 43p32Blue.png in Resources */,
@@ -3531,6 +3538,7 @@
 				BF332F8A22492366009B3042 /* ExGameSeceneHard.swift in Sources */,
 				BF552F12226DDEB400756E16 /* H28.swift in Sources */,
 				BFFA2A8A223384420023BB71 /* Hard.swift in Sources */,
+				BFADC64023A4A10A00AC6768 /* InternetSellect.swift in Sources */,
 				BF332FB622492784009B3042 /* N4.swift in Sources */,
 				BF332FAE22492723009B3042 /* E20.swift in Sources */,
 				BF552E94226DDD0600756E16 /* E25.swift in Sources */,
