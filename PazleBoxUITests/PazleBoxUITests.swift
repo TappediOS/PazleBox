@@ -58,6 +58,26 @@ class PazleBoxUITests: XCTestCase {
       snapshot("CreateStageVC")
    }
    
+   //CreateStageVCでCollectionViewの表示テスト
+   func testShowInternetViewController() {
+      let app = XCUIApplication()
+      app.buttons["TopVC_CreateButton"].tap()
+      app.buttons["CreateHomeVC_InternetUsersStageButton"].tap()
+      snapshot("show Internet vc")
+   }
+   
+   //CreateStageVCでCollectionView cell をタップしたときの表示テスト
+   func testTapInternetViewControllerCell() {
+      let app = XCUIApplication()
+      app.buttons["TopVC_CreateButton"].tap()
+      app.buttons["CreateHomeVC_InternetUsersStageButton"].tap()
+      let cell = app.collectionViews["SellectInternetStageVC_StageCollectionView"].cells.element(boundBy: 2)
+      cell.tap()
+      snapshot("tap cell internet vc")
+   }
+   
+   
+   
    //CreateStageVCでCollectionView cell をタップしたときの表示テスト
    func testTapCollectionViewCell_2_InCreateStageVC() {
       let app = XCUIApplication()
@@ -101,6 +121,16 @@ class PazleBoxUITests: XCTestCase {
       app.buttons["TopVC_CreateButton"].tap()
       app.buttons["CreateHomeVC_SellectStageButton"].tap()
       snapshot("SellectStageVC")
+   }
+   
+   //sellectVCでcell をタップしたときの表示テスト
+   func testTapSellectViewControllerCell() {
+      let app = XCUIApplication()
+      app.buttons["TopVC_CreateButton"].tap()
+      app.buttons["CreateHomeVC_SellectStageButton"].tap()
+      let cell = app.collectionViews["SellectCreateStageVC_StageCollectionView"].cells.element(boundBy: 2)
+      cell.tap()
+      snapshot("tap cell internet vc")
    }
    
    //BackHomeButton押したときにちゃんと戻れるかのテスト

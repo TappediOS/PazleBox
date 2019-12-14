@@ -17,6 +17,7 @@ class InterNetSellect: UIView {
 
    var CellNum: Int = 0
 
+   //Numがついてる方には，実際の数値を代入する。
    @IBOutlet weak var DateLabel: UILabel!
    @IBOutlet weak var StageImageView: UIImageView!
    @IBOutlet weak var RatedLabel: UILabel!
