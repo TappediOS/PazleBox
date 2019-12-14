@@ -74,8 +74,7 @@ class InterNetSellect: UIView {
    
    private func InitRatedNumLabel(_ RatedNum: CGFloat) {
       let point2 = floor(Double(RatedNum) * 100) / 100
-      print("")
-      self.RatedNumLabel.text = String(point2)
+      self.RatedNumLabel.text = String(point2) + " / 5"
    }
    
    private func InitPlayCountNumLabel(_ PlayCount: Int) {
