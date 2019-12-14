@@ -13,19 +13,19 @@ import Firebase
 import TapticEngine
 
 @IBDesignable
-class SellectInterNetView: UIView {
+class InterNetSellect: UIView {
 
    var CellNum: Int = 0
 
    @IBOutlet weak var DateLabel: UILabel!
-   
+   @IBOutlet weak var StageImageView: UIImageView!
    @IBOutlet weak var RatedLabel: UILabel!
    @IBOutlet weak var RatedNumLabel: UILabel!
    @IBOutlet weak var PlayCountLabel: UILabel!
    @IBOutlet weak var PlayCountNumLabel: UILabel!
    @IBOutlet weak var PlayButton: UIButton!
    @IBOutlet weak var CloseButton: UIButton!
-   @IBOutlet weak var StageImageView: UIImageView!
+   
    
    let ButtonShadow = CGSize(width: 0.3, height: 1.75)
    let ButtonShadowColor = UIColor.black.cgColor
@@ -50,7 +50,7 @@ class SellectInterNetView: UIView {
    
    private func LoadNib() {
       let bundle = Bundle(for: type(of: self))
-      let nib = UINib(nibName: "InternetSellect", bundle: bundle)
+      let nib = UINib(nibName: "InterNetSellect", bundle: bundle)
       let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
       view.frame = self.bounds
       addSubview(view)
@@ -98,24 +98,24 @@ class SellectInterNetView: UIView {
       StageImageView.layer.cornerRadius = ButtonCornerRadius
    }
    
-   @IBAction func TapPlayInternetButton(_ sender: Any) {
-      print("Tap PlayButton")
+  
+   @IBAction func TapPlayButton(_ sender: Any) {
+      print("Tap Internet PlayButton")
       
       let SentObject: [String : Int] = ["CellNum": CellNum]
       NotificationCenter.default.post(name: .TapPlayButton, object: nil, userInfo: SentObject)
       
-      DispatchQueue.main.asyncAfter(deadline: .now() + 1.25) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1.27) {
          self.removeFromSuperview()
       }
    }
    
-   @IBAction func TapCloseInternetButton(_ sender: Any) {
+   @IBAction func TapCloseButton(_ sender: Any) {
       print("Tap CloseButton")
       self.removeFromSuperview()
       Play3DtouchLight()
       NotificationCenter.default.post(name: .TapCloseButton, object: nil)
    }
-   
    // viewの枠線の色
    @IBInspectable var borderColor: UIColor = UIColor.clear {
        didSet {
