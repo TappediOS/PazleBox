@@ -97,7 +97,10 @@ class SellectInternetStageViewController: UIViewController {
       db = Firestore.firestore()
    }
    
-   private func GetRawData(document: DocumentSnapshot) {
+   
+   /// ドキュメントからデータを読み込み配列として返す関数
+   /// - Parameter document: forぶんでDocを回したときに呼び出す。
+   private func GetRawData(document: DocumentSnapshot) -> ([String: Any]) {
       var StageData: [String: Any] =  ["documentID": document.documentID]
       var maxPiceNum: Int = 1
       
@@ -145,13 +148,11 @@ class SellectInternetStageViewController: UIViewController {
          }
       }
       
-      
-      
       for data in StageData {
-         //print("\(data.key) -> \(data.value)")
+         print("\(data.key) -> \(data.value)")
       }
-      print()
-      StageDatas.append(StageData)
+      
+      return StageData
    }
    
    //データベースからデータゲットして配列に格納
@@ -161,7 +162,7 @@ class SellectInternetStageViewController: UIViewController {
             print("データベースからのデータ取得エラー: \(err)")
          } else {
             for document in querySnapshot!.documents {
-               self.GetRawData(document: document)
+               self.LatestStageDatas.append(self.GetRawData(document: document))
             }
          }
          
@@ -171,16 +172,62 @@ class SellectInternetStageViewController: UIViewController {
       }
    }
    
+   
+   
    private func GetLatestStageDataFromDataBase() {
-      
+      print("Latestデータの取得開始")
+      db.collection("Stages").getDocuments() { (querySnapshot, err) in
+         if let err = err {
+            print("データベースからのデータ取得エラー: \(err)")
+         } else {
+            for document in querySnapshot!.documents {
+               self.LatestStageDatas.append(self.GetRawData(document: document))
+            }
+         }
+         print("Latestデータの取得完了")
+         //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
+         //Segmentタップした時に別の関数でCollecti onVie をリロードする。
+         self.UsingStageDatas = self.LatestStageDatas
+         print("Delegate設定します。")
+         
+         //読み取りが終わってからデリゲードを入れる必要がある
+         self.StageCollectionView.delegate = self
+         self.StageCollectionView.dataSource = self
+      }
    }
    
    private func GetRatedStageDataFromDataBase() {
-      
+      print("PlayCountデータの取得開始")
+      db.collection("Stages").getDocuments() { (querySnapshot, err) in
+         if let err = err {
+            print("データベースからのデータ取得エラー: \(err)")
+         } else {
+            for document in querySnapshot!.documents {
+               self.LatestStageDatas.append(self.GetRawData(document: document))
+            }
+         }
+         //ここでは必要な配列を作っただけで何もする必要はない。
+         //ここで作った配列(self.LatestStageDatas)
+         //はSegmentタップされたときにUsingStageDataに代入してリロードすればいい。
+         print("Ratedデータの取得完了")
+      }
    }
    
    private func GetPlayCountStageDataFromDataBase(){
-      
+      print("PlayCountデータの取得開始")
+      db.collection("Stages").getDocuments() { (querySnapshot, err) in
+         if let err = err {
+            print("データベースからのデータ取得エラー: \(err)")
+         } else {
+            for document in querySnapshot!.documents {
+               self.GetRawData(document: document)
+            }
+         }
+         //ここでは必要な配列を作っただけで何もする必要はない。
+         //ここで作った配列(self.LatestStageDatas)
+         //はSegmentタップされたときにUsingStageDataに代入してリロードすればいい。
+         print("PlayCountデータの取得完了")
+      }
    }
    
    
@@ -308,9 +355,11 @@ class SellectInternetStageViewController: UIViewController {
    /// - Parameter CellNum: セル番号
    func LoadStageInfomation(CellNum: Int) {
       //EXファイルに存在している
-      PiceArray = GetPiceArrayFromDataBase(StageDic: StageDatas[CellNum])
-      StageArray = GetPiceArrayFromDataBase(StageDic: StageDatas[CellNum])
-      PlayStageData = GetPlayStageInfoFromDataBase(StageDic: StageDatas[CellNum])
+      //Usingの配列を使用してどデータのやり取りをする。
+      //Segmentのでりゲードを利用して変更するべきである。
+      PiceArray = GetPiceArrayFromDataBase(StageDic: UsingStageDatas[CellNum])
+      StageArray = GetPiceArrayFromDataBase(StageDic: UsingStageDatas[CellNum])
+      PlayStageData = GetPlayStageInfoFromDataBase(StageDic: UsingStageDatas[CellNum])
    }
    
    /// GameVCをプレゼントする関数

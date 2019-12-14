@@ -2967,22 +2967,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6C29567D-7ED7-4A4F-8BD2-21A564E1C69C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PazleBox/GameFile/SellectInternetStage/SellectInternetStageViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "GetRawData(document:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "EBD72D7B-9E96-4EB5-B60D-1EF05729AC5F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -2992,7 +2976,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "247"
             endingLineNumber = "247"
-            landmarkName = "TapPlayButtonCatchNotification(notification:)"
+            landmarkName = "InitSegmentedControl()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3008,7 +2992,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "241"
             endingLineNumber = "241"
-            landmarkName = "TapPlayButtonCatchNotification(notification:)"
+            landmarkName = "InitSegmentedControl()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
