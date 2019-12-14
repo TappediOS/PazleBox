@@ -16,5 +16,22 @@ extension SellectInternetStageViewController: TwicketSegmentedControlDelegate {
       
       
       print("Selected index: \(segmentIndex)")
+      
+      UsingStageDatas.removeAll()
+      
+      switch segmentIndex {
+      case 0:
+         UsingStageDatas = LatestStageDatas
+      case 1:
+         UsingStageDatas = PlayCountStageDatas
+      case 2:
+         UsingStageDatas = RatedStageDatas
+      default:
+         print("\n\nあり得ない\n\n")
+         return
+      }
+      
+      self.StageCollectionView.reloadData()
+      
    }
 }

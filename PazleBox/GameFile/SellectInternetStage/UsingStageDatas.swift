@@ -124,8 +124,9 @@ class SellectInternetStageViewController: UIViewController {
       }
       
       //FIXME:- これはなんか取得できてない
-      if let value = document["addDate"] as? Data {
-         StageData.updateValue(value, forKey: "addDate")
+      if let value = document["addDate"] as? Timestamp {
+         print(value.dateValue())
+         StageData.updateValue(value.dateValue(), forKey: "addDate")
       }
       
       if let value = document["MaxPiceNum"] as? Int {
@@ -152,7 +153,7 @@ class SellectInternetStageViewController: UIViewController {
       }
       
       for data in StageData {
-         print("\(data.key) -> \(data.value)")
+         //print("\(data.key) -> \(data.value)")
       }
       
       return StageData
