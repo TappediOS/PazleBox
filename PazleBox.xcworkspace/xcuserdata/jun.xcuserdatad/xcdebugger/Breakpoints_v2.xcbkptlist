@@ -2552,8 +2552,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
             endingLineNumber = "30"
-            landmarkName = "init(frame:Image:CellNum:)"
-            landmarkType = "7">
+            landmarkName = "SellectView"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "8C33F35E-CED6-4F6C-8FB7-808FF76FCBEA - 42431c05e715c634"
@@ -2600,7 +2600,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
             endingLineNumber = "111"
-            landmarkName = "init(coder:)"
+            landmarkName = "LoadNib()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -3024,7 +3024,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
             endingLineNumber = "48"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

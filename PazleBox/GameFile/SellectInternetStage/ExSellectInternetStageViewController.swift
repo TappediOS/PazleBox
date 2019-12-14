@@ -30,7 +30,9 @@ extension SellectInternetStageViewController: UICollectionViewDelegate {
       
       let flame = CGRect(x: view.frame.width / 10, y: view.frame.height / 4, width: view.frame.width / 10 * 8, height: view.frame.width / 10 * 8)
       
-      let SellectedView = InterNetSellect(frame: flame, Image: Image!, CellNum: indexPath.item)
+      let PlayCount = UsingStageDatas[indexPath.item]["PlayCount"] as! Int
+      let ReviewAve = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat
+      let SellectedView = InterNetSellect(frame: flame, Image: Image!, CellNum: indexPath.item, PlayCount: PlayCount, ReviewAve: ReviewAve)
       SellectedView.center.y = view.center.y
       self.view.addSubview(SellectedView)
       

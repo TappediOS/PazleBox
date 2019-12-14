@@ -35,7 +35,7 @@ class InterNetSellect: UIView {
    
    var isLockedPlayButton = false
    
-   init(frame: CGRect, Image: UIImage, CellNum: Int) {
+   init(frame: CGRect, Image: UIImage, CellNum: Int, PlayCount: Int, ReviewAve: CGFloat) {
       super.init(frame: frame)
       
       if #available(iOS 13.0, *) {
@@ -43,9 +43,11 @@ class InterNetSellect: UIView {
       }
       
       self.CellNum = CellNum
-        
+      
       LoadNib()
       InitView()
+      InitRatedNumLabel(ReviewAve)
+      InitPlayCountNumLabel(PlayCount)
       InitPlayButton()
       InitCloseButton()
       InitImageView(Image: Image)
@@ -68,6 +70,16 @@ class InterNetSellect: UIView {
       self.layer.shadowColor = UIColor.black.cgColor
       self.layer.shadowOpacity = 0.7
       self.layer.cornerRadius = 12
+   }
+   
+   private func InitRatedNumLabel(_ RatedNum: CGFloat) {
+      let point2 = floor(Double(RatedNum) * 100) / 100
+      print("")
+      self.RatedNumLabel.text = String(point2)
+   }
+   
+   private func InitPlayCountNumLabel(_ PlayCount: Int) {
+      self.PlayCountNumLabel.text = String(PlayCount)
    }
      
    private func InitPlayButton() {
