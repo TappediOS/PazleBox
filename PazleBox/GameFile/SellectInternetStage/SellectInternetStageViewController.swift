@@ -15,6 +15,7 @@ import FlatUIKit
 import Hero
 import Firebase
 import SCLAlertView
+import TwicketSegmentedControl
 
 
 class SellectInternetStageViewController: UIViewController {
@@ -26,7 +27,7 @@ class SellectInternetStageViewController: UIViewController {
    var PiceArray: [PiceInfo] = Array()
    var StageArray: [[Contents]] = Array()
    
-    var db: Firestore!
+   var db: Firestore!
 
    @IBOutlet weak var StageCollectionView: UICollectionView!
    
@@ -56,16 +57,23 @@ class SellectInternetStageViewController: UIViewController {
       
       
       InitBackButton()
+      
+      InitSegmentedControl()
+      
       InitHeroID()
       InitAccessibilityIdentifires()
       
       InitNotificationCenter()
+      
+      
+      
+
    }
    
    override func viewWillAppear(_ animated: Bool) {
       print("ステージ選択できる状態にします。")
       CanSellectStage = true
-      GetALLStageDataFromDataBase()
+      //GetALLStageDataFromDataBase()
    }
    
    private func InitViewSetting() {
@@ -156,7 +164,7 @@ class SellectInternetStageViewController: UIViewController {
       }
    }
    
-   //データベースからデータゲットして配列に格納
+   //データベースから最新データゲットして配列に格納
    private func GetLEATESTStageDataFromDataBase() {
       db.collection("Stages").getDocuments() { (querySnapshot, err) in
          if let err = err {
@@ -178,6 +186,19 @@ class SellectInternetStageViewController: UIViewController {
    private func  InitAccessibilityIdentifires() {
       StageCollectionView?.accessibilityIdentifier = "SellectInternetStageVC_StageCollectionView"
       BackButton?.accessibilityIdentifier = "SellectInternetStageVC_BackButton"
+   }
+   
+   //TODO:- frameを変更すること。
+   //TODO:- タイトルの名前をローカライズすること。
+   private func InitSegmentedControl() {
+      let titles = ["Rated", "Play Count", "Latest"]
+      let frame = CGRect(x: 5, y: 50, width: view.frame.width - 10, height: 40)
+
+      let segmentedControl = TwicketSegmentedControl(frame: frame)
+      segmentedControl.setSegmentItems(titles)
+      segmentedControl.delegate = self
+
+      view.addSubview(segmentedControl)
    }
    
    private func InitBackButton() {
