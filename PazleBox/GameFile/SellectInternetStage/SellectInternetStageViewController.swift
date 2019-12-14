@@ -22,7 +22,11 @@ class SellectInternetStageViewController: UIViewController {
    
    let SavedStageDataBase = UserCreateStageDataBase()
    
-   var StageDatas: [([String: Any])] = Array()
+   var UsingStageDatas: [([String: Any])] = Array()
+   
+   var LatestStageDatas: [([String: Any])] = Array()
+   var RatedStageDatas: [([String: Any])] = Array()
+   var PlayCountStageDatas: [([String: Any])] = Array()
    
    var PiceArray: [PiceInfo] = Array()
    var StageArray: [[Contents]] = Array()
@@ -54,6 +58,10 @@ class SellectInternetStageViewController: UIViewController {
       SetUpFireStoreSetting()
       
       GetALLStageDataFromDataBase()
+      
+      GetLatestStageDataFromDataBase()
+      GetRatedStageDataFromDataBase()
+      GetPlayCountStageDataFromDataBase()
       
       
       InitBackButton()
@@ -153,7 +161,6 @@ class SellectInternetStageViewController: UIViewController {
             print("データベースからのデータ取得エラー: \(err)")
          } else {
             for document in querySnapshot!.documents {
-               //print("\(document.documentID) -> \(document.data())")
                self.GetRawData(document: document)
             }
          }
@@ -164,22 +171,16 @@ class SellectInternetStageViewController: UIViewController {
       }
    }
    
-   //データベースから最新データゲットして配列に格納
-   private func GetLEATESTStageDataFromDataBase() {
-      db.collection("Stages").getDocuments() { (querySnapshot, err) in
-         if let err = err {
-            print("データベースからのデータ取得エラー: \(err)")
-         } else {
-            for document in querySnapshot!.documents {
-               //print("\(document.documentID) -> \(document.data())")
-               self.GetRawData(document: document)
-            }
-         }
-         
-         //読み取りが終わってからデリゲードを入れる必要がある
-         self.StageCollectionView.delegate = self
-         self.StageCollectionView.dataSource = self
-      }
+   private func GetLatestStageDataFromDataBase() {
+      
+   }
+   
+   private func GetRatedStageDataFromDataBase() {
+      
+   }
+   
+   private func GetPlayCountStageDataFromDataBase(){
+      
    }
    
    
@@ -192,7 +193,7 @@ class SellectInternetStageViewController: UIViewController {
    //TODO:- タイトルの名前をローカライズすること。
    private func InitSegmentedControl() {
       let titles = ["Rated", "Play Count", "Latest"]
-      let frame = CGRect(x: 5, y: 50, width: view.frame.width - 10, height: 40)
+      let frame = CGRect(x: 5, y: 57, width: view.frame.width - 10, height: 40)
 
       let segmentedControl = TwicketSegmentedControl(frame: frame)
       segmentedControl.setSegmentItems(titles)
