@@ -176,10 +176,10 @@ class SellectInternetStageViewController: UIViewController {
    }
    
    
-   
+   //FIXME:- 最新データでない可能性がある。
    private func GetLatestStageDataFromDataBase() {
       print("Latestデータの取得開始")
-      db.collection("Stages").order(by: "addData").limit(to: MaxGetStageNumFormDataBase)
+      db.collection("Stages").limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
       if let err = err {
          print("データベースからのデータ取得エラー: \(err)")
@@ -210,7 +210,7 @@ class SellectInternetStageViewController: UIViewController {
             print("データベースからのデータ取得エラー: \(err)")
          } else {
             for document in querySnapshot!.documents {
-               self.LatestStageDatas.append(self.GetRawData(document: document))
+               self.RatedStageDatas.append(self.GetRawData(document: document))
             }
          }
          //ここでは必要な配列を作っただけで何もする必要はない。
@@ -230,7 +230,7 @@ class SellectInternetStageViewController: UIViewController {
          print("データベースからのデータ取得エラー: \(err)")
       } else {
          for document in querySnapshot!.documents {
-            self.LatestStageDatas.append(self.GetRawData(document: document))
+            self.PlayCountStageDatas.append(self.GetRawData(document: document))
          }
       }
          //ここでは必要な配列を作っただけで何もする必要はない。
