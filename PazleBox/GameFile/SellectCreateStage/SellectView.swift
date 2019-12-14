@@ -26,6 +26,8 @@ class SellectView: UIView {
    let ButtonShadowColor = UIColor.black.cgColor
    let ButtonShadowOpacity: Float = 0.6
    let ButtonCornerRadius: CGFloat = 7
+   
+   var isLockedPlayButton = false
 
    init(frame: CGRect, Image: UIImage, CellNum: Int) {
       super.init(frame: frame)
@@ -116,6 +118,14 @@ class SellectView: UIView {
    
    @IBAction func TapPlayButton(_ sender: Any) {
       print("Tap PlayButton")
+      
+      guard isLockedPlayButton == false else {
+         Play3DtouchLight()
+         print("プレイボタンはロックされています。")
+         return
+      }
+      
+      isLockedPlayButton = true
       
       let SentObject: [String : Int] = ["CellNum": CellNum]
       NotificationCenter.default.post(name: .TapPlayButton, object: nil, userInfo: SentObject)
