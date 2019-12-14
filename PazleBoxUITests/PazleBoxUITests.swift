@@ -130,7 +130,7 @@ class PazleBoxUITests: XCTestCase {
       app.buttons["CreateHomeVC_SellectStageButton"].tap()
       let cell = app.collectionViews["SellectCreateStageVC_StageCollectionView"].cells.element(boundBy: 2)
       cell.tap()
-      snapshot("tap cell internet vc")
+      snapshot("tap cell sellect vc")
    }
    
    //BackHomeButton押したときにちゃんと戻れるかのテスト
