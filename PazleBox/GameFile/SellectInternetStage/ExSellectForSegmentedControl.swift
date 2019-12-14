@@ -12,6 +12,9 @@ import TwicketSegmentedControl
 extension SellectInternetStageViewController: TwicketSegmentedControlDelegate {
    
    func didSelect(_ segmentIndex: Int) {
+      
+      
+      
       print("Selected index: \(segmentIndex)")
    }
 }

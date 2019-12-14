@@ -31,6 +31,8 @@ class SellectInternetStageViewController: UIViewController {
    var PiceArray: [PiceInfo] = Array()
    var StageArray: [[Contents]] = Array()
    
+   let MaxGetStageNumFormDataBase = 5
+   
    var db: Firestore!
 
    @IBOutlet weak var StageCollectionView: UICollectionView!
@@ -177,7 +179,8 @@ class SellectInternetStageViewController: UIViewController {
    
    private func GetLatestStageDataFromDataBase() {
       print("Latestデータの取得開始")
-      db.collection("Stages").order(by: "addData").limit(to: 35).getDocuments() { (querySnapshot, err) in
+      db.collection("Stages").order(by: "addData").limit(to: MaxGetStageNumFormDataBase)
+         .getDocuments() { (querySnapshot, err) in
       if let err = err {
          print("データベースからのデータ取得エラー: \(err)")
       } else {
@@ -198,8 +201,11 @@ class SellectInternetStageViewController: UIViewController {
    }
    
    private func GetRatedStageDataFromDataBase() {
-      print("PlayCountデータの取得開始")
-      db.collection("Stages").whereField("ReviewAve", isGreaterThan: 2).order(by: "ReviewAve").limit(to: 35).getDocuments() { (querySnapshot, err) in
+      print("Ratedデータの取得開始")
+      db.collection("Stages").whereField("ReviewAve", isGreaterThan: 2)
+         .order(by: "ReviewAve")
+         .limit(to: MaxGetStageNumFormDataBase)
+         .getDocuments() { (querySnapshot, err) in
          if let err = err {
             print("データベースからのデータ取得エラー: \(err)")
          } else {
@@ -216,7 +222,10 @@ class SellectInternetStageViewController: UIViewController {
    
    private func GetPlayCountStageDataFromDataBase(){
       print("PlayCountデータの取得開始")
-      db.collection("Stages").whereField("PlayCount", isGreaterThan: 2).order(by: "PlayCount").limit(to: 35).getDocuments() { (querySnapshot, err) in
+      db.collection("Stages").whereField("PlayCount", isGreaterThan: 2)
+         .order(by: "PlayCount")
+         .limit(to: MaxGetStageNumFormDataBase)
+         .getDocuments() { (querySnapshot, err) in
       if let err = err {
          print("データベースからのデータ取得エラー: \(err)")
       } else {
