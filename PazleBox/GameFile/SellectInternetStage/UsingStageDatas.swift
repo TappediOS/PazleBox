@@ -31,7 +31,7 @@ class SellectInternetStageViewController: UIViewController {
    var PiceArray: [PiceInfo] = Array()
    var StageArray: [[Contents]] = Array()
    
-   let MaxGetStageNumFormDataBase = 5
+   let MaxGetStageNumFormDataBase = 15
    
    var db: Firestore!
 
