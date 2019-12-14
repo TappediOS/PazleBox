@@ -19,7 +19,7 @@ extension SellectInternetStageViewController: UICollectionViewDelegate {
       CanSellectStage = false
       print("Cellタップされた Cell: \(indexPath.item)")
       
-      let ImageData = StageDatas[indexPath.item]["ImageData"] as? NSData
+      let ImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
       var Image: UIImage?
       if let data = ImageData {
          Image = UIImage(data: data as Data)
@@ -41,14 +41,14 @@ extension SellectInternetStageViewController: UICollectionViewDelegate {
 
 extension SellectInternetStageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      print("ステージ数の合計: \(StageDatas.count)")
-      return StageDatas.count
+      print("ステージ数の合計: \(UsingStageDatas.count)")
+      return UsingStageDatas.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InternetStagesCell", for: indexPath)
         
-      let ImageData = StageDatas[indexPath.item]["ImageData"] as? NSData
+      let ImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
       
       if let data = ImageData {
          let Image = UIImage(data: data as Data)

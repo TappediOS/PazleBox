@@ -57,8 +57,9 @@ class SellectInternetStageViewController: UIViewController {
       
       SetUpFireStoreSetting()
       
-      GetALLStageDataFromDataBase()
+      //GetALLStageDataFromDataBase()
       
+      //最新，評価，回数でそれぞれ取得する
       GetLatestStageDataFromDataBase()
       GetRatedStageDataFromDataBase()
       GetPlayCountStageDataFromDataBase()
@@ -176,14 +177,14 @@ class SellectInternetStageViewController: UIViewController {
    
    private func GetLatestStageDataFromDataBase() {
       print("Latestデータの取得開始")
-      db.collection("Stages").getDocuments() { (querySnapshot, err) in
-         if let err = err {
-            print("データベースからのデータ取得エラー: \(err)")
-         } else {
-            for document in querySnapshot!.documents {
-               self.LatestStageDatas.append(self.GetRawData(document: document))
-            }
+      db.collection("Stages").order(by: "addData").limit(to: 35).getDocuments() { (querySnapshot, err) in
+      if let err = err {
+         print("データベースからのデータ取得エラー: \(err)")
+      } else {
+         for document in querySnapshot!.documents {
+            self.LatestStageDatas.append(self.GetRawData(document: document))
          }
+      }
          print("Latestデータの取得完了")
          //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
          //Segmentタップした時に別の関数でCollecti onVie をリロードする。
@@ -198,7 +199,7 @@ class SellectInternetStageViewController: UIViewController {
    
    private func GetRatedStageDataFromDataBase() {
       print("PlayCountデータの取得開始")
-      db.collection("Stages").getDocuments() { (querySnapshot, err) in
+      db.collection("Stages").whereField("ReviewAve", isGreaterThan: 2).order(by: "ReviewAve").limit(to: 35).getDocuments() { (querySnapshot, err) in
          if let err = err {
             print("データベースからのデータ取得エラー: \(err)")
          } else {
@@ -215,14 +216,14 @@ class SellectInternetStageViewController: UIViewController {
    
    private func GetPlayCountStageDataFromDataBase(){
       print("PlayCountデータの取得開始")
-      db.collection("Stages").getDocuments() { (querySnapshot, err) in
-         if let err = err {
-            print("データベースからのデータ取得エラー: \(err)")
-         } else {
-            for document in querySnapshot!.documents {
-               self.GetRawData(document: document)
-            }
+      db.collection("Stages").whereField("PlayCount", isGreaterThan: 2).order(by: "PlayCount").limit(to: 35).getDocuments() { (querySnapshot, err) in
+      if let err = err {
+         print("データベースからのデータ取得エラー: \(err)")
+      } else {
+         for document in querySnapshot!.documents {
+            self.LatestStageDatas.append(self.GetRawData(document: document))
          }
+      }
          //ここでは必要な配列を作っただけで何もする必要はない。
          //ここで作った配列(self.LatestStageDatas)
          //はSegmentタップされたときにUsingStageDataに代入してリロードすればいい。

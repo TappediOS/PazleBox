@@ -316,7 +316,7 @@
 		BF849E0322C0CAA1003E34CB /* BackGroundImageForIphone8Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = BF849E0122C0CAA0003E34CB /* BackGroundImageForIphone8Plus.png */; };
 		BF849E0622C25B20003E34CB /* BackGroundImageForIphoneXsMaxVar2.png in Resources */ = {isa = PBXBuildFile; fileRef = BF849E0422C25B20003E34CB /* BackGroundImageForIphoneXsMaxVar2.png */; };
 		BF849E0722C25B20003E34CB /* BackGroundImageForIphone8PlusVar2.png in Resources */ = {isa = PBXBuildFile; fileRef = BF849E0522C25B20003E34CB /* BackGroundImageForIphone8PlusVar2.png */; };
-		BF85D54423935EB1005E564B /* SellectInternetStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85D54323935EB1005E564B /* SellectInternetStageViewController.swift */; };
+		BF85D54423935EB1005E564B /* UsingStageDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85D54323935EB1005E564B /* UsingStageDatas.swift */; };
 		BF85D54623935FDE005E564B /* ExSellectInternetStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85D54523935FDE005E564B /* ExSellectInternetStageViewController.swift */; };
 		BF85D54823937BD1005E564B /* ExSellectInternetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85D54723937BD1005E564B /* ExSellectInternetVC.swift */; };
 		BF89479422B9FCDC0014596B /* PieceStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89479322B9FCDC0014596B /* PieceStoreViewController.swift */; };
@@ -1065,7 +1065,7 @@
 		BF849E0122C0CAA0003E34CB /* BackGroundImageForIphone8Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackGroundImageForIphone8Plus.png; sourceTree = "<group>"; };
 		BF849E0422C25B20003E34CB /* BackGroundImageForIphoneXsMaxVar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackGroundImageForIphoneXsMaxVar2.png; sourceTree = "<group>"; };
 		BF849E0522C25B20003E34CB /* BackGroundImageForIphone8PlusVar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackGroundImageForIphone8PlusVar2.png; sourceTree = "<group>"; };
-		BF85D54323935EB1005E564B /* SellectInternetStageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectInternetStageViewController.swift; sourceTree = "<group>"; };
+		BF85D54323935EB1005E564B /* UsingStageDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingStageDatas.swift; sourceTree = "<group>"; };
 		BF85D54523935FDE005E564B /* ExSellectInternetStageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSellectInternetStageViewController.swift; sourceTree = "<group>"; };
 		BF85D54723937BD1005E564B /* ExSellectInternetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSellectInternetVC.swift; sourceTree = "<group>"; };
 		BF89479322B9FCDC0014596B /* PieceStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceStoreViewController.swift; sourceTree = "<group>"; };
@@ -2193,7 +2193,7 @@
 		BF85D54223935E7A005E564B /* SellectInternetStage */ = {
 			isa = PBXGroup;
 			children = (
-				BF85D54323935EB1005E564B /* SellectInternetStageViewController.swift */,
+				BF85D54323935EB1005E564B /* UsingStageDatas.swift */,
 				BF7F44BF2394DC3B0004CE60 /* PlayStageInfo.swift */,
 				BF85D54523935FDE005E564B /* ExSellectInternetStageViewController.swift */,
 				BFADC63D23A4866200AC6768 /* ExSellectForSegmentedControl.swift */,
@@ -3678,7 +3678,7 @@
 				BF552F36226DDF1C00756E16 /* H46.swift in Sources */,
 				BF552EC4226DDD7B00756E16 /* E49.swift in Sources */,
 				BFF889A7229FC86A0056A839 /* ButtonColorManager.swift in Sources */,
-				BF85D54423935EB1005E564B /* SellectInternetStageViewController.swift in Sources */,
+				BF85D54423935EB1005E564B /* UsingStageDatas.swift in Sources */,
 				BF332FF222492827009B3042 /* H13.swift in Sources */,
 				BFE0AB1A235AC04B003B2C58 /* ExCreateStageVC.swift in Sources */,
 				BF552E9A226DDD1400756E16 /* E28.swift in Sources */,
