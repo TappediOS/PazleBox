@@ -82,10 +82,10 @@ class InterNetSellect: UIView {
       self.PlayCountNumLabel.text = String(PlayCount)
    }
    
-   //TODO:- "にさくせいされました"をローカライズすること。
-   //TODO:- その後にyymmddが他の言語で正しく表示されるかを確認すること
+   //TODO:- yymmddが他の言語で正しく表示されるかを確認すること
    private func InitDateLabel(_ addDate: String) {
-      self.DateLabel.text = addDate + " にさくせいされました"
+      let CreateDay = NSLocalizedString("CreatedDate", comment: "")
+      self.DateLabel.text = CreateDay + addDate
    }
      
    private func InitPlayButton() {
