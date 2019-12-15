@@ -20,8 +20,10 @@ import TwicketSegmentedControl
 
 class SellectInternetStageViewController: UIViewController {
    
+   //こいつにCollectionVeiwで表示するやつを入れる。
    var UsingStageDatas: [([String: Any])] = Array()
    
+   //それぞれFirestoreでとってきてだいにゅうする。
    var LatestStageDatas: [([String: Any])] = Array()
    var RatedStageDatas: [([String: Any])] = Array()
    var PlayCountStageDatas: [([String: Any])] = Array()
@@ -29,6 +31,7 @@ class SellectInternetStageViewController: UIViewController {
    var PiceArray: [PiceInfo] = Array()
    var StageArray: [[Contents]] = Array()
    
+   //Firestoreからどれだけとってくるかのやつ。
    let MaxGetStageNumFormDataBase = 30
    
    var db: Firestore!
@@ -56,14 +59,11 @@ class SellectInternetStageViewController: UIViewController {
       InitViewSetting()
       
       SetUpFireStoreSetting()
-      
-      //GetALLStageDataFromDataBase()
-      
+            
       //最新，評価，回数でそれぞれ取得する
       GetLatestStageDataFromDataBase()
       GetRatedStageDataFromDataBase()
       GetPlayCountStageDataFromDataBase()
-      
       
       InitBackButton()
       
@@ -73,16 +73,11 @@ class SellectInternetStageViewController: UIViewController {
       InitAccessibilityIdentifires()
       
       InitNotificationCenter()
-      
-      
-      
-
    }
    
    override func viewWillAppear(_ animated: Bool) {
       print("ステージ選択できる状態にします。")
       CanSellectStage = true
-      //GetALLStageDataFromDataBase()
    }
    
    private func InitViewSetting() {
@@ -99,89 +94,8 @@ class SellectInternetStageViewController: UIViewController {
    }
    
    
-   /// ドキュメントからデータを読み込み配列として返す関数
-   /// - Parameter document: forぶんでDocを回したときに呼び出す。
-   private func GetRawData(document: DocumentSnapshot) -> ([String: Any]) {
-      var StageData: [String: Any] =  ["documentID": document.documentID]
-      var maxPiceNum: Int = 1
-      
-      if let value = document["ReviewAve"] as? CGFloat {
-         StageData.updateValue(value, forKey: "ReviewAve")
-      }
-      
-      if let value = document["PlayCount"] as? Int {
-         StageData.updateValue(value, forKey: "PlayCount")
-      }
-      
-      if let value = document["ReviewCount"] as? Int {
-         StageData.updateValue(value, forKey: "ReviewCount")
-      }
-      
-      if let value = document["addUser"] as? String {
-         StageData.updateValue(value, forKey: "addUser")
-      }
-      
-      if let value = document["addDate"] as? Timestamp {
-         let date: Date = value.dateValue()
-         
-         let formatter = DateFormatter()
-         formatter.dateStyle = .short
-         formatter.timeStyle = .none
-         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: .current)!
-         let dataAsString: String = formatter.string(from: date)
-         //print(dataAsString)
-         //NOTE:- String型で保存されていることに注意！
-         StageData.updateValue((dataAsString), forKey: "addDate")
-      }
-      
-      if let value = document["MaxPiceNum"] as? Int {
-         StageData.updateValue(value, forKey: "MaxPiceNum")
-         maxPiceNum = value
-      }
-      
-      if let value = document["ImageData"] as? Data {
-         StageData.updateValue(value, forKey: "ImageData")
-      }
-      
-      for tmp in 1 ... 12 {
-         let FieldName = "Field" + String(tmp)
-         if let value = document[FieldName] as? Array<Int> {
-            StageData.updateValue(value, forKey: FieldName)
-         }
-      }
-      
-      for tmp in 1 ... maxPiceNum {
-         let PiceName = "PiceInfo" + String(tmp)
-         if let value = document[PiceName] as? Array<Any> {
-            StageData.updateValue(value, forKey: PiceName)
-         }
-      }
-      
-      for data in StageData {
-         //print("\(data.key) -> \(data.value)")
-      }
-      
-      return StageData
-   }
    
-   //データベースからデータゲットして配列に格納
-   private func GetALLStageDataFromDataBase() {
-      db.collection("Stages").getDocuments() { (querySnapshot, err) in
-         if let err = err {
-            print("データベースからのデータ取得エラー: \(err)")
-         } else {
-            for document in querySnapshot!.documents {
-               self.LatestStageDatas.append(self.GetRawData(document: document))
-            }
-         }
-         
-         //読み取りが終わってからデリゲードを入れる必要がある
-         self.StageCollectionView.delegate = self
-         self.StageCollectionView.dataSource = self
-      }
-   }
-   
-   
+
    //MARK:- 最新，回数，評価それぞれのデータを取得する。
    private func GetLatestStageDataFromDataBase() {
       print("Latestデータの取得開始")

@@ -18,10 +18,19 @@ import SCLAlertView
 
 class SellectCreateStageViewController: UIViewController {
    
-   let SavedStageDataBase = UserCreateStageDataBase()
+   //let SavedStageDataBase = UserCreateStageDataBase()
+   
+   //こいつにCollectionVeiwで表示するやつを入れる。
+   var UsingStageDatas: [([String: Any])] = Array()
+   
+   
    
    var PiceArray: [PiceInfo] = Array()
    var StageArray: [[Contents]] = Array()
+   
+   //Firestoreからどれだけとってくるかのやつ。
+   let MaxGetStageNumFormDataBase = 30
+   var db: Firestore!
    
    @IBOutlet weak var StageCollectionView: UICollectionView!
    //こいつがCollecti on viewのレイアウトを決めている
@@ -35,6 +44,8 @@ class SellectCreateStageViewController: UIViewController {
    
    let HeroID = HeroIDs()
    let GameSound = GameSounds()
+   
+   var PlayStageData = PlayStageRefInfo()
       
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -43,8 +54,10 @@ class SellectCreateStageViewController: UIViewController {
       self.hero.isEnabled = true
       
       self.StageCollectionView.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
-      self.StageCollectionView.delegate = self
-      self.StageCollectionView.dataSource = self
+      
+      SetUpFireStoreSetting()
+      //自分の取得する
+      GetMyStageDataFromDataBase()
       
       InitBackButton()
       InitHeroID()
@@ -58,9 +71,44 @@ class SellectCreateStageViewController: UIViewController {
       CanSellectStage = true
    }
    
+   private func SetUpFireStoreSetting() {
+      let settings = FirestoreSettings()
+      Firestore.firestore().settings = settings
+      db = Firestore.firestore()
+   }
+   
    private func  InitAccessibilityIdentifires() {
       StageCollectionView?.accessibilityIdentifier = "SellectCreateStageVC_StageCollectionView"
       BackButton?.accessibilityIdentifier = "SellectCreateStageVC_BackButton"
+   }
+   
+   
+   
+
+   //MARK:- 最新，回数，評価それぞれのデータを取得する。
+   private func GetMyStageDataFromDataBase() {
+      print("myデータの取得開始")
+      db.collection("Stages")
+         .order(by: "addDate", descending: true)
+         .limit(to: MaxGetStageNumFormDataBase)
+         .getDocuments() { (querySnapshot, err) in
+      if let err = err {
+         print("データベースからのデータ取得エラー: \(err)")
+      } else {
+         for document in querySnapshot!.documents {
+            //GetRawData()はEXファイルに存在している。
+            self.UsingStageDatas.append(self.GetRawData(document: document))
+         }
+      }
+         print("myデータの取得完了")
+         //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
+         //Segmentタップした時に別の関数でCollecti onVie をリロードする。
+         print("Delegate設定します。")
+         
+         //読み取りが終わってからデリゲードを入れる必要がある
+         self.StageCollectionView.delegate = self
+         self.StageCollectionView.dataSource = self
+      }
    }
    
    private func InitBackButton() {
@@ -155,7 +203,7 @@ class SellectCreateStageViewController: UIViewController {
    }
     
    private func DeleteCell(CellNum: Int) {
-      SavedStageDataBase.DeleteUserCreateStageDataBase(at: CellNum)
+      
       self.StageCollectionView.reloadData()
       
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: true)
@@ -167,11 +215,12 @@ class SellectCreateStageViewController: UIViewController {
    /// Collection ViewのCellがタップされた後にステージ情報を取得する関数
    /// - Parameter CellNum: セル番号
    func LoadStageInfomation(CellNum: Int) {
-      let PiceList = SavedStageDataBase.GetPiceFromDataNumberASList(DataNum: CellNum)
-      let FieldYList = SavedStageDataBase.GetFieldYFromDataNumberASList(DataNum: CellNum)
       //EXファイルに存在している
-      PiceArray = GetPiceArrayFromPiceList(PiceList: PiceList)
-      StageArray = GetPiceArrayFromPiceList(FieldYList: FieldYList)
+      //Usingの配列を使用してどデータのやり取りをする。
+      //Segmentのでりゲードを利用して変更するべきである。
+      PiceArray = GetPiceArrayFromDataBase(StageDic: UsingStageDatas[CellNum])
+      StageArray = GetPiceArrayFromDataBase(StageDic: UsingStageDatas[CellNum])
+      PlayStageData = GetPlayStageInfoFromDataBase(StageDic: UsingStageDatas[CellNum])
    }
    
    /// GameVCをプレゼントする関数
@@ -180,6 +229,7 @@ class SellectCreateStageViewController: UIViewController {
 
       GameVC.LoadPiceArray(PiceArray: PiceArray)
       GameVC.LoadStageArray(StageArray: StageArray)
+      GameVC.LoadPlayStageData(RefID: PlayStageData.RefID, stageDataForNoDocExsist: self.PlayStageData)
       GameVC.modalPresentationStyle = .fullScreen
       //HomeViewに対してBGMを消してって通知を送る
       NotificationCenter.default.post(name: .StopHomeViewBGM, object: nil, userInfo: nil)

@@ -2958,10 +2958,10 @@
             filePath = "PazleBox/GameFile/SellectCreateStage/SellectCreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "SellectCreateStageViewController"
-            landmarkType = "3">
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "InitBackButton()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3038,8 +3038,8 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/ExSellectInternetVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "GetPiceArrayFromDataBase(StageDic:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3054,8 +3054,8 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/ExSellectInternetVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "GetPiceArrayFromDataBase(StageDic:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3070,8 +3070,8 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/ExSellectInternetVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "GetPiceArrayFromDataBase(StageDic:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3150,9 +3150,9 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/UsingStageDatas.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
-            landmarkName = "GetLatestStageDataFromDataBase()"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "InitSegmentedControl()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3166,9 +3166,9 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/UsingStageDatas.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
-            landmarkName = "GetLatestStageDataFromDataBase()"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "InitSegmentedControl()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

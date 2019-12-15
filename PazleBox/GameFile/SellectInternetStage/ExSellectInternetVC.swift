@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 //データを取得するExtention集
 extension SellectInternetStageViewController {
@@ -79,6 +80,71 @@ extension SellectInternetStageViewController {
       stageInfo.ReviewAve = reviewAve
       
       return stageInfo
+   }
+   
+   /// ドキュメントからデータを読み込み配列として返す関数
+   /// - Parameter document: forぶんでDocを回したときに呼び出す。
+   func GetRawData(document: DocumentSnapshot) -> ([String: Any]) {
+      var StageData: [String: Any] =  ["documentID": document.documentID]
+      var maxPiceNum: Int = 1
+      
+      if let value = document["ReviewAve"] as? CGFloat {
+         StageData.updateValue(value, forKey: "ReviewAve")
+      }
+      
+      if let value = document["PlayCount"] as? Int {
+         StageData.updateValue(value, forKey: "PlayCount")
+      }
+      
+      if let value = document["ReviewCount"] as? Int {
+         StageData.updateValue(value, forKey: "ReviewCount")
+      }
+      
+      if let value = document["addUser"] as? String {
+         StageData.updateValue(value, forKey: "addUser")
+      }
+      
+      if let value = document["addDate"] as? Timestamp {
+         let date: Date = value.dateValue()
+         
+         let formatter = DateFormatter()
+         formatter.dateStyle = .short
+         formatter.timeStyle = .none
+         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: .current)!
+         let dataAsString: String = formatter.string(from: date)
+         //print(dataAsString)
+         //NOTE:- String型で保存されていることに注意！
+         StageData.updateValue((dataAsString), forKey: "addDate")
+      }
+      
+      if let value = document["MaxPiceNum"] as? Int {
+         StageData.updateValue(value, forKey: "MaxPiceNum")
+         maxPiceNum = value
+      }
+      
+      if let value = document["ImageData"] as? Data {
+         StageData.updateValue(value, forKey: "ImageData")
+      }
+      
+      for tmp in 1 ... 12 {
+         let FieldName = "Field" + String(tmp)
+         if let value = document[FieldName] as? Array<Int> {
+            StageData.updateValue(value, forKey: FieldName)
+         }
+      }
+      
+      for tmp in 1 ... maxPiceNum {
+         let PiceName = "PiceInfo" + String(tmp)
+         if let value = document[PiceName] as? Array<Any> {
+            StageData.updateValue(value, forKey: PiceName)
+         }
+      }
+      
+      for data in StageData {
+         //print("\(data.key) -> \(data.value)")
+      }
+      
+      return StageData
    }
 }
 
