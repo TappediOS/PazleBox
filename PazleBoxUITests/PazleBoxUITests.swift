@@ -88,13 +88,34 @@ class PazleBoxUITests: XCTestCase {
       snapshot("TapCellInCreateStageVC")
    }
    
+   //CreateStageVCでCollectionView cell をタップしたときの表示テスト
+   func testCreateStage_2_InCreateStageVC() {
+      let app = XCUIApplication()
+      app.buttons["TopVC_CreateButton"].tap()
+      app.buttons["CreateHomeVC_CreateStageButton"].tap()
+      let cell = app.collectionViews["CleateStageVC_collectionView"].cells.element(boundBy: 2)
+      cell.tap()
+      let greenView = app.images["GreenPiceImageView"]
+      greenView.tap()
+      app.buttons["CleateStageVC_FinishCreatePuzzleButton"].tap()
+      
+      snapshot("１回ボタン押したとき")
+      
+      let finButton = app.buttons["CleateStageVC_FinishChouseResPuzzleButton"]
+      
+      
+      greenView.press(forDuration: 0.5, thenDragTo: finButton)
+      
+      snapshot("初期位置に移動したとき")
+   }
+   
    //ゴミ箱タップしたときの表示テスト
    func testTapTrashImageViewInCreateStageVC() {
       let app = XCUIApplication()
       app.buttons["TopVC_CreateButton"].tap()
       app.buttons["CreateHomeVC_CreateStageButton"].tap()
       app.images["CleateStageVC_TrashImageView"].tap()
-      snapshot("TapTrashImageView")
+      snapshot("ゴミ箱タップしたときの表示テスト")
    }
    
    //オプションボタン押したときの表示テスト

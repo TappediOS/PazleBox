@@ -533,6 +533,10 @@ class CleateStageViewController: UIViewController {
       RedPiceImageView.SetUPAlphaImageView()
       BluePiceImageView.SetUPAlphaImageView()
       
+      GreenPiceImageView.accessibilityIdentifier = "GreenPiceImageView"
+      RedPiceImageView.accessibilityIdentifier = "RedPiceImageView"
+      BluePiceImageView.accessibilityIdentifier = "BluePiceImageView"
+      
       view.addSubview(GreenPiceImageView)
       view.addSubview(RedPiceImageView)
       view.addSubview(BluePiceImageView)

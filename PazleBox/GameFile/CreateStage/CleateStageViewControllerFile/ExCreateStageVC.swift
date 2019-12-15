@@ -23,7 +23,6 @@ extension CleateStageViewController: UICollectionViewDataSource {
       for subview in cell.contentView.subviews{
          subview.removeFromSuperview()
       }
-      print("セルの生成します \(indexPath.item)")
    
       let ImageView = UIImageView()
       ImageView.frame = cell.contentView.frame
@@ -57,11 +56,13 @@ extension CleateStageViewController: UICollectionViewDataSource {
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
       print("Cell tap \(indexPath.item)")
       ///もしCellタップしたときにOnViewがあったら全部消す。
+      Play3DtouchLight()
       guard isLockColleViewANDTrashPice == false else {
          print("Locked")
          return
       }
       collectionView.reloadData()
+      GameSound.PlaySoundsTapButton()
       RemoveAllFromWorkArry()
       TappedCell(CellNum: indexPath.item)
    }

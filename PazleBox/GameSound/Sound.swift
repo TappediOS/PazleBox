@@ -191,7 +191,7 @@ class GameSounds {
          self.audioPlayer5.volume = 0
          self.audioPlayer5.stop()
          self.audioPlayer5.currentTime = 0
-         self.audioPlayer5.volume = self.SoundVolume
+         self.audioPlayer5.volume = self.SoundVolume / 2.5
          self.audioPlayer5.play()
    
       }
