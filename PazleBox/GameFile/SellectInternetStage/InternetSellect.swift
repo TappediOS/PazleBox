@@ -35,7 +35,7 @@ class InterNetSellect: UIView {
    
    var isLockedPlayButton = false
    
-   init(frame: CGRect, Image: UIImage, CellNum: Int, PlayCount: Int, ReviewAve: CGFloat) {
+   init(frame: CGRect, Image: UIImage, CellNum: Int, PlayCount: Int, ReviewAve: CGFloat, addDate: String) {
       super.init(frame: frame)
       
       if #available(iOS 13.0, *) {
@@ -48,6 +48,7 @@ class InterNetSellect: UIView {
       InitView()
       InitRatedNumLabel(ReviewAve)
       InitPlayCountNumLabel(PlayCount)
+      InitDateLabel(addDate)
       InitPlayButton()
       InitCloseButton()
       InitImageView(Image: Image)
@@ -79,6 +80,10 @@ class InterNetSellect: UIView {
    
    private func InitPlayCountNumLabel(_ PlayCount: Int) {
       self.PlayCountNumLabel.text = String(PlayCount)
+   }
+   
+   private func InitDateLabel(_ addDate: String) {
+      self.DateLabel.text = addDate + "にさくせいされました"
    }
      
    private func InitPlayButton() {

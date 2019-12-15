@@ -125,8 +125,16 @@ class SellectInternetStageViewController: UIViewController {
       
       //FIXME:- これはなんか取得できてない
       if let value = document["addDate"] as? Timestamp {
-         print(value.dateValue())
-         StageData.updateValue(value.dateValue(), forKey: "addDate")
+         let date: Date = value.dateValue()
+         
+         let formatter = DateFormatter()
+         formatter.dateStyle = .short
+         formatter.timeStyle = .none
+         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: .current)!
+         let dataAsString: String = formatter.string(from: date)
+         print(dataAsString)
+         //NOTE:- String型で保存されていることに注意！
+         StageData.updateValue((dataAsString), forKey: "addDate")
       }
       
       if let value = document["MaxPiceNum"] as? Int {
