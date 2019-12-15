@@ -85,11 +85,13 @@ class SellectCreateStageViewController: UIViewController {
    
    
 
-   //MARK:- 最新，回数，評価それぞれのデータを取得する。
+   //MARK:- 自分のステージデータを取得する。
    private func GetMyStageDataFromDataBase() {
-      print("myデータの取得開始")
+      print("自分のデータの取得開始")
+      let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
+      print("UID = \(uid)")
       db.collection("Stages")
-         .order(by: "addDate", descending: true)
+         .whereField("addUser", isEqualTo: uid)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
       if let err = err {
@@ -178,12 +180,14 @@ class SellectCreateStageViewController: UIViewController {
       }
    }
    
+   
    @objc func TapCloseButtonCatchNotification(notification: Notification) -> Void {
       print("TapCloseButton Catch Notification")
       self.GameSound.PlaySoundsTapButton()
       CanSellectStage = true
    }
    
+   //TODO:- ローカライズしろよ
    private func  ShowDeleteView(CellNum: Int) {
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
       let ComleateView = SCLAlertView(appearance: Appearanse)
@@ -191,7 +195,7 @@ class SellectCreateStageViewController: UIViewController {
       ComleateView.addButton(NSLocalizedString("Delete", comment: "")){
          self.Play3DtouchHeavy()
          self.GameSound.PlaySoundsTapButton()
-         self.DeleteCell(CellNum: CellNum)
+         self.DeleteDocumentForFireStore(CellNum: CellNum)
          ComleateView.removeFromParent()
       }
       ComleateView.addButton(NSLocalizedString("Cancel", comment: "")){
@@ -202,14 +206,32 @@ class SellectCreateStageViewController: UIViewController {
       ComleateView.showWarning("ステージの削除", subTitle: "削除したステージは復元できません")
    }
     
-   private func DeleteCell(CellNum: Int) {
+   //MARK:- FireStoreからデータを削除する関数
+   //TODO:- ローカライズしろよ
+   private func DeleteDocumentForFireStore(CellNum: Int) {
       
-      self.StageCollectionView.reloadData()
+      let docID = UsingStageDatas[CellNum]["documentID"] as! String
+      let addUser = UsingStageDatas[CellNum]["addUser"] as! String
+      print("\n\n---データの削除開始---\n\n")
+      print("docID = \(docID)")
+      print("addUser = \(addUser)")
+      print("uid = \(String(describing: UserDefaults.standard.string(forKey: "UID")))")
       
-      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: true)
-      let ComleateView = SCLAlertView(appearance: Appearanse)
-      ComleateView.showSuccess("Success", subTitle: "ステージ削除完了")
-      self.CanSellectStage = true
+      db.collection("Stages").document(docID).delete() { err in
+         if let err = err {
+            print("\n削除するのにエラーが発生:\n\(err)")
+            self.CanSellectStage = true
+            return
+         }else {
+            print("削除成功しました。")
+            self.UsingStageDatas.remove(at: CellNum)
+            self.StageCollectionView.reloadData()
+            let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: true)
+            let ComleateView = SCLAlertView(appearance: Appearanse)
+            ComleateView.showSuccess("Success", subTitle: "ステージ削除完了")
+            self.CanSellectStage = true
+         }
+      }
    }
    
    /// Collection ViewのCellがタップされた後にステージ情報を取得する関数

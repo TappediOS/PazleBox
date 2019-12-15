@@ -2958,8 +2958,8 @@
             filePath = "PazleBox/GameFile/SellectCreateStage/SellectCreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "InitBackButton()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3152,7 +3152,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "116"
             endingLineNumber = "116"
-            landmarkName = "InitSegmentedControl()"
+            landmarkName = "GetLatestStageDataFromDataBase()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3168,7 +3168,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
             endingLineNumber = "117"
-            landmarkName = "InitSegmentedControl()"
+            landmarkName = "GetLatestStageDataFromDataBase()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
