@@ -29,20 +29,8 @@ class PazleBoxUITests: XCTestCase {
       snapshot("TopVC")
    }
    
-   //contact us button　押したときにちゃんと表示されるかのテスト
-   func testTapContactUsButton() {
-      let app = XCUIApplication()
-      app.buttons["TopVC_ContactusButton"].tap()
-      snapshot("TapContactUsButton")
-   }
-   
-   //ShowRankingButton押したときのテスト
-   func testTapShowRankingViewButton() {
-      let app = XCUIApplication()
-      app.buttons["TopVC_ShowRankingViewButton"].tap()
-      snapshot("TapShowRankingButton")
-   }
-   
+
+
    //CreateHomeVCの表示テスト
    func testCreateHomeVC() {
       let app = XCUIApplication()
@@ -124,7 +112,7 @@ class PazleBoxUITests: XCTestCase {
       app.buttons["TopVC_CreateButton"].tap()
       app.buttons["CreateHomeVC_CreateStageButton"].tap()
       app.buttons["CleateStageVC_OptionButton"].tap()
-      snapshot("TapOptionButton")
+      snapshot("オプションボタン押したときの表示テスト")
    }
 
    //ピースがおかれてないときにFinボタンタップされたときの表示テスト
@@ -133,7 +121,7 @@ class PazleBoxUITests: XCTestCase {
       app.buttons["TopVC_CreateButton"].tap()
       app.buttons["CreateHomeVC_CreateStageButton"].tap()
       app.buttons["CleateStageVC_FinishCreatePuzzleButton"].tap()
-      snapshot("TapFinFinishCreatePuzzleButton")
+      snapshot("ピースがおかれてないときにFinボタンタップされたときの表示テスト")
    }
    
    //SellectStageVCの表示テスト

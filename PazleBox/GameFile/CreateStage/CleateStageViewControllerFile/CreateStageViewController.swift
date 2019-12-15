@@ -67,14 +67,16 @@ class CleateStageViewController: UIViewController {
    var DontMoveNodeNum = 0
    var ShouldMoveNodeNum = 0
    
-   let photos = ["33p7Red", "33p21Blue","43p27Green","43p10Red","23p5Red",
-   "43p34Green","43p19Red","43p12Red","23p12Green","23p11Red",
-   "43p26Blue", "33p8Green","43p8Green","43p5Blue","43p41Green",
-   "32p12Blue","43p16Red","43p32Blue","43p25Red","43p14Red",
+   
+   //いま対応してるのは，23,32,33,43,
+   let photos = ["33p7Red", "33p21Blue","23p13Green","43p10Red","23p5Red",
+   "23p14Green","43p19Red","33p34Red","23p12Green","23p11Red",
+   "43p26Blue", "33p8Green","43p8Green","33p25Blue","33p28Green",
+   "32p12Blue","32p3Red","43p32Blue","33p33Red","32p5Red",
    "33p3Blue", "33p23Green","43p21Green","43p26Blue","43p28Blue",
-   "33p34Red","43p35Green","43p36Red","43p25Blue","43p31Green",
-   "33p16Blue", "33p11Red","43p7Red","23p7Green","32p3Red",
-   "43p34Blue","43p19Green","43p12Red","23p12Blue","43p14Green"]
+   "33p34Red","43p35Green","23p4Red","33p1Blue","32p13Green",
+   "33p16Blue", "33p11Red","33p38Red","23p7Green","32p3Red",
+   "43p34Blue","32p2Green","32p10Red","23p12Blue","43p14Green"]
    
    let sectionInsets = UIEdgeInsets(top: 0, left: 17, bottom: 0, right: -17)
    let itemsPerRow: CGFloat = 1 //Cellを横に何個入れるか
@@ -87,6 +89,10 @@ class CleateStageViewController: UIViewController {
    let GameSound = GameSounds()
    
    var BackGroundImageView: BackGroundImageViews?
+   
+   //MARK:- Piceがおける最大値
+   let MaxCanPutPiceNum = 7
+   var isMaxPutPice = false
       
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -339,6 +345,10 @@ class CleateStageViewController: UIViewController {
    
    //指話したときにゴミ箱の上やったから削除する関数
    private func DeletePiceOnGarbageBox(SentNum: Int) {
+      if PiceImageArray.count == MaxCanPutPiceNum {
+         isMaxPutPice = false
+         collectionView.alpha = 1
+      }
       PiceImageArray[SentNum].removeFromSuperview()
       PiceImageArray.remove(at: SentNum)
       Play3DtouchSuccess()
@@ -389,6 +399,13 @@ class CleateStageViewController: UIViewController {
             }
          }else{
             PiceImageArray[SentNum].UpdateBeforXY()
+            
+            //置くときに最大なら置けなくする。
+            if PiceImageArray.count == MaxCanPutPiceNum {
+               isMaxPutPice = true
+               collectionView.alpha = 0.45
+            }
+            
          }
    
          CrearCheckedStage()

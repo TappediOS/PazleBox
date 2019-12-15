@@ -57,6 +57,12 @@ extension CleateStageViewController: UICollectionViewDataSource {
       print("Cell tap \(indexPath.item)")
       ///もしCellタップしたときにOnViewがあったら全部消す。
       Play3DtouchLight()
+      
+      guard isMaxPutPice == false else {
+         print("最大です。")
+         return
+      }
+      
       guard isLockColleViewANDTrashPice == false else {
          print("Locked")
          return
