@@ -8,12 +8,16 @@
 
 import Foundation
 import TwicketSegmentedControl
+import TapticEngine
 
 extension SellectInternetStageViewController: TwicketSegmentedControlDelegate {
    
    func didSelect(_ segmentIndex: Int) {
-      
-      
+      Play3DtouchMedium()
+      guard CanSellectStage == true else {
+         print("Segment Controllできません。")
+         return
+      }
       
       print("Selected index: \(segmentIndex)")
       
@@ -32,6 +36,5 @@ extension SellectInternetStageViewController: TwicketSegmentedControlDelegate {
       }
       
       self.StageCollectionView.reloadData()
-      
    }
 }

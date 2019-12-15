@@ -20,8 +20,6 @@ import TwicketSegmentedControl
 
 class SellectInternetStageViewController: UIViewController {
    
-   let SavedStageDataBase = UserCreateStageDataBase()
-   
    var UsingStageDatas: [([String: Any])] = Array()
    
    var LatestStageDatas: [([String: Any])] = Array()
@@ -31,7 +29,7 @@ class SellectInternetStageViewController: UIViewController {
    var PiceArray: [PiceInfo] = Array()
    var StageArray: [[Contents]] = Array()
    
-   let MaxGetStageNumFormDataBase = 15
+   let MaxGetStageNumFormDataBase = 30
    
    var db: Firestore!
 
@@ -320,21 +318,7 @@ class SellectInternetStageViewController: UIViewController {
       }
    }
    
-   @objc func TapDeleteButtonCatchNotification(notification: Notification) -> Void {
-      print("TapDeleteButton Catch Notification")
-      if let userInfo = notification.userInfo {
-         let SentNum = userInfo["CellNum"] as! Int
-         print("送信されたCellNum: \(SentNum)")
-         
-         ShowDeleteView(CellNum: SentNum)
-         
-         GameSound.PlaySoundsTapButton()
-         
-         
-      }else{
-         print("誰が来たからからない")
-      }
-   }
+
    
    @objc func TapCloseButtonCatchNotification(notification: Notification) -> Void {
       print("TapCloseButton Catch Notification")
@@ -342,34 +326,8 @@ class SellectInternetStageViewController: UIViewController {
       CanSellectStage = true
    }
    
-   private func  ShowDeleteView(CellNum: Int) {
-      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
-      let ComleateView = SCLAlertView(appearance: Appearanse)
+  
 
-      ComleateView.addButton(NSLocalizedString("Delete", comment: "")){
-         self.Play3DtouchHeavy()
-         self.GameSound.PlaySoundsTapButton()
-         self.DeleteCell(CellNum: CellNum)
-         ComleateView.removeFromParent()
-      }
-      ComleateView.addButton(NSLocalizedString("Cancel", comment: "")){
-         self.Play3DtouchHeavy()
-         ComleateView.removeFromParent()
-         self.CanSellectStage = true
-      }
-      ComleateView.showWarning("ステージの削除", subTitle: "削除したステージは復元できません")
-   }
-   
-   //MARK:- 削除するのをFirestoreにする
-   private func DeleteCell(CellNum: Int) {
-      SavedStageDataBase.DeleteUserCreateStageDataBase(at: CellNum)
-      self.StageCollectionView.reloadData()
-      
-      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: true)
-      let ComleateView = SCLAlertView(appearance: Appearanse)
-      ComleateView.showSuccess("Success", subTitle: "ステージ削除完了")
-      self.CanSellectStage = true
-   }
    
    /// Collection ViewのCellがタップされた後にステージ情報を取得する関数
    /// - Parameter CellNum: セル番号
