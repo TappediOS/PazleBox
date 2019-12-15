@@ -33,7 +33,7 @@ class InterNetSellect: UIView {
    let ButtonShadowOpacity: Float = 0.6
    let ButtonCornerRadius: CGFloat = 7
    
-   var isLockedPlayButton = false
+   var isLockedPlayAndCloseButton = false
    
    init(frame: CGRect, Image: UIImage, CellNum: Int, PlayCount: Int, ReviewAve: CGFloat, addDate: String) {
       super.init(frame: frame)
@@ -127,13 +127,13 @@ class InterNetSellect: UIView {
    @IBAction func TapPlayButton(_ sender: Any) {
       print("Tap Internet PlayButton")
       
-      guard isLockedPlayButton == false else {
+      guard isLockedPlayAndCloseButton == false else {
          Play3DtouchLight()
          print("プレイボタンはロックされています。")
          return
       }
       
-      isLockedPlayButton = true
+      isLockedPlayAndCloseButton = true
       
       let SentObject: [String : Int] = ["CellNum": CellNum]
       NotificationCenter.default.post(name: .TapPlayButton, object: nil, userInfo: SentObject)
@@ -144,6 +144,11 @@ class InterNetSellect: UIView {
    }
    
    @IBAction func TapCloseButton(_ sender: Any) {
+      guard isLockedPlayAndCloseButton == false else {
+         Play3DtouchLight()
+         print("各ボタンはロックされています。")
+         return
+      }
       print("Tap CloseButton")
       self.removeFromSuperview()
       Play3DtouchLight()
