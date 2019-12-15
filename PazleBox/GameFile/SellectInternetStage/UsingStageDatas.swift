@@ -184,11 +184,11 @@ class SellectInternetStageViewController: UIViewController {
    }
    
    
-   //FIXME:- 最新データでない可能性がある。
+   //MARK:- 最新，回数，評価それぞれのデータを取得する。
    private func GetLatestStageDataFromDataBase() {
       print("Latestデータの取得開始")
       db.collection("Stages")
-         .order(by: "addDate")
+         .order(by: "addDate", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
       if let err = err {
@@ -212,8 +212,8 @@ class SellectInternetStageViewController: UIViewController {
    
    private func GetRatedStageDataFromDataBase() {
       print("Ratedデータの取得開始")
-      db.collection("Stages").whereField("ReviewAve", isGreaterThan: 1)
-         .order(by: "ReviewAve")
+      db.collection("Stages").whereField("ReviewAve", isGreaterThanOrEqualTo: 0)
+         .order(by: "ReviewAve", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
          if let err = err {
@@ -232,8 +232,8 @@ class SellectInternetStageViewController: UIViewController {
    
    private func GetPlayCountStageDataFromDataBase(){
       print("PlayCountデータの取得開始")
-      db.collection("Stages").whereField("PlayCount", isGreaterThan: 1)
-         .order(by: "PlayCount")
+      db.collection("Stages").whereField("PlayCount", isGreaterThanOrEqualTo: 0)
+         .order(by: "PlayCount", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
       if let err = err {
