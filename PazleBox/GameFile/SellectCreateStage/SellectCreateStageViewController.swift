@@ -29,7 +29,7 @@ class SellectCreateStageViewController: UIViewController {
    var StageArray: [[Contents]] = Array()
    
    //Firestoreからどれだけとってくるかのやつ。
-   let MaxGetStageNumFormDataBase = 30
+   let MaxGetStageNumFormDataBase = 21
    var db: Firestore!
    
    @IBOutlet weak var StageCollectionView: UICollectionView!
