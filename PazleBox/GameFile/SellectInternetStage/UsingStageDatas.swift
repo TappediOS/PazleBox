@@ -123,7 +123,6 @@ class SellectInternetStageViewController: UIViewController {
          StageData.updateValue(value, forKey: "addUser")
       }
       
-      //FIXME:- これはなんか取得できてない
       if let value = document["addDate"] as? Timestamp {
          let date: Date = value.dateValue()
          
@@ -132,7 +131,7 @@ class SellectInternetStageViewController: UIViewController {
          formatter.timeStyle = .none
          formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: .current)!
          let dataAsString: String = formatter.string(from: date)
-         print(dataAsString)
+         //print(dataAsString)
          //NOTE:- String型で保存されていることに注意！
          StageData.updateValue((dataAsString), forKey: "addDate")
       }
