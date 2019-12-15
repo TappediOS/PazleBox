@@ -46,37 +46,37 @@ class PazleBoxUITests: XCTestCase {
       snapshot("CreateStageVC")
    }
    
-   //CreateStageVCでCollectionViewの表示テスト
+   //InterNet表示する
    func testShowInternetViewController() {
       let app = XCUIApplication()
       app.buttons["TopVC_CreateButton"].tap()
       app.buttons["CreateHomeVC_InternetUsersStageButton"].tap()
-      snapshot("show Internet vc")
+      snapshot("InterNet表示する")
    }
    
-   //CreateStageVCでCollectionView cell をタップしたときの表示テスト
+   //InterNetでcellをタップしたとき
    func testTapInternetViewControllerCell() {
       let app = XCUIApplication()
       app.buttons["TopVC_CreateButton"].tap()
       app.buttons["CreateHomeVC_InternetUsersStageButton"].tap()
       let cell = app.collectionViews["SellectInternetStageVC_StageCollectionView"].cells.element(boundBy: 2)
       cell.tap()
-      snapshot("tap cell internet vc")
+      snapshot("InterNetでcellをタップしたとき")
    }
    
    
    
-   //CreateStageVCでCollectionView cell をタップしたときの表示テスト
+   //作るでcellをタップしたときの表示テスト
    func testTapCollectionViewCell_2_InCreateStageVC() {
       let app = XCUIApplication()
       app.buttons["TopVC_CreateButton"].tap()
       app.buttons["CreateHomeVC_CreateStageButton"].tap()
       let cell = app.collectionViews["CleateStageVC_collectionView"].cells.element(boundBy: 2)
       cell.tap()
-      snapshot("TapCellInCreateStageVC")
+      snapshot("作るでcellをタップしたとき")
    }
    
-   //CreateStageVCでCollectionView cell をタップしたときの表示テスト
+   //作ってみるとき
    func testCreateStage_2_InCreateStageVC() {
       let app = XCUIApplication()
       app.buttons["TopVC_CreateButton"].tap()

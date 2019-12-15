@@ -70,6 +70,8 @@ class Firestores {
 //         print("value: \(value)\n")
 //      }
       
+      
+      
       // Add a new document with a generated id.
       var ref: DocumentReference? = nil
       ref = db.collection("Stages").addDocument(data: docData) { err in
