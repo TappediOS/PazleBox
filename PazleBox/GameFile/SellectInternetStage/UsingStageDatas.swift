@@ -187,7 +187,9 @@ class SellectInternetStageViewController: UIViewController {
    //FIXME:- 最新データでない可能性がある。
    private func GetLatestStageDataFromDataBase() {
       print("Latestデータの取得開始")
-      db.collection("Stages").limit(to: MaxGetStageNumFormDataBase)
+      db.collection("Stages")
+         .order(by: "addDate")
+         .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
       if let err = err {
          print("データベースからのデータ取得エラー: \(err)")
@@ -210,7 +212,7 @@ class SellectInternetStageViewController: UIViewController {
    
    private func GetRatedStageDataFromDataBase() {
       print("Ratedデータの取得開始")
-      db.collection("Stages").whereField("ReviewAve", isGreaterThan: 2)
+      db.collection("Stages").whereField("ReviewAve", isGreaterThan: 1)
          .order(by: "ReviewAve")
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
@@ -230,7 +232,7 @@ class SellectInternetStageViewController: UIViewController {
    
    private func GetPlayCountStageDataFromDataBase(){
       print("PlayCountデータの取得開始")
-      db.collection("Stages").whereField("PlayCount", isGreaterThan: 2)
+      db.collection("Stages").whereField("PlayCount", isGreaterThan: 1)
          .order(by: "PlayCount")
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
@@ -257,7 +259,7 @@ class SellectInternetStageViewController: UIViewController {
    //TODO:- frameを変更すること。
    //TODO:- タイトルの名前をローカライズすること。
    private func InitSegmentedControl() {
-      let titles = ["Rated", "Play Count", "Latest"]
+      let titles = ["Latest", "Play Count", "Rated"]
       let frame = CGRect(x: 5, y: 57, width: view.frame.width - 10, height: 40)
 
       let segmentedControl = TwicketSegmentedControl(frame: frame)
