@@ -15,6 +15,7 @@ import FlatUIKit
 import Hero
 import Firebase
 import SCLAlertView
+import NVActivityIndicatorView
 
 class SellectCreateStageViewController: UIViewController {
    
@@ -46,6 +47,8 @@ class SellectCreateStageViewController: UIViewController {
    let GameSound = GameSounds()
    
    var PlayStageData = PlayStageRefInfo()
+   
+   var LoadActivityView: NVActivityIndicatorView?
       
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -60,6 +63,7 @@ class SellectCreateStageViewController: UIViewController {
       GetMyStageDataFromDataBase()
       
       InitBackButton()
+      InitLoadActivityView()
       InitHeroID()
       InitAccessibilityIdentifires()
       
@@ -80,6 +84,28 @@ class SellectCreateStageViewController: UIViewController {
    private func  InitAccessibilityIdentifires() {
       StageCollectionView?.accessibilityIdentifier = "SellectCreateStageVC_StageCollectionView"
       BackButton?.accessibilityIdentifier = "SellectCreateStageVC_BackButton"
+   }
+   
+   private func InitLoadActivityView() {
+      let Viewsize = self.view.frame.width / 10
+      let StartX = self.view.frame.width / 10 * 9 - Viewsize / 2
+      let StartY = self.view.frame.height - 55 - Viewsize * 1.5
+      let Rect = CGRect(x: StartX, y: StartY, width: Viewsize, height: Viewsize)
+      LoadActivityView = NVActivityIndicatorView(frame: Rect, type: .ballSpinFadeLoader, color: UIColor.flatMint(), padding: 0)
+      self.view.addSubview(LoadActivityView!)
+   }
+   
+   //MARK:- ローディングアニメーション再生
+   private func StartLoadingAnimation() {
+      print("ローディングアニメーション再生")
+      self.LoadActivityView?.startAnimating()
+      return
+   }
+   
+   public func StopLoadingAnimation() {
+      if LoadActivityView?.isAnimating == true {
+         self.LoadActivityView?.stopAnimating()
+      }
    }
    
    
