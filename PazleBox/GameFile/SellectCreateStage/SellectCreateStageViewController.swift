@@ -87,9 +87,10 @@ class SellectCreateStageViewController: UIViewController {
    }
    
    private func InitLoadActivityView() {
-      let Viewsize = self.view.frame.width / 10
-      let StartX = self.view.frame.width / 10 * 9 - Viewsize / 2
-      let StartY = self.view.frame.height - 55 - Viewsize * 1.5
+      let spalete: CGFloat = 9 //横幅 viewWide / X　になる。
+      let Viewsize = self.view.frame.width / spalete
+      let StartX = self.view.frame.width / spalete * (spalete - 1) - Viewsize * 0.35
+      let StartY = self.view.frame.height - Viewsize - Viewsize * 0.35
       let Rect = CGRect(x: StartX, y: StartY, width: Viewsize, height: Viewsize)
       LoadActivityView = NVActivityIndicatorView(frame: Rect, type: .ballSpinFadeLoader, color: UIColor.flatMint(), padding: 0)
       self.view.addSubview(LoadActivityView!)
@@ -103,6 +104,7 @@ class SellectCreateStageViewController: UIViewController {
    }
    
    public func StopLoadingAnimation() {
+      print("ローディングアニメーション停止")
       if LoadActivityView?.isAnimating == true {
          self.LoadActivityView?.stopAnimating()
       }
@@ -120,22 +122,29 @@ class SellectCreateStageViewController: UIViewController {
          .whereField("addUser", isEqualTo: uid)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
-      if let err = err {
-         print("データベースからのデータ取得エラー: \(err)")
-      } else {
-         for document in querySnapshot!.documents {
-            //GetRawData()はEXファイルに存在している。
-            self.UsingStageDatas.append(self.GetRawData(document: document))
-         }
-      }
-         print("myデータの取得完了")
-         //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
-         //Segmentタップした時に別の関数でCollecti onVie をリロードする。
-         print("Delegate設定します。")
-         
-         //読み取りが終わってからデリゲードを入れる必要がある
-         self.StageCollectionView.delegate = self
-         self.StageCollectionView.dataSource = self
+            
+            //ローディングアニメーションの再生。
+            self.StartLoadingAnimation()
+            
+            if let err = err {
+               print("データベースからのデータ取得エラー: \(err)")
+            } else {
+               for document in querySnapshot!.documents {
+                  //GetRawData()はEXファイルに存在している。
+                  self.UsingStageDatas.append(self.GetRawData(document: document))
+               }
+            }
+            print("myデータの取得完了")
+            //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
+            //Segmentタップした時に別の関数でCollecti onVie をリロードする。
+            print("Delegate設定します。")
+            
+            //読み取りが終わってからデリゲードを入れる必要がある
+            self.StageCollectionView.delegate = self
+            self.StageCollectionView.dataSource = self
+            
+            //ローディングアニメーションの停止。
+            self.StopLoadingAnimation()
       }
    }
    

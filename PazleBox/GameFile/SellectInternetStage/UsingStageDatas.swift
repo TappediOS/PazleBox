@@ -98,9 +98,10 @@ class SellectInternetStageViewController: UIViewController {
    }
    
    private func InitLoadActivityView() {
-      let Viewsize = self.view.frame.width / 10
-      let StartX = self.view.frame.width / 10 * 9 - Viewsize / 2
-      let StartY = self.view.frame.height - 55 - Viewsize * 1.5
+      let spalete: CGFloat = 9 //横幅 viewWide / X　になる。
+      let Viewsize = self.view.frame.width / spalete
+      let StartX = self.view.frame.width / spalete * (spalete - 1) - Viewsize * 0.35
+      let StartY = self.view.frame.height - Viewsize - Viewsize * 0.35
       let Rect = CGRect(x: StartX, y: StartY, width: Viewsize, height: Viewsize)
       LoadActivityView = NVActivityIndicatorView(frame: Rect, type: .ballSpinFadeLoader, color: UIColor.flatMint(), padding: 0)
       self.view.addSubview(LoadActivityView!)
@@ -114,12 +115,11 @@ class SellectInternetStageViewController: UIViewController {
    }
    
    public func StopLoadingAnimation() {
+      print("ローディングアニメーション停止")
       if LoadActivityView?.isAnimating == true {
          self.LoadActivityView?.stopAnimating()
       }
    }
-   
-   
    
 
    //MARK:- 最新，回数，評価それぞれのデータを取得する。
@@ -129,6 +129,10 @@ class SellectInternetStageViewController: UIViewController {
          .order(by: "addDate", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
+            
+            //ローディングアニメーションの再生。
+            self.StartLoadingAnimation()
+            
             if let err = err {
                print("データベースからのデータ取得エラー: \(err)")
             } else {
@@ -136,15 +140,19 @@ class SellectInternetStageViewController: UIViewController {
                   self.LatestStageDatas.append(self.GetRawData(document: document))
                }
             }
-               print("Latestデータの取得完了")
-               //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
-               //Segmentタップした時に別の関数でCollecti onVie をリロードする。
-               self.UsingStageDatas = self.LatestStageDatas
-               print("Delegate設定します。")
+
+            print("Latestデータの取得完了")
+            //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
+            //Segmentタップした時に別の関数でCollecti onVie をリロードする。
+            self.UsingStageDatas = self.LatestStageDatas
+            print("Delegate設定します。")
                
-               //読み取りが終わってからデリゲードを入れる必要がある
-               self.StageCollectionView.delegate = self
-               self.StageCollectionView.dataSource = self
+            //読み取りが終わってからデリゲードを入れる必要がある
+            self.StageCollectionView.delegate = self
+            self.StageCollectionView.dataSource = self
+            
+             //ローディングアニメーションの停止
+            self.StopLoadingAnimation()
       }
    }
    
@@ -162,10 +170,10 @@ class SellectInternetStageViewController: UIViewController {
                   self.RatedStageDatas.append(self.GetRawData(document: document))
                }
             }
-         //ここでは必要な配列を作っただけで何もする必要はない。
-         //ここで作った配列(self.LatestStageDatas)
-         //はSegmentタップされたときにUsingStageDataに代入してリロードすればいい。
-         print("Ratedデータの取得完了")
+            //ここでは必要な配列を作っただけで何もする必要はない。
+            //ここで作った配列(self.LatestStageDatas)
+            //はSegmentタップされたときにUsingStageDataに代入してリロードすればいい。
+            print("Ratedデータの取得完了")
       }
    }
    
@@ -182,10 +190,10 @@ class SellectInternetStageViewController: UIViewController {
                   self.PlayCountStageDatas.append(self.GetRawData(document: document))
                }
             }
-         //ここでは必要な配列を作っただけで何もする必要はない。
-         //ここで作った配列(self.LatestStageDatas)
-         //はSegmentタップされたときにUsingStageDataに代入してリロードすればいい。
-         print("PlayCountデータの取得完了")
+            //ここでは必要な配列を作っただけで何もする必要はない。
+            //ここで作った配列(self.LatestStageDatas)
+            //はSegmentタップされたときにUsingStageDataに代入してリロードすればいい。
+            print("PlayCountデータの取得完了")
       }
    }
    
