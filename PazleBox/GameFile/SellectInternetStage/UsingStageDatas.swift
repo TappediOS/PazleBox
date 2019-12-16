@@ -60,6 +60,7 @@ class SellectInternetStageViewController: UIViewController {
       
       
       InitViewSetting()
+      InitLoadActivityView()
       
       SetUpFireStoreSetting()
             
@@ -69,7 +70,7 @@ class SellectInternetStageViewController: UIViewController {
       GetPlayCountStageDataFromDataBase()
       
       InitBackButton()
-      InitLoadActivityView()
+      
       
       InitSegmentedControl()
       
@@ -125,13 +126,14 @@ class SellectInternetStageViewController: UIViewController {
    //MARK:- 最新，回数，評価それぞれのデータを取得する。
    private func GetLatestStageDataFromDataBase() {
       print("Latestデータの取得開始")
+      //ローディングアニメーションの再生。
+      self.StartLoadingAnimation()
       db.collection("Stages")
          .order(by: "addDate", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
             
-            //ローディングアニメーションの再生。
-            self.StartLoadingAnimation()
+            
             
             if let err = err {
                print("データベースからのデータ取得エラー: \(err)")

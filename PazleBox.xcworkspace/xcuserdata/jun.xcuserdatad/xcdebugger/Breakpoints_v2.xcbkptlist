@@ -3214,8 +3214,8 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/UsingStageDatas.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "GetLatestStageDataFromDataBase()"
             landmarkType = "7">
          </BreakpointContent>
