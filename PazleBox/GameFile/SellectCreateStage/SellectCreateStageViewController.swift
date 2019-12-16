@@ -71,6 +71,29 @@ class SellectCreateStageViewController: UIViewController {
       InitNotificationCenter()
    }
    
+   //safeArea取得するために必要。
+   override func viewDidLayoutSubviews() {
+      super.viewDidLayoutSubviews()
+      SNPSBackButton()
+   }
+   
+   //MARK:- SNPの設定。
+   func SNPSBackButton() {
+      BackButton!.snp.makeConstraints{ make in
+         let Height:CGFloat = 35
+         make.height.equalTo(Height)
+         make.width.equalTo(Height * 2.2)
+         make.leading.equalTo(self.view.snp.leading).offset(10)
+         if #available(iOS 11, *) {
+            print("safeArea.top = \(self.view.safeAreaInsets.top)")
+            make.top.equalTo(self.view.snp.top).offset(self.view.safeAreaInsets.top + 3)
+         } else {
+            //iOS11以下は，X系が存在していない。
+            make.top.equalTo(self.view.snp.top).offset(20)
+         }
+      }
+   }
+   
    override func viewWillAppear(_ animated: Bool) {
       print("ステージ選択できる状態にします。")
       CanSellectStage = true

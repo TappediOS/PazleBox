@@ -17,6 +17,7 @@ import Firebase
 import SCLAlertView
 import TwicketSegmentedControl
 import NVActivityIndicatorView
+import SnapKit
 
 class SellectInternetStageViewController: UIViewController {
    
@@ -54,12 +55,15 @@ class SellectInternetStageViewController: UIViewController {
    var PlayStageData = PlayStageRefInfo()
    
    var LoadActivityView: NVActivityIndicatorView?
+   
+   var segmentedControl: TwicketSegmentedControl?
       
    override func viewDidLoad() {
       super.viewDidLoad()
       
       
       InitViewSetting()
+     
       InitLoadActivityView()
       
       SetUpFireStoreSetting()
@@ -69,15 +73,53 @@ class SellectInternetStageViewController: UIViewController {
       GetRatedStageDataFromDataBase()
       GetPlayCountStageDataFromDataBase()
       
+      
       InitBackButton()
-      
-      
       InitSegmentedControl()
+      
+      
       
       InitHeroID()
       InitAccessibilityIdentifires()
       
       InitNotificationCenter()
+   }
+   
+   //safeArea取得するために必要。
+   override func viewDidLayoutSubviews() {
+      super.viewDidLayoutSubviews()
+   
+      SNPSBackButton()
+      SNPSegment()
+   }
+   
+   //MARK:- SNPの設定。
+   func SNPSBackButton() {
+      BackButton!.snp.makeConstraints{ make in
+         let Height:CGFloat = 35
+         make.height.equalTo(Height)
+         make.width.equalTo(Height * 2.2)
+         make.leading.equalTo(self.view.snp.leading).offset(10)
+         if #available(iOS 11, *) {
+            print("safeArea.top = \(self.view.safeAreaInsets.top)")
+            make.top.equalTo(self.view.snp.top).offset(self.view.safeAreaInsets.top + 3)
+         } else {
+            //iOS11以下は，X系が存在していない。
+            make.top.equalTo(self.view.snp.top).offset(20)
+         }
+      }
+   }
+   
+   
+   func SNPSegment() {
+      segmentedControl!.snp.makeConstraints{ make in
+         let Height:CGFloat = 35
+         
+         make.height.equalTo(Height)
+         make.leading.equalTo(self.view.snp.leading).offset(5)
+         make.width.equalTo(self.view.frame.width - 10)
+         make.top.equalTo((self.BackButton?.snp.bottom)!).offset(4.5)
+      }
    }
    
    override func viewWillAppear(_ animated: Bool) {
@@ -200,17 +242,18 @@ class SellectInternetStageViewController: UIViewController {
       BackButton?.accessibilityIdentifier = "SellectInternetStageVC_BackButton"
    }
    
+   //MARK:- セグメントのInit
    //TODO:- frameを変更すること。
    //TODO:- タイトルの名前をローカライズすること。
    private func InitSegmentedControl() {
       let titles = ["Latest", "Play Count", "Rated"]
       let frame = CGRect(x: 5, y: 57, width: view.frame.width - 10, height: 40)
 
-      let segmentedControl = TwicketSegmentedControl(frame: frame)
-      segmentedControl.setSegmentItems(titles)
-      segmentedControl.delegate = self
+      segmentedControl = TwicketSegmentedControl(frame: frame)
+      segmentedControl?.setSegmentItems(titles)
+      segmentedControl?.delegate = self
 
-      view.addSubview(segmentedControl)
+      view.addSubview(segmentedControl!)
    }
    
    private func InitBackButton() {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -73,7 +73,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ik9-aM-wke">
-                                <rect key="frame" x="0.0" y="89" width="414" height="807"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="802"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Az1-BX-dXG">
                                     <size key="itemSize" width="95" height="138"/>
@@ -104,7 +104,7 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ik9-aM-wke" secondAttribute="bottom" id="4Mr-zO-KZc"/>
                             <constraint firstItem="ik9-aM-wke" firstAttribute="trailing" secondItem="R78-Xq-M2U" secondAttribute="trailing" id="WOF-tN-FJv"/>
-                            <constraint firstItem="ik9-aM-wke" firstAttribute="top" secondItem="R78-Xq-M2U" secondAttribute="top" constant="45" id="d64-VL-Zxy"/>
+                            <constraint firstItem="ik9-aM-wke" firstAttribute="top" secondItem="R78-Xq-M2U" secondAttribute="top" constant="50" id="d64-VL-Zxy"/>
                             <constraint firstItem="ik9-aM-wke" firstAttribute="leading" secondItem="R78-Xq-M2U" secondAttribute="leading" id="oMY-h6-V2y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R78-Xq-M2U"/>
@@ -189,7 +189,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pku-El-I2i">
-                                <rect key="frame" x="0.0" y="89" width="414" height="807"/>
+                                <rect key="frame" x="0.0" y="129" width="414" height="767"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Y5m-Ya-psF">
                                     <size key="itemSize" width="95" height="138"/>
@@ -220,7 +220,7 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Pku-El-I2i" secondAttribute="bottom" id="Aaz-g7-TxP"/>
                             <constraint firstItem="Pku-El-I2i" firstAttribute="leading" secondItem="vqM-kn-SVX" secondAttribute="leading" id="iHm-op-wq7"/>
-                            <constraint firstItem="Pku-El-I2i" firstAttribute="top" secondItem="vqM-kn-SVX" secondAttribute="top" constant="45" id="unf-SM-ybd"/>
+                            <constraint firstItem="Pku-El-I2i" firstAttribute="top" secondItem="vqM-kn-SVX" secondAttribute="top" constant="85" id="unf-SM-ybd"/>
                             <constraint firstItem="Pku-El-I2i" firstAttribute="trailing" secondItem="vqM-kn-SVX" secondAttribute="trailing" id="yuf-4X-oIr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vqM-kn-SVX"/>
