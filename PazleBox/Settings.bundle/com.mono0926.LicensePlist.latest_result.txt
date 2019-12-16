@@ -191,6 +191,10 @@ name: Protobuf, nameSpecified:
 body: Copyright 2008 Googl…
 version: 3.10.0
 
+name: ReachabilitySwift, nameSpecified: 
+body: Copyright (c) 2016 A…
+version: 5.0.0
+
 name: Realm, nameSpecified: 
 body: TABLE OF CONTENTS
 

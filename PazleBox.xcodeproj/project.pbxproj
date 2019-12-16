@@ -258,6 +258,7 @@
 		BF640C0D224513DF00333782 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF640C0C224513DF00333782 /* HomeViewController.swift */; };
 		BF67C2A5235DB9D200EBFB00 /* ExCreateStageDidLayoutSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67C2A4235DB9D200EBFB00 /* ExCreateStageDidLayoutSubviews.swift */; };
 		BF67C2A8235EB70800EBFB00 /* ExCreateStageInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67C2A7235EB70800EBFB00 /* ExCreateStageInit.swift */; };
+		BF6B60CD23A787D8002FD8A1 /* NetworkCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6B60CC23A787D8002FD8A1 /* NetworkCheck.swift */; };
 		BF72916C2361866E00E8D947 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF72916E2361866E00E8D947 /* InfoPlist.strings */; };
 		BF7291742365A85E00E8D947 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7291732365A85E00E8D947 /* SnapshotHelper.swift */; };
 		BF73C2F22349C03F00745C7F /* UserCreateStageDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F12349C03F00745C7F /* UserCreateStageDB.swift */; };
@@ -1006,6 +1007,7 @@
 		BF640C0C224513DF00333782 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BF67C2A4235DB9D200EBFB00 /* ExCreateStageDidLayoutSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCreateStageDidLayoutSubviews.swift; sourceTree = "<group>"; };
 		BF67C2A7235EB70800EBFB00 /* ExCreateStageInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCreateStageInit.swift; sourceTree = "<group>"; };
+		BF6B60CC23A787D8002FD8A1 /* NetworkCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCheck.swift; sourceTree = "<group>"; };
 		BF72916D2361866E00E8D947 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BF72916F2361867600E8D947 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		BF7291702361867800E8D947 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -2037,6 +2039,7 @@
 		BF73C2F6234B316A00745C7F /* UserStageSecenAndVC */ = {
 			isa = PBXGroup;
 			children = (
+				BF6B60CC23A787D8002FD8A1 /* NetworkCheck.swift */,
 				BF73C2F9234B31A200745C7F /* UsersGameViewController.swift */,
 				BF73C2F7234B319200745C7F /* UsersGameScene.swift */,
 			);
@@ -3513,6 +3516,7 @@
 				BF332FCA224927BA009B3042 /* N14.swift in Sources */,
 				BFF6D790228FC9F2000253A2 /* ExUIViewController.swift in Sources */,
 				BF332FAA22492719009B3042 /* E18.swift in Sources */,
+				BF6B60CD23A787D8002FD8A1 /* NetworkCheck.swift in Sources */,
 				BF332FC8224927B4009B3042 /* N13.swift in Sources */,
 				BF552F0C226DDE9F00756E16 /* H25.swift in Sources */,
 				BF332FCC224927BF009B3042 /* N15.swift in Sources */,

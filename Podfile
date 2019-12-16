@@ -42,6 +42,8 @@ target 'PazleBox' do
 
   pod 'TwicketSegmentedControl'
 
+  pod 'ReachabilitySwift'
+
 end
 
 target 'PazleBoxTests' do

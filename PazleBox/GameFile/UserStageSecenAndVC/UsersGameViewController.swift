@@ -63,6 +63,8 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    
    var db: Firestore = Firestore.firestore()
    
+   let networkChecker = NetworkCheck()
+   
    //スワイプ無効にするやつ
    @available(iOS 11, *)
    override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge{
@@ -353,9 +355,9 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       let RefID = PlayStageData.RefID
       let ThisStageReview = ClearView!.GetReView()
       let StageReviewAve = PlayStageData.ReviewAve
-      let playCount = PlayStageData.PlayCount
+      //let playCount = PlayStageData.PlayCount
       let reviewCount = PlayStageData.ReviewCount
-      let Ref = db.collection("Stages").document(RefID)
+      //let Ref = db.collection("Stages").document(RefID)
       
       print("FireStoreにReview送信開始")
       print("RefID = \(RefID)")
@@ -364,6 +366,17 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
          print("\nステージレビューをしていません")
          self.GoBackViewController()
          return
+      }
+      
+      print("\n---ネットーワーク状況---")
+      
+      
+      if networkChecker.isOnline() == false {
+         print("オフラインです。\n")
+         self.GoBackViewController()
+         return
+      }else{
+         print("オンラインです。\n")
       }
       
       if let count = reviewCount, let reviAve = StageReviewAve {

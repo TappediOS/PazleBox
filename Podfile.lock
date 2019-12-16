@@ -182,6 +182,7 @@ PODS:
     - NVActivityIndicatorView/Presenter (= 4.8.0)
   - NVActivityIndicatorView/Presenter (4.8.0)
   - Protobuf (3.10.0)
+  - ReachabilitySwift (5.0.0)
   - Realm (3.20.0):
     - Realm/Headers (= 3.20.0)
   - Realm/Headers (3.20.0)
@@ -212,6 +213,7 @@ DEPENDENCIES:
   - LicensePlist
   - lottie-ios
   - NVActivityIndicatorView
+  - ReachabilitySwift
   - RealmSwift
   - SAConfettiView (from `https://github.com/gokhanakkurt/SAConfettiView`, branch `swift3`)
   - SCLAlertView
@@ -260,6 +262,7 @@ SPEC REPOS:
     - nanopb
     - NVActivityIndicatorView
     - Protobuf
+    - ReachabilitySwift
     - Realm
     - RealmSwift
     - SCLAlertView
@@ -317,6 +320,7 @@ SPEC CHECKSUMS:
   nanopb: 06f6030d554e6473f5e172460173fcf80f5548f4
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Realm: 8b2ca5bc6479a91f379b6b42b5922e396cd5ba5a
   RealmSwift: 1949ef26a279e1845bd51d591b9103adfcd121df
   SAConfettiView: c87031a2280659261b730fce3669fb10e73636ee
@@ -328,6 +332,6 @@ SPEC CHECKSUMS:
   TwicketSegmentedControl: 6d7a4cf243657e0ac3f00d06d873a25334c04042
   ViewAnimator: 5af1c6f3b310f012bf081259c43717aa54fbae73
 
-PODFILE CHECKSUM: 14863aef1e3d7943ff3f8596ef0bed1af0f000ee
+PODFILE CHECKSUM: e227e0e7d5eab83d1f760ce5fc1dab51a0abc916
 
 COCOAPODS: 1.8.4
