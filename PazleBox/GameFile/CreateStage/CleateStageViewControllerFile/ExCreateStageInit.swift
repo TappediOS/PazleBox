@@ -31,12 +31,15 @@ extension CleateStageViewController {
        print("BackView開始のY座標は　\(StartBackImageViewY)")
     }
     
-     func InitNotification() {
+    func InitNotification() {
        NotificationCenter.default.addObserver(self, selector: #selector(PiceUpPiceImageView(notification:)), name: .PickUpPiceImageView, object: nil)
        NotificationCenter.default.addObserver(self, selector: #selector(MovedPiceCatchNotification(notification:)), name: .PiceMoved, object: nil)
        NotificationCenter.default.addObserver(self, selector: #selector(PiceTouchStartCatchNotification(notification:)), name: .PiceTouchStarted, object: nil)
        NotificationCenter.default.addObserver(self, selector: #selector(PiceTouchMovedCatchNotification(notification:)), name: .PiceTouchMoved, object: nil)
        NotificationCenter.default.addObserver(self, selector: #selector(PiceTouchEndedCatchNotification(notification:)), name: .PiceTouchEnded, object: nil)
+      
+       NotificationCenter.default.addObserver(self, selector: #selector(ErrSentStageCatchNotification(notification:)), name: .ErrSentStageToFireStore, object: nil)
+       NotificationCenter.default.addObserver(self, selector: #selector(SuccessSentStagePiceTouchEndedCatchNotification(notification:)), name: .SuccessSentStageToFireStore, object: nil)
     }
     
      func InitFinishCreatePuzzleButton() {

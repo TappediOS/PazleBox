@@ -77,9 +77,22 @@ class Firestores {
       ref = db.collection("Stages").addDocument(data: docData) { err in
          if let err = err {
             print("\nError adding document: \(err)\n")
+            self.sentErrSetntStageToFireStore()
          } else {
             print("\n\nDocument added with ID: \(ref!.documentID)\n")
+            self.sentErrSetntStageToFireStore()
+            //self.sentSuccessSentStageToFireStore()
          }
       }
    }
+   
+   private func sentErrSetntStageToFireStore () {
+      NotificationCenter.default.post(name: .ErrSentStageToFireStore, object: nil, userInfo: nil)
+   }
+   
+   private func sentSuccessSentStageToFireStore() {
+      NotificationCenter.default.post(name: .SuccessSentStageToFireStore, object: nil, userInfo: nil)
+   }
+   
+  
 }

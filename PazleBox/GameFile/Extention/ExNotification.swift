@@ -42,4 +42,8 @@ extension Notification.Name {
    static let TapPlayButton = Notification.Name("TapPlayButton")
    static let TapDeleteButton  = Notification.Name("TapDeleteButton")
    static let TapCloseButton = Notification.Name("TapCloseButton")
+   
+   
+   static let ErrSentStageToFireStore = Notification.Name("ErrSentStageToFireStore")
+   static let SuccessSentStageToFireStore = Notification.Name("SuccessSentStageToFireStore")
 }

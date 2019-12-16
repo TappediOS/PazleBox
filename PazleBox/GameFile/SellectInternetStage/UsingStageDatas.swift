@@ -164,6 +164,18 @@ class SellectInternetStageViewController: UIViewController {
       }
    }
    
+   //TODO:-　ローカライズすること
+   private func ShowErrGetStageAlertView() {
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      ComleateView.addButton("OK"){
+         ComleateView.dismiss(animated: true)
+         self.Play3DtouchHeavy()
+         self.GameSound.PlaySoundsTapButton()
+      }
+      ComleateView.showError("err", subTitle: "データの取得にに失敗しました。\nネットワーク確認してください。")
+   }
+   
 
    //MARK:- 最新，回数，評価それぞれのデータを取得する。
    private func GetLatestStageDataFromDataBase() {
@@ -175,7 +187,10 @@ class SellectInternetStageViewController: UIViewController {
          .getDocuments() { (querySnapshot, err) in
             if let err = err {
                print("データベースからのデータ取得エラー: \(err)")
+               self.Play3DtouchError()
+               self.ShowErrGetStageAlertView()
             } else {
+               self.Play3DtouchSuccess()
                for document in querySnapshot!.documents {
                   self.LatestStageDatas.append(self.GetRawData(document: document))
                }
@@ -348,5 +363,7 @@ class SellectInternetStageViewController: UIViewController {
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
    func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
    func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
+   func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
+   func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
 }
 

@@ -14,6 +14,7 @@ import FlatUIKit
 import SnapKit
 import SCLAlertView
 import Firebase
+import NVActivityIndicatorView
 
 class CleateStageViewController: UIViewController {
    
@@ -67,6 +68,9 @@ class CleateStageViewController: UIViewController {
    var DontMoveNodeNum = 0
    var ShouldMoveNodeNum = 0
    
+   //くるくる回るview
+   var LoadActivityView: NVActivityIndicatorView?
+   
    
    //いま対応してるのは，23,32,33,43,
    let photos = ["33p7Red", "33p21Blue","23p13Green","43p10Red","23p5Red",
@@ -112,6 +116,8 @@ class CleateStageViewController: UIViewController {
       InitTrashView()
       InitOptionButton()
       InitInfoLabel()
+      
+      InitLoadActivityView()
       
       InitOnPiceView()
       
@@ -201,6 +207,30 @@ class CleateStageViewController: UIViewController {
       for tmp in PiceImageArray {
          print("PiceImageView.selfName = \(tmp.selfName)")
          print("-> (X , Y) = (\(String(describing: tmp.PositionX)) , \(String(describing: tmp.PositionY)))")
+      }
+   }
+   
+   private func InitLoadActivityView() {
+      let spalete: CGFloat = 9 //横幅 viewWide / X　になる。
+      let Viewsize = self.view.frame.width / spalete
+      let StartX = self.view.frame.width / spalete * (spalete - 1) - Viewsize * 0.45
+      let StartY = self.view.frame.height - Viewsize - Viewsize * 0.45
+      let Rect = CGRect(x: StartX, y: StartY, width: Viewsize, height: Viewsize)
+      LoadActivityView = NVActivityIndicatorView(frame: Rect, type: .ballSpinFadeLoader, color: UIColor.flatMint(), padding: 0)
+      self.view.addSubview(LoadActivityView!)
+   }
+   
+   //MARK:- ローディングアニメーション再生
+   private func StartLoadingAnimation() {
+      print("ローディングアニメーション再生")
+      self.LoadActivityView?.startAnimating()
+      return
+   }
+   
+   public func StopLoadingAnimation() {
+      print("ローディングアニメーション停止")
+      if LoadActivityView?.isAnimating == true {
+         self.LoadActivityView?.stopAnimating()
       }
    }
    
@@ -695,9 +725,6 @@ class CleateStageViewController: UIViewController {
       Play3DtouchHeavy()
       GameSound.PlaySoundsTapButton()
       
-      FinishChouseResPuzzleButton?.isHidden = true
-      
-      
       SaveStageUserCreated()
    }
    
@@ -731,6 +758,13 @@ class CleateStageViewController: UIViewController {
    
    //MARK:- 保存する関数
    private func SaveStageUserCreated() {
+      
+      //ローディングアニメーション開始
+      //止める時は，下の2つの関数のいずれかで停止。
+      // ErrSentStageCatchNotification()
+      // SuccessSentStagePiceTouchEndedCatchNotification()
+      self.StartLoadingAnimation()
+      
       let SaveDataBase = UserCreateStageDataBase()
       let ImageData: NSData = SaveStageViewUseScreenshot()
       
@@ -743,12 +777,38 @@ class CleateStageViewController: UIViewController {
       FireStore.AddStageData(StageArrayForContents: FillContentsArray, MaxPiceNum: PiceImageArray.count,
                              PiceArry: PiceImageArray, ImageData: ImageData)
       
-      ShowCompleteSaveAlertView()
-      Analytics.logEvent("CreateStageCount", parameters: nil)
       
    }
-
    
+   @objc func ErrSentStageCatchNotification(notification: Notification) -> Void {
+      print("Errした通知受け取った。")
+      StopLoadingAnimation()
+      Play3DtouchSuccess()
+      ShowErrSentFireStoreSaveAlertView()
+      Analytics.logEvent("ErrCleateStageCount", parameters: nil)
+   }
+   
+   @objc func SuccessSentStagePiceTouchEndedCatchNotification(notification: Notification) -> Void {
+      print("成功した通知受け取った。")
+      StopLoadingAnimation()
+      Play3DtouchError()
+      ShowCompleteSaveAlertView()
+      Analytics.logEvent("CreateStageCount", parameters: nil)
+   }
+
+   //TODO:-　ローカライズすること
+   private func ShowErrSentFireStoreSaveAlertView() {
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      ComleateView.addButton("OK"){
+         self.dismiss(animated: true)
+         self.Play3DtouchHeavy()
+         self.GameSound.PlaySoundsTapButton()
+      }
+      ComleateView.showError("err", subTitle: "保存に失敗しました。\nネットワーク確認してください。")
+   }
+   
+   //TODO:-　ローカライズすること
    private func ShowCompleteSaveAlertView() {
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
       let ComleateView = SCLAlertView(appearance: Appearanse)
@@ -757,7 +817,7 @@ class CleateStageViewController: UIViewController {
          self.Play3DtouchHeavy()
          self.GameSound.PlaySoundsTapButton()
       }
-      ComleateView.showSuccess(NSLocalizedString("Saved", comment: ""), subTitle: "")
+      ComleateView.showSuccess(NSLocalizedString("Saved", comment: "保存成功しました。"), subTitle: "")
    }
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
