@@ -821,7 +821,7 @@ class CleateStageViewController: UIViewController {
          self.Play3DtouchHeavy()
          self.GameSound.PlaySoundsTapButton()
       }
-      ComleateView.showSuccess(NSLocalizedString("Saved", comment: "保存成功しました。"), subTitle: "")
+      ComleateView.showSuccess(NSLocalizedString("Saved", comment: ""), subTitle: "保存成功しました。")
    }
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
