@@ -278,6 +278,7 @@ class SellectCreateStageViewController: UIViewController {
    //MARK:- FireStoreからデータを削除する関数
    //TODO:- ローカライズしろよ
    private func DeleteDocumentForFireStore(CellNum: Int) {
+      self.StartLoadingAnimation()
       
       let docID = UsingStageDatas[CellNum]["documentID"] as! String
       let addUser = UsingStageDatas[CellNum]["addUser"] as! String
@@ -289,18 +290,45 @@ class SellectCreateStageViewController: UIViewController {
       db.collection("Stages").document(docID).delete() { err in
          if let err = err {
             print("\n削除するのにエラーが発生:\n\(err)")
+            self.ShowErrDeleteStageInStoreSaveAlertView()
+            self.StopLoadingAnimation()
             self.CanSellectStage = true
             return
          }else {
             print("削除成功しました。")
             self.UsingStageDatas.remove(at: CellNum)
             self.StageCollectionView.reloadData()
-            let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: true)
-            let ComleateView = SCLAlertView(appearance: Appearanse)
-            ComleateView.showSuccess("Success", subTitle: "ステージ削除完了")
+            self.ShowSuccDeleteStageInStoreSaveAlertView()
+            self.StopLoadingAnimation()
             self.CanSellectStage = true
          }
       }
+   }
+   
+   //TODO:-　ローカライズすること
+   private func ShowErrDeleteStageInStoreSaveAlertView() {
+      Play3DtouchError()
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      ComleateView.addButton("OK"){
+         self.dismiss(animated: true)
+         self.Play3DtouchHeavy()
+         self.GameSound.PlaySoundsTapButton()
+      }
+      ComleateView.showError("err", subTitle: "削除に失敗しました。\nネットワーク確認してください。")
+   }
+   
+   //TODO:-　ローカライズすること
+   private func ShowSuccDeleteStageInStoreSaveAlertView() {
+      Play3DtouchSuccess()
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      ComleateView.addButton("OK"){
+         self.dismiss(animated: true)
+         self.Play3DtouchHeavy()
+         self.GameSound.PlaySoundsTapButton()
+      }
+      ComleateView.showSuccess(NSLocalizedString("Saved", comment: ""), subTitle: "削除に成功しました。")
    }
    
    /// Collection ViewのCellがタップされた後にステージ情報を取得する関数
