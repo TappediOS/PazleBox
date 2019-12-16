@@ -719,8 +719,8 @@ class CleateStageViewController: UIViewController {
       UIGraphicsEndImageContext()
             
       if let UseImage = GetAllViewImage.cropping(to: ( BackImageView?.GetRectForScreenshot() )!) {
-         let ResizeW = UseImage.size.width * 0.3
-         let ResizeH = UseImage.size.height * 0.3
+         let ResizeW = UseImage.size.width * 0.291
+         let ResizeH = UseImage.size.height * 0.291
          let RetruenImage = UseImage.ResizeUIImage(width: ResizeW, height: ResizeH)
          return RetruenImage?.pngData() as! NSData
       }else{
