@@ -60,7 +60,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YYY/MM/DDにさくせいされました。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Flk-9T-lkA">
-                    <rect key="frame" x="7" y="10" width="286" height="26"/>
+                    <rect key="frame" x="10" y="10" width="280" height="26"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="26" id="XKp-gV-NTT"/>
                     </constraints>
@@ -99,14 +99,14 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="J7I-fi-l5P" firstAttribute="top" secondItem="Flk-9T-lkA" secondAttribute="bottom" constant="24" id="29z-xK-M91"/>
-                <constraint firstAttribute="trailing" secondItem="Flk-9T-lkA" secondAttribute="trailing" constant="7" id="7jZ-0v-byx"/>
+                <constraint firstAttribute="trailing" secondItem="Flk-9T-lkA" secondAttribute="trailing" constant="10" id="7jZ-0v-byx"/>
                 <constraint firstAttribute="trailing" secondItem="3Ef-Mm-dxH" secondAttribute="trailing" constant="177" id="7qh-nG-i34"/>
                 <constraint firstItem="Jac-Cs-CyR" firstAttribute="leading" secondItem="3Ef-Mm-dxH" secondAttribute="trailing" constant="8" id="8JA-jI-s4Y"/>
                 <constraint firstItem="sjk-xn-bxU" firstAttribute="trailing" secondItem="3eP-vQ-poT" secondAttribute="trailing" constant="20" id="BAL-eR-9Fd"/>
                 <constraint firstItem="sjk-xn-bxU" firstAttribute="trailing" secondItem="6Au-Am-eRC" secondAttribute="trailing" constant="8" id="D8K-6n-Td0"/>
                 <constraint firstItem="sjk-xn-bxU" firstAttribute="trailing" secondItem="Jac-Cs-CyR" secondAttribute="trailing" constant="8" id="Dul-g5-qOo"/>
                 <constraint firstItem="3eP-vQ-poT" firstAttribute="leading" secondItem="rsH-Xl-IyO" secondAttribute="trailing" constant="30" id="Epb-Zz-S9p"/>
-                <constraint firstItem="Flk-9T-lkA" firstAttribute="leading" secondItem="QnY-mq-qzm" secondAttribute="leading" constant="7" id="Gxg-0K-3SL"/>
+                <constraint firstItem="Flk-9T-lkA" firstAttribute="leading" secondItem="QnY-mq-qzm" secondAttribute="leading" constant="10" id="Gxg-0K-3SL"/>
                 <constraint firstItem="Flk-9T-lkA" firstAttribute="top" secondItem="QnY-mq-qzm" secondAttribute="top" constant="10" id="IAQ-Yn-Ag0"/>
                 <constraint firstAttribute="trailing" secondItem="rsH-Xl-IyO" secondAttribute="trailing" constant="165" id="NTb-3J-cal"/>
                 <constraint firstItem="4cc-p3-pxE" firstAttribute="leading" secondItem="3Ef-Mm-dxH" secondAttribute="trailing" constant="8" id="O36-oT-iGW"/>
@@ -128,6 +128,12 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="sjk-xn-bxU"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="8"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="-518.84057971014499" y="249.10714285714283"/>
         </view>
     </objects>

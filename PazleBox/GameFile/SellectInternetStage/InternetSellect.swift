@@ -70,7 +70,7 @@ class InterNetSellect: UIView {
       self.layer.shadowOffset = CGSize(width: 10, height: 10)
       self.layer.shadowColor = UIColor.black.cgColor
       self.layer.shadowOpacity = 0.7
-      self.layer.cornerRadius = 12
+      self.layer.cornerRadius = 5
    }
    
    private func InitRatedNumLabel(_ RatedNum: CGFloat) {
