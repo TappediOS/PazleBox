@@ -80,8 +80,7 @@ class Firestores {
             self.sentErrSetntStageToFireStore()
          } else {
             print("\n\nDocument added with ID: \(ref!.documentID)\n")
-            self.sentErrSetntStageToFireStore()
-            //self.sentSuccessSentStageToFireStore()
+            self.sentSuccessSentStageToFireStore()
          }
       }
    }
