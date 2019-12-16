@@ -727,7 +727,7 @@ class CleateStageViewController: UIViewController {
       
       //二重にタッチされるのを防ぐ
       self.FinishChouseResPuzzleButton?.isEnabled = false
-      self.FinishChouseResPuzzleButton?.alpha = 0.45
+      self.FinishChouseResPuzzleButton?.alpha = 0.65
       
       SaveStageUserCreated()
    }
