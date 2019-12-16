@@ -58,6 +58,10 @@ class SellectInternetStageViewController: UIViewController {
    
    var segmentedControl: TwicketSegmentedControl?
       
+   //GameVCに行くときに0が入るのを防ぐ
+   //iPhoneX系以外で発生。
+   var safeAreaTOP: CGFloat = 0
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -101,8 +105,17 @@ class SellectInternetStageViewController: UIViewController {
          make.width.equalTo(Height * 2.2)
          make.leading.equalTo(self.view.snp.leading).offset(10)
          if #available(iOS 11, *) {
+            //GameVCに行くときにiPhoneX系以外で0が入ることを防ぐ。
+            if self.view.safeAreaInsets.top != 0 {
+               safeAreaTOP = self.view.safeAreaInsets.top
+            }else{
+               print("safeAreaTOP = 0 になった!")
+               print("safeAreaTOP = \(safeAreaTOP)を適用し続ける")
+            }
+            
+            
             print("safeArea.top = \(self.view.safeAreaInsets.top)")
-            make.top.equalTo(self.view.snp.top).offset(self.view.safeAreaInsets.top + 3)
+            make.top.equalTo(self.view.snp.top).offset(safeAreaTOP + 3)
          } else {
             //iOS11以下は，X系が存在していない。
             make.top.equalTo(self.view.snp.top).offset(20)

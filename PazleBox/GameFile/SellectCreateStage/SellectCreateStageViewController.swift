@@ -49,6 +49,10 @@ class SellectCreateStageViewController: UIViewController {
    var PlayStageData = PlayStageRefInfo()
    
    var LoadActivityView: NVActivityIndicatorView?
+   
+   //GameVCに行くときに0が入るのを防ぐ
+   //iPhoneX系以外で発生。
+   var safeAreaTOP: CGFloat = 0
       
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -85,6 +89,14 @@ class SellectCreateStageViewController: UIViewController {
          make.width.equalTo(Height * 2.2)
          make.leading.equalTo(self.view.snp.leading).offset(10)
          if #available(iOS 11, *) {
+            //GameVCに行くときにiPhoneX系以外で0が入ることを防ぐ。
+            if self.view.safeAreaInsets.top != 0 {
+               safeAreaTOP = self.view.safeAreaInsets.top
+            }else{
+               print("safeAreaTOP = 0 になった!")
+               print("safeAreaTOP = \(safeAreaTOP)を適用し続ける")
+            }
+            
             print("safeArea.top = \(self.view.safeAreaInsets.top)")
             make.top.equalTo(self.view.snp.top).offset(self.view.safeAreaInsets.top + 3)
          } else {
