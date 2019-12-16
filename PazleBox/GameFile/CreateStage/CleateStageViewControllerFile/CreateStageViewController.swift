@@ -725,6 +725,10 @@ class CleateStageViewController: UIViewController {
       Play3DtouchHeavy()
       GameSound.PlaySoundsTapButton()
       
+      //二重にタッチされるのを防ぐ
+      self.FinishCreatePuzzleButton?.isEnabled = false
+      self.FinishCreatePuzzleButton?.alpha = 0.45
+      
       SaveStageUserCreated()
    }
    
