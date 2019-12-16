@@ -726,8 +726,8 @@ class CleateStageViewController: UIViewController {
       GameSound.PlaySoundsTapButton()
       
       //二重にタッチされるのを防ぐ
-      self.FinishCreatePuzzleButton?.isEnabled = false
-      self.FinishCreatePuzzleButton?.alpha = 0.45
+      self.FinishChouseResPuzzleButton?.isEnabled = false
+      self.FinishChouseResPuzzleButton?.alpha = 0.45
       
       SaveStageUserCreated()
    }

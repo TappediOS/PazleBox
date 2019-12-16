@@ -2942,8 +2942,8 @@
             filePath = "PazleBox/GameFile/CreateStage/CleateStageViewControllerFile/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "776"
-            endingLineNumber = "776"
+            startingLineNumber = "780"
+            endingLineNumber = "780"
             landmarkName = "SaveStageUserCreated()"
             landmarkType = "7">
          </BreakpointContent>
