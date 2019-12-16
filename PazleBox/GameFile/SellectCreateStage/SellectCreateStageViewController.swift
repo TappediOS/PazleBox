@@ -58,12 +58,13 @@ class SellectCreateStageViewController: UIViewController {
       
       self.StageCollectionView.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
       
+      InitLoadActivityView()
       SetUpFireStoreSetting()
       //自分の取得する
       GetMyStageDataFromDataBase()
       
       InitBackButton()
-      InitLoadActivityView()
+      
       InitHeroID()
       InitAccessibilityIdentifires()
       
