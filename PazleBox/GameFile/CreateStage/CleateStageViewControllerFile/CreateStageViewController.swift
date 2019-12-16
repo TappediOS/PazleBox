@@ -787,7 +787,7 @@ class CleateStageViewController: UIViewController {
    @objc func ErrSentStageCatchNotification(notification: Notification) -> Void {
       print("Errした通知受け取った。")
       StopLoadingAnimation()
-      Play3DtouchSuccess()
+      Play3DtouchError()
       ShowErrSentFireStoreSaveAlertView()
       Analytics.logEvent("ErrCleateStageCount", parameters: nil)
    }
@@ -795,7 +795,7 @@ class CleateStageViewController: UIViewController {
    @objc func SuccessSentStagePiceTouchEndedCatchNotification(notification: Notification) -> Void {
       print("成功した通知受け取った。")
       StopLoadingAnimation()
-      Play3DtouchError()
+      Play3DtouchSuccess()
       ShowCompleteSaveAlertView()
       Analytics.logEvent("CreateStageCount", parameters: nil)
    }
