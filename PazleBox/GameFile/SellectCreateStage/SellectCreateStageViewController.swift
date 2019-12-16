@@ -117,16 +117,13 @@ class SellectCreateStageViewController: UIViewController {
    //MARK:- 自分のステージデータを取得する。
    private func GetMyStageDataFromDataBase() {
       print("自分のデータの取得開始")
+      self.StartLoadingAnimation() //ローディングアニメーションの再生。
       let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
       print("UID = \(uid)")
       db.collection("Stages")
          .whereField("addUser", isEqualTo: uid)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
-            
-            //ローディングアニメーションの再生。
-            self.StartLoadingAnimation()
-            
             if let err = err {
                print("データベースからのデータ取得エラー: \(err)")
             } else {

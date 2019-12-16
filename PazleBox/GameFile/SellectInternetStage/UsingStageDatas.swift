@@ -132,9 +132,6 @@ class SellectInternetStageViewController: UIViewController {
          .order(by: "addDate", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
-            
-            
-            
             if let err = err {
                print("データベースからのデータ取得エラー: \(err)")
             } else {
@@ -142,7 +139,6 @@ class SellectInternetStageViewController: UIViewController {
                   self.LatestStageDatas.append(self.GetRawData(document: document))
                }
             }
-
             print("Latestデータの取得完了")
             //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
             //Segmentタップした時に別の関数でCollecti onVie をリロードする。
