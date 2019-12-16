@@ -101,8 +101,8 @@ class SellectInternetStageViewController: UIViewController {
    private func InitLoadActivityView() {
       let spalete: CGFloat = 9 //横幅 viewWide / X　になる。
       let Viewsize = self.view.frame.width / spalete
-      let StartX = self.view.frame.width / spalete * (spalete - 1) - Viewsize * 0.35
-      let StartY = self.view.frame.height - Viewsize - Viewsize * 0.35
+      let StartX = self.view.frame.width / spalete * (spalete - 1) - Viewsize * 0.45
+      let StartY = self.view.frame.height - Viewsize - Viewsize * 0.45
       let Rect = CGRect(x: StartX, y: StartY, width: Viewsize, height: Viewsize)
       LoadActivityView = NVActivityIndicatorView(frame: Rect, type: .ballSpinFadeLoader, color: UIColor.flatMint(), padding: 0)
       self.view.addSubview(LoadActivityView!)
@@ -126,8 +126,7 @@ class SellectInternetStageViewController: UIViewController {
    //MARK:- 最新，回数，評価それぞれのデータを取得する。
    private func GetLatestStageDataFromDataBase() {
       print("Latestデータの取得開始")
-      //ローディングアニメーションの再生。
-      self.StartLoadingAnimation()
+      self.StartLoadingAnimation() //ローディングアニメーションの再生。
       db.collection("Stages")
          .order(by: "addDate", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
