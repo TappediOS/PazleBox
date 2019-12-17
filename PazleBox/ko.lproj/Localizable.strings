@@ -58,3 +58,32 @@
 "StageInTheWorld" = "世界的舞台";
 
 "CreatedDate" = "작성일: ";
+
+
+"StageCreate" = "Stage Create";
+
+
+//セグメントのやつ
+"Latest" = "Creati";
+"Play Count" = "Creati";
+"Rated" = "Creati";
+
+
+//active viewで表示するやつ。
+"err" = "Creati";
+"suc" = "succ";
+
+"sucSave" = "保存成功しました。";
+"errSave" = "保存に失敗しました。";
+
+"sucDele" = "削除に成功しました。";
+"errDele" = "削除に失敗しました。";
+
+"errGetDoc" = "データの取得にに失敗しました";
+
+//NOTE:- こいつ呼び出す際は\n入れて改行すべし
+"checkNet" = "ネットワーク確認してください";
+
+//Worningで出すやつ。
+"delStage" = "ステージの削除";
+"cantBack" = "削除したステージは復元できません";
