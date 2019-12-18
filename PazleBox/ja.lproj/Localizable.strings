@@ -64,9 +64,9 @@
 
 
 //セグメントのやつ
-"Latest" = "Creati";
-"PlayCount" = "Creati";
-"Rating" = "Creati";
+"Latest" = "最新";
+"PlayCount" = "プレイ回数";
+"Rating" = "評価";
 
 
 //active viewで表示するやつ。
