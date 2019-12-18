@@ -136,11 +136,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       //-------------------User First Open-----------------//
       //-------------------Init Ad Flag On Users Devise-------------------//
       UserDefaults.standard.register(defaults: ["BuyRemoveAd": false])
+      UserDefaults.standard.register(defaults: ["CreateStageNum": 0])
       if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == true {
          print("\n--- ユーザーは広告削除の課金をしています ---\n")
       }else{
          print("\n ---ユーザーは広告削除の課金をしてない. ---\n")
       }
+      let CreateStageNum = UserDefaults.standard.integer(forKey: "CreateStageNum")
+      print("---ユーザの登録ステージ数:　\(CreateStageNum) 個----\n")
       //-------------------User First Open-----------------//
       //-------------------Init Ad Flag On Users Devise-------------------//
       

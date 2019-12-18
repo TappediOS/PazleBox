@@ -784,6 +784,8 @@ class CleateStageViewController: UIViewController {
       
    }
    
+   
+   //MARK:- 保存成功と失敗を受け取る関数
    @objc func ErrSentStageCatchNotification(notification: Notification) -> Void {
       print("Errした通知受け取った。")
       StopLoadingAnimation()
@@ -794,13 +796,13 @@ class CleateStageViewController: UIViewController {
    
    @objc func SuccessSentStagePiceTouchEndedCatchNotification(notification: Notification) -> Void {
       print("成功した通知受け取った。")
+      IncrementCreateStageNum()
       StopLoadingAnimation()
       Play3DtouchSuccess()
       ShowCompleteSaveAlertView()
       Analytics.logEvent("CreateStageCount", parameters: nil)
    }
 
-   //TODO:-　ローカライズすること
    private func ShowErrSentFireStoreSaveAlertView() {
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
       let ComleateView = SCLAlertView(appearance: Appearanse)
@@ -815,7 +817,6 @@ class CleateStageViewController: UIViewController {
       ComleateView.showError(Error, subTitle: errSave + "\n" + checkNet)
    }
    
-   //TODO:-　ローカライズすること
    private func ShowCompleteSaveAlertView() {
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
       let ComleateView = SCLAlertView(appearance: Appearanse)
@@ -827,6 +828,15 @@ class CleateStageViewController: UIViewController {
       let Suc = NSLocalizedString("suc", comment: "")
       let sucSave = NSLocalizedString("sucSave", comment: "")
       ComleateView.showSuccess(Suc, subTitle: sucSave)
+   }
+   
+   private func IncrementCreateStageNum() {
+      let CreateStageNum: Int = UserDefaults.standard.integer(forKey: "CreateStageNum")
+      print("\nステージ送信完了したので登録しているステージ数を\nインクリメントします。")
+      UserDefaults.standard.set(CreateStageNum + 1, forKey: "CreateStageNum")
+      let AfterCreateStageNum: Int = UserDefaults.standard.integer(forKey: "CreateStageNum")
+      print("インクリメント完了しました")
+      print("登録数は：　\(CreateStageNum) から　\(AfterCreateStageNum) に更新されました\n\n")
    }
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
