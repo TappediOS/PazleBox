@@ -20,7 +20,6 @@ class CreateHomeViewController: UIViewController {
    @IBOutlet weak var BackHomeButton: FUIButton!
    @IBOutlet weak var InternetUsersStageButton: FUIButton!
    
-   var CominSoonLabel = UILabel()
    
    
    var ViewW: CGFloat = 0
@@ -46,7 +45,6 @@ class CreateHomeViewController: UIViewController {
       InitBackgroundImageView()
       InitEachButton()
       
-      InitComminSoonLabel()
       
       InitHeroID()
       InitAccessibilityIdentifires()
@@ -105,19 +103,7 @@ class CreateHomeViewController: UIViewController {
       sender.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
    }
    
-   private func InitComminSoonLabel() {
-      CominSoonLabel = UILabel(frame: CGRect(x: FViewW * 6, y: FViewH * 19, width: FViewW * 12, height: FViewH * 3))
-      CominSoonLabel.text = "Coming Soon"
-      CominSoonLabel.alpha = 0.9
-      CominSoonLabel.font = UIFont(name: "AppleSDGothicNeo-Light", size: 20)
-      CominSoonLabel.adjustsFontSizeToFitWidth = true
-      CominSoonLabel.textColor = UIColor.flatBlack()
-      CominSoonLabel.textAlignment = .center
-      CominSoonLabel.sizeToFit()
-      CominSoonLabel.lineBreakMode = .byWordWrapping
-      CominSoonLabel.center.x = InternetUsersStageButton.center.x
-      view.addSubview(CominSoonLabel)
-   }
+
    
    private func SetUpButtonColor() {
       SellectStageButton.buttonColor = UIColor.flatPlum()
@@ -145,7 +131,6 @@ class CreateHomeViewController: UIViewController {
       CreateStageButton.hero.modifiers = [.arc(), .translate(x: +(ViewW - FViewW * 6), y: 0, z: 0)]
       SellectStageButton.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 2), y: 0, z: 0)]
       InternetUsersStageButton.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 11), y: 0, z: 0)]
-      CominSoonLabel.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 11), y: 0, z: 0)]
    }
    
    
@@ -215,6 +200,22 @@ class CreateHomeViewController: UIViewController {
       GameSound.PlaySoundsTapButton()
       dismiss(animated: true, completion: nil)
    }
+   
+   //   //COMING SOON LABELの初期化　使ってない。けどまた使うかもしれないから残しとく。
+   //   //消すべきであるとは思う。
+   //   private func InitComminSoonLabel() {
+   //      CominSoonLabel = UILabel(frame: CGRect(x: FViewW * 6, y: FViewH * 19, width: FViewW * 12, height: FViewH * 3))
+   //      CominSoonLabel.text = "Coming Soon"
+   //      CominSoonLabel.alpha = 0.9
+   //      CominSoonLabel.font = UIFont(name: "AppleSDGothicNeo-Light", size: 20)
+   //      CominSoonLabel.adjustsFontSizeToFitWidth = true
+   //      CominSoonLabel.textColor = UIColor.flatBlack()
+   //      CominSoonLabel.textAlignment = .center
+   //      CominSoonLabel.sizeToFit()
+   //      CominSoonLabel.lineBreakMode = .byWordWrapping
+   //      CominSoonLabel.center.x = InternetUsersStageButton.center.x
+   //      view.addSubview(CominSoonLabel)
+   //   }
    
    private func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
    private func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
