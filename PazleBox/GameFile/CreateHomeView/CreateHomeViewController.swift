@@ -82,7 +82,6 @@ class CreateHomeViewController: UIViewController {
       InitButton(CreateStageButton)
       InitButton(InternetUsersStageButton)
       InitButton(BackHomeButton)
-      InternetUsersStageButton.alpha = 0.385
       SetUpButtonColor()
       SetUpButtonPosition()
       SetUpButtonTitile()
