@@ -56,6 +56,10 @@
 "Play" = "Play";
 "Create" = "Create";
 
+"Close" = "Close";
+"Delete" = "Delete";
+"Cancel" = "Cancel";
+
 "StageYouMade" = "Stage You Made";
 "StageInTheWorld" = "Stage in the World";
 

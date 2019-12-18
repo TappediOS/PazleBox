@@ -58,6 +58,8 @@ class SellectView: UIView {
    }
      
    private func InitPlayButton() {
+      let title = NSLocalizedString("Play", comment: "")
+      PlayButton.titleLabel?.text = title
       PlayButton.titleLabel?.adjustsFontSizeToFitWidth = true
       PlayButton.titleLabel?.adjustsFontForContentSizeCategory = true
       PlayButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
@@ -72,6 +74,8 @@ class SellectView: UIView {
    }
      
    private func InitDeleteButton() {
+      let title = NSLocalizedString("Delete", comment: "")
+      DeleteButton.titleLabel?.text = title
       DeleteButton.titleLabel?.adjustsFontSizeToFitWidth = true
       DeleteButton.titleLabel?.adjustsFontForContentSizeCategory = true
       DeleteButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
@@ -82,6 +86,8 @@ class SellectView: UIView {
    }
    
    private func InitCloseButton() {
+      let title = NSLocalizedString("Close", comment: "")
+      CloseButton.titleLabel?.text = title
       CloseButton.titleLabel?.adjustsFontSizeToFitWidth = true
       CloseButton.titleLabel?.adjustsFontForContentSizeCategory = true
       CloseButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)

@@ -155,7 +155,10 @@ class SellectCreateStageViewController: UIViewController {
          self.Play3DtouchHeavy()
          self.GameSound.PlaySoundsTapButton()
       }
-      ComleateView.showError("err", subTitle: "データの取得にに失敗しました。\nネットワーク確認してください。")
+      let Error = NSLocalizedString("err", comment: "")
+      let errGetDoc = NSLocalizedString("errGetDoc", comment: "")
+      let checkNet = NSLocalizedString("checkNet", comment: "")
+      ComleateView.showError(Error, subTitle: errGetDoc + "\n" + checkNet)
    }
    
 
@@ -284,11 +287,12 @@ class SellectCreateStageViewController: UIViewController {
          ComleateView.removeFromParent()
          self.CanSellectStage = true
       }
-      ComleateView.showWarning("ステージの削除", subTitle: "削除したステージは復元できません")
+      let delStage = NSLocalizedString("delStage", comment: "")
+      let cantBack = NSLocalizedString("cantBack", comment: "")
+      ComleateView.showWarning(delStage, subTitle: cantBack)
    }
     
    //MARK:- FireStoreからデータを削除する関数
-   //TODO:- ローカライズしろよ
    private func DeleteDocumentForFireStore(CellNum: Int) {
       self.StartLoadingAnimation()
       
@@ -327,7 +331,10 @@ class SellectCreateStageViewController: UIViewController {
          self.Play3DtouchHeavy()
          self.GameSound.PlaySoundsTapButton()
       }
-      ComleateView.showError("err", subTitle: "削除に失敗しました。\nネットワーク確認してください。")
+      let Error = NSLocalizedString("err", comment: "")
+      let errDele = NSLocalizedString("errDele", comment: "")
+      let checkNet = NSLocalizedString("checkNet", comment: "")
+      ComleateView.showError(Error, subTitle: errDele + "\n" + checkNet)
    }
    
    //TODO:-　ローカライズすること
@@ -340,7 +347,9 @@ class SellectCreateStageViewController: UIViewController {
          self.Play3DtouchHeavy()
          self.GameSound.PlaySoundsTapButton()
       }
-      ComleateView.showSuccess(NSLocalizedString("Saved", comment: ""), subTitle: "削除に成功しました。")
+      let suc = NSLocalizedString("suc", comment: "")
+      let sucDele = NSLocalizedString("sucDele", comment: "")
+      ComleateView.showSuccess(suc, subTitle: sucDele)
    }
    
    /// Collection ViewのCellがタップされた後にステージ情報を取得する関数

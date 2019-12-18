@@ -809,7 +809,10 @@ class CleateStageViewController: UIViewController {
          self.Play3DtouchHeavy()
          self.GameSound.PlaySoundsTapButton()
       }
-      ComleateView.showError("err", subTitle: "保存に失敗しました。\nネットワーク確認してください。")
+      let Error = NSLocalizedString("err", comment: "")
+      let errSave = NSLocalizedString("errSave", comment: "")
+      let checkNet = NSLocalizedString("checkNet", comment: "")
+      ComleateView.showError(Error, subTitle: errSave + "\n" + checkNet)
    }
    
    //TODO:-　ローカライズすること
@@ -821,7 +824,9 @@ class CleateStageViewController: UIViewController {
          self.Play3DtouchHeavy()
          self.GameSound.PlaySoundsTapButton()
       }
-      ComleateView.showSuccess(NSLocalizedString("Saved", comment: ""), subTitle: "保存成功しました。")
+      let Suc = NSLocalizedString("suc", comment: "")
+      let sucSave = NSLocalizedString("sucSave", comment: "")
+      ComleateView.showSuccess(Suc, subTitle: sucSave)
    }
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }

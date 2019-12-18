@@ -54,6 +54,10 @@
 "Play" = "놀이";
 "Create" = "몹시 떠들어 대다";
 
+"Close" = "닫기";
+"Delete" = "지우다";
+"Cancel" = "취소";
+
 "StageYouMade" = "당신이 만든 무대";
 "StageInTheWorld" = "세계 무대";
 

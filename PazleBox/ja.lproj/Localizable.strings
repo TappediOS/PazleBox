@@ -54,6 +54,10 @@
 "Play" = "あそぶ";
 "Create" = "つくる";
 
+"Close" = "閉じる";
+"Delete" = "削除";
+"Cancel" = "キャンセル";
+
 "StageYouMade" = "つくったステージ";
 "StageInTheWorld" = "世界中のステージ";
 

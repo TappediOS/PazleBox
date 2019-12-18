@@ -46,6 +46,8 @@ class InterNetSellect: UIView {
       
       LoadNib()
       InitView()
+      InitRatedLabel()
+      InitPlayCountLabel()
       InitRatedNumLabel(ReviewAve)
       InitPlayCountNumLabel(PlayCount)
       InitDateLabel(addDate)
@@ -73,6 +75,20 @@ class InterNetSellect: UIView {
       self.layer.cornerRadius = 5
    }
    
+   private func InitRatedLabel() {
+      let Star = "⭐️"
+      let Rating = NSLocalizedString("Rating", comment: "")
+      let Text = Star + " " + Rating + " " + Star
+      self.RatedLabel.text = Text
+   }
+   
+   private func InitPlayCountLabel() {
+      let Pice = "🧩"
+      let PlayCount = NSLocalizedString("PlayCount", comment: "")
+      let Text = Pice + " " + PlayCount + " " + Pice
+      self.PlayCountLabel.text = Text
+   }
+   
    private func InitRatedNumLabel(_ RatedNum: CGFloat) {
       let point2 = floor(Double(RatedNum) * 100) / 100
       self.RatedNumLabel.text = String(point2) + " / 5"
@@ -89,6 +105,8 @@ class InterNetSellect: UIView {
    }
      
    private func InitPlayButton() {
+      let title = NSLocalizedString("Play", comment: "")
+      PlayButton.titleLabel?.text = title
       PlayButton.titleLabel?.adjustsFontSizeToFitWidth = true
       PlayButton.titleLabel?.adjustsFontForContentSizeCategory = true
       PlayButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
@@ -99,11 +117,12 @@ class InterNetSellect: UIView {
       PlayButton.layer.shadowOpacity = ButtonShadowOpacity
       PlayButton.layer.cornerRadius = ButtonCornerRadius
       //PlayButton.clipsToBounds = true
-      
    }
      
    
    private func InitCloseButton() {
+      let title = NSLocalizedString("Close", comment: "")
+      CloseButton.titleLabel?.text = title
       CloseButton.titleLabel?.adjustsFontSizeToFitWidth = true
       CloseButton.titleLabel?.adjustsFontForContentSizeCategory = true
       CloseButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)

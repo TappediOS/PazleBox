@@ -186,7 +186,10 @@ class SellectInternetStageViewController: UIViewController {
          self.Play3DtouchHeavy()
          self.GameSound.PlaySoundsTapButton()
       }
-      ComleateView.showError("err", subTitle: "データの取得にに失敗しました。\nネットワーク確認してください。")
+      let Error = NSLocalizedString("err", comment: "")
+      let errGetDoc = NSLocalizedString("errGetDoc", comment: "")
+      let checkNet = NSLocalizedString("checkNet", comment: "")
+      ComleateView.showError(Error, subTitle: errGetDoc + "\n" + checkNet)
    }
    
 
@@ -274,7 +277,10 @@ class SellectInternetStageViewController: UIViewController {
    //TODO:- frameを変更すること。
    //TODO:- タイトルの名前をローカライズすること。
    private func InitSegmentedControl() {
-      let titles = ["Latest", "Play Count", "Rated"]
+      let Latest = NSLocalizedString("Latest", comment: "")
+      let PlayCount = NSLocalizedString("PlayCount", comment: "")
+      let Rating = NSLocalizedString("Rating", comment: "")
+      let titles = [Latest, PlayCount, Rating]
       let frame = CGRect(x: 5, y: 57, width: view.frame.width - 10, height: 40)
 
       segmentedControl = TwicketSegmentedControl(frame: frame)

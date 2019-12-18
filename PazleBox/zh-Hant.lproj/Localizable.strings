@@ -54,6 +54,10 @@
 "Play" = "玩";
 "Create" = "創造";
 
+"Close" = "關";
+"Delete" = "刪除";
+"Cancel" = "取消";
+
 "StageYouMade" = "你完成的階段";
 "StageInTheWorld" = "世界舞台";
 
