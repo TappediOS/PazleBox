@@ -89,7 +89,7 @@ class CreateHomeViewController: UIViewController {
    }
    
    private func SetUpButtonTitile() {
-      CreateStageButton.setTitle(NSLocalizedString("Create", comment: ""), for: .normal)
+      CreateStageButton.setTitle(NSLocalizedString("StageCreate", comment: ""), for: .normal)
       SellectStageButton.setTitle(NSLocalizedString("StageYouMade", comment: ""), for: .normal)
       InternetUsersStageButton.setTitle(NSLocalizedString("StageInTheWorld", comment: ""), for: .normal)
    }

@@ -314,6 +314,7 @@ class SellectCreateStageViewController: UIViewController {
             print("削除成功しました。")
             self.UsingStageDatas.remove(at: CellNum)
             self.StageCollectionView.reloadData()
+            self.DecrementCreateStageNum()
             self.ShowSuccDeleteStageInStoreSaveAlertView()
             self.StopLoadingAnimation()
             self.CanSellectStage = true
@@ -350,6 +351,17 @@ class SellectCreateStageViewController: UIViewController {
       let suc = NSLocalizedString("suc", comment: "")
       let sucDele = NSLocalizedString("sucDele", comment: "")
       ComleateView.showSuccess(suc, subTitle: sucDele)
+   }
+   
+   
+   //MARK:- 登録ステージ数をデクリメントする
+   private func DecrementCreateStageNum() {
+      let CreateStageNum: Int = UserDefaults.standard.integer(forKey: "CreateStageNum")
+      print("\nステージ送信完了したので登録しているステージ数を\nデクリメントします。")
+      UserDefaults.standard.set(CreateStageNum - 1, forKey: "CreateStageNum")
+      let AfterCreateStageNum: Int = UserDefaults.standard.integer(forKey: "CreateStageNum")
+      print("デクリメント完了しました")
+      print("登録数は：　\(CreateStageNum) から　\(AfterCreateStageNum) に更新されました\n\n")
    }
    
    /// Collection ViewのCellがタップされた後にステージ情報を取得する関数
