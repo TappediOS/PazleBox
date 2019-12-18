@@ -65,13 +65,13 @@
 
 //セグメントのやつ
 "Latest" = "Creati";
-"Play Count" = "Creati";
-"Rated" = "Creati";
+"PlayCount" = "Creati";
+"Rating" = "Creati";
 
 
 //active viewで表示するやつ。
-"err" = "Creati";
-"suc" = "succ";
+"err" = "Error";
+"suc" = "Success";
 
 "sucSave" = "保存成功しました。";
 "errSave" = "保存に失敗しました。";

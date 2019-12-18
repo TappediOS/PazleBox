@@ -51,39 +51,39 @@
 "Saved" = "저장";
 
 
-"Play" = "播放";
-"Create" = "創建";
+"Play" = "놀이";
+"Create" = "몹시 떠들어 대다";
 
-"StageYouMade" = "您完成的階段";
-"StageInTheWorld" = "世界的舞台";
+"StageYouMade" = "당신이 만든 무대";
+"StageInTheWorld" = "세계 무대";
 
 "CreatedDate" = "작성일: ";
 
 
-"StageCreate" = "Stage Create";
+"StageCreate" = "무대 만들기";
 
 
 //セグメントのやつ
-"Latest" = "Creati";
-"Play Count" = "Creati";
-"Rated" = "Creati";
+"Latest" = "최근";
+"PlayCount" = "플레이 횟수";
+"Rating" = "평가";
 
 
 //active viewで表示するやつ。
-"err" = "Creati";
-"suc" = "succ";
+"err" = "Error";
+"suc" = "Success";
 
-"sucSave" = "保存成功しました。";
-"errSave" = "保存に失敗しました。";
+"sucSave" = "성공적으로 저장 되었음";
+"errSave" = "저장하지 못했습니다";
 
-"sucDele" = "削除に成功しました。";
-"errDele" = "削除に失敗しました。";
+"sucDele" = "성공적으로 삭제되었습니다";
+"errDele" = "삭제하지 못했습니다";
 
-"errGetDoc" = "データの取得にに失敗しました";
+"errGetDoc" = "데이터를 가져 오지 못했습니다";
 
 //NOTE:- こいつ呼び出す際は\n入れて改行すべし
-"checkNet" = "ネットワーク確認してください";
+"checkNet" = "네트워크 확인";
 
 //Worningで出すやつ。
-"delStage" = "ステージの削除";
-"cantBack" = "削除したステージは復元できません";
+"delStage" = "무대 삭제";
+"cantBack" = "삭제 된 단계를 복구 할 수 없습니다";

@@ -60,30 +60,30 @@
 "CreatedDate" = "建立日期: ";
 
 
-"StageCreate" = "Stage Create";
+"StageCreate" = "舞台製作";
 
 
 //セグメントのやつ
-"Latest" = "Creati";
-"Play Count" = "Creati";
-"Rated" = "Creati";
+"Latest" = "最新";
+"PlayCount" = "播放計數";
+"Rating" = "評分";
 
 
 //active viewで表示するやつ。
-"err" = "Creati";
-"suc" = "succ";
+"err" = "Error";
+"suc" = "Success";
 
-"sucSave" = "保存成功しました。";
-"errSave" = "保存に失敗しました。";
+"sucSave" = "保存成功";
+"errSave" = "保存失敗";
 
-"sucDele" = "削除に成功しました。";
-"errDele" = "削除に失敗しました。";
+"sucDele" = "成功刪除";
+"errDele" = "刪除失敗";
 
-"errGetDoc" = "データの取得にに失敗しました";
+"errGetDoc" = "無法獲取數據";
 
 //NOTE:- こいつ呼び出す際は\n入れて改行すべし
-"checkNet" = "ネットワーク確認してください";
+"checkNet" = "檢查網絡";
 
 //Worningで出すやつ。
-"delStage" = "ステージの削除";
-"cantBack" = "削除したステージは復元できません";
+"delStage" = "刪除舞台";
+"cantBack" = "刪除的階段無法恢復";
