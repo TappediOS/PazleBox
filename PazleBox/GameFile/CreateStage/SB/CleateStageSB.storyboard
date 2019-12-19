@@ -64,6 +64,59 @@
             </objects>
             <point key="canvasLocation" x="-691.304347826087" y="113.83928571428571"/>
         </scene>
+        <!--Stage Making View Controller-->
+        <scene sceneID="sSq-aJ-7pA">
+            <objects>
+                <viewController storyboardIdentifier="StageMakingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MEa-cb-ee7" customClass="StageMakingViewController" customModule="PazleBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o05-Qt-PqH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUI-tw-WfZ" customClass="FUIButton">
+                                <rect key="frame" x="20" y="44" width="76" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="←"/>
+                                <connections>
+                                    <action selector="TapBackButton:" destination="MEa-cb-ee7" eventType="touchUpInside" id="cMO-2v-Pb7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mw-g7-yRm" customClass="FUIButton">
+                                <rect key="frame" x="116" y="342" width="183" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Stage Makig"/>
+                                <connections>
+                                    <action selector="TapStageMakingButton:" destination="MEa-cb-ee7" eventType="touchUpInside" id="pPE-Vo-KKQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="作れるステージ数は18個までです。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09V-bE-jBC">
+                                <rect key="frame" x="56" y="447" width="323" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="残り\(StageNum)ステージです。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plm-SA-JAH">
+                                <rect key="frame" x="56" y="489" width="323" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="xxm-3U-dab"/>
+                    </view>
+                    <connections>
+                        <outlet property="BackButton" destination="bUI-tw-WfZ" id="alD-Bi-KeK"/>
+                        <outlet property="InfoLabel" destination="09V-bE-jBC" id="OSj-se-gOY"/>
+                        <outlet property="RemainingLabel" destination="Plm-SA-JAH" id="iHO-pU-BnW"/>
+                        <outlet property="StageMakingButton" destination="3mw-g7-yRm" id="HLV-bl-hPj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qTL-GM-pyT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-685.50724637681162" y="781.47321428571422"/>
+        </scene>
         <!--Sellect Create Stage View Controller-->
         <scene sceneID="NzI-gR-prC">
             <objects>

@@ -20,8 +20,6 @@ class CreateHomeViewController: UIViewController {
    @IBOutlet weak var BackHomeButton: FUIButton!
    @IBOutlet weak var InternetUsersStageButton: FUIButton!
    
-   
-   
    var ViewW: CGFloat = 0
    var ViewH: CGFloat = 0
    var FViewW: CGFloat = 0
@@ -33,9 +31,7 @@ class CreateHomeViewController: UIViewController {
    let GameSound = GameSounds()
    
    var isLockButton = false
-   
-   var handle: AuthStateDidChangeListenerHandle?
-   
+      
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -45,7 +41,6 @@ class CreateHomeViewController: UIViewController {
       InitBackgroundImageView()
       InitEachButton()
       
-      
       InitHeroID()
       InitAccessibilityIdentifires()
    }
@@ -54,7 +49,7 @@ class CreateHomeViewController: UIViewController {
       InitHeroID()
    }
   
-   
+   //MARK:- 初期化
    private func InitViewSize() {
       ViewW = self.view.frame.width
       ViewH = self.view.frame.height
@@ -103,8 +98,6 @@ class CreateHomeViewController: UIViewController {
       sender.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
    }
    
-
-   
    private func SetUpButtonColor() {
       SellectStageButton.buttonColor = UIColor.flatPlum()
       SellectStageButton.shadowColor = UIColor.flatPlumColorDark()
@@ -133,7 +126,7 @@ class CreateHomeViewController: UIViewController {
       InternetUsersStageButton.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 11), y: 0, z: 0)]
    }
    
-   
+   //MARK:-　各ボタンをタップした時の動作
    @IBAction func TapCreateButton(_ sender: FUIButton) {
       Play3DtouchLight()
       if isLockButton == true { return }
@@ -147,10 +140,12 @@ class CreateHomeViewController: UIViewController {
       
       Analytics.logEvent("TapCreateButton", parameters: nil)
       
-      let CreateStageVC = self.storyboard?.instantiateViewController(withIdentifier: "CreateStageVC") as! CleateStageViewController
-      CreateStageVC.modalPresentationStyle = .fullScreen
-      self.present(CreateStageVC, animated: true, completion: {
-         print("CreateStageVCにプレゼント完了")
+      let Storybord = UIStoryboard(name: "Main", bundle: nil)
+      let HomeVC = Storybord.instantiateViewController(withIdentifier: "HomeView")
+      HomeVC.modalPresentationStyle = .fullScreen
+
+      self.present(HomeVC, animated: true, completion: {
+         print("Home VCにプレゼント完了")
          self.isLockButton = false
       })
    }

@@ -126,6 +126,7 @@
 		BF4323C722D35822008DF038 /* CreateStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4323C622D35822008DF038 /* CreateStageViewController.swift */; };
 		BF4323C922D35912008DF038 /* BackTileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4323C822D35912008DF038 /* BackTileImage.swift */; };
 		BF4323CB22D35F28008DF038 /* BackTileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4323CA22D35F28008DF038 /* BackTileImageView.swift */; };
+		BF43E02C23AA127000E0333B /* StageMakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF43E02B23AA127000E0333B /* StageMakingViewController.swift */; };
 		BF46109022352423006F3DF1 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46108F22352423006F3DF1 /* Puzzle.swift */; };
 		BF519C69223CCBDE0087A4AC /* GetTilePOSITION.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */; };
 		BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C6A223F58920087A4AC /* ExNotification.swift */; };
@@ -875,6 +876,7 @@
 		BF4323C622D35822008DF038 /* CreateStageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStageViewController.swift; sourceTree = "<group>"; };
 		BF4323C822D35912008DF038 /* BackTileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackTileImage.swift; sourceTree = "<group>"; };
 		BF4323CA22D35F28008DF038 /* BackTileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackTileImageView.swift; sourceTree = "<group>"; };
+		BF43E02B23AA127000E0333B /* StageMakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageMakingViewController.swift; sourceTree = "<group>"; };
 		BF46108F22352423006F3DF1 /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
 		BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTilePOSITION.swift; sourceTree = "<group>"; };
 		BF519C6A223F58920087A4AC /* ExNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNotification.swift; sourceTree = "<group>"; };
@@ -1960,6 +1962,7 @@
 			children = (
 				BF1DBD5F238A443700F6B2D1 /* FireStore */,
 				BF4323CC22D36733008DF038 /* SB */,
+				BF43E02823AA123600E0333B /* StageMakingViewController */,
 				BF67C2A6235EB6C800EBFB00 /* CleateStageViewControllerFile */,
 				BF33CE09233A243A00AD488A /* PiceImageView.swift */,
 				BF73C2F12349C03F00745C7F /* UserCreateStageDB.swift */,
@@ -1977,6 +1980,14 @@
 				BF4323C422D3568D008DF038 /* CleateStageSB.storyboard */,
 			);
 			path = SB;
+			sourceTree = "<group>";
+		};
+		BF43E02823AA123600E0333B /* StageMakingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BF43E02B23AA127000E0333B /* StageMakingViewController.swift */,
+			);
+			path = StageMakingViewController;
 			sourceTree = "<group>";
 		};
 		BF60AC4F224C8EDA00D441D6 /* StatesBar */ = {
@@ -3592,6 +3603,7 @@
 				BF2C145F2276F39500C7B8FB /* HintPouseView.swift in Sources */,
 				BF332F862249234C009B3042 /* ExGameSeceneEasy.swift in Sources */,
 				BF332F9E224926F3009B3042 /* E12.swift in Sources */,
+				BF43E02C23AA127000E0333B /* StageMakingViewController.swift in Sources */,
 				BF552EFC226DDE5D00756E16 /* N47.swift in Sources */,
 				BF519C7B223FA8D60087A4AC /* ExTextureName.swift in Sources */,
 				BF552F1A226DDECC00756E16 /* H32.swift in Sources */,

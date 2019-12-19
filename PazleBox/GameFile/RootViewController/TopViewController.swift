@@ -330,7 +330,7 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       })
    }
    
-   
+   //MARK:- 各ボタンをタップした時の処理
    @IBAction func TapPlayButton(_ sender: FUIButton) {
       print("Tap PlayButton")
       Play3DtouchLight()
@@ -347,16 +347,19 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       
       Analytics.logEvent("TapTopPlayButton", parameters: nil)
       
-      let HomeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeView") as! HomeViewController
-      HomeVC.modalPresentationStyle = .fullScreen
-      self.present(HomeVC, animated: true, completion: {
-         print("Home VCにプレゼント完了")
+      let Storybord = UIStoryboard(name: "CleateStageSB", bundle: nil)
+      let VC = Storybord.instantiateViewController(withIdentifier: "SellectCreateStageViewController")
+      VC.modalPresentationStyle = .fullScreen
+      
+      self.present(VC, animated: true, completion: {
          self.CanPresentAnotherVC = true
       })
+      return
+      
    }
    
    
-
+   //NOTE:- タップされたらCreateStageSBのMakingに行くべき
    @IBAction func TapCreateButton(_ sender: FUIButton) {
       print("Tap CreateButton")
       
@@ -375,7 +378,7 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
        Analytics.logEvent("TapTopCreateButton", parameters: nil)
       
       let Storybord = UIStoryboard(name: "CleateStageSB", bundle: nil)
-      let VC = Storybord.instantiateViewController(withIdentifier: "SellectCreateStageViewController")
+      let VC = Storybord.instantiateViewController(withIdentifier: "StageMakingVC")
       VC.modalPresentationStyle = .fullScreen
       
       self.present(VC, animated: true, completion: {

@@ -91,3 +91,11 @@
 //Worningで出すやつ。
 "delStage" = "ステージの削除";
 "cantBack" = "削除したステージは復元できません";
+
+
+//InfoLabelにつけるやつ
+"CreateUpToFirst" = "作れるステージの上限は";
+"CreateUpToLast" = "です";
+//RemaingLabelにつけるやつ
+"RemaingFirst" = "残り";
+"RemaingLast" = "ステージです。";

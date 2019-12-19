@@ -91,3 +91,11 @@
 //Worningで出すやつ。
 "delStage" = "무대 삭제";
 "cantBack" = "삭제 된 단계를 복구 할 수 없습니다";
+
+
+//InfoLabelにつけるやつ
+"CreateUpToFirst" = "최대";
+"CreateUpToLast" = "개의 스테이지를 만들 수 있습니다.";
+//RemaingLabelにつけるやつ
+"RemaingFirst" = "나머지 ";
+"RemaingLast" = "단계.";

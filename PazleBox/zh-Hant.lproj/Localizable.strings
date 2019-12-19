@@ -91,3 +91,11 @@
 //Worningで出すやつ。
 "delStage" = "刪除舞台";
 "cantBack" = "刪除的階段無法恢復";
+
+
+//InfoLabelにつけるやつ
+"CreateUpToFirst" = "最多可以創建";
+"CreateUpToLast" = "個階段。";
+//RemaingLabelにつけるやつ
+"RemaingFirst" = "其餘的";
+"RemaingLast" = "個階段。";

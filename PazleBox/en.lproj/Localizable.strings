@@ -93,3 +93,11 @@
 //Worningで出すやつ。
 "delStage" = "Deleting a stage";
 "cantBack" = "Deleted stage cannot be recovered";
+
+
+//InfoLabelにつけるやつ
+"CreateUpToFirst" = "Up To";
+"CreateUpToLast" = "Stages Can Be Created.";
+//RemaingLabelにつけるやつ
+"RemaingFirst" = "The remaining";
+"RemaingLast" = "Stages.";
