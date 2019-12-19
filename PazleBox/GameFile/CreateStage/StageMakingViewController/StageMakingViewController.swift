@@ -76,13 +76,24 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
    }
    
    override func viewDidAppear(_ animated: Bool) {
+      InitUsersRegiStageCount()
+      InitInfoLabel()
+      InitRemainingLabel()
+      SetUpStageMakingButton()
+   }
+   
+   override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(true)
       
    }
    
    //safeArea取得するために必要。
    override func viewDidLayoutSubviews() {
       super.viewDidLayoutSubviews()
-      SNPBannerView()
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false{
+         self.SNPBannerView()
+      }
+      
    }
    
    //MARK:- SNPの設定。

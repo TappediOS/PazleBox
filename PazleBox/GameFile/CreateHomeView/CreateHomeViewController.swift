@@ -62,7 +62,9 @@ class CreateHomeViewController: UIViewController, GADBannerViewDelegate {
    //safeArea取得するために必要。
    override func viewDidLayoutSubviews() {
       super.viewDidLayoutSubviews()
-      SNPBannerView()
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false{
+         self.SNPBannerView()
+      }
    }
    
    //MARK:- SNPの設定。
