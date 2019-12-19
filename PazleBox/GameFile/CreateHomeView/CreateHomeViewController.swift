@@ -55,6 +55,8 @@ class CreateHomeViewController: UIViewController, GADBannerViewDelegate {
    
    override func viewDidAppear(_ animated: Bool) {
       InitHeroID()
+      
+
    }
    
    //safeArea取得するために必要。
@@ -153,10 +155,9 @@ class CreateHomeViewController: UIViewController, GADBannerViewDelegate {
       BackHomeButton.hero.id = HeroID.TopTitleAndCreateBack
       StageAuthCreateButton.hero.id = HeroID.TopPlayAndCreateCreate
       SellectStageButton.hero.id = HeroID.TopCreateAndCreateFinCreate
-      SellectStageButton.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 2), y: 0, z: 0)]
+      SellectStageButton.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 11), y: 0, z: 0)]
       InternetUsersStageButton.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 6), y: 0, z: 0)]
-      StageAuthCreateButton.hero.modifiers = [.arc(), .translate(x: +(ViewW - FViewW * 11), y: 0, z: 0)]
-      
+      StageAuthCreateButton.hero.modifiers = [.arc(), .translate(x: +(ViewW - FViewW * 2), y: 0, z: 0)]
    }
    
    //MARK:- 広告のチェックと初期化

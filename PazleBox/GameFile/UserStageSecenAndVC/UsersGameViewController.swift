@@ -11,6 +11,7 @@ import SpriteKit
 import GameKit
 import GameplayKit
 import SAConfettiView
+import FirebaseFirestore
 import Firebase
 import RealmSwift
 import Hero

@@ -139,7 +139,7 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
    }
    
    private func SetUpButtonTitile() {
-      StageMakingButton.setTitle(NSLocalizedString("StageMaking", comment: ""), for: .normal)
+      StageMakingButton.setTitle(NSLocalizedString("StageCreate", comment: ""), for: .normal)
    }
    
    private func InitButton(_ sender: FUIButton) {
@@ -271,9 +271,9 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
    
    private func InitHeroID() {
       BackButton.hero.id = HeroID.TopLable_Back
-      StageMakingButton.hero.id = HeroID.MakingButton_Trash
-      InfoLabel.hero.id = HeroID.InfoLabel_Option
-      RemainingLabel.hero.id = HeroID.RemainingLabel_Label
+      StageMakingButton.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 11), y: 0, z: 0)]
+      InfoLabel.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 6), y: 0, z: 0)]
+      RemainingLabel.hero.modifiers = [.arc(), .translate(x: +(ViewW - FViewW * 2), y: 0, z: 0)]
    }
    
    //MARK:- ボタンタップ
@@ -281,6 +281,8 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
       Play3DtouchLight()
       if isLockButton == true { return }
       isLockButton = true
+      
+      InitHeroID()
       
       GameSound.PlaySoundsTapButton()
       dismiss(animated: true, completion: nil)
@@ -293,6 +295,11 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
       isLockButton = true
       
       GameSound.PlaySoundsTapButton()
+      
+      BackButton.hero.id = HeroID.TopLable_Back
+      StageMakingButton.hero.id = HeroID.MakingButton_Trash
+      InfoLabel.hero.id = HeroID.InfoLabel_Option
+      RemainingLabel.hero.id = HeroID.RemainingLabel_Label
       
       Analytics.logEvent("TapMakingStageButton", parameters: nil)
       

@@ -14,6 +14,7 @@ import TapticEngine
 import FlatUIKit
 import Hero
 import Firebase
+import FirebaseFirestore
 import SCLAlertView
 import NVActivityIndicatorView
 

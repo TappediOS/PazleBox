@@ -13,6 +13,7 @@ import RealmSwift
 import TapticEngine
 import FlatUIKit
 import Hero
+import FirebaseFirestore
 import Firebase
 import SCLAlertView
 import TwicketSegmentedControl

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 import Firebase
 import AVFoundation
 import Crashlytics

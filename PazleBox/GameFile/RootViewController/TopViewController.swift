@@ -343,7 +343,7 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       
       PlayButton.hero.id = HeroID.BackEasyStage
       CreateButton.hero.id = HeroID.BackHardStage
-      TitleLabel?.hero.id = HeroID.TopVCTitleANDHomeVCBack
+      TitleLabel?.hero.id = HeroID.TopTitleAndCreateBack
       
       Analytics.logEvent("TapTopPlayButton", parameters: nil)
       
@@ -373,7 +373,7 @@ class TopViewController: UIViewController, GKGameCenterControllerDelegate {
       
       PlayButton.hero.id = HeroID.TopPlayAndCreateCreate
       CreateButton.hero.id = HeroID.TopCreateAndCreateFinCreate
-      TitleLabel?.hero.id = HeroID.TopTitleAndCreateBack
+      TitleLabel?.hero.id = HeroID.TopLable_Back
       
        Analytics.logEvent("TapTopCreateButton", parameters: nil)
       

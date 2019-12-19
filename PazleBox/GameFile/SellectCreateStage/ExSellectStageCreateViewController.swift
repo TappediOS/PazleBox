@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FirebaseFirestore
 import Firebase
 
 //データを取得するExtention集
