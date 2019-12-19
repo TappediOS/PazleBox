@@ -184,7 +184,7 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
       #else
          print("\n\n--------INFO ADMOB--------------\n")
          print("Google Mobile ads SDK Versioin -> " + GADRequest.sdkVersion() + "\n")
-         self.GameClearBannerView.adUnitID = BANNER_VIEW_ID
+         self.StageMakingBannerView.adUnitID = BANNER_VIEW_ID
          print("バナー広告：本番環境")
       #endif
       
@@ -241,7 +241,7 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
    
    
    private func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
-     private func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
-     private func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
-     private func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
+   private func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
+   private func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
+   private func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
 }
