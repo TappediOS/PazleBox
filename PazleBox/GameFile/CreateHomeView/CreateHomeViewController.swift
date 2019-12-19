@@ -63,6 +63,9 @@ class CreateHomeViewController: UIViewController, GADBannerViewDelegate {
    override func viewDidLayoutSubviews() {
       super.viewDidLayoutSubviews()
       if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false{
+         if ChoseStageBannerView.isHidden == true {
+            ChoseStageBannerView.isHidden = false
+         }
          self.SNPBannerView()
       }
    }
@@ -216,6 +219,7 @@ class CreateHomeViewController: UIViewController, GADBannerViewDelegate {
       self.present(HomeVC, animated: true, completion: {
          print("Home VCにプレゼント完了")
          self.isLockButton = false
+         self.ChoseStageBannerView.isHidden = true
       })
    }
    
@@ -234,6 +238,7 @@ class CreateHomeViewController: UIViewController, GADBannerViewDelegate {
       self.present(SellectCreateStageVC, animated: true, completion: {
          print("SellectCreateStageVCにプレゼント完了")
          self.isLockButton = false
+         self.ChoseStageBannerView.isHidden = true
       })
    }
    
@@ -251,6 +256,7 @@ class CreateHomeViewController: UIViewController, GADBannerViewDelegate {
       self.present(SellectCreateStageVC, animated: true, completion: {
          print("SellectIntarnetStageVCにプレゼント完了")
          self.isLockButton = false
+         self.ChoseStageBannerView.isHidden = true
       })
    }
    
