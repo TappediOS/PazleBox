@@ -223,7 +223,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
       #if DEBUG
          print("\n\n--------INFO ADMOB--------------\n")
          print("Google Mobile ads SDK Versioin -> " + GADRequest.sdkVersion() + "\n")
-         self.StageMakingBannerView.adUnitID = BANNER_VIEW_TEST_ID
+         self.GameClearBannerView.adUnitID = BANNER_VIEW_TEST_ID
          self.BannerViewReqest.testDevices = ["9d012329e337de42666c706e842b7819"];
          print("バナー広告：テスト環境\n\n")
       #else
