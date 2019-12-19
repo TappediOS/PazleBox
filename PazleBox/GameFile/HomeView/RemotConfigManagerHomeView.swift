@@ -6,6 +6,7 @@
 //  Copyright © 2019 jun. All rights reserved.
 //
 
+import FirebaseRemoteConfig
 import Firebase
 import UIKit
 

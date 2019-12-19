@@ -15,6 +15,7 @@ import SwiftyStoreKit
 import SCLAlertView
 import Crashlytics
 import GameKit
+import FirebaseRemoteConfig
 import Firebase
 import FlatUIKit
 import Hero

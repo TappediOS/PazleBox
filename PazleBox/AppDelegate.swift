@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseMessaging
 import FirebaseFirestore
 import Firebase
 import AVFoundation
