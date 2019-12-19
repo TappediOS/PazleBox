@@ -125,10 +125,10 @@ extension CleateStageViewController {
    func InitHeroID() {
       collectionView.hero.modifiers = [.cascade]
       
-      TrashImageView.hero.id = HeroID.CreateCreateAndCreatingTrash
-      FinishCreatePuzzleButton?.hero.id = HeroID.CreateBackAndCreatingFinButton
-      InfoLabel.hero.id = HeroID.CreateInternetAndCreatingInfoLabel
-      OptionButton.hero.id = HeroID.CreateFinCreateAndCreatingOption
+      TrashImageView.hero.id = HeroID.MakingButton_Trash
+      FinishCreatePuzzleButton?.hero.modifiers = [.fade]
+      InfoLabel.hero.id = HeroID.RemainingLabel_Label
+      OptionButton.hero.id = HeroID.InfoLabel_Option
    }
    
    func InitAccessibilityIdentifires() {

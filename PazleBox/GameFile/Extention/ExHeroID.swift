@@ -39,5 +39,10 @@ struct HeroIDs {
    let CreateInternetAndCreatingInfoLabel = "CreateInternetAndCreatingInfoLabel"
    let CreateBackAndCreatingFinButton = "CreateBackAndCreatingFinButton"
    
+   let TopLable_Back = "TopLable_Back"
+   let MakingButton_Trash = "MakingButton_Trash"
+   let InfoLabel_Option = "InfoLabel_Option"
+   let RemainingLabel_Label = "RemainingLabel_Label"
+   
    let StageButtonAndBadgeMode = [HeroModifier.fade, HeroModifier.scale(0.45), HeroModifier.delay(Double(1) * 0.0115)]
 }

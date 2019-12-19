@@ -67,6 +67,8 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
       SNPInfoLabel()
       SNPRemainingLabel()
       
+      InitHeroID()
+      
       //NOTE:- ここでボタンがタップできるかどうかを判断
       SetUpStageMakingButton()
       
@@ -75,6 +77,28 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
    
    override func viewDidAppear(_ animated: Bool) {
       
+   }
+   
+   //safeArea取得するために必要。
+   override func viewDidLayoutSubviews() {
+      super.viewDidLayoutSubviews()
+      SNPBannerView()
+   }
+   
+   //MARK:- SNPの設定。
+   func SNPBannerView() {
+      StageMakingBannerView.snp.makeConstraints{ make in
+         make.height.equalTo(BANNER_VIEW_HIGHT)
+         make.width.equalTo(self.view.frame.width)
+         make.leading.equalTo(self.view.snp.leading).offset(0)
+         if #available(iOS 11, *) {
+            print("safeArea.bottom = \(self.view.safeAreaInsets.bottom)")
+            make.bottom.equalTo(self.view.snp.bottom).offset(-self.view.safeAreaInsets.bottom)
+         } else {
+            //iOS11以下は，X系が存在していない。
+            make.top.equalTo(self.view.snp.top).offset(0)
+         }
+      }
    }
    
    //MARK:- 初期化
@@ -243,6 +267,13 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
       print("これ以上ステージ増やせない。")
       print("ボタンのタップを無効にします。")
       self.StageMakingButton.isEnabled = false
+   }
+   
+   private func InitHeroID() {
+      BackButton.hero.id = HeroID.TopLable_Back
+      StageMakingButton.hero.id = HeroID.MakingButton_Trash
+      InfoLabel.hero.id = HeroID.InfoLabel_Option
+      RemainingLabel.hero.id = HeroID.RemainingLabel_Label
    }
    
    //MARK:- ボタンタップ
