@@ -13,6 +13,7 @@ import TapticEngine
 import ChameleonFramework
 import Firebase
 import Hero
+import SnapKit
 
 class StageMakingViewController: UIViewController, GADBannerViewDelegate{
    
@@ -61,6 +62,10 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
       InitEachButton()
       InitInfoLabel()
       InitRemainingLabel()
+      
+      SNPStageMakingButton()
+      SNPInfoLabel()
+      SNPRemainingLabel()
       
       //NOTE:- ここでボタンがタップできるかどうかを判断
       SetUpStageMakingButton()
@@ -165,6 +170,33 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
       RemainingLabel.sizeToFit()
       RemainingLabel.lineBreakMode = .byWordWrapping
       RemainingLabel.center.x = StageMakingButton.center.x
+   }
+   
+   private func SNPStageMakingButton() {
+      StageMakingButton!.snp.makeConstraints{ make in
+         make.width.equalTo(FViewW * 12)
+         make.height.equalTo(FViewH * 3)
+         make.leading.equalTo(self.view.snp.leading).offset(FViewW * 6)
+         make.top.equalTo(self.view.snp.top).offset(FViewH * 13.5)
+      }
+   }
+   
+   private func SNPInfoLabel() {
+      InfoLabel!.snp.makeConstraints{ make in
+         make.top.equalTo(StageMakingButton!.snp.bottom).offset(20)
+         make.leading.equalTo(self.view.snp.leading).offset(20)
+         make.trailing.equalTo(self.view.snp.trailing).offset(-20)
+         make.height.equalTo(23)
+      }
+   }
+   
+   private func SNPRemainingLabel() {
+      RemainingLabel!.snp.makeConstraints{ make in
+         make.top.equalTo(InfoLabel!.snp.bottom).offset(5)
+         make.leading.equalTo(self.view.snp.leading).offset(20)
+         make.trailing.equalTo(self.view.snp.trailing).offset(-20)
+         make.height.equalTo(23)
+      }
    }
    
    //MARK:- 広告のチェックと初期化

@@ -16,7 +16,7 @@ import Firebase
 class CreateHomeViewController: UIViewController {
    
    @IBOutlet weak var SellectStageButton: FUIButton!
-   @IBOutlet weak var CreateStageButton: FUIButton!
+   @IBOutlet weak var StageAuthCreateButton: FUIButton!
    @IBOutlet weak var BackHomeButton: FUIButton!
    @IBOutlet weak var InternetUsersStageButton: FUIButton!
    
@@ -59,7 +59,7 @@ class CreateHomeViewController: UIViewController {
    
    private func  InitAccessibilityIdentifires() {
       SellectStageButton?.accessibilityIdentifier = "CreateHomeVC_SellectStageButton"
-      CreateStageButton?.accessibilityIdentifier = "CreateHomeVC_CreateStageButton"
+      StageAuthCreateButton?.accessibilityIdentifier = "CreateHomeVC_StageAuthCreateButton"
       BackHomeButton?.accessibilityIdentifier = "CreateHomeVC_BackHomeButton"
       InternetUsersStageButton?.accessibilityIdentifier = "CreateHomeVC_InternetUsersStageButton"
    }
@@ -72,7 +72,7 @@ class CreateHomeViewController: UIViewController {
    
    private func InitEachButton() {
       InitButton(SellectStageButton)
-      InitButton(CreateStageButton)
+      InitButton(StageAuthCreateButton)
       InitButton(InternetUsersStageButton)
       InitButton(BackHomeButton)
       SetUpButtonColor()
@@ -81,7 +81,7 @@ class CreateHomeViewController: UIViewController {
    }
    
    private func SetUpButtonTitile() {
-      CreateStageButton.setTitle(NSLocalizedString("StageCreate", comment: ""), for: .normal)
+      StageAuthCreateButton.setTitle(NSLocalizedString("StageCreatormade", comment: ""), for: .normal)
       SellectStageButton.setTitle(NSLocalizedString("StageYouMade", comment: ""), for: .normal)
       InternetUsersStageButton.setTitle(NSLocalizedString("StageInTheWorld", comment: ""), for: .normal)
    }
@@ -101,8 +101,8 @@ class CreateHomeViewController: UIViewController {
    private func SetUpButtonColor() {
       SellectStageButton.buttonColor = UIColor.flatPlum()
       SellectStageButton.shadowColor = UIColor.flatPlumColorDark()
-      CreateStageButton.buttonColor = UIColor.flatTeal()
-      CreateStageButton.shadowColor = UIColor.flatTealColorDark()
+      StageAuthCreateButton.buttonColor = UIColor.flatTeal()
+      StageAuthCreateButton.shadowColor = UIColor.flatTealColorDark()
       InternetUsersStageButton.buttonColor = UIColor.flatOrange()
       InternetUsersStageButton.shadowColor = UIColor.flatOrangeColorDark()
       BackHomeButton.buttonColor = UIColor.flatMaroonColorDark()
@@ -110,35 +110,37 @@ class CreateHomeViewController: UIViewController {
    }
    
    private func SetUpButtonPosition() {
-      SellectStageButton.frame = CGRect(x: FViewW * 6, y: FViewH * 15, width: FViewW * 12, height: FViewH * 3)
-      CreateStageButton.frame = CGRect(x: FViewW * 6, y: FViewH * 11, width: FViewW * 12, height: FViewH * 3)
-      InternetUsersStageButton.frame = CGRect(x: FViewW * 6, y: FViewH * 19, width: FViewW * 12, height: FViewH * 3)
+
+      SellectStageButton.frame = CGRect(x: FViewW * 6, y: FViewH * 11, width: FViewW * 12, height: FViewH * 3)
+      InternetUsersStageButton.frame = CGRect(x: FViewW * 6, y: FViewH * 15, width: FViewW * 12, height: FViewH * 3)
+      StageAuthCreateButton.frame = CGRect(x: FViewW * 6, y: FViewH * 19, width: FViewW * 12, height: FViewH * 3)
+      
       BackHomeButton.frame = CGRect(x: FViewW * 1, y: FViewH * 2.5, width: FViewW * 5, height: FViewH * 3 / 2)
    }
    
    
    private func InitHeroID() {
       BackHomeButton.hero.id = HeroID.TopTitleAndCreateBack
-      CreateStageButton.hero.id = HeroID.TopPlayAndCreateCreate
+      StageAuthCreateButton.hero.id = HeroID.TopPlayAndCreateCreate
       SellectStageButton.hero.id = HeroID.TopCreateAndCreateFinCreate
-      CreateStageButton.hero.modifiers = [.arc(), .translate(x: +(ViewW - FViewW * 6), y: 0, z: 0)]
+      StageAuthCreateButton.hero.modifiers = [.arc(), .translate(x: +(ViewW - FViewW * 6), y: 0, z: 0)]
       SellectStageButton.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 2), y: 0, z: 0)]
       InternetUsersStageButton.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 11), y: 0, z: 0)]
    }
    
    //MARK:-　各ボタンをタップした時の動作
-   @IBAction func TapCreateButton(_ sender: FUIButton) {
+   @IBAction func TapStageAuthCreateButton(_ sender: FUIButton) {
       Play3DtouchLight()
       if isLockButton == true { return }
       isLockButton = true
       
       GameSound.PlaySoundsTapButton()
-      CreateStageButton?.hero.id = HeroID.CreateCreateAndCreatingTrash
+      StageAuthCreateButton?.hero.id = HeroID.CreateCreateAndCreatingTrash
       SellectStageButton?.hero.id = HeroID.CreateFinCreateAndCreatingOption
       InternetUsersStageButton?.hero.id = HeroID.CreateInternetAndCreatingInfoLabel
       BackHomeButton?.hero.id = HeroID.CreateBackAndCreatingFinButton
       
-      Analytics.logEvent("TapCreateButton", parameters: nil)
+      Analytics.logEvent("TapStageAuthCreateButton", parameters: nil)
       
       let Storybord = UIStoryboard(name: "Main", bundle: nil)
       let HomeVC = Storybord.instantiateViewController(withIdentifier: "HomeView")
@@ -188,7 +190,7 @@ class CreateHomeViewController: UIViewController {
    
    @IBAction func TapBackButton(_ sender: Any) {
       BackHomeButton.hero.id = HeroID.TopTitleAndCreateBack
-      CreateStageButton.hero.id = HeroID.TopPlayAndCreateCreate
+      StageAuthCreateButton.hero.id = HeroID.TopPlayAndCreateCreate
       SellectStageButton.hero.id = HeroID.TopCreateAndCreateFinCreate
       
       Play3DtouchLight()

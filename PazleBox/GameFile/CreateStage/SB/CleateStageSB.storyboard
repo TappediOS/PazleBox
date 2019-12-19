@@ -30,7 +30,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="作る"/>
                                 <connections>
-                                    <action selector="TapCreateButton:" destination="Shq-YE-a8h" eventType="touchUpInside" id="krW-YM-COU"/>
+                                    <action selector="TapStageAuthCreateButton:" destination="Shq-YE-a8h" eventType="touchUpInside" id="krW-YM-COU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9W-4O-T85" customClass="FUIButton">
@@ -55,9 +55,9 @@
                     </view>
                     <connections>
                         <outlet property="BackHomeButton" destination="X9W-4O-T85" id="pUI-dv-qjg"/>
-                        <outlet property="CreateStageButton" destination="wCS-tJ-dt8" id="8Ji-Ig-e6T"/>
                         <outlet property="InternetUsersStageButton" destination="BXG-cm-a2S" id="aDT-9W-RnN"/>
                         <outlet property="SellectStageButton" destination="nmg-hS-je9" id="p8W-z4-iK9"/>
+                        <outlet property="StageAuthCreateButton" destination="wCS-tJ-dt8" id="8Ji-Ig-e6T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IUE-Lh-ttJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -89,14 +89,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="作れるステージ数は18個までです。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09V-bE-jBC">
-                                <rect key="frame" x="56" y="447" width="323" height="34"/>
+                                <rect key="frame" x="20" y="447" width="374" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="残り\(StageNum)ステージです。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plm-SA-JAH">
-                                <rect key="frame" x="56" y="489" width="323" height="29"/>
+                                <rect key="frame" x="20" y="478" width="374" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
