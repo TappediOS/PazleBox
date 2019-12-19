@@ -14,7 +14,7 @@ import ChameleonFramework
 import Firebase
 import Hero
 
-class StageMakingViewController: UIViewController {
+class StageMakingViewController: UIViewController, GADBannerViewDelegate{
    
    
    @IBOutlet weak var BackButton: FUIButton!
@@ -28,6 +28,8 @@ class StageMakingViewController: UIViewController {
    var FViewW: CGFloat = 0
    var FViewH: CGFloat = 0
    
+   var BackGroundImageView: BackGroundImageViews?
+   
    
    let userDefaults = UserDefaults.standard
    
@@ -39,13 +41,19 @@ class StageMakingViewController: UIViewController {
    let HeroID = HeroIDs()
    let GameSound = GameSounds()
    
+   let StageMakingBannerView = GADBannerView()
+   let BannerViewReqest = GADRequest()
+   let BANNER_VIEW_TEST_ID: String = "ca-app-pub-3940256099942544/2934735716"
+   let BANNER_VIEW_ID: String = "ca-app-pub-1460017825820383/2813553721"
+   let BANNER_VIEW_HIGHT: CGFloat = 50
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
       self.hero.isEnabled = true
       
       InitViewSize()
-      
+      InitBackgroundImageView()
       
       InitUsersRegiStageCount()
       InitAccessibilityIdentifires()
@@ -70,6 +78,12 @@ class StageMakingViewController: UIViewController {
       FViewH = ViewH / 32
    }
    
+   private func InitBackgroundImageView() {
+      BackGroundImageView = BackGroundImageViews(frame: self.view.frame)
+      self.view.addSubview(BackGroundImageView!)
+      self.view.sendSubviewToBack(BackGroundImageView!)
+   }
+   
    private func InitUsersRegiStageCount() {
       UsersRegiStageCount = userDefaults.integer(forKey: "CreateStageNum")
    }
@@ -89,7 +103,7 @@ class StageMakingViewController: UIViewController {
    }
    
    private func SetUpButtonPosition() {
-      StageMakingButton.frame = CGRect(x: FViewW * 6, y: FViewH * 15, width: FViewW * 12, height: FViewH * 3)
+      StageMakingButton.frame = CGRect(x: FViewW * 6, y: FViewH * 13.5, width: FViewW * 12, height: FViewH * 3)
       BackButton.frame = CGRect(x: FViewW * 1, y: FViewH * 2.5, width: FViewW * 5, height: FViewH * 3 / 2)
    }
    
@@ -150,6 +164,40 @@ class StageMakingViewController: UIViewController {
       RemainingLabel.lineBreakMode = .byWordWrapping
       RemainingLabel.center.x = StageMakingButton.center.x
    }
+   
+   //MARK:- 広告のチェックと初期化
+   private func InitAllADCheck() {
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false{
+         self.InitBannerView()
+      }else{
+         print("課金をしているので広告の初期化は行いません")
+      }
+   }
+   
+   private func InitBannerView() {
+      #if DEBUG
+         print("\n\n--------INFO ADMOB--------------\n")
+         print("Google Mobile ads SDK Versioin -> " + GADRequest.sdkVersion() + "\n")
+         self.StageMakingBannerView.adUnitID = BANNER_VIEW_TEST_ID
+         self.BannerViewReqest.testDevices = ["9d012329e337de42666c706e842b7819"];
+         print("バナー広告：テスト環境\n\n")
+      #else
+         print("\n\n--------INFO ADMOB--------------\n")
+         print("Google Mobile ads SDK Versioin -> " + GADRequest.sdkVersion() + "\n")
+         self.GameClearBannerView.adUnitID = BANNER_VIEW_ID
+         print("バナー広告：本番環境")
+      #endif
+      
+      //GameClearBannerView.backgroundColor = .black
+      StageMakingBannerView.frame = CGRect(x: 0, y: BANNER_VIEW_HIGHT, width: ViewW, height: BANNER_VIEW_HIGHT)
+      self.view.addSubview(StageMakingBannerView)
+      self.view.bringSubviewToFront(StageMakingBannerView)
+      
+      StageMakingBannerView.rootViewController = self
+      StageMakingBannerView.load(BannerViewReqest)
+      StageMakingBannerView.delegate = self
+   }
+   
    
    
    private func SetUpStageMakingButton() {
