@@ -234,7 +234,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
       #endif
       
       //GameClearBannerView.backgroundColor = .black
-      GameClearBannerView.frame = CGRect(x: 0, y: ViewH - 55, width: ViewW, height: 50)
+      GameClearBannerView.frame = CGRect(x: 0, y: ViewH - 52.5, width: ViewW, height: 50)
       self.addSubview(GameClearBannerView)
       self.bringSubviewToFront(GameClearBannerView)
       
