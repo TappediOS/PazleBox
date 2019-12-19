@@ -64,6 +64,8 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
       
       //NOTE:- ここでボタンがタップできるかどうかを判断
       SetUpStageMakingButton()
+      
+      InitAllADCheck()
    }
    
    override func viewDidAppear(_ animated: Bool) {
@@ -189,7 +191,7 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
       #endif
       
       //GameClearBannerView.backgroundColor = .black
-      StageMakingBannerView.frame = CGRect(x: 0, y: BANNER_VIEW_HIGHT, width: ViewW, height: BANNER_VIEW_HIGHT)
+      StageMakingBannerView.frame = CGRect(x: 0, y: ViewH - BANNER_VIEW_HIGHT, width: ViewW, height: BANNER_VIEW_HIGHT)
       self.view.addSubview(StageMakingBannerView)
       self.view.bringSubviewToFront(StageMakingBannerView)
       
