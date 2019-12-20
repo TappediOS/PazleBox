@@ -345,7 +345,6 @@ class SellectCreateStageViewController: UIViewController {
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
       let ComleateView = SCLAlertView(appearance: Appearanse)
       ComleateView.addButton("OK"){
-         self.dismiss(animated: true)
          self.Play3DtouchHeavy()
          self.GameSound.PlaySoundsTapButton()
       }
