@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,21 +18,17 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" interfaceStyle="light" id="aA9-FY-kZb">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="301"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Jc-cR-p0A">
-                    <rect key="frame" x="16" y="38" width="120" height="178"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="120" id="Tky-bR-k0Q"/>
-                    </constraints>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Jc-cR-p0A">
+                    <rect key="frame" x="16" y="38" width="120" height="177"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxi-Z3-HTT">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxi-Z3-HTT">
                     <rect key="frame" x="164" y="59" width="108" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="XPF-eO-kCp"/>
-                    </constraints>
                     <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="19"/>
                     <state key="normal" title="Play">
                         <color key="titleColor" red="1" green="0.99132838234447196" blue="0.98599512759275043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,12 +37,10 @@
                         <action selector="TapPlayButton:" destination="-1" eventType="touchUpInside" id="6N9-kC-BDy"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63h-h3-oxf">
-                    <rect key="frame" x="164" y="141" width="108" height="60"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63h-h3-oxf">
+                    <rect key="frame" x="164" y="141" width="108" height="59"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="0.32502464077036464" blue="0.23199593215251424" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="1gH-od-Mzd"/>
-                    </constraints>
                     <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="17"/>
                     <state key="normal" title="Delete">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -55,13 +49,10 @@
                         <action selector="TapDeleteButton:" destination="-1" eventType="touchUpInside" id="2Vz-e2-3gD"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCE-Oc-2EM">
-                    <rect key="frame" x="70" y="241" width="160" height="40"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCE-Oc-2EM">
+                    <rect key="frame" x="70" y="240" width="160" height="40"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.40877829365520313" green="0.87711645893045675" blue="0.35858797593127328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="160" id="5xM-78-Yc1"/>
-                        <constraint firstAttribute="height" constant="40" id="zkU-52-gUI"/>
-                    </constraints>
                     <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="19"/>
                     <state key="normal" title="Close">
                         <color key="titleColor" red="1" green="0.99132838229999998" blue="0.98599512759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -72,19 +63,6 @@
                 </button>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-            <constraints>
-                <constraint firstItem="Ywq-NC-qsg" firstAttribute="trailing" secondItem="63h-h3-oxf" secondAttribute="trailing" constant="28" id="8us-PC-edH"/>
-                <constraint firstItem="63h-h3-oxf" firstAttribute="leading" secondItem="9Jc-cR-p0A" secondAttribute="trailing" constant="28" id="AdO-bq-Ncg"/>
-                <constraint firstItem="WCE-Oc-2EM" firstAttribute="top" secondItem="9Jc-cR-p0A" secondAttribute="bottom" constant="25" id="KI3-uf-jh0"/>
-                <constraint firstItem="Ywq-NC-qsg" firstAttribute="bottom" secondItem="WCE-Oc-2EM" secondAttribute="bottom" constant="20" id="PEk-41-EHo"/>
-                <constraint firstItem="dxi-Z3-HTT" firstAttribute="top" secondItem="aA9-FY-kZb" secondAttribute="top" constant="59" id="XPk-3O-aPd"/>
-                <constraint firstItem="Ywq-NC-qsg" firstAttribute="trailing" secondItem="dxi-Z3-HTT" secondAttribute="trailing" constant="28" id="cx0-Tu-uLU"/>
-                <constraint firstItem="dxi-Z3-HTT" firstAttribute="leading" secondItem="9Jc-cR-p0A" secondAttribute="trailing" constant="28" id="d6N-6Z-You"/>
-                <constraint firstItem="9Jc-cR-p0A" firstAttribute="top" secondItem="aA9-FY-kZb" secondAttribute="top" constant="38" id="d7n-et-hxf"/>
-                <constraint firstItem="9Jc-cR-p0A" firstAttribute="leading" secondItem="Ywq-NC-qsg" secondAttribute="leading" constant="16" id="ehg-hr-sRp"/>
-                <constraint firstItem="63h-h3-oxf" firstAttribute="top" secondItem="dxi-Z3-HTT" secondAttribute="bottom" constant="22" id="fzt-m3-ybb"/>
-                <constraint firstItem="WCE-Oc-2EM" firstAttribute="leading" secondItem="Ywq-NC-qsg" secondAttribute="leading" constant="70" id="tdX-do-KkP"/>
-            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="Ywq-NC-qsg"/>
             <userDefinedRuntimeAttributes>
@@ -93,7 +71,7 @@
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
             </userDefinedRuntimeAttributes>
-            <point key="canvasLocation" x="-546.37681159420299" y="77.678571428571431"/>
+            <point key="canvasLocation" x="-546.37681159420299" y="77.34375"/>
         </view>
     </objects>
 </document>

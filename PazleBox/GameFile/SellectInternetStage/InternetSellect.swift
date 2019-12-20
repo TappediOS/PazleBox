@@ -80,6 +80,7 @@ class InterNetSellect: UIView {
       let Rating = NSLocalizedString("Rating", comment: "")
       let Text = Star + " " + Rating + " " + Star
       self.RatedLabel.text = Text
+      self.RatedLabel.adjustsFontSizeToFitWidth = true
    }
    
    private func InitPlayCountLabel() {
@@ -87,6 +88,7 @@ class InterNetSellect: UIView {
       let PlayCount = NSLocalizedString("PlayCount", comment: "")
       let Text = Pice + " " + PlayCount + " " + Pice
       self.PlayCountLabel.text = Text
+      self.PlayCountLabel.adjustsFontSizeToFitWidth = true
    }
    
    private func InitRatedNumLabel(_ RatedNum: CGFloat) {
