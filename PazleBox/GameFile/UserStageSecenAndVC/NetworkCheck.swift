@@ -32,6 +32,5 @@ class NetworkCheck {
          return false
       }
       
-      
    }
 }
