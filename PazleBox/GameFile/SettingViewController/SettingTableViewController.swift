@@ -46,6 +46,38 @@ class SettingTableViewController: UITableViewController {
          return 0
       }
    }
+   
+   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+      print(indexPath.section)
+      print(indexPath.row)
+      
+      switch indexPath.section {
+      case 0:
+         TapUserInfo(rowNum: indexPath.row)
+      case 1:
+         Tap(rowNum: indexPath.row)
+      case 2:
+         TapOther(rowNum: indexPath.row)
+      default:
+         print("ここにはこない")
+         return
+      }
+      
+      tableView.deselectRow(at: indexPath, animated: true)
+   }
+   
+   func TapUserInfo(rowNum: Int) {
+      
+   }
+   
+   func Tap(rowNum: Int) {
+      
+   }
+   
+   func TapOther(rowNum: Int) {
+      
+   }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
