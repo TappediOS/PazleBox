@@ -130,6 +130,12 @@
 		BF46109022352423006F3DF1 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46108F22352423006F3DF1 /* Puzzle.swift */; };
 		BF48931E23B9BEC60001FB04 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF48931D23B9BEC60001FB04 /* TabBarViewController.swift */; };
 		BF48932023B9C5830001FB04 /* TabBarContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF48931F23B9C5830001FB04 /* TabBarContentsView.swift */; };
+		BF48932223B9CF390001FB04 /* hammer.png in Resources */ = {isa = PBXBuildFile; fileRef = BF48932123B9CF390001FB04 /* hammer.png */; };
+		BF48932423B9CF520001FB04 /* hammer_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = BF48932323B9CF520001FB04 /* hammer_fill.png */; };
+		BF48932623B9D1030001FB04 /* person.png in Resources */ = {isa = PBXBuildFile; fileRef = BF48932523B9D1030001FB04 /* person.png */; };
+		BF48932823B9D1740001FB04 /* person_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = BF48932723B9D1730001FB04 /* person_fill.png */; };
+		BF48932A23B9D2500001FB04 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = BF48932923B9D2500001FB04 /* play.png */; };
+		BF48932C23B9D26D0001FB04 /* play_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = BF48932B23B9D26D0001FB04 /* play_fill.png */; };
 		BF519C69223CCBDE0087A4AC /* GetTilePOSITION.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */; };
 		BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C6A223F58920087A4AC /* ExNotification.swift */; };
 		BF519C7B223FA8D60087A4AC /* ExTextureName.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C7A223FA8D60087A4AC /* ExTextureName.swift */; };
@@ -882,6 +888,12 @@
 		BF46108F22352423006F3DF1 /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
 		BF48931D23B9BEC60001FB04 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		BF48931F23B9C5830001FB04 /* TabBarContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarContentsView.swift; sourceTree = "<group>"; };
+		BF48932123B9CF390001FB04 /* hammer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hammer.png; sourceTree = "<group>"; };
+		BF48932323B9CF520001FB04 /* hammer_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hammer_fill.png; sourceTree = "<group>"; };
+		BF48932523B9D1030001FB04 /* person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person.png; sourceTree = "<group>"; };
+		BF48932723B9D1730001FB04 /* person_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person_fill.png; sourceTree = "<group>"; };
+		BF48932923B9D2500001FB04 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		BF48932B23B9D26D0001FB04 /* play_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_fill.png; sourceTree = "<group>"; };
 		BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTilePOSITION.swift; sourceTree = "<group>"; };
 		BF519C6A223F58920087A4AC /* ExNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNotification.swift; sourceTree = "<group>"; };
 		BF519C7A223FA8D60087A4AC /* ExTextureName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExTextureName.swift; sourceTree = "<group>"; };
@@ -2000,6 +2012,12 @@
 			children = (
 				BF48931D23B9BEC60001FB04 /* TabBarViewController.swift */,
 				BF48931F23B9C5830001FB04 /* TabBarContentsView.swift */,
+				BF48932123B9CF390001FB04 /* hammer.png */,
+				BF48932323B9CF520001FB04 /* hammer_fill.png */,
+				BF48932523B9D1030001FB04 /* person.png */,
+				BF48932723B9D1730001FB04 /* person_fill.png */,
+				BF48932923B9D2500001FB04 /* play.png */,
+				BF48932B23B9D26D0001FB04 /* play_fill.png */,
 			);
 			path = TabBarViewController;
 			sourceTree = "<group>";
@@ -3047,6 +3065,7 @@
 				BFF6D6702286C245000253A2 /* 33p44Blue.png in Resources */,
 				BFF6D77122896610000253A2 /* 43p50Green.png in Resources */,
 				BFF6D5CE227D9323000253A2 /* Settings.bundle in Resources */,
+				BF48932823B9D1740001FB04 /* person_fill.png in Resources */,
 				BFCE25F6224A4C990099A775 /* 42p1Green.png in Resources */,
 				BFF6D76022896610000253A2 /* 43p36Green.png in Resources */,
 				BFCE25E7224A466B0099A775 /* 33p17Green.png in Resources */,
@@ -3204,6 +3223,7 @@
 				BF640BF52244F8FD00333782 /* 32p1Green.png in Resources */,
 				BF7CD91E2240B56300F8302B /* 12p1Blue.png in Resources */,
 				BF60AC6B224DD1DB00D441D6 /* Hint.png in Resources */,
+				BF48932423B9CF520001FB04 /* hammer_fill.png in Resources */,
 				BFF6D78122896610000253A2 /* 43p29Blue.png in Resources */,
 				BFCE261B224A557B0099A775 /* 23p9Blue.png in Resources */,
 				BF849E0222C0CAA1003E34CB /* BackGroundImageForPad.png in Resources */,
@@ -3221,6 +3241,7 @@
 				BFCE263A224A58A60099A775 /* 32p8Green.png in Resources */,
 				BFF6D7972294058A000253A2 /* 43p51Blue.png in Resources */,
 				BF640BFF2244F8FD00333782 /* 32p4Blue.png in Resources */,
+				BF48932A23B9D2500001FB04 /* play.png in Resources */,
 				BFF6D614228412D2000253A2 /* 33p35Green.png in Resources */,
 				BFF6D76622896610000253A2 /* 43p8Blue.png in Resources */,
 				BFCE25BB224A466B0099A775 /* 33p2Green.png in Resources */,
@@ -3262,6 +3283,7 @@
 				BF60AC71224DF62300D441D6 /* Pico.caf in Resources */,
 				BF7CD91D2240B56300F8302B /* 12p1Green.png in Resources */,
 				BF640BF92244F8FD00333782 /* 32p2Green.png in Resources */,
+				BF48932223B9CF390001FB04 /* hammer.png in Resources */,
 				BFF6D75922896610000253A2 /* 43p12Green.png in Resources */,
 				BFCE25B7224A466B0099A775 /* 33p17Red.png in Resources */,
 				BFF6D74222896610000253A2 /* 43p33Green.png in Resources */,
@@ -3286,6 +3308,7 @@
 				BFF6D72222896610000253A2 /* 43p4Red.png in Resources */,
 				BFF6D6462284152F000253A2 /* 32p13Green.png in Resources */,
 				BFCE25EE224A466B0099A775 /* 33p20Red.png in Resources */,
+				BF48932C23B9D26D0001FB04 /* play_fill.png in Resources */,
 				BFCE2648224A58A60099A775 /* 32p12Blue.png in Resources */,
 				BFF6D624228412D2000253A2 /* 33p27Blue.png in Resources */,
 				BFCE25BD224A466B0099A775 /* 33p4Green.png in Resources */,
@@ -3298,6 +3321,7 @@
 				BFCE2647224A58A60099A775 /* 32p11Blue.png in Resources */,
 				BFF6D75A22896610000253A2 /* 43p19Green.png in Resources */,
 				BFF6D75522896610000253A2 /* 43p4Green.png in Resources */,
+				BF48932623B9D1030001FB04 /* person.png in Resources */,
 				BFCE2625224A557B0099A775 /* 23p9Green.png in Resources */,
 				BF60AC5F224CA9AD00D441D6 /* Katch.caf in Resources */,
 				BFF6D71922896610000253A2 /* 43p15Red.png in Resources */,
