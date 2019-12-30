@@ -128,6 +128,7 @@
 		BF4323CB22D35F28008DF038 /* BackTileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4323CA22D35F28008DF038 /* BackTileImageView.swift */; };
 		BF43E02C23AA127000E0333B /* StageMakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF43E02B23AA127000E0333B /* StageMakingViewController.swift */; };
 		BF46109022352423006F3DF1 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46108F22352423006F3DF1 /* Puzzle.swift */; };
+		BF48931E23B9BEC60001FB04 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF48931D23B9BEC60001FB04 /* TabBarViewController.swift */; };
 		BF519C69223CCBDE0087A4AC /* GetTilePOSITION.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */; };
 		BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C6A223F58920087A4AC /* ExNotification.swift */; };
 		BF519C7B223FA8D60087A4AC /* ExTextureName.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C7A223FA8D60087A4AC /* ExTextureName.swift */; };
@@ -878,6 +879,7 @@
 		BF4323CA22D35F28008DF038 /* BackTileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackTileImageView.swift; sourceTree = "<group>"; };
 		BF43E02B23AA127000E0333B /* StageMakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageMakingViewController.swift; sourceTree = "<group>"; };
 		BF46108F22352423006F3DF1 /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
+		BF48931D23B9BEC60001FB04 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTilePOSITION.swift; sourceTree = "<group>"; };
 		BF519C6A223F58920087A4AC /* ExNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNotification.swift; sourceTree = "<group>"; };
 		BF519C7A223FA8D60087A4AC /* ExTextureName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExTextureName.swift; sourceTree = "<group>"; };
@@ -1592,6 +1594,7 @@
 				BF8A464C225081E90016F801 /* LottieJSON */,
 				BF89479222B9FCAB0014596B /* PieceViewController */,
 				BF1648F022C0C29E000CD1AB /* BackGroundImage */,
+				BF48931C23B9BE9F0001FB04 /* TabBarViewController */,
 				BF332F7E22491850009B3042 /* HomeView */,
 				BF9F80A82360108B003512B0 /* RootViewController */,
 				BF95C63522B79C130037E063 /* Game Coins */,
@@ -1988,6 +1991,14 @@
 				BF43E02B23AA127000E0333B /* StageMakingViewController.swift */,
 			);
 			path = StageMakingViewController;
+			sourceTree = "<group>";
+		};
+		BF48931C23B9BE9F0001FB04 /* TabBarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BF48931D23B9BEC60001FB04 /* TabBarViewController.swift */,
+			);
+			path = TabBarViewController;
 			sourceTree = "<group>";
 		};
 		BF60AC4F224C8EDA00D441D6 /* StatesBar */ = {
@@ -3509,6 +3520,7 @@
 				BF332F94224926DB009B3042 /* E7.swift in Sources */,
 				BF332F90224926CD009B3042 /* E5.swift in Sources */,
 				BFFB3AD52250F5E7000C90E1 /* GameClearView.swift in Sources */,
+				BF48931E23B9BEC60001FB04 /* TabBarViewController.swift in Sources */,
 				BF1648EF22C0C118000CD1AB /* DeviceChecker.swift in Sources */,
 				BF7CE797226083AD0040352D /* PouseTextureNode.swift in Sources */,
 				BF552ED6226DDDC900756E16 /* N28.swift in Sources */,
