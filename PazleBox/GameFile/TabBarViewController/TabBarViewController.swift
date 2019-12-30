@@ -30,8 +30,7 @@ class PuzzleTabBarController: ESTabBarController {
       PlayVC.modalPresentationStyle = .fullScreen
       PlayVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: "あそぶ",
                                            image: image, selectedImage: selectedImage, tag: 1)
-      PlayVC.title = "あそぶ"
-      
+
       
       image = getCreateImage()
       selectedImage = getCreateFillImage()
@@ -40,7 +39,6 @@ class PuzzleTabBarController: ESTabBarController {
       CreateVC.modalPresentationStyle = .fullScreen
       CreateVC.tabBarItem = ESTabBarItem.init(TabBarCenterContentView(), title: "作る",
                                               image: image, selectedImage: selectedImage, tag: 2)
-      CreateVC.title = "作る"
       
       
       image = getSettingImage()
@@ -51,7 +49,6 @@ class PuzzleTabBarController: ESTabBarController {
       SettingVC.modalPresentationStyle = .fullScreen
       SettingVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: "設定",
                                                 image: image, selectedImage: selectedImage, tag: 3)
-      SettingVC.title = "設定"
         
       
         
