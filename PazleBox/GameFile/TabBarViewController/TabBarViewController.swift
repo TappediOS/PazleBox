@@ -38,7 +38,7 @@ class PuzzleTabBarController: ESTabBarController {
       
       let CreateVC = Storybord.instantiateViewController(withIdentifier: "StageMakingVC")
       CreateVC.modalPresentationStyle = .fullScreen
-      CreateVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: "作る",
+      CreateVC.tabBarItem = ESTabBarItem.init(TabBarCenterContentView(), title: "作る",
                                               image: image, selectedImage: selectedImage, tag: 2)
       CreateVC.title = "作る"
       
