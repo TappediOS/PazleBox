@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseMessaging
 import FirebaseFirestore
+import FirebaseAuth
 import Firebase
 import AVFoundation
 import Crashlytics
