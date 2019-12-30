@@ -45,6 +45,8 @@ target 'PazleBox' do
   pod 'ReachabilitySwift'
 
   pod 'ESTabBarController-swift'
+  pod 'pop', '~> 1.0'
+
 
 end
 

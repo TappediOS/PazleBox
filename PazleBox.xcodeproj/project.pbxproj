@@ -136,6 +136,7 @@
 		BF48932823B9D1740001FB04 /* person_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = BF48932723B9D1730001FB04 /* person_fill.png */; };
 		BF48932A23B9D2500001FB04 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = BF48932923B9D2500001FB04 /* play.png */; };
 		BF48932C23B9D26D0001FB04 /* play_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = BF48932B23B9D26D0001FB04 /* play_fill.png */; };
+		BF48932E23B9D3980001FB04 /* TabBarCenterContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF48932D23B9D3980001FB04 /* TabBarCenterContentsView.swift */; };
 		BF519C69223CCBDE0087A4AC /* GetTilePOSITION.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */; };
 		BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C6A223F58920087A4AC /* ExNotification.swift */; };
 		BF519C7B223FA8D60087A4AC /* ExTextureName.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C7A223FA8D60087A4AC /* ExTextureName.swift */; };
@@ -894,6 +895,7 @@
 		BF48932723B9D1730001FB04 /* person_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person_fill.png; sourceTree = "<group>"; };
 		BF48932923B9D2500001FB04 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		BF48932B23B9D26D0001FB04 /* play_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_fill.png; sourceTree = "<group>"; };
+		BF48932D23B9D3980001FB04 /* TabBarCenterContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCenterContentsView.swift; sourceTree = "<group>"; };
 		BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTilePOSITION.swift; sourceTree = "<group>"; };
 		BF519C6A223F58920087A4AC /* ExNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNotification.swift; sourceTree = "<group>"; };
 		BF519C7A223FA8D60087A4AC /* ExTextureName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExTextureName.swift; sourceTree = "<group>"; };
@@ -2012,6 +2014,7 @@
 			children = (
 				BF48931D23B9BEC60001FB04 /* TabBarViewController.swift */,
 				BF48931F23B9C5830001FB04 /* TabBarContentsView.swift */,
+				BF48932D23B9D3980001FB04 /* TabBarCenterContentsView.swift */,
 				BF48932123B9CF390001FB04 /* hammer.png */,
 				BF48932323B9CF520001FB04 /* hammer_fill.png */,
 				BF48932523B9D1030001FB04 /* person.png */,
@@ -3703,6 +3706,7 @@
 				BF332F8C224926C1009B3042 /* E3.swift in Sources */,
 				BF1DBD61238A445500F6B2D1 /* FireStores.swift in Sources */,
 				BF332FF022492819009B3042 /* H12.swift in Sources */,
+				BF48932E23B9D3980001FB04 /* TabBarCenterContentsView.swift in Sources */,
 				BF332FD2224927CC009B3042 /* N18.swift in Sources */,
 				BF60AC5C224CA2E000D441D6 /* Sound.swift in Sources */,
 				BF332FDA224927EB009B3042 /* H2.swift in Sources */,
