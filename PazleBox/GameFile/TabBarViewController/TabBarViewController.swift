@@ -24,27 +24,29 @@ class PuzzleTabBarController: ESTabBarController {
       
       image = getPlayImage()
       selectedImage = getPlayFillImage()
-        
+      
+      var title = NSLocalizedString("Play", comment: "")
       let Storybord = UIStoryboard(name: "CleateStageSB", bundle: nil)
       let PlayVC = Storybord.instantiateViewController(withIdentifier: "SellectCreateStageViewController")
-      PlayVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: "あそぶ",
+      PlayVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
                                            image: image, selectedImage: selectedImage, tag: 1)
 
       
       image = getCreateImage()
       selectedImage = getCreateFillImage()
-      
+      title = NSLocalizedString("Create", comment: "")
       let CreateVC = Storybord.instantiateViewController(withIdentifier: "StageMakingVC")
-      CreateVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: "作る",
+      CreateVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
                                               image: image, selectedImage: selectedImage, tag: 2)
       
       
       image = getSettingImage()
       selectedImage = getSettingFillImage()
+      title = NSLocalizedString("Setting", comment: "")
       //TODO: ここのVCを作ってせっていしよう
       //TODO: staticTableViewがいいかなー
       let SettingVC = Storybord.instantiateViewController(withIdentifier: "StageMakingVC")
-      SettingVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: "設定",
+      SettingVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
                                                 image: image, selectedImage: selectedImage, tag: 3)
         
       
