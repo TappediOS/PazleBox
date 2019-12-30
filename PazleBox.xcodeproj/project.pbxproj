@@ -268,6 +268,7 @@
 		BF640C0D224513DF00333782 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF640C0C224513DF00333782 /* HomeViewController.swift */; };
 		BF67C2A5235DB9D200EBFB00 /* ExCreateStageDidLayoutSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67C2A4235DB9D200EBFB00 /* ExCreateStageDidLayoutSubviews.swift */; };
 		BF67C2A8235EB70800EBFB00 /* ExCreateStageInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67C2A7235EB70800EBFB00 /* ExCreateStageInit.swift */; };
+		BF6871C723B9FBA3005013A9 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6871C623B9FBA3005013A9 /* SettingTableViewController.swift */; };
 		BF6B60CD23A787D8002FD8A1 /* NetworkCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6B60CC23A787D8002FD8A1 /* NetworkCheck.swift */; };
 		BF72916C2361866E00E8D947 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF72916E2361866E00E8D947 /* InfoPlist.strings */; };
 		BF7291742365A85E00E8D947 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7291732365A85E00E8D947 /* SnapshotHelper.swift */; };
@@ -1027,6 +1028,7 @@
 		BF640C0C224513DF00333782 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BF67C2A4235DB9D200EBFB00 /* ExCreateStageDidLayoutSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCreateStageDidLayoutSubviews.swift; sourceTree = "<group>"; };
 		BF67C2A7235EB70800EBFB00 /* ExCreateStageInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCreateStageInit.swift; sourceTree = "<group>"; };
+		BF6871C623B9FBA3005013A9 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		BF6B60CC23A787D8002FD8A1 /* NetworkCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCheck.swift; sourceTree = "<group>"; };
 		BF72916D2361866E00E8D947 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BF72916F2361867600E8D947 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -1611,6 +1613,7 @@
 				BF89479222B9FCAB0014596B /* PieceViewController */,
 				BF1648F022C0C29E000CD1AB /* BackGroundImage */,
 				BF48931C23B9BE9F0001FB04 /* TabBarViewController */,
+				BF6871C323B9FAD3005013A9 /* SettingViewController */,
 				BF332F7E22491850009B3042 /* HomeView */,
 				BF9F80A82360108B003512B0 /* RootViewController */,
 				BF95C63522B79C130037E063 /* Game Coins */,
@@ -2080,6 +2083,14 @@
 				BF67C2A7235EB70800EBFB00 /* ExCreateStageInit.swift */,
 			);
 			path = CleateStageViewControllerFile;
+			sourceTree = "<group>";
+		};
+		BF6871C323B9FAD3005013A9 /* SettingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BF6871C623B9FBA3005013A9 /* SettingTableViewController.swift */,
+			);
+			path = SettingViewController;
 			sourceTree = "<group>";
 		};
 		BF73C2F6234B316A00745C7F /* UserStageSecenAndVC */ = {
@@ -3705,6 +3716,7 @@
 				BF552F2E226DDF0D00756E16 /* H42.swift in Sources */,
 				BF332F8C224926C1009B3042 /* E3.swift in Sources */,
 				BF1DBD61238A445500F6B2D1 /* FireStores.swift in Sources */,
+				BF6871C723B9FBA3005013A9 /* SettingTableViewController.swift in Sources */,
 				BF332FF022492819009B3042 /* H12.swift in Sources */,
 				BF48932E23B9D3980001FB04 /* TabBarCenterContentsView.swift in Sources */,
 				BF332FD2224927CC009B3042 /* N18.swift in Sources */,
