@@ -216,7 +216,7 @@ class CleateStageViewController: UIViewController {
       //let Viewsize = self.view.frame.width / spalete
       //let StartX = self.view.frame.width / spalete * (spalete - 1) - Viewsize * 0.45
       //let StartY = self.view.frame.height - Viewsize - Viewsize * 0.45
-      let spalete: CGFloat = 3 //横幅 viewWide / X　になる。
+      let spalete: CGFloat = 5 //横幅 viewWide / X　になる。
       let Viewsize = self.view.frame.width / spalete
       let StartX = self.view.frame.width / 2 - (Viewsize / 2)
       let StartY = self.view.frame.height / 2 - (Viewsize / 2)
@@ -228,6 +228,7 @@ class CleateStageViewController: UIViewController {
    //MARK:- ローディングアニメーション再生
    private func StartLoadingAnimation() {
       print("ローディングアニメーション再生")
+      self.view.bringSubviewToFront(self.LoadActivityView!)
       self.LoadActivityView?.startAnimating()
       return
    }

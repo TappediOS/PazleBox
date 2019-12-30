@@ -50,8 +50,9 @@ class PuzzleTabBarController: ESTabBarController {
                                                 image: image, selectedImage: selectedImage, tag: 3)
         
       
-        
       self.viewControllers = [PlayVC, CreateVC, SettingVC]
+      self.selectedIndex = 1
+      
    }
    
    private func getPlayImage() -> UIImage {

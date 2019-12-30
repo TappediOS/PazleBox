@@ -155,7 +155,7 @@ class SellectInternetStageViewController: UIViewController {
    }
    
    private func InitLoadActivityView() {
-      let spalete: CGFloat = 3 //横幅 viewWide / X　になる。
+      let spalete: CGFloat = 5 //横幅 viewWide / X　になる。
       let Viewsize = self.view.frame.width / spalete
       let StartX = self.view.frame.width / 2 - (Viewsize / 2)
       let StartY = self.view.frame.height / 2 - (Viewsize / 2)

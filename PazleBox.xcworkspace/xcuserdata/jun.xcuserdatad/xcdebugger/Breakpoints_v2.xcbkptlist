@@ -2664,8 +2664,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "527"
             endingLineNumber = "527"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "WorkForPiceUserPiceUp()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2680,8 +2680,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "501"
             endingLineNumber = "501"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "PiceTouchEndedCatchNotification(notification:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2696,8 +2696,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "593"
             endingLineNumber = "593"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "TappedCell(CellNum:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2712,8 +2712,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
             endingLineNumber = "59"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "CleateStageViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "10487C76-0E87-4214-9CB7-74F3AF279E76 - a0d63a1a63c6c83"
@@ -2820,8 +2820,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
             endingLineNumber = "60"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "CleateStageViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "79E08F12-78A4-4784-8FAA-88C0B2B2DF7B - e2806f824875afca"
@@ -2928,8 +2928,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "594"
             endingLineNumber = "594"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "TappedCell(CellNum:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2944,8 +2944,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "780"
             endingLineNumber = "780"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "SaveStageUserCreated()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3425,6 +3425,22 @@
             startingLineNumber = "54"
             endingLineNumber = "54"
             landmarkName = "selectAnimation(animated:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1EE9CCDF-DE3B-4BDE-AE53-C6179258914F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/GameFile/CreateStage/CleateStageViewControllerFile/CreateStageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
+            landmarkName = "StartLoadingAnimation()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
