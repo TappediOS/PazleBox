@@ -155,10 +155,10 @@ class SellectInternetStageViewController: UIViewController {
    }
    
    private func InitLoadActivityView() {
-      let spalete: CGFloat = 9 //横幅 viewWide / X　になる。
+      let spalete: CGFloat = 3 //横幅 viewWide / X　になる。
       let Viewsize = self.view.frame.width / spalete
-      let StartX = self.view.frame.width / spalete * (spalete - 1) - Viewsize * 0.45
-      let StartY = self.view.frame.height - Viewsize - Viewsize * 0.45
+      let StartX = self.view.frame.width / 2 - (Viewsize / 2)
+      let StartY = self.view.frame.height / 2 - (Viewsize / 2)
       let Rect = CGRect(x: StartX, y: StartY, width: Viewsize, height: Viewsize)
       LoadActivityView = NVActivityIndicatorView(frame: Rect, type: .ballSpinFadeLoader, color: UIColor.flatMint(), padding: 0)
       self.view.addSubview(LoadActivityView!)
