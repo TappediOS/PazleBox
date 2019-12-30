@@ -11,6 +11,7 @@ PODS:
   - COSTouchVisualizer (1.0.6)
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
+  - ESTabBarController-swift (2.7)
   - Fabric (1.10.2)
   - Firebase/AdMob (6.11.0):
     - Firebase/CoreOnly
@@ -201,6 +202,7 @@ DEPENDENCIES:
   - ChameleonFramework/Swift
   - COSTouchVisualizer
   - Crashlytics
+  - ESTabBarController-swift
   - Firebase/AdMob
   - Firebase/Auth
   - Firebase/Core
@@ -230,6 +232,7 @@ SPEC REPOS:
     - ChameleonFramework
     - COSTouchVisualizer
     - Crashlytics
+    - ESTabBarController-swift
     - Fabric
     - Firebase
     - FirebaseABTesting
@@ -288,6 +291,7 @@ SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   COSTouchVisualizer: a398089327a6c02897823614d7447ccc97198997
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
+  ESTabBarController-swift: 4fb52ad03d94d0717ef97bc9eb09a5abfdded0a2
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   Firebase: bc9cfc7a96c73268656d5aaab453ff1b4b530e0e
   FirebaseABTesting: 0d10f3cdc3fa00f3f175b5b56c1003c8e888299f
@@ -332,6 +336,6 @@ SPEC CHECKSUMS:
   TwicketSegmentedControl: 6d7a4cf243657e0ac3f00d06d873a25334c04042
   ViewAnimator: 5af1c6f3b310f012bf081259c43717aa54fbae73
 
-PODFILE CHECKSUM: e227e0e7d5eab83d1f760ce5fc1dab51a0abc916
+PODFILE CHECKSUM: 84494412afeebd92071cd385a2d3f54092106388
 
 COCOAPODS: 1.8.4

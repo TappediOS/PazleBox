@@ -44,6 +44,8 @@ target 'PazleBox' do
 
   pod 'ReachabilitySwift'
 
+  pod 'ESTabBarController-swift'
+
 end
 
 target 'PazleBoxTests' do
@@ -93,4 +95,5 @@ target 'PazleBoxUITests' do
 
   pod 'TwicketSegmentedControl'
 
+  pod 'ESTabBarController-swift'
 end
