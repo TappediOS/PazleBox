@@ -211,6 +211,11 @@ class CleateStageViewController: UIViewController {
    }
    
    private func InitLoadActivityView() {
+      //右下に表示するときはこれを使ったらいいよ。
+      //let spalete: CGFloat = 9 //横幅 viewWide / X　になる。
+      //let Viewsize = self.view.frame.width / spalete
+      //let StartX = self.view.frame.width / spalete * (spalete - 1) - Viewsize * 0.45
+      //let StartY = self.view.frame.height - Viewsize - Viewsize * 0.45
       let spalete: CGFloat = 3 //横幅 viewWide / X　になる。
       let Viewsize = self.view.frame.width / spalete
       let StartX = self.view.frame.width / 2 - (Viewsize / 2)
