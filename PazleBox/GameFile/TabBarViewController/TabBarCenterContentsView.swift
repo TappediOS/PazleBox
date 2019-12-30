@@ -14,19 +14,14 @@ class TabBarCenterContentView: ESTabBarItemContentView {
    override init(frame: CGRect) {
       super.init(frame: frame)
         
-      self.imageView.backgroundColor = UIColor.init(red: 23/255.0, green: 149/255.0, blue: 158/255.0, alpha: 1.0)
+      self.imageView.backgroundColor = UIColor.init(red: 23 / 255.0, green: 149 / 255.0, blue: 158 / 255.0, alpha: 1.0)
       self.imageView.layer.borderWidth = 3.0
       self.imageView.layer.borderColor = UIColor.init(white: 235 / 255.0, alpha: 1.0).cgColor
-      self.imageView.layer.cornerRadius = 35
+      self.imageView.layer.cornerRadius = 50
       self.insets = UIEdgeInsets.init(top: -32, left: 0, bottom: 0, right: 0)
       let transform = CGAffineTransform.identity
       self.imageView.transform = transform
       self.superview?.bringSubviewToFront(self)
-      
-      //textColor = UIColor.init(white: 50.0 / 255.0, alpha: 1.0)
-      //highlightTextColor = UIColor.init(red: 254/255.0, green: 73/255.0, blue: 42/255.0, alpha: 1.0)
-      //iconColor = UIColor.init(white: 50.0 / 255.0, alpha: 1.0)
-      //highlightIconColor = UIColor.init(red: 254/255.0, green: 73/255.0, blue: 42/255.0, alpha: 1.0)
       
       textColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
       highlightTextColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
@@ -56,7 +51,7 @@ class TabBarCenterContentView: ESTabBarItemContentView {
       let view = UIView.init(frame: CGRect.init(origin: CGPoint.zero, size: CGSize(width: 2.0, height: 2.0)))
       view.layer.cornerRadius = 1.0
       view.layer.opacity = 0.5
-      view.backgroundColor = UIColor.init(red: 10/255.0, green: 66/255.0, blue: 91/255.0, alpha: 1.0)
+      view.backgroundColor = UIColor.init(red: 10 / 255.0, green: 66 / 255.0, blue: 91 / 255.0, alpha: 1.0)
       self.addSubview(view)
       playMaskAnimation(animateView: view, target: self.imageView, completion: {
          [weak view] in

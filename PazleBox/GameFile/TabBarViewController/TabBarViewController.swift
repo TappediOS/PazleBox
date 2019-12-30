@@ -27,7 +27,6 @@ class PuzzleTabBarController: ESTabBarController {
         
       let Storybord = UIStoryboard(name: "CleateStageSB", bundle: nil)
       let PlayVC = Storybord.instantiateViewController(withIdentifier: "SellectCreateStageViewController")
-      PlayVC.modalPresentationStyle = .fullScreen
       PlayVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: "あそぶ",
                                            image: image, selectedImage: selectedImage, tag: 1)
 
@@ -36,8 +35,7 @@ class PuzzleTabBarController: ESTabBarController {
       selectedImage = getCreateFillImage()
       
       let CreateVC = Storybord.instantiateViewController(withIdentifier: "StageMakingVC")
-      CreateVC.modalPresentationStyle = .fullScreen
-      CreateVC.tabBarItem = ESTabBarItem.init(TabBarCenterContentView(), title: "作る",
+      CreateVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: "作る",
                                               image: image, selectedImage: selectedImage, tag: 2)
       
       
@@ -46,7 +44,6 @@ class PuzzleTabBarController: ESTabBarController {
       //TODO: ここのVCを作ってせっていしよう
       //TODO: staticTableViewがいいかなー
       let SettingVC = Storybord.instantiateViewController(withIdentifier: "StageMakingVC")
-      SettingVC.modalPresentationStyle = .fullScreen
       SettingVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: "設定",
                                                 image: image, selectedImage: selectedImage, tag: 3)
         
