@@ -93,7 +93,7 @@ class SettingTableViewController: UITableViewController {
       
       switch indexPath.section {
       case 0:
-         TapUserInfo(rowNum: indexPath.row)
+         TapUserInfo()
       case 1:
          TapNoAds(rowNum: indexPath.row)
       case 2:
@@ -106,9 +106,6 @@ class SettingTableViewController: UITableViewController {
       tableView.deselectRow(at: indexPath, animated: true)
    }
    
-   func TapUserInfo(rowNum: Int) {
-      
-   }
    
    
    

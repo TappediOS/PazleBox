@@ -13,6 +13,7 @@
 		BF0FD356224371CE00E8F387 /* PutParticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0FD355224371CE00E8F387 /* PutParticle.swift */; };
 		BF13BC9023BC71F200F2E36D /* ExSettingNOADS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF13BC8F23BC71F200F2E36D /* ExSettingNOADS.swift */; };
 		BF13BC9223BC753400F2E36D /* ExSettingOther.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF13BC9123BC753400F2E36D /* ExSettingOther.swift */; };
+		BF13BC9423BC78EB00F2E36D /* ExSettingUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF13BC9323BC78EB00F2E36D /* ExSettingUserInfo.swift */; };
 		BF1648ED22BDFB1C000CD1AB /* AnimationTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1648EC22BDFB1C000CD1AB /* AnimationTimeManager.swift */; };
 		BF1648EF22C0C118000CD1AB /* DeviceChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1648EE22C0C118000CD1AB /* DeviceChecker.swift */; };
 		BF1648F222C0C2CC000CD1AB /* BackGroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1648F122C0C2CC000CD1AB /* BackGroundImageView.swift */; };
@@ -764,6 +765,7 @@
 		BF0FD355224371CE00E8F387 /* PutParticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutParticle.swift; sourceTree = "<group>"; };
 		BF13BC8F23BC71F200F2E36D /* ExSettingNOADS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSettingNOADS.swift; sourceTree = "<group>"; };
 		BF13BC9123BC753400F2E36D /* ExSettingOther.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSettingOther.swift; sourceTree = "<group>"; };
+		BF13BC9323BC78EB00F2E36D /* ExSettingUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSettingUserInfo.swift; sourceTree = "<group>"; };
 		BF1648EC22BDFB1C000CD1AB /* AnimationTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTimeManager.swift; sourceTree = "<group>"; };
 		BF1648EE22C0C118000CD1AB /* DeviceChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeviceChecker.swift; path = ../../DeviceChecker.swift; sourceTree = "<group>"; };
 		BF1648F122C0C2CC000CD1AB /* BackGroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackGroundImageView.swift; sourceTree = "<group>"; };
@@ -2093,6 +2095,7 @@
 			isa = PBXGroup;
 			children = (
 				BF6871C623B9FBA3005013A9 /* SettingTableViewController.swift */,
+				BF13BC9323BC78EB00F2E36D /* ExSettingUserInfo.swift */,
 				BF13BC8F23BC71F200F2E36D /* ExSettingNOADS.swift */,
 				BF13BC9123BC753400F2E36D /* ExSettingOther.swift */,
 			);
@@ -3752,6 +3755,7 @@
 				BF332F8022491F8D009B3042 /* ExEnum.swift in Sources */,
 				BF552ECC226DDDA800756E16 /* N23.swift in Sources */,
 				BF552EAC226DDD4200756E16 /* E37.swift in Sources */,
+				BF13BC9423BC78EB00F2E36D /* ExSettingUserInfo.swift in Sources */,
 				BF33300622492B4C009B3042 /* ExGameSeceneHardP2.swift in Sources */,
 				BF1648F222C0C2CC000CD1AB /* BackGroundImageView.swift in Sources */,
 				BF73C2F22349C03F00745C7F /* UserCreateStageDB.swift in Sources */,
