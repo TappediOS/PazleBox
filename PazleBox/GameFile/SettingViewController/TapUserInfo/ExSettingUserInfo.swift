@@ -28,6 +28,7 @@ extension SettingTableViewController {
    func showFirebaseLoginVC() {
       let Storybord = UIStoryboard(name: "FirebaseLoginSB", bundle: nil)
       let LoginVC = Storybord.instantiateViewController(withIdentifier: "FirebaseLoginVC")
+      LoginVC.modalPresentationStyle = .pageSheet
       present(LoginVC, animated: true, completion: {
          print("Login画面にプレゼント完了")
       })

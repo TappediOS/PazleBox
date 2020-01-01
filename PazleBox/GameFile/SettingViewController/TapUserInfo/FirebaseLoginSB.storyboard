@@ -11,7 +11,7 @@
         <!--Firebase Login View Controller-->
         <scene sceneID="7bi-WW-MCA">
             <objects>
-                <viewController storyboardIdentifier="FirebaseLoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gHy-rn-tsC" customClass="FirebaseLoginViewController" customModule="PazleBox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirebaseLoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" interfaceStyle="light" id="gHy-rn-tsC" customClass="FirebaseLoginViewController" customModule="PazleBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bPh-46-nzT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SDh-9t-JLd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-75" y="101"/>
+            <point key="canvasLocation" x="-75.362318840579718" y="100.44642857142857"/>
         </scene>
     </scenes>
 </document>
