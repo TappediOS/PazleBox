@@ -18,10 +18,13 @@ extension SettingTableViewController {
    func TapNoAds(rowNum: Int) {
       if rowNum == 0 {
          TapNoAdsButton()
-      }      
-      TapRestoreButton()
+         return
+      }
+      if rowNum == 1 {
+         TapRestoreButton()
+         return
+      }
    }
-
    
    //リストア完了した時にViewを表示する関数
      private func CompleateRestore() {
