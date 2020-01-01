@@ -65,6 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       //--------------------FIREBASE-----------------------//
       
       //--------------------ログイン-----------------------//
+   
       Auth.auth().signInAnonymously() { (authResult, error) in
          guard let user = authResult?.user else { return }
          let isAnonymous = user.isAnonymous
