@@ -14,6 +14,8 @@
 		BF13BC9023BC71F200F2E36D /* ExSettingNOADS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF13BC8F23BC71F200F2E36D /* ExSettingNOADS.swift */; };
 		BF13BC9223BC753400F2E36D /* ExSettingOther.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF13BC9123BC753400F2E36D /* ExSettingOther.swift */; };
 		BF13BC9423BC78EB00F2E36D /* ExSettingUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF13BC9323BC78EB00F2E36D /* ExSettingUserInfo.swift */; };
+		BF13BC9723BC7D6F00F2E36D /* FirebaseLoginSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF13BC9623BC7D6F00F2E36D /* FirebaseLoginSB.storyboard */; };
+		BF13BC9923BC7D8D00F2E36D /* FirebaseLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF13BC9823BC7D8D00F2E36D /* FirebaseLoginViewController.swift */; };
 		BF1648ED22BDFB1C000CD1AB /* AnimationTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1648EC22BDFB1C000CD1AB /* AnimationTimeManager.swift */; };
 		BF1648EF22C0C118000CD1AB /* DeviceChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1648EE22C0C118000CD1AB /* DeviceChecker.swift */; };
 		BF1648F222C0C2CC000CD1AB /* BackGroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1648F122C0C2CC000CD1AB /* BackGroundImageView.swift */; };
@@ -766,6 +768,8 @@
 		BF13BC8F23BC71F200F2E36D /* ExSettingNOADS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSettingNOADS.swift; sourceTree = "<group>"; };
 		BF13BC9123BC753400F2E36D /* ExSettingOther.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSettingOther.swift; sourceTree = "<group>"; };
 		BF13BC9323BC78EB00F2E36D /* ExSettingUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSettingUserInfo.swift; sourceTree = "<group>"; };
+		BF13BC9623BC7D6F00F2E36D /* FirebaseLoginSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirebaseLoginSB.storyboard; sourceTree = "<group>"; };
+		BF13BC9823BC7D8D00F2E36D /* FirebaseLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginViewController.swift; sourceTree = "<group>"; };
 		BF1648EC22BDFB1C000CD1AB /* AnimationTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTimeManager.swift; sourceTree = "<group>"; };
 		BF1648EE22C0C118000CD1AB /* DeviceChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeviceChecker.swift; path = ../../DeviceChecker.swift; sourceTree = "<group>"; };
 		BF1648F122C0C2CC000CD1AB /* BackGroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackGroundImageView.swift; sourceTree = "<group>"; };
@@ -1545,6 +1549,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BF13BC9523BC7D4700F2E36D /* TapUserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				BF13BC9323BC78EB00F2E36D /* ExSettingUserInfo.swift */,
+				BF13BC9823BC7D8D00F2E36D /* FirebaseLoginViewController.swift */,
+				BF13BC9623BC7D6F00F2E36D /* FirebaseLoginSB.storyboard */,
+			);
+			path = TapUserInfo;
+			sourceTree = "<group>";
+		};
 		BF1648F022C0C29E000CD1AB /* BackGroundImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -2095,9 +2109,9 @@
 			isa = PBXGroup;
 			children = (
 				BF6871C623B9FBA3005013A9 /* SettingTableViewController.swift */,
-				BF13BC9323BC78EB00F2E36D /* ExSettingUserInfo.swift */,
 				BF13BC8F23BC71F200F2E36D /* ExSettingNOADS.swift */,
 				BF13BC9123BC753400F2E36D /* ExSettingOther.swift */,
+				BF13BC9523BC7D4700F2E36D /* TapUserInfo */,
 			);
 			path = SettingViewController;
 			sourceTree = "<group>";
@@ -3177,6 +3191,7 @@
 				BFF6D71022896610000253A2 /* 43p23Red.png in Resources */,
 				BFF6D72E22896610000253A2 /* 43p29Red.png in Resources */,
 				BFF6D79E22952C22000253A2 /* NotSellectReview.png in Resources */,
+				BF13BC9723BC7D6F00F2E36D /* FirebaseLoginSB.storyboard in Resources */,
 				BF7CD9562240BBD500F8302B /* 23p6Red.png in Resources */,
 				BFF6D71A22896610000253A2 /* 43p41Green.png in Resources */,
 				BFCE25B6224A466B0099A775 /* 33p8Green.png in Resources */,
@@ -3667,6 +3682,7 @@
 				BFF6D7A32297B695000253A2 /* ManageLeaderboard.swift in Sources */,
 				BF2C145F2276F39500C7B8FB /* HintPouseView.swift in Sources */,
 				BF332F862249234C009B3042 /* ExGameSeceneEasy.swift in Sources */,
+				BF13BC9923BC7D8D00F2E36D /* FirebaseLoginViewController.swift in Sources */,
 				BF332F9E224926F3009B3042 /* E12.swift in Sources */,
 				BF43E02C23AA127000E0333B /* StageMakingViewController.swift in Sources */,
 				BF552EFC226DDE5D00756E16 /* N47.swift in Sources */,
