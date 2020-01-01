@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 extension SettingTableViewController {
    func TapOther(rowNum: Int) {
@@ -29,7 +30,19 @@ extension SettingTableViewController {
    }
    
    private func TapContactUs() {
-      
+      let url = URL(string: "https://forms.gle/mSEq7WwDz3fZNcqF6")
+      if let OpenURL = url {
+         if UIApplication.shared.canOpenURL(OpenURL){
+            Analytics.logEvent("TopOpenContactUsURLSetting", parameters: nil)
+            UIApplication.shared.open(OpenURL)
+         }else{
+            Analytics.logEvent("TopCantOpenURSettingL", parameters: nil)
+            print("URL nil ちゃうのにひらけない")
+         }
+      }else{
+         Analytics.logEvent("TopCantOpenURLWithNilSetting", parameters: nil)
+         print("URL 開こうとしたらNilやった")
+      }
    }
    
    private func TapCredit() {
