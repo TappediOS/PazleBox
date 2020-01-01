@@ -46,20 +46,22 @@ extension SettingTableViewController {
       let url = URL(string: "https://forms.gle/mSEq7WwDz3fZNcqF6")
       if let OpenURL = url {
          if UIApplication.shared.canOpenURL(OpenURL){
-            Analytics.logEvent("TopOpenContactUsURLSetting", parameters: nil)
+            Analytics.logEvent("OpenContactUsURLSetting", parameters: nil)
             UIApplication.shared.open(OpenURL)
          }else{
-            Analytics.logEvent("TopCantOpenURSettingL", parameters: nil)
+            Analytics.logEvent("CantOpenURSettingL", parameters: nil)
             print("URL nil ちゃうのにひらけない")
          }
       }else{
-         Analytics.logEvent("TopCantOpenURLWithNilSetting", parameters: nil)
+         Analytics.logEvent("CantOpenURLWithNilSetting", parameters: nil)
          print("URL 開こうとしたらNilやった")
       }
    }
    
    private func TapCredit() {
-      
+      if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
+         UIApplication.shared.open(url, options: [:], completionHandler: nil)
+      }
    }
    
 }
