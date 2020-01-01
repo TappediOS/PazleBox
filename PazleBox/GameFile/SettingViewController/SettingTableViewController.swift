@@ -10,6 +10,18 @@ import UIKit
 
 class SettingTableViewController: UITableViewController {
    
+   
+   
+   @IBOutlet weak var UserInfoLabel: UILabel!
+   
+   @IBOutlet weak var NoAdsLabel: UILabel!
+   @IBOutlet weak var RestoreLabel: UILabel!
+   
+   @IBOutlet weak var ReviewAppLabel: UILabel!
+   @IBOutlet weak var ContactUsLabel: UILabel!
+   @IBOutlet weak var CreditLabel: UILabel!
+   
+   
    let numOfSection = 3
    let firstNumberOfRowsInSection = 1
    let secondNumberOfRowsInSection = 2
@@ -23,7 +35,25 @@ class SettingTableViewController: UITableViewController {
       // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
       // self.navigationItem.rightBarButtonItem = self.editButtonItem
       
+      SetUpView()
+      
+      SetUpLabelText()
+      
+   }
+   
+   private func SetUpView() {
       self.view.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
+   }
+   
+   private func SetUpLabelText() {
+      UserInfoLabel.text = NSLocalizedString("UserInfo", comment: "")
+      
+      NoAdsLabel.text = NSLocalizedString("No Ads", comment: "")
+      RestoreLabel.text = NSLocalizedString("Restore", comment: "")
+      
+      ReviewAppLabel.text = NSLocalizedString("AppReview", comment: "")
+      ContactUsLabel.text = NSLocalizedString("Contact us", comment: "")
+      CreditLabel.text = NSLocalizedString("Credit", comment: "")
    }
 
     // MARK: - Table view data source

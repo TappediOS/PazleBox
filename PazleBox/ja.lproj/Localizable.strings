@@ -102,3 +102,10 @@
 //RemaingLabelにつけるやつ
 "RemaingFirst" = "残り";
 "RemaingLast" = "ステージです。";
+
+
+"UserInfo" = "ユーザ情報";
+
+"Credit" = "クレジット";
+
+"AppReview" = "アプリの評価";

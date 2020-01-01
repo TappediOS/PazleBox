@@ -219,8 +219,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gUw-IQ-Cqt">
-                                                    <rect key="frame" x="315" y="11.999999999999998" width="44" height="20.333333333333332"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="＞" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gUw-IQ-Cqt">
+                                                    <rect key="frame" x="341.66666666666669" y="11.999999999999998" width="17.333333333333332" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -330,6 +330,14 @@
                             <outlet property="delegate" destination="A36-2h-VCr" id="0Ff-Db-AdL"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="ContactUsLabel" destination="Ohi-EA-ICP" id="Ol9-Xw-JVf"/>
+                        <outlet property="CreditLabel" destination="rQk-Rt-9nC" id="QoB-dV-jb9"/>
+                        <outlet property="NoAdsLabel" destination="oGe-jd-Ty0" id="RGo-lV-XsF"/>
+                        <outlet property="RestoreLabel" destination="0v3-iN-UNe" id="DyF-3K-EFe"/>
+                        <outlet property="ReviewAppLabel" destination="7Ga-Jz-Obn" id="rZQ-vY-Z2f"/>
+                        <outlet property="UserInfoLabel" destination="5d2-el-bud" id="4wY-I3-Qh9"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zPF-qU-NIa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
