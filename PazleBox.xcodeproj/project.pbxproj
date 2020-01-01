@@ -12,6 +12,7 @@
 		BF0FD35422436DF200E8F387 /* ExUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0FD35322436DF200E8F387 /* ExUIColor.swift */; };
 		BF0FD356224371CE00E8F387 /* PutParticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0FD355224371CE00E8F387 /* PutParticle.swift */; };
 		BF13BC9023BC71F200F2E36D /* ExSettingNOADS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF13BC8F23BC71F200F2E36D /* ExSettingNOADS.swift */; };
+		BF13BC9223BC753400F2E36D /* ExSettingOther.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF13BC9123BC753400F2E36D /* ExSettingOther.swift */; };
 		BF1648ED22BDFB1C000CD1AB /* AnimationTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1648EC22BDFB1C000CD1AB /* AnimationTimeManager.swift */; };
 		BF1648EF22C0C118000CD1AB /* DeviceChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1648EE22C0C118000CD1AB /* DeviceChecker.swift */; };
 		BF1648F222C0C2CC000CD1AB /* BackGroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1648F122C0C2CC000CD1AB /* BackGroundImageView.swift */; };
@@ -762,6 +763,7 @@
 		BF0FD35322436DF200E8F387 /* ExUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIColor.swift; sourceTree = "<group>"; };
 		BF0FD355224371CE00E8F387 /* PutParticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutParticle.swift; sourceTree = "<group>"; };
 		BF13BC8F23BC71F200F2E36D /* ExSettingNOADS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSettingNOADS.swift; sourceTree = "<group>"; };
+		BF13BC9123BC753400F2E36D /* ExSettingOther.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSettingOther.swift; sourceTree = "<group>"; };
 		BF1648EC22BDFB1C000CD1AB /* AnimationTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTimeManager.swift; sourceTree = "<group>"; };
 		BF1648EE22C0C118000CD1AB /* DeviceChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeviceChecker.swift; path = ../../DeviceChecker.swift; sourceTree = "<group>"; };
 		BF1648F122C0C2CC000CD1AB /* BackGroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackGroundImageView.swift; sourceTree = "<group>"; };
@@ -2092,6 +2094,7 @@
 			children = (
 				BF6871C623B9FBA3005013A9 /* SettingTableViewController.swift */,
 				BF13BC8F23BC71F200F2E36D /* ExSettingNOADS.swift */,
+				BF13BC9123BC753400F2E36D /* ExSettingOther.swift */,
 			);
 			path = SettingViewController;
 			sourceTree = "<group>";
@@ -3580,6 +3583,7 @@
 				BF13BC9023BC71F200F2E36D /* ExSettingNOADS.swift in Sources */,
 				BF1A5EE322B787C2002C6733 /* Buy1400CoinsButton.swift in Sources */,
 				BF552EE2226DDDF400756E16 /* N34.swift in Sources */,
+				BF13BC9223BC753400F2E36D /* ExSettingOther.swift in Sources */,
 				BF552F14226DDEB800756E16 /* H29.swift in Sources */,
 				BF332F92224926D3009B3042 /* E6.swift in Sources */,
 				BF332FCA224927BA009B3042 /* N14.swift in Sources */,

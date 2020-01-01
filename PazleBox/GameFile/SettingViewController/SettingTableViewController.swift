@@ -112,9 +112,7 @@ class SettingTableViewController: UITableViewController {
    
    
    
-   func TapOther(rowNum: Int) {
-      
-   }
+   
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
