@@ -105,14 +105,12 @@ extension SettingTableViewController {
            return
         }
         LockPurchasButton = true
-        GameSound.PlaySoundsTapButton()
         Analytics.logEvent("TapParchasSettingView", parameters: nil)
         purchase(PRODUCT_ID: IAP_PRO_ID)
      }
      
      //リストアボタンを押した時の処理
       func TapRestoreButton() {
-        GameSound.PlaySoundsTapButton()
         SwiftyStoreKit.restorePurchases(atomically: true) { results in
            if results.restoreFailedPurchases.count > 0 {
               //リストアに失敗
