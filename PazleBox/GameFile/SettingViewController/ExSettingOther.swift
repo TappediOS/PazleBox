@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Firebase
+import StoreKit
 
 extension SettingTableViewController {
    func TapOther(rowNum: Int) {
@@ -26,7 +27,19 @@ extension SettingTableViewController {
    }
    
    private func TapAppReview() {
-      
+      if #available(iOS 10.3, *) {
+          SKStoreReviewController.requestReview()
+      }
+      //NOTE:　この下のは,実際にAppSt oreに飛ばす時に使う。
+//      else {
+//          if let url = URL(string: "itms-apps://itunes.apple.com/app/id1274048262?action=write-review") {
+//              if #available(iOS 10.0, *) {
+//                  UIApplication.shared.open(url, options: [:])
+//              } else {
+//                  UIApplication.shared.openURL(url)
+//              }
+//          }
+//      }
    }
    
    private func TapContactUs() {
