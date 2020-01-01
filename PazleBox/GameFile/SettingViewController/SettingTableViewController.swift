@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SwiftyStoreKit
 
 class SettingTableViewController: UITableViewController {
    
-   
+   let IAP_PRO_ID = "NO_ADS"
+   let SECRET_CODE = "c8bf5f01b42f4f80ad32ffd00349d92d"
    
    @IBOutlet weak var UserInfoLabel: UILabel!
    
@@ -26,6 +28,10 @@ class SettingTableViewController: UITableViewController {
    let firstNumberOfRowsInSection = 1
    let secondNumberOfRowsInSection = 2
    let thirdNumberOfRowsInSection = 3
+   
+   var LockPurchasButton = false
+   
+   let GameSound = GameSounds()
 
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -38,6 +44,7 @@ class SettingTableViewController: UITableViewController {
       SetUpView()
       
       SetUpLabelText()
+      CheckIAPInfomation()
       
    }
    
@@ -55,6 +62,8 @@ class SettingTableViewController: UITableViewController {
       ContactUsLabel.text = NSLocalizedString("Contact us", comment: "")
       CreditLabel.text = NSLocalizedString("Credit", comment: "")
    }
+   
+   
 
     // MARK: - Table view data source
    // セクションの数を返します
@@ -86,7 +95,7 @@ class SettingTableViewController: UITableViewController {
       case 0:
          TapUserInfo(rowNum: indexPath.row)
       case 1:
-         Tap(rowNum: indexPath.row)
+         TapNoAds(rowNum: indexPath.row)
       case 2:
          TapOther(rowNum: indexPath.row)
       default:
@@ -101,9 +110,7 @@ class SettingTableViewController: UITableViewController {
       
    }
    
-   func Tap(rowNum: Int) {
-      
-   }
+   
    
    func TapOther(rowNum: Int) {
       
