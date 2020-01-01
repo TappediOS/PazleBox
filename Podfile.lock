@@ -1,4 +1,9 @@
 PODS:
+  - AppAuth (1.3.0):
+    - AppAuth/Core (= 1.3.0)
+    - AppAuth/ExternalUserAgent (= 1.3.0)
+  - AppAuth/Core (1.3.0)
+  - AppAuth/ExternalUserAgent (1.3.0)
   - BoringSSL-GRPC (0.0.3):
     - BoringSSL-GRPC/Implementation (= 0.0.3)
     - BoringSSL-GRPC/Interface (= 0.0.3)
@@ -13,6 +18,16 @@ PODS:
     - Fabric (~> 1.10.2)
   - ESTabBarController-swift (2.7)
   - Fabric (1.10.2)
+  - FBSDKCoreKit (5.13.1):
+    - FBSDKCoreKit/Basics (= 5.13.1)
+    - FBSDKCoreKit/Core (= 5.13.1)
+  - FBSDKCoreKit/Basics (5.13.1)
+  - FBSDKCoreKit/Core (5.13.1):
+    - FBSDKCoreKit/Basics
+  - FBSDKLoginKit (5.13.1):
+    - FBSDKLoginKit/Login (= 5.13.1)
+  - FBSDKLoginKit/Login (5.13.1):
+    - FBSDKCoreKit (~> 5.0)
   - Firebase/AdMob (6.11.0):
     - Firebase/CoreOnly
     - Google-Mobile-Ads-SDK (~> 7.50)
@@ -24,6 +39,9 @@ PODS:
     - FirebaseAnalytics (= 6.1.3)
   - Firebase/CoreOnly (6.11.0):
     - FirebaseCore (= 6.3.2)
+  - Firebase/Database (6.11.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (~> 6.1.1)
   - Firebase/Firestore (6.11.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 1.6.1)
@@ -36,6 +54,9 @@ PODS:
   - Firebase/RemoteConfig (6.11.0):
     - Firebase/CoreOnly
     - FirebaseRemoteConfig (~> 4.4.3)
+  - Firebase/Storage (6.11.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (~> 3.4.1)
   - FirebaseABTesting (3.1.2):
     - FirebaseAnalyticsInterop (~> 1.3)
     - FirebaseCore (~> 6.1)
@@ -69,6 +90,10 @@ PODS:
     - GoogleUtilities/Logger (~> 6.2)
     - nanopb (~> 0.3.901)
   - FirebaseCoreDiagnosticsInterop (1.0.0)
+  - FirebaseDatabase (6.1.3):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 6.0)
+    - leveldb-library (~> 1.22)
   - FirebaseFirestore (1.6.1):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 6.2)
@@ -116,6 +141,45 @@ PODS:
     - GoogleUtilities/Environment (~> 6.2)
     - "GoogleUtilities/NSData+zlib (~> 6.2)"
     - Protobuf (>= 3.9.2, ~> 3.9)
+  - FirebaseStorage (3.4.3):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 6.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseUI (8.4.0):
+    - FirebaseUI/Anonymous (= 8.4.0)
+    - FirebaseUI/Auth (= 8.4.0)
+    - FirebaseUI/Database (= 8.4.0)
+    - FirebaseUI/Email (= 8.4.0)
+    - FirebaseUI/Facebook (= 8.4.0)
+    - FirebaseUI/Firestore (= 8.4.0)
+    - FirebaseUI/Google (= 8.4.0)
+    - FirebaseUI/OAuth (= 8.4.0)
+    - FirebaseUI/Phone (= 8.4.0)
+    - FirebaseUI/Storage (= 8.4.0)
+  - FirebaseUI/Anonymous (8.4.0):
+    - FirebaseUI/Auth
+  - FirebaseUI/Auth (8.4.0):
+    - Firebase/Auth (~> 6.0)
+    - GoogleUtilities/UserDefaults
+  - FirebaseUI/Database (8.4.0):
+    - Firebase/Database (~> 6.0)
+  - FirebaseUI/Email (8.4.0):
+    - FirebaseUI/Auth
+  - FirebaseUI/Facebook (8.4.0):
+    - FBSDKLoginKit (~> 5.0)
+    - FirebaseUI/Auth
+  - FirebaseUI/Firestore (8.4.0):
+    - Firebase/Firestore
+  - FirebaseUI/Google (8.4.0):
+    - FirebaseUI/Auth
+    - GoogleSignIn (~> 5.0)
+  - FirebaseUI/OAuth (8.4.0):
+    - FirebaseUI/Auth
+  - FirebaseUI/Phone (8.4.0):
+    - FirebaseUI/Auth
+  - FirebaseUI/Storage (8.4.0):
+    - Firebase/Storage (~> 6.0)
+    - SDWebImage (~> 5.0)
   - FlatUIKit (1.6.2)
   - Google-Mobile-Ads-SDK (7.51.0):
     - GoogleAppMeasurement (~> 6.0)
@@ -129,6 +193,10 @@ PODS:
   - GoogleDataTransportCCTSupport (1.2.1):
     - GoogleDataTransport (~> 3.0)
     - nanopb (~> 0.3.901)
+  - GoogleSignIn (5.0.2):
+    - AppAuth (~> 1.2)
+    - GTMAppAuth (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleToolboxForMac/Defines (2.2.2)
   - GoogleToolboxForMac/Logger (2.2.2):
     - GoogleToolboxForMac/Defines (= 2.2.2)
@@ -169,7 +237,14 @@ PODS:
     - gRPC-Core/Interface (= 1.21.0)
     - nanopb (~> 0.3)
   - gRPC-Core/Interface (1.21.0)
+  - GTMAppAuth (1.0.0):
+    - AppAuth/Core (~> 1.0)
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.3.0):
+    - GTMSessionFetcher/Full (= 1.3.0)
   - GTMSessionFetcher/Core (1.3.0)
+  - GTMSessionFetcher/Full (1.3.0):
+    - GTMSessionFetcher/Core (= 1.3.0)
   - Hero (1.4.0)
   - leveldb-library (1.22)
   - LicensePlist (2.8.1)
@@ -192,6 +267,9 @@ PODS:
     - Realm (= 3.20.0)
   - SAConfettiView (0.1.8)
   - SCLAlertView (0.8)
+  - SDWebImage (5.4.1):
+    - SDWebImage/Core (= 5.4.1)
+  - SDWebImage/Core (5.4.1)
   - SnapKit (4.2.0)
   - SpriteKitEasingSwift (0.14)
   - SwiftyStoreKit (0.15.0)
@@ -211,6 +289,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - Firebase/Performance
   - Firebase/RemoteConfig
+  - FirebaseUI
   - FlatUIKit
   - Hero
   - LicensePlist
@@ -230,12 +309,15 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - AppAuth
     - BoringSSL-GRPC
     - ChameleonFramework
     - COSTouchVisualizer
     - Crashlytics
     - ESTabBarController-swift
     - Fabric
+    - FBSDKCoreKit
+    - FBSDKLoginKit
     - Firebase
     - FirebaseABTesting
     - FirebaseAnalytics
@@ -245,20 +327,25 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseCoreDiagnosticsInterop
+    - FirebaseDatabase
     - FirebaseFirestore
     - FirebaseInstanceID
     - FirebaseMessaging
     - FirebasePerformance
     - FirebaseRemoteConfig
+    - FirebaseStorage
+    - FirebaseUI
     - FlatUIKit
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
+    - GoogleSignIn
     - GoogleToolboxForMac
     - GoogleUtilities
     - "gRPC-C++"
     - gRPC-Core
+    - GTMAppAuth
     - GTMSessionFetcher
     - Hero
     - leveldb-library
@@ -272,6 +359,7 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - SCLAlertView
+    - SDWebImage
     - SnapKit
     - SpriteKitEasingSwift
     - SwiftyStoreKit
@@ -290,12 +378,15 @@ CHECKOUT OPTIONS:
     :git: https://github.com/gokhanakkurt/SAConfettiView
 
 SPEC CHECKSUMS:
+  AppAuth: 73574f3013a1e65b9601a3ddc8b3158cce68c09d
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   COSTouchVisualizer: a398089327a6c02897823614d7447ccc97198997
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   ESTabBarController-swift: 4fb52ad03d94d0717ef97bc9eb09a5abfdded0a2
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
+  FBSDKCoreKit: 8fb98209109fb684937f05d534305edb18c20207
+  FBSDKLoginKit: c7c6ffd9ca9ea45aee32361840af040ad8f6706a
   Firebase: bc9cfc7a96c73268656d5aaab453ff1b4b530e0e
   FirebaseABTesting: 0d10f3cdc3fa00f3f175b5b56c1003c8e888299f
   FirebaseAnalytics: 0e3ecff2c5d86070f7d4325e21f1edabfbd558dc
@@ -305,20 +396,25 @@ SPEC CHECKSUMS:
   FirebaseCore: beeff42c07c30ea94702471d99db2089b594fbbd
   FirebaseCoreDiagnostics: af29e43048607588c050889d19204f4d7b758c9f
   FirebaseCoreDiagnosticsInterop: 6829da2b8d1fc795ff1bd99df751d3788035d2cb
+  FirebaseDatabase: 9db0c9bb6d3308870cc831a8a6d70c82fd169f37
   FirebaseFirestore: bb8315fa13a15ea8977e940496b74ba6ad9071f2
   FirebaseInstanceID: d0eafcd8bdbd3447cd694594734078c3e3e77d8b
   FirebaseMessaging: 5ab57080c83bc98c9961412e1dab379f4193d02a
   FirebasePerformance: f34a8250a9ff3c969e18bf89990486962354d9a2
   FirebaseRemoteConfig: 51df936d5dfba17f267b2344070c89e8daa3fcfb
+  FirebaseStorage: 93fe2f8190a01bfb2b2c4932df7d679744c4ef1d
+  FirebaseUI: 433550cb9e3d03ec7ee2c25f87493f76358d9b68
   FlatUIKit: 1b41f0d4952ce8d970d8479ce79df54a960242c4
   Google-Mobile-Ads-SDK: 5c625884f0788d22b48e3bb641e1d65c673dc7a5
   GoogleAppMeasurement: 434cc7be25e71dc04b8d0e3079125127b330e84a
   GoogleDataTransport: 166f9b9f82cbf60a204e8fe2daa9db3e3ec1fb15
   GoogleDataTransportCCTSupport: f6ab1962e9dc05ab1fb938b795e5b310209edeec
+  GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GoogleToolboxForMac: 800648f8b3127618c1b59c7f97684427630c5ea3
   GoogleUtilities: f895fde57977df4e0233edda0dbeac490e3703b6
   "gRPC-C++": 9dfe7b44821e7b3e44aacad2af29d2c21f7cde83
   gRPC-Core: c9aef9a261a1247e881b18059b84d597293c9947
+  GTMAppAuth: 4deac854479704f348309e7b66189e604cf5e01e
   GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
@@ -333,6 +429,7 @@ SPEC CHECKSUMS:
   RealmSwift: 1949ef26a279e1845bd51d591b9103adfcd121df
   SAConfettiView: c87031a2280659261b730fce3669fb10e73636ee
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
+  SDWebImage: 29c340dbdcef342bb13125553f4e19ce056b07a7
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SpriteKitEasingSwift: d389a59f5531399b69cc9c31f52c2e279c813688
   SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
@@ -340,6 +437,6 @@ SPEC CHECKSUMS:
   TwicketSegmentedControl: 6d7a4cf243657e0ac3f00d06d873a25334c04042
   ViewAnimator: 5af1c6f3b310f012bf081259c43717aa54fbae73
 
-PODFILE CHECKSUM: 2e201b20fa2289ba3bca66764464cf96ad35e8d9
+PODFILE CHECKSUM: 6e9d13541e1cfc1c3ef3cdba7d2d1dcd732e6170
 
 COCOAPODS: 1.8.4

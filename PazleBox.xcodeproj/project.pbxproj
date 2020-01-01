@@ -2825,6 +2825,7 @@
 				BF2674DE2227B6A3003D370F /* Resources */,
 				BF60EE002227B9C0006BF4B7 /* ShellScript */,
 				7485616176AF9BD2A7C327AD /* [CP] Embed Pods Frameworks */,
+				DAC1568ACEA363353B75D587 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3517,6 +3518,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n#${PODS_ROOT}/SwiftLint/swiftlint\n#else\n#echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n\nif [ $CONFIGURATION = \"Debug\" ]; then\n${PODS_ROOT}/LicensePlist/license-plist --output-path $PRODUCT_NAME/Settings.bundle\nfi\n";
+		};
+		DAC1568ACEA363353B75D587 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PazleBox/Pods-PazleBox-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PazleBox/Pods-PazleBox-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PazleBox/Pods-PazleBox-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		E96078D8C5C8AA0AFB39BC67 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

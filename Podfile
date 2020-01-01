@@ -33,6 +33,7 @@ target 'PazleBox' do
   
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
+  pod 'FirebaseUI'
 
   pod 'LicensePlist'
 
