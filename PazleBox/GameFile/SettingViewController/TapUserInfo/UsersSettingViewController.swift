@@ -8,6 +8,9 @@
 
 import Foundation
 import UIKit
+import TapticEngine
+import Firebase
+import FirebaseFirestore
 
 class UsersSettingTableViewController: UITableViewController {
    
@@ -23,11 +26,18 @@ class UsersSettingTableViewController: UITableViewController {
    @IBOutlet weak var PlaiedCountLabel: UILabel!
    @IBOutlet weak var PlayedCountNumLabel: UILabel!
    
+   var db: Firestore!
+   
+   var numOfStagePlayed = 0
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
       SetUpView()
       SetUpLabelText()
+      SetUpFireStoreSetting()
+      //自分の取得する
+      GetUserDataFromDataBase()
    }
    
    private func SetUpView() {
@@ -41,8 +51,74 @@ class UsersSettingTableViewController: UITableViewController {
       PlayCountNumLabel.text = "nil"
       
       PlaiedCountLabel.text = NSLocalizedString("NumberOfStagesPlayed", comment: "")
-      PlaiedCountLabel.text = "nil"
+      PlayedCountNumLabel.text = "nil"
 
+   }
+   
+   private func FSSetUpLabelText(document: DocumentSnapshot) {
+      if let userName = document.data()?["name"] as? String {
+         NicNameTextField.text = userName
+      }
+      
+      if let ClearStageCount = document.data()?["ClearStageCount"] as? Int {
+         PlayCountNumLabel.text = String(ClearStageCount)
+      }
+   }
+   
+   private func FSSetUPlayedCountNumLabelText() {
+      PlayedCountNumLabel.text = String(numOfStagePlayed)
+   }
+   
+   private func documentPlayCount(document: DocumentSnapshot) -> Int {
+      if let playCount = document["PlayCount"] as? Int {
+         return playCount
+      }
+      print("documentからプレイ回数が取得できてない。")
+      print("documentId = \(document.documentID)")
+      return 0
+   }
+   
+   private func SetUpFireStoreSetting() {
+      let settings = FirestoreSettings()
+      Firestore.firestore().settings = settings
+      db = Firestore.firestore()
+   }
+   
+   //MARK:-  ユーザデータ取得
+   private func GetUserDataFromDataBase() {
+      print("自分のデータの取得開始")
+      let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
+      print("UID = \(uid)")
+      db.collection("users").document(uid).getDocument { (document, err) in
+         if let err = err {
+            print("データベースからのデータ取得エラー: \(err)")
+            self.Play3DtouchError()
+         }
+         
+         if let document = document, document.exists {
+            let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+            print("Document data: \(dataDescription)")
+            self.FSSetUpLabelText(document: document)
+         } else {
+            print("Document does not exist")
+         }
+         print("ユーザネームとプレイ回数のデータの取得完了")
+      }
+      
+      db.collection("Stages").whereField("addUser", isEqualTo: uid).getDocuments() { (querySnapshot, err) in
+         if let err = err {
+            print("データベースからのデータ取得エラー: \(err)")
+            self.Play3DtouchError()
+         } else {
+            self.Play3DtouchSuccess()
+            for document in querySnapshot!.documents {
+               self.numOfStagePlayed += self.documentPlayCount(document: document)
+            }
+            self.FSSetUPlayedCountNumLabelText()
+         }
+         print("作ったステージのプレイされた回数の取得完了")
+      }
+      
    }
    
    
@@ -159,5 +235,9 @@ class UsersSettingTableViewController: UITableViewController {
 
 
    
-
+   func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
+   func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
+   func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
+   func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
+   func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
 }
