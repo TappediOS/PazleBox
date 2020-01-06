@@ -96,11 +96,11 @@ class UsersSettingTableViewController: UITableViewController {
          }
          
          if let document = document, document.exists {
-            let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-            print("Document data: \(dataDescription)")
+            //ドキュメントが存在していたらセットアップをする
             self.FSSetUpLabelText(document: document)
          } else {
             print("Document does not exist")
+            
          }
          print("ユーザネームとプレイ回数のデータの取得完了")
       }
@@ -117,8 +117,8 @@ class UsersSettingTableViewController: UITableViewController {
             self.FSSetUPlayedCountNumLabelText()
          }
          print("作ったステージのプレイされた回数の取得完了")
+         print("合計は \(self.numOfStagePlayed)")
       }
-      
    }
    
    
