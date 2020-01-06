@@ -15,15 +15,34 @@ class UsersSettingTableViewController: UITableViewController {
    let firstNumberOfRowsInSection = 1
    let secondNumberOfRowsInSection = 2
    
+   
+   @IBOutlet weak var NicNameTextField: UITextField!
+   
+   @IBOutlet weak var PlayCountLabel: UILabel!
+   @IBOutlet weak var PlayCountNumLabel: UILabel!
+   @IBOutlet weak var PlaiedCountLabel: UILabel!
+   @IBOutlet weak var PlayedCountNumLabel: UILabel!
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
       SetUpView()
-      
+      SetUpLabelText()
    }
    
    private func SetUpView() {
       self.view.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
+   }
+   
+   private func SetUpLabelText() {
+      NicNameTextField.text = NSLocalizedString("Guest", comment: "")
+      
+      PlayCountLabel.text = NSLocalizedString("PlayCount", comment: "")
+      PlayCountNumLabel.text = "nil"
+      
+      PlaiedCountLabel.text = NSLocalizedString("NumberOfStagesPlayed", comment: "")
+      PlaiedCountLabel.text = "nil"
+
    }
    
    
@@ -54,10 +73,10 @@ class UsersSettingTableViewController: UITableViewController {
       
       switch indexPath.section {
       case 0:
-         //TapUserInfo()
+         TapNicName()
          print("")
       case 1:
-         //TapNoAds(rowNum: indexPath.row)
+         TapUserInfo(rowNum: indexPath.row)
          print("")
       case 2:
          //TapOther(rowNum: indexPath.row)
@@ -70,6 +89,14 @@ class UsersSettingTableViewController: UITableViewController {
       tableView.deselectRow(at: indexPath, animated: true)
    }
    
+   
+   func TapNicName() {
+      
+   }
+   
+   func TapUserInfo(rowNum: Int) {
+      
+   }
    
    
    

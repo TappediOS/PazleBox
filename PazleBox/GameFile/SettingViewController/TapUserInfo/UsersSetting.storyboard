@@ -17,21 +17,25 @@
                         <sections>
                             <tableViewSection headerTitle="ニックネーム" id="gND-om-Fba">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="haf-SX-kBw" style="IBUITableViewCellStyleDefault" id="xfK-7Z-0w5">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xfK-7Z-0w5">
                                         <rect key="frame" x="20" y="55.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xfK-7Z-0w5" id="5do-Wx-Pvg">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="ゲストさん" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="haf-SX-kBw">
-                                                    <rect key="frame" x="20" y="0.0" width="334" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="あ" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U7Z-8i-68n">
+                                                    <rect key="frame" x="20" y="4.5" width="334" height="35"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="U7Z-8i-68n" firstAttribute="leading" secondItem="5do-Wx-Pvg" secondAttribute="leading" constant="20" id="Qrl-4f-vHG"/>
+                                                <constraint firstItem="U7Z-8i-68n" firstAttribute="top" secondItem="5do-Wx-Pvg" secondAttribute="top" constant="4.5" id="aa6-mB-It8"/>
+                                                <constraint firstAttribute="trailing" secondItem="U7Z-8i-68n" secondAttribute="trailing" constant="20" id="at8-92-crl"/>
+                                                <constraint firstAttribute="bottom" secondItem="U7Z-8i-68n" secondAttribute="bottom" constant="4.5" id="ygT-bd-M6l"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -95,10 +99,17 @@
                         </connections>
                     </tableView>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="NicNameTextField" destination="U7Z-8i-68n" id="w7r-zS-ook"/>
+                        <outlet property="PlaiedCountLabel" destination="wRM-as-1n4" id="DYT-kj-Fb5"/>
+                        <outlet property="PlayCountLabel" destination="XKh-t6-Ott" id="iZd-45-5Zq"/>
+                        <outlet property="PlayCountNumLabel" destination="A9E-Jd-sN7" id="0ZD-Ut-fgY"/>
+                        <outlet property="PlayedCountNumLabel" destination="sbj-OR-uhI" id="Pvb-KA-7lo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v38-nh-jo5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-425" y="33"/>
+            <point key="canvasLocation" x="-426.08695652173918" y="32.8125"/>
         </scene>
     </scenes>
 </document>

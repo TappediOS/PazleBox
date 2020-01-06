@@ -109,3 +109,8 @@
 "Credit" = "라이센스";
 
 "AppReview" = "앱 검토";
+
+
+"Guest" = "客人";
+"Number Played" = "播放次數";
+"NumberOfStagesPlayed" = "播放的階段數";

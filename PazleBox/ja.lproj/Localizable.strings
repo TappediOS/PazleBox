@@ -109,3 +109,7 @@
 "Credit" = "ライセンス";
 
 "AppReview" = "アプリの評価";
+
+"Guest" = "ゲストさん";
+"Number Played" = "遊んだ回数";
+"NumberOfStagesPlayed" = "ステージが遊ばれた回数";
