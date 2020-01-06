@@ -13,7 +13,7 @@ class UsersSettingTableViewController: UITableViewController {
    
    let numOfSection = 2
    let firstNumberOfRowsInSection = 1
-   let secondNumberOfRowsInSection = 3
+   let secondNumberOfRowsInSection = 2
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -36,6 +36,7 @@ class UsersSettingTableViewController: UITableViewController {
       case 1:
          return secondNumberOfRowsInSection
       default:
+         print("設定ミスってるぞ！！！")
          return 0
       }
    }
@@ -56,7 +57,7 @@ class UsersSettingTableViewController: UITableViewController {
          //TapOther(rowNum: indexPath.row)
          print("")
       default:
-         print("ここにはこない")
+         print("設定ミスってるぞ！！！")
          return
       }
       
