@@ -17,9 +17,15 @@ class UsersSettingTableViewController: UITableViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
-   
-
+      
+      SetUpView()
+      
    }
+   
+   private func SetUpView() {
+      self.view.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
+   }
+   
    
    // MARK: - Table view data source
    // セクションの数を返します
