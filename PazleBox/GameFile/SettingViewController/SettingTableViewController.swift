@@ -88,8 +88,8 @@ class SettingTableViewController: UITableViewController {
    
    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-      print(indexPath.section)
-      print(indexPath.row)
+      print("section 番号: \(indexPath.section)")
+      print("index   番号: \(indexPath.row)")
       
       switch indexPath.section {
       case 0:
