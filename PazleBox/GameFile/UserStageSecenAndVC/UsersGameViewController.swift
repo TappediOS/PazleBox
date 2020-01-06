@@ -319,6 +319,22 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       }
    }
    
+   private func SaveUsersPlayStageCountToFireStore() {
+      let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
+      let Ref = db.collection("users").document(uid)
+      print("UID = \(uid)")
+      
+      Ref.updateData([
+         "ClearStageCount": FieldValue.increment(Int64(1))
+      ]) { err in
+         if let err = err {
+            print("Error: ClearStageCountアップデート: \(err)")
+         } else {
+            print("ClearStageCount書き込み成功!")
+         }
+      }
+   }
+   
    private func ReviewUpdate(newValue: CGFloat) {
       let RefID = PlayStageData.RefID
       let Ref = db.collection("Stages").document(RefID)
@@ -411,7 +427,10 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       
       
       //データをFireBaseに飛ばす
+      //こっちはStagesのプレイカウントを変える
       SavePlayStageCountToFireStore()
+      //こっちはユーザ情報のプレイカウントを変える
+      SaveUsersPlayStageCountToFireStore()
 
       //BGM小さくして，
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.075) {
