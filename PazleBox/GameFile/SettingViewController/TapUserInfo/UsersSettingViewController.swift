@@ -169,10 +169,17 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
       }
    }
    
+   //MARK:- テキストフィールドの処理を記載。
    //制限を超えた場合は，表示されないようにする。
    @objc func textFieldDidChange(notification: NSNotification) {
-       guard let text = NicNameTextField.text else { return }
-       NicNameTextField.text = String(text.prefix(maxTextfieldLength))
+      guard let text = NicNameTextField.text else { return }
+      NicNameTextField.text = String(text.prefix(maxTextfieldLength))
+      
+      if text.count == 0 {
+         NicNameTextField.isEnabled = false
+      } else {
+         NicNameTextField.isEnabled = true
+      }
    }
    
    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
