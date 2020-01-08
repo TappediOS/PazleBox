@@ -50,16 +50,17 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
       print("表示時　のニックネーム： \(self.usersName)")
       print("閉じる時のニックネーム： \(String(describing: self.NicNameTextField.text))")
       
+      //nilはだめ。
+      guard let newName = self.NicNameTextField.text else { return }
       
-      guard let newName = self.NicNameTextField.text else {
-         print("nil入ってたわ。なぜ？")
-         return
-      }
-      
+      //変わってない場合
       guard newName != usersName else {
          print("ニックネーム変わってないよね。")
          return
       }
+      
+      //空白文字の場合
+      guard newName != "" else { return }
       
       
       let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
@@ -167,6 +168,7 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
       }
    }
    
+   //制限を超えた場合は，表示されないようにする。
    @objc func textFieldDidChange(notification: NSNotification) {
        guard let text = NicNameTextField.text else { return }
        NicNameTextField.text = String(text.prefix(maxTextfieldLength))
