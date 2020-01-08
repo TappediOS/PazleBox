@@ -1,9 +1,10 @@
+/* Class = "UITableViewSection"; headerTitle = "その他"; ObjectID = "3Ef-9w-wV7"; */
+"3Ef-9w-wV7.headerTitle" = "その他";
 
-/* Class = "UIButton"; normalTitle = "Easy"; ObjectID = "B1r-pK-hHC"; */
-"B1r-pK-hHC.normalTitle" = "Easy";
 
-/* Class = "UIButton"; normalTitle = "Normal"; ObjectID = "Ff9-dL-ofO"; */
-"Ff9-dL-ofO.normalTitle" = "Normal";
+/* Class = "UITableViewSection"; headerTitle = "アカウント"; ObjectID = "9W2-NP-ml9"; */
+"9W2-NP-ml9.headerTitle" = "アカウント";
 
-/* Class = "UIButton"; normalTitle = "Hard"; ObjectID = "sp0-vN-R4x"; */
-"sp0-vN-R4x.normalTitle" = "Hard";
+
+/* Class = "UITableViewSection"; headerTitle = "広告の削除"; ObjectID = "CRz-Q2-4RW"; */
+"CRz-Q2-4RW.headerTitle" = "広告の削除";

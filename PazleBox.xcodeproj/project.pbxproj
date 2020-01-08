@@ -911,6 +911,7 @@
 		BF4F4E1E23C5B11F005B5D60 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/UsersSetting.strings"; sourceTree = "<group>"; };
 		BF4F4E2023C5B124005B5D60 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/UsersSetting.strings; sourceTree = "<group>"; };
 		BF4F4E2223C5B128005B5D60 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/UsersSetting.strings; sourceTree = "<group>"; };
+		BF4F4E2423C5B224005B5D60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTilePOSITION.swift; sourceTree = "<group>"; };
 		BF519C6A223F58920087A4AC /* ExNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNotification.swift; sourceTree = "<group>"; };
 		BF519C7A223FA8D60087A4AC /* ExTextureName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExTextureName.swift; sourceTree = "<group>"; };
@@ -3876,6 +3877,7 @@
 				BF2A186022A6ACD500E19CFF /* ja */,
 				BF2A186222A6ACE500E19CFF /* ko */,
 				BF2A186422A6ACFF00E19CFF /* zh-Hant */,
+				BF4F4E2423C5B224005B5D60 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
