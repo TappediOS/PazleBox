@@ -81,6 +81,7 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
    }
    
    private func SetUpTextField() {
+      NicNameTextField.returnKeyType = .done
       NicNameTextField.delegate = self
       NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(notification:)),
                                              name: UITextField.textDidChangeNotification, object: NicNameTextField)
@@ -172,6 +173,11 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
    @objc func textFieldDidChange(notification: NSNotification) {
        guard let text = NicNameTextField.text else { return }
        NicNameTextField.text = String(text.prefix(maxTextfieldLength))
+   }
+   
+   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+       NicNameTextField.resignFirstResponder()
+       return true
    }
 
    
