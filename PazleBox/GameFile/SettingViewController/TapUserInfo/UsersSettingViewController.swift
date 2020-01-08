@@ -33,7 +33,7 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
    var usersName: String = NSLocalizedString("Guest", comment: "")
    
    //テキストフィールドに書き込む最大の文字数。
-   let maxTextfieldLength = 9
+   let maxTextfieldLength = 6
    
    override func viewDidLoad() {
       super.viewDidLoad()
