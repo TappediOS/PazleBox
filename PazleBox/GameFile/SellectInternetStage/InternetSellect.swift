@@ -82,10 +82,13 @@ class InterNetSellect: UIView {
    }
    
    private func InitView() {
-      self.layer.shadowOffset = CGSize(width: 10, height: 10)
+      self.layer.borderColor = UIColor.black.cgColor
+      self.layer.borderWidth = 0.35
+      self.layer.shadowOffset = CGSize(width: 14.5, height: 14.5)
       self.layer.shadowColor = UIColor.black.cgColor
-      self.layer.shadowOpacity = 0.7
-      self.layer.cornerRadius = 5
+      //1にすれば真っ黒，0にすれば透明に
+      self.layer.shadowOpacity = 0.65
+      self.layer.cornerRadius = 5.8
    }
    
    private func GetCreateUserName(_ addUserUID: String) {
