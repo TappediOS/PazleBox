@@ -14,7 +14,6 @@
 		BF13BC9023BC71F200F2E36D /* ExSettingNOADS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF13BC8F23BC71F200F2E36D /* ExSettingNOADS.swift */; };
 		BF13BC9223BC753400F2E36D /* ExSettingOther.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF13BC9123BC753400F2E36D /* ExSettingOther.swift */; };
 		BF13BC9423BC78EB00F2E36D /* ExSettingUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF13BC9323BC78EB00F2E36D /* ExSettingUserInfo.swift */; };
-		BF13BC9723BC7D6F00F2E36D /* UsersSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF13BC9623BC7D6F00F2E36D /* UsersSetting.storyboard */; };
 		BF13BC9923BC7D8D00F2E36D /* UsersSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF13BC9823BC7D8D00F2E36D /* UsersSettingViewController.swift */; };
 		BF1648ED22BDFB1C000CD1AB /* AnimationTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1648EC22BDFB1C000CD1AB /* AnimationTimeManager.swift */; };
 		BF1648EF22C0C118000CD1AB /* DeviceChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1648EE22C0C118000CD1AB /* DeviceChecker.swift */; };
@@ -142,6 +141,7 @@
 		BF48932A23B9D2500001FB04 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = BF48932923B9D2500001FB04 /* play.png */; };
 		BF48932C23B9D26D0001FB04 /* play_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = BF48932B23B9D26D0001FB04 /* play_fill.png */; };
 		BF48932E23B9D3980001FB04 /* TabBarCenterContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF48932D23B9D3980001FB04 /* TabBarCenterContentsView.swift */; };
+		BF4F4E1823C5B109005B5D60 /* UsersSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4F4E1A23C5B109005B5D60 /* UsersSetting.storyboard */; };
 		BF519C69223CCBDE0087A4AC /* GetTilePOSITION.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */; };
 		BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C6A223F58920087A4AC /* ExNotification.swift */; };
 		BF519C7B223FA8D60087A4AC /* ExTextureName.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C7A223FA8D60087A4AC /* ExTextureName.swift */; };
@@ -768,7 +768,6 @@
 		BF13BC8F23BC71F200F2E36D /* ExSettingNOADS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSettingNOADS.swift; sourceTree = "<group>"; };
 		BF13BC9123BC753400F2E36D /* ExSettingOther.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSettingOther.swift; sourceTree = "<group>"; };
 		BF13BC9323BC78EB00F2E36D /* ExSettingUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSettingUserInfo.swift; sourceTree = "<group>"; };
-		BF13BC9623BC7D6F00F2E36D /* UsersSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UsersSetting.storyboard; sourceTree = "<group>"; };
 		BF13BC9823BC7D8D00F2E36D /* UsersSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersSettingViewController.swift; sourceTree = "<group>"; };
 		BF1648EC22BDFB1C000CD1AB /* AnimationTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTimeManager.swift; sourceTree = "<group>"; };
 		BF1648EE22C0C118000CD1AB /* DeviceChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeviceChecker.swift; path = ../../DeviceChecker.swift; sourceTree = "<group>"; };
@@ -907,6 +906,11 @@
 		BF48932923B9D2500001FB04 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		BF48932B23B9D26D0001FB04 /* play_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_fill.png; sourceTree = "<group>"; };
 		BF48932D23B9D3980001FB04 /* TabBarCenterContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCenterContentsView.swift; sourceTree = "<group>"; };
+		BF4F4E1923C5B109005B5D60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UsersSetting.storyboard; sourceTree = "<group>"; };
+		BF4F4E1C23C5B116005B5D60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UsersSetting.strings; sourceTree = "<group>"; };
+		BF4F4E1E23C5B11F005B5D60 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/UsersSetting.strings"; sourceTree = "<group>"; };
+		BF4F4E2023C5B124005B5D60 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/UsersSetting.strings; sourceTree = "<group>"; };
+		BF4F4E2223C5B128005B5D60 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/UsersSetting.strings; sourceTree = "<group>"; };
 		BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTilePOSITION.swift; sourceTree = "<group>"; };
 		BF519C6A223F58920087A4AC /* ExNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNotification.swift; sourceTree = "<group>"; };
 		BF519C7A223FA8D60087A4AC /* ExTextureName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExTextureName.swift; sourceTree = "<group>"; };
@@ -1554,7 +1558,7 @@
 			children = (
 				BF13BC9323BC78EB00F2E36D /* ExSettingUserInfo.swift */,
 				BF13BC9823BC7D8D00F2E36D /* UsersSettingViewController.swift */,
-				BF13BC9623BC7D6F00F2E36D /* UsersSetting.storyboard */,
+				BF4F4E1A23C5B109005B5D60 /* UsersSetting.storyboard */,
 			);
 			path = TapUserInfo;
 			sourceTree = "<group>";
@@ -3192,7 +3196,7 @@
 				BFF6D71022896610000253A2 /* 43p23Red.png in Resources */,
 				BFF6D72E22896610000253A2 /* 43p29Red.png in Resources */,
 				BFF6D79E22952C22000253A2 /* NotSellectReview.png in Resources */,
-				BF13BC9723BC7D6F00F2E36D /* UsersSetting.storyboard in Resources */,
+				BF4F4E1823C5B109005B5D60 /* UsersSetting.storyboard in Resources */,
 				BF7CD9562240BBD500F8302B /* 23p6Red.png in Resources */,
 				BFF6D71A22896610000253A2 /* 43p41Green.png in Resources */,
 				BFCE25B6224A466B0099A775 /* 33p8Green.png in Resources */,
@@ -3896,6 +3900,18 @@
 				BF2A186D22A6AD7800E19CFF /* ja */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		BF4F4E1A23C5B109005B5D60 /* UsersSetting.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF4F4E1923C5B109005B5D60 /* Base */,
+				BF4F4E1C23C5B116005B5D60 /* en */,
+				BF4F4E1E23C5B11F005B5D60 /* zh-Hant */,
+				BF4F4E2023C5B124005B5D60 /* ko */,
+				BF4F4E2223C5B128005B5D60 /* ja */,
+			);
+			name = UsersSetting.storyboard;
 			sourceTree = "<group>";
 		};
 		BF72916E2361866E00E8D947 /* InfoPlist.strings */ = {

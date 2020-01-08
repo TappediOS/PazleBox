@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "100"; ObjectID = "A9E-Jd-sN7"; */
+"A9E-Jd-sN7.text" = "100";
+
+/* Class = "UITableViewSection"; headerTitle = "ユーザ情報"; ObjectID = "Hj8-gY-Kds"; */
+"Hj8-gY-Kds.headerTitle" = "ユーザ情報";
+
+/* Class = "UILabel"; text = "プレイ回数"; ObjectID = "XKh-t6-Ott"; */
+"XKh-t6-Ott.text" = "プレイ回数";
+
+/* Class = "UITableViewSection"; headerTitle = "ニックネーム"; ObjectID = "gND-om-Fba"; */
+"gND-om-Fba.headerTitle" = "ニックネーム";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "sbj-OR-uhI"; */
+"sbj-OR-uhI.text" = "10";
+
+/* Class = "UILabel"; text = "遊ばれた回数"; ObjectID = "wRM-as-1n4"; */
+"wRM-as-1n4.text" = "遊ばれた回数";
