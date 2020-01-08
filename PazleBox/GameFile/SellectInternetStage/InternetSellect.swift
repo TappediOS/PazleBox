@@ -163,10 +163,10 @@ class InterNetSellect: UIView {
      
    private func InitImageView(Image: UIImage) {
       StageImageView.image = Image
-      StageImageView.layer.shadowOffset = StageImageViewButtonShadow
-      StageImageView.layer.shadowColor = StageImageViewButtonShadowColor
-      StageImageView.layer.shadowOpacity = StageImageViewButtonShadowOpacity
-      StageImageView.layer.cornerRadius = StageImageViewButtonCornerRadius
+      StageImageView.layer.shadowOffset = StageImageViewShadow
+      StageImageView.layer.shadowColor = StageImageViewShadowColor
+      StageImageView.layer.shadowOpacity = StageImageViewShadowOpacity
+      StageImageView.layer.cornerRadius = StageImageViewCornerRadius
    }
    
   
