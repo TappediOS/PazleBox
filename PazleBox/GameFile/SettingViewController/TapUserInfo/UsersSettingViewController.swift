@@ -45,8 +45,8 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
       GetUserDataFromDataBase()
    }
    
-   override func viewWillDisappear(_ animated: Bool) {
-      super.viewWillAppear(true)
+   override func viewDidDisappear(_ animated: Bool) {
+      super.viewDidDisappear(true)
       print("表示時　のニックネーム： \(self.usersName)")
       print("閉じる時のニックネーム： \(String(describing: self.NicNameTextField.text))")
       
@@ -81,6 +81,7 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
    }
    
    private func SetUpTextField() {
+      NicNameTextField.enablesReturnKeyAutomatically = true
       NicNameTextField.returnKeyType = .done
       NicNameTextField.delegate = self
       NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(notification:)),
@@ -174,12 +175,6 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
    @objc func textFieldDidChange(notification: NSNotification) {
       guard let text = NicNameTextField.text else { return }
       NicNameTextField.text = String(text.prefix(maxTextfieldLength))
-      
-      if text.count == 0 {
-         NicNameTextField.isEnabled = false
-      } else {
-         NicNameTextField.isEnabled = true
-      }
    }
    
    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
