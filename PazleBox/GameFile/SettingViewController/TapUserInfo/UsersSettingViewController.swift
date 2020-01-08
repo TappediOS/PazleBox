@@ -12,7 +12,7 @@ import TapticEngine
 import Firebase
 import FirebaseFirestore
 
-class UsersSettingTableViewController: UITableViewController {
+class UsersSettingTableViewController: UITableViewController, UITextFieldDelegate {
    
    let numOfSection = 2
    let firstNumberOfRowsInSection = 1
@@ -30,18 +30,63 @@ class UsersSettingTableViewController: UITableViewController {
    
    var numOfStagePlayed = 0
    
+   var usersName: String = NSLocalizedString("Guest", comment: "")
+   
+   let maxTextfieldLength = 9
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
       SetUpView()
+      SetUpTextField()
       SetUpLabelText()
       SetUpFireStoreSetting()
       //自分の取得する
       GetUserDataFromDataBase()
    }
    
+   override func viewWillDisappear(_ animated: Bool) {
+      super.viewWillAppear(true)
+      print("表示時　のニックネーム： \(self.usersName)")
+      print("閉じる時のニックネーム： \(String(describing: self.NicNameTextField.text))")
+      
+      
+      guard let newName = self.NicNameTextField.text else {
+         print("nil入ってたわ。なぜ？")
+         return
+      }
+      
+      guard newName != usersName else {
+         print("ニックネーム変わってないよね。")
+         return
+      }
+      
+      
+      let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
+      db.collection("users").document(uid).updateData([
+         "name": newName
+      ]) { err in
+         if let err = err {
+            print("\nニックネームアップデートエラー: \(err)")
+         } else {
+            print("\nニックネームアップデート成功!")
+         }
+      }
+      
+   }
+   
    private func SetUpView() {
       self.view.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
+   }
+   
+   private func SetUpTextField() {
+      NicNameTextField.delegate = self
+      NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(notification:)),
+                                             name: UITextField.textDidChangeNotification, object: NicNameTextField)
+   }
+
+   deinit {
+      NotificationCenter.default.removeObserver(self)
    }
    
    private func SetUpLabelText() {
@@ -58,6 +103,7 @@ class UsersSettingTableViewController: UITableViewController {
    private func FSSetUpLabelText(document: DocumentSnapshot) {
       if let userName = document.data()?["name"] as? String {
          NicNameTextField.text = userName
+         usersName = userName
       }
       
       if let ClearStageCount = document.data()?["ClearStageCount"] as? Int {
@@ -121,6 +167,11 @@ class UsersSettingTableViewController: UITableViewController {
       }
    }
    
+   @objc func textFieldDidChange(notification: NSNotification) {
+       guard let text = NicNameTextField.text else { return }
+       NicNameTextField.text = String(text.prefix(maxTextfieldLength))
+   }
+
    
    // MARK: - Table view data source
    // セクションの数を返します

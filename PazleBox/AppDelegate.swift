@@ -92,7 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
          }else{
             print("\n--- ユーザーの初めてのログイン ---\n")
             db.collection("users").document(uid).setData([
-               "name": "NoName",
+               "name": NSLocalizedString("Guest", comment: ""),
                "LastLogin": Timestamp(date: Date()),
                "CreateStageNum": 0,
                "ClearStageCount": 0
