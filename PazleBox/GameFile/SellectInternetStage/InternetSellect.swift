@@ -34,6 +34,8 @@ class InterNetSellect: UIView {
    let StageImageViewShadowOpacity: Float = 0.6
    let StageImageViewCornerRadius: CGFloat = 7
    
+   let ButtonCornerRadius: CGFloat = 6.5
+   
    var isLockedPlayAndCloseButton = false
    
    var db: Firestore!
@@ -148,6 +150,7 @@ class InterNetSellect: UIView {
       PlayButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
       PlayButton.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       PlayButton.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
+      PlayButton.layer.cornerRadius =  ButtonCornerRadius
    }
      
    
@@ -159,6 +162,7 @@ class InterNetSellect: UIView {
       CloseButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
       CloseButton.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       CloseButton.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
+      CloseButton.layer.cornerRadius =  ButtonCornerRadius
    }
      
    private func InitImageView(Image: UIImage) {
