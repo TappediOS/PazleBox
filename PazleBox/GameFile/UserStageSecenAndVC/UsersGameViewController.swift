@@ -176,9 +176,9 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
             
             print("\nstageInfo = {")
             print("  RefId       = \(self.PlayStageData.RefID)")
-            print("  PlayCount   = \(self.PlayStageData.PlayCount)")
-            print("  ReviewCount = \(self.PlayStageData.ReviewCount)")
-            print("  ReviewAve   = \(self.PlayStageData.ReviewAve)")
+            print("  PlayCount   = \(String(describing: self.PlayStageData.PlayCount))")
+            print("  ReviewCount = \(String(describing: self.PlayStageData.ReviewCount))")
+            print("  ReviewAve   = \(String(describing: self.PlayStageData.ReviewAve))")
             print("}\n")
          } else {
             print("Document does not exist")

@@ -10,6 +10,7 @@ import UIKit
 import ChameleonFramework
 import FlatUIKit
 import Firebase
+import FirebaseFirestore
 import TapticEngine
 
 @IBDesignable

@@ -141,9 +141,9 @@ extension SellectInternetStageViewController {
          }
       }
       
-      for data in StageData {
-         //print("\(data.key) -> \(data.value)")
-      }
+//      for data in StageData {
+//         //print("\(data.key) -> \(data.value)")
+//      }
       
       return StageData
    }

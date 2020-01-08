@@ -200,7 +200,7 @@ class PiceImageView : UIImageView {
    }
    
    private func PuzzleTouchStartPostNotification(touches: Set<UITouch>, X: Int, Y: Int) {
-      print("わたし \(self.ArryNum)が透明部を触ったことを通知します。")
+      print("わたし \(String(describing: self.ArryNum))が透明部を触ったことを通知します。")
       print("タップした座標: \(String(describing: touches.first?.location(in: self)))")
       
       let TouchPoint: CGPoint = touches.first!.location(in: self)
