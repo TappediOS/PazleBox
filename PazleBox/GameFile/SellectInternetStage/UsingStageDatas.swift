@@ -178,7 +178,6 @@ class SellectInternetStageViewController: UIViewController {
       }
    }
    
-   //TODO:-　ローカライズすること
    private func ShowErrGetStageAlertView() {
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
       let ComleateView = SCLAlertView(appearance: Appearanse)

@@ -19,6 +19,7 @@ class InterNetSellect: UIView {
 
    //Numがついてる方には，実際の数値を代入する。
    @IBOutlet weak var DateLabel: UILabel!
+   @IBOutlet weak var CreateUserLabel: UILabel!
    @IBOutlet weak var StageImageView: UIImageView!
    @IBOutlet weak var RatedLabel: UILabel!
    @IBOutlet weak var RatedNumLabel: UILabel!
@@ -35,7 +36,9 @@ class InterNetSellect: UIView {
    
    var isLockedPlayAndCloseButton = false
    
-   init(frame: CGRect, Image: UIImage, CellNum: Int, PlayCount: Int, ReviewAve: CGFloat, addDate: String) {
+   var db: Firestore!
+   
+   init(frame: CGRect, Image: UIImage, CellNum: Int, PlayCount: Int, ReviewAve: CGFloat, addDate: String, addUserUID: String) {
       super.init(frame: frame)
       
       if #available(iOS 13.0, *) {
@@ -44,8 +47,10 @@ class InterNetSellect: UIView {
       
       self.CellNum = CellNum
       
+      SetUpFireStoreSetting()
       LoadNib()
       InitView()
+      GetCreateUserName(addUserUID)
       InitRatedLabel()
       InitPlayCountLabel()
       InitRatedNumLabel(ReviewAve)
@@ -58,6 +63,12 @@ class InterNetSellect: UIView {
    
    override func awakeFromNib() {
       
+   }
+   
+   private func SetUpFireStoreSetting() {
+      let settings = FirestoreSettings()
+      Firestore.firestore().settings = settings
+      db = Firestore.firestore()
    }
    
    private func LoadNib() {
@@ -73,6 +84,29 @@ class InterNetSellect: UIView {
       self.layer.shadowColor = UIColor.black.cgColor
       self.layer.shadowOpacity = 0.7
       self.layer.cornerRadius = 5
+   }
+   
+   private func GetCreateUserName(_ addUserUID: String) {
+      db.collection("users").document(addUserUID).getDocument { (document, err) in
+         if let err = err {
+            print("データベースからのデータ取得エラー: \(err)")
+         }
+         
+         if let document = document, document.exists {
+            if let userName = document.data()?["name"] as? String {
+               self.InitCreateUserLabel(userName: userName)
+            }
+         } else {
+            print("Document does not exist")
+            
+         }
+         print("ユーザネームの取得完了")
+      }
+   }
+   
+   private func InitCreateUserLabel(userName: String) {
+      let Creator = NSLocalizedString("Creator", comment: "")
+      self.CreateUserLabel.text = Creator + ": " + userName
    }
    
    private func InitRatedLabel() {

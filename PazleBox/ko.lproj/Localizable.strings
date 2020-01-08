@@ -111,6 +111,9 @@
 "AppReview" = "앱 검토";
 
 
-"Guest" = "客人";
-"Number Played" = "播放次數";
-"NumberOfStagesPlayed" = "播放的階段數";
+"Guest" = "손님들";
+"Number Played" = "플레이 횟수";
+"NumberOfStagesPlayed" = "플레이 한 스테이지 수";
+
+
+"Creator" = "저자";

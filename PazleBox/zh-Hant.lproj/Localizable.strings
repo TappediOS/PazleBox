@@ -110,6 +110,8 @@
 
 "AppReview" = "應用程式審查";
 
-"Guest" = "손님들";
-"Number Played" = "플레이 횟수";
-"NumberOfStagesPlayed" = "플레이 한 스테이지 수";
+"Guest" = "客人";
+"Number Played" = "播放次數";
+"NumberOfStagesPlayed" = "播放的階段數";
+
+"Creator" = "作者";

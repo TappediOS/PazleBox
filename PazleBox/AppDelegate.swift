@@ -80,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
          
          if UserDefaults.standard.bool(forKey: "Logined") == true {
             print("\n--- ユーザーはログインしています ---\n")
-            db.collection("objects").document(uid).updateData([
+            db.collection("users").document(uid).updateData([
                "LastLogin": FieldValue.serverTimestamp(),
                ]) { err in
                    if let err = err {
