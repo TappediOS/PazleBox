@@ -51,10 +51,13 @@ class SellectView: UIView {
    }
      
    private func InitView() {
-      self.layer.shadowOffset = CGSize(width: 10, height: 10)
+      self.layer.borderColor = UIColor.black.cgColor
+      self.layer.borderWidth = 0.45
+      self.layer.shadowOffset = CGSize(width: 14.5, height: 14.5)
       self.layer.shadowColor = UIColor.black.cgColor
-      self.layer.shadowOpacity = 0.7
-      self.layer.cornerRadius = 12
+      //1にすれば真っ黒，0にすれば透明に
+      self.layer.shadowOpacity = 0.65
+      self.layer.cornerRadius = 5.8
    }
      
    private func InitPlayButton() {
@@ -65,11 +68,7 @@ class SellectView: UIView {
       PlayButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
       PlayButton.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       PlayButton.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
-      PlayButton.layer.shadowOffset = ButtonShadow
-      PlayButton.layer.shadowColor = ButtonShadowColor
-      PlayButton.layer.shadowOpacity = ButtonShadowOpacity
       PlayButton.layer.cornerRadius = ButtonCornerRadius
-      //PlayButton.clipsToBounds = true
       
    }
      
@@ -82,7 +81,6 @@ class SellectView: UIView {
       DeleteButton.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       DeleteButton.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
       DeleteButton.layer.cornerRadius = ButtonCornerRadius
-      //DeleteButton.clipsToBounds = true
    }
    
    private func InitCloseButton() {
@@ -93,9 +91,6 @@ class SellectView: UIView {
       CloseButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
       CloseButton.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       CloseButton.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
-      CloseButton.layer.shadowOffset = ButtonShadow
-      CloseButton.layer.shadowColor = ButtonShadowColor
-      CloseButton.layer.shadowOpacity = ButtonShadowOpacity
       CloseButton.layer.cornerRadius = ButtonCornerRadius
    }
      
