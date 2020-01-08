@@ -29,10 +29,10 @@ class InterNetSellect: UIView {
    @IBOutlet weak var CloseButton: UIButton!
    
    
-   let ButtonShadow = CGSize(width: 0.3, height: 1.75)
-   let ButtonShadowColor = UIColor.black.cgColor
-   let ButtonShadowOpacity: Float = 0.6
-   let ButtonCornerRadius: CGFloat = 7
+   let StageImageViewShadow = CGSize(width: 0.3, height: 1.75)
+   let StageImageViewShadowColor = UIColor.black.cgColor
+   let StageImageViewShadowOpacity: Float = 0.6
+   let StageImageViewCornerRadius: CGFloat = 7
    
    var isLockedPlayAndCloseButton = false
    
@@ -148,11 +148,6 @@ class InterNetSellect: UIView {
       PlayButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
       PlayButton.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       PlayButton.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
-      PlayButton.layer.shadowOffset = ButtonShadow
-      PlayButton.layer.shadowColor = ButtonShadowColor
-      PlayButton.layer.shadowOpacity = ButtonShadowOpacity
-      PlayButton.layer.cornerRadius = ButtonCornerRadius
-      //PlayButton.clipsToBounds = true
    }
      
    
@@ -164,18 +159,14 @@ class InterNetSellect: UIView {
       CloseButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
       CloseButton.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       CloseButton.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
-      CloseButton.layer.shadowOffset = ButtonShadow
-      CloseButton.layer.shadowColor = ButtonShadowColor
-      CloseButton.layer.shadowOpacity = ButtonShadowOpacity
-      CloseButton.layer.cornerRadius = ButtonCornerRadius
    }
      
    private func InitImageView(Image: UIImage) {
       StageImageView.image = Image
-      StageImageView.layer.shadowOffset = ButtonShadow
-      StageImageView.layer.shadowColor = ButtonShadowColor
-      StageImageView.layer.shadowOpacity = ButtonShadowOpacity
-      StageImageView.layer.cornerRadius = ButtonCornerRadius
+      StageImageView.layer.shadowOffset = StageImageViewButtonShadow
+      StageImageView.layer.shadowColor = StageImageViewButtonShadowColor
+      StageImageView.layer.shadowOpacity = StageImageViewButtonShadowOpacity
+      StageImageView.layer.cornerRadius = StageImageViewButtonCornerRadius
    }
    
   
