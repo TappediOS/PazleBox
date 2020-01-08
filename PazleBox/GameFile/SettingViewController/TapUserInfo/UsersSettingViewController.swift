@@ -32,6 +32,7 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
    
    var usersName: String = NSLocalizedString("Guest", comment: "")
    
+   //テキストフィールドに書き込む最大の文字数。
    let maxTextfieldLength = 9
    
    override func viewDidLoad() {
@@ -45,6 +46,7 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
       GetUserDataFromDataBase()
    }
    
+   //viewWillDisappearにすると，Pagesheetを下げた瞬間に呼ばれる。
    override func viewDidDisappear(_ animated: Bool) {
       super.viewDidDisappear(true)
       print("表示時　のニックネーム： \(self.usersName)")
@@ -53,22 +55,23 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
       //nilはだめ。
       guard let newName = self.NicNameTextField.text else { return }
       
-      //変わってない場合
+      //変わってない場合さよなら
       guard newName != usersName else {
          print("ニックネーム変わってないよね。")
          return
       }
       
-      //空白文字の場合
+      //空白文字の場合さよなら
       guard newName != "" else { return }
       
-      
+      //書き込み
       let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
       db.collection("users").document(uid).updateData([
          "name": newName
       ]) { err in
          if let err = err {
             print("\nニックネームアップデートエラー: \(err)")
+            self.Play3DtouchError()
          } else {
             print("\nニックネームアップデート成功!")
          }
@@ -81,13 +84,17 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
    }
    
    private func SetUpTextField() {
+      //文字入ってない時はdoneを押せないようにする処理
       NicNameTextField.enablesReturnKeyAutomatically = true
+      //doneにする処理
       NicNameTextField.returnKeyType = .done
       NicNameTextField.delegate = self
+      //オブザーバ登録
       NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(notification:)),
                                              name: UITextField.textDidChangeNotification, object: NicNameTextField)
    }
 
+   //オブザーバの片付けをする。
    deinit {
       NotificationCenter.default.removeObserver(self)
    }
