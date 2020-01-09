@@ -85,7 +85,9 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
    }
    
    private func SetUpNavigationBar() {
-      self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "×", style: .plain, target: self, action: #selector(TapDoneButton))
+      let stopItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(TapDoneButton))
+      stopItem.tintColor = .black
+      self.navigationItem.leftBarButtonItem = stopItem
    }
    
    private func SetUpTextField() {
