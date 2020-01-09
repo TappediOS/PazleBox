@@ -25,16 +25,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U7Z-8i-68n">
-                                                    <rect key="frame" x="20" y="4.5" width="334" height="35"/>
+                                                    <rect key="frame" x="10" y="4" width="354" height="36"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="U7Z-8i-68n" firstAttribute="leading" secondItem="5do-Wx-Pvg" secondAttribute="leading" constant="20" id="Qrl-4f-vHG"/>
-                                                <constraint firstItem="U7Z-8i-68n" firstAttribute="top" secondItem="5do-Wx-Pvg" secondAttribute="top" constant="4.5" id="aa6-mB-It8"/>
-                                                <constraint firstAttribute="trailing" secondItem="U7Z-8i-68n" secondAttribute="trailing" constant="20" id="at8-92-crl"/>
-                                                <constraint firstAttribute="bottom" secondItem="U7Z-8i-68n" secondAttribute="bottom" constant="4.5" id="ygT-bd-M6l"/>
+                                                <constraint firstAttribute="trailing" secondItem="U7Z-8i-68n" secondAttribute="trailing" constant="10" id="Yip-1b-trJ"/>
+                                                <constraint firstItem="U7Z-8i-68n" firstAttribute="leading" secondItem="5do-Wx-Pvg" secondAttribute="leading" constant="10" id="bQG-qh-Sfv"/>
+                                                <constraint firstItem="U7Z-8i-68n" firstAttribute="top" secondItem="5do-Wx-Pvg" secondAttribute="top" constant="4" id="mli-aK-pEI"/>
+                                                <constraint firstAttribute="bottom" secondItem="U7Z-8i-68n" secondAttribute="bottom" constant="4" id="zQj-tu-dKY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
