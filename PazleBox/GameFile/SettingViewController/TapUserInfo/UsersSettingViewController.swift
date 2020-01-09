@@ -202,6 +202,9 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
    
    @objc func TapDoneButton() {
       print("完了ボタンタップされた")
+      self.dismiss(animated: true, completion: {
+         print("SettingVCのdismiss完了")
+      })
    }
    
    // MARK: - Table view data source

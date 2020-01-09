@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-2094" y="49"/>
         </scene>
-        <!--Setting-->
+        <!--Users Setting Table View Controller-->
         <scene sceneID="BE4-oo-Ft8">
             <objects>
                 <tableViewController storyboardIdentifier="UsersSettingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4Yx-QD-Jog" customClass="UsersSettingTableViewController" customModule="PazleBox" customModuleProvider="target" sceneMemberID="viewController">
@@ -115,7 +115,7 @@
                             <outlet property="delegate" destination="4Yx-QD-Jog" id="eBq-Ql-C7W"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Setting" id="Hun-Rb-jxQ"/>
+                    <navigationItem key="navigationItem" id="Hun-Rb-jxQ"/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="NicNameTextField" destination="U7Z-8i-68n" id="w7r-zS-ook"/>
