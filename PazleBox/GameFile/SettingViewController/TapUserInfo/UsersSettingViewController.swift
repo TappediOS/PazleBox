@@ -39,6 +39,7 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
       super.viewDidLoad()
       
       SetUpView()
+      SetUpNavigationBar()
       SetUpTextField()
       SetUpLabelText()
       SetUpFireStoreSetting()
@@ -81,6 +82,10 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
    
    private func SetUpView() {
       self.view.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
+   }
+   
+   private func SetUpNavigationBar() {
+      self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "×", style: .plain, target: self, action: #selector(TapDoneButton))
    }
    
    private func SetUpTextField() {
@@ -194,6 +199,10 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
        return true
    }
 
+   
+   @objc func TapDoneButton() {
+      print("完了ボタンタップされた")
+   }
    
    // MARK: - Table view data source
    // セクションの数を返します

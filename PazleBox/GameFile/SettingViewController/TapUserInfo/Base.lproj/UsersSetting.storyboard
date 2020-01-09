@@ -115,9 +115,7 @@
                             <outlet property="delegate" destination="4Yx-QD-Jog" id="eBq-Ql-C7W"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Setting" leftItemsSupplementBackButton="YES" id="Hun-Rb-jxQ">
-                        <barButtonItem key="backBarButtonItem" title="←" id="HJk-4S-Vbg"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Setting" id="Hun-Rb-jxQ"/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="NicNameTextField" destination="U7Z-8i-68n" id="w7r-zS-ook"/>
