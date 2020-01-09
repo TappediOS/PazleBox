@@ -7,7 +7,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Users Setting Table View Controller-->
+        <!--User Setting Navigation Controller-->
+        <scene sceneID="DfT-Bg-mpD">
+            <objects>
+                <navigationController storyboardIdentifier="UserSettingNavigationC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NVy-Ra-IAX" customClass="UserSettingNavigationController" sceneMemberID="viewController">
+                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4IP-eH-yun">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="4Yx-QD-Jog" kind="relationship" relationship="rootViewController" id="egj-X8-ulm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pgi-oQ-2mL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2094" y="49"/>
+        </scene>
+        <!--Setting-->
         <scene sceneID="BE4-oo-Ft8">
             <objects>
                 <tableViewController storyboardIdentifier="UsersSettingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4Yx-QD-Jog" customClass="UsersSettingTableViewController" customModule="PazleBox" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,6 +115,9 @@
                             <outlet property="delegate" destination="4Yx-QD-Jog" id="eBq-Ql-C7W"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Setting" leftItemsSupplementBackButton="YES" id="Hun-Rb-jxQ">
+                        <barButtonItem key="backBarButtonItem" title="←" id="HJk-4S-Vbg"/>
+                    </navigationItem>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="NicNameTextField" destination="U7Z-8i-68n" id="w7r-zS-ook"/>
