@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puzzle Maker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twb-qF-HXT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puzzle Maker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="twb-qF-HXT">
                                 <rect key="frame" x="20" y="219" width="374" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="OqQ-6w-uxI"/>
@@ -36,11 +36,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99824589490000004" green="0.94119483230000001" blue="0.37794265274383565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="zry-7d-9wh" firstAttribute="top" secondItem="twb-qF-HXT" secondAttribute="bottom" priority="250" constant="84" id="6IK-BV-v1w"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="twb-qF-HXT" secondAttribute="trailing" constant="20" id="85x-TY-0AL"/>
                             <constraint firstItem="zry-7d-9wh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9E2-qA-g8D"/>
                             <constraint firstItem="twb-qF-HXT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="H8p-5g-dQ7"/>
-                            <constraint firstItem="zry-7d-9wh" firstAttribute="top" secondItem="twb-qF-HXT" secondAttribute="bottom" constant="84" id="JnJ-aF-bBP"/>
+                            <constraint firstItem="zry-7d-9wh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="twb-qF-HXT" secondAttribute="bottom" constant="40" id="JnJ-aF-bBP"/>
                             <constraint firstItem="zry-7d-9wh" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Yrb-4y-L4f"/>
+                            <constraint firstItem="twb-qF-HXT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" priority="750" constant="175" id="rso-MK-FY3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
