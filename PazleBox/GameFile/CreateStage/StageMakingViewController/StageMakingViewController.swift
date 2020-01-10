@@ -75,13 +75,6 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
       InitAllADCheck()
    }
    
-   override func viewDidAppear(_ animated: Bool) {
-      InitUsersRegiStageCount()
-      InitInfoLabel()
-      InitRemainingLabel()
-      SetUpStageMakingButton()
-   }
-   
    override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(true)
       if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false{
@@ -96,6 +89,13 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
             StageMakingBannerView.isHidden = true
          }
       }
+   }
+   
+   override func viewDidAppear(_ animated: Bool) {
+      InitUsersRegiStageCount()
+      InitInfoLabel()
+      InitRemainingLabel()
+      SetUpStageMakingButton()
    }
    
    //safeArea取得するために必要。
