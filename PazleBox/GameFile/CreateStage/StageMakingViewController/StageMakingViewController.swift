@@ -18,7 +18,6 @@ import SnapKit
 class StageMakingViewController: UIViewController, GADBannerViewDelegate{
    
    
-   @IBOutlet weak var BackButton: FUIButton!
    @IBOutlet weak var StageMakingButton: FUIButton!
    
    @IBOutlet weak var InfoLabel: UILabel!
@@ -149,7 +148,6 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
    
    private func InitEachButton() {
       InitButton(StageMakingButton)
-      InitButton(BackButton)
       SetUpButtonColor()
       SetUpButtonPosition()
       SetUpButtonTitile()
@@ -157,7 +155,6 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
    
    private func SetUpButtonPosition() {
       StageMakingButton.frame = CGRect(x: FViewW * 6, y: FViewH * 13.5, width: FViewW * 12, height: FViewH * 3)
-      BackButton.frame = CGRect(x: FViewW * 1, y: FViewH * 2.5, width: FViewW * 5, height: FViewH * 3 / 2)
    }
    
    private func SetUpButtonTitile() {
@@ -179,8 +176,6 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
    private func SetUpButtonColor() {
       StageMakingButton.buttonColor = UIColor.flatTeal()
       StageMakingButton.shadowColor = UIColor.flatTealColorDark()
-      BackButton.buttonColor = UIColor.flatMaroonColorDark()
-      BackButton.shadowColor = UIColor.flatMaroonColorDark()
    }
    
    
@@ -292,23 +287,11 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
    }
    
    private func InitHeroID() {
-      BackButton.hero.id = HeroID.TopLable_Back
       StageMakingButton.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 11), y: 0, z: 0)]
       InfoLabel.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 6), y: 0, z: 0)]
       RemainingLabel.hero.modifiers = [.arc(), .translate(x: +(ViewW - FViewW * 2), y: 0, z: 0)]
    }
    
-   //MARK:- ボタンタップ
-   @IBAction func TapBackButton(_ sender: Any) {
-      Play3DtouchLight()
-      if isLockButton == true { return }
-      isLockButton = true
-      
-      InitHeroID()
-      
-      GameSound.PlaySoundsTapButton()
-      dismiss(animated: true, completion: nil)
-   }
    
    //NOTE:- タップしたら同一SB上の
    @IBAction func TapStageMakingButton(_ sender: Any) {
@@ -318,7 +301,6 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
       
       GameSound.PlaySoundsTapButton()
       
-      BackButton.hero.id = HeroID.TopLable_Back
       StageMakingButton.hero.id = HeroID.MakingButton_Trash
       InfoLabel.hero.id = HeroID.InfoLabel_Option
       RemainingLabel.hero.id = HeroID.RemainingLabel_Label

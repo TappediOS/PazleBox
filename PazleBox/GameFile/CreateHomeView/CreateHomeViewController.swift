@@ -17,7 +17,6 @@ class CreateHomeViewController: UIViewController, GADBannerViewDelegate {
    
    @IBOutlet weak var SellectStageButton: FUIButton!
    @IBOutlet weak var StageAuthCreateButton: FUIButton!
-   @IBOutlet weak var BackHomeButton: FUIButton!
    @IBOutlet weak var InternetUsersStageButton: FUIButton!
    
    var ViewW: CGFloat = 0
@@ -112,7 +111,6 @@ class CreateHomeViewController: UIViewController, GADBannerViewDelegate {
    private func  InitAccessibilityIdentifires() {
       SellectStageButton?.accessibilityIdentifier = "CreateHomeVC_SellectStageButton"
       StageAuthCreateButton?.accessibilityIdentifier = "CreateHomeVC_StageAuthCreateButton"
-      BackHomeButton?.accessibilityIdentifier = "CreateHomeVC_BackHomeButton"
       InternetUsersStageButton?.accessibilityIdentifier = "CreateHomeVC_InternetUsersStageButton"
    }
    
@@ -126,7 +124,6 @@ class CreateHomeViewController: UIViewController, GADBannerViewDelegate {
       InitButton(SellectStageButton)
       InitButton(StageAuthCreateButton)
       InitButton(InternetUsersStageButton)
-      InitButton(BackHomeButton)
       SetUpButtonColor()
       SetUpButtonPosition()
       SetUpButtonTitile()
@@ -157,8 +154,6 @@ class CreateHomeViewController: UIViewController, GADBannerViewDelegate {
       StageAuthCreateButton.shadowColor = UIColor.flatTealColorDark()
       InternetUsersStageButton.buttonColor = UIColor.flatOrange()
       InternetUsersStageButton.shadowColor = UIColor.flatOrangeColorDark()
-      BackHomeButton.buttonColor = UIColor.flatMaroonColorDark()
-      BackHomeButton.shadowColor = UIColor.flatMaroonColorDark()
    }
    
    private func SetUpButtonPosition() {
@@ -166,13 +161,10 @@ class CreateHomeViewController: UIViewController, GADBannerViewDelegate {
       SellectStageButton.frame = CGRect(x: FViewW * 6, y: FViewH * 11, width: FViewW * 12, height: FViewH * 3)
       InternetUsersStageButton.frame = CGRect(x: FViewW * 6, y: FViewH * 15, width: FViewW * 12, height: FViewH * 3)
       StageAuthCreateButton.frame = CGRect(x: FViewW * 6, y: FViewH * 19, width: FViewW * 12, height: FViewH * 3)
-      
-      BackHomeButton.frame = CGRect(x: FViewW * 1, y: FViewH * 2.5, width: FViewW * 5, height: FViewH * 3 / 2)
    }
    
    
    private func InitHeroID() {
-      BackHomeButton.hero.id = HeroID.TopTitleAndCreateBack
       StageAuthCreateButton.hero.id = HeroID.TopPlayAndCreateCreate
       SellectStageButton.hero.id = HeroID.TopCreateAndCreateFinCreate
       SellectStageButton.hero.modifiers = [.arc(), .translate(x: +(ViewW + FViewW * 11), y: 0, z: 0)]
@@ -223,7 +215,6 @@ class CreateHomeViewController: UIViewController, GADBannerViewDelegate {
       StageAuthCreateButton?.hero.id = HeroID.CreateCreateAndCreatingTrash
       SellectStageButton?.hero.id = HeroID.CreateFinCreateAndCreatingOption
       InternetUsersStageButton?.hero.id = HeroID.CreateInternetAndCreatingInfoLabel
-      BackHomeButton?.hero.id = HeroID.CreateBackAndCreatingFinButton
       
       Analytics.logEvent("TapStageAuthCreateButton", parameters: nil)
       
@@ -275,17 +266,7 @@ class CreateHomeViewController: UIViewController, GADBannerViewDelegate {
       })
    }
    
-   
-   @IBAction func TapBackButton(_ sender: Any) {
-      BackHomeButton.hero.id = HeroID.TopTitleAndCreateBack
-      StageAuthCreateButton.hero.id = HeroID.TopPlayAndCreateCreate
-      SellectStageButton.hero.id = HeroID.TopCreateAndCreateFinCreate
-      
-      Play3DtouchLight()
-      GameSound.PlaySoundsTapButton()
-      dismiss(animated: true, completion: nil)
-   }
-   
+
    //   //COMING SOON LABELの初期化　使ってない。けどまた使うかもしれないから残しとく。
    //   //消すべきであるとは思う。
    //   private func InitComminSoonLabel() {

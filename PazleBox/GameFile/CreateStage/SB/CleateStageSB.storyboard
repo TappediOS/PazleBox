@@ -33,14 +33,6 @@
                                     <action selector="TapStageAuthCreateButton:" destination="Shq-YE-a8h" eventType="touchUpInside" id="krW-YM-COU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9W-4O-T85" customClass="FUIButton">
-                                <rect key="frame" x="20" y="44" width="117" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="←"/>
-                                <connections>
-                                    <action selector="TapBackButton:" destination="Shq-YE-a8h" eventType="touchUpInside" id="WQ5-en-fxE"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXG-cm-a2S" customClass="FUIButton">
                                 <rect key="frame" x="43" y="607" width="294" height="173"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -54,7 +46,6 @@
                         <viewLayoutGuide key="safeArea" id="9RH-C0-ZW1"/>
                     </view>
                     <connections>
-                        <outlet property="BackHomeButton" destination="X9W-4O-T85" id="pUI-dv-qjg"/>
                         <outlet property="InternetUsersStageButton" destination="BXG-cm-a2S" id="aDT-9W-RnN"/>
                         <outlet property="SellectStageButton" destination="nmg-hS-je9" id="p8W-z4-iK9"/>
                         <outlet property="StageAuthCreateButton" destination="wCS-tJ-dt8" id="8Ji-Ig-e6T"/>
@@ -72,14 +63,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUI-tw-WfZ" customClass="FUIButton">
-                                <rect key="frame" x="20" y="44" width="76" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="←"/>
-                                <connections>
-                                    <action selector="TapBackButton:" destination="MEa-cb-ee7" eventType="touchUpInside" id="cMO-2v-Pb7"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mw-g7-yRm" customClass="FUIButton">
                                 <rect key="frame" x="116" y="342" width="183" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -107,7 +90,6 @@
                         <viewLayoutGuide key="safeArea" id="xxm-3U-dab"/>
                     </view>
                     <connections>
-                        <outlet property="BackButton" destination="bUI-tw-WfZ" id="alD-Bi-KeK"/>
                         <outlet property="InfoLabel" destination="09V-bE-jBC" id="OSj-se-gOY"/>
                         <outlet property="RemainingLabel" destination="Plm-SA-JAH" id="iHO-pU-BnW"/>
                         <outlet property="StageMakingButton" destination="3mw-g7-yRm" id="HLV-bl-hPj"/>
