@@ -89,8 +89,8 @@ class PuzzleTabBarController: ESTabBarController {
       SettingVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
                                                 image: image, selectedImage: selectedImage, tag: 3)
       self.viewControllers = [PlayVC, CreateVC, SettingVC]
-      self.selectedIndex = 1
       self.selectedViewController = CreateVC
+      self.selectedIndex = 1
    }
    
    //MARK: 通知の初期化
