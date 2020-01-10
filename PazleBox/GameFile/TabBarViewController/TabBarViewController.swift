@@ -17,6 +17,9 @@ class PuzzleTabBarController: ESTabBarController {
    private var GameBGM: BGM?
    let GameSound = GameSounds()
    
+   //viewWillAppearで初期化しているから，dismissしたときに複数回初期化することになるのを防ぐ.
+   var firstOpenForBGM = true
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -38,8 +41,11 @@ class PuzzleTabBarController: ESTabBarController {
    /// - Parameter animated:
    override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(true)
-      InitBGM()
-      StartBGM()
+      if firstOpenForBGM {
+         InitBGM()
+         StartBGM()
+         firstOpenForBGM = false
+      }
    }
    
    override func viewDidAppear(_ animated: Bool) {
