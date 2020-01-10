@@ -90,6 +90,7 @@ class PuzzleTabBarController: ESTabBarController {
                                                 image: image, selectedImage: selectedImage, tag: 3)
       self.viewControllers = [PlayVC, CreateVC, SettingVC]
       self.selectedIndex = 1
+      self.selectedViewController = CreateVC
    }
    
    //MARK: 通知の初期化
