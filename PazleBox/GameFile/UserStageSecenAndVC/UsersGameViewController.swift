@@ -300,6 +300,9 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       
    }
    
+   
+   //MARK:- Firestoreに情報を送信する。
+   //ステージのプレイ回数をインクリメント
    private func SavePlayStageCountToFireStore() {
       let RefID = PlayStageData.RefID
       let Ref = db.collection("Stages").document(RefID)
@@ -318,7 +321,7 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
          }
       }
    }
-   
+   //ユーザのプレイ回数をインクリメント
    private func SaveUsersPlayStageCountToFireStore() {
       let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
       let Ref = db.collection("users").document(uid)
