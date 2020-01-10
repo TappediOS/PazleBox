@@ -274,8 +274,6 @@ class SellectInternetStageViewController: UIViewController {
    }
    
    //MARK:- セグメントのInit
-   //TODO:- frameを変更すること。
-   //TODO:- タイトルの名前をローカライズすること。
    private func InitSegmentedControl() {
       let Latest = NSLocalizedString("Latest", comment: "")
       let PlayCount = NSLocalizedString("PlayCount", comment: "")

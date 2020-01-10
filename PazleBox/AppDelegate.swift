@@ -104,6 +104,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
                   UserDefaults.standard.set(true, forKey: "Logined")
                }
             }
+            
+            self.ChekUserCreateStageNumFromFireStore(uid: uid)
          }
          print("------------ログイン情報--------------\n")
       }
@@ -207,6 +209,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       //------------------- プッシュ通知の赤いやつ消す-----------------//
       
       return true
+   }
+   
+   //Firestoreに保存されているステージ数を取得してUser Defaultsに反映。
+   private func ChekUserCreateStageNumFromFireStore(uid: String) {
+      print("UID = \(uid)")
+      let db = Firestore.firestore()
+      db.collection("Stages").whereField("addUser", isEqualTo: uid).getDocuments() { (querySnapshot, err) in
+         if let err = err {
+            print("データベースからのデータ取得エラー: \(err)")
+         } else {
+            let createStageNum: Int = querySnapshot!.documents.count
+            print("作成されているステージ数は， \(createStageNum) 個")
+            UserDefaults.standard.set(createStageNum, forKey: "CreateStageNum")
+         }
+      }
    }
 
    //MARK:- 元々あったやつ
