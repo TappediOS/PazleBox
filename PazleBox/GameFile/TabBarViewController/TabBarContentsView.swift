@@ -30,7 +30,7 @@ class TabBarBasicContentView: ESTabBarItemContentView {
       completion?()
    }
    
-   
+
     
    func bounceAnimation() {
       let impliesAnimation = CAKeyframeAnimation(keyPath: "transform.scale")

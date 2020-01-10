@@ -28,7 +28,6 @@ class PuzzleTabBarController: ESTabBarController {
    }
    
    
-   
    /// なんでここでBGM Initしてるか。
    /// そもそもライフサイクルが
    ///     viewDidLoad -> AppDelegade -> viewWillAppar
