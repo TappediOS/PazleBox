@@ -53,10 +53,25 @@ class CreateHomeViewController: UIViewController, GADBannerViewDelegate {
       InitAllADCheck()
    }
    
+   override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(true)
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false{
+         if ChoseStageBannerView.isHidden == true {
+            ChoseStageBannerView.isHidden = false
+         }
+         return
+      }
+      
+      
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == true {
+         if ChoseStageBannerView.isHidden == false {
+            ChoseStageBannerView.isHidden = true
+         }
+      }
+   }
+   
    override func viewDidAppear(_ animated: Bool) {
       InitHeroID()
-      
-
    }
    
    //safeArea取得するために必要。
