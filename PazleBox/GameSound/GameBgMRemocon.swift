@@ -25,21 +25,28 @@ extension BGM {
    func InitConfig() {
       self.RemorteConfigs = RemoteConfig.remoteConfig()
       //MARK: デベロッパモード　出すときはやめろ
+      let settings = RemoteConfigSettings()
       #if DEBUG
       print("RemoConデバッグモードでいくとよ。")
-      let RemortConfigSetting = RemoteConfigSettings(developerModeEnabled: true)
-      self.RemorteConfigs.configSettings = RemortConfigSetting
+      settings.minimumFetchInterval = 0
       #else
       print("RemoConリリースモードでいくとよ。")
-      let RemortConfigSetting = RemoteConfigSettings(developerModeEnabled: false)
-      self.RemorteConfigs.configSettings = RemortConfigSetting
+      settings.minimumFetchInterval = 3600
       #endif
+      self.RemorteConfigs.configSettings = settings
    }
    
    
    func FetchConfig() {
       // ディベロッパーモードの時、expirationDurationを0にして随時更新できるようにする。
-      let expirationDuration = RemorteConfigs.configSettings.isDeveloperModeEnabled ? 0 : 3600
+      var expirationDuration = 0
+      #if DEBUG
+      print("RemoConデバッグモードでいくとよ。")
+      expirationDuration = 0
+      #else
+      print("RemoConリリースモードでいくとよ。")
+      expirationDuration = 3600
+      #endif
       print("RemoteConfigのフェッチする間隔： \(expirationDuration)")
       RemorteConfigs.fetch(withExpirationDuration: TimeInterval(expirationDuration)) { [unowned self] (status, error) -> Void in
          guard error == nil else {
@@ -49,7 +56,12 @@ extension BGM {
          }
          
          print("クラウドからGameBGMゲットできました")
-         self.RemorteConfigs.activateFetched()
+         self.RemorteConfigs.activate(completionHandler: { err in
+            if let err = err {
+               print("Remoconアクティブにするときにエラー発生")
+               print("Err: \(err)")
+            }
+         })
          self.SetGameBGM()
       }
    }
