@@ -57,8 +57,8 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    let INTERSTITIAL_ID = "ca-app-pub-1460017825820383/5793475595"
    
    //インターステーシャル広告出すまでの回数
-   var InterstitialCount = 3
-   var InterstitialCountBase = 3
+   var InterstitialCount = 2
+   var InterstitialCountBase = 2
    
    
    //MARK: user defaults
