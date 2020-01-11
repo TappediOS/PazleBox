@@ -282,6 +282,10 @@
 		BF73C2F8234B319200745C7F /* UsersGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F7234B319200745C7F /* UsersGameScene.swift */; };
 		BF73C2FA234B31A200745C7F /* UsersGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F9234B31A200745C7F /* UsersGameViewController.swift */; };
 		BF73C2FC234B465A00745C7F /* UsersGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF73C2FB234B465A00745C7F /* UsersGameScene.sks */; };
+		BF78D91723C98C8100334188 /* PuzzleTabBarControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91623C98C8100334188 /* PuzzleTabBarControllerTest.swift */; };
+		BF78D91923C98E5E00334188 /* SettingVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91823C98E5E00334188 /* SettingVCTest.swift */; };
+		BF78D91B23C9906100334188 /* SellectCreateStageVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91A23C9906100334188 /* SellectCreateStageVCTest.swift */; };
+		BF78D91D23C991CD00334188 /* UsersGameSceneTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91C23C991CD00334188 /* UsersGameSceneTest.swift */; };
 		BF7CD91C2240B56300F8302B /* 12p1Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD9192240B56100F8302B /* 12p1Red.png */; };
 		BF7CD91D2240B56300F8302B /* 12p1Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD91A2240B56200F8302B /* 12p1Green.png */; };
 		BF7CD91E2240B56300F8302B /* 12p1Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD91B2240B56300F8302B /* 12p1Blue.png */; };
@@ -1055,6 +1059,10 @@
 		BF73C2F7234B319200745C7F /* UsersGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersGameScene.swift; sourceTree = "<group>"; };
 		BF73C2F9234B31A200745C7F /* UsersGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersGameViewController.swift; sourceTree = "<group>"; };
 		BF73C2FB234B465A00745C7F /* UsersGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = UsersGameScene.sks; sourceTree = "<group>"; };
+		BF78D91623C98C8100334188 /* PuzzleTabBarControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleTabBarControllerTest.swift; sourceTree = "<group>"; };
+		BF78D91823C98E5E00334188 /* SettingVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVCTest.swift; sourceTree = "<group>"; };
+		BF78D91A23C9906100334188 /* SellectCreateStageVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectCreateStageVCTest.swift; sourceTree = "<group>"; };
+		BF78D91C23C991CD00334188 /* UsersGameSceneTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersGameSceneTest.swift; sourceTree = "<group>"; };
 		BF7CD9192240B56100F8302B /* 12p1Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12p1Red.png; sourceTree = "<group>"; };
 		BF7CD91A2240B56200F8302B /* 12p1Green.png */ = {isa = PBXFileReference; explicitFileType = image.png; path = 12p1Green.png; sourceTree = "<group>"; };
 		BF7CD91B2240B56300F8302B /* 12p1Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12p1Blue.png; sourceTree = "<group>"; };
@@ -2715,6 +2723,10 @@
 			isa = PBXGroup;
 			children = (
 				BFDCDBAA2340900200AD6E4F /* PazleBoxTests.swift */,
+				BF78D91C23C991CD00334188 /* UsersGameSceneTest.swift */,
+				BF78D91623C98C8100334188 /* PuzzleTabBarControllerTest.swift */,
+				BF78D91823C98E5E00334188 /* SettingVCTest.swift */,
+				BF78D91A23C9906100334188 /* SellectCreateStageVCTest.swift */,
 				BFDCDBAC2340900200AD6E4F /* Info.plist */,
 			);
 			path = PazleBoxTests;
@@ -3850,7 +3862,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF78D91723C98C8100334188 /* PuzzleTabBarControllerTest.swift in Sources */,
+				BF78D91923C98E5E00334188 /* SettingVCTest.swift in Sources */,
+				BF78D91B23C9906100334188 /* SellectCreateStageVCTest.swift in Sources */,
 				BFDCDBAB2340900200AD6E4F /* PazleBoxTests.swift in Sources */,
+				BF78D91D23C991CD00334188 /* UsersGameSceneTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

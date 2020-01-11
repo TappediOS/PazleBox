@@ -48,10 +48,19 @@ body:
                    …
 version: 6.11.0
 
+name: Firebase, nameSpecified: 
+body: 
+                   …
+version: 6.11.0
+
 name: FirebaseABTesting, nameSpecified: 
 body: 
                    …
 version: 3.1.2
+
+name: FirebaseAnalytics, nameSpecified: 
+body: Copyright 2019 Googl…
+version: 6.1.3
 
 name: FirebaseAnalytics, nameSpecified: 
 body: Copyright 2019 Googl…
@@ -77,10 +86,25 @@ body:
                    …
 version: 6.3.2
 
+name: FirebaseCore, nameSpecified: 
+body: 
+                   …
+version: 6.3.2
+
 name: FirebaseCoreDiagnostics, nameSpecified: 
 body: 
                    …
 version: 1.1.1
+
+name: FirebaseCoreDiagnostics, nameSpecified: 
+body: 
+                   …
+version: 1.1.1
+
+name: FirebaseCoreDiagnosticsInterop, nameSpecified: 
+body: 
+                   …
+version: 1.0.0
 
 name: FirebaseCoreDiagnosticsInterop, nameSpecified: 
 body: 
@@ -96,6 +120,11 @@ name: FirebaseFirestore, nameSpecified:
 body: 
                    …
 version: 1.6.1
+
+name: FirebaseInstanceID, nameSpecified: 
+body: 
+                   …
+version: 4.2.6
 
 name: FirebaseInstanceID, nameSpecified: 
 body: 
@@ -146,10 +175,24 @@ name: GoogleAppMeasurement, nameSpecified:
 body: Copyright 2019 Googl…
 version: 6.1.3
 
+name: GoogleAppMeasurement, nameSpecified: 
+body: Copyright 2019 Googl…
+version: 6.1.3
+
 name: GoogleDataTransport, nameSpecified: 
 body: 
                    …
 version: 3.0.1
+
+name: GoogleDataTransport, nameSpecified: 
+body: 
+                   …
+version: 3.0.1
+
+name: GoogleDataTransportCCTSupport, nameSpecified: 
+body: 
+                   …
+version: 1.2.1
 
 name: GoogleDataTransportCCTSupport, nameSpecified: 
 body: 
@@ -164,6 +207,11 @@ name: GoogleToolboxForMac, nameSpecified:
 body: 
                    …
 version: 2.2.2
+
+name: GoogleUtilities, nameSpecified: 
+body: 
+                   …
+version: 6.3.1
 
 name: GoogleUtilities, nameSpecified: 
 body: 
@@ -215,6 +263,10 @@ version: 3.1.3
 name: lottie-ios, nameSpecified: 
 body:                     …
 version: 3.1.3
+
+name: nanopb, nameSpecified: 
+body: Copyright (c) 2011 P…
+version: 0.3.904
 
 name: nanopb, nameSpecified: 
 body: Copyright (c) 2011 P…

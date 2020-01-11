@@ -1,18 +1,20 @@
 //
-//  PazleBoxTests.swift
+//  PuzzleTabBarControllerTest.swift
 //  PazleBoxTests
 //
-//  Created by jun on 2019/09/29.
-//  Copyright © 2019 jun. All rights reserved.
+//  Created by jun on 2020/01/11.
+//  Copyright © 2020 jun. All rights reserved.
 //
 
 import XCTest
 @testable import PazleBox
 
-class PazleBoxTests: XCTestCase {
+//NOTE: タブバーのテスト
+class PuzzleTabBarControllerTest: XCTestCase {
+
    
    override class func setUp() {
-   
+
    }
    
    override class func tearDown() {

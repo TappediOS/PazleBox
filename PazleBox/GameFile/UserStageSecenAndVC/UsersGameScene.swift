@@ -287,22 +287,22 @@ class UsersGameScene: SKScene {
    }
    
    //MARK:- 位置の判定をしてる
-   private func CheckLeftUp(x: Int, y: Int) -> Bool {
+   func CheckLeftUp(x: Int, y: Int) -> Bool {
       if x >= 0 && y <= 11 { return true }
       return false
    }
    
-   private func CheckLeftDown(x: Int, y: Int) -> Bool {
+   func CheckLeftDown(x: Int, y: Int) -> Bool {
       if x >= 0 && y >= 0 { return true }
       return false
    }
    
-   private func CheckRightUp(x: Int, y: Int) -> Bool {
+   func CheckRightUp(x: Int, y: Int) -> Bool {
       if x <= 8 && y <= 11 { return true }
       return false
    }
    
-   private func CheckRightDown(x: Int, y: Int) -> Bool {
+   func CheckRightDown(x: Int, y: Int) -> Bool {
       if x <= 8 && y >= 0 { return true }
       return false
    }
