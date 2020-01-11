@@ -119,6 +119,26 @@ class UsersGameSceneTest: XCTestCase {
          XCTAssertFalse(GameScene.CheckRightDown(x: 23, y: -2))
       })
    }
+   
+   //送信された座標に他のパズル(.In)があるかどうかを判定するテスト
+   func testPuzzleAwayyy() {
+      let Puzzle = puzzle(PX: 4, PY: 3, CustNum: 2, ViewX: 50, ViewY: 50, PuzzleStyle: "43p9", PuzzleColor: "Red", RespawnX: 3, RespawnY: 3)
+      XCTContext.runActivity(named: "AwayXが0より大きい，または，AwayYが0より小さい時はtrue", block: { _ in
+         XCTAssertTrue(GameScene.PuzzleAwayyy(AwayX: 1, AwayY: 4, Puzzle: Puzzle))
+         XCTAssertTrue(GameScene.PuzzleAwayyy(AwayX: -2, AwayY: -3, Puzzle: Puzzle))
+      })
+      
+      XCTContext.runActivity(named: "AwayX + Px が0以下の時はtrue", block: { _ in
+         XCTAssertTrue(GameScene.PuzzleAwayyy(AwayX: -5, AwayY: 4, Puzzle: Puzzle))
+         XCTAssertTrue(GameScene.PuzzleAwayyy(AwayX: -6, AwayY: -3, Puzzle: Puzzle))
+      })
+      
+      XCTContext.runActivity(named: "AwayY - Py が0以下の時はtrue", block: { _ in
+         XCTAssertTrue(GameScene.PuzzleAwayyy(AwayX: 1, AwayY: 2, Puzzle: Puzzle))
+         XCTAssertTrue(GameScene.PuzzleAwayyy(AwayX: -2, AwayY: 0, Puzzle: Puzzle))
+         XCTAssertTrue(GameScene.PuzzleAwayyy(AwayX: 3, AwayY: -1, Puzzle: Puzzle))
+      })
+   }
 
 }
 
