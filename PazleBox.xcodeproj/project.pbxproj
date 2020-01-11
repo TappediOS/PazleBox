@@ -479,7 +479,6 @@
 		BFCE264A224A58A60099A775 /* 32p9Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE2638224A58A50099A775 /* 32p9Blue.png */; };
 		BFCE264B224A58A60099A775 /* 32p12Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE2639224A58A60099A775 /* 32p12Red.png */; };
 		BFDCDB9D23408FFA00AD6E4F /* PazleBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCDB9C23408FFA00AD6E4F /* PazleBoxUITests.swift */; };
-		BFDCDBAB2340900200AD6E4F /* PazleBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCDBAA2340900200AD6E4F /* PazleBoxTests.swift */; };
 		BFDCDBB3234205AA00AD6E4F /* CleanChackStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCDBB2234205AA00AD6E4F /* CleanChackStage.swift */; };
 		BFDD3EE7227D6B3200B9E6B0 /* Gold_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE4227D6B3100B9E6B0 /* Gold_Badge.png */; };
 		BFDD3EE8227D6B3200B9E6B0 /* Bronze_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE5227D6B3200B9E6B0 /* Bronze_Badge.png */; };
@@ -1261,7 +1260,6 @@
 		BFDCDB9C23408FFA00AD6E4F /* PazleBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PazleBoxUITests.swift; sourceTree = "<group>"; };
 		BFDCDB9E23408FFA00AD6E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFDCDBA82340900200AD6E4F /* PazleBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PazleBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFDCDBAA2340900200AD6E4F /* PazleBoxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PazleBoxTests.swift; sourceTree = "<group>"; };
 		BFDCDBAC2340900200AD6E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFDCDBB2234205AA00AD6E4F /* CleanChackStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanChackStage.swift; sourceTree = "<group>"; };
 		BFDD3EE4227D6B3100B9E6B0 /* Gold_Badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gold_Badge.png; sourceTree = "<group>"; };
@@ -2724,7 +2722,6 @@
 		BFDCDBA92340900200AD6E4F /* PazleBoxTests */ = {
 			isa = PBXGroup;
 			children = (
-				BFDCDBAA2340900200AD6E4F /* PazleBoxTests.swift */,
 				BF78D91C23C991CD00334188 /* UsersGameSceneTest.swift */,
 				BF78D91E23C99C0600334188 /* PuzzleTest.swift */,
 				BF78D91623C98C8100334188 /* PuzzleTabBarControllerTest.swift */,
@@ -3869,7 +3866,6 @@
 				BF78D91923C98E5E00334188 /* SettingVCTest.swift in Sources */,
 				BF78D91B23C9906100334188 /* SellectCreateStageVCTest.swift in Sources */,
 				BF78D91F23C99C0600334188 /* PuzzleTest.swift in Sources */,
-				BFDCDBAB2340900200AD6E4F /* PazleBoxTests.swift in Sources */,
 				BF78D91D23C991CD00334188 /* UsersGameSceneTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
