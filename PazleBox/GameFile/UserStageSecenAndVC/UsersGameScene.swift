@@ -462,7 +462,7 @@ class UsersGameScene: SKScene {
    
    
    //MARK:- 送信された座標に他のパズル(.In)があるかどうかを判定。
-   private func PuzzleAwayyy(AwayX: Int, AwayY: Int, Puzzle: puzzle) -> Bool {
+   func PuzzleAwayyy(AwayX: Int, AwayY: Int, Puzzle: puzzle) -> Bool {
       
       if AwayX > 0 { return true }
       if AwayY < 0 { return true }
@@ -476,7 +476,7 @@ class UsersGameScene: SKScene {
       return false
    }
    
-   private func ExsitsPuzzle(SerchX: Int, SerchY: Int, SentNum: Int) -> Bool {
+   func ExsitsPuzzle(SerchX: Int, SerchY: Int, SentNum: Int) -> Bool {
       for Puzzle in PuzzleBox {
          //送信者と一致したらcontinue
          if Puzzle as! puzzle == (PuzzleBox[SentNum] as! puzzle){
