@@ -286,6 +286,7 @@
 		BF78D91923C98E5E00334188 /* SettingVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91823C98E5E00334188 /* SettingVCTest.swift */; };
 		BF78D91B23C9906100334188 /* SellectCreateStageVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91A23C9906100334188 /* SellectCreateStageVCTest.swift */; };
 		BF78D91D23C991CD00334188 /* UsersGameSceneTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91C23C991CD00334188 /* UsersGameSceneTest.swift */; };
+		BF78D91F23C99C0600334188 /* PuzzleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91E23C99C0600334188 /* PuzzleTest.swift */; };
 		BF7CD91C2240B56300F8302B /* 12p1Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD9192240B56100F8302B /* 12p1Red.png */; };
 		BF7CD91D2240B56300F8302B /* 12p1Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD91A2240B56200F8302B /* 12p1Green.png */; };
 		BF7CD91E2240B56300F8302B /* 12p1Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD91B2240B56300F8302B /* 12p1Blue.png */; };
@@ -1063,6 +1064,7 @@
 		BF78D91823C98E5E00334188 /* SettingVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVCTest.swift; sourceTree = "<group>"; };
 		BF78D91A23C9906100334188 /* SellectCreateStageVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectCreateStageVCTest.swift; sourceTree = "<group>"; };
 		BF78D91C23C991CD00334188 /* UsersGameSceneTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersGameSceneTest.swift; sourceTree = "<group>"; };
+		BF78D91E23C99C0600334188 /* PuzzleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleTest.swift; sourceTree = "<group>"; };
 		BF7CD9192240B56100F8302B /* 12p1Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12p1Red.png; sourceTree = "<group>"; };
 		BF7CD91A2240B56200F8302B /* 12p1Green.png */ = {isa = PBXFileReference; explicitFileType = image.png; path = 12p1Green.png; sourceTree = "<group>"; };
 		BF7CD91B2240B56300F8302B /* 12p1Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12p1Blue.png; sourceTree = "<group>"; };
@@ -2724,6 +2726,7 @@
 			children = (
 				BFDCDBAA2340900200AD6E4F /* PazleBoxTests.swift */,
 				BF78D91C23C991CD00334188 /* UsersGameSceneTest.swift */,
+				BF78D91E23C99C0600334188 /* PuzzleTest.swift */,
 				BF78D91623C98C8100334188 /* PuzzleTabBarControllerTest.swift */,
 				BF78D91823C98E5E00334188 /* SettingVCTest.swift */,
 				BF78D91A23C9906100334188 /* SellectCreateStageVCTest.swift */,
@@ -3865,6 +3868,7 @@
 				BF78D91723C98C8100334188 /* PuzzleTabBarControllerTest.swift in Sources */,
 				BF78D91923C98E5E00334188 /* SettingVCTest.swift in Sources */,
 				BF78D91B23C9906100334188 /* SellectCreateStageVCTest.swift in Sources */,
+				BF78D91F23C99C0600334188 /* PuzzleTest.swift in Sources */,
 				BFDCDBAB2340900200AD6E4F /* PazleBoxTests.swift in Sources */,
 				BF78D91D23C991CD00334188 /* UsersGameSceneTest.swift in Sources */,
 			);
