@@ -53,4 +53,13 @@ class PuzzleTest: XCTestCase {
          XCTAssertEqual(exp["PArry"] as! Array, PuzzlePArry)
       })
    }
+   
+   
+   //Puzzleの初期化番号が正しいこと。
+   func testBirthDayNum() {
+      let randBirthDayNum = Int.random(in: 0 ... 10)
+      let Puzzle = puzzle(PX: 4, PY: 3, CustNum: randBirthDayNum, ViewX: 50, ViewY: 50, PuzzleStyle: "43p9", PuzzleColor: "Red", RespawnX: 3, RespawnY: 3)
+      
+      XCTAssertEqual(Puzzle.GetBirthDayNum(), randBirthDayNum)
+   }
 }
