@@ -70,6 +70,8 @@ target 'PazleBoxTests' do
 
   pod 'SCLAlertView'
 
+  pod 'Firebase'
+
 
     # Pods for testing
 end

@@ -28,6 +28,8 @@ PODS:
     - FBSDKLoginKit/Login (= 5.13.1)
   - FBSDKLoginKit/Login (5.13.1):
     - FBSDKCoreKit (~> 5.0)
+  - Firebase (6.11.0):
+    - Firebase/Core (= 6.11.0)
   - Firebase/AdMob (6.11.0):
     - Firebase/CoreOnly
     - Google-Mobile-Ads-SDK (~> 7.50)
@@ -282,6 +284,7 @@ DEPENDENCIES:
   - COSTouchVisualizer
   - Crashlytics
   - ESTabBarController-swift
+  - Firebase
   - Firebase/AdMob
   - Firebase/Auth
   - Firebase/Core
@@ -437,6 +440,6 @@ SPEC CHECKSUMS:
   TwicketSegmentedControl: 6d7a4cf243657e0ac3f00d06d873a25334c04042
   ViewAnimator: 5af1c6f3b310f012bf081259c43717aa54fbae73
 
-PODFILE CHECKSUM: 6e9d13541e1cfc1c3ef3cdba7d2d1dcd732e6170
+PODFILE CHECKSUM: 5af081b82c8211c076b5082c58168bffd4767bde
 
 COCOAPODS: 1.8.4
