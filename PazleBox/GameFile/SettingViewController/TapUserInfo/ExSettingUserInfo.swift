@@ -13,15 +13,16 @@ import UIKit
 
 extension SettingTableViewController {
    func TapUserInfo() {
-      showFirebaseLoginVC()
+      showUserSettingNavigationController()
    }
    
-   func showFirebaseLoginVC() {
+   func showUserSettingNavigationController() {
       let Storybord = UIStoryboard(name: "UsersSetting", bundle: nil)
       let LoginVC = Storybord.instantiateViewController(withIdentifier: "UserSettingNavigationC")
       LoginVC.modalPresentationStyle = .pageSheet
       present(LoginVC, animated: true, completion: {
          print("Login画面にプレゼント完了")
+         Analytics.logEvent("OpenUserSettingNC", parameters: nil)
       })
    }
 }

@@ -17,10 +17,12 @@ extension SettingTableViewController {
    
    func TapNoAds(rowNum: Int) {
       if rowNum == 0 {
+         Analytics.logEvent("SettingTapNoAdsButton", parameters: nil)
          TapNoAdsButton()
          return
       }
       if rowNum == 1 {
+         Analytics.logEvent("SettingTapRestoreButton", parameters: nil)
          TapRestoreButton()
          return
       }
