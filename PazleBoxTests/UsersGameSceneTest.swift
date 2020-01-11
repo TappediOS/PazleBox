@@ -133,10 +133,10 @@ class UsersGameSceneTest: XCTestCase {
          XCTAssertTrue(GameScene.PuzzleAwayyy(AwayX: -6, AwayY: -3, Puzzle: Puzzle))
       })
       
-      XCTContext.runActivity(named: "AwayY - Py が0以下の時はtrue", block: { _ in
-         XCTAssertTrue(GameScene.PuzzleAwayyy(AwayX: 1, AwayY: 2, Puzzle: Puzzle))
-         XCTAssertTrue(GameScene.PuzzleAwayyy(AwayX: -2, AwayY: 0, Puzzle: Puzzle))
-         XCTAssertTrue(GameScene.PuzzleAwayyy(AwayX: 3, AwayY: -1, Puzzle: Puzzle))
+      XCTContext.runActivity(named: "Py - AwayY が0以下の時はtrue", block: { _ in
+         XCTAssertTrue(GameScene.PuzzleAwayyy(AwayX: 1, AwayY: 4, Puzzle: Puzzle))
+         XCTAssertTrue(GameScene.PuzzleAwayyy(AwayX: 0, AwayY: 5, Puzzle: Puzzle))
+         XCTAssertTrue(GameScene.PuzzleAwayyy(AwayX: -2, AwayY: 3, Puzzle: Puzzle))
       })
    }
 
