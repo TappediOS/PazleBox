@@ -127,6 +127,9 @@ class CreateHomeViewController: UIViewController, GADBannerViewDelegate {
       SetUpButtonColor()
       SetUpButtonPosition()
       SetUpButtonTitile()
+      
+      StageAuthCreateButton.isHidden = true
+      StageAuthCreateButton.isEnabled = false
    }
    
    private func SetUpButtonTitile() {
