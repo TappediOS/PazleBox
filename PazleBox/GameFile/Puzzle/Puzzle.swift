@@ -273,7 +273,7 @@ class puzzle: SKSpriteNode {
       self.MoveMyself = true
    }
    
-   private func TouchPointIsAlpha(X: Int, Y: Int) -> Bool {
+   func TouchPointIsAlpha(X: Int, Y: Int) -> Bool {
       if self.pAllPosi[Y][X] == .Out {
          print("透明部分をタップしました。")
          return true
