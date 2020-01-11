@@ -388,6 +388,7 @@ class CleateStageViewController: UIViewController {
       PiceImageArray[SentNum].removeFromSuperview()
       PiceImageArray.remove(at: SentNum)
       Play3DtouchSuccess()
+      Analytics.logEvent("TrashImageNum", parameters: nil)
    }
    
    private func UpdateAllPiceArryNum() {
@@ -652,6 +653,7 @@ class CleateStageViewController: UIViewController {
       print("Tap OptionButton")
       Play3DtouchLight()
       GameSound.PlaySoundsTapButton()
+      Analytics.logEvent("TapOptionBtn", parameters: nil)
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: true)
       let ComleateView = SCLAlertView(appearance: Appearanse)
 
@@ -662,6 +664,7 @@ class CleateStageViewController: UIViewController {
          self.dismiss(animated: true)
          self.Play3DtouchHeavy()
          self.GameSound.PlaySoundsTapButton()
+         Analytics.logEvent("TapHomeCreateing", parameters: nil)
       }
       ComleateView.showInfo(NSLocalizedString("Pouse", comment: ""), subTitle: NSLocalizedString("IfGoHome", comment: ""))
    }
@@ -670,6 +673,7 @@ class CleateStageViewController: UIViewController {
    
    @objc func TapTrashView(_ sender: UITapGestureRecognizer) {
       print("Tap TrashView")
+      Analytics.logEvent("TapTrashView", parameters: nil)
       guard isLockColleViewANDTrashPice == false else {
          return
       }
@@ -709,6 +713,7 @@ class CleateStageViewController: UIViewController {
       
       FinishCreatePuzzleButton?.isHidden = true
       FinishChouseResPuzzleButton?.isHidden = false
+      Analytics.logEvent("TapFinPutBtn", parameters: nil)
    }
    
    @objc func TapFinChouseResPuzzleButton() {
@@ -727,6 +732,8 @@ class CleateStageViewController: UIViewController {
          GameSound.PlaySoundsTapButton()
          return
       }
+      
+      Analytics.logEvent("TapChoseResBtn", parameters: nil)
       
       Play3DtouchHeavy()
       GameSound.PlaySoundsTapButton()

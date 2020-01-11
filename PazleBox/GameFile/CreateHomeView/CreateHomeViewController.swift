@@ -240,7 +240,7 @@ class CreateHomeViewController: UIViewController, GADBannerViewDelegate {
       GameSound.PlaySoundsTapButton()
       SellectStageButton.hero.id = HeroID.CreateFinCreateAndSellectBack
       
-      Analytics.logEvent("TapSellectStageButton", parameters: nil)
+      Analytics.logEvent("TapSellectStageBtn", parameters: nil)
       
       let SellectCreateStageVC = self.storyboard?.instantiateViewController(withIdentifier: "SellectCreateStageVC") as! SellectCreateStageViewController
       SellectCreateStageVC.modalPresentationStyle = .fullScreen
@@ -258,8 +258,8 @@ class CreateHomeViewController: UIViewController, GADBannerViewDelegate {
       GameSound.PlaySoundsTapButton()
       SellectStageButton.hero.id = HeroID.CreateFinCreateAndSellectBack
       
-      Analytics.logEvent("TapSellectStageButton", parameters: nil)
-      
+      Analytics.logEvent("TapInterNetStageBtn", parameters: nil)
+
       let SellectCreateStageVC = self.storyboard?.instantiateViewController(withIdentifier: "SellectIntarnetStageVC") as! SellectInternetStageViewController
       SellectCreateStageVC.modalPresentationStyle = .fullScreen
       self.present(SellectCreateStageVC, animated: true, completion: {

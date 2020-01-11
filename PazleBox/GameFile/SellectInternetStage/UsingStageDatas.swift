@@ -315,7 +315,9 @@ class SellectInternetStageViewController: UIViewController {
    @objc func TapBackButton(_ sender: FUIButton) {
       Play3DtouchMedium()
       GameSound.PlaySoundsTapButton()
-      self.dismiss(animated: true, completion: nil)
+      self.dismiss(animated: true, completion: {
+         Analytics.logEvent("TapBackBtnInterNet", parameters: nil)
+      })
    }
    
    private func InitNotificationCenter() {

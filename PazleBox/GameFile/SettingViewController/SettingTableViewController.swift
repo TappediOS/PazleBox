@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyStoreKit
+import Firebase
 
 class SettingTableViewController: UITableViewController {
    

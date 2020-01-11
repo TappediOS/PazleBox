@@ -19,6 +19,8 @@ extension SellectCreateStageViewController: UICollectionViewDelegate {
       CanSellectStage = false
       print("Cellタップされた Cell: \(indexPath.item)")
       
+      Analytics.logEvent("TapCellCreate", parameters: nil)
+      
       let ImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
       var Image: UIImage?
       if let data = ImageData {

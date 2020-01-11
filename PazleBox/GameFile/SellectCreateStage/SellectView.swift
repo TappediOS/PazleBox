@@ -128,6 +128,8 @@ class SellectView: UIView {
       
       isLockedPlayAndCloseButton = true
       
+      Analytics.logEvent("TapPlayCreate", parameters: nil)
+      
       let SentObject: [String : Int] = ["CellNum": CellNum]
       NotificationCenter.default.post(name: .TapPlayButton, object: nil, userInfo: SentObject)
       
@@ -143,6 +145,8 @@ class SellectView: UIView {
          print("各ボタンはロックされています。")
          return
       }
+      
+      Analytics.logEvent("TapDeleteCreate", parameters: nil)
       print("Tap DeleteButton")
       let SentObject: [String : Int] = ["CellNum": CellNum]
       Play3DtouchHeavy()
@@ -156,6 +160,8 @@ class SellectView: UIView {
          print("各ボタンはロックされています。")
          return
       }
+      
+      Analytics.logEvent("TapCloseCreate", parameters: nil)
       print("Tap CloseButton")
       self.removeFromSuperview()
       Play3DtouchLight()

@@ -19,6 +19,8 @@ extension SellectInternetStageViewController: UICollectionViewDelegate {
       CanSellectStage = false
       print("Cellタップされた Cell: \(indexPath.item)")
       
+      Analytics.logEvent("TapCellInterNet", parameters: nil)
+      
       let ImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
       var Image: UIImage?
       if let data = ImageData {

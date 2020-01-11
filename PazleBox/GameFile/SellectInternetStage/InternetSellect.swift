@@ -187,6 +187,8 @@ class InterNetSellect: UIView {
          return
       }
       
+      Analytics.logEvent("TapPlayInterNet", parameters: nil)
+      
       isLockedPlayAndCloseButton = true
       
       let SentObject: [String : Int] = ["CellNum": CellNum]
@@ -204,6 +206,7 @@ class InterNetSellect: UIView {
          return
       }
       print("Tap CloseButton")
+      Analytics.logEvent("TapCloseInterNet", parameters: nil)
       self.removeFromSuperview()
       Play3DtouchLight()
       NotificationCenter.default.post(name: .TapCloseButton, object: nil)
