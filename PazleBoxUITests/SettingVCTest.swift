@@ -23,5 +23,15 @@ class SettingVCTest: XCTestCase {
    }
    
    
+   func showSettingVC() {
+      app.tabBars.otherElements["tabBar_Setting"].tap()
+   }
+   
+   //UserInfoCellをタプしたときの表示テスト
+   func testTapUserInfoCell() {
+      showSettingVC()
+      app.tables.cells.element(boundBy: 0).tap()
+      snapshot("UserInfoをタップしたときの画面")
+   }
    
 }
