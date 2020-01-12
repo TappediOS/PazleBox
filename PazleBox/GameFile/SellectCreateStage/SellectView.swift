@@ -43,6 +43,7 @@ class SellectView: UIView {
       InitPlayButton()
       InitDeleteButton()
       InitCloseButton()
+      InitAccessibilityIdentifier()
       InitImageView(Image: Image)
    }
      
@@ -102,6 +103,12 @@ class SellectView: UIView {
       SellectImageView.layer.cornerRadius = ButtonCornerRadius
    }
      
+   
+   private func InitAccessibilityIdentifier() {
+      PlayButton.accessibilityIdentifier = "PlayButton"
+      DeleteButton.accessibilityIdentifier = "DeleteButton"
+      CloseButton.accessibilityIdentifier = "CloseButton"
+   }
      
    private func LoadNib() {
       let bundle = Bundle(for: type(of: self))
