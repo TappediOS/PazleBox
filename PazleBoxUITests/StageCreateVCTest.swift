@@ -69,33 +69,44 @@ class StageCreateVCTest: XCTestCase {
       snapshot("ピースのセルをタップしたときの表示テスト")
    }
    
-   //作ってみるとき
-   func testCreateStage_2_InCreateStageVC() {
+   //3つのピースのいずれかをタップしたときの表示テスト
+   func testTap3Pice() {
       showCreateStageVC()
       let random = Int.random(in: 0 ... 3)
       let imageRandom = Int.random(in: 0 ... 2)
       let imageRandomArray = ["GreenPiceImageView", "BluePiceImageView", "RedPiceImageView"]
-      let finButton = app.buttons["CleateStageVC_FinishChouseResPuzzleButton"]
+      app.collectionViews["CleateStageVC_collectionView"].cells.element(boundBy: random).tap()
+      //ランダムに表示してタップ
+      app.images[imageRandomArray[imageRandom]].tap()
+      snapshot("3つのピースのいずれかをタップしたときの表示テスト")
+   }
+   
+   //ピース2個置いて，一個をゴミ箱に入れたときの表示テスト
+   func testPut2PiceAndTrash1Pice() {
+      showCreateStageVC()
+      let trash = app.images["CleateStageVC_TrashImageView"]
+      let option = app.buttons["CleateStageVC_OptionButton"]
+      let finbutton = app.buttons["CleateStageVC_FinishChouseResPuzzleButton"]
+      var imageRandom = Int.random(in: 0 ... 2)
+      let imageRandomArray = ["GreenPiceImageView", "BluePiceImageView", "RedPiceImageView"]
+      var random = Int.random(in: 0 ... 3)
       
       app.collectionViews["CleateStageVC_collectionView"].cells.element(boundBy: random).tap()
+      //ランダムに表示してタップ
+      let firstImage = app.images[imageRandomArray[imageRandom]]
+      firstImage.tap()
+      firstImage.press(forDuration: 1, thenDragTo: finbutton)
       
-
+      random = Int.random(in: 0 ... 3)
+      imageRandom = Int.random(in: 0 ... 2)
+      app.collectionViews["CleateStageVC_collectionView"].cells.element(boundBy: random).tap()
       
-      let imageView = app.images["GreenPiceImageView"]
+      let secondImage = app.images[imageRandomArray[imageRandom]]
+      secondImage.tap()
+      secondImage.press(forDuration: 1, thenDragTo: option)
       
-      imageView.tap()
-      
-      app.buttons["CleateStageVC_FinishCreatePuzzleButton"].tap()
-      snapshot("１回ボタン押したとき")
-      
-      let finButton = app.buttons["CleateStageVC_FinishChouseResPuzzleButton"]
-      
-      
-      imageView.press(forDuration: 0.5, thenDragTo: BackTile)
-      
-      snapshot("初期位置に移動したとき")
-      
-     
-      
+      snapshot("2つのピースを配置したとき")
    }
+   
+
 }
