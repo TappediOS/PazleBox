@@ -70,7 +70,7 @@ class SellectCreateStageVC: XCTestCase {
    }
    
    //Deleteをタップしたときの表示テスト。
-   func testTapPlayButton() {
+   func testTapDeleteButton() {
       showSellectCreateStageVC()
       let count = collectionViewCellCount()
       guard count != 0 else {
