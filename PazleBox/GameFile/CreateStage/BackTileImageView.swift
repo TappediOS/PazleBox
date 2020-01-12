@@ -34,6 +34,8 @@ class BackTileImageView: UIView {
       let Frame = CGRect(x: 0, y: ViewStartY, width: frame.width, height: ViewHeight)
       super.init(frame: Frame)
       
+      self.isAccessibilityElement = true
+      
       InitBackTileImage()
    }
    
@@ -48,6 +50,10 @@ class BackTileImageView: UIView {
             ImageView.hero.modifiers = [.fade, .scale(0.45), .delay(Double(y * 10 + x) * 0.0042)]
             BackImageViewArray[y].append(ImageView)
             self.addSubview(ImageView)
+            
+            ImageView.isAccessibilityElement = true
+            let acceIden = String(x) + String(y) + "BackTile"
+            ImageView.accessibilityIdentifier = acceIden
          }
       }
       print("タイルの表示完了")
@@ -66,6 +72,10 @@ class BackTileImageView: UIView {
             BackImageViewArray[y][x] = ImageView
             ImageView.hero.modifiers = [.fade, .scale(0.45), .delay(Double(y * 10 + x) * 0.0042)]
             self.addSubview(ImageView)
+            
+            ImageView.isAccessibilityElement = true
+            let acceIden = String(x) + String(y) + "ReBackTile"
+            ImageView.accessibilityIdentifier = acceIden
          }
       }
       print("タイルの表示完了")
