@@ -68,4 +68,19 @@ class SellectCreateStageVC: XCTestCase {
       app.buttons["PlayButton"].tap()
       snapshot("PlayButtonをタップしたときの表示テスト。")
    }
+   
+   //Deleteをタップしたときの表示テスト。
+   func testTapPlayButton() {
+      showSellectCreateStageVC()
+      let count = collectionViewCellCount()
+      guard count != 0 else {
+         return
+      }
+      
+      app.collectionViews["CleateStageVC_collectionView"].cells.element(boundBy: 0).tap()
+      app.buttons["DeleteButton"].tap()
+      snapshot("DeleteButtonをタップしたときの表示テスト。")
+   }
+   
+   
 }
