@@ -64,7 +64,9 @@ class StageCreateVCTest: XCTestCase {
    //ピースがおかれてないときにFinボタンタップされたときの表示テスト
    func testTapFinFinishCreatePuzzleButton_PiceIsNOTSellected() {
       showCreateStageVC()
-      app.buttons["CleateStageVC_FinishCreatePuzzleButton"].tap()
+      let finButton = app.buttons["CleateStageVC_FinishCreatePuzzleButton"]
+      finButton.tap()
+      XCTAssertTrue(finButton.isEnabled)
       snapshot("ピースがおかれてないときにFinボタンタップされたときの表示テスト")
    }
   
@@ -122,6 +124,20 @@ class StageCreateVCTest: XCTestCase {
       putOnePice()
       app.buttons["CleateStageVC_FinishCreatePuzzleButton"].tap()
       snapshot("ピース置かれているときにFinButton押されたときの表示テスト")
+   }
+   
+   //ピース置かれているときにFinButton押されたら，Finボタンは無効になって，
+   //FinRes Buttopは有効になる
+   func testIsNotEnableFinButton() {
+      showCreateStageVC()
+      putOnePice()
+      let finButton = app.buttons["CleateStageVC_FinishCreatePuzzleButton"]
+      
+      finButton.tap()
+      XCTAssertFalse(finButton.isEnabled)
+      
+      let finResButton = app.buttons["CleateStageVC_FinishChouseResPuzzleButton"]
+      XCTAssertTrue(finResButton.isEnabled)
    }
    
    
