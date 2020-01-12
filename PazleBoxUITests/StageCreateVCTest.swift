@@ -126,6 +126,4 @@ class StageCreateVCTest: XCTestCase {
       snapshot("ピース置かれているときにFinButton押されたときの表示テスト")
    }
    
-
-   
 }
