@@ -52,10 +52,18 @@ class SellectInterNetStageVCTest: XCTestCase {
    //PlayCountのセグメントをタップしたときの表示テスト
    func testSegmentPlayCount() {
       showSellectInternetCreateStageVC()
-      let segment = app.segmentedControls["SellectInternetStageVC_Segment"]
       let element = app.otherElements["SellectInternetStageVC_Segment"].children(matching: .other).element.children(matching: .other).element(boundBy: 1)
       element.staticTexts[localizedStr("PlayCount")].tap()
       snapshot("PlayCountのセグメントをタップしたときの表示テスト")
+      
+   }
+   
+   //Ratingのセグメントをタップしたときの表示テスト
+   func testSegmentRating() {
+      showSellectInternetCreateStageVC()
+      let element = app.otherElements["SellectInternetStageVC_Segment"].children(matching: .other).element.children(matching: .other).element(boundBy: 1)
+      element.staticTexts[localizedStr("Rating")].tap()
+      snapshot("Ratingのセグメントをタップしたときの表示テスト")
       
    }
 }
