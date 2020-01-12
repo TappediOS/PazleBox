@@ -45,5 +45,12 @@ class StageCreateVCTest: XCTestCase {
       app.images["CleateStageVC_TrashImageView"].tap()
       snapshot("ゴミ箱タップしたときの表示テスト")
    }
+   
+   //オプションボタン押したときの表示テスト
+   func testTapOptionButtonInCreateStageVC() {
+      showCreateStageVC()
+      app.buttons["CleateStageVC_OptionButton"].tap()
+      snapshot("オプションボタン押したときの表示テスト")
+   }
   
 }
