@@ -64,6 +64,17 @@ class SellectInterNetStageVCTest: XCTestCase {
       let element = app.otherElements["SellectInternetStageVC_Segment"].children(matching: .other).element.children(matching: .other).element(boundBy: 1)
       element.staticTexts[localizedStr("Rating")].tap()
       snapshot("Ratingのセグメントをタップしたときの表示テスト")
+   }
+   
+   //InterNetで0番目のCellをタップしたときの表示テスト。
+   func testTapCollectionViewCell() {
+      showSellectInternetCreateStageVC()
+      let count = collectionViewCellCount()
+      guard count != 0 else {
+         return
+      }
       
+      app.collectionViews["SellectInternetStageVC_Segment"].cells.element(boundBy: 0).tap()
+      snapshot("InterNetで0番目のCellをタップしたときの表示テスト。")
    }
 }
