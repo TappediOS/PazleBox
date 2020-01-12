@@ -22,9 +22,19 @@ class StageCreateVCTest: XCTestCase {
       super.tearDown()
    }
    
+   func showCreateStageVC() {
+       app.buttons["StageMakingButton"].tap()
+   }
+   
+   //ステージ作りのVCの表示テスト
+   func testCreateStage_2_InCreateStageVC() {
+      showCreateStageVC()
+      snapshot("ステージ作りのVCの表示テスト")
+   }
+   
    //ピースのセル(3番目)をタップしたときの表示テスト
    func testTapCollectionViewCell_2_InCreateStageVC() {
-      app.buttons["StageMakingButton"].tap()
+      showCreateStageVC()
       app.collectionViews["CleateStageVC_collectionView"].cells.element(boundBy: 2).tap()
       snapshot("ステージ作りで3番目のcellをタップしたとき")
    }
