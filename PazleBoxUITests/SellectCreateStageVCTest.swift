@@ -23,6 +23,12 @@ class SellectCreateStageVC: XCTestCase {
    }
    
    func showSellectCreateStageVC() {
-       app.buttons["StageMakingButton"].tap()
+       app.buttons["CreateHomeVC_SellectStageButton"].tap()
+   }
+   
+   //ステージ作りのVCの表示テスト
+   func testSellectCreateStageVC() {
+      showSellectCreateStageVC()
+      snapshot("自分のステージセレクトVCの表示テスト")
    }
 }
