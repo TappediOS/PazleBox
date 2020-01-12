@@ -23,7 +23,9 @@ class TopTabBarUITest: XCTestCase {
        // Put teardown code here. This method is called after the invocation of each test method in the class.
    }
    
-   
-
+   //起動時のVCの表示テスト
+   func testLauncVC() {
+      snapshot("起動時のVCの画面")
+   }
    
 }
