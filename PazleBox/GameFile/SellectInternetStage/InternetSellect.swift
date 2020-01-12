@@ -62,6 +62,7 @@ class InterNetSellect: UIView {
       InitPlayButton()
       InitCloseButton()
       InitImageView(Image: Image)
+      InitAccessibilityIdentifier()
    }
    
    override func awakeFromNib() {
@@ -177,6 +178,17 @@ class InterNetSellect: UIView {
       StageImageView.layer.cornerRadius = StageImageViewCornerRadius
    }
    
+   private func InitAccessibilityIdentifier() {
+      DateLabel.accessibilityIdentifier         = "DateLabel"
+      CreateUserLabel.accessibilityIdentifier   = "CreateUserLabel"
+      StageImageView.accessibilityIdentifier    = "StageImageView"
+      RatedLabel.accessibilityIdentifier        = "RatedLabel"
+      RatedNumLabel.accessibilityIdentifier     = "RatedNumLabel"
+      PlayCountLabel.accessibilityIdentifier    = "PlayCountLabel"
+      PlayCountNumLabel.accessibilityIdentifier = "PlayCountNumLabel"
+      PlayButton.accessibilityIdentifier        = "PlayButton"
+      CloseButton.accessibilityIdentifier       = "CloseButton"
+   }
   
    @IBAction func TapPlayButton(_ sender: Any) {
       print("Tap Internet PlayButton")
