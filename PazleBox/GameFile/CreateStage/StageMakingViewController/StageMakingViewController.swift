@@ -151,6 +151,7 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
       SetUpButtonColor()
       SetUpButtonPosition()
       SetUpButtonTitile()
+      SetUpButtonAccessibilityIdentifier()
    }
    
    private func SetUpButtonPosition() {
@@ -176,6 +177,10 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
    private func SetUpButtonColor() {
       StageMakingButton.buttonColor = UIColor.flatTeal()
       StageMakingButton.shadowColor = UIColor.flatTealColorDark()
+   }
+   
+   private func SetUpButtonAccessibilityIdentifier() {
+      StageMakingButton.accessibilityIdentifier = "StageMakingButton"
    }
    
    

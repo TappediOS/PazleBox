@@ -21,4 +21,13 @@ class StageCreateVCTest: XCTestCase {
    override func tearDown() {
       super.tearDown()
    }
+   
+   //ピースのセル(3番目)をタップしたときの表示テスト
+   func testTapCollectionViewCell_2_InCreateStageVC() {
+      app.buttons["StageMakingButton"].tap()
+      app.collectionViews["CleateStageVC_collectionView"].cells.element(boundBy: 2).tap()
+      snapshot("ステージ作りで3番目のcellをタップしたとき")
+   }
+   
+  
 }
