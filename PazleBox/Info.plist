@@ -30,7 +30,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<string>27</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-1460017825820383~3711990786</string>
 	<key>LSRequiresIPhoneOS</key>
