@@ -39,5 +39,11 @@ class StageCreateVCTest: XCTestCase {
       snapshot("ステージ作りで3番目のcellをタップしたとき")
    }
    
+   //ゴミ箱タップしたときの表示テスト
+   func testTapTrashImageViewInCreateStageVC() {
+      showCreateStageVC()
+      app.images["CleateStageVC_TrashImageView"].tap()
+      snapshot("ゴミ箱タップしたときの表示テスト")
+   }
   
 }
