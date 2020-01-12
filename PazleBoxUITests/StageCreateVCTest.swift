@@ -52,5 +52,12 @@ class StageCreateVCTest: XCTestCase {
       app.buttons["CleateStageVC_OptionButton"].tap()
       snapshot("オプションボタン押したときの表示テスト")
    }
+   
+   //ピースがおかれてないときにFinボタンタップされたときの表示テスト
+   func testTapFinFinishCreatePuzzleButton_PiceIsNOTSellected() {
+      showCreateStageVC()
+      app.buttons["CleateStageVC_FinishCreatePuzzleButton"].tap()
+      snapshot("ピースがおかれてないときにFinボタンタップされたときの表示テスト")
+   }
   
 }
