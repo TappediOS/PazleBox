@@ -107,5 +107,22 @@ class StageCreateVCTest: XCTestCase {
    }
    
    
+   func putOnePice() {
+      let imageRandom = Int.random(in: 0 ... 2)
+      let imageRandomArray = ["GreenPiceImageView", "BluePiceImageView", "RedPiceImageView"]
+      let random = Int.random(in: 0 ... 3)
+      app.collectionViews["CleateStageVC_collectionView"].cells.element(boundBy: random).tap()
+      //ランダムに表示してタップ
+      app.images[imageRandomArray[imageRandom]].tap()
+   }
+   
+   //ピース置かれているときにFinButton押されたときの表示テスト
+   func testTapFinButtonWhilePuttedPice() {
+      showCreateStageVC()
+      putOnePice()
+      app.buttons["CleateStageVC_FinishCreatePuzzleButton"].tap()
+      snapshot("ピース置かれているときにFinButton押されたときの表示テスト")
+   }
+   
    
 }
