@@ -484,7 +484,6 @@
 		BFCE2649224A58A60099A775 /* 32p12Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE2637224A58A40099A775 /* 32p12Green.png */; };
 		BFCE264A224A58A60099A775 /* 32p9Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE2638224A58A50099A775 /* 32p9Blue.png */; };
 		BFCE264B224A58A60099A775 /* 32p12Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE2639224A58A60099A775 /* 32p12Red.png */; };
-		BFDCDB9D23408FFA00AD6E4F /* PazleBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCDB9C23408FFA00AD6E4F /* PazleBoxUITests.swift */; };
 		BFDCDBB3234205AA00AD6E4F /* CleanChackStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCDBB2234205AA00AD6E4F /* CleanChackStage.swift */; };
 		BFDD3EE7227D6B3200B9E6B0 /* Gold_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE4227D6B3100B9E6B0 /* Gold_Badge.png */; };
 		BFDD3EE8227D6B3200B9E6B0 /* Bronze_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE5227D6B3200B9E6B0 /* Bronze_Badge.png */; };
@@ -1268,7 +1267,6 @@
 		BFCE2638224A58A50099A775 /* 32p9Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32p9Blue.png; sourceTree = "<group>"; };
 		BFCE2639224A58A60099A775 /* 32p12Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32p12Red.png; sourceTree = "<group>"; };
 		BFDCDB9A23408FFA00AD6E4F /* PazleBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PazleBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFDCDB9C23408FFA00AD6E4F /* PazleBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PazleBoxUITests.swift; sourceTree = "<group>"; };
 		BFDCDB9E23408FFA00AD6E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFDCDBA82340900200AD6E4F /* PazleBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PazleBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDCDBAC2340900200AD6E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -2724,7 +2722,6 @@
 			isa = PBXGroup;
 			children = (
 				BF7291732365A85E00E8D947 /* SnapshotHelper.swift */,
-				BFDCDB9C23408FFA00AD6E4F /* PazleBoxUITests.swift */,
 				BF78D92023CACA4300334188 /* TopTabBarTest.swift */,
 				BF78D92223CAD29900334188 /* SettingVCTest.swift */,
 				BF0A9AA523CADC3500DBE398 /* StageCreateVCTest.swift */,
@@ -3872,7 +3869,6 @@
 			files = (
 				BF0A9AA623CADC3500DBE398 /* StageCreateVCTest.swift in Sources */,
 				BF0A9AA823CAF13700DBE398 /* SellectCreateStageVCTest.swift in Sources */,
-				BFDCDB9D23408FFA00AD6E4F /* PazleBoxUITests.swift in Sources */,
 				BF78D92323CAD29900334188 /* SettingVCTest.swift in Sources */,
 				BF0A9AAA23CAF57000DBE398 /* SellectInterNetStageVCTest.swift in Sources */,
 				BF7291742365A85E00E8D947 /* SnapshotHelper.swift in Sources */,
