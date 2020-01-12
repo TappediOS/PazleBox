@@ -55,5 +55,4 @@ class SettingVCTest: XCTestCase {
       XCTAssertTrue(LicensesCell.isEnabled)
       app.terminate()
    }
-   
 }
