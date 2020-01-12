@@ -45,11 +45,17 @@ class SellectInterNetStageVCTest: XCTestCase {
       snapshot("InterNetステージVCでバックボタンを押したときのテスト")
    }
    
+   func localizedStr(_ key: String) -> String {
+      return NSLocalizedString(key, bundle: Bundle(for: SellectInterNetStageVCTest.self), comment: "")
+   }
+   
    //PlayCountのセグメントをタップしたときの表示テスト
    func testSegmentPlayCount() {
       showSellectInternetCreateStageVC()
       let segment = app.segmentedControls["SellectInternetStageVC_Segment"]
-      segment.tap(withNumberOfTaps: 1, numberOfTouches: 1)
+      let element = app.otherElements["SellectInternetStageVC_Segment"].children(matching: .other).element.children(matching: .other).element(boundBy: 1)
+      element.staticTexts[localizedStr("PlayCount")].tap()
       snapshot("PlayCountのセグメントをタップしたときの表示テスト")
+      
    }
 }

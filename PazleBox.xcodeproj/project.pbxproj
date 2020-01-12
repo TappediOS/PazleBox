@@ -10,6 +10,7 @@
 		BF0A9AA623CADC3500DBE398 /* StageCreateVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A9AA523CADC3500DBE398 /* StageCreateVCTest.swift */; };
 		BF0A9AA823CAF13700DBE398 /* SellectCreateStageVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A9AA723CAF13700DBE398 /* SellectCreateStageVCTest.swift */; };
 		BF0A9AAA23CAF57000DBE398 /* SellectInterNetStageVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A9AA923CAF57000DBE398 /* SellectInterNetStageVCTest.swift */; };
+		BF0A9AB423CAFEB100DBE398 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF2A186A22A6AD7300E19CFF /* Localizable.strings */; };
 		BF0FD350224363A800E8F387 /* PutPuzzleParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF0FD34F224363A800E8F387 /* PutPuzzleParticle.sks */; };
 		BF0FD352224364A900E8F387 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = BF0FD351224364A900E8F387 /* Star.png */; };
 		BF0FD35422436DF200E8F387 /* ExUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0FD35322436DF200E8F387 /* ExUIColor.swift */; };
@@ -3426,6 +3427,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF0A9AB423CAFEB100DBE398 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
