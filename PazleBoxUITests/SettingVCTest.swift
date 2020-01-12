@@ -31,7 +31,14 @@ class SettingVCTest: XCTestCase {
    func testTapUserInfoCell() {
       showSettingVC()
       app.tables.cells.element(boundBy: 0).tap()
-      snapshot("UserInfoをタップしたときの画面")
+      snapshot("UserInfoCellをタップしたときの画面")
+   }
+   
+   //AppReviewCellをタプしたときの表示テスト
+   func testTapAppReviewCell() {
+      showSettingVC()
+      app.tables.cells.element(boundBy: 3).tap()
+      snapshot("AppReviewCellをタップしたときの画面")
    }
    
 }
