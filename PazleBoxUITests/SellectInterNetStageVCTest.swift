@@ -22,12 +22,18 @@ class SellectInterNetStageVCTest: XCTestCase {
       super.tearDown()
    }
    
-   func showSellectCreateStageVC() {
+   func showSellectInternetCreateStageVC() {
        app.buttons["CreateHomeVC_InternetUsersStageButton"].tap()
    }
    
    //存在してたらtrue
    func collectionViewCellCount() -> Int {
       return app.collectionViews["SellectInternetStageVC_StageCollectionView"].cells.count
+   }
+   
+   //InterNetステージ作りVCの表示テスト
+   func testSellectInternetCreateStageVC() {
+      showSellectInternetCreateStageVC()
+      snapshot("InterNetステージ作りVCの表示テスト")
    }
 }
