@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF0A9AA623CADC3500DBE398 /* StageCreateVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A9AA523CADC3500DBE398 /* StageCreateVCTest.swift */; };
-		BF0A9AA823CAF13700DBE398 /* CreateStageVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A9AA723CAF13700DBE398 /* CreateStageVCTest.swift */; };
+		BF0A9AA823CAF13700DBE398 /* SellectCreateStageVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A9AA723CAF13700DBE398 /* SellectCreateStageVCTest.swift */; };
 		BF0FD350224363A800E8F387 /* PutPuzzleParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF0FD34F224363A800E8F387 /* PutPuzzleParticle.sks */; };
 		BF0FD352224364A900E8F387 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = BF0FD351224364A900E8F387 /* Star.png */; };
 		BF0FD35422436DF200E8F387 /* ExUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0FD35322436DF200E8F387 /* ExUIColor.swift */; };
@@ -770,7 +770,7 @@
 		AC63FB0A53E7131595C10607 /* Pods-PazleBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PazleBox.release.xcconfig"; path = "Target Support Files/Pods-PazleBox/Pods-PazleBox.release.xcconfig"; sourceTree = "<group>"; };
 		AD7D7F04FB8319111C9B228B /* Pods-PazleBoxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PazleBoxUITests.debug.xcconfig"; path = "Target Support Files/Pods-PazleBoxUITests/Pods-PazleBoxUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF0A9AA523CADC3500DBE398 /* StageCreateVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageCreateVCTest.swift; sourceTree = "<group>"; };
-		BF0A9AA723CAF13700DBE398 /* CreateStageVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStageVCTest.swift; sourceTree = "<group>"; };
+		BF0A9AA723CAF13700DBE398 /* SellectCreateStageVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectCreateStageVCTest.swift; sourceTree = "<group>"; };
 		BF0FD34F224363A800E8F387 /* PutPuzzleParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PutPuzzleParticle.sks; sourceTree = "<group>"; };
 		BF0FD351224364A900E8F387 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
 		BF0FD35322436DF200E8F387 /* ExUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIColor.swift; sourceTree = "<group>"; };
@@ -2725,7 +2725,7 @@
 				BF78D92023CACA4300334188 /* TopTabBarTest.swift */,
 				BF78D92223CAD29900334188 /* SettingVCTest.swift */,
 				BF0A9AA523CADC3500DBE398 /* StageCreateVCTest.swift */,
-				BF0A9AA723CAF13700DBE398 /* CreateStageVCTest.swift */,
+				BF0A9AA723CAF13700DBE398 /* SellectCreateStageVCTest.swift */,
 				BFDCDB9E23408FFA00AD6E4F /* Info.plist */,
 			);
 			path = PazleBoxUITests;
@@ -3866,7 +3866,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF0A9AA623CADC3500DBE398 /* StageCreateVCTest.swift in Sources */,
-				BF0A9AA823CAF13700DBE398 /* CreateStageVCTest.swift in Sources */,
+				BF0A9AA823CAF13700DBE398 /* SellectCreateStageVCTest.swift in Sources */,
 				BFDCDB9D23408FFA00AD6E4F /* PazleBoxUITests.swift in Sources */,
 				BF78D92323CAD29900334188 /* SettingVCTest.swift in Sources */,
 				BF7291742365A85E00E8D947 /* SnapshotHelper.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  CreateStageVCTest.swift
+//  SellectCreateStageVC.swift
 //  PazleBoxUITests
 //
 //  Created by jun on 2020/01/12.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class CreateStageVCTest: XCTestCase {
+class SellectCreateStageVC: XCTestCase {
    let app = XCUIApplication()
    
    override func setUp() {
@@ -20,5 +20,9 @@ class CreateStageVCTest: XCTestCase {
 
    override func tearDown() {
       super.tearDown()
+   }
+   
+   func showSellectCreateStageVC() {
+       app.buttons["StageMakingButton"].tap()
    }
 }
