@@ -91,4 +91,18 @@ class SellectInterNetStageVCTest: XCTestCase {
       app.buttons["PlayButton"].tap()
       snapshot("InterNetでPlayButtonをタップしたときの表示テスト")
    }
+   
+   //InterNetでCloseButtonをタップしたときの表示テスト
+   func testTapCloseButtonNet() {
+      showSellectInternetCreateStageVC()
+      let random = Int.random(in: 0 ... 8)
+      let count = collectionViewCellCount()
+      guard count != 0 else {
+         return
+      }
+      
+      app.collectionViews["SellectInternetStageVC_Segment"].cells.element(boundBy: random).tap()
+      app.buttons["CloseButton"].tap()
+      snapshot("InterNetでCloseButtonをタップしたときの表示テスト")
+   }
 }
