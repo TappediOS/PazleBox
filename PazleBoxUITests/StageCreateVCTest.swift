@@ -90,7 +90,7 @@ class StageCreateVCTest: XCTestCase {
    }
    
    //ピースを一個をゴミ箱に入れたときの表示テスト
-   func testPut2PiceAndTrash1Pice() {
+   func testAPiceAndTrashPice() {
       showCreateStageVC()
       let trash = app.images["CleateStageVC_TrashImageView"]
       let imageRandom = Int.random(in: 0 ... 2)
@@ -105,5 +105,7 @@ class StageCreateVCTest: XCTestCase {
 
       snapshot("ピースをゴミ箱においた後。")
    }
+   
+   
    
 }
