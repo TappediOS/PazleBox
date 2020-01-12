@@ -53,6 +53,14 @@ class StageCreateVCTest: XCTestCase {
       snapshot("オプションボタン押したときの表示テスト")
    }
    
+   //オプションボタン押してHome押したときの表示テスト
+   func testTapOptionButtonAndTapHome() {
+      showCreateStageVC()
+      app.buttons["CleateStageVC_OptionButton"].tap()
+      app.buttons["Home"].tap()
+      snapshot("オプションボタン押してHome押したときの表示テスト")
+   }
+   
    //ピースがおかれてないときにFinボタンタップされたときの表示テスト
    func testTapFinFinishCreatePuzzleButton_PiceIsNOTSellected() {
       showCreateStageVC()
@@ -98,5 +106,4 @@ class StageCreateVCTest: XCTestCase {
       snapshot("ピースをゴミ箱においた後。")
    }
    
-
 }
