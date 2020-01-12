@@ -271,6 +271,7 @@ class SellectInternetStageViewController: UIViewController {
    private func  InitAccessibilityIdentifires() {
       StageCollectionView?.accessibilityIdentifier = "SellectInternetStageVC_StageCollectionView"
       BackButton?.accessibilityIdentifier = "SellectInternetStageVC_BackButton"
+      segmentedControl?.accessibilityIdentifier = "SellectInternetStageVC_Segment"
    }
    
    //MARK:- セグメントのInit

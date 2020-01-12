@@ -43,4 +43,12 @@ class SellectInterNetStageVCTest: XCTestCase {
       app.buttons["SellectInternetStageVC_StageCollectionView"].tap()
       snapshot("InterNetステージVCでバックボタンを押したときのテスト")
    }
+   
+   //PlayCountのセグメントをタップしたときの表示テスト
+   func testSegmentPlayCount() {
+      showSellectInternetCreateStageVC()
+      let segment = app.segmentedControls["SellectInternetStageVC_Segment"]
+      segment.tap(withNumberOfTaps: 1, numberOfTouches: 1)
+      snapshot("PlayCountのセグメントをタップしたときの表示テスト")
+   }
 }
