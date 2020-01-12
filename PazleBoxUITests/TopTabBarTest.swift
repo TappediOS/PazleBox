@@ -28,4 +28,11 @@ class TopTabBarUITest: XCTestCase {
       snapshot("起動時のVCの画面")
    }
    
+   //tabbarでSettingを押したときの表示テスト
+   func testSettingVC() {
+      let setting = app.tabBars.element(boundBy: 2)
+      setting.tap()
+      snapshot("SettingVCの画面")
+   }
+   
 }
