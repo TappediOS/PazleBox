@@ -82,5 +82,17 @@ class SellectCreateStageVC: XCTestCase {
       snapshot("DeleteButtonをタップしたときの表示テスト。")
    }
    
+   //Closeをタップしたときの表示テスト。
+   func testTapCloseButton() {
+      showSellectCreateStageVC()
+      let count = collectionViewCellCount()
+      guard count != 0 else {
+         return
+      }
+      
+      app.collectionViews["CleateStageVC_collectionView"].cells.element(boundBy: 0).tap()
+      app.buttons["CloseButton"].tap()
+      snapshot("CloseButtonをタップしたときの表示テスト。")
+   }
    
 }
