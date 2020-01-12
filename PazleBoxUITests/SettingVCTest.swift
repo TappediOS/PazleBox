@@ -19,7 +19,7 @@ class SettingVCTest: XCTestCase {
    }
 
    override func tearDown() {
-       // Put teardown code here. This method is called after the invocation of each test method in the class.
+      super.tearDown()
    }
    
    
@@ -41,18 +41,19 @@ class SettingVCTest: XCTestCase {
       snapshot("AppReviewCellをタップしたときの画面")
    }
    
-   //ContactUsCellをタプしたときの表示テスト
+   //ContactUsCellがタップできるかのテスト
    func testTapContactUsCell() {
       showSettingVC()
-      app.tables.cells.element(boundBy: 4).tap()
-      snapshot("ContactUsCellをタップしたときの画面")
+      let ContactUsCell = app.tables.cells.element(boundBy: 4)
+      XCTAssertTrue(ContactUsCell.isEnabled)
    }
    
-   //LicensesCellをタプしたときの表示テスト
+   //LicensesCellがタップできるかのテスト
    func testTapLicensesCell() {
       showSettingVC()
-      app.tables.cells.element(boundBy: 5).tap()
-      snapshot("LicensesCellをタップしたときの画面")
+      let LicensesCell = app.tables.cells.element(boundBy: 5)
+      XCTAssertTrue(LicensesCell.isEnabled)
+      app.terminate()
    }
    
 }
