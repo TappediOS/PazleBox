@@ -41,7 +41,7 @@ class SellectInterNetStageVCTest: XCTestCase {
    //InterNetステージVCでバックボタンを押したときのテスト
    func testSellectStageBackButton() {
       showSellectInternetCreateStageVC()
-      app.buttons["SellectInternetStageVC_StageCollectionView"].tap()
+      app.buttons["SellectInternetStageVC_BackButton"].tap()
       snapshot("InterNetステージVCでバックボタンを押したときのテスト")
    }
    

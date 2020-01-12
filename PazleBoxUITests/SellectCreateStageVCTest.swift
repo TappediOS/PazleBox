@@ -23,7 +23,8 @@ class SellectCreateStageVC: XCTestCase {
    }
    
    func showSellectCreateStageVC() {
-       app.buttons["CreateHomeVC_SellectStageButton"].tap()
+      XCUIApplication().tabBars.otherElements["tabBar_Play"].tap()
+      app.buttons["CreateHomeVC_SellectStageButton"].tap()
    }
    
    //存在してたらtrue
