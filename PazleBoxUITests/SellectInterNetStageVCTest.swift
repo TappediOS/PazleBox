@@ -31,9 +31,16 @@ class SellectInterNetStageVCTest: XCTestCase {
       return app.collectionViews["SellectInternetStageVC_StageCollectionView"].cells.count
    }
    
-   //InterNetステージ作りVCの表示テスト
+   //InterNetステージVCの表示テスト
    func testSellectInternetCreateStageVC() {
       showSellectInternetCreateStageVC()
       snapshot("InterNetステージ作りVCの表示テスト")
+   }
+   
+   //InterNetステージVCでバックボタンを押したときのテスト
+   func testSellectStageBackButton() {
+      showSellectInternetCreateStageVC()
+      app.buttons["SellectInternetStageVC_StageCollectionView"].tap()
+      snapshot("InterNetステージVCでバックボタンを押したときのテスト")
    }
 }

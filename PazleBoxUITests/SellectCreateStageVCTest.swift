@@ -37,11 +37,11 @@ class SellectCreateStageVC: XCTestCase {
       snapshot("自分のステージセレクトVCの表示テスト")
    }
    
-   //ステージ作りVCでバックボタンを押したときのテスト
+   //ステージセレクトVCでバックボタンを押したときのテスト
    func testSellectStageBackButton() {
       showSellectCreateStageVC()
       app.buttons["SellectCreateStageVC_BackButton"].tap()
-      snapshot("ステージ作りVCでバックボタンを押したときのテスト")
+      snapshot("ステージセレクトVCでバックボタンを押したときのテスト")
    }
    
    //0番目のCellをタップしたときの表示テスト。
