@@ -26,6 +26,11 @@ class SellectCreateStageVC: XCTestCase {
        app.buttons["CreateHomeVC_SellectStageButton"].tap()
    }
    
+   //存在してたらtrue
+   func collectionViewCellCount() -> Int {
+      return app.collectionViews["SellectCreateStageVC_StageCollectionView"].cells.count
+   }
+   
    //ステージ作りVCの表示テスト
    func testSellectCreateStageVC() {
       showSellectCreateStageVC()
@@ -37,5 +42,17 @@ class SellectCreateStageVC: XCTestCase {
       showSellectCreateStageVC()
       app.buttons["SellectCreateStageVC_BackButton"].tap()
       snapshot("ステージ作りVCでバックボタンを押したときのテスト")
+   }
+   
+   //0番目のCellをタップしたときの表示テスト。
+   func testTapCollectionViewCell() {
+      showSellectCreateStageVC()
+      let count = collectionViewCellCount()
+      guard count != 0 else {
+         return
+      }
+      
+      app.collectionViews["CleateStageVC_collectionView"].cells.element(boundBy: 0).tap()
+      snapshot("0番目のCellをタップしたときの表示テスト。")
    }
 }
