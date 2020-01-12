@@ -127,7 +127,7 @@ class StageCreateVCTest: XCTestCase {
    }
    
    //ピース置かれているときにFinButton押されたら，Finボタンは無効になって，
-   //FinRes Buttopは有効になる
+   //FinRes Buttopは有効になるテスト
    func testIsNotEnableFinButton() {
       showCreateStageVC()
       putOnePice()
