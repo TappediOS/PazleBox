@@ -30,7 +30,7 @@ class TopTabBarUITest: XCTestCase {
    
    //tabbarでSettingを押したときの表示テスト
    func testSettingVC() {
-      let setting = app.tabBars.element(boundBy: 2)
+      let setting = XCUIApplication().tabBars/*@START_MENU_TOKEN@*/.otherElements["tabBar_Setting"]/*[[".otherElements[\"Setting\"]",".otherElements[\"tabBar_Setting\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
       setting.tap()
       snapshot("SettingVCの画面")
    }

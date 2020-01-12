@@ -69,6 +69,8 @@ class PuzzleTabBarController: ESTabBarController {
       let PlayVC = Storybord.instantiateViewController(withIdentifier: "SellectCreateStageViewController")
       PlayVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
                                            image: image, selectedImage: selectedImage, tag: 1)
+      
+      PlayVC.tabBarItem.accessibilityIdentifier = "tabBar_Play"
 
       
       image = getCreateImage()
@@ -77,6 +79,7 @@ class PuzzleTabBarController: ESTabBarController {
       let CreateVC = Storybord.instantiateViewController(withIdentifier: "StageMakingVC")
       CreateVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
                                               image: image, selectedImage: selectedImage, tag: 2)
+      CreateVC.tabBarItem.accessibilityIdentifier = "tabBar_Create"
       
       
       image = getSettingImage()
@@ -88,6 +91,8 @@ class PuzzleTabBarController: ESTabBarController {
       let SettingVC = MainStorybord.instantiateViewController(withIdentifier: "SettingTableVC")
       SettingVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
                                                 image: image, selectedImage: selectedImage, tag: 3)
+      SettingVC.tabBarItem.accessibilityIdentifier = "tabBar_Setting"
+      
       self.viewControllers = [PlayVC, CreateVC, SettingVC]
       self.selectedViewController = CreateVC
       self.selectedIndex = 1
