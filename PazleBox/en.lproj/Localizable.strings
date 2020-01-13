@@ -119,3 +119,9 @@
 "NumberOfStagesPlayed" = "Number Of Stages Played";
 
 "Creator" = "Creator";
+
+"UserAgreement" = "User Agreement";
+"PrivacyPolicy" = "Plivacy Policy";
+"AgreementInfo" = "Do you agree with the User Agreement and Privacy Policy?";
+"DontAccept" = "Dont Accept";
+"Accept" = "Accept";

@@ -115,3 +115,10 @@
 "NumberOfStagesPlayed" = "ステージが遊ばれた回数";
 
 "Creator" = "つくった人";
+
+
+"UserAgreement" = "利用規約";
+"PrivacyPolicy" = "プライバシーポリシー";
+"AgreementInfo" = "利用規約とプライバシーポリシーに同意しますか？";
+"DontAccept" = "同意しない";
+"Accept" = "同意する";

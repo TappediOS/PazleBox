@@ -23,7 +23,7 @@ class UserAgreementView: UIView {
    @IBOutlet weak var DontAgreebutton: UIButton!
    @IBOutlet weak var AgreeButton: UIButton!
    
-   
+   let ButtonCornerRadius: CGFloat = 6.5
    
 
    init(frame: CGRect, Image: UIImage, CellNum: Int, PlayCount: Int, ReviewAve: CGFloat, addDate: String, addUserUID: String) {
@@ -36,6 +36,13 @@ class UserAgreementView: UIView {
       
       LoadNib()
       InitView()
+      InitAgreementLabel()
+      InitAgreementDescriptionLabel()
+      InitAgreementButton()
+      InitPlivacyPolicyButton()
+      InitDontAgreebutton()
+      InitAgreeButton()
+      SetUpEachButtonCornerRadiusAndAjustsFont()
 
    }
    
@@ -62,7 +69,51 @@ class UserAgreementView: UIView {
       self.layer.cornerRadius = 5.8
    }
    
+   private func InitAgreementLabel() {
+      let title = NSLocalizedString("UserAgreement", comment: "")
+      greementLabe.text = title
+   }
    
+   private func InitAgreementDescriptionLabel() {
+      let title = NSLocalizedString("UserAgreement", comment: "")
+      AgreementDescriptionLabel.text = title
+   }
+   
+   private func InitPlivacyPolicyButton() {
+      let title = NSLocalizedString("PrivacyPolicy", comment: "")
+      PlivacyPolicyButton.setTitle(title, for: .normal)
+   }
+   
+   private func InitAgreementButton() {
+      let title = NSLocalizedString("UserAgreement", comment: "")
+      AgreementButton.setTitle(title, for: .normal)
+   }
+   
+   
+    
+   private func InitDontAgreebutton() {
+      let title = NSLocalizedString("DontAccept", comment: "")
+      DontAgreebutton.setTitle(title, for: .normal)
+   }
+   
+   private func InitAgreeButton() {
+      let title = NSLocalizedString("Accept", comment: "")
+      AgreeButton.setTitle(title, for: .normal)
+   }
+   
+   
+   private func SetUpEachButtonCornerRadiusAndAjustsFont() {
+      SetUpButtonCornerRadiusAndAjustsFont(AgreementButton)
+      SetUpButtonCornerRadiusAndAjustsFont(PlivacyPolicyButton)
+      SetUpButtonCornerRadiusAndAjustsFont(DontAgreebutton)
+      SetUpButtonCornerRadiusAndAjustsFont(AgreeButton)
+   }
+   
+   private func SetUpButtonCornerRadiusAndAjustsFont(_ button: UIButton) {
+      button.titleLabel?.adjustsFontSizeToFitWidth = true
+      button.titleLabel?.adjustsFontForContentSizeCategory = true
+      button.layer.cornerRadius =  ButtonCornerRadius
+   }
    
    @IBAction func TapAgreementButton(_ sender: Any) {
    }

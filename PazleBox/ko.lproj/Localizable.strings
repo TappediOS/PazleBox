@@ -117,3 +117,9 @@
 
 
 "Creator" = "저자";
+
+"UserAgreement" = "이용 약관";
+"PrivacyPolicy" = "개인 정보 정책";
+"AgreementInfo" = "사용자 계약 및 개인 정보 보호 정책에 동의하십니까?";
+"DontAccept" = "수락하지 않음";
+"Accept" = "동의하기";
