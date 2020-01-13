@@ -13,7 +13,7 @@ import Firebase
 import FirebaseFirestore
 import TapticEngine
 
-@IBDesignable
+
 class UserAgreementView: UIView {
    
    @IBOutlet weak var AgreementLabel: UILabel!
