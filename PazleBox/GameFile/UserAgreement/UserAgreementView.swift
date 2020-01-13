@@ -137,7 +137,8 @@ class UserAgreementView: UIView {
    }
    
    @IBAction func TapAgreeButton(_ sender: Any) {
-      
+      UserDefaults.standard.set(true, forKey: "AcceptAgreement")
+      self.removeFromSuperview()
    }
    // viewの枠線の色
    @IBInspectable var borderColor: UIColor = UIColor.clear {
