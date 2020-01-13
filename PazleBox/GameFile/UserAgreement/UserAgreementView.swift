@@ -72,11 +72,15 @@ class UserAgreementView: UIView {
    private func InitAgreementLabel() {
       let title = NSLocalizedString("UserAgreement", comment: "")
       AgreementLabel.text = title
+      AgreementLabel.adjustsFontSizeToFitWidth = true
+      AgreementLabel.adjustsFontForContentSizeCategory = true
    }
    
    private func InitAgreementDescriptionLabel() {
       let title = NSLocalizedString("UserAgreement", comment: "")
       AgreementDescriptionLabel.text = title
+      AgreementDescriptionLabel.adjustsFontSizeToFitWidth = true
+      AgreementDescriptionLabel.adjustsFontForContentSizeCategory = true
    }
    
    private func InitPlivacyPolicyButton() {
