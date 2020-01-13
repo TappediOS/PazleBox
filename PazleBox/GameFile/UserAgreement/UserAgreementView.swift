@@ -17,6 +17,7 @@ import SCLAlertView
 
 class UserAgreementView: UIView {
    
+   
    @IBOutlet weak var AgreementLabel: UILabel!
    @IBOutlet weak var AgreementDescriptionLabel: UILabel!
    @IBOutlet weak var AgreementButton: UIButton!
@@ -24,10 +25,13 @@ class UserAgreementView: UIView {
    @IBOutlet weak var DontAgreebutton: UIButton!
    @IBOutlet weak var AgreeButton: UIButton!
    
+   
+   
+   
    let ButtonCornerRadius: CGFloat = 6.5
    
 
-   init(frame: CGRect, Image: UIImage, CellNum: Int, PlayCount: Int, ReviewAve: CGFloat, addDate: String, addUserUID: String) {
+   override init(frame: CGRect) {
       super.init(frame: frame)
       
       if #available(iOS 13.0, *) {
@@ -54,7 +58,7 @@ class UserAgreementView: UIView {
 
    private func LoadNib() {
       let bundle = Bundle(for: type(of: self))
-      let nib = UINib(nibName: "UserAgreement", bundle: bundle)
+      let nib = UINib(nibName: "UserAgreementView", bundle: bundle)
       let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
       view.frame = self.bounds
       addSubview(view)
@@ -136,7 +140,7 @@ class UserAgreementView: UIView {
       }
    }
    
-
+   
    @IBAction func TapPlivacyPolicyButton(_ sender: Any) {
       let url = URL(string: "https://github.com/TappediOS/PazleBox/blob/sub/Privacy%20Policy")
       if let OpenURL = url {
@@ -152,8 +156,8 @@ class UserAgreementView: UIView {
          print("URL 開こうとしたらNilやった")
       }
    }
-   
 
+   
    @IBAction func TapDontAgreeButton(_ sender: Any) {
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: true)
       let ComleateView = SCLAlertView(appearance: Appearanse)
@@ -164,6 +168,8 @@ class UserAgreementView: UIView {
       UserDefaults.standard.set(true, forKey: "AcceptAgreement")
       self.removeFromSuperview()
    }
+   
+
    // viewの枠線の色
    @IBInspectable var borderColor: UIColor = UIColor.clear {
       didSet {

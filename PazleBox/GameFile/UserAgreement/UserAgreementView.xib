@@ -8,9 +8,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserAgreementView" customModule="PazleBox" customModuleProvider="target">
+            <connections>
+                <outlet property="AgreeButton" destination="Cdd-Hk-PZd" id="IIF-Iz-JjO"/>
+                <outlet property="AgreementButton" destination="0Ig-pI-d7t" id="RjU-ec-Ip7"/>
+                <outlet property="AgreementDescriptionLabel" destination="wf7-OV-a55" id="zvT-eo-17O"/>
+                <outlet property="AgreementLabel" destination="e9I-p5-hvD" id="vg0-pB-xjM"/>
+                <outlet property="DontAgreebutton" destination="Ok5-ug-iqG" id="oLF-dO-hGn"/>
+                <outlet property="PlivacyPolicyButton" destination="ZaU-M1-YDY" id="eOK-c5-Eqb"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" interfaceStyle="light" id="iN0-l3-epB" customClass="UserAgreementView" customModule="PazleBox" customModuleProvider="target">
+        <view contentMode="scaleToFill" interfaceStyle="light" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -43,7 +52,7 @@
                     <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="18"/>
                     <state key="normal" title="同意しない"/>
                     <connections>
-                        <action selector="TapDontAgreeButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="1gC-cA-sVE"/>
+                        <action selector="TapDontAgreeButton:" destination="-1" eventType="touchUpInside" id="CZH-GY-GxU"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZaU-M1-YDY">
@@ -55,7 +64,7 @@
                         <color key="titleColor" red="0.39628078381048248" green="0.39488228302782286" blue="0.84137055837563457" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
-                        <action selector="TapPlivacyPolicyButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="bVE-1X-X2f"/>
+                        <action selector="TapPlivacyPolicyButton:" destination="-1" eventType="touchUpInside" id="bIn-2X-Tfe"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cdd-Hk-PZd">
@@ -66,7 +75,7 @@
                     <color key="tintColor" red="0.9421021097623592" green="0.93908887195595458" blue="0.96739192981472077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="同意する"/>
                     <connections>
-                        <action selector="TapAgreeButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="6fo-0s-oMR"/>
+                        <action selector="TapAgreeButton:" destination="-1" eventType="touchUpInside" id="mNw-AP-ZiO"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ig-pI-d7t">
@@ -78,7 +87,7 @@
                         <color key="titleColor" red="0.39628078381048248" green="0.39488228302782286" blue="0.84137055837563457" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
-                        <action selector="TapAgreementButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="9lk-Zx-Sen"/>
+                        <action selector="TapAgreementButton:" destination="-1" eventType="touchUpInside" id="Edg-t8-DZx"/>
                     </connections>
                 </button>
             </subviews>
@@ -91,15 +100,7 @@
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
             </userDefinedRuntimeAttributes>
-            <connections>
-                <outlet property="AgreeButton" destination="Cdd-Hk-PZd" id="T8G-fi-ZUg"/>
-                <outlet property="AgreementButton" destination="0Ig-pI-d7t" id="UdL-MS-KhF"/>
-                <outlet property="AgreementDescriptionLabel" destination="wf7-OV-a55" id="96y-KX-yp8"/>
-                <outlet property="AgreementLabel" destination="e9I-p5-hvD" id="67G-3E-rR1"/>
-                <outlet property="DontAgreebutton" destination="Ok5-ug-iqG" id="A6u-gw-wKB"/>
-                <outlet property="PlivacyPolicyButton" destination="ZaU-M1-YDY" id="2Rf-er-S3O"/>
-            </connections>
-            <point key="canvasLocation" x="340.57971014492756" y="229.6875"/>
+            <point key="canvasLocation" x="-32" y="212"/>
         </view>
     </objects>
 </document>

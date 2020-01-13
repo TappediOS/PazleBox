@@ -27,6 +27,14 @@ extension SettingTableViewController {
    }
    
    private func TapAppReview() {
+      
+      let flame = CGRect(x: view.frame.width / 10, y: view.frame.height / 4, width: view.frame.width / 10 * 8, height: view.frame.width / 10 * 8)
+           
+      let AgreeView = UserAgreementView(frame: flame)
+      AgreeView.center.y = view.center.y
+      self.view.addSubview(AgreeView)
+      return
+      
       if #available(iOS 10.3, *) {
           SKStoreReviewController.requestReview()
       }
