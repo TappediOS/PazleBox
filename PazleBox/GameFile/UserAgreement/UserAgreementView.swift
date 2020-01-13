@@ -71,7 +71,7 @@ class UserAgreementView: UIView {
    
    private func InitAgreementLabel() {
       let title = NSLocalizedString("UserAgreement", comment: "")
-      greementLabe.text = title
+      AgreementLabel.text = title
    }
    
    private func InitAgreementDescriptionLabel() {
