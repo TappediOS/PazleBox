@@ -41,4 +41,5 @@ extension SellectInternetStageViewController: TwicketSegmentedControlDelegate {
       
       self.StageCollectionView.reloadData()
    }
+   
 }
