@@ -53,7 +53,7 @@ class UserAgreementView: UIView {
 
    private func LoadNib() {
       let bundle = Bundle(for: type(of: self))
-      let nib = UINib(nibName: "InterNetSellect", bundle: bundle)
+      let nib = UINib(nibName: "UserAgreement", bundle: bundle)
       let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
       view.frame = self.bounds
       addSubview(view)
