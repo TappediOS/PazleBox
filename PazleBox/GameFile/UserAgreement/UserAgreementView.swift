@@ -28,7 +28,7 @@ class UserAgreementView: UIView {
    
    
    
-   let ButtonCornerRadius: CGFloat = 6.5
+   let ButtonCornerRadius: CGFloat = 8
    
 
    override init(frame: CGRect) {
@@ -66,12 +66,12 @@ class UserAgreementView: UIView {
    
    private func InitView() {
       self.layer.borderColor = UIColor.black.cgColor
-      self.layer.borderWidth = 0.45
-      self.layer.shadowOffset = CGSize(width: 14.5, height: 14.5)
+      self.layer.borderWidth = 0.75
+      self.layer.shadowOffset = CGSize(width: 16, height: 16)
       self.layer.shadowColor = UIColor.black.cgColor
       //1にすれば真っ黒，0にすれば透明に
-      self.layer.shadowOpacity = 0.65
-      self.layer.cornerRadius = 5.8
+      self.layer.shadowOpacity = 0.5
+      self.layer.cornerRadius = 13
    }
    
    private func InitAgreementLabel() {
@@ -82,7 +82,7 @@ class UserAgreementView: UIView {
    }
    
    private func InitAgreementDescriptionLabel() {
-      let title = NSLocalizedString("UserAgreement", comment: "")
+      let title = NSLocalizedString("AgreementInfo", comment: "")
       AgreementDescriptionLabel.text = title
       AgreementDescriptionLabel.adjustsFontSizeToFitWidth = true
       AgreementDescriptionLabel.adjustsFontForContentSizeCategory = true

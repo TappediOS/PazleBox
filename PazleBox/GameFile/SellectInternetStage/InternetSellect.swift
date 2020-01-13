@@ -90,7 +90,7 @@ class InterNetSellect: UIView {
       self.layer.shadowColor = UIColor.black.cgColor
       //1にすれば真っ黒，0にすれば透明に
       self.layer.shadowOpacity = 0.65
-      self.layer.cornerRadius = 5.8
+      self.layer.cornerRadius = 12
    }
    
    private func GetCreateUserName(_ addUserUID: String) {
