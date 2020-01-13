@@ -35,6 +35,9 @@
                     <color key="backgroundColor" red="0.85936717045662014" green="0.91415042501739396" blue="0.96739192981472077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="18"/>
                     <state key="normal" title="同意しない"/>
+                    <connections>
+                        <action selector="TapDontAgreeButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="1gC-cA-sVE"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZaU-M1-YDY">
                     <rect key="frame" x="16" y="179" width="268" height="38"/>
@@ -44,6 +47,9 @@
                     <state key="normal" title="プライバシーポリシー">
                         <color key="titleColor" red="0.39628078381048248" green="0.39488228302782286" blue="0.84137055837563457" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="TapPlivacyPolicyButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="bVE-1X-X2f"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cdd-Hk-PZd">
                     <rect key="frame" x="164" y="240" width="120" height="40"/>
@@ -52,6 +58,9 @@
                     <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="18"/>
                     <color key="tintColor" red="0.9421021097623592" green="0.93908887195595458" blue="0.96739192981472077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="同意する"/>
+                    <connections>
+                        <action selector="TapAgreeButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="6fo-0s-oMR"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ig-pI-d7t">
                     <rect key="frame" x="16" y="133" width="268" height="38"/>
@@ -61,6 +70,9 @@
                     <state key="normal" title="利用規約">
                         <color key="titleColor" red="0.39628078381048248" green="0.39488228302782286" blue="0.84137055837563457" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="TapAgreementButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="9lk-Zx-Sen"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.22027699070644302" green="0.43223121281491095" blue="0.75307344543147203" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -68,10 +80,18 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                    <integer key="value" value="8"/>
+                    <integer key="value" value="10"/>
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
             </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="AgreeButton" destination="Cdd-Hk-PZd" id="T8G-fi-ZUg"/>
+                <outlet property="AgreementButton" destination="0Ig-pI-d7t" id="UdL-MS-KhF"/>
+                <outlet property="AgreementDescriptionLabel" destination="wf7-OV-a55" id="96y-KX-yp8"/>
+                <outlet property="AgreementLabel" destination="e9I-p5-hvD" id="67G-3E-rR1"/>
+                <outlet property="DontAgreebutton" destination="Ok5-ug-iqG" id="A6u-gw-wKB"/>
+                <outlet property="PlivacyPolicyButton" destination="ZaU-M1-YDY" id="2Rf-er-S3O"/>
+            </connections>
             <point key="canvasLocation" x="340.57971014492756" y="229.6875"/>
         </view>
     </objects>

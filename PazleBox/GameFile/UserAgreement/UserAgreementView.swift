@@ -15,6 +15,16 @@ import TapticEngine
 
 @IBDesignable
 class UserAgreementView: UIView {
+   
+   @IBOutlet weak var AgreementLabel: UILabel!
+   @IBOutlet weak var AgreementDescriptionLabel: UILabel!
+   @IBOutlet weak var AgreementButton: UIButton!
+   @IBOutlet weak var PlivacyPolicyButton: UIButton!
+   @IBOutlet weak var DontAgreebutton: UIButton!
+   @IBOutlet weak var AgreeButton: UIButton!
+   
+   
+   
 
    init(frame: CGRect, Image: UIImage, CellNum: Int, PlayCount: Int, ReviewAve: CGFloat, addDate: String, addUserUID: String) {
       super.init(frame: frame)
@@ -52,10 +62,21 @@ class UserAgreementView: UIView {
       self.layer.cornerRadius = 5.8
    }
    
+   
+   
+   @IBAction func TapAgreementButton(_ sender: Any) {
+   }
+   
 
-  
+   @IBAction func TapPlivacyPolicyButton(_ sender: Any) {
+   }
+   
 
-
+   @IBAction func TapDontAgreeButton(_ sender: Any) {
+   }
+   
+   @IBAction func TapAgreeButton(_ sender: Any) {
+   }
    // viewの枠線の色
    @IBInspectable var borderColor: UIColor = UIColor.clear {
       didSet {
