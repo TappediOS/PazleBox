@@ -53,7 +53,8 @@ class InterNetSellect: UIView {
       SetUpFireStoreSetting()
       LoadNib()
       InitView()
-      GetCreateUserName(addUserUID)
+      InitCreateUserLabel(userName: NSLocalizedString("Guest", comment: "")) //初期化してから，
+      GetCreateUserName(addUserUID) //本来のデータを撮りにいく。
       InitRatedLabel()
       InitPlayCountLabel()
       InitRatedNumLabel(ReviewAve)
