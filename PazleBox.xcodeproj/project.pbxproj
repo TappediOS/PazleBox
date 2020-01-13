@@ -1571,6 +1571,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BF0A9AB523CC10B900DBE398 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				BF2674E72227B6A3003D370F /* Actions.sks */,
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
 		BF13BC9523BC7D4700F2E36D /* TapUserInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1630,9 +1638,9 @@
 		BF1FF2AA22311C8D0047ED23 /* GemFile */ = {
 			isa = PBXGroup;
 			children = (
+				BF0A9AB523CC10B900DBE398 /* Action */,
 				BF2674E52227B6A3003D370F /* GameScene.sks */,
 				BF73C2FB234B465A00745C7F /* UsersGameScene.sks */,
-				BF2674E72227B6A3003D370F /* Actions.sks */,
 			);
 			path = GemFile;
 			sourceTree = "<group>";
@@ -4089,7 +4097,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PazleBox/PazleBox.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 27;
+				CURRENT_PROJECT_VERSION = 29;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9R4W53MKG7;
 				INFOPLIST_FILE = PazleBox/Info.plist;
@@ -4115,7 +4123,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PazleBox/PazleBox.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 27;
+				CURRENT_PROJECT_VERSION = 29;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9R4W53MKG7;
 				INFOPLIST_FILE = PazleBox/Info.plist;
