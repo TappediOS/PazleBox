@@ -12,6 +12,7 @@ import FlatUIKit
 import Firebase
 import FirebaseFirestore
 import TapticEngine
+import SCLAlertView
 
 
 class UserAgreementView: UIView {
@@ -120,17 +121,23 @@ class UserAgreementView: UIView {
    }
    
    @IBAction func TapAgreementButton(_ sender: Any) {
+      
    }
    
 
    @IBAction func TapPlivacyPolicyButton(_ sender: Any) {
+      
    }
    
 
    @IBAction func TapDontAgreeButton(_ sender: Any) {
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: true)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      ComleateView.showInfo(NSLocalizedString("UserAgreement", comment: ""), subTitle: NSLocalizedString("YouCantContinue", comment: ""))
    }
    
    @IBAction func TapAgreeButton(_ sender: Any) {
+      
    }
    // viewの枠線の色
    @IBInspectable var borderColor: UIColor = UIColor.clear {
