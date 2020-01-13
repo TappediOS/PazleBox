@@ -121,12 +121,36 @@ class UserAgreementView: UIView {
    }
    
    @IBAction func TapAgreementButton(_ sender: Any) {
-      
+      let url = URL(string: "https://github.com/TappediOS/PazleBox/blob/sub/User%20Agreement")
+      if let OpenURL = url {
+         if UIApplication.shared.canOpenURL(OpenURL){
+            Analytics.logEvent("OpenAgreement", parameters: nil)
+            UIApplication.shared.open(OpenURL)
+         }else{
+            Analytics.logEvent("CantOpenAgreement", parameters: nil)
+            print("URL nil ちゃうのにひらけない")
+         }
+      }else{
+         Analytics.logEvent("CantOpenAgreement", parameters: nil)
+         print("URL 開こうとしたらNilやった")
+      }
    }
    
 
    @IBAction func TapPlivacyPolicyButton(_ sender: Any) {
-      
+      let url = URL(string: "https://github.com/TappediOS/PazleBox/blob/sub/Privacy%20Policy")
+      if let OpenURL = url {
+         if UIApplication.shared.canOpenURL(OpenURL){
+            Analytics.logEvent("OpenPlivacyPolicy", parameters: nil)
+            UIApplication.shared.open(OpenURL)
+         }else{
+            Analytics.logEvent("CantOpenPlivacyPolicy", parameters: nil)
+            print("URL nil ちゃうのにひらけない")
+         }
+      }else{
+         Analytics.logEvent("CantOpenPlivacyPolicy", parameters: nil)
+         print("URL 開こうとしたらNilやった")
+      }
    }
    
 
