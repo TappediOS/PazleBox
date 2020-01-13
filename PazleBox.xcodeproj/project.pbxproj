@@ -12,6 +12,7 @@
 		BF0A9AAA23CAF57000DBE398 /* SellectInterNetStageVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A9AA923CAF57000DBE398 /* SellectInterNetStageVCTest.swift */; };
 		BF0A9AB423CAFEB100DBE398 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF2A186A22A6AD7300E19CFF /* Localizable.strings */; };
 		BF0A9AB823CC506A00DBE398 /* UsersGameScenePart2.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF0A9AB723CC506A00DBE398 /* UsersGameScenePart2.sks */; };
+		BF0A9ABB23CC53F800DBE398 /* UserAgreement.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF0A9ABA23CC53F800DBE398 /* UserAgreement.xib */; };
 		BF0FD350224363A800E8F387 /* PutPuzzleParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF0FD34F224363A800E8F387 /* PutPuzzleParticle.sks */; };
 		BF0FD352224364A900E8F387 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = BF0FD351224364A900E8F387 /* Star.png */; };
 		BF0FD35422436DF200E8F387 /* ExUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0FD35322436DF200E8F387 /* ExUIColor.swift */; };
@@ -775,6 +776,7 @@
 		BF0A9AA723CAF13700DBE398 /* SellectCreateStageVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectCreateStageVCTest.swift; sourceTree = "<group>"; };
 		BF0A9AA923CAF57000DBE398 /* SellectInterNetStageVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectInterNetStageVCTest.swift; sourceTree = "<group>"; };
 		BF0A9AB723CC506A00DBE398 /* UsersGameScenePart2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = UsersGameScenePart2.sks; sourceTree = "<group>"; };
+		BF0A9ABA23CC53F800DBE398 /* UserAgreement.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserAgreement.xib; sourceTree = "<group>"; };
 		BF0FD34F224363A800E8F387 /* PutPuzzleParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PutPuzzleParticle.sks; sourceTree = "<group>"; };
 		BF0FD351224364A900E8F387 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
 		BF0FD35322436DF200E8F387 /* ExUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIColor.swift; sourceTree = "<group>"; };
@@ -1592,6 +1594,14 @@
 			path = GameSceneSksFiles;
 			sourceTree = "<group>";
 		};
+		BF0A9AB923CC53BB00DBE398 /* UserAgreement */ = {
+			isa = PBXGroup;
+			children = (
+				BF0A9ABA23CC53F800DBE398 /* UserAgreement.xib */,
+			);
+			path = UserAgreement;
+			sourceTree = "<group>";
+		};
 		BF13BC9523BC7D4700F2E36D /* TapUserInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1683,6 +1693,7 @@
 				BFAC253223489FE400038594 /* SellectCreateStage */,
 				BF85D54223935E7A005E564B /* SellectInternetStage */,
 				BF73C2F6234B316A00745C7F /* UserStageSecenAndVC */,
+				BF0A9AB923CC53BB00DBE398 /* UserAgreement */,
 			);
 			path = GameFile;
 			sourceTree = "<group>";
@@ -2998,6 +3009,7 @@
 				BFCE25D1224A466B0099A775 /* 33p4Red.png in Resources */,
 				BFF6D75822896610000253A2 /* 43p13Blue.png in Resources */,
 				BFF6D76922896610000253A2 /* 43p19Red.png in Resources */,
+				BF0A9ABB23CC53F800DBE398 /* UserAgreement.xib in Resources */,
 				BFFA2A912234CF010023BB71 /* NullTile.png in Resources */,
 				BFF6D78522896610000253A2 /* 43p31Red.png in Resources */,
 				BFF6D5D6227ED73A000253A2 /* 33p23Blue.png in Resources */,
