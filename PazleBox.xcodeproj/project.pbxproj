@@ -11,6 +11,7 @@
 		BF0A9AA823CAF13700DBE398 /* SellectCreateStageVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A9AA723CAF13700DBE398 /* SellectCreateStageVCTest.swift */; };
 		BF0A9AAA23CAF57000DBE398 /* SellectInterNetStageVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A9AA923CAF57000DBE398 /* SellectInterNetStageVCTest.swift */; };
 		BF0A9AB423CAFEB100DBE398 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF2A186A22A6AD7300E19CFF /* Localizable.strings */; };
+		BF0A9AB823CC506A00DBE398 /* UsersGameScenePart2.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF0A9AB723CC506A00DBE398 /* UsersGameScenePart2.sks */; };
 		BF0FD350224363A800E8F387 /* PutPuzzleParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF0FD34F224363A800E8F387 /* PutPuzzleParticle.sks */; };
 		BF0FD352224364A900E8F387 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = BF0FD351224364A900E8F387 /* Star.png */; };
 		BF0FD35422436DF200E8F387 /* ExUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0FD35322436DF200E8F387 /* ExUIColor.swift */; };
@@ -773,6 +774,7 @@
 		BF0A9AA523CADC3500DBE398 /* StageCreateVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageCreateVCTest.swift; sourceTree = "<group>"; };
 		BF0A9AA723CAF13700DBE398 /* SellectCreateStageVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectCreateStageVCTest.swift; sourceTree = "<group>"; };
 		BF0A9AA923CAF57000DBE398 /* SellectInterNetStageVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectInterNetStageVCTest.swift; sourceTree = "<group>"; };
+		BF0A9AB723CC506A00DBE398 /* UsersGameScenePart2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = UsersGameScenePart2.sks; sourceTree = "<group>"; };
 		BF0FD34F224363A800E8F387 /* PutPuzzleParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PutPuzzleParticle.sks; sourceTree = "<group>"; };
 		BF0FD351224364A900E8F387 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
 		BF0FD35322436DF200E8F387 /* ExUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIColor.swift; sourceTree = "<group>"; };
@@ -1584,6 +1586,7 @@
 			children = (
 				BF73C2FB234B465A00745C7F /* UsersGameScene.sks */,
 				BF2674E52227B6A3003D370F /* GameScene.sks */,
+				BF0A9AB723CC506A00DBE398 /* UsersGameScenePart2.sks */,
 				BF0A9AB523CC10B900DBE398 /* Action */,
 			);
 			path = GameSceneSksFiles;
@@ -3243,6 +3246,7 @@
 				BFF6D71A22896610000253A2 /* 43p41Green.png in Resources */,
 				BFCE25B6224A466B0099A775 /* 33p8Green.png in Resources */,
 				BFF6D621228412D2000253A2 /* 33p24Green.png in Resources */,
+				BF0A9AB823CC506A00DBE398 /* UsersGameScenePart2.sks in Resources */,
 				BFCE2621224A557B0099A775 /* 23p9Red.png in Resources */,
 				BF8A4650225088EE0016F801 /* NoLike.png in Resources */,
 				BF7CD9622240BBD500F8302B /* 23p1Red.png in Resources */,
