@@ -85,7 +85,7 @@ class InterNetSellect: UIView {
    
    private func InitView() {
       self.layer.borderColor = UIColor.black.cgColor
-      self.layer.borderWidth = 0.45
+      self.layer.borderWidth = 0.8
       self.layer.shadowOffset = CGSize(width: 14.5, height: 14.5)
       self.layer.shadowColor = UIColor.black.cgColor
       //1にすれば真っ黒，0にすれば透明に
