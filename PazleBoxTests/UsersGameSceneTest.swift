@@ -13,7 +13,7 @@ import XCTest
 //NOTE: SellectCreateStageVCTestのテスト
 class UsersGameSceneTest: XCTestCase {
    
-   let GameScene = UsersGameScene()
+   let GameScene = UsersGameScenePart2()
 
    
    override class func setUp() {
