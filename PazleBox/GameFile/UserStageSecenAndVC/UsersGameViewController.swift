@@ -189,10 +189,10 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
 
    private func InitGameViewAndShowView() {
       print("Users GameSene，GameViewの初期化開始")
-      if let scene = GKScene(fileNamed: "UsersGameScene") {
+      if let scene = GKScene(fileNamed: "UsersGameScenePart2") {
          
          // Get the SKScene from the loaded GKScene
-         if let sceneNode = scene.rootNode as! UsersGameScene? {
+         if let sceneNode = scene.rootNode as! UsersGameScenePart2? {
             sceneNode.scaleMode = GetSceneScalaMode(DeviceHeight: UIScreen.main.nativeBounds.height)
             sceneNode.InitPuzzleArrayBoforeScene(SizeX: sceneNode.frame.width, SizeY: sceneNode.frame.height, PiceArray: UserPiceArray)
             sceneNode.SetStageArrayBeforeScene(StageArray: UserStageArray)

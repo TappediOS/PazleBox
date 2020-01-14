@@ -14,7 +14,7 @@ import AudioToolbox
 import FlatUIKit
 import Firebase
 
-class UsersGameScene: SKScene {
+class UsersGameScenePart2: SKScene {
    
    let AllStage = AllStageInfo()
    let Stage = HoldStage()
