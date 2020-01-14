@@ -18,6 +18,7 @@ extension UserDefaults {
       }
    }
    
+   
    func getEnum<T: RawRepresentable>(forKey key: String) -> T? where T.RawValue == String {
       if let string = string(forKey: key) {
          return T(rawValue: string)

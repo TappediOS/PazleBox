@@ -288,7 +288,6 @@
 		BF73C2F5234AD86700745C7F /* SellectCreateStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F4234AD86700745C7F /* SellectCreateStageViewController.swift */; };
 		BF73C2F8234B319200745C7F /* UsersGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F7234B319200745C7F /* UsersGameScene.swift */; };
 		BF73C2FA234B31A200745C7F /* UsersGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F9234B31A200745C7F /* UsersGameViewController.swift */; };
-		BF73C2FC234B465A00745C7F /* UsersGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF73C2FB234B465A00745C7F /* UsersGameScene.sks */; };
 		BF78D91723C98C8100334188 /* PuzzleTabBarControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91623C98C8100334188 /* PuzzleTabBarControllerTest.swift */; };
 		BF78D91923C98E5E00334188 /* SettingVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91823C98E5E00334188 /* SettingVCTest.swift */; };
 		BF78D91B23C9906100334188 /* SellectCreateStageVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91A23C9906100334188 /* SellectCreateStageVCTest.swift */; };
@@ -1072,7 +1071,6 @@
 		BF73C2F4234AD86700745C7F /* SellectCreateStageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectCreateStageViewController.swift; sourceTree = "<group>"; };
 		BF73C2F7234B319200745C7F /* UsersGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersGameScene.swift; sourceTree = "<group>"; };
 		BF73C2F9234B31A200745C7F /* UsersGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersGameViewController.swift; sourceTree = "<group>"; };
-		BF73C2FB234B465A00745C7F /* UsersGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = UsersGameScene.sks; path = ../GemFile/UsersGameScene.sks; sourceTree = "<group>"; };
 		BF78D91623C98C8100334188 /* PuzzleTabBarControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleTabBarControllerTest.swift; sourceTree = "<group>"; };
 		BF78D91823C98E5E00334188 /* SettingVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVCTest.swift; sourceTree = "<group>"; };
 		BF78D91A23C9906100334188 /* SellectCreateStageVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectCreateStageVCTest.swift; sourceTree = "<group>"; };
@@ -1588,7 +1586,6 @@
 		BF0A9AB623CC4FB100DBE398 /* GameSceneSksFiles */ = {
 			isa = PBXGroup;
 			children = (
-				BF73C2FB234B465A00745C7F /* UsersGameScene.sks */,
 				BF2674E52227B6A3003D370F /* GameScene.sks */,
 				BF0A9AB723CC506A00DBE398 /* UsersGameScenePart2.sks */,
 				BF0A9AB523CC10B900DBE398 /* Action */,
@@ -3219,7 +3216,6 @@
 				BFCE25E1224A466B0099A775 /* 33p2Blue.png in Resources */,
 				BF3EF63B2250988700D5534A /* GoogleService-Info.plist in Resources */,
 				BF7CD9602240BBD500F8302B /* 23p5Green.png in Resources */,
-				BF73C2FC234B465A00745C7F /* UsersGameScene.sks in Resources */,
 				BFCE25C3224A466B0099A775 /* 33p8Red.png in Resources */,
 				BF640C062244F8FD00333782 /* 32p2Blue.png in Resources */,
 				BFF6D77322896610000253A2 /* 43p27Blue.png in Resources */,
