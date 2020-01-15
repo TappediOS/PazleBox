@@ -53,6 +53,7 @@ class SellectInterNetStageVCTest: XCTestCase {
    func testSegmentPlayCount() {
       showSellectInternetCreateStageVC()
       let element = app.otherElements["SellectInternetStageVC_Segment"].children(matching: .other).element.children(matching: .other).element(boundBy: 1)
+      print("PlayCountのセグメント名 = \(localizedStr("PlayCount"))")
       element.staticTexts[localizedStr("PlayCount")].tap()
       snapshot("PlayCountのセグメントをタップしたときの表示テスト")
       
@@ -62,6 +63,7 @@ class SellectInterNetStageVCTest: XCTestCase {
    func testSegmentRating() {
       showSellectInternetCreateStageVC()
       let element = app.otherElements["SellectInternetStageVC_Segment"].children(matching: .other).element.children(matching: .other).element(boundBy: 1)
+      print("Ratingのセグメント名 = \(localizedStr("Rating"))")
       element.staticTexts[localizedStr("Rating")].tap()
       snapshot("Ratingのセグメントをタップしたときの表示テスト")
    }
