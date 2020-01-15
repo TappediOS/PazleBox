@@ -25,21 +25,21 @@ class TopTabBarUITest: XCTestCase {
    
    //起動時のVCの表示テスト
    func testShowLauncVC() {
-      snapshot("起動時(Create)のVCの画面")
+      snapshot("起動時(Create)のVCの画面テスト")
    }
    
    //tabbarでSettingを押したときの表示テスト
    func testShowSettingVC() {
       let setting = XCUIApplication().tabBars/*@START_MENU_TOKEN@*/.otherElements["tabBar_Setting"]/*[[".otherElements[\"Setting\"]",".otherElements[\"tabBar_Setting\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
       setting.tap()
-      snapshot("SettingVCの画面")
+      snapshot("SettingVCの画面テスト")
    }
    
    //tabbarでPlayを押したときの表示テスト
    func testShowPlayVC() {
       let play = XCUIApplication().tabBars.otherElements["tabBar_Play"]
       play.tap()
-      snapshot("PlayVCの画面")
+      snapshot("PlayVCの画面テスト")
    }
    
 }
