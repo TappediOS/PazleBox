@@ -51,6 +51,14 @@ class UserAgreementViewController: UIViewController {
    
    @objc func TapAcceptChatchNotification(notification: Notification) {
       print("Tap Accept UserAgreement")
+      print("\nTabBarControllerに遷移します。")
       
+      let Storybord = UIStoryboard(name: "Main", bundle: nil)
+      let PuzzleTabBarC = Storybord.instantiateViewController(withIdentifier: "PuzzleTabBarC") as! PuzzleTabBarController
+
+      self.present(PuzzleTabBarC, animated: true, completion: {
+         print("PuzzleTabBarCにプレゼント終わった")
+      })
    }
+   
 }
