@@ -32,6 +32,8 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
    
    var usersName: String = NSLocalizedString("Guest", comment: "")
    
+   let leaderBords = ManageLeadearBoards()
+   
    //テキストフィールドに書き込む最大の文字数。
    let maxTextfieldLength = 6
    
@@ -47,7 +49,7 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
       GetUserDataFromDataBase()
    }
    
-   //viewWillDisappearにすると，Pagesheetを下げた瞬間に呼ばれる。
+   //NOTE: viewWillDisappearにすると，Pagesheetを下げた瞬間に呼ばれる。
    override func viewDidDisappear(_ animated: Bool) {
       super.viewDidDisappear(true)
       print("表示時　のニックネーム： \(self.usersName)")
@@ -128,6 +130,16 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
       }
    }
    
+   private func CheckGameCenterPlayCount(document: DocumentSnapshot) {
+      if let ClearStageCount = document.data()?["ClearStageCount"] as? Int {
+         leaderBords.CheckUserCreatedStagesHaveBeenPlayed(playedCount: ClearStageCount)
+      }
+   }
+   
+   private func CheckGameCenterCreatedStagePlayCount() {
+      leaderBords.CheckSomeUserCreatedStagesHaveBeenPlayed(playCount: self.numOfStagePlayed)
+   }
+   
    private func FSSetUPlayedCountNumLabelText() {
       PlayedCountNumLabel.text = String(numOfStagePlayed)
    }
@@ -161,6 +173,8 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
          if let document = document, document.exists {
             //ドキュメントが存在していたらセットアップをする
             self.FSSetUpLabelText(document: document)
+            self.CheckGameCenterPlayCount(document: document)
+            
          } else {
             print("Document does not exist")
             
