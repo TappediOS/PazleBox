@@ -11,10 +11,18 @@ import UIKit
 
 class UserAgreementViewController: UIViewController {
    
+   var BackGroundImageView: BackGroundImageViews?
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      InitBackgroundImageView()
       
-      
+   }
+   
+   private func InitBackgroundImageView() {
+      BackGroundImageView = BackGroundImageViews(frame: self.view.frame)
+      self.view.addSubview(BackGroundImageView!)
+      self.view.sendSubviewToBack(BackGroundImageView!)
    }
 }
