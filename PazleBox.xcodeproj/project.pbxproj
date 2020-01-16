@@ -50,6 +50,8 @@
 		BF2674EF2227B6A3003D370F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2674ED2227B6A3003D370F /* Main.storyboard */; };
 		BF2674F12227B6A4003D370F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2674F02227B6A4003D370F /* Assets.xcassets */; };
 		BF2674F42227B6A4003D370F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2674F22227B6A4003D370F /* LaunchScreen.storyboard */; };
+		BF26985623D0225D00305577 /* UserAgreementViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF26985523D0225D00305577 /* UserAgreementViewController.storyboard */; };
+		BF26985823D0228900305577 /* UserAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF26985723D0228900305577 /* UserAgreementViewController.swift */; };
 		BF27D04A22B4E61800596644 /* HomeViewIAP.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF27D04922B4E61800596644 /* HomeViewIAP.swift */; };
 		BF27D04C22B4EBE800596644 /* GameBgMRemocon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF27D04B22B4EBE800596644 /* GameBgMRemocon.swift */; };
 		BF2A186822A6AD7300E19CFF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF2A186A22A6AD7300E19CFF /* Localizable.strings */; };
@@ -817,6 +819,8 @@
 		BF2674F02227B6A4003D370F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF2674F32227B6A4003D370F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF2674F52227B6A4003D370F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF26985523D0225D00305577 /* UserAgreementViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserAgreementViewController.storyboard; sourceTree = "<group>"; };
+		BF26985723D0228900305577 /* UserAgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgreementViewController.swift; sourceTree = "<group>"; };
 		BF27D04922B4E61800596644 /* HomeViewIAP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewIAP.swift; sourceTree = "<group>"; };
 		BF27D04B22B4EBE800596644 /* GameBgMRemocon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBgMRemocon.swift; sourceTree = "<group>"; };
 		BF2A186022A6ACD500E19CFF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
@@ -1596,6 +1600,8 @@
 		BF0A9AB923CC53BB00DBE398 /* UserAgreement */ = {
 			isa = PBXGroup;
 			children = (
+				BF26985523D0225D00305577 /* UserAgreementViewController.storyboard */,
+				BF26985723D0228900305577 /* UserAgreementViewController.swift */,
 				BF0A9ABA23CC53F800DBE398 /* UserAgreementView.xib */,
 				BF0A9ABC23CC58C300DBE398 /* UserAgreementView.swift */,
 			);
@@ -3374,6 +3380,7 @@
 				BF7CD95D2240BBD500F8302B /* 23p2Red.png in Resources */,
 				BF8A464E2250829C0016F801 /* StarStar.json in Resources */,
 				BFFA2A992234D9D30023BB71 /* BaseTile.png in Resources */,
+				BF26985623D0225D00305577 /* UserAgreementViewController.storyboard in Resources */,
 				BFF6D66322853EC7000253A2 /* 33p39Green.png in Resources */,
 				BF640C052244F8FD00333782 /* 32p3Blue.png in Resources */,
 				BF7CD95F2240BBD500F8302B /* 23p3Green.png in Resources */,
@@ -3651,6 +3658,7 @@
 				BF552EC8226DDD9100756E16 /* N21.swift in Sources */,
 				BFFA2A8E2234CC5F0023BB71 /* Tile.swift in Sources */,
 				BF332FA422492704009B3042 /* E15.swift in Sources */,
+				BF26985823D0228900305577 /* UserAgreementViewController.swift in Sources */,
 				BF1FF2B4223121BF0047ED23 /* Easy.swift in Sources */,
 				BF552EBC226DDD6400756E16 /* E45.swift in Sources */,
 				BF33CE08233A208900AD488A /* ExString.swift in Sources */,
