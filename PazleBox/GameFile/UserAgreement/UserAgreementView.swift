@@ -166,6 +166,7 @@ class UserAgreementView: UIView {
    
    @IBAction func TapAgreeButton(_ sender: Any) {
       UserDefaults.standard.set(true, forKey: "AcceptAgreement")
+      NotificationCenter.default.post(name: .AcceptUserAgreement, object: nil)
       self.removeFromSuperview()
    }
    
