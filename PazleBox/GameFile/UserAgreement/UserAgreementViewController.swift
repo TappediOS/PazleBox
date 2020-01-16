@@ -10,11 +10,8 @@ import Foundation
 import UIKit
 
 class UserAgreementViewController: UIViewController {
-   
    var BackGroundImageView: BackGroundImageViews?
-   
    var UserAgreementViewFrame = CGRect()
-   
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -49,6 +46,9 @@ class UserAgreementViewController: UIViewController {
       self.view.addSubview(AgreeView)
    }
    
+   
+   //MARK:- タブバーに遷移する処理
+   //NOTE:- もし，チュートリアルの画面に遷移するんやったらここでいいんじゃね。
    @objc func TapAcceptChatchNotification(notification: Notification) {
       print("Tap Accept UserAgreement")
       print("\nTabBarControllerに遷移します。")
