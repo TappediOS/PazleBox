@@ -40,7 +40,7 @@ class PuzzleTabBarController: ESTabBarController {
    /// - Parameter animated:
    override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(true)
-      if firstOpenForBGM {
+      if firstOpenForBGM == true {
          InitBGM()
          StartBGM()
          firstOpenForBGM = false
@@ -49,10 +49,13 @@ class PuzzleTabBarController: ESTabBarController {
    
    override func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(true)
-      //戻ってきた時についてなかったらさいせい
-      if !GameBGM!.Hight_Tech.isPlaying {
-         print("BGMついてないから再生します。")
-         StartBGM()
+      if let bgm = GameBGM {
+         if bgm.Hight_Tech.isPlaying == false {
+            print("BGMついてないから再生します。")
+            StartBGM()
+         }
+      }else{
+         print("BGMにnil入っててんけど？")
       }
       
    }
@@ -130,9 +133,13 @@ class PuzzleTabBarController: ESTabBarController {
    }
    
    @objc func StartHomeBGMCatchNotification(notification: Notification) -> Void {
-      if !GameBGM!.Hight_Tech.isPlaying {
-         print("BGMついてないから再生します。")
-         StartBGM()
+      if let bgm = GameBGM {
+         if bgm.Hight_Tech.isPlaying == false {
+            print("BGMついてないから再生します。")
+            StartBGM()
+         }
+      }else{
+         print("BGMにnil入っててんけど？")
       }
    }
    
