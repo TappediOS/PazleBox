@@ -9,13 +9,17 @@
 import UIKit
 import SwiftyStoreKit
 import Firebase
+import GameKit
 
-class SettingTableViewController: UITableViewController {
+class SettingTableViewController: UITableViewController, GKGameCenterControllerDelegate {
    
    let IAP_PRO_ID = "NO_ADS"
    let SECRET_CODE = "c8bf5f01b42f4f80ad32ffd00349d92d"
    
    @IBOutlet weak var UserInfoLabel: UILabel!
+   @IBOutlet weak var GameCenterLabel: UILabel!
+   
+   
    
    @IBOutlet weak var NoAdsLabel: UILabel!
    @IBOutlet weak var RestoreLabel: UILabel!
@@ -26,7 +30,7 @@ class SettingTableViewController: UITableViewController {
    
    
    let numOfSection = 3
-   let firstNumberOfRowsInSection = 1
+   let firstNumberOfRowsInSection = 2
    let secondNumberOfRowsInSection = 2
    let thirdNumberOfRowsInSection = 3
    
@@ -94,7 +98,7 @@ class SettingTableViewController: UITableViewController {
       
       switch indexPath.section {
       case 0:
-         TapUserInfo()
+         TapUserInfo(rowNum: indexPath.row)
       case 1:
          TapNoAds(rowNum: indexPath.row)
       case 2:
