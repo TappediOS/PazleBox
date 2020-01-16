@@ -32,6 +32,8 @@ class ManageLeadearBoards {
    
    let CLEAR_STAGE_NUM_DEADERBOARD_ID = "ClearStageNumLeaderBoard"
    let COLLECTED_STAR_NUM_DEADERBOARD_ID = "CollectNumberOfStarsLeaderBoad"
+   let NUM_OF_PLAYED_STAGE_USER_CREATED = "NumOfPlayedStageUserCreated"
+   let NUM_OF_YOU_CREATED_STAGE_PLAYED = "NumOfYouCreatedStagePlayed"
    
    let userDefaults = UserDefaults.standard
    let realm = try! Realm()
@@ -45,6 +47,8 @@ class ManageLeadearBoards {
    private func InitUserDefaults() {
       userDefaults.register(defaults: ["SumOfClearStageNum": 0])
       userDefaults.register(defaults: ["SumOfCollectedStarNum": 0])
+      userDefaults.register(defaults: ["SumOfStagePlayed": 0])
+      userDefaults.register(defaults: ["SumOfStageYouCretedHasBeenPlayed": 0])
       
       userDefaults.register(defaults: ["Clear1": false])
       userDefaults.register(defaults: ["Clear5": false])
@@ -56,6 +60,8 @@ class ManageLeadearBoards {
       
       print("\n合計ステージクリア数　\(String(describing: userDefaults.object(forKey: "SumOfClearStageNum")))")
       print("集めた星の数　\(String(describing: userDefaults.object(forKey: "SumOfCollectedStarNum")))\n")
+      print("作ったステージをプレイした回数　\(String(describing: userDefaults.object(forKey: "SumOfClearStageNum")))")
+      print("作ったステージがプレイされた回数　\(String(describing: userDefaults.object(forKey: "SumOfClearStageNum")))")
       
       print("\n達成項目1   \(String(describing: userDefaults.object(forKey: "Clear1")))")
       print("達成項目5   \(String(describing: userDefaults.object(forKey: "Clear5")))")
@@ -185,6 +191,48 @@ class ManageLeadearBoards {
       })
    }
    
+   private func SentCreatedStagesHaveBeenPlayed(NewRecord: Int, BeforeRecord: Int) {
+      let SentScore = GKScore(leaderboardIdentifier: NUM_OF_PLAYED_STAGE_USER_CREATED)
+      
+      if GKLocalPlayer.local.isAuthenticated == false {
+         print("ユーザーはゲームセンターにログインしていません")
+         return
+      }
+      
+      SentScore.value = Int64(NewRecord)
+      userDefaults.set(NewRecord, forKey: "SumOfStagePlayed")
+      print()
+      
+      GKScore.report([SentScore], withCompletionHandler: { (error) in
+         if error != nil {
+            print("error, cant sent new score of Clear Stage num...\(String(describing: error))")
+            self.userDefaults.set(BeforeRecord, forKey: "SumOfStagePlayed")
+         }
+         
+      })
+   }
+   
+   private func SentUserCreatedStagesHaveBeenPlayed(NewRecord: Int, BeforeRecord: Int) {
+      let SentScore = GKScore(leaderboardIdentifier: NUM_OF_YOU_CREATED_STAGE_PLAYED)
+      
+      if GKLocalPlayer.local.isAuthenticated == false {
+         print("ユーザーはゲームセンターにログインしていません")
+         return
+      }
+      
+      SentScore.value = Int64(NewRecord)
+      userDefaults.set(NewRecord, forKey: "SumOfStageYouCretedHasBeenPlayed")
+      print()
+      
+      GKScore.report([SentScore], withCompletionHandler: { (error) in
+         if error != nil {
+            print("error, cant sent new score of Clear Stage num...\(String(describing: error))")
+            self.userDefaults.set(BeforeRecord, forKey: "SumOfStageYouCretedHasBeenPlayed")
+         }
+         
+      })
+   }
+   
    //MARK: クリアしたステージ数を調査する
    public func CheckUserUpdateNumberOfClearStage() {
       
@@ -215,7 +263,44 @@ class ManageLeadearBoards {
       }else{
          print("ステージクリア数は更新されませんでした.")
       }
+   }
+   
+   //MARK:- （あるユーザが)作ったステージがプレイされた回数をGameCenterに送る。
+   //私が作ったステージは関係ない。
+   //これは,FireStoreでのUserのフォルダにあるやつを送っている。
+   public func CheckUserCreatedStagesHaveBeenPlayed(playedCount: Int) {
+      let nowCount = userDefaults.integer(forKey: "SumOfStagePlayed")
       
+      print("現在保存されているプレイされた回数の最大値: \(nowCount)")
+      print("送るかを考えるプレイされた回数　　　　　　: \(playedCount)")
+      
+      if nowCount > playedCount {
+         print("超えてないので送らない。")
+         return
+      }
+      
+      print("記録を更新しました。送信を行います")
+      SentCreatedStagesHaveBeenPlayed(NewRecord: playedCount, BeforeRecord: nowCount)
+      Analytics.logEvent("UpdateUserCreatedStagesHaveBeenPlayed", parameters: nil)
+   }
+   
+   //MARK:- ユーザによって作られたステージをプレイした回数をGameCenterに送る。
+   //これは,FireStoreでのUserのフォルダにあるやつを送っている。
+   //iudでもう一回クエリしないといけないめんどくさいやつ。
+   public func CheckSomeUserCreatedStagesHaveBeenPlayed(playCount: Int) {
+      let nowCount = userDefaults.integer(forKey: "SumOfStagePlayed")
+      
+      print("現在保存されているプレイされた回数の最大値: \(nowCount)")
+      print("送るかを考えるプレイされた回数　　　　　　: \(playCount)")
+      
+      if nowCount > playCount {
+         print("超えてないので送らない。")
+         return
+      }
+      
+      print("記録を更新しました。送信を行います")
+      SentUserCreatedStagesHaveBeenPlayed(NewRecord: playCount, BeforeRecord: nowCount)
+      Analytics.logEvent("UpdateUserCreatedStagesHaveBeenPlayed", parameters: nil)
    }
    
    private func AppStoreReview() {
