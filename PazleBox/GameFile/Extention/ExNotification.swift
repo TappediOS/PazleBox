@@ -46,4 +46,6 @@ extension Notification.Name {
    
    static let ErrSentStageToFireStore = Notification.Name("ErrSentStageToFireStore")
    static let SuccessSentStageToFireStore = Notification.Name("SuccessSentStageToFireStore")
+   
+   static let AcceptUserAgreement = Notification.Name("AcceptUserAgreement")
 }

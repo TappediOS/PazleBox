@@ -19,9 +19,14 @@ class UserAgreementViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      InitNotificationCenter()
       InitAgreementViewSizeSetting()
       InitBackgroundImageView()
       InitUserAgreementView()
+   }
+   
+   private func InitNotificationCenter() {
+       NotificationCenter.default.addObserver(self, selector: #selector(TapAcceptChatchNotification(notification:)), name: .AcceptUserAgreement, object: nil)
    }
    
    private func InitAgreementViewSizeSetting() {
@@ -42,5 +47,10 @@ class UserAgreementViewController: UIViewController {
       AgreeView.center.y = view.center.y
       AgreeView.center.x = view.center.x
       self.view.addSubview(AgreeView)
+   }
+   
+   @objc func TapAcceptChatchNotification(notification: Notification) {
+      print("Tap Accept UserAgreement")
+      
    }
 }
