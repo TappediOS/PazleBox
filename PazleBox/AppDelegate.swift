@@ -60,7 +60,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       let fileName = "GoogleService-Info"
       let filePath = Bundle.main.path(forResource: fileName, ofType: "plist")
       let fileopts = FirebaseOptions(contentsOfFile: filePath!)
-
       FirebaseApp.configure(options: fileopts!)
       //--------------------FIREBASE-----------------------//
       
@@ -111,6 +110,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       }
       //--------------------ログイン-----------------------//
       
+      //--------------------利用規約VC-----------------------//
+      UserDefaults.standard.register(defaults: ["AcceptAgreement": false])
+      if UserDefaults.standard.bool(forKey: "AcceptAgreement") == false {
+         print("------------利用規約画面を表示する処理をします。--------------\n")
+         let storyboard = UIStoryboard(name: "UserAgreementViewController", bundle: nil)
+         let AgreementVC = storyboard.instantiateViewController(withIdentifier: "UserAgreementVC") as! UserAgreementViewController
+         self.window = UIWindow(frame: UIScreen.main.bounds)
+         self.window?.rootViewController = AgreementVC
+      } else {
+         print("\n利用規約Acceptしてるよ。")
+         //FIXME:- 出すときはこれを消してOK
+         //この処理は出るかを確認するためにしてるだけ。
+         UserDefaults.standard.set(false, forKey: "AcceptAgreement")
+         print("次開くときはAgreementVC出します。\n")
+      }
+      //--------------------利用規約VC-----------------------//
       
       
       //-----------バックグラウンドでの音の再生を許可------------//
