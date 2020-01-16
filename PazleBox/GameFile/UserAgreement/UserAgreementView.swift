@@ -67,11 +67,11 @@ class UserAgreementView: UIView {
    private func InitView() {
       self.layer.borderColor = UIColor.black.cgColor
       self.layer.borderWidth = 1
-      self.layer.shadowOffset = CGSize(width: 16, height: 16)
+      self.layer.shadowOffset = CGSize(width: 17, height: 17)
       self.layer.shadowColor = UIColor.black.cgColor
       //1にすれば真っ黒，0にすれば透明に
-      self.layer.shadowOpacity = 0.5
-      self.layer.cornerRadius = 13
+      self.layer.shadowOpacity = 0.45
+      self.layer.cornerRadius = 18
    }
    
    private func InitAgreementLabel() {
