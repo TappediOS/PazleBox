@@ -182,7 +182,7 @@
         <!--Puzzle Tab Bar Controller-->
         <scene sceneID="SGH-8C-Ttl">
             <objects>
-                <viewController storyboardIdentifier="PuzzpeTabBarC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zmL-sd-h9q" customClass="PuzzleTabBarController" customModule="PazleBox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PuzzleTabBarC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zmL-sd-h9q" customClass="PuzzleTabBarController" customModule="PazleBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pSv-Ur-5c5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
