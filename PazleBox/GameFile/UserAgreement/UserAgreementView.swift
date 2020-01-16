@@ -25,7 +25,7 @@ class UserAgreementView: UIView {
    @IBOutlet weak var DontAgreebutton: UIButton!
    @IBOutlet weak var AgreeButton: UIButton!
    
-   
+   let gameSound = GameSounds()
    
    
    let ButtonCornerRadius: CGFloat = 8
@@ -159,12 +159,14 @@ class UserAgreementView: UIView {
 
    
    @IBAction func TapDontAgreeButton(_ sender: Any) {
+      gameSound.PlaySoundsTapButton()
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: true)
       let ComleateView = SCLAlertView(appearance: Appearanse)
       ComleateView.showInfo(NSLocalizedString("UserAgreement", comment: ""), subTitle: NSLocalizedString("YouCantContinue", comment: ""))
    }
    
    @IBAction func TapAgreeButton(_ sender: Any) {
+      gameSound.PlaySoundsTapButton()
       UserDefaults.standard.set(true, forKey: "AcceptAgreement")
       NotificationCenter.default.post(name: .AcceptUserAgreement, object: nil)
       self.removeFromSuperview()
