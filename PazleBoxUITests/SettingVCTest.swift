@@ -34,24 +34,31 @@ class SettingVCTest: XCTestCase {
       snapshot("UserInfoCellをタップしたときの画面")
    }
    
+   //UserInfoCellをタプしたときの表示テスト
+   func testGameCenterCell() {
+      showSettingVC()
+      app.tables.cells.element(boundBy: 1).tap()
+      snapshot("GameCenterCellをタップしたときの画面")
+   }
+   
    //AppReviewCellをタプしたときの表示テスト
    func testTapAppReviewCell() {
       showSettingVC()
-      app.tables.cells.element(boundBy: 3).tap()
+      app.tables.cells.element(boundBy: 4).tap()
       snapshot("AppReviewCellをタップしたときの画面")
    }
    
    //ContactUsCellがタップできるかのテスト
    func testTapContactUsCell() {
       showSettingVC()
-      let ContactUsCell = app.tables.cells.element(boundBy: 4)
+      let ContactUsCell = app.tables.cells.element(boundBy: 5)
       XCTAssertTrue(ContactUsCell.isEnabled)
    }
    
    //LicensesCellがタップできるかのテスト
    func testTapLicensesCell() {
       showSettingVC()
-      let LicensesCell = app.tables.cells.element(boundBy: 5)
+      let LicensesCell = app.tables.cells.element(boundBy: 6)
       XCTAssertTrue(LicensesCell.isEnabled)
       app.terminate()
    }
