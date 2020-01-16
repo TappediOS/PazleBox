@@ -160,6 +160,7 @@ class UserAgreementView: UIView {
    
    @IBAction func TapDontAgreeButton(_ sender: Any) {
       gameSound.PlaySoundsTapButton()
+      Play3DtouchError()
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: true)
       let ComleateView = SCLAlertView(appearance: Appearanse)
       ComleateView.showInfo(NSLocalizedString("UserAgreement", comment: ""), subTitle: NSLocalizedString("YouCantContinue", comment: ""))
@@ -167,6 +168,7 @@ class UserAgreementView: UIView {
    
    @IBAction func TapAgreeButton(_ sender: Any) {
       gameSound.PlaySoundsTapButton()
+      Play3DtouchSuccess()
       UserDefaults.standard.set(true, forKey: "AcceptAgreement")
       NotificationCenter.default.post(name: .AcceptUserAgreement, object: nil)
       self.removeFromSuperview()
@@ -199,6 +201,8 @@ class UserAgreementView: UIView {
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
    func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
    func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
+   func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
+   func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
       
    required init?(coder: NSCoder) {
       super.init(coder: coder)
