@@ -151,7 +151,7 @@ extension TutorialViewController {
    func InitBalloonView() {
       BalloonView = TutorialBalloon(frame: BalloonViewRect)
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
-         self.view.addSubview(BalloonView!)
+         self.view.addSubview(self.BalloonView!)
       }
       
    }
