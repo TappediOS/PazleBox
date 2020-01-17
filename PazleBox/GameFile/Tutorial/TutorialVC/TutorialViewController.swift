@@ -667,6 +667,8 @@ class TutorialViewController: UIViewController {
    
    
    @objc func TapTrashView(_ sender: UITapGestureRecognizer) {
+      //TODO:- アニメーション終わったら消すこと。
+      tapImage?.startAnimation()
       print("Tap TrashView")
       Analytics.logEvent("TapTrashView", parameters: nil)
       guard isLockColleViewANDTrashPice == false else {

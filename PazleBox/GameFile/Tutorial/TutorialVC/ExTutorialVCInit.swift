@@ -162,6 +162,6 @@ extension TutorialViewController {
       let frame = CGRect(x: StartX, y: StartY, width: ViewSize, height: ViewSize)
       self.tapImage = TapImage(frame: frame)
       self.view.addSubview(self.tapImage!)
-      tapImage?.startAnimation()
+      
    }
 }

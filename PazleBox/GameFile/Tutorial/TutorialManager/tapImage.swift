@@ -34,9 +34,20 @@ class TapImage: UIImageView {
    }
    
    public func startAnimation() {
-      let animation = AnimationType.zoom(scale: 2)
-      self.animate(animations: [animation], delay: 3.0, duration: 2.0, options: [.repeat, .curveEaseInOut], completion: {
-         print("アニメーション")
-      })
+      
+      UIView.animate(withDuration: 2,
+                     delay: 0.0,
+                     options: [.autoreverse],
+                     animations: {
+                        self.transform.scaledBy(x: 1.5, y: 1.5)
+                        self.alpha = 0
+                        print("アニメーション1")
+                     },
+                     completion: {_ in
+                           //self.transform.scaledBy(x: 0.5, y: 0.5)
+                           //self.alpha = 1
+                           print("アニメーション2")
+                     })
+
    }
 }
