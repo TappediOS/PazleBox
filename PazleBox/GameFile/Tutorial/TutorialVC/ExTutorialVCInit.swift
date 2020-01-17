@@ -158,7 +158,7 @@ extension TutorialViewController {
    func InitTapImage() {
       let StartX = view.frame.width / 18
       let StartY = view.frame.height / 4
-      let ViewSize = view.frame.width / 10
+      let ViewSize = view.frame.width / 6.5
       let frame = CGRect(x: StartX, y: StartY, width: ViewSize, height: ViewSize)
       self.tapImage = TapImage(frame: frame)
       self.view.addSubview(self.tapImage!)
