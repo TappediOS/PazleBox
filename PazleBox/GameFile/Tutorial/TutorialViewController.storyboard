@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tutorial View Controller-->
         <scene sceneID="hjC-Jm-Nj6">
             <objects>
-                <viewController storyboardIdentifier="TutorialVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LS3-vb-fk3" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LS3-vb-fk3" customClass="TutorialViewController" customModule="PazleBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WvX-Zz-MVo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,6 +49,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Uon-j7-KRT"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="tA5-g4-cqD" id="Zaj-pf-p4m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Owb-BT-JHW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
