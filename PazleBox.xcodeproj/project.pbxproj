@@ -746,6 +746,7 @@
 		BFFA3E7523D1793000CE3B16 /* ExTutorialVCCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA3E7423D1793000CE3B16 /* ExTutorialVCCollectionView.swift */; };
 		BFFA3E7723D1794100CE3B16 /* ExTutorialVCLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA3E7623D1794100CE3B16 /* ExTutorialVCLayout.swift */; };
 		BFFA3E7923D1794F00CE3B16 /* ExTutorialVCInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA3E7823D1794F00CE3B16 /* ExTutorialVCInit.swift */; };
+		BFFA3E7D23D17D0900CE3B16 /* TutorialBalloon.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFA3E7C23D17D0900CE3B16 /* TutorialBalloon.xib */; };
 		BFFB3AD52250F5E7000C90E1 /* GameClearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB3AD42250F5E7000C90E1 /* GameClearView.swift */; };
 		BFFB3AD722510716000C90E1 /* ExUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB3AD622510716000C90E1 /* ExUIView.swift */; };
 		C568DD1EF47C3315C5F1E752 /* Pods_PazleBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E806537451A9DDED852EEBA6 /* Pods_PazleBox.framework */; };
@@ -1542,6 +1543,7 @@
 		BFFA3E7423D1793000CE3B16 /* ExTutorialVCCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExTutorialVCCollectionView.swift; sourceTree = "<group>"; };
 		BFFA3E7623D1794100CE3B16 /* ExTutorialVCLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExTutorialVCLayout.swift; sourceTree = "<group>"; };
 		BFFA3E7823D1794F00CE3B16 /* ExTutorialVCInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExTutorialVCInit.swift; sourceTree = "<group>"; };
+		BFFA3E7C23D17D0900CE3B16 /* TutorialBalloon.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialBalloon.xib; sourceTree = "<group>"; };
 		BFFB3AD42250F5E7000C90E1 /* GameClearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameClearView.swift; sourceTree = "<group>"; };
 		BFFB3AD622510716000C90E1 /* ExUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIView.swift; sourceTree = "<group>"; };
 		E806537451A9DDED852EEBA6 /* Pods_PazleBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PazleBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2890,6 +2892,7 @@
 		BFFA3E7A23D17C9100CE3B16 /* TutorialManager */ = {
 			isa = PBXGroup;
 			children = (
+				BFFA3E7C23D17D0900CE3B16 /* TutorialBalloon.xib */,
 			);
 			path = TutorialManager;
 			sourceTree = "<group>";
@@ -3458,6 +3461,7 @@
 				BF48932C23B9D26D0001FB04 /* play_fill.png in Resources */,
 				BFCE2648224A58A60099A775 /* 32p12Blue.png in Resources */,
 				BFF6D624228412D2000253A2 /* 33p27Blue.png in Resources */,
+				BFFA3E7D23D17D0900CE3B16 /* TutorialBalloon.xib in Resources */,
 				BFCE25BD224A466B0099A775 /* 33p4Green.png in Resources */,
 				BFCE25D8224A466B0099A775 /* 33p18Red.png in Resources */,
 				BFF6D78622896610000253A2 /* 43p49Green.png in Resources */,
