@@ -36,6 +36,11 @@ class TapImage: UIImageView {
       self.frame = frame
    }
    
+   
+   func getIsPlayAnimation() -> Bool {
+      return self.isAnimating
+   }
+   
    //MARK:- アニメーション
    public func startAnimation() {
       UIView.animate(withDuration: animationTime,
