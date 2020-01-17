@@ -747,6 +747,7 @@
 		BFFA3E7723D1794100CE3B16 /* ExTutorialVCLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA3E7623D1794100CE3B16 /* ExTutorialVCLayout.swift */; };
 		BFFA3E7923D1794F00CE3B16 /* ExTutorialVCInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA3E7823D1794F00CE3B16 /* ExTutorialVCInit.swift */; };
 		BFFA3E7D23D17D0900CE3B16 /* TutorialBalloon.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFA3E7C23D17D0900CE3B16 /* TutorialBalloon.xib */; };
+		BFFA3E7F23D17F9100CE3B16 /* TutorialBalloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA3E7E23D17F9100CE3B16 /* TutorialBalloon.swift */; };
 		BFFB3AD52250F5E7000C90E1 /* GameClearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB3AD42250F5E7000C90E1 /* GameClearView.swift */; };
 		BFFB3AD722510716000C90E1 /* ExUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB3AD622510716000C90E1 /* ExUIView.swift */; };
 		C568DD1EF47C3315C5F1E752 /* Pods_PazleBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E806537451A9DDED852EEBA6 /* Pods_PazleBox.framework */; };
@@ -1544,6 +1545,7 @@
 		BFFA3E7623D1794100CE3B16 /* ExTutorialVCLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExTutorialVCLayout.swift; sourceTree = "<group>"; };
 		BFFA3E7823D1794F00CE3B16 /* ExTutorialVCInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExTutorialVCInit.swift; sourceTree = "<group>"; };
 		BFFA3E7C23D17D0900CE3B16 /* TutorialBalloon.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialBalloon.xib; sourceTree = "<group>"; };
+		BFFA3E7E23D17F9100CE3B16 /* TutorialBalloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialBalloon.swift; sourceTree = "<group>"; };
 		BFFB3AD42250F5E7000C90E1 /* GameClearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameClearView.swift; sourceTree = "<group>"; };
 		BFFB3AD622510716000C90E1 /* ExUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIView.swift; sourceTree = "<group>"; };
 		E806537451A9DDED852EEBA6 /* Pods_PazleBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PazleBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2893,6 +2895,7 @@
 			isa = PBXGroup;
 			children = (
 				BFFA3E7C23D17D0900CE3B16 /* TutorialBalloon.xib */,
+				BFFA3E7E23D17F9100CE3B16 /* TutorialBalloon.swift */,
 			);
 			path = TutorialManager;
 			sourceTree = "<group>";
@@ -3817,6 +3820,7 @@
 				BFFA2A8C223384D80023BB71 /* HardCreate.swift in Sources */,
 				BFF6D7A32297B695000253A2 /* ManageLeaderboard.swift in Sources */,
 				BF2C145F2276F39500C7B8FB /* HintPouseView.swift in Sources */,
+				BFFA3E7F23D17F9100CE3B16 /* TutorialBalloon.swift in Sources */,
 				BF332F862249234C009B3042 /* ExGameSeceneEasy.swift in Sources */,
 				BF13BC9923BC7D8D00F2E36D /* UsersSettingViewController.swift in Sources */,
 				BF332F9E224926F3009B3042 /* E12.swift in Sources */,
