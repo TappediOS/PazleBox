@@ -13,6 +13,7 @@ import Firebase
 import FirebaseFirestore
 import TapticEngine
 import SCLAlertView
+import Hero
 
 class TutorialBalloon: UIView {
    
@@ -43,6 +44,8 @@ class TutorialBalloon: UIView {
       //1にすれば真っ黒，0にすれば透明に
       self.layer.shadowOpacity = 0.45
       self.layer.cornerRadius = 20
+      
+      self.isHeroEnabled = true
    }
    
 
