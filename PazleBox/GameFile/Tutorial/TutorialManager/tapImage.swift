@@ -42,11 +42,11 @@ class TapImage: UIImageView {
                      delay: 0.0,
                      options: [.autoreverse, .repeat, .curveEaseIn],
                      animations: {
-                        self.frame = CGRect(x: self.frame.minX, y: self.frame.minY, width: self.frame.width * scaleFactor, height: self.frame.height * scaleFactor )
+                        self.frame = CGRect(x: self.frame.minX, y: self.frame.minY, width: self.frame.width * self.scaleFactor, height: self.frame.height * self.scaleFactor )
                         print("アニメーション1")
                      },
                      completion: {_ in
-                        self.frame = CGRect(x: self.frame.minX, y: self.frame.minY, width: self.frame.width / scaleFactor, height: self.frame.height / scaleFactor)
+                        self.frame = CGRect(x: self.frame.minX, y: self.frame.minY, width: self.frame.width / self.scaleFactor, height: self.frame.height / self.scaleFactor)
                         print("アニメーション2")
                      })
 
