@@ -33,7 +33,7 @@ class TutorialViewController: UIViewController {
      
    var InfoLabel = UILabel()
      
-     var StartBackImageViewY: CGFloat = 0
+   var StartBackImageViewY: CGFloat = 0
    
    var GreenFlame = CGRect()
    var RedFlame = CGRect()
@@ -657,23 +657,7 @@ class TutorialViewController: UIViewController {
    }
    
    @objc func TapOptionButton() {
-      print("Tap OptionButton")
-      Play3DtouchLight()
-      GameSound.PlaySoundsTapButton()
-      Analytics.logEvent("TapOptionBtn", parameters: nil)
-      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: true)
-      let ComleateView = SCLAlertView(appearance: Appearanse)
 
-      ComleateView.addButton(NSLocalizedString("Home", comment: "")){
-         if self.FinishChouseResPuzzleButton?.isHidden == false{
-            self.FinishChouseResPuzzleButton?.hero.id = self.HeroID.CreateBackAndCreatingFinButton
-         }
-         self.dismiss(animated: true)
-         self.Play3DtouchHeavy()
-         self.GameSound.PlaySoundsTapButton()
-         Analytics.logEvent("TapHomeCreateing", parameters: nil)
-      }
-      ComleateView.showInfo(NSLocalizedString("Pouse", comment: ""), subTitle: NSLocalizedString("IfGoHome", comment: ""))
    }
    
    

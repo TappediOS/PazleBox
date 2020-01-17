@@ -748,6 +748,7 @@
 		BFFA3E7923D1794F00CE3B16 /* ExTutorialVCInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA3E7823D1794F00CE3B16 /* ExTutorialVCInit.swift */; };
 		BFFA3E7D23D17D0900CE3B16 /* TutorialBalloon.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFA3E7C23D17D0900CE3B16 /* TutorialBalloon.xib */; };
 		BFFA3E7F23D17F9100CE3B16 /* TutorialBalloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA3E7E23D17F9100CE3B16 /* TutorialBalloon.swift */; };
+		BFFA3E8123D19B4C00CE3B16 /* tap.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFA3E8023D19B4C00CE3B16 /* tap.png */; };
 		BFFB3AD52250F5E7000C90E1 /* GameClearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB3AD42250F5E7000C90E1 /* GameClearView.swift */; };
 		BFFB3AD722510716000C90E1 /* ExUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB3AD622510716000C90E1 /* ExUIView.swift */; };
 		C568DD1EF47C3315C5F1E752 /* Pods_PazleBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E806537451A9DDED852EEBA6 /* Pods_PazleBox.framework */; };
@@ -1546,6 +1547,7 @@
 		BFFA3E7823D1794F00CE3B16 /* ExTutorialVCInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExTutorialVCInit.swift; sourceTree = "<group>"; };
 		BFFA3E7C23D17D0900CE3B16 /* TutorialBalloon.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialBalloon.xib; sourceTree = "<group>"; };
 		BFFA3E7E23D17F9100CE3B16 /* TutorialBalloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialBalloon.swift; sourceTree = "<group>"; };
+		BFFA3E8023D19B4C00CE3B16 /* tap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tap.png; sourceTree = "<group>"; };
 		BFFB3AD42250F5E7000C90E1 /* GameClearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameClearView.swift; sourceTree = "<group>"; };
 		BFFB3AD622510716000C90E1 /* ExUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIView.swift; sourceTree = "<group>"; };
 		E806537451A9DDED852EEBA6 /* Pods_PazleBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PazleBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2896,6 +2898,7 @@
 			children = (
 				BFFA3E7C23D17D0900CE3B16 /* TutorialBalloon.xib */,
 				BFFA3E7E23D17F9100CE3B16 /* TutorialBalloon.swift */,
+				BFFA3E8023D19B4C00CE3B16 /* tap.png */,
 			);
 			path = TutorialManager;
 			sourceTree = "<group>";
@@ -3234,6 +3237,7 @@
 				BFF6D62C228412D2000253A2 /* 33p32Red.png in Resources */,
 				BFF6D620228412D2000253A2 /* 33p26Red.png in Resources */,
 				BF7CD9652240BBD500F8302B /* 23p5Blue.png in Resources */,
+				BFFA3E8123D19B4C00CE3B16 /* tap.png in Resources */,
 				BF640C002244F8FD00333782 /* 32p5Green.png in Resources */,
 				BFF6D74A22896610000253A2 /* 43p44Blue.png in Resources */,
 				BF640BFB2244F8FD00333782 /* 32p5Blue.png in Resources */,
