@@ -36,8 +36,8 @@ class TapImage: UIImageView {
       self.frame = frame
    }
    
+   //MARK:- アニメーション
    public func startAnimation() {
-      
       UIView.animate(withDuration: animationTime,
                      delay: 0.0,
                      options: [.autoreverse, .repeat, .curveEaseOut],
