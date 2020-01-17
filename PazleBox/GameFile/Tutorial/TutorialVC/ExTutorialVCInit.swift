@@ -141,10 +141,10 @@ extension TutorialViewController {
    }
    
    func InitBalloonViewRect() {
-      let ViewSizeWidth = view.frame.width / 16 * 10
+      let ViewSizeWidth = view.frame.width / 18 * 16
       let ViewSiizeHeight = ViewSizeWidth * 0.375
-      let StartX = view.frame.width / 16
-      let StartY = view.frame.height - ViewSiizeHeight - 60
+      let StartX = view.frame.width / 18
+      let StartY = view.frame.height - ViewSiizeHeight * 2
       BalloonViewRect = CGRect(x: StartX, y: StartY, width: ViewSizeWidth, height: ViewSiizeHeight)
    }
    
