@@ -50,6 +50,7 @@ class TutorialBalloon: UIView {
       CommentLabel.adjustsFontSizeToFitWidth = true
       CommentLabel.adjustsFontForContentSizeCategory = true
       CommentLabel.textColor = UIColor(red: 51 / 255, green: 51 / 255, blue: 51 / 255, alpha: 1)
+      CommentLabel.text = "I heard that the weather is fine today, but the chance of rain tomorrow is very high. What will happen?\nI dont know..."
    }
    
 
