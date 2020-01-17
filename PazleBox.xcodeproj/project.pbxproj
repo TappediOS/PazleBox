@@ -2881,12 +2881,28 @@
 			isa = PBXGroup;
 			children = (
 				BFFA3E7023D176C000CE3B16 /* TutorialViewController.storyboard */,
+				BFFA3E7B23D17C9B00CE3B16 /* TutorialVC */,
+				BFFA3E7A23D17C9100CE3B16 /* TutorialManager */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		BFFA3E7A23D17C9100CE3B16 /* TutorialManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TutorialManager;
+			sourceTree = "<group>";
+		};
+		BFFA3E7B23D17C9B00CE3B16 /* TutorialVC */ = {
+			isa = PBXGroup;
+			children = (
 				BFFA3E7223D176D100CE3B16 /* TutorialViewController.swift */,
 				BFFA3E7423D1793000CE3B16 /* ExTutorialVCCollectionView.swift */,
 				BFFA3E7623D1794100CE3B16 /* ExTutorialVCLayout.swift */,
 				BFFA3E7823D1794F00CE3B16 /* ExTutorialVCInit.swift */,
 			);
-			path = Tutorial;
+			path = TutorialVC;
 			sourceTree = "<group>";
 		};
 		F18F91965E347613F23DE2B0 /* Frameworks */ = {
