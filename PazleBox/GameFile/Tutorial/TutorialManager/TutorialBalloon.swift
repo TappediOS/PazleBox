@@ -45,7 +45,7 @@ class TutorialBalloon: UIView {
       self.layer.shadowOpacity = 0.45
       self.layer.cornerRadius = 20
       
-      self.isHeroEnabled = true
+      self.hero.isEnabled = true
    }
    
 
