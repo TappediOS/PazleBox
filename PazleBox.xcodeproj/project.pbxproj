@@ -743,6 +743,9 @@
 		BFFA2A992234D9D30023BB71 /* BaseTile.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFA2A982234D9D30023BB71 /* BaseTile.png */; };
 		BFFA3E7123D176C000CE3B16 /* TutorialViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFFA3E7023D176C000CE3B16 /* TutorialViewController.storyboard */; };
 		BFFA3E7323D176D100CE3B16 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA3E7223D176D100CE3B16 /* TutorialViewController.swift */; };
+		BFFA3E7523D1793000CE3B16 /* ExTutorialVCCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA3E7423D1793000CE3B16 /* ExTutorialVCCollectionView.swift */; };
+		BFFA3E7723D1794100CE3B16 /* ExTutorialVCLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA3E7623D1794100CE3B16 /* ExTutorialVCLayout.swift */; };
+		BFFA3E7923D1794F00CE3B16 /* ExTutorialVCInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA3E7823D1794F00CE3B16 /* ExTutorialVCInit.swift */; };
 		BFFB3AD52250F5E7000C90E1 /* GameClearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB3AD42250F5E7000C90E1 /* GameClearView.swift */; };
 		BFFB3AD722510716000C90E1 /* ExUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB3AD622510716000C90E1 /* ExUIView.swift */; };
 		C568DD1EF47C3315C5F1E752 /* Pods_PazleBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E806537451A9DDED852EEBA6 /* Pods_PazleBox.framework */; };
@@ -1536,6 +1539,9 @@
 		BFFA2A982234D9D30023BB71 /* BaseTile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BaseTile.png; sourceTree = "<group>"; };
 		BFFA3E7023D176C000CE3B16 /* TutorialViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TutorialViewController.storyboard; sourceTree = "<group>"; };
 		BFFA3E7223D176D100CE3B16 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		BFFA3E7423D1793000CE3B16 /* ExTutorialVCCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExTutorialVCCollectionView.swift; sourceTree = "<group>"; };
+		BFFA3E7623D1794100CE3B16 /* ExTutorialVCLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExTutorialVCLayout.swift; sourceTree = "<group>"; };
+		BFFA3E7823D1794F00CE3B16 /* ExTutorialVCInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExTutorialVCInit.swift; sourceTree = "<group>"; };
 		BFFB3AD42250F5E7000C90E1 /* GameClearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameClearView.swift; sourceTree = "<group>"; };
 		BFFB3AD622510716000C90E1 /* ExUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIView.swift; sourceTree = "<group>"; };
 		E806537451A9DDED852EEBA6 /* Pods_PazleBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PazleBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2876,6 +2882,9 @@
 			children = (
 				BFFA3E7023D176C000CE3B16 /* TutorialViewController.storyboard */,
 				BFFA3E7223D176D100CE3B16 /* TutorialViewController.swift */,
+				BFFA3E7423D1793000CE3B16 /* ExTutorialVCCollectionView.swift */,
+				BFFA3E7623D1794100CE3B16 /* ExTutorialVCLayout.swift */,
+				BFFA3E7823D1794F00CE3B16 /* ExTutorialVCInit.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -3736,6 +3745,7 @@
 				BF332F8A22492366009B3042 /* ExGameSeceneHard.swift in Sources */,
 				BF552F12226DDEB400756E16 /* H28.swift in Sources */,
 				BFFA2A8A223384420023BB71 /* Hard.swift in Sources */,
+				BFFA3E7923D1794F00CE3B16 /* ExTutorialVCInit.swift in Sources */,
 				BFADC64023A4A10A00AC6768 /* InternetSellect.swift in Sources */,
 				BF332FB622492784009B3042 /* N4.swift in Sources */,
 				BF332FAE22492723009B3042 /* E20.swift in Sources */,
@@ -3746,6 +3756,7 @@
 				BF332F8E224926CA009B3042 /* E4.swift in Sources */,
 				BF552EA2226DDD2B00756E16 /* E32.swift in Sources */,
 				BF552EA6226DDD3700756E16 /* E34.swift in Sources */,
+				BFFA3E7723D1794100CE3B16 /* ExTutorialVCLayout.swift in Sources */,
 				BF552EF6226DDE4900756E16 /* N44.swift in Sources */,
 				BF94BDDE2352FC33001ACD11 /* ExSellectStageVCCollection.swift in Sources */,
 				BF552F38226DDF2D00756E16 /* H47.swift in Sources */,
@@ -3773,6 +3784,7 @@
 				BF0A9ABD23CC58C300DBE398 /* UserAgreementView.swift in Sources */,
 				BF332FFE2249284F009B3042 /* H19.swift in Sources */,
 				BF552EB2226DDD5000756E16 /* E40.swift in Sources */,
+				BFFA3E7523D1793000CE3B16 /* ExTutorialVCCollectionView.swift in Sources */,
 				BF9F80AA236010A6003512B0 /* TopViewController.swift in Sources */,
 				BF332FF622492834009B3042 /* H15.swift in Sources */,
 				BF552F10226DDEB000756E16 /* H27.swift in Sources */,
