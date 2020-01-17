@@ -153,6 +153,14 @@ extension TutorialViewController {
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
          self.view.addSubview(self.BalloonView!)
       }
-      
+   }
+   
+   func InitTapImage() {
+      let StartX = view.frame.width / 18
+      let StartY = view.frame.height / 4
+      let ViewSize = view.frame.width / 10
+      let frame = CGRect(x: StartX, y: StartY, width: ViewSize, height: ViewSize)
+      self.tapImage = TapImage(frame: frame)
+      self.view.addSubview(self.tapImage!)
    }
 }

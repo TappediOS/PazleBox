@@ -99,6 +99,8 @@ class TutorialViewController: UIViewController {
    var BalloonView: TutorialBalloon?
    var BalloonViewRect = CGRect()
    
+   var tapImage: TapImage?
+   
    //MARK:- Piceがおける最大値
    let MaxCanPutPiceNum = 7
    var isMaxPutPice = false
@@ -130,6 +132,8 @@ class TutorialViewController: UIViewController {
       
       InitBalloonViewRect()
       InitBalloonView()
+      
+      InitTapImage()
       
       
       collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")

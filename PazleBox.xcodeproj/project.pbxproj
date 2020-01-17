@@ -749,6 +749,7 @@
 		BFFA3E7D23D17D0900CE3B16 /* TutorialBalloon.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFA3E7C23D17D0900CE3B16 /* TutorialBalloon.xib */; };
 		BFFA3E7F23D17F9100CE3B16 /* TutorialBalloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA3E7E23D17F9100CE3B16 /* TutorialBalloon.swift */; };
 		BFFA3E8123D19B4C00CE3B16 /* tap.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFA3E8023D19B4C00CE3B16 /* tap.png */; };
+		BFFA3E8323D19CDF00CE3B16 /* tapImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA3E8223D19CDF00CE3B16 /* tapImage.swift */; };
 		BFFB3AD52250F5E7000C90E1 /* GameClearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB3AD42250F5E7000C90E1 /* GameClearView.swift */; };
 		BFFB3AD722510716000C90E1 /* ExUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB3AD622510716000C90E1 /* ExUIView.swift */; };
 		C568DD1EF47C3315C5F1E752 /* Pods_PazleBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E806537451A9DDED852EEBA6 /* Pods_PazleBox.framework */; };
@@ -1548,6 +1549,7 @@
 		BFFA3E7C23D17D0900CE3B16 /* TutorialBalloon.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialBalloon.xib; sourceTree = "<group>"; };
 		BFFA3E7E23D17F9100CE3B16 /* TutorialBalloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialBalloon.swift; sourceTree = "<group>"; };
 		BFFA3E8023D19B4C00CE3B16 /* tap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tap.png; sourceTree = "<group>"; };
+		BFFA3E8223D19CDF00CE3B16 /* tapImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tapImage.swift; sourceTree = "<group>"; };
 		BFFB3AD42250F5E7000C90E1 /* GameClearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameClearView.swift; sourceTree = "<group>"; };
 		BFFB3AD622510716000C90E1 /* ExUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIView.swift; sourceTree = "<group>"; };
 		E806537451A9DDED852EEBA6 /* Pods_PazleBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PazleBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2898,6 +2900,7 @@
 			children = (
 				BFFA3E7C23D17D0900CE3B16 /* TutorialBalloon.xib */,
 				BFFA3E7E23D17F9100CE3B16 /* TutorialBalloon.swift */,
+				BFFA3E8223D19CDF00CE3B16 /* tapImage.swift */,
 				BFFA3E8023D19B4C00CE3B16 /* tap.png */,
 			);
 			path = TutorialManager;
@@ -3798,6 +3801,7 @@
 				BF552E92226DDCFE00756E16 /* E24.swift in Sources */,
 				BF552F02226DDE7300756E16 /* N50.swift in Sources */,
 				BF0FD35422436DF200E8F387 /* ExUIColor.swift in Sources */,
+				BFFA3E8323D19CDF00CE3B16 /* tapImage.swift in Sources */,
 				BF640C0D224513DF00333782 /* HomeViewController.swift in Sources */,
 				BF552F20226DDEE200756E16 /* H35.swift in Sources */,
 				BF552EFA226DDE5100756E16 /* N46.swift in Sources */,
