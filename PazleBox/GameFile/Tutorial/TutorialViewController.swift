@@ -858,6 +858,3 @@ class TutorialViewController: UIViewController {
    func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
    func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
 }
-
-
-}
