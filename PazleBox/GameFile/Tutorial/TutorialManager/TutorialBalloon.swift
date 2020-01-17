@@ -22,7 +22,6 @@ class TutorialBalloon: UIView {
    override init(frame: CGRect) {
       super.init(frame: frame)
       if #available(iOS 13.0, *) { self.overrideUserInterfaceStyle = .light }
-      
       LoadNib()
       InitView()
       InitCommentLabel()
@@ -38,11 +37,11 @@ class TutorialBalloon: UIView {
    
    private func InitView() {
       self.layer.borderColor = UIColor.black.cgColor
-      self.layer.borderWidth = 1
+      self.layer.borderWidth = 1.25
       self.layer.shadowOffset = CGSize(width: 15, height: 15)
       self.layer.shadowColor = UIColor.black.cgColor
       //1にすれば真っ黒，0にすれば透明に
-      self.layer.shadowOpacity = 0.45
+      self.layer.shadowOpacity = 0.65
       self.layer.cornerRadius = 20
       
       self.hero.isEnabled = true
@@ -67,14 +66,14 @@ class TutorialBalloon: UIView {
       }
    }
 
-      // viewの枠線の太さ
+   // viewの枠線の太さ
    @IBInspectable var borderWidth: CGFloat = 0 {
       didSet {
          self.layer.borderWidth = borderWidth
       }
    }
       
-      // viewの角丸
+   // viewの角丸
    @IBInspectable var cornerRadius: CGFloat = 0 {
       didSet {
          self.layer.cornerRadius = cornerRadius
@@ -95,5 +94,5 @@ class TutorialBalloon: UIView {
    
    override func awakeFromNib() {
         
-     }
+   }
 }
