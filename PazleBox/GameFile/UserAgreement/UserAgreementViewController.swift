@@ -51,14 +51,22 @@ class UserAgreementViewController: UIViewController {
    //NOTE:- もし，チュートリアルの画面に遷移するんやったらここでいいんじゃね。
    @objc func TapAcceptChatchNotification(notification: Notification) {
       print("Tap Accept UserAgreement")
-      print("\nTabBarControllerに遷移します。")
+      print("\nTutorialに遷移します。")
       
-      let Storybord = UIStoryboard(name: "Main", bundle: nil)
-      let PuzzleTabBarC = Storybord.instantiateViewController(withIdentifier: "PuzzleTabBarC") as! PuzzleTabBarController
-      PuzzleTabBarC.modalPresentationStyle = .fullScreen
-      self.present(PuzzleTabBarC, animated: true, completion: {
-         print("PuzzleTabBarCにプレゼント終わった")
+      let Storybord = UIStoryboard(name: "TutorialViewController", bundle: nil)
+      let TutorialVC = Storybord.instantiateViewController(withIdentifier: "TutorialVC") as! TutorialViewController
+      TutorialVC.modalPresentationStyle = .fullScreen
+      self.present(TutorialVC, animated: true, completion: {
+         print("TutorialVCにプレゼント終わった")
       })
+      
+      //これはTabに行く処理
+//      let Storybord = UIStoryboard(name: "Main", bundle: nil)
+//      let PuzzleTabBarC = Storybord.instantiateViewController(withIdentifier: "PuzzleTabBarC") as! PuzzleTabBarController
+//      PuzzleTabBarC.modalPresentationStyle = .fullScreen
+//      self.present(PuzzleTabBarC, animated: true, completion: {
+//         print("PuzzleTabBarCにプレゼント終わった")
+//      })
    }
    
 }
