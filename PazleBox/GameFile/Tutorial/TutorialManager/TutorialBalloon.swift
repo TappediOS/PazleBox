@@ -17,8 +17,7 @@ import SCLAlertView
 class TutorialBalloon: UIView {
    
    @IBOutlet weak var CommentLabel: UILabel!
-   
-   
+      
    override init(frame: CGRect) {
       super.init(frame: frame)
       if #available(iOS 13.0, *) { self.overrideUserInterfaceStyle = .light }
@@ -27,11 +26,6 @@ class TutorialBalloon: UIView {
       InitView()
       InitCommentLabel()
    }
-   
-   override func awakeFromNib() {
-      
-   }
-   
 
    private func LoadNib() {
       let bundle = Bundle(for: type(of: self))
@@ -55,6 +49,7 @@ class TutorialBalloon: UIView {
    private func InitCommentLabel() {
       CommentLabel.adjustsFontSizeToFitWidth = true
       CommentLabel.adjustsFontForContentSizeCategory = true
+      CommentLabel.textColor = UIColor(red: 51 / 255, green: 51 / 255, blue: 51 / 255, alpha: 1)
    }
    
 
@@ -93,4 +88,8 @@ class TutorialBalloon: UIView {
       super.init(coder: coder)
       LoadNib()
    }
+   
+   override func awakeFromNib() {
+        
+     }
 }

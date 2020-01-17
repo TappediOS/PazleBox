@@ -95,6 +95,10 @@ class TutorialViewController: UIViewController {
    
    var BackGroundImageView: BackGroundImageViews?
    
+   
+   var BalloonView: TutorialBalloon?
+   var BalloonViewRect = CGRect()
+   
    //MARK:- Piceがおける最大値
    let MaxCanPutPiceNum = 7
    var isMaxPutPice = false
@@ -123,6 +127,9 @@ class TutorialViewController: UIViewController {
       InitOnPiceView()
       
       CrearCheckedStage()
+      
+      InitBalloonViewRect()
+      InitBalloonView()
       
       
       collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")

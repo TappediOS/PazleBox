@@ -139,4 +139,16 @@ extension TutorialViewController {
       OptionButton.accessibilityIdentifier = "CleateStageVC_OptionButton"
       BackImageView?.accessibilityIdentifier = "CleateStageVC_BackImageView"
    }
+   
+   func InitBalloonViewRect() {
+      let ViewSizeWidth = view.frame.width / 12 * 10
+      let ViewSiizeHeight = ViewSizeWidth / 0.375
+      let StartX = view.frame.width / 12
+      let StartY = view.frame.height - ViewSiizeHeight - 60
+      BalloonViewRect = CGRect(x: StartX, y: StartY, width: ViewSizeWidth, height: ViewSiizeHeight)
+   }
+   
+   func InitBalloonView() {
+      BalloonView = TutorialBalloon(frame: BalloonViewRect)
+   }
 }
