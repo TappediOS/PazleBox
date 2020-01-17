@@ -76,7 +76,7 @@ extension TutorialViewController: UICollectionViewDataSource {
 }
 
 
-extension CleateStageViewController: UICollectionViewDelegateFlowLayout {
+extension TutorialViewController: UICollectionViewDelegateFlowLayout {
    
    // Screenサイズに応じたセルサイズを返す
 //   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
