@@ -150,5 +150,6 @@ extension TutorialViewController {
    
    func InitBalloonView() {
       BalloonView = TutorialBalloon(frame: BalloonViewRect)
+      self.view.addSubview(BalloonView!)
    }
 }
