@@ -13,7 +13,7 @@ import ViewAnimator
 class TapImage: UIImageView {
    
    let scaleFactor: CGFloat = 1.65
-   let animationTime: Double = 1.5
+   let animationTime: Double = 1.35
    
    override init(frame: CGRect) {
       super.init(frame: frame)
@@ -40,7 +40,7 @@ class TapImage: UIImageView {
       
       UIView.animate(withDuration: animationTime,
                      delay: 0.0,
-                     options: [.autoreverse, .repeat, .curveEaseIn],
+                     options: [.autoreverse, .repeat, .curveEaseOut],
                      animations: {
                         self.frame = CGRect(x: self.frame.minX, y: self.frame.minY, width: self.frame.width * self.scaleFactor, height: self.frame.height * self.scaleFactor )
                         print("アニメーション1")
