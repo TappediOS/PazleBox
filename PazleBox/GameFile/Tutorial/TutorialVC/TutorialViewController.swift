@@ -943,7 +943,7 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       print("\n-----アニメーション(FinButton)スタート-----\n")
       tapImage?.appearImageView()
       let frame = FinishCreatePuzzleButton?.frame
-      tapImage?.changePosition(posiX: frame!.midX, posiY: (frame!.midY + frame!.minY) / 2)
+      tapImage?.changePosition(posiX: frame!.minX + 12, posiY: (frame!.midY + frame!.minY) / 2)
       tapImage?.startAnimation()
    }
    
