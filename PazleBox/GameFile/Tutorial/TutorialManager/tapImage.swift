@@ -15,9 +15,9 @@ class TapImage: UIImageView {
    let scaleFactor: CGFloat = 1.45
    let animationTime: Double = 0.825
    
-   let dragScaleX: CGFloat = -60
-   let dragScaleY: CGFloat = 125
-   let dragAniTile: Double = 1.5
+   let dragScaleX: CGFloat = -90
+   let dragScaleY: CGFloat = 150
+   let dragAniTile: Double = 1.6
    
    override init(frame: CGRect) {
       super.init(frame: frame)
