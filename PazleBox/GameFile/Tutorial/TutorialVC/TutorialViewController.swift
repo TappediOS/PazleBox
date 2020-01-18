@@ -104,6 +104,8 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
    //MARK:- Piceがおける最大値
    let MaxCanPutPiceNum = 7
    var isMaxPutPice = false
+   
+   var TutorialManager = tutorialManager()
         
    override func viewDidLoad() {
       super.viewDidLoad()

@@ -33,6 +33,6 @@ class TutorialManager {
    }
    
    public func TapTutorialView() {
-      
+      if state == .advance { advanceTutorial() }
    }
 }
