@@ -595,6 +595,13 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       RedPiceImageView.accessibilityIdentifier = "RedPiceImageView"
       BluePiceImageView.accessibilityIdentifier = "BluePiceImageView"
       
+      //チュートリアルで１回目の時はタップできないようにする。
+      if tutorialManager.getState() == .operationCollectionViewFirst {
+         GreenPiceImageView.isUserInteractionEnabled = false
+         RedPiceImageView.isUserInteractionEnabled = false
+         BluePiceImageView.isUserInteractionEnabled = false
+      }
+      
       view.addSubview(GreenPiceImageView)
       view.addSubview(RedPiceImageView)
       view.addSubview(BluePiceImageView)
