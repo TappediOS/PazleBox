@@ -150,6 +150,7 @@ class TutorialManager {
          advanceTutorial()
       case 15:
          print("チュートリアル終わり！")
+         FinishTutorial()
       default:
          print("チュートリアル番号が間違っています。")
          return
