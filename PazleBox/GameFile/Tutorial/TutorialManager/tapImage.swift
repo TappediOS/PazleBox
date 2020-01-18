@@ -15,6 +15,9 @@ class TapImage: UIImageView {
    let scaleFactor: CGFloat = 1.45
    let animationTime: Double = 0.825
    
+   let dragScaleX: CGFloat = -60
+   let dragScaleY: CGFloat = 80
+   
    override init(frame: CGRect) {
       super.init(frame: frame)
       
@@ -52,6 +55,21 @@ class TapImage: UIImageView {
                      },
                      completion: {_ in
                         self.frame = CGRect(x: self.frame.minX, y: self.frame.minY, width: self.frame.width / self.scaleFactor, height: self.frame.height / self.scaleFactor)
+                        print("アニメーション2")
+                     })
+
+   }
+   
+   public func startDragAndDropAnimation() {
+      UIView.animate(withDuration: animationTime,
+                     delay: 0.0,
+                     options: [.repeat, .curveEaseOut],
+                     animations: {
+                        self.frame = CGRect(x: self.frame.minX + self.dragScaleX, y: self.frame.minY + self.dragScaleY, width: self.frame.width, height: self.frame.height  )
+                        print("アニメーション1")
+                     },
+                     completion: {_ in
+                        self.frame = CGRect(x: self.frame.minX - self.dragScaleX, y: self.frame.minY - self.dragScaleX, width: self.frame.width, height: self.frame.height)
                         print("アニメーション2")
                      })
 
