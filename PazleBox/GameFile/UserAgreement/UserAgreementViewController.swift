@@ -125,7 +125,7 @@ class UserAgreementViewController: UIViewController {
    
    @objc func stopBGMforTutorialCatchNotification(notificaton: Notification) {
       print("\n-----BGMだんだん小さくするよ-----\n")
-      fadeOutBGM(fromVolume: BGM.volume, toVolume: 0, overTime: 3.1)
+      fadeOutBGM(fromVolume: BGM.volume, toVolume: 0, overTime: 2.85)
    }
    
    @objc func showTabBarCatchNotification (notificaton: Notification) {
