@@ -108,10 +108,7 @@ class TutorialViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      self.hero.isEnabled = true
-      
-      self.view.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
-      
+      InitViewSetting()
       InitBackgroundImageView()
       InitBackTileImageView()
       GetStartBackImageViewY()
@@ -135,15 +132,8 @@ class TutorialViewController: UIViewController {
       
       InitTapImage()
       
+      InitCollectionView()
       
-      collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-      collectionView.delegate = self
-      collectionView.dataSource = self
-        
-      collectionView.collectionViewLayout.invalidateLayout()
-        
-      collectionView.hero.modifiers = [.cascade]
-      collectionView.backgroundColor = UIColor.flatWhite().withAlphaComponent(0.5)
         
       InitHeroID()
       InitAccessibilityIdentifires()

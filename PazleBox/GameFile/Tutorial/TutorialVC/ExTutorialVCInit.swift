@@ -12,6 +12,12 @@ import FlatUIKit
 import ChameleonFramework
 
 extension TutorialViewController {
+   func InitViewSetting() {
+      self.hero.isEnabled = true
+      
+      self.view.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
+   }
+   
    func InitBackgroundImageView() {
       BackGroundImageView = BackGroundImageViews(frame: self.view.frame)
       self.view.addSubview(BackGroundImageView!)
@@ -138,6 +144,17 @@ extension TutorialViewController {
       InfoLabel.accessibilityIdentifier = "CleateStageVC_InfoLabel"
       OptionButton.accessibilityIdentifier = "CleateStageVC_OptionButton"
       BackImageView?.accessibilityIdentifier = "CleateStageVC_BackImageView"
+   }
+   
+   func InitCollectionView() {
+      collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+      collectionView.delegate = self
+      collectionView.dataSource = self
+        
+      collectionView.collectionViewLayout.invalidateLayout()
+        
+      collectionView.hero.modifiers = [.cascade]
+      collectionView.backgroundColor = UIColor.flatWhite().withAlphaComponent(0.5)
    }
    
    func InitBalloonViewRect() {
