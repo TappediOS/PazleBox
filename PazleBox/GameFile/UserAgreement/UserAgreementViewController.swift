@@ -122,9 +122,9 @@ class UserAgreementViewController: UIViewController {
    }
    
    @objc func showTabBarCatchNotification (notificaton: Notification) {
-      fadeOutBGM(fromVolume: BGM.volume, toVolume: 0, overTime: 1)
+      fadeOutBGM(fromVolume: BGM.volume, toVolume: 0, overTime: 3)
       
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
         print("\n-----タブバー表示する通知ゲット!!!-----\n")
         let Storybord = UIStoryboard(name: "Main", bundle: nil)
         let PuzzleTabBarC = Storybord.instantiateViewController(withIdentifier: "PuzzleTabBarC") as! PuzzleTabBarController
