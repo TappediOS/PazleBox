@@ -626,8 +626,9 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       //画像を置き終わったら，終わった旨をTutorialManagerに伝える。
       if tutorialManager.getState() == .operationCollectionViewFirst {
          tutorialManager.finishTapCollectionViewFirst()
+      } else {
+         tutorialManager.finishTapCollectionViewSecond()
       }
-      tutorialManager.finishTapCollectionViewSecond()
    }
    
    private func CompleteFillContentsArrayUseFillContentsArray(StageObject: [String: Any]) {
