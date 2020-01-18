@@ -12,8 +12,8 @@ import ViewAnimator
 
 class TapImage: UIImageView {
    
-   let scaleFactor: CGFloat = 1.6
-   let animationTime: Double = 1.1
+   let scaleFactor: CGFloat = 1.45
+   let animationTime: Double = 0.825
    
    override init(frame: CGRect) {
       super.init(frame: frame)
