@@ -65,4 +65,5 @@ extension Notification.Name {
    static let StartAnimationDragAndDropFirst = Notification.Name("StartAnimationDragAndDropFirst")
    static let StartAnimationDragAndDropSecond = Notification.Name("StartAnimationDragAndDropSecond")
    static let StartAnimationResButton = Notification.Name("StartAnimationResButton")
+   static let FinishTutorial = Notification.Name("FinishTutorial")
 }

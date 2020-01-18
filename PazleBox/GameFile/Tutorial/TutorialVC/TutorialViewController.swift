@@ -992,6 +992,16 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       tapImage?.clearImageView()
    }
    
+   @objc func FinishTutorialCatchNotification (notificaton: Notification) {
+      print("\n-----チュートリアル終わり-----\n")
+      let Storybord = UIStoryboard(name: "Main", bundle: nil)
+      let PuzzleTabBarC = Storybord.instantiateViewController(withIdentifier: "PuzzleTabBarC") as! PuzzleTabBarController
+      PuzzleTabBarC.modalPresentationStyle = .fullScreen
+      self.present(PuzzleTabBarC, animated: true, completion: {
+         print("PuzzleTabBarCにプレゼント終わった")
+      })
+   }
+   
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
    func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
    func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }

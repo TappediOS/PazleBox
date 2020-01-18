@@ -93,6 +93,10 @@ class TutorialManager {
       NotificationCenter.default.post(name: .ClearTapImageView, object: nil)
    }
    
+   func FinishTutorial() {
+      NotificationCenter.default.post(name: .FinishTutorial, object: nil)
+   }
+   
 
    
    public func TapTutorialView() {
