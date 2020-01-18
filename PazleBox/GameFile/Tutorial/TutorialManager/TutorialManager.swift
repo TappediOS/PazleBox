@@ -129,7 +129,7 @@ class TutorialManager {
    public func finishTapCollectionViewSecond() {
       TuronOffCollectionViewNotification()
       advanceTutorial()
-      
+      state = .operationTapPiceViewSecond
    }
    
    public func finishDragAndDropPiceFirst() {
