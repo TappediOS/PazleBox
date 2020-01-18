@@ -35,6 +35,7 @@
 		BF1BD1EC2279C4060047496B /* NormalStageClearInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD1EB2279C4060047496B /* NormalStageClearInfomation.swift */; };
 		BF1BD1EE2279C4120047496B /* HardStageClearInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BD1ED2279C4120047496B /* HardStageClearInfomation.swift */; };
 		BF1CE88C22D4C1C000ACF7F8 /* ExUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE88B22D4C1C000ACF7F8 /* ExUIImage.swift */; };
+		BF1DABE923D2A5CF007F50F8 /* TutorialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1DABE823D2A5CF007F50F8 /* TutorialManager.swift */; };
 		BF1DBD5A237FC34700F6B2D1 /* SellectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1DBD59237FC34700F6B2D1 /* SellectView.xib */; };
 		BF1DBD5E237FCD5A00F6B2D1 /* SellectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1DBD5D237FCD5A00F6B2D1 /* SellectView.swift */; };
 		BF1DBD61238A445500F6B2D1 /* FireStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1DBD60238A445500F6B2D1 /* FireStores.swift */; };
@@ -810,6 +811,7 @@
 		BF1BD1EB2279C4060047496B /* NormalStageClearInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalStageClearInfomation.swift; sourceTree = "<group>"; };
 		BF1BD1ED2279C4120047496B /* HardStageClearInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardStageClearInfomation.swift; sourceTree = "<group>"; };
 		BF1CE88B22D4C1C000ACF7F8 /* ExUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIImage.swift; sourceTree = "<group>"; };
+		BF1DABE823D2A5CF007F50F8 /* TutorialManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialManager.swift; sourceTree = "<group>"; };
 		BF1DBD59237FC34700F6B2D1 /* SellectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellectView.xib; sourceTree = "<group>"; };
 		BF1DBD5D237FCD5A00F6B2D1 /* SellectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectView.swift; sourceTree = "<group>"; };
 		BF1DBD60238A445500F6B2D1 /* FireStores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStores.swift; sourceTree = "<group>"; };
@@ -2901,6 +2903,7 @@
 				BFFA3E7C23D17D0900CE3B16 /* TutorialBalloon.xib */,
 				BFFA3E7E23D17F9100CE3B16 /* TutorialBalloon.swift */,
 				BFFA3E8223D19CDF00CE3B16 /* tapImage.swift */,
+				BF1DABE823D2A5CF007F50F8 /* TutorialManager.swift */,
 				BFFA3E8023D19B4C00CE3B16 /* tap.png */,
 			);
 			path = TutorialManager;
@@ -3773,6 +3776,7 @@
 				BF332FB22249276F009B3042 /* N2.swift in Sources */,
 				BF552EDA226DDDD700756E16 /* N30.swift in Sources */,
 				BF332F8A22492366009B3042 /* ExGameSeceneHard.swift in Sources */,
+				BF1DABE923D2A5CF007F50F8 /* TutorialManager.swift in Sources */,
 				BF552F12226DDEB400756E16 /* H28.swift in Sources */,
 				BFFA2A8A223384420023BB71 /* Hard.swift in Sources */,
 				BFFA3E7923D1794F00CE3B16 /* ExTutorialVCInit.swift in Sources */,
