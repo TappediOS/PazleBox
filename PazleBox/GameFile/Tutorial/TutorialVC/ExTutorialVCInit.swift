@@ -18,6 +18,7 @@ extension TutorialViewController {
       
       let tapGesture = UITapGestureRecognizer(target: self, action: #selector(TappedView(_ :)))
       tapGesture.delegate = self
+      tapGesture.cancelsTouchesInView = false
       self.view.addGestureRecognizer(tapGesture)
    }
    
