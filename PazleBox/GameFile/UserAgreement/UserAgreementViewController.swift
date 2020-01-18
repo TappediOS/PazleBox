@@ -64,24 +64,5 @@ class UserAgreementViewController: UIViewController {
             print("TutorialVCにプレゼント終わった")
          })
       })
-      
-      
-      
-//      self.view.fadeIn(type: .Slow, completed: {
-//         self.present(TutorialVC, animated: true, completion: {
-//            print("TutorialVCにプレゼント終わった")
-//         })
-//      })
-      
-      
-      
-      //これはTabに行く処理
-//      let Storybord = UIStoryboard(name: "Main", bundle: nil)
-//      let PuzzleTabBarC = Storybord.instantiateViewController(withIdentifier: "PuzzleTabBarC") as! PuzzleTabBarController
-//      PuzzleTabBarC.modalPresentationStyle = .fullScreen
-//      self.present(PuzzleTabBarC, animated: true, completion: {
-//         print("PuzzleTabBarCにプレゼント終わった")
-//      })
    }
-   
 }
