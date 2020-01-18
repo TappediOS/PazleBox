@@ -732,6 +732,10 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       FinishCreatePuzzleButton?.isHidden = true
       FinishChouseResPuzzleButton?.isHidden = false
       Analytics.logEvent("TapFinPutBtn", parameters: nil)
+      
+      //Tutorialの処理
+      //FinButton押したことをManageに通知
+      tutorialManager.finishTapFinButton()
    }
    
    @objc func TapFinChouseResPuzzleButton() {

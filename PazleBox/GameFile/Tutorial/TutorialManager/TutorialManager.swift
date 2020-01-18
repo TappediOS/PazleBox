@@ -105,6 +105,7 @@ class TutorialManager {
       case 11:
          advanceTutorial()
       case 12:
+         print("状態が10のときは初期位置決めのためにピース移動するまで待つ。")
          return
       case 13:
          return
@@ -143,7 +144,8 @@ class TutorialManager {
    }
    
    public func finishTapFinButton() {
-      
+      advanceTutorial()
+      state = .advance
    }
    
    public func finishTapFinChoseResButton() {
