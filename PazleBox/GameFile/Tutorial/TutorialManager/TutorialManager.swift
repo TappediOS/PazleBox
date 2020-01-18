@@ -80,6 +80,7 @@ class TutorialManager {
       case 5:
          advanceTutorial()
       case 6:
+         print("状態が6のときはPiceViewタップするまで待つ。")
          return
       case 7:
          advanceTutorial()

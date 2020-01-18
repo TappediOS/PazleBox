@@ -61,7 +61,7 @@ extension TutorialViewController: UICollectionViewDataSource {
       
       //Tutoriαlの状態がCollectionViewをタップできるかどうかを判定。
       let state = tutorialManager.getState()
-      if state == .operationCollectionViewFirst || state == .operationCollectionViewSecond {
+      if state != .operationCollectionViewFirst && state != .operationCollectionViewSecond {
          print("CollectionViewをタップできる状態ではありません。")
          return
       }
