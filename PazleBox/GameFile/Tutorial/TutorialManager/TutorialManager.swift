@@ -33,27 +33,27 @@ class TutorialManager {
    }
    
    func TurnOnCollectionViewNotification() {
-      
+      NotificationCenter.default.post(name: .TurnOnCollectionView, object: nil)
    }
    
    func TuronOffCollectionViewNotification() {
-      
+      NotificationCenter.default.post(name: .TuronOffCollectionView, object: nil)
    }
    
    func TurnOnFinButtonNotification() {
-      
+      NotificationCenter.default.post(name: .TurnOnFinButton, object: nil)
    }
    
    func TuronOffFinButtonNotification() {
-      
+      NotificationCenter.default.post(name: .TuronOffFinButton, object: nil)
    }
    
    func TurnOnChoseResButtonNotification() {
-      
+      NotificationCenter.default.post(name: .TurnOnChoseResButton, object: nil)
    }
    
    func TuronOffChoseResButtonNotification() {
-      
+      NotificationCenter.default.post(name: .TuronOffChoseResButton, object: nil)
    }
    
 
