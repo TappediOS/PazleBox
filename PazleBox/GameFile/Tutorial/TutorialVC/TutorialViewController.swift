@@ -840,15 +840,11 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
    }
    
    
-   
+   //MARK:- Viewがタップされたときのイベント
+   //チュートリアルの進行に使用する。
    @objc func TappedView(_ sender: UITapGestureRecognizer) {
-      
       print("TapView")
-      //タップ直後に中身を実行
-      if sender.state == .ended {
-         //Labelをタップしたら、デバッグエリアに"タップされました"を表示
-         print("タップされました")
-      }
+      
    }
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
