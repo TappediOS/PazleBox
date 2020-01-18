@@ -77,6 +77,10 @@ class TutorialManager {
       NotificationCenter.default.post(name: .StartAnimationFinButton, object: nil)
    }
    
+   func StartAnimationResButton() {
+      NotificationCenter.default.post(name: .StartAnimationResButton, object: nil)
+   }
+   
    func StartAnimationDragAndDropFirst() {
       NotificationCenter.default.post(name: .StartAnimationDragAndDropFirst, object: nil)
    }
@@ -131,12 +135,12 @@ class TutorialManager {
          return
       case 11:
          advanceTutorial()
-         TurnOnChoseResButtonNotification()
-         state = .operationResChoseButton
       case 12:
-         print("状態が10のときは初期位置決めのためにピース移動するまで待つ。")
+         advanceTutorial()
+         StartAnimationResButton()
          return
       case 13:
+         print("状態が13のときは初期位置決めのためにピース移動するまで待つ。")
          return
       case 14:
          advanceTutorial()
@@ -187,8 +191,9 @@ class TutorialManager {
    public func finishTapFinButton() {
       print("Finボタンのタップおわったよ")
       advanceTutorial()
+      TurnOnChoseResButtonNotification()
+      state = .operationResChoseButton
       ClearTapImageView()
-      state = .advance
    }
    
    public func finishTapFinChoseResButton() {

@@ -948,6 +948,14 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       tapImage?.startAnimation()
    }
    
+   @objc func StartAnimationResButtonCatchNotification (notificaton: Notification) {
+      print("\n-----アニメーション(ResButton)スタート-----\n")
+      tapImage?.appearImageView()
+      let frame = FinishChouseResPuzzleButton?.frame
+      tapImage?.changePosition(posiX: frame!.minX + 12, posiY: (frame!.midY + frame!.minY) / 2)
+      tapImage?.startAnimation()
+   }
+   
    @objc func StartAnimationDragAndDropFirstCatchNotification (notificaton: Notification) {
       print("\n-----アニメーション(DragDrop)スタート 1回目-----\n")
       guard WorkPlacePiceImageArray.count == 3 else {
