@@ -52,26 +52,35 @@ class TapImage: UIImageView {
                      options: [.autoreverse, .repeat, .curveEaseOut],
                      animations: {
                         self.frame = CGRect(x: self.frame.minX, y: self.frame.minY, width: self.frame.width * self.scaleFactor, height: self.frame.height * self.scaleFactor )
-                        print("アニメーション1")
                      },
                      completion: {_ in
                         self.frame = CGRect(x: self.frame.minX, y: self.frame.minY, width: self.frame.width / self.scaleFactor, height: self.frame.height / self.scaleFactor)
-                        print("アニメーション2")
                      })
 
    }
    
-   public func startDragAndDropAnimation() {
+   public func startDragAndDropAnimationFirst() {
       UIView.animate(withDuration: dragAniTile,
                      delay: 0.1,
                      options: [.repeat, .curveEaseIn],
                      animations: {
                         self.frame = CGRect(x: self.frame.minX + self.dragScaleX, y: self.frame.minY + self.dragScaleY, width: self.frame.width, height: self.frame.height  )
-                        print("アニメーション1")
                      },
                      completion: {_ in
                         self.frame = CGRect(x: self.frame.minX - self.dragScaleX, y: self.frame.minY - self.dragScaleX, width: self.frame.width, height: self.frame.height)
-                        print("アニメーション2")
+                     })
+
+   }
+   
+   public func startDragAndDropAnimationSecond() {
+      UIView.animate(withDuration: dragAniTile,
+                     delay: 0.1,
+                     options: [.repeat, .curveEaseIn],
+                     animations: {
+                        self.frame = CGRect(x: self.frame.minX, y: self.frame.minY + self.dragScaleY, width: self.frame.width, height: self.frame.height  )
+                     },
+                     completion: {_ in
+                        self.frame = CGRect(x: self.frame.minX, y: self.frame.minY - self.dragScaleX, width: self.frame.width, height: self.frame.height)
                      })
 
    }
