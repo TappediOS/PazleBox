@@ -126,3 +126,27 @@
 "DontAccept" = "Dont Accept";
 "Accept" = "Accept";
 "YouCantContinue" = "You cant continue until you have agreed with the User Agreement and the Privacy Policy.";
+
+//-------------------- チュートリアル --------------------//
+"Tutorial1" = "This app is for creating a stage and sharing it with everyone";
+"Tutorial2" = "- Tutorial -\n\nLet's actually make a stage!";
+
+"Tutorial3" = "First, tap your favorite piece";
+"Tutorial4" = "OK 👍";
+"Tutorial5" = "Tap it and you'll see three colored pieces";
+"Tutorial6" = "Let's drag one piece and place it on the board!";
+
+"Tutorial7" = "☆ Excellent ☆";
+"Tutorial8" = "Let's tap on a different piece just like before!";
+"Tutorial9" = "Drag & drop when leaving so that it does not cover other pieces";
+
+"Tutorial10" = "Tap this button when the stage is complete";
+
+"Tutorial11" = "Finally decide the initial position of the piece!";
+"Tutorial12" = "Let's move the piece that we put by dragging it!";
+
+"Tutorial13" = "Tap this button once you have determined the initial position";
+
+"Tutorial14" = "The stage you created can be played by everyone around the world!";
+"Tutorial15" = "You can also play the stage created by everyone in the world!!";
+//-------------------- チュートリアル --------------------//
