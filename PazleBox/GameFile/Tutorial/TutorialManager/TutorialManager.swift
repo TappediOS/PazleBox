@@ -109,24 +109,28 @@ class TutorialManager {
          advanceTutorial()
          state = .advance
          gameSound.PlaySoundsTapButton()
+         Play3DtouchMedium()
       case 2:
          advanceTutorial()
          TurnOnCollectionViewNotification()
          StartAnimationCollectionViewFirst()
          state = .operationCollectionViewFirst
          gameSound.PlaySoundsTapButton()
+         Play3DtouchMedium()
       case 3:
          print("状態が3のときはCollectionViewタップするまで待つ。")
          return
       case 4:
          advanceTutorial()
          gameSound.PlaySoundsTapButton()
+         Play3DtouchMedium()
       case 5:
          advanceTutorial()
          TurnOnPiceImagesNotification()
          StartAnimationDragAndDropFirst()
          state = .operationTapPiceViewFirst
          gameSound.PlaySoundsTapButton()
+         Play3DtouchMedium()
       case 6:
          print("状態が6のときはPiceViewタップするまで待つ。")
          return
@@ -136,6 +140,7 @@ class TutorialManager {
          StartAnimationCollectionViewSecond()
          state = .operationCollectionViewSecond
          gameSound.PlaySoundsTapButton()
+         Play3DtouchMedium()
       case 8:
          print("状態が8のときはCollectionViewタップするまで待つ。")
          return
@@ -152,6 +157,7 @@ class TutorialManager {
          advanceTutorial()
          StartAnimationResButton()
          gameSound.PlaySoundsTapButton()
+         Play3DtouchMedium()
          return
       case 13:
          print("状態が13のときは初期位置決めのためにピース移動するまで待つ。")
@@ -163,6 +169,7 @@ class TutorialManager {
          print("チュートリアル終わり！")
          FinishTutorial()
          gameSound.PlaySoundsTapButton()
+         Play3DtouchMedium()
       default:
          print("チュートリアル番号が間違っています。")
          return
