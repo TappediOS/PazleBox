@@ -68,7 +68,7 @@ extension TutorialViewController {
       NotificationCenter.default.addObserver(self, selector: #selector(StartAnimationDragAndDropFirstCatchNotification(notificaton:)), name: .StartAnimationDragAndDropFirst, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(StartAnimationDragAndDropSecondCatchNotification(notificaton:)), name: .StartAnimationDragAndDropSecond, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(StartAnimationResButtonCatchNotification(notificaton:)), name: .StartAnimationResButton, object: nil)
-       NotificationCenter.default.addObserver(self, selector: #selector(FinishTutorialCatchNotification(notificaton:)), name: .FinishTutorial, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(FinishTutorialCatchNotification(notificaton:)), name: .FinishTutorial, object: nil)
    }
     
    func InitFinishCreatePuzzleButton() {

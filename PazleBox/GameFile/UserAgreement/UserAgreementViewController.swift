@@ -25,6 +25,7 @@ class UserAgreementViewController: UIViewController {
    
    private func InitNotificationCenter() {
        NotificationCenter.default.addObserver(self, selector: #selector(TapAcceptChatchNotification(notification:)), name: .AcceptUserAgreement, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(showTabBarCatchNotification(notificaton:)), name: .showTabBar, object: nil)
    }
    
    private func InitAgreementViewSizeSetting() {
@@ -60,9 +61,25 @@ class UserAgreementViewController: UIViewController {
       TutorialVC.modalPresentationStyle = .fullScreen
       TutorialVC.modalTransitionStyle = .crossDissolve
       self.AgreeView?.fadeOut(type: .Normal, completed: {
+         self.AgreeView?.removeFromSuperview()
          self.present(TutorialVC, animated: true, completion: {
             print("TutorialVCにプレゼント終わった")
          })
       })
+   }
+   
+   @objc func showTabBarCatchNotification (notificaton: Notification) {
+      
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+        print("\n-----タブバー表示する通知ゲット!!!-----\n")
+        let Storybord = UIStoryboard(name: "Main", bundle: nil)
+        let PuzzleTabBarC = Storybord.instantiateViewController(withIdentifier: "PuzzleTabBarC") as! PuzzleTabBarController
+        PuzzleTabBarC.modalPresentationStyle = .fullScreen
+        PuzzleTabBarC.modalTransitionStyle = .crossDissolve
+        self.present(PuzzleTabBarC, animated: true, completion: {
+           print("PuzzleTabBarCにプレゼント終わった")
+        })
+      }
+      
    }
 }
