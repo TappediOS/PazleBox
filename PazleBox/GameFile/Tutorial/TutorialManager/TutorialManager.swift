@@ -178,7 +178,9 @@ class TutorialManager {
       advanceTutorial()
       ClearTapImageView()
       TurnOnFinButtonNotification()
-      StartAnimationFinButton()
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+         self.StartAnimationFinButton()
+      }
       state = .operationFinButton
    }
    
