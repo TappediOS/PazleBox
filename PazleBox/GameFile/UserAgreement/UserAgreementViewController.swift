@@ -12,10 +12,11 @@ import UIKit
 class UserAgreementViewController: UIViewController {
    var BackGroundImageView: BackGroundImageViews?
    var UserAgreementViewFrame = CGRect()
+   var AgreeView: UserAgreementView?
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      
+      self.hero.isEnabled = true
       InitNotificationCenter()
       InitAgreementViewSizeSetting()
       InitBackgroundImageView()
@@ -40,10 +41,11 @@ class UserAgreementViewController: UIViewController {
    }
    
    private func InitUserAgreementView() {
-      let AgreeView = UserAgreementView(frame: UserAgreementViewFrame)
-      AgreeView.center.y = view.center.y
-      AgreeView.center.x = view.center.x
-      self.view.addSubview(AgreeView)
+      AgreeView = UserAgreementView(frame: UserAgreementViewFrame)
+      AgreeView?.center.y = view.center.y
+      AgreeView?.center.x = view.center.x
+      self.view.addSubview(AgreeView!)
+      AgreeView?.fadeIn(type: .Normal, completed: nil)
    }
    
    
@@ -56,9 +58,22 @@ class UserAgreementViewController: UIViewController {
       let Storybord = UIStoryboard(name: "TutorialViewController", bundle: nil)
       let TutorialVC = Storybord.instantiateViewController(withIdentifier: "TutorialVC") as! TutorialViewController
       TutorialVC.modalPresentationStyle = .fullScreen
-      self.present(TutorialVC, animated: true, completion: {
-         print("TutorialVCにプレゼント終わった")
+      
+      AgreeView?.fadeIn(type: .Slow, completed: {
+         self.present(TutorialVC, animated: true, completion: {
+            print("TutorialVCにプレゼント終わった")
+         })
       })
+      
+      
+      
+//      self.view.fadeIn(type: .Slow, completed: {
+//         self.present(TutorialVC, animated: true, completion: {
+//            print("TutorialVCにプレゼント終わった")
+//         })
+//      })
+      
+      
       
       //これはTabに行く処理
 //      let Storybord = UIStoryboard(name: "Main", bundle: nil)

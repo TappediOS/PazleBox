@@ -997,9 +997,12 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       let Storybord = UIStoryboard(name: "Main", bundle: nil)
       let PuzzleTabBarC = Storybord.instantiateViewController(withIdentifier: "PuzzleTabBarC") as! PuzzleTabBarController
       PuzzleTabBarC.modalPresentationStyle = .fullScreen
-      self.present(PuzzleTabBarC, animated: true, completion: {
-         print("PuzzleTabBarCにプレゼント終わった")
+      self.view.fadeIn(type: .Slow, completed: {
+         self.present(PuzzleTabBarC, animated: true, completion: {
+            print("PuzzleTabBarCにプレゼント終わった")
+         })
       })
+      
    }
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
