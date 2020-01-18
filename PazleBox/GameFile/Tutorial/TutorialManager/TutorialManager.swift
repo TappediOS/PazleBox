@@ -162,6 +162,7 @@ class TutorialManager {
    public func finishDragAndDropPiceSecond() {
       advanceTutorial()
       TurnOnFinButtonNotification()
+      StartAnimationFinButton()
       state = .operationFinButton
    }
    
