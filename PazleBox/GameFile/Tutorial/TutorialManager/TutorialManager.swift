@@ -84,7 +84,8 @@ class TutorialManager {
          advanceTutorial()
       case 5:
          advanceTutorial()
-         
+         TurnOnPiceImagesNotification()
+         state = .operationTapPiceViewFirst
       case 6:
          print("状態が6のときはPiceViewタップするまで待つ。")
          return

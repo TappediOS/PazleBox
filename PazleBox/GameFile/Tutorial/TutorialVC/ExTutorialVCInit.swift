@@ -59,7 +59,7 @@ extension TutorialViewController {
       NotificationCenter.default.addObserver(self, selector: #selector(TurnOffFinButtonCatchNotification(notificaton:)), name: .TuronOffFinButton, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(TurnOnChoseResButtonCatchNotification(notificaton:)), name: .TurnOnChoseResButton, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(TurnOffChoseResButtonCatchNotification(notificaton:)), name: .TuronOffChoseResButton, object: nil)
-      NotificationCenter.default.addObserver(self, selector: #selector(TuronOnPiceImageViewCatchNotification(notificaton:)), name: .TuronOffChoseResButton, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(TuronOnPiceImageViewCatchNotification(notificaton:)), name: .TuronOnPiceImageView, object: nil)
    }
     
    func InitFinishCreatePuzzleButton() {
