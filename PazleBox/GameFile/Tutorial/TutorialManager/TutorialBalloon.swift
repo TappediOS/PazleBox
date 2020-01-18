@@ -55,9 +55,13 @@ class TutorialBalloon: UIView {
       CommentLabel.text = NSLocalizedString("Tutorial1", comment: "")
    }
    
+   func getTutorialNum(TutorialNum: Int) -> String {
+      return "Tutorial" + String(TutorialNum)
+   }
+   
    
    public func advance(advanceTutorialNum: Int) {
-      let tutorialStr = "Tutorial" + String(advanceTutorialNum)
+      let tutorialStr = getTutorialNum(TutorialNum: advanceTutorialNum)
       CommentLabel.text = NSLocalizedString(tutorialStr, comment: "")
    }
 
