@@ -863,38 +863,32 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
    
    @objc func TurnOnCollectionViewCatchNotification(notificaton: Notification) {
       print("\n-----CollectionViewをオンにします-----\n")
-      let tutorialNum = tutorialManager.getTutorialNum()
-      BalloonView?.advance(advanceTutorialNum: tutorialNum)
+      self.collectionView.isUserInteractionEnabled = true
    }
    
    @objc func TurnOffCollectionViewCatchNotification(notificaton: Notification) {
       print("\n-----CollectionViewをオフにします-----\n")
-      let tutorialNum = tutorialManager.getTutorialNum()
-      BalloonView?.advance(advanceTutorialNum: tutorialNum)
+      self.collectionView.isUserInteractionEnabled = false
    }
    
    @objc func TurnOnFinButtonCatchNotification(notificaton: Notification) {
       print("\n-----FinButtonをオンにします-----\n")
-      let tutorialNum = tutorialManager.getTutorialNum()
-      BalloonView?.advance(advanceTutorialNum: tutorialNum)
+      self.FinishCreatePuzzleButton?.isEnabled = true
    }
    
    @objc func TurnOffFinButtonCatchNotification(notificaton: Notification) {
       print("\n-----FinButtonをオフにします-----\n")
-      let tutorialNum = tutorialManager.getTutorialNum()
-      BalloonView?.advance(advanceTutorialNum: tutorialNum)
+      self.FinishCreatePuzzleButton?.isEnabled = false
    }
    
    @objc func TurnOnChoseResButtonCatchNotification(notificaton: Notification) {
       print("\n-----ChoseResButtonをオンにします-----\n")
-      let tutorialNum = tutorialManager.getTutorialNum()
-      BalloonView?.advance(advanceTutorialNum: tutorialNum)
+      self.FinishChouseResPuzzleButton?.isEnabled = true
    }
    
    @objc func TurnOffChoseResButtonCatchNotification(notificaton: Notification) {
       print("\n-----ChoseResButtonをオフにします-----\n")
-      let tutorialNum = tutorialManager.getTutorialNum()
-      BalloonView?.advance(advanceTutorialNum: tutorialNum)
+      self.FinishChouseResPuzzleButton?.isEnabled = false
    }
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
