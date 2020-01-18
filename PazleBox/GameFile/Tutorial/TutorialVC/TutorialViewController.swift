@@ -136,7 +136,8 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       
       InitCollectionView()
       
-        
+      SetUpEachObjetForTutorial()
+      
       InitHeroID()
       InitAccessibilityIdentifires()
    }

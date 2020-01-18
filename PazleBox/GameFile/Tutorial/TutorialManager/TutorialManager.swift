@@ -18,7 +18,7 @@ enum TutorialState {
 
 class TutorialManager {
    var state = TutorialState.none
-   var tutorialNum = 0
+   var tutorialNum = 1
    
    init() {
       state = .advance

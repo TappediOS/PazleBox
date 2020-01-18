@@ -161,6 +161,8 @@ extension TutorialViewController {
         
       collectionView.hero.modifiers = [.cascade]
       collectionView.backgroundColor = UIColor.flatWhite().withAlphaComponent(0.5)
+      
+      
    }
    
    func InitBalloonViewRect() {
@@ -186,5 +188,11 @@ extension TutorialViewController {
       self.tapImage = TapImage(frame: frame)
       self.view.addSubview(self.tapImage!)
       tapImage?.clearImageView()
+   }
+   
+   func SetUpEachObjetForTutorial() {
+      collectionView.isUserInteractionEnabled = false
+      FinishCreatePuzzleButton?.isEnabled = false
+      FinishChouseResPuzzleButton?.isEnabled = false
    }
 }
