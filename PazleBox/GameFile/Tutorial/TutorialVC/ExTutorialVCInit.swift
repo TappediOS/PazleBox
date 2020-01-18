@@ -63,6 +63,7 @@ extension TutorialViewController {
       
       NotificationCenter.default.addObserver(self, selector: #selector(StartAnimationCollectionViewFirstCatchNotification(notificaton:)), name: .StartAnimationCollectionViewFirst, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(StartAnimationCollectionViewSecondCatchNotification(notificaton:)), name: .StartAnimationCollectionViewSecond, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(ClearTapImageViewCatchNotification(notificaton:)), name: .ClearTapImageView, object: nil)
    }
     
    func InitFinishCreatePuzzleButton() {

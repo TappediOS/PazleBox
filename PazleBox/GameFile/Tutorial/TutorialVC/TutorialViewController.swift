@@ -933,10 +933,15 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
    
    @objc func StartAnimationCollectionViewSecondCatchNotification (notificaton: Notification) {
       print("\n-----アニメーション(CollectionView)スタート　2回目-----\n")
-     tapImage?.appearImageView()
-     let frame = collectionView.frame
+      tapImage?.appearImageView()
+      let frame = collectionView.frame
       tapImage?.changePosition(posiX: (frame.midX + frame.minX) / 2, posiY: (frame.midY + frame.minY) / 2)
-     tapImage?.startAnimation()
+      tapImage?.startAnimation()
+   }
+   
+   @objc func ClearTapImageViewCatchNotification (notificaton: Notification) {
+      print("\n-----アニメーションを非表示にする-----\n")
+      tapImage?.clearImageView()
    }
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }

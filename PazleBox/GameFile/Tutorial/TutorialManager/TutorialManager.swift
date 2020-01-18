@@ -73,6 +73,10 @@ class TutorialManager {
       NotificationCenter.default.post(name: .StartAnimationCollectionViewSecond, object: nil)
    }
    
+   func ClearTapImageView() {
+      NotificationCenter.default.post(name: .ClearTapImageView, object: nil)
+   }
+   
 
    
    public func TapTutorialView() {

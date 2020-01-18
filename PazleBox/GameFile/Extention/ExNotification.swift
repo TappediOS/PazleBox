@@ -60,4 +60,5 @@ extension Notification.Name {
    static let TuronOnPiceImageView = Notification.Name("TuronOnPiceImageView")
    static let StartAnimationCollectionViewFirst = Notification.Name("StartAnimationCollectionViewFirst")
    static let StartAnimationCollectionViewSecond = Notification.Name("StartAnimationCollectionViewSecond")
+   static let ClearTapImageView = Notification.Name("ClearTapImageView")
 }
