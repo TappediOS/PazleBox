@@ -9,12 +9,15 @@
 import Foundation
 
 enum TutorialState {
-   case none                      //状態なし
-   case wait                      //まつ
-   case advance                   //文字を進める状態
-   case operationButton           //ユーザがボタン操作する状態
-   case operationCollectionViewFirst   //ユーザがCollectionView操作する状態
-   case operationCollectionViewSecond
+   case none                           //状態なし
+   case wait                           //まつ
+   case advance                        //文字を進める状態
+   case operationFinButton             //ユーザがFinButtonを操作する状態
+   case operationResChoseButton        //ユーザがResChoseButtonを操作する状態
+   case operationCollectionViewFirst   //ユーザがCollectionView操作する状態(1回目)
+   case operationCollectionViewSecond  //ユーザがCollectionView操作する状態(2回目)
+   case operationTapPiceViewFirst      //ユーザがPiceView操作する状態(1回目)
+   case operationTapPiceViewSecond     //ユーザがPiceView操作する状態(2回目)
 }
 
 class TutorialManager {
@@ -109,11 +112,13 @@ class TutorialManager {
    public func finishTapCollectionViewFirst() {
       TuronOffCollectionViewNotification()
       advanceTutorial()
+      state = .advance
    }
    
    public func finishTapCollectionViewSecond() {
       TuronOffCollectionViewNotification()
       advanceTutorial()
+      
    }
    
    public func finishDragAndDropPice() {
