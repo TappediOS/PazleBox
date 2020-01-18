@@ -3751,7 +3751,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "34DC18E8-4009-4DF3-A0CA-C5B13447A545"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/Tutorial/TutorialVC/TutorialViewController.swift"
