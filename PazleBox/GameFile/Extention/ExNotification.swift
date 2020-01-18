@@ -48,4 +48,6 @@ extension Notification.Name {
    static let SuccessSentStageToFireStore = Notification.Name("SuccessSentStageToFireStore")
    
    static let AcceptUserAgreement = Notification.Name("AcceptUserAgreement")
+   
+   static let AdvanceTutorial = Notification.Name("AdvanceTutorial")
 }

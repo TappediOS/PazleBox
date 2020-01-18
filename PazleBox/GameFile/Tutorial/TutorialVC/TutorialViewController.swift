@@ -846,7 +846,14 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
    //チュートリアルの進行に使用する。
    @objc func TappedView(_ sender: UITapGestureRecognizer) {
       print("TapView")
-      
+      tutorialManager.TapTutorialView()
+   }
+   
+   
+   @objc func AdvanceTutorialCatchNotification(notificaton: Notification) {
+      print("\n-----チュートリアルを進めます。-----\n")
+      let tutorialNum = tutorialManager.getTutorialNum()
+      BalloonView?.advance(advanceTutorialNum: tutorialNum)
    }
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }

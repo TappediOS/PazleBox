@@ -50,6 +50,8 @@ extension TutorialViewController {
       
       NotificationCenter.default.addObserver(self, selector: #selector(ErrSentStageCatchNotification(notification:)), name: .ErrSentStageToFireStore, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(SuccessSentStagePiceTouchEndedCatchNotification(notification:)), name: .SuccessSentStageToFireStore, object: nil)
+      
+      NotificationCenter.default.addObserver(self, selector: #selector(AdvanceTutorialCatchNotification(notificaton:)), name: .AdvanceTutorial, object: nil)
    }
     
    func InitFinishCreatePuzzleButton() {

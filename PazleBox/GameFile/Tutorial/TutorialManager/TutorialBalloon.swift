@@ -52,9 +52,14 @@ class TutorialBalloon: UIView {
       CommentLabel.adjustsFontSizeToFitWidth = true
       CommentLabel.adjustsFontForContentSizeCategory = true
       CommentLabel.textColor = UIColor(red: 51 / 255, green: 51 / 255, blue: 51 / 255, alpha: 1)
-      CommentLabel.text = "このアプリはステージを作ってみんなで共有するアプリです"
+      CommentLabel.text = NSLocalizedString("Tutorial1", comment: "")
    }
    
+   
+   public func advance(advanceTutorialNum: Int) {
+      let tutorialStr = "Tutorial1" + String(advanceTutorialNum)
+      CommentLabel.text = NSLocalizedString(tutorialStr, comment: "")
+   }
 
 
    
