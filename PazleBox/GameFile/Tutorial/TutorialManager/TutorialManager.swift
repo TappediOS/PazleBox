@@ -32,6 +32,32 @@ class TutorialManager {
       NotificationCenter.default.post(name: .AdvanceTutorial, object: nil)
    }
    
+   func TurnOnCollectionViewNotification() {
+      
+   }
+   
+   func TuronOffCollectionViewNotification() {
+      
+   }
+   
+   func TurnOnFinButtonNotification() {
+      
+   }
+   
+   func TuronOffFinButtonNotification() {
+      
+   }
+   
+   func TurnOnChoseResButtonNotification() {
+      
+   }
+   
+   func TuronOffChoseResButtonNotification() {
+      
+   }
+   
+
+   
    public func TapTutorialView() {
       if state == .advance { advanceTutorial() }
    }

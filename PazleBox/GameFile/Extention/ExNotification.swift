@@ -50,4 +50,11 @@ extension Notification.Name {
    static let AcceptUserAgreement = Notification.Name("AcceptUserAgreement")
    
    static let AdvanceTutorial = Notification.Name("AdvanceTutorial")
+   
+   static let TurnOnCollectionView = Notification.Name("TurnOnCollectionView")
+   static let TuronOffCollectionView = Notification.Name("TuronOffCollectionView")
+   static let TurnOnFinButton = Notification.Name("TurnOnFinButton")
+   static let TuronOffFinButton = Notification.Name("TuronOffFinButton")
+   static let TurnOnChoseResButton = Notification.Name("TurnOnChoseResButton")
+   static let TuronOffChoseResButton = Notification.Name("TuronOffChoseResButton")
 }
