@@ -104,6 +104,8 @@ class TutorialManager {
          return
       case 11:
          advanceTutorial()
+         TurnOnChoseResButtonNotification()
+         state = .operationResChoseButton
       case 12:
          print("状態が10のときは初期位置決めのためにピース移動するまで待つ。")
          return
