@@ -77,6 +77,14 @@ class TutorialManager {
       NotificationCenter.default.post(name: .StartAnimationFinButton, object: nil)
    }
    
+   func StartAnimationDragAndDropFirst() {
+      NotificationCenter.default.post(name: .StartAnimationDragAndDropFirst, object: nil)
+   }
+   
+   func StartAnimationDragAndDropSecond() {
+      NotificationCenter.default.post(name: .StartAnimationDragAndDropSecond, object: nil)
+   }
+   
    func ClearTapImageView() {
       NotificationCenter.default.post(name: .ClearTapImageView, object: nil)
    }
@@ -102,6 +110,7 @@ class TutorialManager {
       case 5:
          advanceTutorial()
          TurnOnPiceImagesNotification()
+         StartAnimationDragAndDropFirst()
          state = .operationTapPiceViewFirst
       case 6:
          print("状態が6のときはPiceViewタップするまで待つ。")
@@ -150,6 +159,7 @@ class TutorialManager {
    public func finishTapCollectionViewSecond() {
       TuronOffCollectionViewNotification()
       ClearTapImageView()
+      StartAnimationDragAndDropSecond()
       advanceTutorial()
       state = .operationTapPiceViewSecond
    }

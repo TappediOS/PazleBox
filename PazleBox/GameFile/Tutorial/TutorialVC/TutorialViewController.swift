@@ -947,6 +947,30 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       tapImage?.startAnimation()
    }
    
+   @objc func StartAnimationDragAndDropFirstCatchNotification (notificaton: Notification) {
+      print("\n-----アニメーション(DragDrop)スタート 1回目-----\n")
+      guard WorkPlacePiceImageArray.count == 3 else {
+         print("3じゃない")
+         return
+      }
+      tapImage?.appearImageView()
+      let frame = WorkPlacePiceImageArray[1].frame
+      tapImage?.changePosition(posiX: frame.minX, posiY: (frame.midY + frame.minY) / 2)
+      tapImage?.startDragAndDropAnimationFirst()
+   }
+   
+   @objc func StartAnimationDragAndDropSecondCatchNotification (notificaton: Notification) {
+      print("\n-----アニメーション(DragDrop)スタート 2回目-----\n")
+      guard WorkPlacePiceImageArray.count == 3 else {
+         print("3じゃない")
+         return
+      }
+      tapImage?.appearImageView()
+      let frame = WorkPlacePiceImageArray[0].frame
+      tapImage?.changePosition(posiX: frame.minX, posiY: (frame.midY + frame.minY) / 2)
+      tapImage?.startDragAndDropAnimationSecond()
+   }
+   
    @objc func ClearTapImageViewCatchNotification (notificaton: Notification) {
       print("\n-----アニメーションを非表示にする-----\n")
       tapImage?.stopAnimation()
