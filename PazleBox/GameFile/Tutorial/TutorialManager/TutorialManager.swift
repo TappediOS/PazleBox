@@ -97,8 +97,10 @@ class TutorialManager {
          print("状態が8のときはCollectionViewタップするまで待つ。")
          return
       case 9:
+         print("状態が9のときはPiceViewタップするまで待つ。")
          return
       case 10:
+         print("状態が10のときはFinボタンタップするまで待つ。")
          return
       case 11:
          advanceTutorial()
