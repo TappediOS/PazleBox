@@ -59,7 +59,7 @@ class UserAgreementViewController: UIViewController {
       let TutorialVC = Storybord.instantiateViewController(withIdentifier: "TutorialVC") as! TutorialViewController
       TutorialVC.modalPresentationStyle = .fullScreen
       
-      AgreeView?.fadeIn(type: .Slow, completed: {
+      self.AgreeView?.fadeOut(type: .Normal, completed: {
          self.present(TutorialVC, animated: true, completion: {
             print("TutorialVCにプレゼント終わった")
          })
