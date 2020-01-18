@@ -29,7 +29,7 @@ class TutorialManager {
    
    public func advanceTutorial() {
       tutorialNum += 1
-      //TODO:- NotificationCenterで送る
+      NotificationCenter.default.post(name: .AdvanceTutorial, object: nil)
    }
    
    public func TapTutorialView() {
