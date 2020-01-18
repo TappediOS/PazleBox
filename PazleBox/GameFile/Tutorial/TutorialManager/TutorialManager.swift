@@ -104,7 +104,11 @@ class TutorialManager {
    }
    
    
-   public func finishTapCollectionView() {
+   public func finishTapCollectionViewFirst() {
+      TuronOffCollectionViewNotification()
+   }
+   
+   public func finishTapCollectionViewSecond() {
       TuronOffCollectionViewNotification()
    }
    
