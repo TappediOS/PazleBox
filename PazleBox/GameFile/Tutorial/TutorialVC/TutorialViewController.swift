@@ -955,8 +955,9 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
          return
       }
       tapImage?.appearImageView()
-      let frame = WorkPlacePiceImageArray[1].frame
-      tapImage?.bringSubviewToFront(WorkPlacePiceImageArray[1])
+      //配列には，[緑, 赤，青]の順で入っていることに注意。
+      let frame = WorkPlacePiceImageArray[0].frame
+      tapImage?.bringSubviewToFront(WorkPlacePiceImageArray[0])
       tapImage?.changePosition(posiX: frame.minX, posiY: (frame.midY + frame.minY) / 2)
       tapImage?.startDragAndDropAnimationFirst()
    }
@@ -968,8 +969,9 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
          return
       }
       tapImage?.appearImageView()
-      let frame = WorkPlacePiceImageArray[0].frame
-      tapImage?.bringSubviewToFront(WorkPlacePiceImageArray[0])
+      //配列には，[緑, 赤，青]の順で入っていることに注意。
+      let frame = WorkPlacePiceImageArray[2].frame
+      tapImage?.bringSubviewToFront(WorkPlacePiceImageArray[2])
       tapImage?.changePosition(posiX: frame.minX, posiY: (frame.midY + frame.minY) / 2)
       tapImage?.startDragAndDropAnimationSecond()
    }
