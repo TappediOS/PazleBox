@@ -165,6 +165,7 @@ class TutorialManager {
       case 14:
          advanceTutorial()
          gameSound.PlaySoundsTapButton()
+         Play3DtouchMedium()
       case 15:
          print("チュートリアル終わり！")
          FinishTutorial()
