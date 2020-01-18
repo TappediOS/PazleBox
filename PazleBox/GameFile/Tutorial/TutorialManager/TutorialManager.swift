@@ -63,30 +63,33 @@ class TutorialManager {
       switch self.tutorialNum {
       case 1:
          advanceTutorial()
+         state = .advance
       case 2:
          advanceTutorial()
+         TurnOnCollectionViewNotification()
+         state = .operationCollectionView
       case 3:
-         advanceTutorial()
+         return
       case 4:
          advanceTutorial()
       case 5:
          advanceTutorial()
       case 6:
-         advanceTutorial()
+         return
       case 7:
          advanceTutorial()
       case 8:
-         advanceTutorial()
+         return
       case 9:
-         advanceTutorial()
+         return
       case 10:
-         advanceTutorial()
+         return
       case 11:
          advanceTutorial()
       case 12:
-         advanceTutorial()
+         return
       case 13:
-         advanceTutorial()
+         return
       case 14:
          advanceTutorial()
       case 15:
