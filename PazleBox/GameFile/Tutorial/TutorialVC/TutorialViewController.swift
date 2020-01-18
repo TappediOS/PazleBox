@@ -417,7 +417,7 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
          let SentNum = userInfo["ArryNum"] as! Int
          print("送信者番号: \(SentNum)")
          
-         //もしPiceがゴミ箱の上に乗ってて，かつ，ロックされてなかったら
+         //もしPiceがゴミ箱の上に乗ってて，かつ，ロックされてなかったら削除する
          if isPiceOnGarbageBox(SentNum: SentNum) == true && isLockColleViewANDTrashPice == false {
             DeletePiceOnGarbageBox(SentNum: SentNum)
             UpdateAllPiceArryNum()
@@ -439,6 +439,7 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
                PiceImageArray[SentNum].ReBackPicePosition()
             }
          }else{
+            //ユーザがおきたい場所にピースを置くことに成功したときの処理
             PiceImageArray[SentNum].UpdateBeforXY()
             
             //置くときに最大なら置けなくする。
@@ -446,6 +447,16 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
                isMaxPutPice = true
                collectionView.alpha = 0.45
             }
+            
+            
+            //---- Tutoriαl ----//
+            //ピースおき終わったよって教えてあげる。
+            if tutorialManager.getState() == .operationTapPiceViewFirst {
+               tutorialManager.finishDragAndDropPiceFirst()
+            } else {
+               tutorialManager.finishDragAndDropPiceSecond()
+            }
+            //---- Tutoriαl ----//
             
          }
    

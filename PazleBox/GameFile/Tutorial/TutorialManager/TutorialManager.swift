@@ -130,7 +130,8 @@ class TutorialManager {
    }
    
    public func finishDragAndDropPiceFirst() {
-      
+      advanceTutorial()
+      state = .advance
    }
    
    public func finishDragAndDropPiceSecond() {
