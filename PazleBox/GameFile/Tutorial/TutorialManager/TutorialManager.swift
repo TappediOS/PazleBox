@@ -70,6 +70,7 @@ class TutorialManager {
          TurnOnCollectionViewNotification()
          state = .operationCollectionViewFirst
       case 3:
+         print("状態が3のときはCollectionViewタップするまで待つ。")
          return
       case 4:
          advanceTutorial()
@@ -82,6 +83,7 @@ class TutorialManager {
          TurnOnCollectionViewNotification()
          state = .operationCollectionViewSecond
       case 8:
+         print("状態が8のときはCollectionViewタップするまで待つ。")
          return
       case 9:
          return
@@ -106,10 +108,12 @@ class TutorialManager {
    
    public func finishTapCollectionViewFirst() {
       TuronOffCollectionViewNotification()
+      advanceTutorial()
    }
    
    public func finishTapCollectionViewSecond() {
       TuronOffCollectionViewNotification()
+      advanceTutorial()
    }
    
    public func finishDragAndDropPice() {

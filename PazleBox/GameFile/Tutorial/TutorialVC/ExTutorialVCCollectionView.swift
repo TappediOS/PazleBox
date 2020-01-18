@@ -58,6 +58,14 @@ extension TutorialViewController: UICollectionViewDataSource {
       ///もしCellタップしたときにOnViewがあったら全部消す。
       Play3DtouchLight()
       
+      
+      //Tutoriαlの状態がCollectionViewをタップできるかどうかを判定。
+      let state = tutorialManager.getState()
+      if state == .operationCollectionViewFirst || state == .operationCollectionViewSecond {
+         print("CollectionViewをタップできる状態ではありません。")
+         return
+      }
+      
       guard isMaxPutPice == false else {
          print("最大です。")
          return
