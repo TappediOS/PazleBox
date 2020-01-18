@@ -125,11 +125,11 @@ class UserAgreementViewController: UIViewController {
    
    @objc func stopBGMforTutorialCatchNotification(notificaton: Notification) {
       print("\n-----BGMだんだん小さくするよ-----\n")
-      fadeOutBGM(fromVolume: BGM.volume, toVolume: 0, overTime: 3.5)
+      fadeOutBGM(fromVolume: BGM.volume, toVolume: 0, overTime: 3.1)
    }
    
    @objc func showTabBarCatchNotification (notificaton: Notification) {
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
         print("\n-----タブバー表示する通知ゲット!!!-----\n")
         let Storybord = UIStoryboard(name: "Main", bundle: nil)
         let PuzzleTabBarC = Storybord.instantiateViewController(withIdentifier: "PuzzleTabBarC") as! PuzzleTabBarController
