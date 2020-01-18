@@ -998,6 +998,7 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
    
    @objc func FinishTutorialCatchNotification (notificaton: Notification) {
       print("\n-----チュートリアル終わり-----\n")
+      NotificationCenter.default.post(name: .stopBGMforTutorial, object: nil)
       self.view.fadeOut(type: .Slow, completed: {
          self.dismiss(animated: false, completion: {
             NotificationCenter.default.post(name: .showTabBar, object: nil)

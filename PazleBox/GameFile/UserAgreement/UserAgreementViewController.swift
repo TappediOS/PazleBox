@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import AVFoundation
+import TapticEngine
 
 class UserAgreementViewController: UIViewController {
    var BackGroundImageView: BackGroundImageViews?
@@ -31,8 +32,9 @@ class UserAgreementViewController: UIViewController {
    }
    
    private func InitNotificationCenter() {
-       NotificationCenter.default.addObserver(self, selector: #selector(TapAcceptChatchNotification(notification:)), name: .AcceptUserAgreement, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(TapAcceptChatchNotification(notification:)), name: .AcceptUserAgreement, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(showTabBarCatchNotification(notificaton:)), name: .showTabBar, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(stopBGMforTutorialCatchNotification(notificaton:)), name: .stopBGMforTutorial, object: nil)
    }
    
    private func InitBGM() {
@@ -121,10 +123,13 @@ class UserAgreementViewController: UIViewController {
       }
    }
    
+   @objc func stopBGMforTutorialCatchNotification(notificaton: Notification) {
+      print("\n-----BGMだんだん小さくするよ-----\n")
+      fadeOutBGM(fromVolume: BGM.volume, toVolume: 0, overTime: 3.5)
+   }
+   
    @objc func showTabBarCatchNotification (notificaton: Notification) {
-      fadeOutBGM(fromVolume: BGM.volume, toVolume: 0, overTime: 3)
-      
-      DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) {
         print("\n-----タブバー表示する通知ゲット!!!-----\n")
         let Storybord = UIStoryboard(name: "Main", bundle: nil)
         let PuzzleTabBarC = Storybord.instantiateViewController(withIdentifier: "PuzzleTabBarC") as! PuzzleTabBarController

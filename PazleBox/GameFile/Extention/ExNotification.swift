@@ -67,4 +67,6 @@ extension Notification.Name {
    static let StartAnimationResButton = Notification.Name("StartAnimationResButton")
    static let FinishTutorial = Notification.Name("FinishTutorial")
    static let showTabBar = Notification.Name("showTabBar")
+   
+   static let stopBGMforTutorial = Notification.Name("stopBGMforTutorial")
 }
