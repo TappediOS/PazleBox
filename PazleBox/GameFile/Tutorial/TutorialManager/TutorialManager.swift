@@ -8,13 +8,12 @@
 
 import Foundation
 
-
-
 enum TutorialState {
-   case none
-   case wait      //まつ
-   case advance   //文字を進める状態
-   case operaton  //ユーザが操作する状態
+   case none                      //状態なし
+   case wait                      //まつ
+   case advance                   //文字を進める状態
+   case operationButton           //ユーザがボタン操作する状態
+   case operationCollectionView   //ユーザがCollectionView操作する状態
 }
 
 class TutorialManager {
@@ -31,5 +30,9 @@ class TutorialManager {
    public func advanceTutorial() {
       tutorialNum += 1
       //TODO:- NotificationCenterで送る
+   }
+   
+   public func TapTutorialView() {
+      
    }
 }
