@@ -3725,8 +3725,8 @@
             filePath = "PazleBox/GameFile/Tutorial/TutorialVC/TutorialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "954"
-            endingLineNumber = "954"
+            startingLineNumber = "980"
+            endingLineNumber = "980"
             landmarkName = "ClearTapImageViewCatchNotification(notificaton:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3757,8 +3757,8 @@
             filePath = "PazleBox/GameFile/Tutorial/TutorialVC/TutorialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "965"
-            endingLineNumber = "965"
+            startingLineNumber = "966"
+            endingLineNumber = "966"
             landmarkName = "StartAnimationDragAndDropSecondCatchNotification(notificaton:)"
             landmarkType = "7">
          </BreakpointContent>

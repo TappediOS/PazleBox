@@ -871,7 +871,7 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       print("登録数は：　\(CreateStageNum) から　\(AfterCreateStageNum) に更新されました\n\n")
    }
    
-   
+   //MARK: Tutorial
    //MARK:- Viewがタップされたときのイベント
    //チュートリアルの進行に使用する。
    @objc func TappedView(_ sender: UITapGestureRecognizer) {
@@ -955,6 +955,7 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       }
       tapImage?.appearImageView()
       let frame = WorkPlacePiceImageArray[1].frame
+      tapImage?.bringSubviewToFront(WorkPlacePiceImageArray[1])
       tapImage?.changePosition(posiX: frame.minX, posiY: (frame.midY + frame.minY) / 2)
       tapImage?.startDragAndDropAnimationFirst()
    }
@@ -967,6 +968,7 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       }
       tapImage?.appearImageView()
       let frame = WorkPlacePiceImageArray[0].frame
+      tapImage?.bringSubviewToFront(WorkPlacePiceImageArray[0])
       tapImage?.changePosition(posiX: frame.minX, posiY: (frame.midY + frame.minY) / 2)
       tapImage?.startDragAndDropAnimationSecond()
    }

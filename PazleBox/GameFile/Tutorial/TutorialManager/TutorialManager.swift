@@ -150,6 +150,7 @@ class TutorialManager {
    
    
    public func finishTapCollectionViewFirst() {
+      print("CollectinViewのタップ終わったよ。1回目")
       TuronOffCollectionViewNotification()
       ClearTapImageView()
       advanceTutorial()
@@ -157,6 +158,7 @@ class TutorialManager {
    }
    
    public func finishTapCollectionViewSecond() {
+      print("CollectinViewのタップ終わったよ。2回目")
       TuronOffCollectionViewNotification()
       ClearTapImageView()
       StartAnimationDragAndDropSecond()
@@ -165,12 +167,14 @@ class TutorialManager {
    }
    
    public func finishDragAndDropPiceFirst() {
+      print("ドラッグアンドドロップおわったよ。1回目")
       ClearTapImageView()
       advanceTutorial()
       state = .advance
    }
    
    public func finishDragAndDropPiceSecond() {
+      print("ドラッグアンドドロップおわったよ。2回目")
       advanceTutorial()
       ClearTapImageView()
       TurnOnFinButtonNotification()
@@ -179,12 +183,14 @@ class TutorialManager {
    }
    
    public func finishTapFinButton() {
+      print("Finボタンのタップおわったよ")
       advanceTutorial()
       ClearTapImageView()
       state = .advance
    }
    
    public func finishTapFinChoseResButton() {
+      print("ChoseResボタンのタップおわったよ")
       advanceTutorial()
       ClearTapImageView()
       state = .advance
