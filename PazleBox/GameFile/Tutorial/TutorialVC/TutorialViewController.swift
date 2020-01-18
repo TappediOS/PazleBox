@@ -16,7 +16,7 @@ import SCLAlertView
 import Firebase
 import NVActivityIndicatorView
 
-class TutorialViewController: UIViewController {
+class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
    
    @IBOutlet weak var collectionView: UICollectionView!
    
@@ -837,6 +837,18 @@ class TutorialViewController: UIViewController {
       let AfterCreateStageNum: Int = UserDefaults.standard.integer(forKey: "CreateStageNum")
       print("インクリメント完了しました")
       print("登録数は：　\(CreateStageNum) から　\(AfterCreateStageNum) に更新されました\n\n")
+   }
+   
+   
+   
+   @objc func TappedView(_ sender: UITapGestureRecognizer) {
+      
+      print("TapView")
+      //タップ直後に中身を実行
+      if sender.state == .ended {
+         //Labelをタップしたら、デバッグエリアに"タップされました"を表示
+         print("タップされました")
+      }
    }
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
