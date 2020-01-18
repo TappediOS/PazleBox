@@ -453,7 +453,7 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
             //ピースおき終わったよって教えてあげる。
             if tutorialManager.getState() == .operationTapPiceViewFirst {
                tutorialManager.finishDragAndDropPiceFirst()
-            } else utorialManager.getState() == .operationTapPiceViewSecond{
+            } else if tutorialManager.getState() == .operationTapPiceViewSecond {
                tutorialManager.finishDragAndDropPiceSecond()
             }
             
@@ -732,7 +732,7 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       FinishChouseResPuzzleButton?.isHidden = false
       Analytics.logEvent("TapFinPutBtn", parameters: nil)
       
-      //MARK- Tutorial
+      //MARK:- Tutorial
       //FinButton押したことをManageに通知
       tutorialManager.finishTapFinButton()
    }
