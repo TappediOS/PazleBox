@@ -58,7 +58,7 @@ class UserAgreementViewController: UIViewController {
       let Storybord = UIStoryboard(name: "TutorialViewController", bundle: nil)
       let TutorialVC = Storybord.instantiateViewController(withIdentifier: "TutorialVC") as! TutorialViewController
       TutorialVC.modalPresentationStyle = .fullScreen
-      
+      TutorialVC.modalTransitionStyle = .crossDissolve
       self.AgreeView?.fadeOut(type: .Normal, completed: {
          self.present(TutorialVC, animated: true, completion: {
             print("TutorialVCにプレゼント終わった")
