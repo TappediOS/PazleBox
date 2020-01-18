@@ -135,7 +135,9 @@ class TutorialManager {
    }
    
    public func finishDragAndDropPiceSecond() {
-      
+      advanceTutorial()
+      TurnOnFinButtonNotification()
+      state = .operationFinButton
    }
    
    public func finishTapFinButton() {
