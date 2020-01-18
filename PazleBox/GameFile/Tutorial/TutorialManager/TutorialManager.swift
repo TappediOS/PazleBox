@@ -121,7 +121,11 @@ class TutorialManager {
       
    }
    
-   public func finishDragAndDropPice() {
+   public func finishDragAndDropPiceFirst() {
+      
+   }
+   
+   public func finishDragAndDropPiceSecond() {
       
    }
    
