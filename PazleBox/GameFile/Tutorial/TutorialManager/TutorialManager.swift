@@ -138,12 +138,14 @@ class TutorialManager {
    
    public func finishTapCollectionViewFirst() {
       TuronOffCollectionViewNotification()
+      ClearTapImageView()
       advanceTutorial()
       state = .advance
    }
    
    public func finishTapCollectionViewSecond() {
       TuronOffCollectionViewNotification()
+      ClearTapImageView()
       advanceTutorial()
       state = .operationTapPiceViewSecond
    }
