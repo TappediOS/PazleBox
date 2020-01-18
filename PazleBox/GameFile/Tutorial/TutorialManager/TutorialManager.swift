@@ -114,7 +114,7 @@ class TutorialManager {
       case 14:
          advanceTutorial()
       case 15:
-         advanceTutorial()
+         print("チュートリアル終わり！")
       default:
          print("チュートリアル番号が間違っています。")
          return
@@ -151,6 +151,7 @@ class TutorialManager {
    }
    
    public func finishTapFinChoseResButton() {
-      
+      advanceTutorial()
+      state = .advance
    }
 }

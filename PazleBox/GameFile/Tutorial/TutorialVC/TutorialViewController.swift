@@ -763,6 +763,10 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       self.FinishChouseResPuzzleButton?.isEnabled = false
       self.FinishChouseResPuzzleButton?.alpha = 0.65
       
+      //MARK:- Tutorial
+      tutorialManager.finishTapFinChoseResButton()
+      
+      //MARK:- チュートリアルなのでセーブする処理はしないよ。
       SaveStageUserCreated()
    }
    
