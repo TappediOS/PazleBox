@@ -59,6 +59,41 @@ class TutorialManager {
 
    
    public func TapTutorialView() {
-      if state == .advance { advanceTutorial() }
+      print("現在のチュートリアル番号: \(self.tutorialNum)")
+      switch self.tutorialNum {
+      case 1:
+         advanceTutorial()
+      case 2:
+         advanceTutorial()
+      case 3:
+         advanceTutorial()
+      case 4:
+         advanceTutorial()
+      case 5:
+         advanceTutorial()
+      case 6:
+         advanceTutorial()
+      case 7:
+         advanceTutorial()
+      case 8:
+         advanceTutorial()
+      case 9:
+         advanceTutorial()
+      case 10:
+         advanceTutorial()
+      case 11:
+         advanceTutorial()
+      case 12:
+         advanceTutorial()
+      case 13:
+         advanceTutorial()
+      case 14:
+         advanceTutorial()
+      case 15:
+         advanceTutorial()
+      default:
+         print("チュートリアル番号が間違っています。")
+         return
+      }
    }
 }
