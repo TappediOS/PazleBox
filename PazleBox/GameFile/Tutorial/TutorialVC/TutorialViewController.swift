@@ -941,6 +941,7 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
    
    @objc func ClearTapImageViewCatchNotification (notificaton: Notification) {
       print("\n-----アニメーションを非表示にする-----\n")
+      tapImage?.stopAnimation()
       tapImage?.clearImageView()
    }
    

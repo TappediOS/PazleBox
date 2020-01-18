@@ -56,4 +56,8 @@ class TapImage: UIImageView {
                      })
 
    }
+   
+   public func stopAnimation() {
+      self.layer.removeAllAnimations()
+   }
 }
