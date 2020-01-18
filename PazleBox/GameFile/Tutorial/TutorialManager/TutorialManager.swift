@@ -65,6 +65,14 @@ class TutorialManager {
       NotificationCenter.default.post(name: .TuronOnPiceImageView, object: nil)
    }
    
+   func StartAnimationCollectionViewFirst() {
+      NotificationCenter.default.post(name: .StartAnimationCollectionViewFirst, object: nil)
+   }
+   
+   func StartAnimationCollectionViewSecond() {
+      NotificationCenter.default.post(name: .StartAnimationCollectionViewSecond, object: nil)
+   }
+   
 
    
    public func TapTutorialView() {
@@ -76,6 +84,7 @@ class TutorialManager {
       case 2:
          advanceTutorial()
          TurnOnCollectionViewNotification()
+         StartAnimationCollectionViewFirst()
          state = .operationCollectionViewFirst
       case 3:
          print("状態が3のときはCollectionViewタップするまで待つ。")
@@ -92,6 +101,7 @@ class TutorialManager {
       case 7:
          advanceTutorial()
          TurnOnCollectionViewNotification()
+         StartAnimationCollectionViewSecond()
          state = .operationCollectionViewSecond
       case 8:
          print("状態が8のときはCollectionViewタップするまで待つ。")

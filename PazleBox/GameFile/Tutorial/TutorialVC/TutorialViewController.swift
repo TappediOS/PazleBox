@@ -683,12 +683,6 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
    
    
    @objc func TapTrashView(_ sender: UITapGestureRecognizer) {
-      //TODO:- アニメーション終わったら消すこと。
-      tapImage?.appearImageView()
-      let frame = collectionView.frame
-      tapImage?.changePosition(posiX: frame.midX, posiY: (frame.midY + frame.minY) / 2)
-      tapImage?.startAnimation()
-      
       print("Tap TrashView")
       Analytics.logEvent("TapTrashView", parameters: nil)
       guard isLockColleViewANDTrashPice == false else {
@@ -927,6 +921,22 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       for pice in WorkPlacePiceImageArray {
          pice.isUserInteractionEnabled = true
       }
+   }
+   
+   @objc func StartAnimationCollectionViewFirstCatchNotification (notificaton: Notification) {
+      print("\n-----アニメーション(CollectionView)スタート　１回目-----\n")
+      tapImage?.appearImageView()
+      let frame = collectionView.frame
+      tapImage?.changePosition(posiX: frame.midX, posiY: (frame.midY + frame.minY) / 2)
+      tapImage?.startAnimation()
+   }
+   
+   @objc func StartAnimationCollectionViewSecondCatchNotification (notificaton: Notification) {
+      print("\n-----アニメーション(CollectionView)スタート　2回目-----\n")
+     tapImage?.appearImageView()
+     let frame = collectionView.frame
+      tapImage?.changePosition(posiX: (frame.midX + frame.minX) / 2, posiY: (frame.midY + frame.minY) / 2)
+     tapImage?.startAnimation()
    }
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }

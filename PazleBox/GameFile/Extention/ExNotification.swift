@@ -58,4 +58,6 @@ extension Notification.Name {
    static let TurnOnChoseResButton = Notification.Name("TurnOnChoseResButton")
    static let TuronOffChoseResButton = Notification.Name("TuronOffChoseResButton")
    static let TuronOnPiceImageView = Notification.Name("TuronOnPiceImageView")
+   static let StartAnimationCollectionViewFirst = Notification.Name("StartAnimationCollectionViewFirst")
+   static let StartAnimationCollectionViewSecond = Notification.Name("StartAnimationCollectionViewSecond")
 }
