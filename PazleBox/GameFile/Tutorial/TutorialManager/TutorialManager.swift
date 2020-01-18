@@ -24,6 +24,8 @@ class TutorialManager {
    var state = TutorialState.none
    var tutorialNum = 1
    
+   let gameSound = GameSounds()
+   
    init() {
       state = .advance
    }
@@ -105,11 +107,13 @@ class TutorialManager {
       case 1:
          advanceTutorial()
          state = .advance
+         gameSound.PlaySoundsTapButton()
       case 2:
          advanceTutorial()
          TurnOnCollectionViewNotification()
          StartAnimationCollectionViewFirst()
          state = .operationCollectionViewFirst
+         gameSound.PlaySoundsTapButton()
       case 3:
          print("状態が3のときはCollectionViewタップするまで待つ。")
          return
@@ -120,6 +124,7 @@ class TutorialManager {
          TurnOnPiceImagesNotification()
          StartAnimationDragAndDropFirst()
          state = .operationTapPiceViewFirst
+         gameSound.PlaySoundsTapButton()
       case 6:
          print("状態が6のときはPiceViewタップするまで待つ。")
          return
@@ -128,6 +133,7 @@ class TutorialManager {
          TurnOnCollectionViewNotification()
          StartAnimationCollectionViewSecond()
          state = .operationCollectionViewSecond
+         gameSound.PlaySoundsTapButton()
       case 8:
          print("状態が8のときはCollectionViewタップするまで待つ。")
          return
@@ -139,18 +145,22 @@ class TutorialManager {
          return
       case 11:
          advanceTutorial()
+         gameSound.PlaySoundsTapButton()
       case 12:
          advanceTutorial()
          StartAnimationResButton()
+         gameSound.PlaySoundsTapButton()
          return
       case 13:
          print("状態が13のときは初期位置決めのためにピース移動するまで待つ。")
          return
       case 14:
          advanceTutorial()
+         gameSound.PlaySoundsTapButton()
       case 15:
          print("チュートリアル終わり！")
          FinishTutorial()
+         gameSound.PlaySoundsTapButton()
       default:
          print("チュートリアル番号が間違っています。")
          return
@@ -180,6 +190,7 @@ class TutorialManager {
       ClearTapImageView()
       advanceTutorial()
       state = .advance
+      
    }
    
    public func finishDragAndDropPiceSecond() {
