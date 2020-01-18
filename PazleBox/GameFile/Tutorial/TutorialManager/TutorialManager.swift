@@ -119,6 +119,7 @@ class TutorialManager {
          return
       case 4:
          advanceTutorial()
+         gameSound.PlaySoundsTapButton()
       case 5:
          advanceTutorial()
          TurnOnPiceImagesNotification()
