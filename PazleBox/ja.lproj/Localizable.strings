@@ -147,6 +147,8 @@
 
 "Tutorial13" = "初期位置を決めたらこのボタンをタップしてね";　
 
-"Tutorial14" = "つくったステージは世界中のみんなが遊べるよ!";
-"Tutorial15" = "世界中のみんなが作ったステージも遊べるよ!!";
+//"Tutorial14" = "つくったステージは世界中のみんなが遊べるよ!";
+//"Tutorial15" = "世界中のみんなが作ったステージも遊べるよ!!";
+"Tutorial14" = "The stage you created can be played by everyone around the world!";
+"Tutorial15" = "You can also play the stage created by everyone in the world!!";
 //-------------------- チュートリアル --------------------//

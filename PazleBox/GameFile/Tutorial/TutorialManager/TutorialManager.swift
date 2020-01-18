@@ -197,8 +197,9 @@ class TutorialManager {
    }
    
    public func finishTapFinChoseResButton() {
-      print("ChoseResボタンのタップおわったよ")
-      advanceTutorial()
+      //FinResがピース移動した上で押されたことが保証されているから14まで飛ばしていい
+      tutorialNum = 14
+      NotificationCenter.default.post(name: .AdvanceTutorial, object: nil)
       ClearTapImageView()
       state = .advance
    }
