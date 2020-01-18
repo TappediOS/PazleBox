@@ -861,6 +861,42 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       BalloonView?.advance(advanceTutorialNum: tutorialNum)
    }
    
+   @objc func TurnOnCollectionViewCatchNotification(notificaton: Notification) {
+      print("\n-----CollectionViewをオンにします-----\n")
+      let tutorialNum = tutorialManager.getTutorialNum()
+      BalloonView?.advance(advanceTutorialNum: tutorialNum)
+   }
+   
+   @objc func TurnOffCollectionViewCatchNotification(notificaton: Notification) {
+      print("\n-----CollectionViewをオフにします-----\n")
+      let tutorialNum = tutorialManager.getTutorialNum()
+      BalloonView?.advance(advanceTutorialNum: tutorialNum)
+   }
+   
+   @objc func TurnOnFinButtonCatchNotification(notificaton: Notification) {
+      print("\n-----FinButtonをオンにします-----\n")
+      let tutorialNum = tutorialManager.getTutorialNum()
+      BalloonView?.advance(advanceTutorialNum: tutorialNum)
+   }
+   
+   @objc func TurnOffFinButtonCatchNotification(notificaton: Notification) {
+      print("\n-----FinButtonをオフにします-----\n")
+      let tutorialNum = tutorialManager.getTutorialNum()
+      BalloonView?.advance(advanceTutorialNum: tutorialNum)
+   }
+   
+   @objc func TurnOnChoseResButtonCatchNotification(notificaton: Notification) {
+      print("\n-----ChoseResButtonをオンにします-----\n")
+      let tutorialNum = tutorialManager.getTutorialNum()
+      BalloonView?.advance(advanceTutorialNum: tutorialNum)
+   }
+   
+   @objc func TurnOffChoseResButtonCatchNotification(notificaton: Notification) {
+      print("\n-----ChoseResButtonをオフにします-----\n")
+      let tutorialNum = tutorialManager.getTutorialNum()
+      BalloonView?.advance(advanceTutorialNum: tutorialNum)
+   }
+   
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
    func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
    func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
