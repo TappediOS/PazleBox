@@ -767,7 +767,7 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       tutorialManager.finishTapFinChoseResButton()
       
       //MARK:- チュートリアルなのでセーブする処理はしないよ。
-      SaveStageUserCreated()
+      //SaveStageUserCreated()
    }
    
    func trimmingImage(_ image: UIImage, trimmingArea: CGRect) -> UIImage {
