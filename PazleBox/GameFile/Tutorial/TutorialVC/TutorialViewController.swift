@@ -660,7 +660,11 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
    
    @objc func TapTrashView(_ sender: UITapGestureRecognizer) {
       //TODO:- アニメーション終わったら消すこと。
+      tapImage?.appearImageView()
+      let frame = collectionView.frame
+      tapImage?.changePosition(posiX: frame.midX, posiY: (frame.midY + frame.minY) / 2)
       tapImage?.startAnimation()
+      
       print("Tap TrashView")
       Analytics.logEvent("TapTrashView", parameters: nil)
       guard isLockColleViewANDTrashPice == false else {
