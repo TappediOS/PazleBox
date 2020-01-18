@@ -13,7 +13,8 @@ enum TutorialState {
    case wait                      //まつ
    case advance                   //文字を進める状態
    case operationButton           //ユーザがボタン操作する状態
-   case operationCollectionView   //ユーザがCollectionView操作する状態
+   case operationCollectionViewFirst   //ユーザがCollectionView操作する状態
+   case operationCollectionViewSecond
 }
 
 class TutorialManager {
@@ -67,7 +68,7 @@ class TutorialManager {
       case 2:
          advanceTutorial()
          TurnOnCollectionViewNotification()
-         state = .operationCollectionView
+         state = .operationCollectionViewFirst
       case 3:
          return
       case 4:
@@ -78,6 +79,8 @@ class TutorialManager {
          return
       case 7:
          advanceTutorial()
+         TurnOnCollectionViewNotification()
+         state = .operationCollectionViewSecond
       case 8:
          return
       case 9:
@@ -98,5 +101,22 @@ class TutorialManager {
          print("チュートリアル番号が間違っています。")
          return
       }
+   }
+   
+   
+   public func finishTapCollectionView() {
+      TuronOffCollectionViewNotification()
+   }
+   
+   public func finishDragAndDropPice() {
+      
+   }
+   
+   public func finishTapFinButton() {
+      
+   }
+   
+   public func finishTapFinChoseResButton() {
+      
    }
 }
