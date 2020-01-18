@@ -61,4 +61,5 @@ extension Notification.Name {
    static let StartAnimationCollectionViewFirst = Notification.Name("StartAnimationCollectionViewFirst")
    static let StartAnimationCollectionViewSecond = Notification.Name("StartAnimationCollectionViewSecond")
    static let ClearTapImageView = Notification.Name("ClearTapImageView")
+   static let StartAnimationFinButton = Notification.Name("StartAnimationFinButton")
 }

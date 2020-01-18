@@ -73,6 +73,10 @@ class TutorialManager {
       NotificationCenter.default.post(name: .StartAnimationCollectionViewSecond, object: nil)
    }
    
+   func StartAnimationFinButton() {
+      NotificationCenter.default.post(name: .StartAnimationFinButton, object: nil)
+   }
+   
    func ClearTapImageView() {
       NotificationCenter.default.post(name: .ClearTapImageView, object: nil)
    }
@@ -163,11 +167,13 @@ class TutorialManager {
    
    public func finishTapFinButton() {
       advanceTutorial()
+      ClearTapImageView()
       state = .advance
    }
    
    public func finishTapFinChoseResButton() {
       advanceTutorial()
+      ClearTapImageView()
       state = .advance
    }
 }

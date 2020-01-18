@@ -939,6 +939,14 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       tapImage?.startAnimation()
    }
    
+   @objc func StartAnimationFinButtonCatchNotification (notificaton: Notification) {
+      print("\n-----アニメーション(FinButton)スタート-----\n")
+      tapImage?.appearImageView()
+      let frame = FinishCreatePuzzleButton?.frame
+      tapImage?.changePosition(posiX: frame!.midX, posiY: (frame!.midY + frame!.minY) / 2)
+      tapImage?.startAnimation()
+   }
+   
    @objc func ClearTapImageViewCatchNotification (notificaton: Notification) {
       print("\n-----アニメーションを非表示にする-----\n")
       tapImage?.stopAnimation()
