@@ -904,6 +904,13 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       self.FinishChouseResPuzzleButton?.isEnabled = false
    }
    
+   @objc func TuronOnPiceImageViewCatchNotification (notificaton: Notification) {
+      print("\n-----PiceViewをタップできるようににします-----\n")
+      for pice in WorkPlacePiceImageArray {
+         pice.isUserInteractionEnabled = true
+      }
+   }
+   
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
    func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
    func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }

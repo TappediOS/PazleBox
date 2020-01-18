@@ -60,6 +60,11 @@ class TutorialManager {
       NotificationCenter.default.post(name: .TuronOffChoseResButton, object: nil)
    }
    
+   //cellタップしたときに出てくる3つのpiceをタップできるようにする。
+   func TurnOnPiceImagesNotification() {
+      NotificationCenter.default.post(name: .TuronOnPiceImageView, object: nil)
+   }
+   
 
    
    public func TapTutorialView() {
@@ -79,6 +84,7 @@ class TutorialManager {
          advanceTutorial()
       case 5:
          advanceTutorial()
+         
       case 6:
          print("状態が6のときはPiceViewタップするまで待つ。")
          return

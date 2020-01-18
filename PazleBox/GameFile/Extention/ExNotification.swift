@@ -57,4 +57,5 @@ extension Notification.Name {
    static let TuronOffFinButton = Notification.Name("TuronOffFinButton")
    static let TurnOnChoseResButton = Notification.Name("TurnOnChoseResButton")
    static let TuronOffChoseResButton = Notification.Name("TuronOffChoseResButton")
+   static let TuronOnPiceImageView = Notification.Name("TuronOnPiceImageView")
 }
