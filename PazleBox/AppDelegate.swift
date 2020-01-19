@@ -121,7 +121,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
          self.window?.rootViewController = AgreementVC
       } else {
          print("\n利用規約Acceptしてるよ。")
-
       }
       //--------------------利用規約VC-----------------------//
       
