@@ -283,7 +283,6 @@ class puzzle: SKSpriteNode {
    public func PlayParticleForRightSet() {
       Play3DtouchHeavy()
       return
-      //FIXME:- だだしい場所に置いた時にパーティクルを出すときは以下を変更
    }
    
    //MARK:- 自前のタッチイベント

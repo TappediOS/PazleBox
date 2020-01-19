@@ -176,7 +176,6 @@ class GameViewController: UIViewController, GADRewardBasedVideoAdDelegate, GADIn
    }
    
    private func InitStageSellectView() {
-      //FIXME:- クラス作ったら直す
       switch StageLevel {
       case .Easy:
          EasySelect.InitView(frame: self.view.frame, ButtonColor: EasySellectButtonColor!, ButtonShadowColor: EasySellectButtonShadowColor!)
