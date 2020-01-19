@@ -341,7 +341,6 @@ class GameScene: SKScene {
    
    //MARK:- ゲームのチェックを行う関数群
    private func GameCheck() -> Bool {
-      //TODO: デバック終わったら消してOK
       ShowStage()
       ShowCheckStage()
       
@@ -654,7 +653,6 @@ class GameScene: SKScene {
          CrearCheckedStage()
          
          //Nodeを置いた正しい場所(黒い場所)だったらパーティクル表示。
-         //TODO:- カチって音を鳴らすならここ
          let SentOb = (PuzzleBox[SentNum] as! puzzle).GetOfInfomation()
          if MovedNodePutRightPosition(BirthDay: SentNum, StageObject: SentOb) == true {
             PlayParticleForRightSet(BirthDay: SentNum)

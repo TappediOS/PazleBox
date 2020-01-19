@@ -88,8 +88,7 @@ class PuzzleTabBarController: ESTabBarController {
       image = getSettingImage()
       selectedImage = getSettingFillImage()
       title = NSLocalizedString("Setting", comment: "")
-      //TODO: ここのVCを作ってせっていしよう
-      //TODO: staticTableViewがいいかなー
+
       let MainStorybord = UIStoryboard(name: "Main", bundle: nil)
       let SettingVC = MainStorybord.instantiateViewController(withIdentifier: "SettingTableVC")
       SettingVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,

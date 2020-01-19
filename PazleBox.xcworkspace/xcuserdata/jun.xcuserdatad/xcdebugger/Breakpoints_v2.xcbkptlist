@@ -1305,7 +1305,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "830"
             endingLineNumber = "830"
-            landmarkName = "AdShowOrNot()"
+            landmarkName = "SetHint1()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1322,7 +1322,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "841"
             endingLineNumber = "841"
-            landmarkName = "SetHint1()"
+            landmarkName = "SetHint2()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1407,24 +1407,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "831"
             endingLineNumber = "831"
-            landmarkName = "GameScene"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D9747A92-2D96-4E08-A54E-3635A8EDED5F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PazleBox/GameFile/SeceneAndViewCon/GameScene.swift"
-            timestampString = "590043379.050475"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "345"
-            endingLineNumber = "345"
-            landmarkName = "GameCheck()"
+            landmarkName = "SetHint1()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

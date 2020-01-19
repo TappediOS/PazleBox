@@ -142,7 +142,6 @@ class InterNetSellect: UIView {
       self.PlayCountNumLabel.text = String(PlayCount)
    }
    
-   //TODO:- yymmddが他の言語で正しく表示されるかを確認すること
    private func InitDateLabel(_ addDate: String) {
       let CreateDay = NSLocalizedString("CreatedDate", comment: "")
       self.DateLabel.text = CreateDay + addDate

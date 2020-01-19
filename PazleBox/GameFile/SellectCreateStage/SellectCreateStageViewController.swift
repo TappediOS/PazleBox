@@ -147,7 +147,6 @@ class SellectCreateStageViewController: UIViewController {
       }
    }
    
-   //TODO:-　ローカライズすること
    private func ShowErrGetStageAlertView() {
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
       let ComleateView = SCLAlertView(appearance: Appearanse)
@@ -274,7 +273,6 @@ class SellectCreateStageViewController: UIViewController {
       CanSellectStage = true
    }
    
-   //TODO:- ローカライズしろよ
    private func  ShowDeleteView(CellNum: Int) {
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
       let ComleateView = SCLAlertView(appearance: Appearanse)
@@ -325,7 +323,6 @@ class SellectCreateStageViewController: UIViewController {
       }
    }
    
-   //TODO:-　ローカライズすること
    private func ShowErrDeleteStageInStoreSaveAlertView() {
       Play3DtouchError()
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
@@ -341,7 +338,6 @@ class SellectCreateStageViewController: UIViewController {
       ComleateView.showError(Error, subTitle: errDele + "\n" + checkNet)
    }
    
-   //TODO:-　ローカライズすること
    private func ShowSuccDeleteStageInStoreSaveAlertView() {
       Play3DtouchSuccess()
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
