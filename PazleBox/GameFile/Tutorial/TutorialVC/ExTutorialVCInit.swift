@@ -160,13 +160,13 @@ extension TutorialViewController {
    }
    
    func InitAccessibilityIdentifires() {
-      collectionView?.accessibilityIdentifier = "CleateStageVC_collectionView"
-      TrashImageView.accessibilityIdentifier = "CleateStageVC_TrashImageView"
-      FinishCreatePuzzleButton?.accessibilityIdentifier = "CleateStageVC_FinishCreatePuzzleButton"
-      FinishChouseResPuzzleButton?.accessibilityIdentifier = "CleateStageVC_FinishChouseResPuzzleButton"
-      InfoLabel.accessibilityIdentifier = "CleateStageVC_InfoLabel"
-      OptionButton.accessibilityIdentifier = "CleateStageVC_OptionButton"
-      BackImageView?.accessibilityIdentifier = "CleateStageVC_BackImageView"
+      collectionView?.accessibilityIdentifier = "TutorialVC_collectionView"
+      TrashImageView.accessibilityIdentifier = "TutorialVC_TrashImageView"
+      FinishCreatePuzzleButton?.accessibilityIdentifier = "TutorialVC_FinishCreatePuzzleButton"
+      FinishChouseResPuzzleButton?.accessibilityIdentifier = "TutorialVC_FinishChouseResPuzzleButton"
+      InfoLabel.accessibilityIdentifier = "TutorialVC_InfoLabel"
+      OptionButton.accessibilityIdentifier = "TutorialVC_OptionButton"
+      BackImageView?.accessibilityIdentifier = "TutorialVC_BackImageView"
    }
    
    func InitCollectionView() {
@@ -194,7 +194,7 @@ extension TutorialViewController {
       BalloonView = TutorialBalloon(frame: BalloonViewRect)
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
          self.view.addSubview(self.BalloonView!)
-         self.BalloonView?.fadeIn(duration: 0.25, completed: nil)
+         self.BalloonView?.fadeIn(type: .Normal, completed: nil)
       }
    }
    
