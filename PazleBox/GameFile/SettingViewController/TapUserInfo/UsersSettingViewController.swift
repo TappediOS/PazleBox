@@ -131,12 +131,15 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
       }
    }
    
+   //MARK:- あなたがステージをプレイした回数
    private func CheckGameCenterPlayCount(document: DocumentSnapshot) {
       if let ClearStageCount = document.data()?["ClearStageCount"] as? Int {
          leaderBords.CheckUserCreatedStagesHaveBeenPlayed(playedCount: ClearStageCount)
       }
    }
    
+   
+   //MARK:- あなたが作ったステージが他のプレーヤによってプレイされた回数
    private func CheckGameCenterCreatedStagePlayCount() {
       leaderBords.CheckSomeUserCreatedStagesHaveBeenPlayed(playCount: self.numOfStagePlayed)
    }
@@ -193,6 +196,7 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
                self.numOfStagePlayed += self.documentPlayCount(document: document)
             }
             self.FSSetUPlayedCountNumLabelText()
+            self.CheckGameCenterCreatedStagePlayCount()
          }
          print("作ったステージのプレイされた回数の取得完了")
          print("合計は \(self.numOfStagePlayed)")

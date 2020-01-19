@@ -191,6 +191,7 @@ class ManageLeadearBoards {
       })
    }
    
+   //MARK:- あなたがステージをプレイした回数をGameCenterに送る。
    private func SentCreatedStagesHaveBeenPlayed(NewRecord: Int, BeforeRecord: Int) {
       let SentScore = GKScore(leaderboardIdentifier: NUM_OF_PLAYED_STAGE_USER_CREATED)
       
@@ -212,7 +213,8 @@ class ManageLeadearBoards {
       })
    }
    
-   private func SentUserCreatedStagesHaveBeenPlayed(NewRecord: Int, BeforeRecord: Int) {
+   //MARK:- あなたが作ったステージが他のプレーヤによってプレイされた回数をGameCenterに送る。
+   private func SentYOUCreatedStagesHaveBeenPlayed(NewRecord: Int, BeforeRecord: Int) {
       let SentScore = GKScore(leaderboardIdentifier: NUM_OF_YOU_CREATED_STAGE_PLAYED)
       
       if GKLocalPlayer.local.isAuthenticated == false {
@@ -265,16 +267,16 @@ class ManageLeadearBoards {
       }
    }
    
-   //MARK:- （あるユーザが)作ったステージがプレイされた回数をGameCenterに送る。
+   //MARK:- あなたがステージをプレイした回数をGameCenterに送る。
    //私が作ったステージは関係ない。
    //これは,FireStoreでのUserのフォルダにあるやつを送っている。
    public func CheckUserCreatedStagesHaveBeenPlayed(playedCount: Int) {
       let nowCount = userDefaults.integer(forKey: "SumOfStagePlayed")
       
-      print("現在保存されているプレイされた回数の最大値: \(nowCount)")
+      print("あなたがステージをプレイした回数の最大値: \(nowCount)")
       print("送るかを考えるプレイされた回数　　　　　　: \(playedCount)")
       
-      if nowCount > playedCount {
+      if nowCount >= playedCount {
          print("超えてないので送らない。")
          return
       }
@@ -284,23 +286,23 @@ class ManageLeadearBoards {
       Analytics.logEvent("UpdateUserCreatedStagesHaveBeenPlayed", parameters: nil)
    }
    
-   //MARK:- ユーザによって作られたステージをプレイした回数をGameCenterに送る。
+   //MARK:- あなたが作ったステージが他のプレーヤによってプレイされた回数をGameCenterに送る。
    //これは,FireStoreでのUserのフォルダにあるやつを送っている。
    //iudでもう一回クエリしないといけないめんどくさいやつ。
    public func CheckSomeUserCreatedStagesHaveBeenPlayed(playCount: Int) {
-      let nowCount = userDefaults.integer(forKey: "SumOfStagePlayed")
+      let nowCount = userDefaults.integer(forKey: "SumOfStageYouCretedHasBeenPlayed")
       
-      print("現在保存されているプレイされた回数の最大値: \(nowCount)")
+      print("あなたが作ったステージが他のプレーヤによってプレイされた回数の最大値: \(nowCount)")
       print("送るかを考えるプレイされた回数　　　　　　: \(playCount)")
       
-      if nowCount > playCount {
+      if nowCount >= playCount {
          print("超えてないので送らない。")
          return
       }
       
       print("記録を更新しました。送信を行います")
-      SentUserCreatedStagesHaveBeenPlayed(NewRecord: playCount, BeforeRecord: nowCount)
-      Analytics.logEvent("UpdateUserCreatedStagesHaveBeenPlayed", parameters: nil)
+      SentYOUCreatedStagesHaveBeenPlayed(NewRecord: playCount, BeforeRecord: nowCount)
+      Analytics.logEvent("UpdateYOUCreatedStagesHaveBeenPlayed", parameters: nil)
    }
    
    private func AppStoreReview() {
