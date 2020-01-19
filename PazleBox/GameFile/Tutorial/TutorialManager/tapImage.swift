@@ -17,7 +17,7 @@ class TapImage: UIImageView {
    
    let dragScaleX: CGFloat = -100
    let dragScaleY: CGFloat = 160
-   let dragAniTile: Double = 1.45
+   let dragAniTime: Double = 1.55
    
    override init(frame: CGRect) {
       super.init(frame: frame)
@@ -60,7 +60,7 @@ class TapImage: UIImageView {
    }
    
    public func startDragAndDropAnimationFirst() {
-      UIView.animate(withDuration: dragAniTile,
+      UIView.animate(withDuration: dragAniTime,
                      delay: 0.2,
                      options: [.repeat, .curveEaseInOut],
                      animations: {
@@ -73,7 +73,7 @@ class TapImage: UIImageView {
    }
    
    public func startDragAndDropAnimationSecond() {
-      UIView.animate(withDuration: dragAniTile,
+      UIView.animate(withDuration: dragAniTime,
                      delay: 0.2,
                      options: [.repeat, .curveEaseInOut],
                      animations: {
