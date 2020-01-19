@@ -169,9 +169,7 @@ class UserAgreementView: UIView {
    @IBAction func TapAgreeButton(_ sender: Any) {
       gameSound.PlaySoundsTapButton()
       Play3DtouchSuccess()
-      //MARK:- ここは後でコメントとるべし
-      //TODO:- ここは後でコメントとるべし
-      //UserDefaults.standard.set(true, forKey: "AcceptAgreement")
+      UserDefaults.standard.set(true, forKey: "AcceptAgreement")
       NotificationCenter.default.post(name: .AcceptUserAgreement, object: nil)
       self.removeFromSuperview()
    }

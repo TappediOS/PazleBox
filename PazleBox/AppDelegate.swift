@@ -122,8 +122,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
          print("\n利用規約Acceptしてるよ。")
          //FIXME:- 出すときはこれを消してOK
          //この処理は出るかを確認するためにしてるだけ。
-         //UserDefaults.standard.set(false, forKey: "AcceptAgreement")
-         //print("次開くときはAgreementVC出します。\n")
+         UserDefaults.standard.set(false, forKey: "AcceptAgreement")
+         print("次開くときはAgreementVC出します。\n")
       }
       //--------------------利用規約VC-----------------------//
       
