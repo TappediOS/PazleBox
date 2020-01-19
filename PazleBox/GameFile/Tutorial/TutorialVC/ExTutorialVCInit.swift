@@ -192,9 +192,8 @@ extension TutorialViewController {
    
    func InitBalloonView() {
       BalloonView = TutorialBalloon(frame: BalloonViewRect)
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.365) {
          self.view.addSubview(self.BalloonView!)
-         self.BalloonView?.fadeIn(type: .Normal, completed: nil)
       }
    }
    
