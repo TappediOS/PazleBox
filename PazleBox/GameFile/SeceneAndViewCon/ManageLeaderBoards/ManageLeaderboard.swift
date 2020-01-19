@@ -208,8 +208,9 @@ class ManageLeadearBoards {
          if error != nil {
             print("error, cant sent new score of Clear Stage num...\(String(describing: error))")
             self.userDefaults.set(BeforeRecord, forKey: "SumOfStagePlayed")
+         }else{
+            print("あなたがステージをプレイした回数をGameCenterに送ったよ。")
          }
-         
       })
    }
    
@@ -230,8 +231,9 @@ class ManageLeadearBoards {
          if error != nil {
             print("error, cant sent new score of Clear Stage num...\(String(describing: error))")
             self.userDefaults.set(BeforeRecord, forKey: "SumOfStageYouCretedHasBeenPlayed")
+         }else{
+            print("あなたが作ったステージが他のプレーヤによってプレイされた回数をGameCenterに送ったよ。")
          }
-         
       })
    }
    

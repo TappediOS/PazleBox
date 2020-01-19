@@ -198,7 +198,6 @@ class TutorialManager {
       }
    }
    
-   
    public func finishTapCollectionViewFirst() {
       print("CollectinViewのタップ終わったよ。1回目")
       TuronOffCollectionViewNotification()
