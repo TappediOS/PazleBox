@@ -27,7 +27,7 @@ extension SettingTableViewController {
    }
    
    private func TapAppReview() {
-      
+      Analytics.logEvent("TapAppReview", parameters: nil)
       if #available(iOS 10.3, *) {
           SKStoreReviewController.requestReview()
       }
@@ -60,6 +60,7 @@ extension SettingTableViewController {
    }
    
    private func TapCredit() {
+      Analytics.logEvent("TapCredit", parameters: nil)
       if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
          UIApplication.shared.open(url, options: [:], completionHandler: nil)
       }

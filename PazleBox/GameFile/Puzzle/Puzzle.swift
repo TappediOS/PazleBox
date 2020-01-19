@@ -134,8 +134,6 @@ class puzzle: SKSpriteNode {
       //SetParticle = SetParticles.GetParticle()
       
       InitPazzle()
-      
-      Analytics.logEvent("Init_A_Puzzle", parameters: nil)
    }
    
 

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import AVFoundation
 import TapticEngine
+import Firebase
 
 class UserAgreementViewController: UIViewController {
    var BackGroundImageView: BackGroundImageViews?
@@ -29,6 +30,8 @@ class UserAgreementViewController: UIViewController {
       InitBackgroundImageView()
       InitUserAgreementView()
       StartBGM()
+      //Tutoriαl始まったって送る。
+      Analytics.logEvent(AnalyticsEventTutorialBegin, parameters: nil)
    }
    
    private func InitNotificationCenter() {
@@ -129,6 +132,7 @@ class UserAgreementViewController: UIViewController {
    }
    
    @objc func showTabBarCatchNotification (notificaton: Notification) {
+      Analytics.logEvent(AnalyticsEventTutorialComplete, parameters: nil)
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
         print("\n-----タブバー表示する通知ゲット!!!-----\n")
         let Storybord = UIStoryboard(name: "Main", bundle: nil)

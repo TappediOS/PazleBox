@@ -88,6 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
                        print("Document successfully updated")
                    }
                }
+            Analytics.logEvent(AnalyticsEventLogin, parameters: nil)
          }else{
             print("\n--- ユーザーの初めてのログイン ---\n")
             db.collection("users").document(uid).setData([
@@ -103,7 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
                   UserDefaults.standard.set(true, forKey: "Logined")
                }
             }
-            
+            Analytics.logEvent(AnalyticsEventSignUp, parameters: nil)
             self.ChekUserCreateStageNumFromFireStore(uid: uid)
          }
          print("------------ログイン情報--------------\n")

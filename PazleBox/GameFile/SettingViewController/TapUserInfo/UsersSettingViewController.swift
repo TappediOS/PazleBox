@@ -77,6 +77,7 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
             self.Play3DtouchError()
          } else {
             print("\nニックネームアップデート成功!")
+            Analytics.logEvent("changeNicName", parameters: ["afterName": newName])
          }
       }
       

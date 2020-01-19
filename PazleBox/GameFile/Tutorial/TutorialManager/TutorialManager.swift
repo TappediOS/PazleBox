@@ -8,6 +8,7 @@
 
 import Foundation
 import TapticEngine
+import Firebase
 
 enum TutorialState {
    case none                           //状態なし
@@ -110,6 +111,7 @@ class TutorialManager {
          state = .advance
          gameSound.PlaySoundsTapButton()
          Play3DtouchMedium()
+         Analytics.logEvent("FinTutorial1", parameters: nil)
       case 2:
          advanceTutorial()
          TurnOnCollectionViewNotification()
@@ -117,6 +119,7 @@ class TutorialManager {
          state = .operationCollectionViewFirst
          gameSound.PlaySoundsTapButton()
          Play3DtouchMedium()
+         Analytics.logEvent("FinTutorial2", parameters: nil)
       case 3:
          print("状態が3のときはCollectionViewタップするまで待つ。")
          return
@@ -124,6 +127,7 @@ class TutorialManager {
          advanceTutorial()
          gameSound.PlaySoundsTapButton()
          Play3DtouchMedium()
+         Analytics.logEvent("FinTutorial4", parameters: nil)
       case 5:
          advanceTutorial()
          TurnOnPiceImagesNotification()
@@ -131,6 +135,7 @@ class TutorialManager {
          state = .operationTapPiceViewFirst
          gameSound.PlaySoundsTapButton()
          Play3DtouchMedium()
+         Analytics.logEvent("FinTutorial5", parameters: nil)
       case 6:
          print("状態が6のときはPiceViewタップするまで待つ。")
          return
@@ -141,6 +146,7 @@ class TutorialManager {
          state = .operationCollectionViewSecond
          gameSound.PlaySoundsTapButton()
          Play3DtouchMedium()
+         Analytics.logEvent("FinTutorial7", parameters: nil)
       case 8:
          print("状態が8のときはCollectionViewタップするまで待つ。")
          return
@@ -153,11 +159,14 @@ class TutorialManager {
       case 11:
          advanceTutorial()
          gameSound.PlaySoundsTapButton()
+         Play3DtouchMedium()
+         Analytics.logEvent("FinTutorial11", parameters: nil)
       case 12:
          advanceTutorial()
          StartAnimationResButton()
          gameSound.PlaySoundsTapButton()
          Play3DtouchMedium()
+         Analytics.logEvent("FinTutorial12", parameters: nil)
          return
       case 13:
          print("状態が13のときは初期位置決めのためにピース移動するまで待つ。")
@@ -166,19 +175,23 @@ class TutorialManager {
          advanceTutorial()
          gameSound.PlaySoundsTapButton()
          Play3DtouchMedium()
+         Analytics.logEvent("FinTutorial14", parameters: nil)
       case 15:
          advanceTutorial()
          gameSound.PlaySoundsTapButton()
          Play3DtouchMedium()
+         Analytics.logEvent("FinTutorial15", parameters: nil)
       case 16:
          advanceTutorial()
          gameSound.PlaySoundsTapButton()
          Play3DtouchMedium()
+         Analytics.logEvent("FinTutorial16", parameters: nil)
       case 17:
          print("チュートリアル終わり！")
          FinishTutorial()
          gameSound.PlaySoundsTapButton()
          Play3DtouchMedium()
+         Analytics.logEvent("FinTutorial17", parameters: nil)
       default:
          print("チュートリアル番号が間違っています。")
          return
@@ -192,6 +205,7 @@ class TutorialManager {
       ClearTapImageView()
       advanceTutorial()
       state = .advance
+      Analytics.logEvent("FinTutorial3", parameters: nil)
    }
    
    public func finishTapCollectionViewSecond() {
@@ -201,6 +215,7 @@ class TutorialManager {
       StartAnimationDragAndDropSecond()
       advanceTutorial()
       state = .operationTapPiceViewSecond
+      Analytics.logEvent("FinTutorial8", parameters: nil)
    }
    
    public func finishDragAndDropPiceFirst() {
@@ -208,7 +223,7 @@ class TutorialManager {
       ClearTapImageView()
       advanceTutorial()
       state = .advance
-      
+      Analytics.logEvent("FinTutorial6", parameters: nil)
    }
    
    public func finishDragAndDropPiceSecond() {
@@ -220,6 +235,7 @@ class TutorialManager {
          self.StartAnimationFinButton()
       }
       state = .operationFinButton
+      Analytics.logEvent("FinTutorial9", parameters: nil)
    }
    
    public func finishTapFinButton() {
@@ -228,6 +244,7 @@ class TutorialManager {
       TurnOnChoseResButtonNotification()
       state = .operationResChoseButton
       ClearTapImageView()
+      Analytics.logEvent("FinTutorial10", parameters: nil)
    }
    
    public func finishTapFinChoseResButton() {
@@ -236,6 +253,7 @@ class TutorialManager {
       NotificationCenter.default.post(name: .AdvanceTutorial, object: nil)
       ClearTapImageView()
       state = .advance
+      Analytics.logEvent("FinTutorial13", parameters: nil)
    }
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }

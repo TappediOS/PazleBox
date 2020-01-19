@@ -79,6 +79,7 @@ class Firestores {
          if let err = err {
             print("\nError adding document: \(err)\n")
             self.sentErrSetntStageToFireStore()
+            self.sentFirebaseLogEvent(MaxPiceNum: MaxPiceNum)
          } else {
             print("\n\nDocument added with ID: \(ref!.documentID)\n")
             self.sentSuccessSentStageToFireStore()
@@ -92,6 +93,11 @@ class Firestores {
    
    private func sentSuccessSentStageToFireStore() {
       NotificationCenter.default.post(name: .SuccessSentStageToFireStore, object: nil, userInfo: nil)
+   }
+   
+   private func sentFirebaseLogEvent(MaxPiceNum: Int) {
+      Analytics.logEvent(AnalyticsEventShare, parameters: ["MaxPiceNum": MaxPiceNum,
+                                                           "UserID": self.UID])
    }
    
   
