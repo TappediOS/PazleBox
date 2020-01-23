@@ -54,16 +54,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
 
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       
-      //--------------------UITESTの処理-----------------------//
+      //--------------------UITESTの処理 (1/2)-----------------------//
+      var isUITesting = false
       if CommandLine.arguments.contains("--uitesting") {
          print("---UITest--- 利用規約にAcceptしてるようにします")
          UserDefaults.standard.set(true, forKey: "AcceptAgreement")
+         isUITesting = true
       }
       if CommandLine.arguments.contains("--uitestingUserAgreement") {
          print("---UITest--- 利用規約にAcceptしてないようにします")
          UserDefaults.standard.set(false, forKey: "AcceptAgreement")
+         isUITesting = true
       }
-      //--------------------UITESTの処理-----------------------//
+      //--------------------UITESTの処理 (1/2)-----------------------//
 
       
 
@@ -207,6 +210,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       print("------------Game Center--------------\n")
       //------------------- Game Center-----------------//
       
+      
+      //--------------------UITESTの処理 (2/2)-----------------------//
+      if isUITesting == true {
+         print("UITestなのでプッシュ通知のDelegateとかはONにしません。")
+         return true
+      }
+      //--------------------UITESTの処理 (2/2)-----------------------//
       
       //------------------- プッシュ通知-----------------//
       // [START set_messaging_delegate]
