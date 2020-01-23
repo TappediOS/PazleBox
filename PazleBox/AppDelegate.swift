@@ -55,12 +55,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       
       //--------------------UITESTの処理-----------------------//
-      print("UITestなので利用規約にAcceptしてるようにします")
       if CommandLine.arguments.contains("--uitesting") {
-          UserDefaults.standard.set(true, forKey: "AcceptAgreement")
+         print("---UITest--- 利用規約にAcceptしてるようにします")
+         UserDefaults.standard.set(true, forKey: "AcceptAgreement")
+      }
+      if CommandLine.arguments.contains("--uitestingUserAgreement") {
+         print("---UITest--- 利用規約にAcceptしてないようにします")
+         UserDefaults.standard.set(false, forKey: "AcceptAgreement")
       }
       //--------------------UITESTの処理-----------------------//
 
+      
 
       //--------------------FIREBASE-----------------------//
       print("firebaseにアクセス")

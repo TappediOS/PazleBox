@@ -16,11 +16,17 @@ class UserAgreementVCTest: XCTestCase {
       continueAfterFailure = false
       let app = XCUIApplication()
       setupSnapshot(app)
-      app.launchArguments.append("--uitesting")
+      app.launchArguments.append("--uitestingUserAgreement")
       app.launch()
    }
 
    override func tearDown() {
       super.tearDown()
    }
+   
+   //利用規約VCの表示テスト
+   func testShowUserAgreementVC() {
+      snapshot("利用規約VCの表示テスト")
+   }
+   
 }
