@@ -29,4 +29,10 @@ class UserAgreementVCTest: XCTestCase {
       snapshot("利用規約VCの表示テスト")
    }
    
+   //利用規約ボタンを押した時の表示テスト
+   func testTapUserAgreementButton() {
+      app.buttons["AgreementButton"].tap()
+      snapshot("利用規約ボタンを押した時の表示テスト")
+   }
+   
 }
