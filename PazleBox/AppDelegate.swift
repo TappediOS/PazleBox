@@ -181,6 +181,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       //-------------------Init Ad Flag On Users Devise-------------------//
       
       
+      //--------------------UITESTの処理 (2/2)-----------------------//
+      if isUITesting == true {
+         print("UITestなのでプッシュ通知のDelegateとかはONにしません。")
+         return true
+      }
+      //--------------------UITESTの処理 (2/2)-----------------------//
+      
+      
       //-------------------Game Center-----------------//
       print("\n------------Game Center--------------")
       if let rootView = self.window?.rootViewController {
@@ -211,12 +219,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       //------------------- Game Center-----------------//
       
       
-      //--------------------UITESTの処理 (2/2)-----------------------//
-      if isUITesting == true {
-         print("UITestなのでプッシュ通知のDelegateとかはONにしません。")
-         return true
-      }
-      //--------------------UITESTの処理 (2/2)-----------------------//
       
       //------------------- プッシュ通知-----------------//
       // [START set_messaging_delegate]
