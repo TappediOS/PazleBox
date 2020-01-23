@@ -64,9 +64,16 @@ class UserAgreementVCTest: XCTestCase {
    
    //DontAcceptを押してDoneを押した時の表示テスト
    func testTapDontAgreeAndDoneButton() {
-      let button = app.buttons["DontAgreebutton"]
-      XCTAssertTrue(button.isEnabled)
-      button.tap()
+      let AcceptButton = app.buttons["AgreeButton"]
+      let DontAcceptButton = app.buttons["DontAgreebutton"]
+      XCTAssertTrue(AcceptButton.isEnabled)
+      XCTAssertTrue(DontAcceptButton.isEnabled)
+      DontAcceptButton.tap()
+      let doneButton = app.buttons["Done"]
+      XCTAssertTrue(doneButton.isEnabled)
+      doneButton.tap()
       snapshot("DontAcceptを押してDoneを押した時の表示テスト")
+      XCTAssertTrue(AcceptButton.isEnabled)
+      XCTAssertTrue(DontAcceptButton.isEnabled)
    }
 }
