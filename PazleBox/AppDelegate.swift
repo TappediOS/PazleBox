@@ -53,6 +53,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
    //var window: UIWindow?
 
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+      
+      //--------------------UITESTの処理-----------------------//
+      print("UITestなので利用規約にAcceptしてるようにします")
+      if CommandLine.arguments.contains("--uitesting") {
+          UserDefaults.standard.set(true, forKey: "AcceptAgreement")
+      }
+      //--------------------UITESTの処理-----------------------//
 
 
       //--------------------FIREBASE-----------------------//
