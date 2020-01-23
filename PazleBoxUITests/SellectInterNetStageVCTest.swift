@@ -23,9 +23,12 @@ class SellectInterNetStageVCTest: XCTestCase {
       super.tearDown()
    }
    
+   
    func showSellectInternetCreateStageVC() {
       XCUIApplication().tabBars.otherElements["tabBar_Play"].tap()
       app.buttons["CreateHomeVC_InternetUsersStageButton"].tap()
+      sleep(UInt32(2))
+      return
    }
    
    //存在してたらtrue
