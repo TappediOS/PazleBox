@@ -15,6 +15,7 @@ class SellectInterNetStageVCTest: XCTestCase {
      continueAfterFailure = false
      let app = XCUIApplication()
      setupSnapshot(app)
+      app.launchArguments.append("--uitesting")
      app.launch()
    }
 

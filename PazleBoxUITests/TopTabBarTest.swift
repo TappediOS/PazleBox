@@ -13,10 +13,11 @@ class TopTabBarUITest: XCTestCase {
    let app = XCUIApplication()
    
    override func setUp() {
-     continueAfterFailure = false
-     let app = XCUIApplication()
-     setupSnapshot(app)
-     app.launch()
+      continueAfterFailure = false
+      let app = XCUIApplication()
+      setupSnapshot(app)
+      app.launchArguments.append("--uitesting")
+      app.launch()
    }
 
    override func tearDown() {
