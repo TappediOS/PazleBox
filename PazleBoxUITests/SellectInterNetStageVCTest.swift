@@ -27,7 +27,7 @@ class SellectInterNetStageVCTest: XCTestCase {
    func showSellectInternetCreateStageVC() {
       XCUIApplication().tabBars.otherElements["tabBar_Play"].tap()
       app.buttons["CreateHomeVC_InternetUsersStageButton"].tap()
-      sleep(UInt32(2))
+      sleep(UInt32(6))
       return
    }
    
