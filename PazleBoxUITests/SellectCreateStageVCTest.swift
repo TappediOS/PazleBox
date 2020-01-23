@@ -26,6 +26,7 @@ class SellectCreateStageVC: XCTestCase {
    func showSellectCreateStageVC() {
       XCUIApplication().tabBars.otherElements["tabBar_Play"].tap()
       app.buttons["CreateHomeVC_SellectStageButton"].tap()
+      sleep(UInt32(6))
    }
    
    //存在してたらtrue
@@ -68,6 +69,7 @@ class SellectCreateStageVC: XCTestCase {
       
       app.collectionViews["CleateStageVC_collectionView"].cells.element(boundBy: 0).tap()
       app.buttons["PlayButton"].tap()
+      sleep(UInt32(8))
       snapshot("PlayButtonをタップしたときの表示テスト。")
    }
    
@@ -81,6 +83,7 @@ class SellectCreateStageVC: XCTestCase {
       
       app.collectionViews["CleateStageVC_collectionView"].cells.element(boundBy: 0).tap()
       app.buttons["DeleteButton"].tap()
+      sleep(UInt32(8))
       snapshot("DeleteButtonをタップしたときの表示テスト。")
    }
    
