@@ -50,6 +50,7 @@ class UserAgreementVCTest: XCTestCase {
    func testTapAgreeButton() {
       let button = app.buttons["AgreeButton"]
       XCTAssertTrue(button.isEnabled)
+      button.tap()
       snapshot("Acceptを押した時の表示テスト")
    }
    
@@ -57,6 +58,7 @@ class UserAgreementVCTest: XCTestCase {
    func testTapDontAgreeButton() {
       let button = app.buttons["DontAgreebutton"]
       XCTAssertTrue(button.isEnabled)
+      button.tap()
       snapshot("DontAcceptを押した時の表示テスト")
    }
    
@@ -64,6 +66,7 @@ class UserAgreementVCTest: XCTestCase {
    func testTapDontAgreeAndDoneButton() {
       let button = app.buttons["DontAgreebutton"]
       XCTAssertTrue(button.isEnabled)
+      button.tap()
       snapshot("DontAcceptを押してDoneを押した時の表示テスト")
    }
 }
