@@ -12,11 +12,11 @@ class SellectCreateStageVC: XCTestCase {
    let app = XCUIApplication()
    
    override func setUp() {
-     continueAfterFailure = false
-     let app = XCUIApplication()
-     setupSnapshot(app)
+      continueAfterFailure = false
+      let app = XCUIApplication()
+      setupSnapshot(app)
       app.launchArguments.append("--uitesting")
-     app.launch()
+      app.launch()
    }
 
    override func tearDown() {
