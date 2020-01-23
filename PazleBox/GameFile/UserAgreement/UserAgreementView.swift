@@ -48,6 +48,7 @@ class UserAgreementView: UIView {
       InitDontAgreebutton()
       InitAgreeButton()
       SetUpEachButtonCornerRadiusAndAjustsFont()
+      InitAccessibilityIdentifier()
 
    }
    
@@ -122,6 +123,15 @@ class UserAgreementView: UIView {
       button.titleLabel?.adjustsFontSizeToFitWidth = true
       button.titleLabel?.adjustsFontForContentSizeCategory = true
       button.layer.cornerRadius =  ButtonCornerRadius
+   }
+   
+   private func InitAccessibilityIdentifier() {
+      AgreementLabel.accessibilityIdentifier = "AgreementLabel"
+      AgreementDescriptionLabel.accessibilityIdentifier = "AgreementDescriptionLabel"
+      AgreementButton.accessibilityIdentifier = "AgreementButton"
+      PlivacyPolicyButton.accessibilityIdentifier = "PlivacyPolicyButton"
+      DontAgreebutton.accessibilityIdentifier = "DontAgreebutton"
+      AgreeButton.accessibilityIdentifier = "AgreeButton"
    }
    
    @IBAction func TapAgreementButton(_ sender: Any) {
