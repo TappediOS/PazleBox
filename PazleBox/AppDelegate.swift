@@ -78,14 +78,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       FirebaseApp.configure(options: fileopts!)
       //--------------------FIREBASE-----------------------//
       
-      //--------------------ログイン-----------------------//
-   
+      //--------------------FireBaseログイン-----------------------//
       Auth.auth().signInAnonymously() { (authResult, error) in
          guard let user = authResult?.user else { return }
          let isAnonymous = user.isAnonymous
          let uid = user.uid
          let db = Firestore.firestore()
-         print("\n------------ログイン情報--------------")
+         print("\n------------FireBaseログイン情報--------------")
          print("匿名認証: \(isAnonymous)")
          print("uid:     \(uid)")
          
@@ -105,7 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
                }
             Analytics.logEvent(AnalyticsEventLogin, parameters: nil)
          }else{
-            print("\n--- ユーザーの初めてのログイン ---\n")
+            print("\n--- ユーザーの初めてのFireBaseログイン ---\n")
             db.collection("users").document(uid).setData([
                "name": NSLocalizedString("Guest", comment: ""),
                "LastLogin": Timestamp(date: Date()),
@@ -122,9 +121,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
             Analytics.logEvent(AnalyticsEventSignUp, parameters: nil)
             self.ChekUserCreateStageNumFromFireStore(uid: uid)
          }
-         print("------------ログイン情報--------------\n")
+         print("------------FireBaseログイン情報--------------\n")
       }
-      //--------------------ログイン-----------------------//
+      //--------------------FireBaseログイン-----------------------//
       
       //--------------------利用規約VC-----------------------//
       UserDefaults.standard.register(defaults: ["AcceptAgreement": false])
