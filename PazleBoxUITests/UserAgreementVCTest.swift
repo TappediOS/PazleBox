@@ -31,8 +31,20 @@ class UserAgreementVCTest: XCTestCase {
    
    //利用規約ボタンを押した時の表示テスト
    func testTapUserAgreementButton() {
-      app.buttons["AgreementButton"].tap()
-      snapshot("利用規約ボタンを押した時の表示テスト")
+      let button = app.buttons["AgreementButton"]
+      XCTAssertTrue(button.isEnabled)
+      XCUIDevice.shared.press(.home)
+      app.activate()
    }
+   
+   //利用規約ボタンを押した時の表示テスト
+   func testTapPrivacyPolicyButton() {
+      let button = app.buttons["PlivacyPolicyButton"]
+      XCTAssertTrue(button.isEnabled)
+      XCUIDevice.shared.press(.home)
+      app.activate()
+   }
+   
+   
    
 }
