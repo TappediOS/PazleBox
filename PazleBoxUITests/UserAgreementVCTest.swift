@@ -46,5 +46,10 @@ class UserAgreementVCTest: XCTestCase {
    }
    
    
-   
+   //Acceptを押した時の表示テスト
+   func testTapAgreeButton() {
+      let button = app.buttons["AgreeButton"]
+      XCTAssertTrue(button.isEnabled)
+      snapshot("Acceptを押した時の表示テスト")
+   }
 }
