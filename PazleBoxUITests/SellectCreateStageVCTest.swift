@@ -26,7 +26,7 @@ class SellectCreateStageVC: XCTestCase {
    func showSellectCreateStageVC() {
       XCUIApplication().tabBars.otherElements["tabBar_Play"].tap()
       app.buttons["CreateHomeVC_SellectStageButton"].tap()
-      sleep(UInt32(6))
+      //sleep(UInt32(6))
    }
    
    //存在してたらtrue
