@@ -79,9 +79,7 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
    "43p26Blue", "33p8Green","43p8Green","33p25Blue","33p28Green",
    "32p12Blue","32p3Red","43p32Blue","33p33Red","32p5Red",
    "33p3Blue", "33p23Green","43p21Green","43p26Blue","43p28Blue",
-   "33p34Red","43p35Green","23p4Red","33p1Blue","32p13Green",
-   "33p16Blue", "33p11Red","33p38Red","23p7Green","32p3Red",
-   "43p34Blue","32p2Green","32p10Red","23p12Blue","43p14Green"]
+   "33p34Red","43p35Green","23p4Red","33p1Blue","32p13Green"]
      
    let sectionInsets = UIEdgeInsets(top: 0, left: 17, bottom: 0, right: -17)
    let itemsPerRow: CGFloat = 1 //Cellを横に何個入れるか
