@@ -12,16 +12,24 @@ import TapticEngine
 
 class PuzzleMakerTapToPlayViewController: UIViewController, UIGestureRecognizerDelegate {
    let GameSound = GameSounds()
+   var BackGroundImageView: BackGroundImageViews?
    
    override func viewDidLoad() {
       super.viewDidLoad()
       InitTapGesture()
+      InitBackgroundImageView()
    }
    
-   func InitTapGesture() {
+   private func InitTapGesture() {
       let tapGesture = UITapGestureRecognizer(target: self, action: #selector(TappedView(_:)))
       tapGesture.delegate = self
       self.view.addGestureRecognizer(tapGesture)
+   }
+   
+   private func InitBackgroundImageView() {
+      BackGroundImageView = BackGroundImageViews(frame: self.view.frame)
+      self.view.addSubview(BackGroundImageView!)
+      self.view.sendSubviewToBack(BackGroundImageView!)
    }
    
    @objc func TappedView(_ sender: UITapGestureRecognizer) {
@@ -30,11 +38,14 @@ class PuzzleMakerTapToPlayViewController: UIViewController, UIGestureRecognizerD
       Play3DtouchMedium()
       GameSound.PlaySoundsTapButton()
       
-
-      PuzzleTabBar.modalPresentationStyle = .fullScreen
-      self.present(PuzzleTabBar, animated: true, completion: {
-         print("プレゼント終わった")
+      self.view.fadeOut(type: .Normal, completed: {
+         PuzzleTabBar.modalPresentationStyle = .fullScreen
+         self.present(PuzzleTabBar, animated: false, completion: {
+            print("プレゼント終わった")
+         })
       })
+
+      
    }
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
