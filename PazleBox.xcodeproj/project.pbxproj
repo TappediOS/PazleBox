@@ -135,6 +135,8 @@
 		BF33CE0A233A243A00AD488A /* PiceImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33CE09233A243A00AD488A /* PiceImageView.swift */; };
 		BF33CE0E233B319000AD488A /* GetPiceposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33CE0D233B319000AD488A /* GetPiceposition.swift */; };
 		BF399B8422C4A14C003DD18A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2674E32227B6A3003D370F /* AppDelegate.swift */; };
+		BF3C975623F927A90004DF88 /* cart_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3C975423F927A80004DF88 /* cart_fill.png */; };
+		BF3C975723F927A90004DF88 /* cart.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3C975523F927A90004DF88 /* cart.png */; };
 		BF3EF63B2250988700D5534A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF3EF63A2250988700D5534A /* GoogleService-Info.plist */; };
 		BF4323C522D3568D008DF038 /* CleateStageSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4323C422D3568D008DF038 /* CleateStageSB.storyboard */; };
 		BF4323C722D35822008DF038 /* CreateStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4323C622D35822008DF038 /* CreateStageViewController.swift */; };
@@ -923,6 +925,8 @@
 		BF33CE07233A208900AD488A /* ExString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExString.swift; sourceTree = "<group>"; };
 		BF33CE09233A243A00AD488A /* PiceImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiceImageView.swift; sourceTree = "<group>"; };
 		BF33CE0D233B319000AD488A /* GetPiceposition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPiceposition.swift; sourceTree = "<group>"; };
+		BF3C975423F927A80004DF88 /* cart_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cart_fill.png; sourceTree = "<group>"; };
+		BF3C975523F927A90004DF88 /* cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cart.png; sourceTree = "<group>"; };
 		BF3EF63A2250988700D5534A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		BF4323C422D3568D008DF038 /* CleateStageSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CleateStageSB.storyboard; sourceTree = "<group>"; };
 		BF4323C622D35822008DF038 /* CreateStageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStageViewController.swift; sourceTree = "<group>"; };
@@ -2123,6 +2127,8 @@
 				BF48932323B9CF520001FB04 /* hammer_fill.png */,
 				BF48932523B9D1030001FB04 /* person.png */,
 				BF48932723B9D1730001FB04 /* person_fill.png */,
+				BF3C975423F927A80004DF88 /* cart_fill.png */,
+				BF3C975523F927A90004DF88 /* cart.png */,
 				BF48932923B9D2500001FB04 /* play.png */,
 				BF48932B23B9D26D0001FB04 /* play_fill.png */,
 			);
@@ -3186,6 +3192,7 @@
 				BF2674E62227B6A3003D370F /* GameScene.sks in Resources */,
 				BF2674F12227B6A4003D370F /* Assets.xcassets in Resources */,
 				BFF6D618228412D2000253A2 /* 33p28Green.png in Resources */,
+				BF3C975623F927A90004DF88 /* cart_fill.png in Resources */,
 				BF4323C522D3568D008DF038 /* CleateStageSB.storyboard in Resources */,
 				BFF6D73022896610000253A2 /* 43p16Red.png in Resources */,
 				BFF6D628228412D2000253A2 /* 33p31Red.png in Resources */,
@@ -3299,6 +3306,7 @@
 				BF1DBD5A237FC34700F6B2D1 /* SellectView.xib in Resources */,
 				BFF6D73222896610000253A2 /* 43p17Red.png in Resources */,
 				BFF6D70522896610000253A2 /* 43p39Red.png in Resources */,
+				BF3C975723F927A90004DF88 /* cart.png in Resources */,
 				BFCE2616224A557B0099A775 /* 23p7Blue.png in Resources */,
 				BFC9C1E022B136E600F0FFDE /* Clear.caf in Resources */,
 				BFCE2618224A557B0099A775 /* 23p7Green.png in Resources */,
