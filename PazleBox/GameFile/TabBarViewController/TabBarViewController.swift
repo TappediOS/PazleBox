@@ -158,6 +158,9 @@ class PuzzleTabBarController: ESTabBarController {
       }
    }
    
+   
+   
+   
    private func getCreateImage() -> UIImage {
       if #available(iOS 13, *) {
          return UIImage(systemName: "hammer")!
@@ -173,6 +176,26 @@ class PuzzleTabBarController: ESTabBarController {
          return UIImage(named: "hammer_fill.png")!
       }
    }
+   
+   
+   
+   private func getCartImage() -> UIImage {
+      if #available(iOS 13, *) {
+         return UIImage(systemName: "cart")!
+      }else{
+         return UIImage(named: "cart.png")!
+      }
+   }
+   
+   private func getCartFillImage() -> UIImage {
+      if #available(iOS 13, *) {
+         return UIImage(systemName: "cart.fill")!
+      }else{
+         return UIImage(named: "cart_fill.png")!
+      }
+   }
+   
+   
    
    private func getSettingImage() -> UIImage {
       if #available(iOS 13, *) {
