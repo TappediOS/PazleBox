@@ -3262,8 +3262,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
             endingLineNumber = "96"
-            landmarkName = "viewDidLayoutSubviews()"
-            landmarkType = "7">
+            landmarkName = "SellectInternetStageViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3276,10 +3276,10 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/UsingStageDatas.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "366"
-            endingLineNumber = "366"
-            landmarkName = "SellectInternetStageViewController"
-            landmarkType = "3">
+            startingLineNumber = "456"
+            endingLineNumber = "456"
+            landmarkName = "LoadStageInfomation(CellNum:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3935,6 +3935,22 @@
             startingLineNumber = "36"
             endingLineNumber = "36"
             landmarkName = "collectionViewCellCount()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8054E565-5B11-4804-AE51-ABB1A5DAB3CD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/GameFile/SellectInternetStage/UsingStageDatas.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "refresh(sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

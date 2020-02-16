@@ -58,6 +58,8 @@ class SellectInternetStageViewController: UIViewController {
    var LoadActivityView: NVActivityIndicatorView?
    
    var segmentedControl: TwicketSegmentedControl?
+   
+   var RefleshControl = UIRefreshControl()
       
    //GameVCに行くときに0が入るのを防ぐ
    //iPhoneX系以外で発生。
@@ -82,12 +84,38 @@ class SellectInternetStageViewController: UIViewController {
       InitBackButton()
       InitSegmentedControl()
       
-      
+      StageCollectionView.refreshControl = RefleshControl
+      self.RefleshControl.attributedTitle = NSAttributedString(string: "引っ張って更新")
+      self.RefleshControl.addTarget(self, action: #selector(self.refresh(sender:)), for: .valueChanged)
       
       InitHeroID()
       InitAccessibilityIdentifires()
       
       InitNotificationCenter()
+   }
+   
+   @objc func refresh(sender: UIRefreshControl) {
+      Play3DtouchMedium()
+      guard let indexNum = self.segmentedControl?.selectedSegmentIndex else {
+         print("リロードする前に，セグメントのインデックスがnilやから中止する。")
+         RefleshControl.endRefreshing()
+         return
+      }
+      
+      switch indexNum{
+      case 0:
+         print("Latestの更新をします。")
+         ReLoadLatestStageDataFromDataBase()
+      case 1:
+         print("PlayCountの更新をします。")
+         ReLoadPlayCountStageDataFromDataBase()
+         print("Ratingの更新をします。")
+      case 2:
+         ReLoadRatedStageDataFromDataBase()
+      default:
+         print("nilじゃなかったら何？")
+         RefleshControl.endRefreshing()
+      }
    }
    
    //safeArea取得するために必要。
@@ -226,6 +254,26 @@ class SellectInternetStageViewController: UIViewController {
       }
    }
    
+   private func GetPlayCountStageDataFromDataBase(){
+      print("PlayCountデータの取得開始")
+      db.collection("Stages").whereField("PlayCount", isGreaterThanOrEqualTo: 0)
+         .order(by: "PlayCount", descending: true)
+         .limit(to: MaxGetStageNumFormDataBase)
+         .getDocuments() { (querySnapshot, err) in
+            if let err = err {
+               print("データベースからのデータ取得エラー: \(err)")
+            } else {
+               for document in querySnapshot!.documents {
+                  self.PlayCountStageDatas.append(self.GetRawData(document: document))
+               }
+            }
+            //ここでは必要な配列を作っただけで何もする必要はない。
+            //ここで作った配列(self.LatestStageDatas)
+            //はSegmentタップされたときにUsingStageDataに代入してリロードすればいい。
+            print("PlayCountデータの取得完了")
+      }
+   }
+   
    private func GetRatedStageDataFromDataBase() {
       print("Ratedデータの取得開始")
       db.collection("Stages").whereField("ReviewAve", isGreaterThanOrEqualTo: 0)
@@ -247,25 +295,75 @@ class SellectInternetStageViewController: UIViewController {
       }
    }
    
-   private func GetPlayCountStageDataFromDataBase(){
-      print("PlayCountデータの取得開始")
-      db.collection("Stages").whereField("PlayCount", isGreaterThanOrEqualTo: 0)
-         .order(by: "PlayCount", descending: true)
+   
+   
+   private func ReLoadLatestStageDataFromDataBase() {
+      print("Latestデータの更新開始")
+      db.collection("Stages")
+         .order(by: "addDate", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
             if let err = err {
                print("データベースからのデータ取得エラー: \(err)")
             } else {
+               print("Latestデータの取得成功")
+               self.LatestStageDatas.removeAll()
                for document in querySnapshot!.documents {
-                  self.PlayCountStageDatas.append(self.GetRawData(document: document))
+                  self.LatestStageDatas.append(self.GetRawData(document: document))
                }
+               print("Latestデータの更新完了")
+               self.UsingStageDatas = self.LatestStageDatas
+               self.StageCollectionView.reloadData()
             }
-            //ここでは必要な配列を作っただけで何もする必要はない。
-            //ここで作った配列(self.LatestStageDatas)
-            //はSegmentタップされたときにUsingStageDataに代入してリロードすればいい。
-            print("PlayCountデータの取得完了")
+            self.RefleshControl.endRefreshing()
       }
    }
+   
+   private func ReLoadPlayCountStageDataFromDataBase(){
+        print("PlayCountデータの更新開始")
+        db.collection("Stages").whereField("PlayCount", isGreaterThanOrEqualTo: 0)
+           .order(by: "PlayCount", descending: true)
+           .limit(to: MaxGetStageNumFormDataBase)
+           .getDocuments() { (querySnapshot, err) in
+              if let err = err {
+                 print("データベースからのデータ取得エラー: \(err)")
+              } else {
+                 print("PlayCountデータの取得完了")
+                 self.PlayCountStageDatas.removeAll()
+                 for document in querySnapshot!.documents {
+                    self.PlayCountStageDatas.append(self.GetRawData(document: document))
+                 }
+                 print("PlayCountデータの更新完了")
+                 self.UsingStageDatas = self.PlayCountStageDatas
+                 self.StageCollectionView.reloadData()
+              }
+              self.RefleshControl.endRefreshing()
+        }
+     }
+   
+   private func ReLoadRatedStageDataFromDataBase() {
+      print("Ratedデータの更新開始")
+      db.collection("Stages").whereField("ReviewAve", isGreaterThanOrEqualTo: 0)
+         .order(by: "ReviewAve", descending: true)
+         .limit(to: MaxGetStageNumFormDataBase)
+         .getDocuments() { (querySnapshot, err) in
+            if let err = err {
+               print("データベースからのデータ取得エラー: \(err)")
+            } else {
+               print("Ratedデータの取得成功")
+               self.RatedStageDatas.removeAll()
+               for document in querySnapshot!.documents {
+                  self.RatedStageDatas.append(self.GetRawData(document: document))
+               }
+               print("Ratedデータの更新完了")
+               self.UsingStageDatas = self.RatedStageDatas
+               self.StageCollectionView.reloadData()
+            }
+            self.RefleshControl.endRefreshing()
+      }
+   }
+   
+  
    
    
    private func  InitAccessibilityIdentifires() {
