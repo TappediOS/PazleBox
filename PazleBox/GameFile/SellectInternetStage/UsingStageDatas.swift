@@ -84,9 +84,8 @@ class SellectInternetStageViewController: UIViewController {
       InitBackButton()
       InitSegmentedControl()
       
-      StageCollectionView.refreshControl = RefleshControl
-      self.RefleshControl.attributedTitle = NSAttributedString(string: "引っ張って更新")
-      self.RefleshControl.addTarget(self, action: #selector(self.refresh(sender:)), for: .valueChanged)
+      
+      SetUpRefleshControl()
       
       InitHeroID()
       InitAccessibilityIdentifires()
@@ -94,7 +93,7 @@ class SellectInternetStageViewController: UIViewController {
       InitNotificationCenter()
    }
    
-   @objc func refresh(sender: UIRefreshControl) {
+   @objc func ReloadDataFromFireStore(sender: UIRefreshControl) {
       Play3DtouchMedium()
       guard let indexNum = self.segmentedControl?.selectedSegmentIndex else {
          print("リロードする前に，セグメントのインデックスがnilやから中止する。")
@@ -422,6 +421,12 @@ class SellectInternetStageViewController: UIViewController {
    private func InitNotificationCenter() {
       NotificationCenter.default.addObserver(self, selector: #selector(TapPlayButtonCatchNotification(notification:)), name: .TapPlayButton, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(TapCloseButtonCatchNotification(notification:)), name: .TapCloseButton, object: nil)
+   }
+   
+   
+   func SetUpRefleshControl() {
+      self.StageCollectionView.refreshControl = self.RefleshControl
+      self.RefleshControl.addTarget(self, action: #selector(self.ReloadDataFromFireStore(sender:)), for: .valueChanged)
    }
    
    @objc func TapPlayButtonCatchNotification(notification: Notification) -> Void {
