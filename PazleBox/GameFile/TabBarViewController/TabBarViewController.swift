@@ -96,8 +96,6 @@ class PuzzleTabBarController: ESTabBarController {
       SettingVC.tabBarItem.accessibilityIdentifier = "tabBar_Setting"
       
       self.viewControllers = [PlayVC, CreateVC, SettingVC]
-      self.selectedViewController = CreateVC
-      self.selectedIndex = 1
    }
    
    //MARK: 通知の初期化
