@@ -15,13 +15,60 @@
                     <view key="view" contentMode="scaleToFill" id="Gzb-yn-Wv0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCk-7v-AyU">
+                                <rect key="frame" x="20" y="154" width="374" height="109"/>
+                                <color key="backgroundColor" red="0.70409113479999996" green="0.93592940800000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="109" id="Mqw-XE-BUR"/>
+                                </constraints>
+                                <state key="normal" title="Pice1"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ih-E5-oML">
+                                <rect key="frame" x="20" y="294" width="374" height="109"/>
+                                <color key="backgroundColor" red="0.70409113479999996" green="0.93592940800000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="109" id="j38-3I-nlo"/>
+                                </constraints>
+                                <state key="normal" title="Pice2"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m12-14-lXY">
+                                <rect key="frame" x="20" y="600" width="374" height="109"/>
+                                <color key="backgroundColor" red="0.70409113479999996" green="0.93592940800000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Pice4"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CjY-eN-gZR">
+                                <rect key="frame" x="20" y="445" width="374" height="109"/>
+                                <color key="backgroundColor" red="0.70409113479999996" green="0.93592940800000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="109" id="VMi-Gl-FqT"/>
+                                </constraints>
+                                <state key="normal" title="Pice3"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nLj-fR-Uoi" firstAttribute="bottom" secondItem="m12-14-lXY" secondAttribute="bottom" constant="153" id="3Gb-We-uhf"/>
+                            <constraint firstItem="TCk-7v-AyU" firstAttribute="leading" secondItem="7ih-E5-oML" secondAttribute="leading" id="59U-5g-ZC6"/>
+                            <constraint firstItem="CjY-eN-gZR" firstAttribute="leading" secondItem="m12-14-lXY" secondAttribute="leading" id="Apu-ik-KQB"/>
+                            <constraint firstItem="7ih-E5-oML" firstAttribute="leading" secondItem="CjY-eN-gZR" secondAttribute="leading" id="CnT-L9-Igf"/>
+                            <constraint firstItem="7ih-E5-oML" firstAttribute="top" secondItem="TCk-7v-AyU" secondAttribute="bottom" constant="31" id="GM5-x4-Jq3"/>
+                            <constraint firstItem="CjY-eN-gZR" firstAttribute="top" secondItem="7ih-E5-oML" secondAttribute="bottom" constant="42" id="GZK-pL-58T"/>
+                            <constraint firstItem="TCk-7v-AyU" firstAttribute="trailing" secondItem="7ih-E5-oML" secondAttribute="trailing" id="MJN-ca-2rO"/>
+                            <constraint firstItem="TCk-7v-AyU" firstAttribute="trailing" secondItem="Gzb-yn-Wv0" secondAttribute="trailingMargin" id="OEb-61-KHA"/>
+                            <constraint firstItem="CjY-eN-gZR" firstAttribute="trailing" secondItem="m12-14-lXY" secondAttribute="trailing" id="POM-Dr-Bwn"/>
+                            <constraint firstItem="7ih-E5-oML" firstAttribute="trailing" secondItem="CjY-eN-gZR" secondAttribute="trailing" id="Tau-tf-kHk"/>
+                            <constraint firstItem="m12-14-lXY" firstAttribute="top" secondItem="CjY-eN-gZR" secondAttribute="bottom" constant="46" id="iKa-Cd-ZC0"/>
+                            <constraint firstItem="TCk-7v-AyU" firstAttribute="leading" secondItem="Gzb-yn-Wv0" secondAttribute="leadingMargin" id="waZ-nZ-6rq"/>
+                            <constraint firstItem="TCk-7v-AyU" firstAttribute="top" secondItem="nLj-fR-Uoi" secondAttribute="top" constant="110" id="xec-zh-Khd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nLj-fR-Uoi"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ASz-fn-hI0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IXj-1n-J6J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-216" y="188"/>
+            <point key="canvasLocation" x="-217.39130434782609" y="187.5"/>
         </scene>
     </scenes>
 </document>
