@@ -85,6 +85,17 @@ class PuzzleTabBarController: ESTabBarController {
       CreateVC.tabBarItem.accessibilityIdentifier = "tabBar_Create"
       
       
+      
+      image = getCartImage()
+      selectedImage = getCartFillImage()
+      title = NSLocalizedString("Create", comment: "")
+      let ShoppingPiceVC = Storybord.instantiateViewController(withIdentifier: "ShoppingPiceVC")
+      ShoppingPiceVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
+                                              image: image, selectedImage: selectedImage, tag: 3)
+      ShoppingPiceVC.tabBarItem.accessibilityIdentifier = "tabBar_Cart"
+      
+      
+      
       image = getSettingImage()
       selectedImage = getSettingFillImage()
       title = NSLocalizedString("Setting", comment: "")
@@ -92,10 +103,10 @@ class PuzzleTabBarController: ESTabBarController {
       let MainStorybord = UIStoryboard(name: "Main", bundle: nil)
       let SettingVC = MainStorybord.instantiateViewController(withIdentifier: "SettingTableVC")
       SettingVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
-                                                image: image, selectedImage: selectedImage, tag: 3)
+                                                image: image, selectedImage: selectedImage, tag: 4)
       SettingVC.tabBarItem.accessibilityIdentifier = "tabBar_Setting"
       
-      self.viewControllers = [PlayVC, CreateVC, SettingVC]
+      self.viewControllers = [PlayVC, CreateVC, ShoppingPiceVC, SettingVC]
       self.selectedViewController = PlayVC
       self.selectedIndex = 0
    }
