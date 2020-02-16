@@ -3598,8 +3598,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "113"
             endingLineNumber = "113"
-            landmarkName = "StartBGM()"
-            landmarkType = "7">
+            landmarkName = "PuzzleTabBarController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3614,7 +3614,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
             endingLineNumber = "137"
-            landmarkName = "StartHomeBGMCatchNotification(notification:)"
+            landmarkName = "StopHomeBGMCatchNotification(notification:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3630,8 +3630,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
             endingLineNumber = "114"
-            landmarkName = "StartBGM()"
-            landmarkType = "7">
+            landmarkName = "PuzzleTabBarController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
