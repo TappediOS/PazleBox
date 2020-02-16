@@ -88,8 +88,9 @@ class PuzzleTabBarController: ESTabBarController {
       
       image = getCartImage()
       selectedImage = getCartFillImage()
-      title = NSLocalizedString("Create", comment: "")
-      let ShoppingPiceVC = Storybord.instantiateViewController(withIdentifier: "ShoppingPiceVC")
+      title = NSLocalizedString("Pice", comment: "")
+      let ShoppingStorybord = UIStoryboard(name: "ShoppingPiceVC", bundle: nil)
+      let ShoppingPiceVC = ShoppingStorybord.instantiateViewController(withIdentifier: "ShoppingPiceVC")
       ShoppingPiceVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
                                               image: image, selectedImage: selectedImage, tag: 3)
       ShoppingPiceVC.tabBarItem.accessibilityIdentifier = "tabBar_Cart"
