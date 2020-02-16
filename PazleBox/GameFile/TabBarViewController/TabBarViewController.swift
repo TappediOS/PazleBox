@@ -69,7 +69,9 @@ class PuzzleTabBarController: ESTabBarController {
       
       var title = NSLocalizedString("Play", comment: "")
       let Storybord = UIStoryboard(name: "CleateStageSB", bundle: nil)
-      let PlayVC = Storybord.instantiateViewController(withIdentifier: "SellectCreateStageViewController")
+      //こっちにしたら，自分のステージと世界のステージを選べる画面になる。
+      //let PlayVC = Storybord.instantiateViewController(withIdentifier: "SellectCreateStageViewController")
+      let PlayVC = Storybord.instantiateViewController(withIdentifier: "SellectIntarnetStageVC")
       PlayVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
                                            image: image, selectedImage: selectedImage, tag: 1)
       
