@@ -13,9 +13,15 @@ import Firebase
 extension SellectInternetStageViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
       guard CanSellectStage == true else {
-         print("ステージを選べません")
+         print("他のステージが選ばれてるのでステージを選べません")
          return
       }
+      
+      guard self.RefleshControl.isRefreshing == false else {
+         print("データ更新中なので選択できません")
+         return
+      }
+      
       CanSellectStage = false
       print("Cellタップされた Cell: \(indexPath.item)")
       
