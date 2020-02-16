@@ -3710,15 +3710,15 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "996"
             endingLineNumber = "996"
-            landmarkName = "ClearTapImageViewCatchNotification(notificaton:)"
-            landmarkType = "7">
+            landmarkName = "TutorialViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C422C101-389F-4B78-928A-7E464D8580AD"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PazleBox/GameFile/Tutorial/TutorialVC/TutorialViewController.swift"
