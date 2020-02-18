@@ -41,9 +41,10 @@ class SellectInternetStageViewController: UIViewController {
    @IBOutlet weak var StageCollectionView: UICollectionView!
    
    //こいつがCollecti on viewのレイアウトを決めている
+   //上下左右にどれだけの感覚を開けるかを決める。
    let sectionInsets = UIEdgeInsets(top: 13.0, left: 6.0, bottom: 5.0, right: 6.0)
    //Cellを横に何個入れるか
-   let itemsPerRow: CGFloat = 3
+   let itemsPerRow: CGFloat = 2
    
    //ステージが選択できるかどうか
    var CanSellectStage: Bool = true
