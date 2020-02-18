@@ -297,7 +297,7 @@ class SellectInternetStageViewController: UIViewController {
    
    
    private func ReLoadLatestStageDataFromDataBase() {
-      print("Latestデータの更新開始")
+      print("\n---- Latestデータの更新開始 ----")
       db.collection("Stages")
          .order(by: "addDate", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
@@ -310,7 +310,7 @@ class SellectInternetStageViewController: UIViewController {
                for document in querySnapshot!.documents {
                   self.LatestStageDatas.append(self.GetRawData(document: document))
                }
-               print("Latestデータの更新完了")
+               print("---- Latestデータの更新完了 ----\n")
                self.UsingStageDatas = self.LatestStageDatas
                self.StageCollectionView.reloadData()
             }
@@ -319,7 +319,7 @@ class SellectInternetStageViewController: UIViewController {
    }
    
    private func ReLoadPlayCountStageDataFromDataBase(){
-        print("PlayCountデータの更新開始")
+        print("\n---- PlayCountデータの更新開始 ----")
         db.collection("Stages").whereField("PlayCount", isGreaterThanOrEqualTo: 0)
            .order(by: "PlayCount", descending: true)
            .limit(to: MaxGetStageNumFormDataBase)
@@ -332,7 +332,7 @@ class SellectInternetStageViewController: UIViewController {
                  for document in querySnapshot!.documents {
                     self.PlayCountStageDatas.append(self.GetRawData(document: document))
                  }
-                 print("PlayCountデータの更新完了")
+                 print("---- PlayCountデータの更新完了 ----\n")
                  self.UsingStageDatas = self.PlayCountStageDatas
                  self.StageCollectionView.reloadData()
               }
@@ -341,7 +341,7 @@ class SellectInternetStageViewController: UIViewController {
      }
    
    private func ReLoadRatedStageDataFromDataBase() {
-      print("Ratedデータの更新開始")
+      print("\n---- Ratedデータの更新開始 ----")
       db.collection("Stages").whereField("ReviewAve", isGreaterThanOrEqualTo: 0)
          .order(by: "ReviewAve", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
@@ -354,7 +354,7 @@ class SellectInternetStageViewController: UIViewController {
                for document in querySnapshot!.documents {
                   self.RatedStageDatas.append(self.GetRawData(document: document))
                }
-               print("Ratedデータの更新完了")
+               print("---- Ratedデータの更新完了 ----\n")
                self.UsingStageDatas = self.RatedStageDatas
                self.StageCollectionView.reloadData()
             }
