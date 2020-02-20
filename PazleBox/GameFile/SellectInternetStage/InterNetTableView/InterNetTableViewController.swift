@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import UIKit
+
+class InterNetTableViewController: UIViewController {
+   
+   override func viewDidLoad() {
+      super.viewDidLoad()
+      
+   }
+}
