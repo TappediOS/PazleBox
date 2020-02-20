@@ -143,6 +143,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z8K-jt-huS"/>
                     </view>
+                    <connections>
+                        <outlet property="InterNetTableView" destination="zuk-lm-NbP" id="G3A-B3-shZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SBT-uH-Axo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

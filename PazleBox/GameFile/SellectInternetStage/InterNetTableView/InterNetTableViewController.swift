@@ -11,6 +11,9 @@ import UIKit
 
 class InterNetTableViewController: UIViewController {
    
+   @IBOutlet weak var InterNetTableView: UITableView!
+   
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
