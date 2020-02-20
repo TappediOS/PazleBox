@@ -297,6 +297,7 @@
 		BF73C2F8234B319200745C7F /* UsersGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F7234B319200745C7F /* UsersGameScene.swift */; };
 		BF73C2FA234B31A200745C7F /* UsersGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F9234B31A200745C7F /* UsersGameViewController.swift */; };
 		BF77126523D94BD400EF0D3C /* UserAgreementVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF77126423D94BD400EF0D3C /* UserAgreementVCTest.swift */; };
+		BF77E90B23FE6C2200E5EC91 /* InterNetTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF77E90A23FE6C2200E5EC91 /* InterNetTableView.storyboard */; };
 		BF78D91723C98C8100334188 /* PuzzleTabBarControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91623C98C8100334188 /* PuzzleTabBarControllerTest.swift */; };
 		BF78D91923C98E5E00334188 /* SettingVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91823C98E5E00334188 /* SettingVCTest.swift */; };
 		BF78D91B23C9906100334188 /* SellectCreateStageVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91A23C9906100334188 /* SellectCreateStageVCTest.swift */; };
@@ -1098,6 +1099,7 @@
 		BF73C2F7234B319200745C7F /* UsersGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersGameScene.swift; sourceTree = "<group>"; };
 		BF73C2F9234B31A200745C7F /* UsersGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersGameViewController.swift; sourceTree = "<group>"; };
 		BF77126423D94BD400EF0D3C /* UserAgreementVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgreementVCTest.swift; sourceTree = "<group>"; };
+		BF77E90A23FE6C2200E5EC91 /* InterNetTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InterNetTableView.storyboard; sourceTree = "<group>"; };
 		BF78D91623C98C8100334188 /* PuzzleTabBarControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleTabBarControllerTest.swift; sourceTree = "<group>"; };
 		BF78D91823C98E5E00334188 /* SettingVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVCTest.swift; sourceTree = "<group>"; };
 		BF78D91A23C9906100334188 /* SellectCreateStageVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectCreateStageVCTest.swift; sourceTree = "<group>"; };
@@ -2255,6 +2257,7 @@
 		BF77E90923FE6BC700E5EC91 /* InterNetTableView */ = {
 			isa = PBXGroup;
 			children = (
+				BF77E90A23FE6C2200E5EC91 /* InterNetTableView.storyboard */,
 			);
 			path = InterNetTableView;
 			sourceTree = "<group>";
@@ -3185,6 +3188,7 @@
 				BFCE261F224A557B0099A775 /* 23p12Red.png in Resources */,
 				BFCE25C6224A466B0099A775 /* 33p22Red.png in Resources */,
 				BFF6D70D22896610000253A2 /* 43p7Green.png in Resources */,
+				BF77E90B23FE6C2200E5EC91 /* InterNetTableView.storyboard in Resources */,
 				BF7CD9422240B89800F8302B /* 22p5Green.png in Resources */,
 				BFF6D619228412D2000253A2 /* 33p26Blue.png in Resources */,
 				BFF6D60D228412D2000253A2 /* 33p34Green.png in Resources */,
