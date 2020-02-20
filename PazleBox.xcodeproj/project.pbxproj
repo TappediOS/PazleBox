@@ -298,6 +298,7 @@
 		BF73C2FA234B31A200745C7F /* UsersGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F9234B31A200745C7F /* UsersGameViewController.swift */; };
 		BF77126523D94BD400EF0D3C /* UserAgreementVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF77126423D94BD400EF0D3C /* UserAgreementVCTest.swift */; };
 		BF77E90B23FE6C2200E5EC91 /* InterNetTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF77E90A23FE6C2200E5EC91 /* InterNetTableView.storyboard */; };
+		BF77E90D23FE743200E5EC91 /* InterNetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF77E90C23FE743200E5EC91 /* InterNetTableViewController.swift */; };
 		BF78D91723C98C8100334188 /* PuzzleTabBarControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91623C98C8100334188 /* PuzzleTabBarControllerTest.swift */; };
 		BF78D91923C98E5E00334188 /* SettingVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91823C98E5E00334188 /* SettingVCTest.swift */; };
 		BF78D91B23C9906100334188 /* SellectCreateStageVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91A23C9906100334188 /* SellectCreateStageVCTest.swift */; };
@@ -1100,6 +1101,7 @@
 		BF73C2F9234B31A200745C7F /* UsersGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersGameViewController.swift; sourceTree = "<group>"; };
 		BF77126423D94BD400EF0D3C /* UserAgreementVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgreementVCTest.swift; sourceTree = "<group>"; };
 		BF77E90A23FE6C2200E5EC91 /* InterNetTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InterNetTableView.storyboard; sourceTree = "<group>"; };
+		BF77E90C23FE743200E5EC91 /* InterNetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterNetTableViewController.swift; sourceTree = "<group>"; };
 		BF78D91623C98C8100334188 /* PuzzleTabBarControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleTabBarControllerTest.swift; sourceTree = "<group>"; };
 		BF78D91823C98E5E00334188 /* SettingVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVCTest.swift; sourceTree = "<group>"; };
 		BF78D91A23C9906100334188 /* SellectCreateStageVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectCreateStageVCTest.swift; sourceTree = "<group>"; };
@@ -2258,6 +2260,7 @@
 			isa = PBXGroup;
 			children = (
 				BF77E90A23FE6C2200E5EC91 /* InterNetTableView.storyboard */,
+				BF77E90C23FE743200E5EC91 /* InterNetTableViewController.swift */,
 			);
 			path = InterNetTableView;
 			sourceTree = "<group>";
@@ -3948,6 +3951,7 @@
 				BF552EF8226DDE4E00756E16 /* N45.swift in Sources */,
 				BF399B8422C4A14C003DD18A /* AppDelegate.swift in Sources */,
 				BF519C7D223FAA470087A4AC /* GetPuzzleArry.swift in Sources */,
+				BF77E90D23FE743200E5EC91 /* InterNetTableViewController.swift in Sources */,
 				BFFA2A81223380720023BB71 /* EasyGet.swift in Sources */,
 				BF552F04226DDE8200756E16 /* H21.swift in Sources */,
 				BF552EEC226DDE2700756E16 /* N39.swift in Sources */,
