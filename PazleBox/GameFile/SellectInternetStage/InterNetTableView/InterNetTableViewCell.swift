@@ -23,6 +23,7 @@ class InterNetTableViewCell: UITableViewCell {
    
    @IBOutlet weak var CreatedDayLabel: UILabel!
    
-
+   @IBOutlet weak var GameScreenshotImageView: UIImageView!
+   
  
 }

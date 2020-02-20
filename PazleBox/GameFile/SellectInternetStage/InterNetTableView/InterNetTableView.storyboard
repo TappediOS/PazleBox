@@ -132,6 +132,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="CreatedDayLabel" destination="Y5B-Ny-0Ic" id="MRV-wt-dkp"/>
+                                            <outlet property="GameScreenshotImageView" destination="tmm-Y7-zUW" id="bRv-YQ-ElI"/>
                                             <outlet property="PlayCountImageView" destination="XUa-gT-C6k" id="tRY-Dq-Ufd"/>
                                             <outlet property="PlayCountLabel" destination="ryE-l2-ZOJ" id="gye-cF-TOk"/>
                                             <outlet property="PuzzleTitleLabel" destination="dbc-Vc-79b" id="XAY-Nj-Cgg"/>

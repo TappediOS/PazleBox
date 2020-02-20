@@ -36,6 +36,12 @@ extension InterNetTableViewController {
    //Cellを返す
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = self.InterNetTableView.dequeueReusableCell(withIdentifier: "InterNetCell", for: indexPath) as? InterNetTableViewCell
+      
+      
+      cell?.UserImageView.image = UIImage(named: "person.png")
+      cell?.GameScreenshotImageView.image = UIImage(named: "23p5Red.png")
+      cell?.UserNameLabel.text = "Raid on was"
+      cell?.PlayCountLabel.text = "200"
 
       
       return cell!
