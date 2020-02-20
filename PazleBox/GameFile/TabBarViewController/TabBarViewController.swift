@@ -67,6 +67,7 @@ class PuzzleTabBarController: ESTabBarController {
       image = getPlayImage()
       selectedImage = getPlayFillImage()
       
+      //----- CollectionViewとして生成 -----//
       var title = NSLocalizedString("Play", comment: "")
       let Storybord = UIStoryboard(name: "CleateStageSB", bundle: nil)
       //こっちにしたら，自分のステージと世界のステージを選べる画面になる。
@@ -76,7 +77,16 @@ class PuzzleTabBarController: ESTabBarController {
                                            image: image, selectedImage: selectedImage, tag: 1)
       
       PlayVC.tabBarItem.accessibilityIdentifier = "tabBar_Play"
-
+      //----- CollectionViewとして生成 -----//
+      
+      //----- Tabeviewとして生成 -----//
+      let InterNetStorybord = UIStoryboard(name: "InterNetTableView", bundle: nil)
+      let InterNetTableVC = InterNetStorybord.instantiateViewController(withIdentifier: "InterNetTableVC")
+      PlayVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
+                                           image: image, selectedImage: selectedImage, tag: 1)
+      
+      PlayVC.tabBarItem.accessibilityIdentifier = "tabBar_Play"
+      //----- Tabeviewとして生成 -----//
       
       image = getCreateImage()
       selectedImage = getCreateFillImage()
@@ -109,8 +119,10 @@ class PuzzleTabBarController: ESTabBarController {
                                                 image: image, selectedImage: selectedImage, tag: 4)
       SettingVC.tabBarItem.accessibilityIdentifier = "tabBar_Setting"
       
-      self.viewControllers = [PlayVC, CreateVC, ShoppingPiceVC, SettingVC]
-      self.selectedViewController = PlayVC
+      
+      //MARK:- 配列の0番目を変更してPlayVCにすると元に戻る
+      self.viewControllers = [InterNetTableVC, CreateVC, ShoppingPiceVC, SettingVC]
+      self.selectedViewController = InterNetTableVC
       self.selectedIndex = 0
    }
    
