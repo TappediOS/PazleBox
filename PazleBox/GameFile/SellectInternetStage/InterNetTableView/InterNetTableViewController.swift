@@ -35,6 +35,9 @@ extension InterNetTableViewController {
    
    //Cellを返す
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      <#code#>
+      let cell = self.InterNetTableView.dequeueReusableCell(withIdentifier: "InterNetCell", for: indexPath) as? InterNexTableViewCell
+
+      
+      return cell!
    }
 }

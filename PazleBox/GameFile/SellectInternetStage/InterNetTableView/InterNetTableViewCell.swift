@@ -1,5 +1,5 @@
 //
-//  InterNexTableViewCell.swift
+//  InterNetTableViewCell.swift
 //  PazleBox
 //
 //  Created by jun on 2020/02/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InterNexTableViewCell: UITableViewCell {
+class InterNetTableViewCell: UITableViewCell {
    
    @IBOutlet weak var UserImageView: UIImageView!
    @IBOutlet weak var UserNameLabel: UILabel!
