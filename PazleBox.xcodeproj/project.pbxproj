@@ -2238,6 +2238,27 @@
 			path = UserStageSecenAndVC;
 			sourceTree = "<group>";
 		};
+		BF77E90823FE6BB600E5EC91 /* InterNetCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				BF85D54323935EB1005E564B /* UsingStageDatas.swift */,
+				BF7F44BF2394DC3B0004CE60 /* PlayStageInfo.swift */,
+				BFADC64123A4A11700AC6768 /* InterNetSellect.xib */,
+				BFADC63F23A4A10A00AC6768 /* InternetSellect.swift */,
+				BF85D54523935FDE005E564B /* ExSellectInternetStageViewController.swift */,
+				BFADC63D23A4866200AC6768 /* ExSellectForSegmentedControl.swift */,
+				BF85D54723937BD1005E564B /* ExSellectInternetVC.swift */,
+			);
+			path = InterNetCollectionView;
+			sourceTree = "<group>";
+		};
+		BF77E90923FE6BC700E5EC91 /* InterNetTableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InterNetTableView;
+			sourceTree = "<group>";
+		};
 		BF7CD9142240B41500F8302B /* P12 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2392,13 +2413,8 @@
 		BF85D54223935E7A005E564B /* SellectInternetStage */ = {
 			isa = PBXGroup;
 			children = (
-				BF85D54323935EB1005E564B /* UsingStageDatas.swift */,
-				BF7F44BF2394DC3B0004CE60 /* PlayStageInfo.swift */,
-				BFADC64123A4A11700AC6768 /* InterNetSellect.xib */,
-				BFADC63F23A4A10A00AC6768 /* InternetSellect.swift */,
-				BF85D54523935FDE005E564B /* ExSellectInternetStageViewController.swift */,
-				BFADC63D23A4866200AC6768 /* ExSellectForSegmentedControl.swift */,
-				BF85D54723937BD1005E564B /* ExSellectInternetVC.swift */,
+				BF77E90923FE6BC700E5EC91 /* InterNetTableView */,
+				BF77E90823FE6BB600E5EC91 /* InterNetCollectionView */,
 			);
 			path = SellectInternetStage;
 			sourceTree = "<group>";
