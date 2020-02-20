@@ -82,10 +82,10 @@ class PuzzleTabBarController: ESTabBarController {
       //----- Tabeviewとして生成 -----//
       let InterNetStorybord = UIStoryboard(name: "InterNetTableView", bundle: nil)
       let InterNetTableVC = InterNetStorybord.instantiateViewController(withIdentifier: "InterNetTableVC")
-      PlayVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
+      InterNetTableVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
                                            image: image, selectedImage: selectedImage, tag: 1)
       
-      PlayVC.tabBarItem.accessibilityIdentifier = "tabBar_Play"
+      InterNetTableVC.tabBarItem.accessibilityIdentifier = "tabBar_Play"
       //----- Tabeviewとして生成 -----//
       
       image = getCreateImage()
