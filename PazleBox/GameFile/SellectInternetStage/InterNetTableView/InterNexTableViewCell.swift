@@ -9,16 +9,20 @@
 import UIKit
 
 class InterNexTableViewCell: UITableViewCell {
+   
+   @IBOutlet weak var UserImageView: UIImageView!
+   @IBOutlet weak var UserNameLabel: UILabel!
+   
+   @IBOutlet weak var PuzzleTitleLabel: UILabel!
+   
+   @IBOutlet weak var RatedImageView: UIImageView!
+   @IBOutlet weak var RatedLabel: UILabel!
+   
+   @IBOutlet weak var PlayCountImageView: UIImageView!
+   @IBOutlet weak var PlayCountLabel: UILabel!
+   
+   @IBOutlet weak var CreatedDayLabel: UILabel!
+   
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+ 
 }
