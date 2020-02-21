@@ -52,9 +52,18 @@ extension InterNetTableViewController {
       cell?.UserImageView.image = UIImage(named: "person.png")
       cell?.GameScreenshotImageView.image = UIImage(named: "23p5Red.png")
       cell?.UserNameLabel.text = "Raid on was"
-      cell?.PlayCountLabel.text = "200"
+      cell?.PlayCountLabel.text = String(2 * indexPath.row + 100 - indexPath.row)
 
-      
       return cell!
    }
+   
+   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      // セルの選択を解除する
+      tableView.deselectRow(at: indexPath, animated: true)
+      
+      let InterNetCellTappedVC = self.storyboard?.instantiateViewController(withIdentifier: "InterNetCellTappedVC") as! InterNetCellTappedViewController
+      self.navigationController?.pushViewController(InterNetCellTappedVC, animated: true)
+   }
+   
+   
 }
