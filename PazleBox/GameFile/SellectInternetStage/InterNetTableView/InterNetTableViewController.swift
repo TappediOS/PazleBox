@@ -19,6 +19,8 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      self.InterNetTableView.delegate = self
+      self.InterNetTableView.dataSource = self
    }
 }
 
