@@ -300,6 +300,7 @@
 		BF77E90B23FE6C2200E5EC91 /* InterNetTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF77E90A23FE6C2200E5EC91 /* InterNetTableView.storyboard */; };
 		BF77E90D23FE743200E5EC91 /* InterNetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF77E90C23FE743200E5EC91 /* InterNetTableViewController.swift */; };
 		BF77E90F23FE760600E5EC91 /* InterNetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF77E90E23FE760600E5EC91 /* InterNetTableViewCell.swift */; };
+		BF77E91123FF9FDF00E5EC91 /* InterNetCellTappedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF77E91023FF9FDF00E5EC91 /* InterNetCellTappedViewController.swift */; };
 		BF78D91723C98C8100334188 /* PuzzleTabBarControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91623C98C8100334188 /* PuzzleTabBarControllerTest.swift */; };
 		BF78D91923C98E5E00334188 /* SettingVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91823C98E5E00334188 /* SettingVCTest.swift */; };
 		BF78D91B23C9906100334188 /* SellectCreateStageVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91A23C9906100334188 /* SellectCreateStageVCTest.swift */; };
@@ -1104,6 +1105,7 @@
 		BF77E90A23FE6C2200E5EC91 /* InterNetTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InterNetTableView.storyboard; sourceTree = "<group>"; };
 		BF77E90C23FE743200E5EC91 /* InterNetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterNetTableViewController.swift; sourceTree = "<group>"; };
 		BF77E90E23FE760600E5EC91 /* InterNetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterNetTableViewCell.swift; sourceTree = "<group>"; };
+		BF77E91023FF9FDF00E5EC91 /* InterNetCellTappedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterNetCellTappedViewController.swift; sourceTree = "<group>"; };
 		BF78D91623C98C8100334188 /* PuzzleTabBarControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleTabBarControllerTest.swift; sourceTree = "<group>"; };
 		BF78D91823C98E5E00334188 /* SettingVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVCTest.swift; sourceTree = "<group>"; };
 		BF78D91A23C9906100334188 /* SellectCreateStageVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectCreateStageVCTest.swift; sourceTree = "<group>"; };
@@ -2264,6 +2266,7 @@
 				BF77E90A23FE6C2200E5EC91 /* InterNetTableView.storyboard */,
 				BF77E90E23FE760600E5EC91 /* InterNetTableViewCell.swift */,
 				BF77E90C23FE743200E5EC91 /* InterNetTableViewController.swift */,
+				BF77E91023FF9FDF00E5EC91 /* InterNetCellTappedViewController.swift */,
 			);
 			path = InterNetTableView;
 			sourceTree = "<group>";
@@ -3767,6 +3770,7 @@
 				BF1FF2B6223122C80047ED23 /* EasyCreate.swift in Sources */,
 				BF93731722BA4F8D009DCEF6 /* ExHeroID.swift in Sources */,
 				BF332FA0224926F7009B3042 /* E13.swift in Sources */,
+				BF77E91123FF9FDF00E5EC91 /* InterNetCellTappedViewController.swift in Sources */,
 				BF332F882249235D009B3042 /* ExGameSeceneNorma.swift in Sources */,
 				BF519C69223CCBDE0087A4AC /* GetTilePOSITION.swift in Sources */,
 				BF1FF2AF22311FD40047ED23 /* StageContents.swift in Sources */,
