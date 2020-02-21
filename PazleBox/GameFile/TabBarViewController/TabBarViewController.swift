@@ -81,7 +81,7 @@ class PuzzleTabBarController: ESTabBarController {
       
       //----- Tabeviewとして生成 -----//
       let InterNetStorybord = UIStoryboard(name: "InterNetTableView", bundle: nil)
-      let InterNetTableVC = InterNetStorybord.instantiateViewController(withIdentifier: "InterNetTableVC")
+      let InterNetTableVC = InterNetStorybord.instantiateViewController(withIdentifier: "InterNetNavigationVC")
       InterNetTableVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
                                            image: image, selectedImage: selectedImage, tag: 1)
       
