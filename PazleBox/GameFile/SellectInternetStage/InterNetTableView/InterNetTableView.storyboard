@@ -8,6 +8,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="xzc-Ai-TCE">
+            <objects>
+                <navigationController id="9pJ-6z-m0d" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MXm-CR-LU0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="LGF-jR-zW1" kind="relationship" relationship="rootViewController" id="Igp-gT-pQI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8QG-3Y-3Kf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3408" y="129"/>
+        </scene>
         <!--Inter Net Table View Controller-->
         <scene sceneID="7nv-ZW-AWj">
             <objects>
@@ -17,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zuk-lm-NbP">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InterNetCell" rowHeight="160" id="iha-VY-0Kz" customClass="InterNetTableViewCell" customModule="PazleBox" customModuleProvider="target">
@@ -155,13 +171,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z8K-jt-huS"/>
                     </view>
+                    <navigationItem key="navigationItem" id="nc0-Zy-BBh"/>
                     <connections>
                         <outlet property="InterNetTableView" destination="zuk-lm-NbP" id="G3A-B3-shZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SBT-uH-Axo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1594.2028985507247" y="88.392857142857139"/>
+            <point key="canvasLocation" x="-2270" y="120"/>
         </scene>
     </scenes>
     <resources>
