@@ -28,10 +28,10 @@ extension SettingTableViewController {
    
    func showUserSettingNavigationController() {
       let Storybord = UIStoryboard(name: "UsersSetting", bundle: nil)
-      let LoginVC = Storybord.instantiateViewController(withIdentifier: "UserSettingNavigationC")
-      LoginVC.modalPresentationStyle = .pageSheet
-      present(LoginVC, animated: true, completion: {
-         print("Login画面にプレゼント完了")
+      let UserSettingNaviVC = Storybord.instantiateViewController(withIdentifier: "UserSettingNavigationC")
+      UserSettingNaviVC.modalPresentationStyle = .pageSheet
+      present(UserSettingNaviVC, animated: true, completion: {
+         print("UserSettingNaviVC画面にプレゼント完了")
          Analytics.logEvent("OpenUserSettingNC", parameters: nil)
       })
    }
