@@ -19,3 +19,37 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       
    }
 }
+
+extension InterNetCellTappedViewController {
+   //セクションの数を返す
+   func numberOfSections(in tableView: UITableView) -> Int {
+      return 1
+   }
+   
+   //テーブルの行数を返す
+   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      return 20
+   }
+   
+   //Cellを返す
+   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      let cell = self.UsersCommentTableView.dequeueReusableCell(withIdentifier: "UsersCommentCell", for: indexPath) as? UsersCommentTableViewCell
+      
+      
+      //cell?.UserImageView.image = UIImage(named: "person.png")
+      //cell?.GameScreenshotImageView.image = UIImage(named: "23p5Red.png")
+      //cell?.UserNameLabel.text = "Raid on was"
+      //cell?.PlayCountLabel.text = String(2 * indexPath.row + 100 - indexPath.row)
+
+      return cell!
+   }
+   
+   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      // セルの選択を解除する
+      tableView.deselectRow(at: indexPath, animated: true)
+      
+      
+   }
+   
+   
+}
