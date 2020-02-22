@@ -255,6 +255,12 @@
                                                 <constraint firstItem="baY-ZT-r42" firstAttribute="leading" secondItem="jdK-e2-hjU" secondAttribute="trailing" constant="8" id="z2D-Ik-Vjo"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="CommentedUsersCommentLabel" destination="4d6-p9-9Uo" id="Szc-5p-fvo"/>
+                                            <outlet property="CommentedUsersImageView" destination="LHG-ov-j0i" id="xo2-Ff-YSD"/>
+                                            <outlet property="CommentedUsersNameLabel" destination="jdK-e2-hjU" id="rE2-HF-jHD"/>
+                                            <outlet property="ReportUserButton" destination="baY-ZT-r42" id="WPJ-6f-QH8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

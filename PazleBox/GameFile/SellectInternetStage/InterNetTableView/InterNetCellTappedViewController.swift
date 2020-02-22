@@ -36,10 +36,9 @@ extension InterNetCellTappedViewController {
       let cell = self.UsersCommentTableView.dequeueReusableCell(withIdentifier: "UsersCommentCell", for: indexPath) as? UsersCommentTableViewCell
       
       
-      //cell?.UserImageView.image = UIImage(named: "person.png")
-      //cell?.GameScreenshotImageView.image = UIImage(named: "23p5Red.png")
-      //cell?.UserNameLabel.text = "Raid on was"
-      //cell?.PlayCountLabel.text = String(2 * indexPath.row + 100 - indexPath.row)
+      cell?.CommentedUsersImageView.image = UIImage(named: "person.png")
+      cell?.CommentedUsersNameLabel.text = "Kind Person"
+      cell?.CommentedUsersCommentLabel.text = "This is a super good!"
 
       return cell!
    }
