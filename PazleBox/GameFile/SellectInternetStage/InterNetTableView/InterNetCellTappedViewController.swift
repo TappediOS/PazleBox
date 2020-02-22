@@ -17,6 +17,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      
       self.UsersCommentTableView.delegate = self
       self.UsersCommentTableView.dataSource = self
    }
@@ -41,6 +42,10 @@ extension InterNetCellTappedViewController {
       cell?.CommentedUsersImageView.image = UIImage(named: "person.png")
       cell?.CommentedUsersNameLabel.text = "Kind Person"
       cell?.CommentedUsersCommentLabel.text = "This is a super good!"
+      
+      if indexPath.row % 3 == 0 {
+         cell?.CommentedUsersCommentLabel.text = "apple. apple\nyou are apple\nif you have a any question, please contact us. thank you! \n\n ad ad ad\n lunch for you."
+      }
 
       return cell!
    }
