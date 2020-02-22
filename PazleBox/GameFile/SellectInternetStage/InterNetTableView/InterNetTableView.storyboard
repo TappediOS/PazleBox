@@ -199,7 +199,7 @@
                                 <rect key="frame" x="0.0" y="212" width="414" height="650"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="2t0-by-cf8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UsersCommentCell" rowHeight="100" id="2t0-by-cf8" customClass="UsersCommentTableViewCell" customModule="PazleBox" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2t0-by-cf8" id="5cg-GB-u62">
@@ -271,6 +271,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bc7-kg-Nzt"/>
                     </view>
+                    <connections>
+                        <outlet property="UsersCommentTableView" destination="jBV-Ka-7ck" id="xAB-Y3-Dud"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZx-gs-dZe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

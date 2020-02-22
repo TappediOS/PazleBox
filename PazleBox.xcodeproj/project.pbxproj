@@ -301,6 +301,7 @@
 		BF77E90D23FE743200E5EC91 /* InterNetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF77E90C23FE743200E5EC91 /* InterNetTableViewController.swift */; };
 		BF77E90F23FE760600E5EC91 /* InterNetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF77E90E23FE760600E5EC91 /* InterNetTableViewCell.swift */; };
 		BF77E91123FF9FDF00E5EC91 /* InterNetCellTappedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF77E91023FF9FDF00E5EC91 /* InterNetCellTappedViewController.swift */; };
+		BF77E9132400C59C00E5EC91 /* UsersCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF77E9122400C59C00E5EC91 /* UsersCommentTableViewCell.swift */; };
 		BF78D91723C98C8100334188 /* PuzzleTabBarControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91623C98C8100334188 /* PuzzleTabBarControllerTest.swift */; };
 		BF78D91923C98E5E00334188 /* SettingVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91823C98E5E00334188 /* SettingVCTest.swift */; };
 		BF78D91B23C9906100334188 /* SellectCreateStageVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91A23C9906100334188 /* SellectCreateStageVCTest.swift */; };
@@ -1106,6 +1107,7 @@
 		BF77E90C23FE743200E5EC91 /* InterNetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterNetTableViewController.swift; sourceTree = "<group>"; };
 		BF77E90E23FE760600E5EC91 /* InterNetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterNetTableViewCell.swift; sourceTree = "<group>"; };
 		BF77E91023FF9FDF00E5EC91 /* InterNetCellTappedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterNetCellTappedViewController.swift; sourceTree = "<group>"; };
+		BF77E9122400C59C00E5EC91 /* UsersCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCommentTableViewCell.swift; sourceTree = "<group>"; };
 		BF78D91623C98C8100334188 /* PuzzleTabBarControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleTabBarControllerTest.swift; sourceTree = "<group>"; };
 		BF78D91823C98E5E00334188 /* SettingVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVCTest.swift; sourceTree = "<group>"; };
 		BF78D91A23C9906100334188 /* SellectCreateStageVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectCreateStageVCTest.swift; sourceTree = "<group>"; };
@@ -2267,6 +2269,7 @@
 				BF77E90E23FE760600E5EC91 /* InterNetTableViewCell.swift */,
 				BF77E90C23FE743200E5EC91 /* InterNetTableViewController.swift */,
 				BF77E91023FF9FDF00E5EC91 /* InterNetCellTappedViewController.swift */,
+				BF77E9122400C59C00E5EC91 /* UsersCommentTableViewCell.swift */,
 			);
 			path = InterNetTableView;
 			sourceTree = "<group>";
@@ -3765,6 +3768,7 @@
 				BF1FF2B2223120650047ED23 /* AllStageInfomation.swift in Sources */,
 				BF552E9C226DDD1700756E16 /* E29.swift in Sources */,
 				BF332F762248C043009B3042 /* StageSellectButton.swift in Sources */,
+				BF77E9132400C59C00E5EC91 /* UsersCommentTableViewCell.swift in Sources */,
 				BF640C0B2245103500333782 /* E2.swift in Sources */,
 				BFFB3AD722510716000C90E1 /* ExUIView.swift in Sources */,
 				BF1FF2B6223122C80047ED23 /* EasyCreate.swift in Sources */,

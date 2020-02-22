@@ -9,7 +9,10 @@
 import Foundation
 import UIKit
 
-class InterNetCellTappedViewController: UIViewController {
+class InterNetCellTappedViewController, UITableViewDelegate, UITableViewDataSource {
+   
+   
+   @IBOutlet weak var UsersCommentTableView: UITableView!
    
    override func viewDidLoad() {
       super.viewDidLoad()
