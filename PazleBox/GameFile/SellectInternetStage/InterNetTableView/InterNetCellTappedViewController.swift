@@ -17,6 +17,8 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      self.UsersCommentTableView.delegate = self
+      self.UsersCommentTableView.dataSource = self
    }
 }
 
