@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class InterNetCellTappedViewController, UITableViewDelegate, UITableViewDataSource {
+class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
    
    @IBOutlet weak var UsersCommentTableView: UITableView!
