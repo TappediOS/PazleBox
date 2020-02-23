@@ -14,26 +14,36 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    @IBOutlet weak var PostUsersImageView: UIImageView!
    @IBOutlet weak var PostUsersUserNBameLabel: UILabel!
    
-   
    @IBOutlet weak var PostUsersStageImageView: UIImageView!
    @IBOutlet weak var PostUsersStageTitleLabel: UILabel!
    
    @IBOutlet weak var PostUsersStageReviewLabel: UILabel!
    @IBOutlet weak var PostUsersStagePlayCountLabel: UILabel!
    @IBOutlet weak var PostUsersStagePlayBuutton: UIButton!
-   
-   
-   
-   
+
    
    @IBOutlet weak var UsersCommentTableView: UITableView!
+
+   let ButtonCornerRadius: CGFloat = 6.5
    
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      SetUpPostUsersStagePlayButton()
       
       self.UsersCommentTableView.delegate = self
       self.UsersCommentTableView.dataSource = self
+   }
+   
+   private func SetUpPostUsersStagePlayButton() {
+      let title = NSLocalizedString("Play", comment: "")
+      PostUsersStagePlayBuutton.setTitle(title, for: .normal)
+      PostUsersStagePlayBuutton.titleLabel?.adjustsFontSizeToFitWidth = true
+      PostUsersStagePlayBuutton.titleLabel?.adjustsFontForContentSizeCategory = true
+      PostUsersStagePlayBuutton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
+      PostUsersStagePlayBuutton.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
+      PostUsersStagePlayBuutton.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
+      PostUsersStagePlayBuutton.layer.cornerRadius =  ButtonCornerRadius
    }
    
    
