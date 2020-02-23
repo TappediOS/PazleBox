@@ -61,7 +61,16 @@ extension InterNetTableViewController {
       // セルの選択を解除する
       tableView.deselectRow(at: indexPath, animated: true)
       
+      
       let InterNetCellTappedVC = self.storyboard?.instantiateViewController(withIdentifier: "InterNetCellTappedVC") as! InterNetCellTappedViewController
+      
+      InterNetCellTappedVC.setUsersImage(usersImage: UIImage(named: "hammer.png")!)
+      InterNetCellTappedVC.setUsersName(usersName: "Supar Boy")
+      InterNetCellTappedVC.setPostUsersStageImage(stageImage: UIImage(named: "23p2Blue")!)
+      InterNetCellTappedVC.setPostUsersStageTitle(stageTitle: "Drop Card")
+      InterNetCellTappedVC.setPostUsersStageReview(stageReview: "2.16 / 5")
+      InterNetCellTappedVC.setPostUsersStagePlayCount(stagePlayCount: "968")
+      
       self.navigationController?.pushViewController(InterNetCellTappedVC, animated: true)
    }
    

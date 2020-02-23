@@ -47,6 +47,32 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    }
    
    
+   //画面遷移する前にポストユーザの画面の各値をセットする
+   public func setUsersImage(usersImage: UIImage) {
+      self.PostUsersImageView.image = usersImage
+   }
+   
+   public func setUsersName(usersName: String) {
+      self.PostUsersUserNBameLabel.text = usersName
+   }
+   
+   public func setPostUsersStageImage(stageImage: UIImage) {
+      self.PostUsersStageImageView.image = stageImage
+   }
+   
+   public func setPostUsersStageTitle(stageTitle: String) {
+      self.PostUsersStageTitleLabel.text = stageTitle
+   }
+   
+   public func setPostUsersStageReview(stageReview: String) {
+      self.PostUsersStageReviewLabel.text = stageReview
+   }
+   
+   public func setPostUsersStagePlayCount(stagePlayCount: String) {
+      self.PostUsersStagePlayCountLabel.text = stagePlayCount
+   }
+   
+   
    @IBAction func TapPostUsersStagePlayButton(_ sender: Any) {
       print("ユーザステージのプレイボタンタップされた")
    }
