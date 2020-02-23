@@ -40,7 +40,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       PostUsersStagePlayBuutton.setTitle(title, for: .normal)
       PostUsersStagePlayBuutton.titleLabel?.adjustsFontSizeToFitWidth = true
       PostUsersStagePlayBuutton.titleLabel?.adjustsFontForContentSizeCategory = true
-      PostUsersStagePlayBuutton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
+      PostUsersStagePlayBuutton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 18)
       PostUsersStagePlayBuutton.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       PostUsersStagePlayBuutton.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
       PostUsersStagePlayBuutton.layer.cornerRadius =  ButtonCornerRadius
