@@ -21,6 +21,12 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    @IBOutlet weak var PostUsersStagePlayCountLabel: UILabel!
    @IBOutlet weak var PostUsersStagePlayBuutton: UIButton!
 
+   var PostusersImage = UIImage()
+   var PostUsersUserName = ""
+   var PostUsersStageImage = UIImage()
+   var PostUsersStageTitle = ""
+   var PostUsersStageReivew = ""
+   var PostUsersStagePlayCount = ""
    
    @IBOutlet weak var UsersCommentTableView: UITableView!
 
@@ -29,6 +35,12 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      InitPostUsersImageView()
+      InitPostUsersUserNBameLabel()
+      InitPostUsersStageImageView()
+      InitPostUsersStageTitleLabel()
+      InitPostUsersStageReviewLabel()
+      InitPostUsersStagePlayCountLabel()
       SetUpPostUsersStagePlayButton()
       
       self.UsersCommentTableView.delegate = self
@@ -46,30 +58,50 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       PostUsersStagePlayBuutton.layer.cornerRadius =  ButtonCornerRadius
    }
    
+   //MARK:- viewDidLoadで画面遷移前に取得した各値をセットする
+   func InitPostUsersImageView() {
+      self.PostUsersImageView.image = self.PostusersImage
+   }
+   func InitPostUsersUserNBameLabel() {
+      self.PostUsersUserNBameLabel.text = self.PostUsersUserName
+   }
+   func InitPostUsersStageImageView() {
+      self.PostUsersStageImageView.image = self.PostUsersStageImage
+   }
+   func InitPostUsersStageTitleLabel() {
+      self.PostUsersStageTitleLabel.text = self.PostUsersStageTitle
+   }
+   func InitPostUsersStageReviewLabel() {
+      self.PostUsersStageReviewLabel.text = self.PostUsersStageReivew
+   }
+   func InitPostUsersStagePlayCountLabel() {
+      self.PostUsersStagePlayCountLabel.text = self.PostUsersStagePlayCount
+   }
    
-   //画面遷移する前にポストユーザの画面の各値をセットする
+   
+   //MARK:- 画面遷移する前にポストユーザの画面の各値をセットする
    public func setUsersImage(usersImage: UIImage) {
-      self.PostUsersImageView.image = usersImage
+      self.PostusersImage = usersImage
    }
    
    public func setUsersName(usersName: String) {
-      self.PostUsersUserNBameLabel.text = usersName
+      self.PostUsersUserName = usersName
    }
    
    public func setPostUsersStageImage(stageImage: UIImage) {
-      self.PostUsersStageImageView.image = stageImage
+      self.PostUsersStageImage = stageImage
    }
    
    public func setPostUsersStageTitle(stageTitle: String) {
-      self.PostUsersStageTitleLabel.text = stageTitle
+      self.PostUsersStageTitle = stageTitle
    }
    
    public func setPostUsersStageReview(stageReview: String) {
-      self.PostUsersStageReviewLabel.text = stageReview
+      self.PostUsersStageReivew = stageReview
    }
    
    public func setPostUsersStagePlayCount(stagePlayCount: String) {
-      self.PostUsersStagePlayCountLabel.text = stagePlayCount
+      self.PostUsersStagePlayCount = stagePlayCount
    }
    
    
