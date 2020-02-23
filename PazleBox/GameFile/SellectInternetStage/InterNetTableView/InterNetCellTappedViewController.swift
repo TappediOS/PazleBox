@@ -11,6 +11,20 @@ import UIKit
 
 class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
+   @IBOutlet weak var PostUsersImageView: UIImageView!
+   @IBOutlet weak var PostUsersUserNBameLabel: UILabel!
+   
+   
+   @IBOutlet weak var PostUsersStageImageView: UIImageView!
+   @IBOutlet weak var PostUsersStageTitleLabel: UILabel!
+   
+   @IBOutlet weak var PostUsersStageReviewLabel: UILabel!
+   @IBOutlet weak var PostUsersStagePlayCountLabel: UILabel!
+   @IBOutlet weak var PostUsersStagePlayBuutton: UIButton!
+   
+   
+   
+   
    
    @IBOutlet weak var UsersCommentTableView: UITableView!
    
@@ -21,6 +35,16 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       self.UsersCommentTableView.delegate = self
       self.UsersCommentTableView.dataSource = self
    }
+   
+   
+   @IBAction func TapPostUsersStagePlayButton(_ sender: Any) {
+      print("ユーザステージのプレイボタンタップされた")
+   }
+   
+   @IBAction func TapPostUsersStageReportButton(_ sender: Any) {
+      print("ユーザステージの報告ボタンタップされた")
+   }
+   
 }
 
 extension InterNetCellTappedViewController {
