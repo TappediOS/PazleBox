@@ -145,9 +145,8 @@ extension InterNetCellTappedViewController {
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       // セルの選択を解除する
       tableView.deselectRow(at: indexPath, animated: true)
-      
+
       
    }
-   
-   
 }
+
