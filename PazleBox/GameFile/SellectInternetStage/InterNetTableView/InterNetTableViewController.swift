@@ -64,7 +64,7 @@ extension InterNetTableViewController {
       
       let InterNetCellTappedVC = self.storyboard?.instantiateViewController(withIdentifier: "InterNetCellTappedVC") as! InterNetCellTappedViewController
       
-      //InterNetCellTappedVC.setUsersImage(usersImage: UIImage(named: "hammer.png")!)
+      InterNetCellTappedVC.setUsersImage(usersImage: UIImage(named: "hammer.png")!)
       InterNetCellTappedVC.setUsersName(usersName: "Supar Boy")
       InterNetCellTappedVC.setPostUsersStageImage(stageImage: UIImage(named: "23p2Blue")!)
       InterNetCellTappedVC.setPostUsersStageTitle(stageTitle: "Drop Card")
