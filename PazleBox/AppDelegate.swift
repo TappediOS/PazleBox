@@ -140,8 +140,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       
       
       //-----------バックグラウンドでの音の再生を許可------------//
-      let audioSession : AVAudioSession = AVAudioSession.sharedInstance()
-      try! audioSession.setCategory(AVAudioSession.Category.ambient)
+      //let audioSession : AVAudioSession = AVAudioSession.sharedInstance()
+      //try! audioSession.setCategory(AVAudioSession.Category.ambient)
       //-----------バックグラウンドでの音の再生を許可------------//
       
       //--------------------ADMOB-----------------------//

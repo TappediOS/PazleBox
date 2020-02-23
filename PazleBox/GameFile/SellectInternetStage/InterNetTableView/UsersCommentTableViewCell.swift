@@ -17,4 +17,6 @@ class UsersCommentTableViewCell: UITableViewCell {
    @IBOutlet weak var CommentedUsersCommentLabel: UILabel!
    
    @IBOutlet weak var ReportUserButton: UIButton!
+   
+   
 }
