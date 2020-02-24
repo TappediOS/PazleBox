@@ -298,6 +298,8 @@
 		BF73C2FA234B31A200745C7F /* UsersGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73C2F9234B31A200745C7F /* UsersGameViewController.swift */; };
 		BF77126523D94BD400EF0D3C /* UserAgreementVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF77126423D94BD400EF0D3C /* UserAgreementVCTest.swift */; };
 		BF7748CB24026A0200AA5E9C /* ExInterNetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7748CA24026A0200AA5E9C /* ExInterNetTableViewController.swift */; };
+		BF7748CE24038E4C00AA5E9C /* UserProfileViewControllerSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF7748CD24038E4C00AA5E9C /* UserProfileViewControllerSB.storyboard */; };
+		BF7748D024038E6600AA5E9C /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7748CF24038E6600AA5E9C /* UserProfileViewController.swift */; };
 		BF77E90B23FE6C2200E5EC91 /* InterNetTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF77E90A23FE6C2200E5EC91 /* InterNetTableView.storyboard */; };
 		BF77E90D23FE743200E5EC91 /* InterNetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF77E90C23FE743200E5EC91 /* InterNetTableViewController.swift */; };
 		BF77E90F23FE760600E5EC91 /* InterNetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF77E90E23FE760600E5EC91 /* InterNetTableViewCell.swift */; };
@@ -1105,6 +1107,8 @@
 		BF73C2F9234B31A200745C7F /* UsersGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersGameViewController.swift; sourceTree = "<group>"; };
 		BF77126423D94BD400EF0D3C /* UserAgreementVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgreementVCTest.swift; sourceTree = "<group>"; };
 		BF7748CA24026A0200AA5E9C /* ExInterNetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExInterNetTableViewController.swift; sourceTree = "<group>"; };
+		BF7748CD24038E4C00AA5E9C /* UserProfileViewControllerSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserProfileViewControllerSB.storyboard; sourceTree = "<group>"; };
+		BF7748CF24038E6600AA5E9C /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		BF77E90A23FE6C2200E5EC91 /* InterNetTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InterNetTableView.storyboard; sourceTree = "<group>"; };
 		BF77E90C23FE743200E5EC91 /* InterNetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterNetTableViewController.swift; sourceTree = "<group>"; };
 		BF77E90E23FE760600E5EC91 /* InterNetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterNetTableViewCell.swift; sourceTree = "<group>"; };
@@ -1734,6 +1738,7 @@
 				BF1648F022C0C29E000CD1AB /* BackGroundImage */,
 				BF3C975D23F92E390004DF88 /* PuzzleMakerTapToPlayVC */,
 				BF48931C23B9BE9F0001FB04 /* TabBarViewController */,
+				BF7748CC24038E1200AA5E9C /* UserProfileViewController */,
 				BF3C975823F928AC0004DF88 /* ShoppingPiceViewController */,
 				BF6871C323B9FAD3005013A9 /* SettingViewController */,
 				BF332F7E22491850009B3042 /* HomeView */,
@@ -2248,6 +2253,15 @@
 				BF73C2F7234B319200745C7F /* UsersGameScene.swift */,
 			);
 			path = UserStageSecenAndVC;
+			sourceTree = "<group>";
+		};
+		BF7748CC24038E1200AA5E9C /* UserProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BF7748CD24038E4C00AA5E9C /* UserProfileViewControllerSB.storyboard */,
+				BF7748CF24038E6600AA5E9C /* UserProfileViewController.swift */,
+			);
+			path = UserProfileViewController;
 			sourceTree = "<group>";
 		};
 		BF77E90823FE6BB600E5EC91 /* InterNetCollectionView */ = {
@@ -3348,6 +3362,7 @@
 				BFCE25E1224A466B0099A775 /* 33p2Blue.png in Resources */,
 				BF3EF63B2250988700D5534A /* GoogleService-Info.plist in Resources */,
 				BF7CD9602240BBD500F8302B /* 23p5Green.png in Resources */,
+				BF7748CE24038E4C00AA5E9C /* UserProfileViewControllerSB.storyboard in Resources */,
 				BFCE25C3224A466B0099A775 /* 33p8Red.png in Resources */,
 				BF640C062244F8FD00333782 /* 32p2Blue.png in Resources */,
 				BFF6D77322896610000253A2 /* 43p27Blue.png in Resources */,
@@ -3859,6 +3874,7 @@
 				BFFA3E7923D1794F00CE3B16 /* ExTutorialVCInit.swift in Sources */,
 				BFADC64023A4A10A00AC6768 /* InternetSellect.swift in Sources */,
 				BF332FB622492784009B3042 /* N4.swift in Sources */,
+				BF7748D024038E6600AA5E9C /* UserProfileViewController.swift in Sources */,
 				BF332FAE22492723009B3042 /* E20.swift in Sources */,
 				BF552E94226DDD0600756E16 /* E25.swift in Sources */,
 				BF332FA2224926FF009B3042 /* E14.swift in Sources */,
