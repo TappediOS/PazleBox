@@ -17,18 +17,26 @@ extension InterNetTableViewController {
    
    //テーブルの行数を返す
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 20
+      return UsingStageDatas.count
    }
    
    //Cellを返す
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = self.InterNetTableView.dequeueReusableCell(withIdentifier: "InterNetCell", for: indexPath) as? InterNetTableViewCell
       
+      let ImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
+      if let data = ImageData {
+         let Image = UIImage(data: data as Data)
+         cell?.GameScreenshotImageView.image = Image
+      }
       
       cell?.UserImageView.image = UIImage(named: "person.png")
-      cell?.GameScreenshotImageView.image = UIImage(named: "23p5Red.png")
       cell?.UserNameLabel.text = "Raid on was"
-      cell?.PlayCountLabel.text = String(2 * indexPath.row + 100 - indexPath.row)
+      
+      let reviewNum = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat
+      cell?.RatedLabel.text = String(floor(Double(reviewNum) * 100) / 100) + " / 5"
+      cell?.PlayCountLabel.text = String(UsingStageDatas[indexPath.item]["PlayCount"] as! Int)
+      cell?.CreatedDayLabel.text = UsingStageDatas[indexPath.item]["addDate"] as! String
 
       return cell!
    }
@@ -36,16 +44,23 @@ extension InterNetTableViewController {
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       // セルの選択を解除する
       tableView.deselectRow(at: indexPath, animated: true)
-      
-      
       let InterNetCellTappedVC = self.storyboard?.instantiateViewController(withIdentifier: "InterNetCellTappedVC") as! InterNetCellTappedViewController
+      
+      let ImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
+      if let data = ImageData {
+         let Image = UIImage(data: data as Data)
+         InterNetCellTappedVC.setPostUsersStageImage(stageImage: Image!)
+      }
       
       InterNetCellTappedVC.setUsersImage(usersImage: UIImage(named: "hammer.png")!)
       InterNetCellTappedVC.setUsersName(usersName: "Supar Boy")
-      InterNetCellTappedVC.setPostUsersStageImage(stageImage: UIImage(named: "23p2Blue")!)
+      
       InterNetCellTappedVC.setPostUsersStageTitle(stageTitle: "Drop Card")
-      InterNetCellTappedVC.setPostUsersStageReview(stageReview: "2.16 / 5")
-      InterNetCellTappedVC.setPostUsersStagePlayCount(stagePlayCount: "968")
+      
+      let reviewNum = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat
+      
+      InterNetCellTappedVC.setPostUsersStageReview(stageReview: String(floor(Double(reviewNum) * 100) / 100) + " / 5")
+      InterNetCellTappedVC.setPostUsersStagePlayCount(stagePlayCount: String(UsingStageDatas[indexPath.item]["PlayCount"] as! Int))
       
       self.navigationController?.pushViewController(InterNetCellTappedVC, animated: true)
    }
