@@ -113,6 +113,7 @@ class PuzzleTabBarController: ESTabBarController {
       selectedImage = getSettingFillImage()
       title = NSLocalizedString("Setting", comment: "")
 
+      //settingのVC画面
       let MainStorybord = UIStoryboard(name: "Main", bundle: nil)
       let SettingVC = MainStorybord.instantiateViewController(withIdentifier: "SettingTableVC")
       SettingVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
@@ -120,8 +121,17 @@ class PuzzleTabBarController: ESTabBarController {
       SettingVC.tabBarItem.accessibilityIdentifier = "tabBar_Setting"
       
       
+      //UserProfileVC
+      let UserProfileSB = UIStoryboard(name: "UserProfileViewControllerSB", bundle: nil)
+      let UserProfileVC = UserProfileSB.instantiateViewController(withIdentifier: "UserProfileVC")
+      UserProfileVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
+                                                image: image, selectedImage: selectedImage, tag: 4)
+      UserProfileVC.tabBarItem.accessibilityIdentifier = "tabBar_Setting"
+      
+      
+      
       //MARK:- 配列の0番目を変更してPlayVCにすると元に戻る
-      self.viewControllers = [InterNetTableVC, CreateVC, ShoppingPiceVC, SettingVC]
+      self.viewControllers = [InterNetTableVC, CreateVC, ShoppingPiceVC, UserProfileSB]
       self.selectedViewController = InterNetTableVC
       self.selectedIndex = 0
    }
