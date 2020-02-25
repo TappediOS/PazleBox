@@ -18,7 +18,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      
+      UserProfileTableView.rowHeight = 160
       UserProfileTableView.delegate = self
       UserProfileTableView.dataSource = self
    }
