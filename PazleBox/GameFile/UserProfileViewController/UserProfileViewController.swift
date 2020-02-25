@@ -41,20 +41,8 @@ extension UserProfileViewController {
    
    //ヘッダーに使うUIViewを返す
    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
-      let view = UIView()
-      view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 100)
-      if #available(iOS 13.0, *) {
-         view.backgroundColor = .secondarySystemBackground
-      } else {
-         // Fallback on earlier versions
-      }
-      let headerLabel = UILabel()
-      headerLabel.frame =  CGRect(x: 0, y: 30, width: self.view.frame.size.width, height: 50)
-      headerLabel.text = "This is Headers label"
-      headerLabel.textColor = UIColor.white
-      headerLabel.textAlignment = NSTextAlignment.center
-      view.addSubview(headerLabel)
-      return view
+      let HeaderView = UserProfileHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: sectionHeaderHeight))
+      return HeaderView
    }
    
    
