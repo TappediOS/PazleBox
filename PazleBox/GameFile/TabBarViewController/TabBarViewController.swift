@@ -121,13 +121,13 @@ class PuzzleTabBarController: ESTabBarController {
       SettingVC.tabBarItem.accessibilityIdentifier = "tabBar_Setting"
       
       
-      //UserProfileVC
+      //---- UserProfileVC ----//
       let UserProfileSB = UIStoryboard(name: "UserProfileViewControllerSB", bundle: nil)
-      let UserProfileVC = UserProfileSB.instantiateViewController(withIdentifier: "UserProfileVC")
+      let UserProfileVC = UserProfileSB.instantiateViewController(withIdentifier: "UserProfileNavigationVC")
       UserProfileVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
                                                 image: image, selectedImage: selectedImage, tag: 4)
       UserProfileVC.tabBarItem.accessibilityIdentifier = "tabBar_Setting"
-      
+      //---- UserProfileVC ----//
       
       
       //MARK:- 配列の0番目を変更してPlayVCにすると元に戻る

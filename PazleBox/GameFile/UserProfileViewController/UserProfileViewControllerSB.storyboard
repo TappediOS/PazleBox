@@ -8,6 +8,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="093-lr-XxX">
+            <objects>
+                <navigationController storyboardIdentifier="UserProfileNavigationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XFQ-mG-Khs" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qep-5d-nGu">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1c9-FS-ku4" kind="relationship" relationship="rootViewController" id="Pap-fy-H24"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P0i-UJ-7oB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2241" y="76"/>
+        </scene>
         <!--User Profile View Controller-->
         <scene sceneID="P1x-c9-ey4">
             <objects>
@@ -35,13 +51,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Q5A-gV-jJ4"/>
                     </view>
+                    <navigationItem key="navigationItem" id="KpR-CC-ejz"/>
                     <connections>
                         <outlet property="UserProfileTableView" destination="E1K-Kr-waT" id="baE-Mi-vqq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2F-dM-dKC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-657.97101449275362" y="85.714285714285708"/>
+            <point key="canvasLocation" x="-1478" y="76"/>
         </scene>
     </scenes>
 </document>

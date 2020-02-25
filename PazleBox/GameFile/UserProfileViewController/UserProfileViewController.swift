@@ -13,7 +13,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    
    
    @IBOutlet weak var UserProfileTableView: UITableView!
-   
+   private let sectionHeaderHeight: CGFloat = 200
    
    
    override func viewDidLoad() {
@@ -26,18 +26,17 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
 
 extension UserProfileViewController {
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 20
+      return 25
    }
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "UsersSgageCell")! as UITableViewCell
-      
+      let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "UsersSgageCell")! as UITableViewCell
       return cell
    }
    
    //ヘッダーの高さを設定
    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
-      return 200
+      return sectionHeaderHeight
    }
    
    //ヘッダーに使うUIViewを返す
@@ -56,5 +55,26 @@ extension UserProfileViewController {
       headerLabel.textAlignment = NSTextAlignment.center
       view.addSubview(headerLabel)
       return view
+   }
+   
+   
+   //スクロールした際にtableviewのヘッダを動かす
+   func scrollViewDidScroll(_ scrollView: UIScrollView) {
+       /// sectionHeaderが上部に残らないようにする
+       let offsetY = scrollView.contentOffset.y
+       let safeAreaInset: CGFloat = scrollView.safeAreaInsets.top
+
+       let top: CGFloat
+       if offsetY > sectionHeaderHeight{
+           /// 一番上のheaderの最下部が画面外へ出ている状態
+           top = -(safeAreaInset + sectionHeaderHeight)
+       } else if offsetY < -safeAreaInset {
+           /// 初期状態からメニューを下に引っ張っている状態
+           top = 0
+       } else {
+           /// safeArea内を一番上のheaderが移動している状態
+           top = -(safeAreaInset + offsetY)
+       }
+       scrollView.contentInset = UIEdgeInsets(top: top, left: 0, bottom: 0, right: 0)
    }
 }
