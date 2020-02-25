@@ -29,7 +29,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    }
    
    func SetUpRefleshControl() {
-      self.InterNetTableView.refreshControl = self.RefleshControl
+      self.UserProfileTableView.refreshControl = self.RefleshControl
       self.RefleshControl.addTarget(self, action: #selector(self.ReloadDataFromFireStore(sender:)), for: .valueChanged)
    }
    
