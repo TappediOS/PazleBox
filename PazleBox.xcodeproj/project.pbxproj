@@ -368,6 +368,7 @@
 		BF85D54823937BD1005E564B /* ExSellectInternetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85D54723937BD1005E564B /* ExSellectInternetVC.swift */; };
 		BF874AFB2404BAF80078E931 /* UserProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF874AFA2404BAF80078E931 /* UserProfileHeaderView.xib */; };
 		BF874AFF2404BEE10078E931 /* UserProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF874AFE2404BEE10078E931 /* UserProfileHeaderView.swift */; };
+		BF874B012404C6860078E931 /* UserProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF874B002404C6860078E931 /* UserProfileTableViewCell.swift */; };
 		BF89479422B9FCDC0014596B /* PieceStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89479322B9FCDC0014596B /* PieceStoreViewController.swift */; };
 		BF8A464E2250829C0016F801 /* StarStar.json in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464D2250829C0016F801 /* StarStar.json */; };
 		BF8A4650225088EE0016F801 /* NoLike.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8A464F225088EE0016F801 /* NoLike.png */; };
@@ -1179,6 +1180,7 @@
 		BF85D54723937BD1005E564B /* ExSellectInternetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSellectInternetVC.swift; sourceTree = "<group>"; };
 		BF874AFA2404BAF80078E931 /* UserProfileHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileHeaderView.xib; sourceTree = "<group>"; };
 		BF874AFE2404BEE10078E931 /* UserProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeaderView.swift; sourceTree = "<group>"; };
+		BF874B002404C6860078E931 /* UserProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewCell.swift; sourceTree = "<group>"; };
 		BF89479322B9FCDC0014596B /* PieceStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceStoreViewController.swift; sourceTree = "<group>"; };
 		BF8A464D2250829C0016F801 /* StarStar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StarStar.json; sourceTree = "<group>"; };
 		BF8A464F225088EE0016F801 /* NoLike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoLike.png; sourceTree = "<group>"; };
@@ -2264,6 +2266,7 @@
 			children = (
 				BF7748CD24038E4C00AA5E9C /* UserProfileViewControllerSB.storyboard */,
 				BF7748CF24038E6600AA5E9C /* UserProfileViewController.swift */,
+				BF874B002404C6860078E931 /* UserProfileTableViewCell.swift */,
 				BF874AFA2404BAF80078E931 /* UserProfileHeaderView.xib */,
 				BF874AFE2404BEE10078E931 /* UserProfileHeaderView.swift */,
 			);
@@ -3955,6 +3958,7 @@
 				BF27D04C22B4EBE800596644 /* GameBgMRemocon.swift in Sources */,
 				BF1BD1EA2279A2620047496B /* EasyStageClearInfomation.swift in Sources */,
 				BFE0AB18235AB82E003B2C58 /* CreateHomeViewController.swift in Sources */,
+				BF874B012404C6860078E931 /* UserProfileTableViewCell.swift in Sources */,
 				BFFA2A86223383B60023BB71 /* Normal.swift in Sources */,
 				BF67C2A8235EB70800EBFB00 /* ExCreateStageInit.swift in Sources */,
 				BF33300422492B3E009B3042 /* ExGameSecenNormalP2.swift in Sources */,

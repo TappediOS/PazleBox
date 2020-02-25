@@ -30,8 +30,10 @@ extension UserProfileViewController {
    }
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "UsersSgageCell")! as UITableViewCell
-      return cell
+      let cell = self.UserProfileTableView.dequeueReusableCell(withIdentifier: "UserProfileTableCell", for: indexPath) as? UserProfileTableViewCell
+      
+
+      return cell!
    }
    
    //ヘッダーの高さを設定
@@ -41,8 +43,15 @@ extension UserProfileViewController {
    
    //ヘッダーに使うUIViewを返す
    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
+      //xibファイルから読み込んでヘッダを生成
       let HeaderView = UserProfileHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: sectionHeaderHeight))
       return HeaderView
+   }
+   
+   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      // セルの選択を解除する
+      tableView.deselectRow(at: indexPath, animated: true)
+      //self.navigationController?.pushViewController(somwVC, animated: true)
    }
    
    
