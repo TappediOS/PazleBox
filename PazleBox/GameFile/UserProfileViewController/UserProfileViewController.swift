@@ -15,12 +15,26 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    @IBOutlet weak var UserProfileTableView: UITableView!
    private let sectionHeaderHeight: CGFloat = 200
    
+   var RefleshControl = UIRefreshControl()
+   
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+      SetUpRefleshControl()
+      
       UserProfileTableView.rowHeight = 160
       UserProfileTableView.delegate = self
       UserProfileTableView.dataSource = self
+   }
+   
+   func SetUpRefleshControl() {
+      self.InterNetTableView.refreshControl = self.RefleshControl
+      self.RefleshControl.addTarget(self, action: #selector(self.ReloadDataFromFireStore(sender:)), for: .valueChanged)
+   }
+   
+   @objc func ReloadDataFromFireStore(sender: UIRefreshControl) {
+      RefleshControl.endRefreshing()
    }
 }
 
