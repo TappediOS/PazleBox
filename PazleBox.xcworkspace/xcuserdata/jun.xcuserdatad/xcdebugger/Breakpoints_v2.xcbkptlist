@@ -3580,8 +3580,8 @@
             filePath = "PazleBox/GameFile/TabBarViewController/TabBarViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "PuzzleTabBarController"
             landmarkType = "3">
          </BreakpointContent>
@@ -3596,8 +3596,8 @@
             filePath = "PazleBox/GameFile/TabBarViewController/TabBarViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "PuzzleTabBarController"
             landmarkType = "3">
          </BreakpointContent>
@@ -3612,8 +3612,8 @@
             filePath = "PazleBox/GameFile/TabBarViewController/TabBarViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "StopHomeBGMCatchNotification(notification:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3628,8 +3628,8 @@
             filePath = "PazleBox/GameFile/TabBarViewController/TabBarViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "InitNotificationCenter()"
             landmarkType = "7">
          </BreakpointContent>
