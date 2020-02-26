@@ -377,6 +377,7 @@
                         <outlet property="UsersPostedStageReviewLabel" destination="CeZ-Kx-zz2" id="cNI-6o-plg"/>
                         <outlet property="UsersPostedStageTitleLabel" destination="pm9-wI-zZQ" id="FP6-uL-iTA"/>
                         <outlet property="UsersProfileImageView" destination="h4P-sn-SP4" id="tIA-13-pEJ"/>
+                        <outlet property="UsersStageCommentTableView" destination="uwX-uc-fAO" id="czr-to-xLm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w26-ar-JLY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

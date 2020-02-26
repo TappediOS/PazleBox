@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class UserProfileTapCellViewController: UIViewController {
+   @IBOutlet weak var UsersStageCommentTableView: UITableView!
    
    
    @IBOutlet weak var UsersProfileImageView: UIImageView!
@@ -33,17 +34,94 @@ class UserProfileTapCellViewController: UIViewController {
    @IBOutlet weak var UsersPostedStagePlayButton: UIButton!
    @IBOutlet weak var UsersPostedStageDeleteButton: UIButton!
    
+   let ButtonCornerRadius: CGFloat = 6.5
+   
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      InitUsersProfileImageView()
+      InitUsersNameLabel()
+      InitUsersPostedStageImageView()
+      InitUsersPostedStageTitleLabel()
+      InitUsersPostedStageReviewLabel()
+      InitUsersPostedStagePalyCountLabel()
       
+      SetUpPlayButtonAndDeleteButtonTitle()
+      SetUpPostUsersStageButton(sender: UsersPostedStagePlayButton)
+      SetUpPostUsersStageButton(sender: UsersPostedStageDeleteButton)
    }
    
-   @IBAction func TapUsersPostedStagePlayButton(_ sender: Any) {
+   //MARK:- viewDidLoadで画面遷移前に取得した各値をセットする
+   func InitUsersProfileImageView() {
+      self.UsersProfileImageView.image = self.UsersProfileImage
+   }
+   func InitUsersNameLabel() {
+      self.UsersNameLabel.text = self.UsersName
+   }
+   func InitUsersPostedStageImageView() {
+      self.UsersPostedStageImageView.image = self.UsersPostedStageImage
+   }
+   func InitUsersPostedStageTitleLabel() {
+      self.UsersPostedStageTitleLabel.text = self.UsersPostedStageTitle
+   }
+   func InitUsersPostedStageReviewLabel() {
+      self.UsersPostedStageReviewLabel.text = self.UsersPostedStageReview
+   }
+   func InitUsersPostedStagePalyCountLabel() {
+      self.UsersPostedStagePalyCountLabel.text = self.UsersPostedStagePlayCount
+   }
+   
+   
+   private func SetUpPlayButtonAndDeleteButtonTitle() {
+      let play = NSLocalizedString("Play", comment: "")
+      let delete = NSLocalizedString("Delete", comment: "")
+      UsersPostedStagePlayButton.setTitle(play, for: .normal)
+      UsersPostedStageDeleteButton.setTitle(delete, for: .normal)
+   }
+   
+   private func SetUpPostUsersStageButton(sender: UIButton) {
+      sender.titleLabel?.adjustsFontSizeToFitWidth = true
+      sender.titleLabel?.adjustsFontForContentSizeCategory = true
+      sender.titleLabel?.font = UIFont.boldFlatFont (ofSize: 18)
+      sender.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
+      sender.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
+      sender.layer.cornerRadius =  ButtonCornerRadius
+   }
+   
+   
+   //MARK:- 画面遷移する前にポストユーザの画面の各値をセットする
+   public func setUsersImage(usersImage: UIImage) {
+      self.UsersProfileImage = usersImage
+   }
+   
+   public func setUsersName(usersName: String) {
+      self.UsersName = usersName
+   }
+   
+   public func setPostUsersStageImage(stageImage: UIImage) {
+      self.UsersPostedStageImage = stageImage
+   }
+   
+   public func setPostUsersStageTitle(stageTitle: String) {
+      self.UsersPostedStageTitle = stageTitle
+   }
+   
+   public func setPostUsersStageReview(stageReview: String) {
+      self.UsersPostedStageReview = stageReview
+   }
+   
+   public func setPostUsersStagePlayCount(stagePlayCount: String) {
+      self.UsersPostedStagePlayCount = stagePlayCount
    }
    
    
    @IBAction func TapUsersPostedStagePlayButton(_ sender: Any) {
+      print("Play Buttonタップされました")
+   }
+   
+   
+   @IBAction func TapUsersPostedStagePlayButton(_ sender: Any) {
+      print("Delete Buttonタップされました")
    }
    
 }
