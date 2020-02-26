@@ -34,7 +34,4 @@ class ProfileVCtapCellCommentCell: UITableViewCell {
    @IBAction func TapUserReportButton(_ sender: Any) {
       print("コメントしたユーザの報告ボタンがタップされた")
    }
-   
-   
-   
 }
