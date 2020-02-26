@@ -142,15 +142,15 @@ extension UserProfileTapCellViewController {
    
    //Cellを返す
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = self.UsersCommentTableView.dequeueReusableCell(withIdentifier: "ProfileVCsTapCellTableViewCell", for: indexPath) as? ProfileVCtapCellCommentCell
+      let cell = self.UsersStageCommentTableView.dequeueReusableCell(withIdentifier: "ProfileVCsTapCellTableViewCell", for: indexPath) as? ProfileVCtapCellCommentCell
       
       
-      cell?.UsersImageButton.image = UIImage(named: "person.png")
+      cell?.UsersImageButton.setImage(UIImage(named: "person.png"), for: .normal)
       cell?.UserNameLabel.text = "Your Person?"
       cell?.UsersComments.text = "Now I Lock on"
       
       if indexPath.row % 3 == 0 {
-         cell?.CommentedUsersCommentLabel.text = "BanBanBan\nlet you know\ni like you, i hate you, i...,  thank you! \n\n lack lack lack \n lunch for me."
+         cell?.UsersComments.text = "BanBanBan\nlet you know\ni like you, i hate you, i...,  thank you! \n\n lack lack lack \n lunch for me."
       }
 
       return cell!
