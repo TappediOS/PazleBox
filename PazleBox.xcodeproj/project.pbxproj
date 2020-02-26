@@ -507,6 +507,7 @@
 		BFCE264A224A58A60099A775 /* 32p9Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE2638224A58A50099A775 /* 32p9Blue.png */; };
 		BFCE264B224A58A60099A775 /* 32p12Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE2639224A58A60099A775 /* 32p12Red.png */; };
 		BFDCBECC240622ED006C6D4A /* UserProfileTapCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCBECB240622ED006C6D4A /* UserProfileTapCellViewController.swift */; };
+		BFDCBECE24062AF2006C6D4A /* ProfileVCtapCellCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCBECD24062AF2006C6D4A /* ProfileVCtapCellCommentCell.swift */; };
 		BFDCDBB3234205AA00AD6E4F /* CleanChackStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCDBB2234205AA00AD6E4F /* CleanChackStage.swift */; };
 		BFDD3EE7227D6B3200B9E6B0 /* Gold_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE4227D6B3100B9E6B0 /* Gold_Badge.png */; };
 		BFDD3EE8227D6B3200B9E6B0 /* Bronze_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE5227D6B3200B9E6B0 /* Bronze_Badge.png */; };
@@ -1321,6 +1322,7 @@
 		BFCE2638224A58A50099A775 /* 32p9Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32p9Blue.png; sourceTree = "<group>"; };
 		BFCE2639224A58A60099A775 /* 32p12Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32p12Red.png; sourceTree = "<group>"; };
 		BFDCBECB240622ED006C6D4A /* UserProfileTapCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTapCellViewController.swift; sourceTree = "<group>"; };
+		BFDCBECD24062AF2006C6D4A /* ProfileVCtapCellCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVCtapCellCommentCell.swift; sourceTree = "<group>"; };
 		BFDCDB9A23408FFA00AD6E4F /* PazleBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PazleBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDCDB9E23408FFA00AD6E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFDCDBA82340900200AD6E4F /* PazleBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PazleBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2270,6 +2272,7 @@
 				BF7748CF24038E6600AA5E9C /* UserProfileViewController.swift */,
 				BF874B002404C6860078E931 /* UserProfileTableViewCell.swift */,
 				BFDCBECB240622ED006C6D4A /* UserProfileTapCellViewController.swift */,
+				BFDCBECD24062AF2006C6D4A /* ProfileVCtapCellCommentCell.swift */,
 				BF874AFA2404BAF80078E931 /* UserProfileHeaderView.xib */,
 				BF874AFE2404BEE10078E931 /* UserProfileHeaderView.swift */,
 			);
@@ -3961,6 +3964,7 @@
 				BF27D04C22B4EBE800596644 /* GameBgMRemocon.swift in Sources */,
 				BF1BD1EA2279A2620047496B /* EasyStageClearInfomation.swift in Sources */,
 				BFE0AB18235AB82E003B2C58 /* CreateHomeViewController.swift in Sources */,
+				BFDCBECE24062AF2006C6D4A /* ProfileVCtapCellCommentCell.swift in Sources */,
 				BF874B012404C6860078E931 /* UserProfileTableViewCell.swift in Sources */,
 				BFFA2A86223383B60023BB71 /* Normal.swift in Sources */,
 				BF67C2A8235EB70800EBFB00 /* ExCreateStageInit.swift in Sources */,

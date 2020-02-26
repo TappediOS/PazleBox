@@ -297,7 +297,7 @@
                                 <rect key="frame" x="0.0" y="212" width="414" height="650"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="1pO-aR-YZl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileVCsTapCellTableViewCell" rowHeight="100" id="1pO-aR-YZl" customClass="ProfileVCtapCellCommentCell" customModule="PazleBox" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1pO-aR-YZl" id="FQJ-Ro-mMr">
@@ -327,6 +327,9 @@
                                                     </constraints>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" image="person.crop.circle.badge.checkmark" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="TapUsersImageButton:" destination="1pO-aR-YZl" eventType="touchUpInside" id="Pev-Og-phm"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Kj-ov-vir">
                                                     <rect key="frame" x="369" y="11" width="25" height="25"/>
@@ -336,6 +339,9 @@
                                                     </constraints>
                                                     <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" image="ellipsis" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="TapUserReportButton:" destination="1pO-aR-YZl" eventType="touchUpInside" id="RYt-WE-NZd"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -352,6 +358,12 @@
                                                 <constraint firstItem="1Kj-ov-vir" firstAttribute="leading" secondItem="aXZ-aR-r2g" secondAttribute="trailing" constant="8" id="uue-5G-XTT"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="UserImageView" destination="3kJ-OH-3Q7" id="Jux-iE-2h0"/>
+                                            <outlet property="UserNameLabel" destination="aXZ-aR-r2g" id="PHP-ax-urE"/>
+                                            <outlet property="UsersComments" destination="3Ze-SZ-qNF" id="Wvg-VA-k6W"/>
+                                            <outlet property="UsersImageButton" destination="3kJ-OH-3Q7" id="Ja3-DC-Z1a"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
