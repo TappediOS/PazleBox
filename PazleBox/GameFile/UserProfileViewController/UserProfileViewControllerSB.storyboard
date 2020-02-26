@@ -249,7 +249,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="TapUsersPostedStagePlayButton:" destination="KHZ-AV-bXP" eventType="touchUpInside" id="kza-hp-Bxh"/>
+                                                    <action selector="TapUsersStagePlayButton:" destination="KHZ-AV-bXP" eventType="touchUpInside" id="1gE-TL-aHa"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVF-TY-olb">
@@ -260,7 +260,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="TapUsersPostedStagePlayButton:" destination="KHZ-AV-bXP" eventType="touchUpInside" id="IGs-xN-Cny"/>
+                                                    <action selector="TapUsersStageDeleteButton:" destination="KHZ-AV-bXP" eventType="touchUpInside" id="bG7-HP-HfM"/>
                                                 </connections>
                                             </button>
                                         </subviews>

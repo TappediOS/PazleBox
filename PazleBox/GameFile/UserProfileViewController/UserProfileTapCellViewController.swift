@@ -117,15 +117,15 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
       self.UsersPostedStagePlayCount = stagePlayCount
    }
    
-   
-   @IBAction func TapUsersPostedStagePlayButton(_ sender: Any) {
-      print("Play Buttonタップされました")
+   @IBAction func TapUsersStagePlayButton(_ sender: Any) {
+      print("Play Buttonタップされたよ")
    }
    
    
-   @IBAction func TapUsersPostedStagePlayButton(_ sender: Any) {
-      print("Delete Buttonタップされました")
+   @IBAction func TapUsersStageDeleteButton(_ sender: Any) {
+       print("Delete Buttonタップされたよ")
    }
+   
    
 }
 
