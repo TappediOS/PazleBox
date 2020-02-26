@@ -506,6 +506,7 @@
 		BFCE2649224A58A60099A775 /* 32p12Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE2637224A58A40099A775 /* 32p12Green.png */; };
 		BFCE264A224A58A60099A775 /* 32p9Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE2638224A58A50099A775 /* 32p9Blue.png */; };
 		BFCE264B224A58A60099A775 /* 32p12Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE2639224A58A60099A775 /* 32p12Red.png */; };
+		BFDCBECC240622ED006C6D4A /* UserProfileTapCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCBECB240622ED006C6D4A /* UserProfileTapCellViewController.swift */; };
 		BFDCDBB3234205AA00AD6E4F /* CleanChackStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCDBB2234205AA00AD6E4F /* CleanChackStage.swift */; };
 		BFDD3EE7227D6B3200B9E6B0 /* Gold_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE4227D6B3100B9E6B0 /* Gold_Badge.png */; };
 		BFDD3EE8227D6B3200B9E6B0 /* Bronze_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE5227D6B3200B9E6B0 /* Bronze_Badge.png */; };
@@ -1319,6 +1320,7 @@
 		BFCE2637224A58A40099A775 /* 32p12Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32p12Green.png; sourceTree = "<group>"; };
 		BFCE2638224A58A50099A775 /* 32p9Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32p9Blue.png; sourceTree = "<group>"; };
 		BFCE2639224A58A60099A775 /* 32p12Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32p12Red.png; sourceTree = "<group>"; };
+		BFDCBECB240622ED006C6D4A /* UserProfileTapCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTapCellViewController.swift; sourceTree = "<group>"; };
 		BFDCDB9A23408FFA00AD6E4F /* PazleBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PazleBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDCDB9E23408FFA00AD6E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFDCDBA82340900200AD6E4F /* PazleBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PazleBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2267,6 +2269,7 @@
 				BF7748CD24038E4C00AA5E9C /* UserProfileViewControllerSB.storyboard */,
 				BF7748CF24038E6600AA5E9C /* UserProfileViewController.swift */,
 				BF874B002404C6860078E931 /* UserProfileTableViewCell.swift */,
+				BFDCBECB240622ED006C6D4A /* UserProfileTapCellViewController.swift */,
 				BF874AFA2404BAF80078E931 /* UserProfileHeaderView.xib */,
 				BF874AFE2404BEE10078E931 /* UserProfileHeaderView.swift */,
 			);
@@ -3977,6 +3980,7 @@
 				BF552EC0226DDD7100756E16 /* E47.swift in Sources */,
 				BF95C63722B79C540037E063 /* GameCoin.swift in Sources */,
 				BFADC63E23A4866200AC6768 /* ExSellectForSegmentedControl.swift in Sources */,
+				BFDCBECC240622ED006C6D4A /* UserProfileTapCellViewController.swift in Sources */,
 				BF89479422B9FCDC0014596B /* PieceStoreViewController.swift in Sources */,
 				BF552EE8226DDE1400756E16 /* N37.swift in Sources */,
 				BF8ABFD82279C6B100F275FA /* NormalSellectStage.swift in Sources */,
