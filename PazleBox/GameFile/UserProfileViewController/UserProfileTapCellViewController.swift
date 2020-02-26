@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class UserProfileTapCellViewController: UIViewController {
+class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    @IBOutlet weak var UsersStageCommentTableView: UITableView!
    
    
@@ -49,6 +49,9 @@ class UserProfileTapCellViewController: UIViewController {
       SetUpPlayButtonAndDeleteButtonTitle()
       SetUpPostUsersStageButton(sender: UsersPostedStagePlayButton)
       SetUpPostUsersStageButton(sender: UsersPostedStageDeleteButton)
+      
+      self.UsersStageCommentTableView.delegate = self
+      self.UsersStageCommentTableView.dataSource = self
    }
    
    //MARK:- viewDidLoadで画面遷移前に取得した各値をセットする
@@ -124,4 +127,39 @@ class UserProfileTapCellViewController: UIViewController {
       print("Delete Buttonタップされました")
    }
    
+}
+
+extension UserProfileTapCellViewController {
+   //セクションの数を返す
+   func numberOfSections(in tableView: UITableView) -> Int {
+      return 1
+   }
+   
+   //テーブルの行数を返す
+   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      return 20
+   }
+   
+   //Cellを返す
+   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      let cell = self.UsersCommentTableView.dequeueReusableCell(withIdentifier: "UsersCommentCell", for: indexPath) as? UsersCommentTableViewCell
+      
+      
+      cell?.CommentedUsersImageView.image = UIImage(named: "person.png")
+      cell?.CommentedUsersNameLabel.text = "Your Person?"
+      cell?.CommentedUsersCommentLabel.text = "Now I Lock on"
+      
+      if indexPath.row % 3 == 0 {
+         cell?.CommentedUsersCommentLabel.text = "BanBanBan\nlet you know\ni like you, i hate you, i...,  thank you! \n\n lack lack lack \n lunch for me."
+      }
+
+      return cell!
+   }
+   
+   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      // セルの選択を解除する
+      tableView.deselectRow(at: indexPath, animated: true)
+
+      
+   }
 }
