@@ -159,20 +159,7 @@ extension UserProfileTapCellViewController {
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       // セルの選択を解除する
       tableView.deselectRow(at: indexPath, animated: true)
-      let UserProfileTapCellViewController = self.storyboard?.instantiateViewController(withIdentifier: "UserProfileTapCellVC") as! InterNetCellTappedViewController
-   
       
-      
-      UserProfileTapCellViewController.setUsersImage(usersImage: UIImage(named: "hammer.png")!)
-      UserProfileTapCellViewController.setUsersName(usersName: "Great Girl")
-      
-      UserProfileTapCellViewController.setPostUsersStageTitle(stageTitle: "Rest MeeE")
-      
-      
-      UserProfileTapCellViewController.setPostUsersStageReview(stageReview: String(floor(Double(4.12) * 100) / 100) + " / 5")
-      UserProfileTapCellViewController.setPostUsersStagePlayCount(stagePlayCount: String(382))
-      
-      self.navigationController?.pushViewController(UserProfileTapCellViewController, animated: true)
       
    }
 }
