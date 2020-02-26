@@ -27,10 +27,12 @@ class ProfileVCtapCellCommentCell: UITableViewCell {
     }
 
    @IBAction func TapUsersImageButton(_ sender: Any) {
+      print("コメントしたユーザのプロフィール画像がタップされた")
    }
    
    
    @IBAction func TapUserReportButton(_ sender: Any) {
+      print("コメントしたユーザの報告ボタンがタップされた")
    }
    
    
