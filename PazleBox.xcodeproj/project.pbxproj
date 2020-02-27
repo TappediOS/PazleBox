@@ -508,6 +508,8 @@
 		BFCE264B224A58A60099A775 /* 32p12Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCE2639224A58A60099A775 /* 32p12Red.png */; };
 		BFDCBECC240622ED006C6D4A /* UserProfileTapCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCBECB240622ED006C6D4A /* UserProfileTapCellViewController.swift */; };
 		BFDCBECE24062AF2006C6D4A /* ProfileVCtapCellCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCBECD24062AF2006C6D4A /* ProfileVCtapCellCommentCell.swift */; };
+		BFDCBED124079882006C6D4A /* OtherUsersProfileViewControllerSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDCBED024079882006C6D4A /* OtherUsersProfileViewControllerSB.storyboard */; };
+		BFDCBED324079894006C6D4A /* OtherUsersProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCBED224079894006C6D4A /* OtherUsersProfileViewController.swift */; };
 		BFDCDBB3234205AA00AD6E4F /* CleanChackStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCDBB2234205AA00AD6E4F /* CleanChackStage.swift */; };
 		BFDD3EE7227D6B3200B9E6B0 /* Gold_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE4227D6B3100B9E6B0 /* Gold_Badge.png */; };
 		BFDD3EE8227D6B3200B9E6B0 /* Bronze_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE5227D6B3200B9E6B0 /* Bronze_Badge.png */; };
@@ -1323,6 +1325,8 @@
 		BFCE2639224A58A60099A775 /* 32p12Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32p12Red.png; sourceTree = "<group>"; };
 		BFDCBECB240622ED006C6D4A /* UserProfileTapCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTapCellViewController.swift; sourceTree = "<group>"; };
 		BFDCBECD24062AF2006C6D4A /* ProfileVCtapCellCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVCtapCellCommentCell.swift; sourceTree = "<group>"; };
+		BFDCBED024079882006C6D4A /* OtherUsersProfileViewControllerSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OtherUsersProfileViewControllerSB.storyboard; sourceTree = "<group>"; };
+		BFDCBED224079894006C6D4A /* OtherUsersProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUsersProfileViewController.swift; sourceTree = "<group>"; };
 		BFDCDB9A23408FFA00AD6E4F /* PazleBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PazleBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDCDB9E23408FFA00AD6E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFDCDBA82340900200AD6E4F /* PazleBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PazleBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1749,6 +1753,7 @@
 				BF3C975D23F92E390004DF88 /* PuzzleMakerTapToPlayVC */,
 				BF48931C23B9BE9F0001FB04 /* TabBarViewController */,
 				BF7748CC24038E1200AA5E9C /* UserProfileViewController */,
+				BFDCBECF24079832006C6D4A /* OtherUsersProfileViewController */,
 				BF3C975823F928AC0004DF88 /* ShoppingPiceViewController */,
 				BF6871C323B9FAD3005013A9 /* SettingViewController */,
 				BF332F7E22491850009B3042 /* HomeView */,
@@ -2871,6 +2876,15 @@
 			path = P43;
 			sourceTree = "<group>";
 		};
+		BFDCBECF24079832006C6D4A /* OtherUsersProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BFDCBED024079882006C6D4A /* OtherUsersProfileViewControllerSB.storyboard */,
+				BFDCBED224079894006C6D4A /* OtherUsersProfileViewController.swift */,
+			);
+			path = OtherUsersProfileViewController;
+			sourceTree = "<group>";
+		};
 		BFDCDB9B23408FFA00AD6E4F /* PazleBoxUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -3609,6 +3623,7 @@
 				BF7CD9352240B89800F8302B /* 22p4Blue.png in Resources */,
 				BFF6D61E228412D2000253A2 /* 33p33Blue.png in Resources */,
 				BFF6D60F228412D2000253A2 /* 33p30Red.png in Resources */,
+				BFDCBED124079882006C6D4A /* OtherUsersProfileViewControllerSB.storyboard in Resources */,
 				BFCE25B0224A466B0099A775 /* 33p19Green.png in Resources */,
 				BFF6D62F228412D2000253A2 /* 33p34Red.png in Resources */,
 				BFF6D611228412D2000253A2 /* 33p26Green.png in Resources */,
@@ -3954,6 +3969,7 @@
 				BF33300022492854009B3042 /* H20.swift in Sources */,
 				BF552EAE226DDD4500756E16 /* E38.swift in Sources */,
 				BF332FAC2249271C009B3042 /* E19.swift in Sources */,
+				BFDCBED324079894006C6D4A /* OtherUsersProfileViewController.swift in Sources */,
 				BF552EB8226DDD5E00756E16 /* E43.swift in Sources */,
 				BF552EA4226DDD3400756E16 /* E33.swift in Sources */,
 				BF552F3E226DDF4D00756E16 /* H50.swift in Sources */,
