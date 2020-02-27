@@ -126,7 +126,15 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
        print("Delete Buttonタップされたよ")
    }
    
-   
+   @objc func TapUserImageButtonUserProfileTapCellComment(_ sender: UIButton) {
+        let rowNum = sender.tag
+        print("\(rowNum)番目のcellがタップされました")
+        
+        let OtherUsersProfileSB = UIStoryboard(name: "OtherUsersProfileViewControllerSB", bundle: nil)
+        let OtherUsersProfileVC = OtherUsersProfileSB.instantiateViewController(withIdentifier: "OtherUsersProfileVC") as! OtherUsersProfileViewController
+              
+        self.navigationController?.pushViewController(OtherUsersProfileVC, animated: true)
+     }
 }
 
 extension UserProfileTapCellViewController {
@@ -146,6 +154,8 @@ extension UserProfileTapCellViewController {
       
       
       cell?.UsersImageButton.setImage(UIImage(named: "person.png"), for: .normal)
+      cell?.UsersImageButton.tag = indexPath.row
+      cell?.UsersImageButton.addTarget(self, action: #selector(TapUserImageButtonUserProfileTapCellComment(_:)), for: .touchUpInside)
       cell?.UserNameLabel.text = "Your Person?"
       cell?.UsersComments.text = "Now I Lock on"
       
