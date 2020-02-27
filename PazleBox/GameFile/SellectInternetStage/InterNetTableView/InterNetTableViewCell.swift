@@ -30,7 +30,7 @@ class InterNetTableViewCell: UITableViewCell {
    
    
    @IBAction func TapUserImageViewButton(_ sender: Any) {
-      print("tableview cell の中のUserimageがタップされました")
+      //print("tableview cell の中のUserimageがタップされました")
    }
    
 }

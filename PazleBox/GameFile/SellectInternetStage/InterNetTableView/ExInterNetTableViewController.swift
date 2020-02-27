@@ -32,6 +32,9 @@ extension InterNetTableViewController {
       
    
       cell?.UserImageViewButton.setImage(UIImage(named: "person.png")!, for: .normal)
+      cell?.UserImageViewButton.tag = indexPath.row
+      cell?.UserImageViewButton.addTarget(self, action: #selector(TapUserImageButtonInterNetTableView(_:)), for: .touchUpInside)
+      
       cell?.UserNameLabel.text = "Raid on was"
       
       let reviewNum = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat

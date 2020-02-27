@@ -196,6 +196,16 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
       RefleshControl.endRefreshing()
    }
    
+   @objc func TapUserImageButtonInterNetTableView(_ sender: UIButton) {
+      let rowNum = sender.tag
+      print("\(rowNum)番目のcellがタップされました")
+      
+      let OtherUsersProfileSB = UIStoryboard(name: "OtherUsersProfileViewControllerSB", bundle: nil)
+      let OtherUsersProfileVC = OtherUsersProfileSB.instantiateViewController(withIdentifier: "OtherUsersProfileVC") as! OtherUsersProfileViewController
+            
+      self.navigationController?.pushViewController(OtherUsersProfileVC, animated: true)
+   }
+   
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
    func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
    func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
