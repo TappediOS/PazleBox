@@ -58,15 +58,27 @@ extension OtherUsersProfileViewController {
    //ヘッダーに使うUIViewを返す
    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
       //xibファイルから読み込んでヘッダを生成
-      let HeaderView = UserProfileHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: sectionHeaderHeight))
+      let HeaderView = OtherUsersProfileTableViewHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: sectionHeaderHeight))
       return HeaderView
    }
    
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       // セルの選択を解除する
       tableView.deselectRow(at: indexPath, animated: true)
-
-      //self.navigationController?.pushViewController(UserProfileTapCellViewController, animated: true)
+      let InterNetTableVCSB = UIStoryboard(name: "InterNetTableView", bundle: nil)
+      let InterNetCellTappedVC = InterNetTableVCSB.instantiateViewController(withIdentifier: "InterNetCellTappedVC") as! InterNetCellTappedViewController
+      
+      InterNetCellTappedVC.setPostUsersStageImage(stageImage: UIImage(named: "23p2Red")!)
+      InterNetCellTappedVC.setUsersImage(usersImage: UIImage(named: "hammer.png")!)
+      InterNetCellTappedVC.setUsersName(usersName: "Supar Boy")
+      
+      InterNetCellTappedVC.setPostUsersStageTitle(stageTitle: "Drop Card")
+      
+      
+      InterNetCellTappedVC.setPostUsersStageReview(stageReview: "1.92 / 5 ")
+      InterNetCellTappedVC.setPostUsersStagePlayCount(stagePlayCount: "542")
+      
+      self.navigationController?.pushViewController(InterNetCellTappedVC, animated: true)
    }
    
    

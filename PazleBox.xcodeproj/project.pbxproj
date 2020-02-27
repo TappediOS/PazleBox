@@ -512,6 +512,7 @@
 		BFDCBED324079894006C6D4A /* OtherUsersProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCBED224079894006C6D4A /* OtherUsersProfileViewController.swift */; };
 		BFDCBED524079E2D006C6D4A /* OtherUesrsProfileTableViewHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFDCBED424079E2D006C6D4A /* OtherUesrsProfileTableViewHeaderView.xib */; };
 		BFDCBED72407A0CF006C6D4A /* OtherUsersProfileTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCBED62407A0CF006C6D4A /* OtherUsersProfileTableViewHeaderView.swift */; };
+		BFDCBED92407A1E8006C6D4A /* OtherUsersProfileTabCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCBED82407A1E8006C6D4A /* OtherUsersProfileTabCellViewController.swift */; };
 		BFDCDBB3234205AA00AD6E4F /* CleanChackStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCDBB2234205AA00AD6E4F /* CleanChackStage.swift */; };
 		BFDD3EE7227D6B3200B9E6B0 /* Gold_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE4227D6B3100B9E6B0 /* Gold_Badge.png */; };
 		BFDD3EE8227D6B3200B9E6B0 /* Bronze_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE5227D6B3200B9E6B0 /* Bronze_Badge.png */; };
@@ -1331,6 +1332,7 @@
 		BFDCBED224079894006C6D4A /* OtherUsersProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUsersProfileViewController.swift; sourceTree = "<group>"; };
 		BFDCBED424079E2D006C6D4A /* OtherUesrsProfileTableViewHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherUesrsProfileTableViewHeaderView.xib; sourceTree = "<group>"; };
 		BFDCBED62407A0CF006C6D4A /* OtherUsersProfileTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUsersProfileTableViewHeaderView.swift; sourceTree = "<group>"; };
+		BFDCBED82407A1E8006C6D4A /* OtherUsersProfileTabCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUsersProfileTabCellViewController.swift; sourceTree = "<group>"; };
 		BFDCDB9A23408FFA00AD6E4F /* PazleBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PazleBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDCDB9E23408FFA00AD6E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFDCDBA82340900200AD6E4F /* PazleBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PazleBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2885,6 +2887,7 @@
 			children = (
 				BFDCBED024079882006C6D4A /* OtherUsersProfileViewControllerSB.storyboard */,
 				BFDCBED224079894006C6D4A /* OtherUsersProfileViewController.swift */,
+				BFDCBED82407A1E8006C6D4A /* OtherUsersProfileTabCellViewController.swift */,
 				BFDCBED424079E2D006C6D4A /* OtherUesrsProfileTableViewHeaderView.xib */,
 				BFDCBED62407A0CF006C6D4A /* OtherUsersProfileTableViewHeaderView.swift */,
 			);
@@ -3946,6 +3949,7 @@
 				BF552EE4226DDDF800756E16 /* N35.swift in Sources */,
 				BF332F96224926DF009B3042 /* E8.swift in Sources */,
 				BF2674EA2227B6A3003D370F /* GameScene.swift in Sources */,
+				BFDCBED92407A1E8006C6D4A /* OtherUsersProfileTabCellViewController.swift in Sources */,
 				BF552EF4226DDE3F00756E16 /* N43.swift in Sources */,
 				BF0A9ABD23CC58C300DBE398 /* UserAgreementView.swift in Sources */,
 				BF332FFE2249284F009B3042 /* H19.swift in Sources */,
