@@ -10,7 +10,9 @@ import UIKit
 
 class InterNetTableViewCell: UITableViewCell {
    
-   @IBOutlet weak var UserImageView: UIImageView!
+   
+   @IBOutlet weak var UserImageViewButton: UIButton!
+   
    @IBOutlet weak var UserNameLabel: UILabel!
    
    @IBOutlet weak var PuzzleTitleLabel: UILabel!
@@ -25,5 +27,10 @@ class InterNetTableViewCell: UITableViewCell {
    
    @IBOutlet weak var GameScreenshotImageView: UIImageView!
    
- 
+   
+   
+   @IBAction func TapUserImageViewButton(_ sender: Any) {
+      print("tableview cell の中のUserimageがタップされました")
+   }
+   
 }

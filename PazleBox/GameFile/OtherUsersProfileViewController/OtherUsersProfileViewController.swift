@@ -65,6 +65,7 @@ extension OtherUsersProfileViewController {
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       // セルの選択を解除する
       tableView.deselectRow(at: indexPath, animated: true)
+      //InterNetTableVCのcellタップイベントと同様にして画面遷移すればいい。
       let InterNetTableVCSB = UIStoryboard(name: "InterNetTableView", bundle: nil)
       let InterNetCellTappedVC = InterNetTableVCSB.instantiateViewController(withIdentifier: "InterNetCellTappedVC") as! InterNetCellTappedViewController
       

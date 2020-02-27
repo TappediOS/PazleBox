@@ -131,7 +131,7 @@ extension InterNetCellTappedViewController {
       let cell = self.UsersCommentTableView.dequeueReusableCell(withIdentifier: "UsersCommentCell", for: indexPath) as? UsersCommentTableViewCell
       
       
-      cell?.CommentedUsersImageView.image = UIImage(named: "person.png")
+      cell?.CommentedUsersImageViewButton.setImage(UIImage(named: "person.png")!, for: .normal)
       cell?.CommentedUsersNameLabel.text = "Kind Person"
       cell?.CommentedUsersCommentLabel.text = "This is a super good!"
       

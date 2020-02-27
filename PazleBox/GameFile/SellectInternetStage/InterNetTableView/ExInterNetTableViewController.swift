@@ -30,7 +30,8 @@ extension InterNetTableViewController {
          cell?.GameScreenshotImageView.image = Image
       }
       
-      cell?.UserImageView.image = UIImage(named: "person.png")
+   
+      cell?.UserImageViewButton.setImage(UIImage(named: "person.png")!, for: .normal)
       cell?.UserNameLabel.text = "Raid on was"
       
       let reviewNum = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat

@@ -11,7 +11,8 @@ import UIKit
 class UsersCommentTableViewCell: UITableViewCell {
    
    
-   @IBOutlet weak var CommentedUsersImageView: UIImageView!
+   
+   @IBOutlet weak var CommentedUsersImageViewButton: UIButton!
    @IBOutlet weak var CommentedUsersNameLabel: UILabel!
    
    @IBOutlet weak var CommentedUsersCommentLabel: UILabel!
@@ -19,4 +20,7 @@ class UsersCommentTableViewCell: UITableViewCell {
    @IBOutlet weak var ReportUserButton: UIButton!
    
    
+   @IBAction func TapCommentedUsersImageViewButton(_ sender: Any) {
+      print("userの画像がタップされました")
+   }
 }
