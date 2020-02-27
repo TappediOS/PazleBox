@@ -113,6 +113,17 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       print("ユーザステージの報告ボタンタップされた")
    }
    
+   
+   @objc func TapCommentedUsersImageViewButtonInterNetTableView(_ sender: UIButton) {
+      let rowNum = sender.tag
+      print("\(rowNum)番目のcellがタップされました")
+      
+      let OtherUsersProfileSB = UIStoryboard(name: "OtherUsersProfileViewControllerSB", bundle: nil)
+      let OtherUsersProfileVC = OtherUsersProfileSB.instantiateViewController(withIdentifier: "OtherUsersProfileVC") as! OtherUsersProfileViewController
+            
+      self.navigationController?.pushViewController(OtherUsersProfileVC, animated: true)
+   }
+   
 }
 
 extension InterNetCellTappedViewController {
@@ -132,6 +143,10 @@ extension InterNetCellTappedViewController {
       
       
       cell?.CommentedUsersImageViewButton.setImage(UIImage(named: "person.png")!, for: .normal)
+      cell?.CommentedUsersImageViewButton.tag = indexPath.row
+      cell?.CommentedUsersImageViewButton.addTarget(self, action: #selector(TapCommentedUsersImageViewButtonInterNetTableView(_:)), for: .touchUpInside)
+      
+      
       cell?.CommentedUsersNameLabel.text = "Kind Person"
       cell?.CommentedUsersCommentLabel.text = "This is a super good!"
       
