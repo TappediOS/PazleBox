@@ -510,6 +510,8 @@
 		BFDCBECE24062AF2006C6D4A /* ProfileVCtapCellCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCBECD24062AF2006C6D4A /* ProfileVCtapCellCommentCell.swift */; };
 		BFDCBED124079882006C6D4A /* OtherUsersProfileViewControllerSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDCBED024079882006C6D4A /* OtherUsersProfileViewControllerSB.storyboard */; };
 		BFDCBED324079894006C6D4A /* OtherUsersProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCBED224079894006C6D4A /* OtherUsersProfileViewController.swift */; };
+		BFDCBED524079E2D006C6D4A /* OtherUesrsProfileTableViewHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFDCBED424079E2D006C6D4A /* OtherUesrsProfileTableViewHeaderView.xib */; };
+		BFDCBED72407A0CF006C6D4A /* OtherUsersProfileTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCBED62407A0CF006C6D4A /* OtherUsersProfileTableViewHeaderView.swift */; };
 		BFDCDBB3234205AA00AD6E4F /* CleanChackStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCDBB2234205AA00AD6E4F /* CleanChackStage.swift */; };
 		BFDD3EE7227D6B3200B9E6B0 /* Gold_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE4227D6B3100B9E6B0 /* Gold_Badge.png */; };
 		BFDD3EE8227D6B3200B9E6B0 /* Bronze_Badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDD3EE5227D6B3200B9E6B0 /* Bronze_Badge.png */; };
@@ -1327,6 +1329,8 @@
 		BFDCBECD24062AF2006C6D4A /* ProfileVCtapCellCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVCtapCellCommentCell.swift; sourceTree = "<group>"; };
 		BFDCBED024079882006C6D4A /* OtherUsersProfileViewControllerSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OtherUsersProfileViewControllerSB.storyboard; sourceTree = "<group>"; };
 		BFDCBED224079894006C6D4A /* OtherUsersProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUsersProfileViewController.swift; sourceTree = "<group>"; };
+		BFDCBED424079E2D006C6D4A /* OtherUesrsProfileTableViewHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherUesrsProfileTableViewHeaderView.xib; sourceTree = "<group>"; };
+		BFDCBED62407A0CF006C6D4A /* OtherUsersProfileTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUsersProfileTableViewHeaderView.swift; sourceTree = "<group>"; };
 		BFDCDB9A23408FFA00AD6E4F /* PazleBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PazleBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDCDB9E23408FFA00AD6E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFDCDBA82340900200AD6E4F /* PazleBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PazleBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2881,6 +2885,8 @@
 			children = (
 				BFDCBED024079882006C6D4A /* OtherUsersProfileViewControllerSB.storyboard */,
 				BFDCBED224079894006C6D4A /* OtherUsersProfileViewController.swift */,
+				BFDCBED424079E2D006C6D4A /* OtherUesrsProfileTableViewHeaderView.xib */,
+				BFDCBED62407A0CF006C6D4A /* OtherUsersProfileTableViewHeaderView.swift */,
 			);
 			path = OtherUsersProfileViewController;
 			sourceTree = "<group>";
@@ -3288,6 +3294,7 @@
 				BFF6D78822896610000253A2 /* 43p24Red.png in Resources */,
 				BF2C146722770A2600C7B8FB /* cherry.caf in Resources */,
 				BFF6D76222896610000253A2 /* 43p44Green.png in Resources */,
+				BFDCBED524079E2D006C6D4A /* OtherUesrsProfileTableViewHeaderView.xib in Resources */,
 				BFF6D75E22896610000253A2 /* 43p22Red.png in Resources */,
 				BF7CE7992261E3840040352D /* Confe.json in Resources */,
 				BFF6D77B22896610000253A2 /* 43p41Blue.png in Resources */,
@@ -3976,6 +3983,7 @@
 				BF552EF2226DDE3A00756E16 /* N42.swift in Sources */,
 				BF332F742248B1FE009B3042 /* EasySellectStage.swift in Sources */,
 				BF552F16226DDEC500756E16 /* H30.swift in Sources */,
+				BFDCBED72407A0CF006C6D4A /* OtherUsersProfileTableViewHeaderView.swift in Sources */,
 				BF332FF822492837009B3042 /* H16.swift in Sources */,
 				BF27D04C22B4EBE800596644 /* GameBgMRemocon.swift in Sources */,
 				BF1BD1EA2279A2620047496B /* EasyStageClearInfomation.swift in Sources */,
