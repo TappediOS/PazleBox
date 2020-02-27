@@ -159,7 +159,7 @@
                                             <outlet property="PuzzleTitleLabel" destination="dbc-Vc-79b" id="XAY-Nj-Cgg"/>
                                             <outlet property="RatedImageView" destination="kcM-cg-JL6" id="d5T-ry-IXJ"/>
                                             <outlet property="RatedLabel" destination="83s-pX-NHt" id="cbO-of-YsD"/>
-                                            <outlet property="UserImageViewButtobn" destination="XHB-vg-olC" id="c5f-X6-QL6"/>
+                                            <outlet property="UserImageViewButton" destination="XHB-vg-olC" id="p75-ZH-5UF"/>
                                             <outlet property="UserNameLabel" destination="Omr-Ol-x8T" id="GRE-dY-fC2"/>
                                         </connections>
                                     </tableViewCell>
