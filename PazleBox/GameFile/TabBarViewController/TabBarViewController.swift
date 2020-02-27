@@ -80,6 +80,8 @@ class PuzzleTabBarController: ESTabBarController {
       //----- CollectionViewとして生成 -----//
       
       //----- Tabeviewとして生成 -----//
+      image = getHouseImage()
+      selectedImage = getHouseFillImage()
       let InterNetStorybord = UIStoryboard(name: "InterNetTableView", bundle: nil)
       let InterNetTableVC = InterNetStorybord.instantiateViewController(withIdentifier: "InterNetNavigationVC")
       InterNetTableVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
@@ -175,6 +177,22 @@ class PuzzleTabBarController: ESTabBarController {
          }
       }else{
          print("BGMにnil入っててんけど？")
+      }
+   }
+   
+   private func getHouseImage() -> UIImage {
+      if #available(iOS 13, *) {
+         return UIImage(systemName: "house")!
+      }else{
+         return UIImage(named: "play.png")!
+      }
+   }
+   
+   private func getHouseFillImage() -> UIImage {
+      if #available(iOS 13, *) {
+         return UIImage(systemName: "house.fill")!
+      }else{
+         return UIImage(named: "play_fill.png")!
       }
    }
    

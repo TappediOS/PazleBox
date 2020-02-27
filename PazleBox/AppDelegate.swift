@@ -53,6 +53,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
    //var window: UIWindow?
 
    
+   
+   //windowのrootViewControllerでFireStoreを使おうとしたら，
+   //FirebaseApp.configure()を呼び出せって怒られるからこの初期化関数ないでfirebaseを初期化してる。
    override init() {
       //--------------------FIREBASE-----------------------//
       print("firebaseにアクセス")
