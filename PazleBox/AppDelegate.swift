@@ -52,6 +52,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
    
    //var window: UIWindow?
 
+   
+   override init() {
+      //--------------------FIREBASE-----------------------//
+      print("firebaseにアクセス")
+      let fileName = "GoogleService-Info"
+      let filePath = Bundle.main.path(forResource: fileName, ofType: "plist")
+      let fileopts = FirebaseOptions(contentsOfFile: filePath!)
+      FirebaseApp.configure(options: fileopts!)
+      //--------------------FIREBASE-----------------------//
+   }
+   
+   
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       
       //--------------------UITESTの処理 (1/2)-----------------------//
@@ -68,16 +80,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       }
       //--------------------UITESTの処理 (1/2)-----------------------//
 
-      
-
-      //--------------------FIREBASE-----------------------//
-      print("firebaseにアクセス")
-      let fileName = "GoogleService-Info"
-      let filePath = Bundle.main.path(forResource: fileName, ofType: "plist")
-      let fileopts = FirebaseOptions(contentsOfFile: filePath!)
-      FirebaseApp.configure(options: fileopts!)
-      //--------------------FIREBASE-----------------------//
-      
       //--------------------FireBaseログイン-----------------------//
       Auth.auth().signInAnonymously() { (authResult, error) in
          guard let user = authResult?.user else { return }
