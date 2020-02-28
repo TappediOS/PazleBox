@@ -38,7 +38,7 @@ class OtherUsersProfileTableViewHeaderView: UIView {
       self.FollowOrUnFollowButton.titleLabel?.adjustsFontForContentSizeCategory = true
       self.FollowOrUnFollowButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 18)
       self.FollowOrUnFollowButton.layer.cornerRadius =  ButtonCornerRadius
-      SetUpFollowOrUnFollowButtonAsUnFollowButton()
+      SetUpFollowOrUnFollowButtonAsFollowButton()
    }
    
    public func SetUpFollowOrUnFollowButtonAsFollowButton() {
