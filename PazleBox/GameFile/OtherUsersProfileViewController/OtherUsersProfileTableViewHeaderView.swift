@@ -37,9 +37,23 @@ class OtherUsersProfileTableViewHeaderView: UIView {
       self.FollowOrUnFollowButton.titleLabel?.adjustsFontSizeToFitWidth = true
       self.FollowOrUnFollowButton.titleLabel?.adjustsFontForContentSizeCategory = true
       self.FollowOrUnFollowButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 18)
-      self.FollowOrUnFollowButton.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
-      self.FollowOrUnFollowButton.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
       self.FollowOrUnFollowButton.layer.cornerRadius =  ButtonCornerRadius
+      SetUpFollowOrUnFollowButtonAsUnFollowButton()
+   }
+   
+   public func SetUpFollowOrUnFollowButtonAsFollowButton() {
+      self.FollowOrUnFollowButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
+      self.FollowOrUnFollowButton.backgroundColor = .systemTeal
+      self.FollowOrUnFollowButton.layer.borderColor = .none
+      self.FollowOrUnFollowButton.layer.borderWidth = 0
+   }
+   
+   public func SetUpFollowOrUnFollowButtonAsUnFollowButton() {
+      self.FollowOrUnFollowButton.setTitle("Following", for: .normal)
+      self.FollowOrUnFollowButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
+      self.FollowOrUnFollowButton.backgroundColor = .white
+      self.FollowOrUnFollowButton.layer.borderColor = UIColor.black.cgColor
+      self.FollowOrUnFollowButton.layer.borderWidth = 1.0
    }
    
    
