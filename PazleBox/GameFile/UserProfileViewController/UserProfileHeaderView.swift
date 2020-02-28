@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 
 class UserProfileHeaderView: UIView {
+   
+   
+   
+   
    override init(frame: CGRect){
       super.init(frame: frame)
       loadNib()

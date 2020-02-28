@@ -8,7 +8,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OtherUsersProfileTableViewHeaderView" customModule="PazleBox" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OtherUsersProfileTableViewHeaderView" customModule="PazleBox" customModuleProvider="target">
+            <connections>
+                <outlet property="FollowOrUnFollowButton" destination="7Iu-Dk-6wU" id="Kj2-ew-Uzo"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -114,6 +118,9 @@
                         <constraint firstAttribute="width" constant="60" id="P2p-nN-64S"/>
                     </constraints>
                     <state key="normal" title="Follow"/>
+                    <connections>
+                        <action selector="TapFollowOrUnFollowButton:" destination="-1" eventType="touchUpInside" id="sEx-bE-C6o"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTw-N7-zoi">
                     <rect key="frame" x="0.0" y="200" width="414" height="0.5"/>
