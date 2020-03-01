@@ -35,6 +35,10 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
    @objc func ReloadDataFromFireStore(sender: UIRefreshControl) {
       RefleshControl.endRefreshing()
    }
+   
+   @objc func TapFollowOrUnFollowButton(_ sender: UIButton) {
+      print("TFollowOrUnFollowButtonがタップされた")
+   }
 }
 
 
@@ -59,6 +63,8 @@ extension OtherUsersProfileViewController {
    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
       //xibファイルから読み込んでヘッダを生成
       let HeaderView = OtherUsersProfileTableViewHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: sectionHeaderHeight))
+      let followButton = HeaderView.getFollowOrUnFollowButton()
+      followButton.addTarget(self, action: #selector(TapFollowOrUnFollowButton(_:)), for: .touchUpInside)
       return HeaderView
    }
    

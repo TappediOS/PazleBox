@@ -134,7 +134,7 @@ class PuzzleTabBarController: ESTabBarController {
       
       //MARK:- 配列の0番目を変更してPlayVCにすると元に戻る
       self.viewControllers = [InterNetTableVC, CreateVC, ShoppingPiceVC, UserProfileVC]
-      self.selectedViewController = InterNetTableVC
+      self.selectedViewController = self.viewControllers?[0]
       self.selectedIndex = 0
    }
    

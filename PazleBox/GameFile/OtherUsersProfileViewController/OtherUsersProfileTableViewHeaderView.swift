@@ -56,9 +56,12 @@ class OtherUsersProfileTableViewHeaderView: UIView {
       self.FollowOrUnFollowButton.layer.borderWidth = 1.0
    }
    
+   public func getFollowOrUnFollowButton() -> UIButton {
+      return self.FollowOrUnFollowButton
+   }
+   
    
    @IBAction func TapFollowOrUnFollowButton(_ sender: Any) {
-      print("Followボタンタップされた")
    }
    
 }

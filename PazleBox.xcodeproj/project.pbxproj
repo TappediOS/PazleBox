@@ -385,6 +385,9 @@
 		BFADC63E23A4866200AC6768 /* ExSellectForSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFADC63D23A4866200AC6768 /* ExSellectForSegmentedControl.swift */; };
 		BFADC64023A4A10A00AC6768 /* InternetSellect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFADC63F23A4A10A00AC6768 /* InternetSellect.swift */; };
 		BFADC64223A4A11700AC6768 /* InterNetSellect.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFADC64123A4A11700AC6768 /* InterNetSellect.xib */; };
+		BFBDA421240B918000A6AA64 /* WorldTableViewControllerSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBDA420240B918000A6AA64 /* WorldTableViewControllerSB.storyboard */; };
+		BFBDA423240B948400A6AA64 /* WorldTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA422240B948400A6AA64 /* WorldTableViewController.swift */; };
+		BFBDA425240B959E00A6AA64 /* ExWorldTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA424240B959E00A6AA64 /* ExWorldTableViewController.swift */; };
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
 		BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D422428287007C8FA1 /* Assets.xcassets */; };
 		BFC6C5D9224283BD007C8FA1 /* Test.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D8224283BD007C8FA1 /* Test.sks */; };
@@ -1206,6 +1209,9 @@
 		BFADC63D23A4866200AC6768 /* ExSellectForSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSellectForSegmentedControl.swift; sourceTree = "<group>"; };
 		BFADC63F23A4A10A00AC6768 /* InternetSellect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetSellect.swift; sourceTree = "<group>"; };
 		BFADC64123A4A11700AC6768 /* InterNetSellect.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterNetSellect.xib; sourceTree = "<group>"; };
+		BFBDA420240B918000A6AA64 /* WorldTableViewControllerSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorldTableViewControllerSB.storyboard; sourceTree = "<group>"; };
+		BFBDA422240B948400A6AA64 /* WorldTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTableViewController.swift; sourceTree = "<group>"; };
+		BFBDA424240B959E00A6AA64 /* ExWorldTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExWorldTableViewController.swift; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
 		BFC6C5D422428287007C8FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC6C5D8224283BD007C8FA1 /* Test.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Test.sks; sourceTree = "<group>"; };
@@ -2473,6 +2479,7 @@
 		BF85D54223935E7A005E564B /* SellectInternetStage */ = {
 			isa = PBXGroup;
 			children = (
+				BFBDA41F240B915E00A6AA64 /* WorldTableViewController */,
 				BF77E90923FE6BC700E5EC91 /* InterNetTableView */,
 				BF77E90823FE6BB600E5EC91 /* InterNetCollectionView */,
 			);
@@ -2524,6 +2531,16 @@
 				BF94BDDB2352ED98001ACD11 /* ExSellectStageCreateViewController.swift */,
 			);
 			path = SellectCreateStage;
+			sourceTree = "<group>";
+		};
+		BFBDA41F240B915E00A6AA64 /* WorldTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BFBDA420240B918000A6AA64 /* WorldTableViewControllerSB.storyboard */,
+				BFBDA422240B948400A6AA64 /* WorldTableViewController.swift */,
+				BFBDA424240B959E00A6AA64 /* ExWorldTableViewController.swift */,
+			);
+			path = WorldTableViewController;
 			sourceTree = "<group>";
 		};
 		BFC6C5D722428296007C8FA1 /* Particle */ = {
@@ -3636,6 +3653,7 @@
 				BF7CD9352240B89800F8302B /* 22p4Blue.png in Resources */,
 				BFF6D61E228412D2000253A2 /* 33p33Blue.png in Resources */,
 				BFF6D60F228412D2000253A2 /* 33p30Red.png in Resources */,
+				BFBDA421240B918000A6AA64 /* WorldTableViewControllerSB.storyboard in Resources */,
 				BFDCBED124079882006C6D4A /* OtherUsersProfileViewControllerSB.storyboard in Resources */,
 				BFCE25B0224A466B0099A775 /* 33p19Green.png in Resources */,
 				BFF6D62F228412D2000253A2 /* 33p34Red.png in Resources */,
@@ -3987,6 +4005,7 @@
 				BFDCBED324079894006C6D4A /* OtherUsersProfileViewController.swift in Sources */,
 				BF552EB8226DDD5E00756E16 /* E43.swift in Sources */,
 				BF552EA4226DDD3400756E16 /* E33.swift in Sources */,
+				BFBDA425240B959E00A6AA64 /* ExWorldTableViewController.swift in Sources */,
 				BF552F3E226DDF4D00756E16 /* H50.swift in Sources */,
 				BF552EF2226DDE3A00756E16 /* N42.swift in Sources */,
 				BF332F742248B1FE009B3042 /* EasySellectStage.swift in Sources */,
@@ -3996,6 +4015,7 @@
 				BF27D04C22B4EBE800596644 /* GameBgMRemocon.swift in Sources */,
 				BF1BD1EA2279A2620047496B /* EasyStageClearInfomation.swift in Sources */,
 				BFE0AB18235AB82E003B2C58 /* CreateHomeViewController.swift in Sources */,
+				BFBDA423240B948400A6AA64 /* WorldTableViewController.swift in Sources */,
 				BFDCBECE24062AF2006C6D4A /* ProfileVCtapCellCommentCell.swift in Sources */,
 				BF874B012404C6860078E931 /* UserProfileTableViewCell.swift in Sources */,
 				BFFA2A86223383B60023BB71 /* Normal.swift in Sources */,
