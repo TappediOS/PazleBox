@@ -33,7 +33,7 @@ extension WorldTableViewController {
    
       cell?.UsersImageViewButton.setImage(UIImage(named: "person.png")!, for: .normal)
       cell?.UsersImageViewButton.tag = indexPath.row
-      cell?.UsersImageViewButton.addTarget(self, action: #selector(TapUserImageButtonInterNetTableView(_:)), for: .touchUpInside)
+      cell?.UsersImageViewButton.addTarget(self, action: #selector(TapUserImageButtonWorldTableView(_:)), for: .touchUpInside)
       
       cell?.UserNameLabel.text = "Raid on was"
       
@@ -48,6 +48,8 @@ extension WorldTableViewController {
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       // セルの選択を解除する
       tableView.deselectRow(at: indexPath, animated: true)
+      let InterNetCellTappedVCSB = UIStoryboard(name: "InterNetTableView", bundle: nil)
+
       let InterNetCellTappedVC = self.storyboard?.instantiateViewController(withIdentifier: "InterNetCellTappedVC") as! InterNetCellTappedViewController
       
       let ImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData

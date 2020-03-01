@@ -82,7 +82,7 @@ class PuzzleTabBarController: ESTabBarController {
       
       //----- WorldVCを生成 ----//
       let WorldVCSB = UIStoryboard(name: "WorldTableViewControllerSB", bundle: nil)
-      let WorldVC = WorldVCSB.instantiateViewController(withIdentifier: "WorldTableVC")
+      let WorldVC = WorldVCSB.instantiateViewController(withIdentifier: "WorldTableViewNavigationVC")
       WorldVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
                                            image: image, selectedImage: selectedImage, tag: 1)
       
