@@ -13,6 +13,8 @@ import FirebaseFirestore
 import Firebase
 import NVActivityIndicatorView
 import SCLAlertView
+import TwicketSegmentedControl
+import SnapKit
 
 class WorldTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    //こいつにCollectionVeiwで表示するやつを入れる。
@@ -20,14 +22,24 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
      
    //それぞれFirestoreでとってきてだいにゅうする。
    var LatestStageDatas: [([String: Any])] = Array()
-   var RefleshControl = UIRefreshControl()
+   var RatedStageDatas: [([String: Any])] = Array()
+   var PlayCountStageDatas: [([String: Any])] = Array()
+   
+   var PiceArray: [PiceInfo] = Array()
+   var StageArray: [[Contents]] = Array()
+   
+   
    var db: Firestore!
    let MaxGetStageNumFormDataBase = 15
    
+   var RefleshControl = UIRefreshControl()
+   
    @IBOutlet weak var WorldTableView: UITableView!
    
-   
    var LoadActivityView: NVActivityIndicatorView?
+   var segmentedControl: TwicketSegmentedControl?
+   
+   var CanSellectStage: Bool = true
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -38,6 +50,10 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       SetUpFireStoreSetting()
       
       GetLatestStageDataFromDataBase()
+      GetRatedStageDataFromDataBase()
+      GetPlayCountStageDataFromDataBase()
+      
+      InitSegmentedControl()
    }
    
    private func SetUpFireStoreSetting() {
@@ -91,6 +107,47 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
             self.WorldTableView.reloadData()
              //ローディングアニメーションの停止
             self.StopLoadingAnimation()
+      }
+   }
+   
+   private func GetPlayCountStageDataFromDataBase(){
+      print("PlayCountデータの取得開始")
+      db.collection("Stages").whereField("PlayCount", isGreaterThanOrEqualTo: 0)
+         .order(by: "PlayCount", descending: true)
+         .limit(to: MaxGetStageNumFormDataBase)
+         .getDocuments() { (querySnapshot, err) in
+            if let err = err {
+               print("データベースからのデータ取得エラー: \(err)")
+            } else {
+               for document in querySnapshot!.documents {
+                  self.PlayCountStageDatas.append(self.GetRawData(document: document))
+               }
+            }
+            //ここでは必要な配列を作っただけで何もする必要はない。
+            //ここで作った配列(self.LatestStageDatas)
+            //はSegmentタップされたときにUsingStageDataに代入してリロードすればいい。
+            print("PlayCountデータの取得完了")
+      }
+   }
+   
+   private func GetRatedStageDataFromDataBase() {
+      print("Ratedデータの取得開始")
+      db.collection("Stages").whereField("ReviewAve", isGreaterThanOrEqualTo: 0)
+         .order(by: "ReviewAve", descending: true)
+         .limit(to: MaxGetStageNumFormDataBase)
+         .getDocuments() { (querySnapshot, err) in
+            if let err = err {
+               print("データベースからのデータ取得エラー: \(err)")
+            } else {
+            
+               for document in querySnapshot!.documents {
+                  self.RatedStageDatas.append(self.GetRawData(document: document))
+               }
+            }
+            //ここでは必要な配列を作っただけで何もする必要はない。
+            //ここで作った配列(self.LatestStageDatas)
+            //はSegmentタップされたときにUsingStageDataに代入してリロードすればいい。
+            print("Ratedデータの取得完了")
       }
    }
    
@@ -185,7 +242,21 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
             
       return StageData
    }
-      
+    
+   //MARK:- セグメントのInit
+   private func InitSegmentedControl() {
+      let Latest = NSLocalizedString("Latest", comment: "")
+      let PlayCount = NSLocalizedString("PlayCount", comment: "")
+      let Rating = NSLocalizedString("Rating", comment: "")
+      let titles = [Latest, PlayCount, Rating]
+      let frame = CGRect(x: 5, y: 57, width: view.frame.width - 10, height: 40)
+
+      segmentedControl = TwicketSegmentedControl(frame: frame)
+      segmentedControl?.setSegmentItems(titles)
+      segmentedControl?.delegate = self
+
+      view.addSubview(segmentedControl!)
+   }
       
       
    @objc func ReloadDataFromFireStore(sender: UIRefreshControl) {

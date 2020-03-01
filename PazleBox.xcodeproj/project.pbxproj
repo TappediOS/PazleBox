@@ -388,6 +388,7 @@
 		BFBDA421240B918000A6AA64 /* WorldTableViewControllerSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBDA420240B918000A6AA64 /* WorldTableViewControllerSB.storyboard */; };
 		BFBDA423240B948400A6AA64 /* WorldTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA422240B948400A6AA64 /* WorldTableViewController.swift */; };
 		BFBDA425240B959E00A6AA64 /* ExWorldTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA424240B959E00A6AA64 /* ExWorldTableViewController.swift */; };
+		BFBDA427240B969E00A6AA64 /* ExWorldVCSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA426240B969E00A6AA64 /* ExWorldVCSegment.swift */; };
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
 		BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D422428287007C8FA1 /* Assets.xcassets */; };
 		BFC6C5D9224283BD007C8FA1 /* Test.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D8224283BD007C8FA1 /* Test.sks */; };
@@ -1212,6 +1213,7 @@
 		BFBDA420240B918000A6AA64 /* WorldTableViewControllerSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorldTableViewControllerSB.storyboard; sourceTree = "<group>"; };
 		BFBDA422240B948400A6AA64 /* WorldTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTableViewController.swift; sourceTree = "<group>"; };
 		BFBDA424240B959E00A6AA64 /* ExWorldTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExWorldTableViewController.swift; sourceTree = "<group>"; };
+		BFBDA426240B969E00A6AA64 /* ExWorldVCSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExWorldVCSegment.swift; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
 		BFC6C5D422428287007C8FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC6C5D8224283BD007C8FA1 /* Test.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Test.sks; sourceTree = "<group>"; };
@@ -2539,6 +2541,7 @@
 				BFBDA420240B918000A6AA64 /* WorldTableViewControllerSB.storyboard */,
 				BFBDA422240B948400A6AA64 /* WorldTableViewController.swift */,
 				BFBDA424240B959E00A6AA64 /* ExWorldTableViewController.swift */,
+				BFBDA426240B969E00A6AA64 /* ExWorldVCSegment.swift */,
 			);
 			path = WorldTableViewController;
 			sourceTree = "<group>";
@@ -3982,6 +3985,7 @@
 				BF552F10226DDEB000756E16 /* H27.swift in Sources */,
 				BF552EC2226DDD7600756E16 /* E48.swift in Sources */,
 				BF332FD0224927C9009B3042 /* N17.swift in Sources */,
+				BFBDA427240B969E00A6AA64 /* ExWorldVCSegment.swift in Sources */,
 				BF2674EC2227B6A3003D370F /* GameViewController.swift in Sources */,
 				BF552EA0226DDD2800756E16 /* E31.swift in Sources */,
 				BF332FD6224927D5009B3042 /* N20.swift in Sources */,
