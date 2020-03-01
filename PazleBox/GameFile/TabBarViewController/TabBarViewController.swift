@@ -79,6 +79,16 @@ class PuzzleTabBarController: ESTabBarController {
       PlayVC.tabBarItem.accessibilityIdentifier = "tabBar_Play"
       //----- CollectionViewとして生成 -----//
       
+      
+      //----- WorldVCを生成 ----//
+      let WorldVCSB = UIStoryboard(name: "WorldTableViewControllerSB", bundle: nil)
+      let WorldVC = WorldVCSB.instantiateViewController(withIdentifier: "WorldTableVC")
+      WorldVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
+                                           image: image, selectedImage: selectedImage, tag: 1)
+      
+      WorldVC.tabBarItem.accessibilityIdentifier = "tabBar_Play"
+      //----- WorldVCを生成 ----//
+      
       //----- Tabeviewとして生成 -----//
       image = getHouseImage()
       selectedImage = getHouseFillImage()
@@ -133,7 +143,7 @@ class PuzzleTabBarController: ESTabBarController {
       
       
       //MARK:- 配列の0番目を変更してPlayVCにすると元に戻る
-      self.viewControllers = [InterNetTableVC, CreateVC, ShoppingPiceVC, UserProfileVC]
+      self.viewControllers = [InterNetTableVC, WorldVC, CreateVC, ShoppingPiceVC, UserProfileVC]
       self.selectedViewController = self.viewControllers?[0]
       self.selectedIndex = 0
    }
