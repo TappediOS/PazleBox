@@ -61,10 +61,10 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       if #available(iOS 11.0, *) {
          let safeAreBottom = self.view.safeAreaInsets.bottom
          self.segmentedControl?.snp.makeConstraints { make in
-            make.bottom.equalTo(view.snp.bottom).offset(-(safeAreBottom + 16))
+            make.bottom.equalTo(view.snp.bottom).offset(-(safeAreBottom + 10))
             make.leading.equalTo(view.snp.leading).offset(28)
             make.trailing.equalTo(view.snp.trailing).offset(-28)
-            make.height.equalTo(42)
+            make.height.equalTo(40)
          }
 
       }
@@ -267,7 +267,6 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       segmentedControl = TwicketSegmentedControl()
       segmentedControl?.setSegmentItems(titles)
       segmentedControl?.delegate = self
-      segmentedControl?.backgroundColor = UIColor.white.withAlphaComponent(0.85)
       
       view.addSubview(segmentedControl!)
    }
