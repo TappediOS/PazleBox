@@ -62,8 +62,8 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
          let safeAreBottom = self.view.safeAreaInsets.bottom
          self.segmentedControl?.snp.makeConstraints { make in
             make.bottom.equalTo(view.snp.bottom).offset(-(safeAreBottom + 16))
-            make.leading.equalTo(view.snp.leading).offset(35)
-            make.trailing.equalTo(view.snp.trailing).offset(-35)
+            make.leading.equalTo(view.snp.leading).offset(28)
+            make.trailing.equalTo(view.snp.trailing).offset(-28)
             make.height.equalTo(42)
          }
 
@@ -263,12 +263,12 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       let PlayCount = NSLocalizedString("PlayCount", comment: "")
       let Rating = NSLocalizedString("Rating", comment: "")
       let titles = [Latest, PlayCount, Rating]
-      let frame = CGRect(x: 5, y: view.frame.height - 80, width: view.frame.width - 10, height: 50)
 
       segmentedControl = TwicketSegmentedControl()
       segmentedControl?.setSegmentItems(titles)
       segmentedControl?.delegate = self
-
+      segmentedControl?.backgroundColor = UIColor.white.withAlphaComponent(0.85)
+      
       view.addSubview(segmentedControl!)
    }
       
