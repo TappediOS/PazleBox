@@ -50,7 +50,7 @@ extension WorldTableViewController {
       tableView.deselectRow(at: indexPath, animated: true)
       let InterNetCellTappedVCSB = UIStoryboard(name: "InterNetTableView", bundle: nil)
 
-      let InterNetCellTappedVC = self.storyboard?.instantiateViewController(withIdentifier: "InterNetCellTappedVC") as! InterNetCellTappedViewController
+      let InterNetCellTappedVC = InterNetCellTappedVCSB.instantiateViewController(withIdentifier: "InterNetCellTappedVC") as! InterNetCellTappedViewController
       
       let ImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
       if let data = ImageData {
