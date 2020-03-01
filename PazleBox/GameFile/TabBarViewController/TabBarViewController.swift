@@ -90,6 +90,7 @@ class PuzzleTabBarController: ESTabBarController {
       //----- WorldVCを生成 ----//
       
       //----- Tabeviewとして生成 -----//
+      title = NSLocalizedString("Home", comment: "")
       image = getHouseImage()
       selectedImage = getHouseFillImage()
       let InterNetStorybord = UIStoryboard(name: "InterNetTableView", bundle: nil)
