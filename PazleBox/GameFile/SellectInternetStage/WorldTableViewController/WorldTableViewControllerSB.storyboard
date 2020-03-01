@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="160" id="fKb-Ro-F63">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorldTableViewCell" rowHeight="160" id="fKb-Ro-F63" customClass="WorldTableViewCell" customModule="PazleBox" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fKb-Ro-F63" id="cfR-rt-zRz">
@@ -147,6 +147,15 @@
                                                 <constraint firstItem="ZqN-Qi-PRf" firstAttribute="leading" secondItem="fvS-ys-2OB" secondAttribute="trailing" constant="40" id="ysr-AB-Dfg"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="UserNameLabel" destination="7rh-81-32r" id="Yrs-zC-Xrg"/>
+                                            <outlet property="UsersGameImageView" destination="fvS-ys-2OB" id="Ueg-4c-HfU"/>
+                                            <outlet property="UsersImageViewButton" destination="8M4-Pi-lHe" id="br0-B2-9va"/>
+                                            <outlet property="UsersStagePlayCountLabel" destination="J6U-Dm-ES0" id="nvX-Ji-BLc"/>
+                                            <outlet property="UsersStagePostedDateLabel" destination="ZqN-Qi-PRf" id="o2D-qv-zXT"/>
+                                            <outlet property="UsersStageReviewLabel" destination="bTL-hr-EkY" id="iDF-Ck-pks"/>
+                                            <outlet property="UsersStageTitlelLabel" destination="KhF-Ds-zkY" id="guf-Lv-sEd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

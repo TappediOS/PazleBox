@@ -90,6 +90,7 @@ class PuzzleTabBarController: ESTabBarController {
       //----- WorldVCを生成 ----//
       
       //----- Tabeviewとして生成 -----//
+      //TODO:- ローカライズする
       title = NSLocalizedString("Home", comment: "")
       image = getHouseImage()
       selectedImage = getHouseFillImage()

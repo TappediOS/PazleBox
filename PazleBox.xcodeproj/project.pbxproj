@@ -389,6 +389,7 @@
 		BFBDA423240B948400A6AA64 /* WorldTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA422240B948400A6AA64 /* WorldTableViewController.swift */; };
 		BFBDA425240B959E00A6AA64 /* ExWorldTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA424240B959E00A6AA64 /* ExWorldTableViewController.swift */; };
 		BFBDA427240B969E00A6AA64 /* ExWorldVCSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA426240B969E00A6AA64 /* ExWorldVCSegment.swift */; };
+		BFBDA429240B9A4E00A6AA64 /* WorldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA428240B9A4E00A6AA64 /* WorldTableViewCell.swift */; };
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
 		BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D422428287007C8FA1 /* Assets.xcassets */; };
 		BFC6C5D9224283BD007C8FA1 /* Test.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D8224283BD007C8FA1 /* Test.sks */; };
@@ -1214,6 +1215,7 @@
 		BFBDA422240B948400A6AA64 /* WorldTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTableViewController.swift; sourceTree = "<group>"; };
 		BFBDA424240B959E00A6AA64 /* ExWorldTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExWorldTableViewController.swift; sourceTree = "<group>"; };
 		BFBDA426240B969E00A6AA64 /* ExWorldVCSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExWorldVCSegment.swift; sourceTree = "<group>"; };
+		BFBDA428240B9A4E00A6AA64 /* WorldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTableViewCell.swift; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
 		BFC6C5D422428287007C8FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC6C5D8224283BD007C8FA1 /* Test.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Test.sks; sourceTree = "<group>"; };
@@ -2542,6 +2544,7 @@
 				BFBDA422240B948400A6AA64 /* WorldTableViewController.swift */,
 				BFBDA424240B959E00A6AA64 /* ExWorldTableViewController.swift */,
 				BFBDA426240B969E00A6AA64 /* ExWorldVCSegment.swift */,
+				BFBDA428240B9A4E00A6AA64 /* WorldTableViewCell.swift */,
 			);
 			path = WorldTableViewController;
 			sourceTree = "<group>";
@@ -3952,6 +3955,7 @@
 				BFFA3E7723D1794100CE3B16 /* ExTutorialVCLayout.swift in Sources */,
 				BF552EF6226DDE4900756E16 /* N44.swift in Sources */,
 				BF94BDDE2352FC33001ACD11 /* ExSellectStageVCCollection.swift in Sources */,
+				BFBDA429240B9A4E00A6AA64 /* WorldTableViewCell.swift in Sources */,
 				BF552F38226DDF2D00756E16 /* H47.swift in Sources */,
 				BF332FEA2249280A009B3042 /* H10.swift in Sources */,
 				BF552ECE226DDDAC00756E16 /* N25.swift in Sources */,

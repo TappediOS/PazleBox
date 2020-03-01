@@ -22,25 +22,25 @@ extension WorldTableViewController {
    
    //Cellを返す
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = self.WorldTableView.dequeueReusableCell(withIdentifier: "InterNetCell", for: indexPath) as? InterNetTableViewCell
+      let cell = self.WorldTableView.dequeueReusableCell(withIdentifier: "WorldTableViewCell", for: indexPath) as? WorldTableViewCell
       
       let ImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
       if let data = ImageData {
          let Image = UIImage(data: data as Data)
-         cell?.GameScreenshotImageView.image = Image
+         cell?.UsersGameImageView.image = Image
       }
       
    
-      cell?.UserImageViewButton.setImage(UIImage(named: "person.png")!, for: .normal)
-      cell?.UserImageViewButton.tag = indexPath.row
-      cell?.UserImageViewButton.addTarget(self, action: #selector(TapUserImageButtonInterNetTableView(_:)), for: .touchUpInside)
+      cell?.UsersImageViewButton.setImage(UIImage(named: "person.png")!, for: .normal)
+      cell?.UsersImageViewButton.tag = indexPath.row
+      cell?.UsersImageViewButton.addTarget(self, action: #selector(TapUserImageButtonInterNetTableView(_:)), for: .touchUpInside)
       
       cell?.UserNameLabel.text = "Raid on was"
       
       let reviewNum = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat
-      cell?.RatedLabel.text = String(floor(Double(reviewNum) * 100) / 100) + " / 5"
-      cell?.PlayCountLabel.text = String(UsingStageDatas[indexPath.item]["PlayCount"] as! Int)
-      cell?.CreatedDayLabel.text = UsingStageDatas[indexPath.item]["addDate"] as! String
+      cell?.UsersStageReviewLabel.text = String(floor(Double(reviewNum) * 100) / 100) + " / 5"
+      cell?.UsersStagePlayCountLabel.text = String(UsingStageDatas[indexPath.item]["PlayCount"] as! Int)
+      cell?.UsersStagePostedDateLabel.text = UsingStageDatas[indexPath.item]["addDate"] as! String
 
       return cell!
    }
