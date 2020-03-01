@@ -61,10 +61,10 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       if #available(iOS 11.0, *) {
          let safeAreBottom = self.view.safeAreaInsets.bottom
          self.segmentedControl?.snp.makeConstraints { make in
-            make.bottom.equalTo(view.snp.bottom).offset(-(safeAreBottom + 15))
-            make.leading.equalTo(view.snp.leading).offset(30)
-            make.trailing.equalTo(view.snp.trailing).offset(-30)
-            make.height.equalTo(40)
+            make.bottom.equalTo(view.snp.bottom).offset(-(safeAreBottom + 16))
+            make.leading.equalTo(view.snp.leading).offset(35)
+            make.trailing.equalTo(view.snp.trailing).offset(-35)
+            make.height.equalTo(42)
          }
 
       }
