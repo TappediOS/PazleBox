@@ -56,6 +56,20 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       InitSegmentedControl()
    }
    
+   override func viewWillLayoutSubviews() {
+      super.viewWillLayoutSubviews()
+      if #available(iOS 11.0, *) {
+         let safeAreBottom = self.view.safeAreaInsets.bottom
+         self.segmentedControl?.snp.makeConstraints { make in
+            make.bottom.equalTo(view.snp.bottom).offset(-(safeAreBottom + 15))
+            make.leading.equalTo(view.snp.leading).offset(30)
+            make.trailing.equalTo(view.snp.trailing).offset(-30)
+            make.height.equalTo(40)
+         }
+
+      }
+   }
+   
    private func SetUpFireStoreSetting() {
       let settings = FirestoreSettings()
       Firestore.firestore().settings = settings
@@ -249,9 +263,9 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       let PlayCount = NSLocalizedString("PlayCount", comment: "")
       let Rating = NSLocalizedString("Rating", comment: "")
       let titles = [Latest, PlayCount, Rating]
-      let frame = CGRect(x: 5, y: 57, width: view.frame.width - 10, height: 40)
+      let frame = CGRect(x: 5, y: view.frame.height - 80, width: view.frame.width - 10, height: 50)
 
-      segmentedControl = TwicketSegmentedControl(frame: frame)
+      segmentedControl = TwicketSegmentedControl()
       segmentedControl?.setSegmentItems(titles)
       segmentedControl?.delegate = self
 
