@@ -109,13 +109,46 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       print("ユーザステージのプレイボタンタップされた")
    }
    
+   
+   //ユーザが投稿したものに対してレポートボタンが押されたときの処理
+   private func TapReportActionAgainstUsersPost() {
+      let ReportActionSheet = UIAlertController(title: "Report", message: nil, preferredStyle: .actionSheet)
+      
+      let StringInappropriate = "Contains illegal characters"
+      let StringInappropriateAction = UIAlertAction(title: StringInappropriate, style: .default, handler: { (action: UIAlertAction!) in
+         print("不適切な文字を含むボタンが押された押されたよ")
+      })
+      let ImageInappropriate = "Contains inappropriate images"
+      let ImageInappropriateAction = UIAlertAction(title: ImageInappropriate, style: .default, handler: { (action: UIAlertAction!) in
+         print("不適切な画像を含むボタンが押された押されたよ")
+      })
+      
+      let Other = "Other"
+      let OtherInappropriateAction = UIAlertAction(title: Other, style: .default, handler: { (action: UIAlertAction!) in
+         print("その他ボタンが押された押されたよ")
+      })
+                      
+      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+         print("ReportActionSheetでCanselタップされた")
+      })
+           
+              
+      ReportActionSheet.addAction(StringInappropriateAction)
+      ReportActionSheet.addAction(ImageInappropriateAction)
+      ReportActionSheet.addAction(OtherInappropriateAction)
+      ReportActionSheet.addAction(CanselAction)
+              
+      self.present(ReportActionSheet, animated: true, completion: nil)
+   }
+   
    @IBAction func TapPostUsersStageReportButton(_ sender: Any) {
       print("ユーザステージの報告ボタンタップされた")
 
-      let ActionSheet = UIAlertController(title: "ポケモンリスト", message: "好きなポケモンを選んでください。", preferredStyle: .actionSheet)
+      let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
              
       let ReportAction = UIAlertAction(title: "Report", style: .destructive, handler: { (action: UIAlertAction!) in
          print("Report押されたよ")
+         self.TapReportActionAgainstUsersPost()
       })
       
       
