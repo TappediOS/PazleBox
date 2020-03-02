@@ -35,6 +35,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      SetUpNavigationController()
       InitPostUsersImageView()
       InitPostUsersUserNBameLabel()
       InitPostUsersStageImageView()
@@ -45,6 +46,11 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       
       self.UsersCommentTableView.delegate = self
       self.UsersCommentTableView.dataSource = self
+   }
+   
+   func SetUpNavigationController() {
+      //TODO:- ローカライズする
+      self.navigationItem.title = NSLocalizedString("Stage", comment: "")
    }
    
    private func SetUpPostUsersStagePlayButton() {

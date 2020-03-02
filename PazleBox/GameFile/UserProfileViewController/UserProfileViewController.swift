@@ -43,7 +43,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
       SettingButtonItems.tintColor = .black
       self.navigationItem.setLeftBarButton(SettingButtonItems, animated: true)
       
-      
       let EditProfile = "Edit Profile"
       let EditProfileItem = UIBarButtonItem(title: EditProfile, style: .plain, target: self, action: #selector(TapEditProfileButton(sender:)))
       EditProfileItem.tintColor = .black

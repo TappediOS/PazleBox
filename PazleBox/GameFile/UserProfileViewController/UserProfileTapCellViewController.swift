@@ -39,6 +39,7 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      SetUpNavigationController()
       InitUsersProfileImageView()
       InitUsersNameLabel()
       InitUsersPostedStageImageView()
@@ -52,6 +53,11 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
       
       self.UsersStageCommentTableView.delegate = self
       self.UsersStageCommentTableView.dataSource = self
+   }
+   
+   func SetUpNavigationController() {
+      //TODO:- ローカライズする
+      self.navigationItem.title = NSLocalizedString("Stage", comment: "")
    }
    
    //MARK:- viewDidLoadで画面遷移前に取得した各値をセットする

@@ -45,6 +45,7 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       super.viewDidLoad()
       WorldTableView.rowHeight = 160
       
+      SetUpNavigationController()
       InitLoadActivityView()
       SetUpRefleshControl()
       SetUpFireStoreSetting()
@@ -68,6 +69,11 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
          }
 
       }
+   }
+   
+   func SetUpNavigationController() {
+      //TODO:- ローカライズする
+      self.navigationItem.title = NSLocalizedString("World Stage", comment: "")
    }
    
    private func SetUpFireStoreSetting() {

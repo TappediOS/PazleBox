@@ -19,12 +19,18 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
       
    override func viewDidLoad() {
       super.viewDidLoad()
-         
+      
+      SetUpNavigationController()
       SetUpRefleshControl()
          
       OtherUesrsProfileTableView.rowHeight = 160
       OtherUesrsProfileTableView.delegate = self
       OtherUesrsProfileTableView.dataSource = self
+   }
+   
+   func SetUpNavigationController() {
+      //TODO:- UserNameを入れる
+      self.navigationItem.title = NSLocalizedString("Joe", comment: "")
    }
       
    func SetUpRefleshControl() {

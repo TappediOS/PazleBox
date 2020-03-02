@@ -34,6 +34,8 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
       super.viewDidLoad()
       InterNetTableView.rowHeight = 160
       
+      SetUpNavigationController()
+      
       InitLoadActivityView()
       SetUpRefleshControl()
       SetUpFireStoreSetting()
@@ -42,6 +44,11 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
       
 
       
+   }
+   
+   func SetUpNavigationController() {
+      //TODO:- ローカライズする
+      self.navigationItem.title = NSLocalizedString("Home", comment: "")
    }
    
    private func SetUpFireStoreSetting() {
