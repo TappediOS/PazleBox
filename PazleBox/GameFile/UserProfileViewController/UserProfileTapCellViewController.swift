@@ -133,14 +133,93 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
    }
    
    @objc func TapUserImageButtonUserProfileTapCellComment(_ sender: UIButton) {
-        let rowNum = sender.tag
-        print("\(rowNum)番目のcellがタップされました")
+      let rowNum = sender.tag
+      print("\(rowNum)番目のcellがタップされました")
         
-        let OtherUsersProfileSB = UIStoryboard(name: "OtherUsersProfileViewControllerSB", bundle: nil)
-        let OtherUsersProfileVC = OtherUsersProfileSB.instantiateViewController(withIdentifier: "OtherUsersProfileVC") as! OtherUsersProfileViewController
+      let OtherUsersProfileSB = UIStoryboard(name: "OtherUsersProfileViewControllerSB", bundle: nil)
+      let OtherUsersProfileVC = OtherUsersProfileSB.instantiateViewController(withIdentifier: "OtherUsersProfileVC") as! OtherUsersProfileViewController
               
-        self.navigationController?.pushViewController(OtherUsersProfileVC, animated: true)
-     }
+      self.navigationController?.pushViewController(OtherUsersProfileVC, animated: true)
+   }
+   
+   
+   @objc func TapUsersCommentReportButton(_ sender: UIButton) {
+      let rowNum = sender.tag
+      print("\(rowNum)番目のcellの報告ボタンがタップされました")
+      
+      let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+             
+      let ReportAction = UIAlertAction(title: "Report", style: .destructive, handler: { (action: UIAlertAction!) in
+         print("Report押されたよ")
+         self.TapReportActionAgainstUsersPost()
+      })
+      
+      let BlockAction = UIAlertAction(title: "Block", style: .default, handler: { (action: UIAlertAction!) in
+         print("Block押されたよ")
+         self.TapBlockActionAgainstUsersPost()
+      })
+      
+      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+         print("ActionSheetでCanselタップされた")
+      })
+      
+      ActionSheet.addAction(ReportAction)
+      ActionSheet.addAction(BlockAction)
+      ActionSheet.addAction(CanselAction)
+         
+      self.present(ActionSheet, animated: true, completion: nil)
+   }
+   
+   //ユーザが投稿したものに対してレポートボタンが押されたときの処理
+   //TODO: ローカライズすること
+   private func TapReportActionAgainstUsersPost() {
+      let ReportActionSheet = UIAlertController(title: "Report", message: nil, preferredStyle: .actionSheet)
+      
+      let StringInappropriate = "Contains illegal characters"
+      let StringInappropriateAction = UIAlertAction(title: StringInappropriate, style: .default, handler: { (action: UIAlertAction!) in
+         print("不適切な文字を含むボタンが押された押されたよ")
+      })
+      let ImageInappropriate = "Contains inappropriate images"
+      let ImageInappropriateAction = UIAlertAction(title: ImageInappropriate, style: .default, handler: { (action: UIAlertAction!) in
+         print("不適切な画像を含むボタンが押された押されたよ")
+      })
+      
+      let Other = "Other"
+      let OtherInappropriateAction = UIAlertAction(title: Other, style: .default, handler: { (action: UIAlertAction!) in
+         print("その他ボタンが押された押されたよ")
+      })
+                      
+      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+         print("ReportActionSheetでCanselタップされた")
+      })
+           
+              
+      ReportActionSheet.addAction(StringInappropriateAction)
+      ReportActionSheet.addAction(ImageInappropriateAction)
+      ReportActionSheet.addAction(OtherInappropriateAction)
+      ReportActionSheet.addAction(CanselAction)
+              
+      self.present(ReportActionSheet, animated: true, completion: nil)
+   }
+   
+   //ユーザが投稿したものに対してブロックボタンが押されたときの処理
+   //TODO: ローカライズすること
+   private func TapBlockActionAgainstUsersPost() {
+      let BlockAlertSheet = UIAlertController(title: "Block", message: nil, preferredStyle: .alert)
+      
+      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+         print("BlockActionSheetでCanselタップされた")
+      })
+      
+      let BlockAction = UIAlertAction(title: "Block", style: .destructive, handler: { (action: UIAlertAction!) in
+         print("Blockします。")
+      })
+      
+      BlockAlertSheet.addAction(BlockAction)
+      BlockAlertSheet.addAction(CanselAction)
+      
+      self.present(BlockAlertSheet, animated: true, completion: nil)
+   }
 }
 
 extension UserProfileTapCellViewController {
@@ -162,6 +241,9 @@ extension UserProfileTapCellViewController {
       cell?.UsersImageButton.setImage(UIImage(named: "person.png"), for: .normal)
       cell?.UsersImageButton.tag = indexPath.row
       cell?.UsersImageButton.addTarget(self, action: #selector(TapUserImageButtonUserProfileTapCellComment(_:)), for: .touchUpInside)
+      
+      cell?.UsersCommentReportButton.tag = indexPath.row
+      cell?.UsersCommentReportButton.addTarget(self, action: #selector(TapUsersCommentReportButton(_:)), for: .touchUpInside)
       cell?.UserNameLabel.text = "Your Person?"
       cell?.UsersComments.text = "Now I Lock on"
       

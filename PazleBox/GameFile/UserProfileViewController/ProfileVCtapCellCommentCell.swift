@@ -14,6 +14,9 @@ class ProfileVCtapCellCommentCell: UITableViewCell {
    @IBOutlet weak var UserNameLabel: UILabel!
    @IBOutlet weak var UsersComments: UILabel!
    
+   
+   @IBOutlet weak var UsersCommentReportButton: UIButton!
+   
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,6 +35,6 @@ class ProfileVCtapCellCommentCell: UITableViewCell {
    
    
    @IBAction func TapUserReportButton(_ sender: Any) {
-      print("コメントしたユーザの報告ボタンがタップされた")
+      //print("コメントしたユーザの報告ボタンがタップされた")
    }
 }

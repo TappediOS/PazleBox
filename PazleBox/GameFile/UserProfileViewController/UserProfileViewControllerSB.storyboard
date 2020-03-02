@@ -369,6 +369,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="UserNameLabel" destination="aXZ-aR-r2g" id="PHP-ax-urE"/>
+                                            <outlet property="UsersCommentReportButton" destination="1Kj-ov-vir" id="T97-Ia-qSJ"/>
                                             <outlet property="UsersComments" destination="3Ze-SZ-qNF" id="Wvg-VA-k6W"/>
                                             <outlet property="UsersImageButton" destination="3kJ-OH-3Q7" id="Ja3-DC-Z1a"/>
                                         </connections>
