@@ -111,6 +111,23 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    
    @IBAction func TapPostUsersStageReportButton(_ sender: Any) {
       print("ユーザステージの報告ボタンタップされた")
+
+      let ActionSheet = UIAlertController(title: "ポケモンリスト", message: "好きなポケモンを選んでください。", preferredStyle: .actionSheet)
+             
+      let ReportAction = UIAlertAction(title: "Report", style: .destructive, handler: { (action: UIAlertAction!) in
+         print("Report押されたよ")
+      })
+      
+      
+      let BlockAction = UIAlertAction(title: "Block", style: .default, handler: { (action: UIAlertAction!) in
+         print("Block押されたよ")
+      })
+      
+         
+      ActionSheet.addAction(ReportAction)
+      ActionSheet.addAction(BlockAction)
+         
+      self.present(ActionSheet, animated: true, completion: nil)
    }
    
    
