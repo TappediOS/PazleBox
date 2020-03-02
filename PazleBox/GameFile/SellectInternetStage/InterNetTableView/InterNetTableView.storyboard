@@ -327,7 +327,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdK-e2-hjU">
-                                                    <rect key="frame" x="60" y="13" width="301" height="21"/>
+                                                    <rect key="frame" x="53" y="13" width="308" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="b50-Yb-szB"/>
                                                     </constraints>
@@ -372,7 +372,7 @@
                                                 <constraint firstItem="4d6-p9-9Uo" firstAttribute="leading" secondItem="5cg-GB-u62" secondAttribute="leadingMargin" constant="33" id="LtB-Nr-Sae"/>
                                                 <constraint firstItem="baY-ZT-r42" firstAttribute="top" secondItem="5cg-GB-u62" secondAttribute="topMargin" id="Oz5-7a-vjn"/>
                                                 <constraint firstItem="prc-5r-H30" firstAttribute="leading" secondItem="5cg-GB-u62" secondAttribute="leadingMargin" id="ZM4-Za-T7w"/>
-                                                <constraint firstItem="jdK-e2-hjU" firstAttribute="leading" secondItem="prc-5r-H30" secondAttribute="trailing" constant="15" id="iMF-sK-BbN"/>
+                                                <constraint firstItem="jdK-e2-hjU" firstAttribute="leading" secondItem="prc-5r-H30" secondAttribute="trailing" constant="8" id="iMF-sK-BbN"/>
                                                 <constraint firstItem="4d6-p9-9Uo" firstAttribute="top" secondItem="baY-ZT-r42" secondAttribute="bottom" constant="4" id="isI-Xb-Ges"/>
                                                 <constraint firstItem="4d6-p9-9Uo" firstAttribute="bottom" secondItem="5cg-GB-u62" secondAttribute="bottomMargin" id="ld5-G6-pPE"/>
                                                 <constraint firstItem="jdK-e2-hjU" firstAttribute="top" secondItem="5cg-GB-u62" secondAttribute="topMargin" constant="2" id="w6d-jk-j1L"/>
