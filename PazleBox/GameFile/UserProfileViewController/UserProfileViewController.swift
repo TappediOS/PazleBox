@@ -21,11 +21,45 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      
+      SetUpNavigationController()
+      
       SetUpRefleshControl()
       
       UserProfileTableView.rowHeight = 160
       UserProfileTableView.delegate = self
       UserProfileTableView.dataSource = self
+   }
+   
+   func SetUpNavigationController() {
+      var image = UIImage()
+      if #available(iOS 13, *) {
+         image = UIImage(systemName: "gear")!
+      } else {
+         image = UIImage(named: "Gear.png")!
+      }
+      
+      let SettingButtonItems = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(TapSettingButton(sender:)))
+      SettingButtonItems.tintColor = .black
+      self.navigationItem.setLeftBarButton(SettingButtonItems, animated: true)
+      
+      
+      let EditProfile = "Edit Profile"
+      let EditProfileItem = UIBarButtonItem(title: EditProfile, style: .plain, target: self, action: #selector(TapEditProfileButton(sender:)))
+      EditProfileItem.tintColor = .black
+      self.navigationItem.setRightBarButton(EditProfileItem, animated: true)
+      
+      //TODO:- ローカライズすること
+      self.navigationItem.title = NSLocalizedString("My Page", comment: "")
+   }
+   
+   //MARK:- 設定ボタンを押したときの処理
+   @objc func TapSettingButton(sender: UIBarButtonItem) {
+      print("tap setting")
+   }
+   
+   @objc func TapEditProfileButton(sender: UIBarButtonItem) {
+      print("tap editProfile")
    }
    
    func SetUpRefleshControl() {

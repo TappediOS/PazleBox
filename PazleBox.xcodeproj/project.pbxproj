@@ -390,6 +390,7 @@
 		BFBDA425240B959E00A6AA64 /* ExWorldTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA424240B959E00A6AA64 /* ExWorldTableViewController.swift */; };
 		BFBDA427240B969E00A6AA64 /* ExWorldVCSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA426240B969E00A6AA64 /* ExWorldVCSegment.swift */; };
 		BFBDA429240B9A4E00A6AA64 /* WorldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA428240B9A4E00A6AA64 /* WorldTableViewCell.swift */; };
+		BFBDA42B240CF2C500A6AA64 /* Gear.png in Resources */ = {isa = PBXBuildFile; fileRef = BFBDA42A240CF2C500A6AA64 /* Gear.png */; };
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
 		BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D422428287007C8FA1 /* Assets.xcassets */; };
 		BFC6C5D9224283BD007C8FA1 /* Test.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D8224283BD007C8FA1 /* Test.sks */; };
@@ -1216,6 +1217,7 @@
 		BFBDA424240B959E00A6AA64 /* ExWorldTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExWorldTableViewController.swift; sourceTree = "<group>"; };
 		BFBDA426240B969E00A6AA64 /* ExWorldVCSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExWorldVCSegment.swift; sourceTree = "<group>"; };
 		BFBDA428240B9A4E00A6AA64 /* WorldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTableViewCell.swift; sourceTree = "<group>"; };
+		BFBDA42A240CF2C500A6AA64 /* Gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gear.png; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
 		BFC6C5D422428287007C8FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC6C5D8224283BD007C8FA1 /* Test.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Test.sks; sourceTree = "<group>"; };
@@ -2298,6 +2300,7 @@
 				BFDCBECD24062AF2006C6D4A /* ProfileVCtapCellCommentCell.swift */,
 				BF874AFA2404BAF80078E931 /* UserProfileHeaderView.xib */,
 				BF874AFE2404BEE10078E931 /* UserProfileHeaderView.swift */,
+				BFBDA42A240CF2C500A6AA64 /* Gear.png */,
 			);
 			path = UserProfileViewController;
 			sourceTree = "<group>";
@@ -3520,6 +3523,7 @@
 				BFDD3EE9227D6B3200B9E6B0 /* Silver_Badge.png in Resources */,
 				BF640C032244F8FD00333782 /* 32p1Blue.png in Resources */,
 				BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */,
+				BFBDA42B240CF2C500A6AA64 /* Gear.png in Resources */,
 				BF7CD95E2240BBD500F8302B /* 23p4Red.png in Resources */,
 				BFF6D66A2286BC74000253A2 /* 33p43Red.png in Resources */,
 				BFF6D78922896610000253A2 /* 43p22Blue.png in Resources */,
