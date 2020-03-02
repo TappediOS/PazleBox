@@ -157,6 +157,16 @@
                                                 <constraint firstItem="mNv-y6-ROC" firstAttribute="leading" secondItem="jCl-WL-0O1" secondAttribute="trailing" constant="8" id="yKD-98-tSN"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="OtherUsersNameImageView" destination="JoR-SH-kIQ" id="J4x-cr-nnG"/>
+                                            <outlet property="OtherUsersNameLabel" destination="mfQ-j9-gBx" id="lCM-xi-wLP"/>
+                                            <outlet property="OtherUsersPostReportButton" destination="u1g-o9-TFM" id="z4Z-wb-Cxq"/>
+                                            <outlet property="OtherUsersPostedStageDateLabel" destination="MSx-rA-UEf" id="aDz-ih-2Sg"/>
+                                            <outlet property="OtherUsersPostedStageImageView" destination="tng-4m-w2L" id="nPc-pz-TyC"/>
+                                            <outlet property="OtherUsersPostedStagePlayCountLabel" destination="mNv-y6-ROC" id="PlH-PL-iTs"/>
+                                            <outlet property="OtherUsersPostedStageRatedLabel" destination="NyQ-SY-YNW" id="70F-wc-uBM"/>
+                                            <outlet property="OtherUsersPostedStageTitleLabel" destination="v8r-uV-BhR" id="s0D-Db-Fbm"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

@@ -135,6 +135,8 @@ class PuzzleTabBarController: ESTabBarController {
       SettingVC.tabBarItem.accessibilityIdentifier = "tabBar_Setting"
       
       
+      //TODO:- "My Page"のローカライズする
+      title = NSLocalizedString("My Page", comment: "")
       //---- UserProfileVC ----//
       let UserProfileSB = UIStoryboard(name: "UserProfileViewControllerSB", bundle: nil)
       let UserProfileVC = UserProfileSB.instantiateViewController(withIdentifier: "UserProfileNavigationVC")

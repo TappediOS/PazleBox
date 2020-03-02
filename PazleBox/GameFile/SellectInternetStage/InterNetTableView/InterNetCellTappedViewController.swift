@@ -111,6 +111,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    
    
    //ユーザが投稿したものに対してレポートボタンが押されたときの処理
+   //TODO: ローカライズすること
    private func TapReportActionAgainstUsersPost() {
       let ReportActionSheet = UIAlertController(title: "Report", message: nil, preferredStyle: .actionSheet)
       
@@ -142,11 +143,12 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    }
    
    //ユーザが投稿したものに対してブロックボタンが押されたときの処理
+   //TODO: ローカライズすること
    private func TapBlockActionAgainstUsersPost() {
       let BlockAlertSheet = UIAlertController(title: "Block", message: nil, preferredStyle: .alert)
       
       let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-         print("ReportActionSheetでCanselタップされた")
+         print("BlockActionSheetでCanselタップされた")
       })
       
       let BlockAction = UIAlertAction(title: "Block", style: .destructive, handler: { (action: UIAlertAction!) in
@@ -159,6 +161,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       self.present(BlockAlertSheet, animated: true, completion: nil)
    }
    
+   //TODO: ローカライズすること
    @IBAction func TapPostUsersStageReportButton(_ sender: Any) {
       print("ユーザステージの報告ボタンタップされた")
 
@@ -169,6 +172,34 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
          self.TapReportActionAgainstUsersPost()
       })
       
+      let BlockAction = UIAlertAction(title: "Block", style: .default, handler: { (action: UIAlertAction!) in
+         print("Block押されたよ")
+         self.TapBlockActionAgainstUsersPost()
+      })
+      
+      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+         print("ActionSheetでCanselタップされた")
+      })
+      
+      ActionSheet.addAction(ReportAction)
+      ActionSheet.addAction(BlockAction)
+      ActionSheet.addAction(CanselAction)
+         
+      self.present(ActionSheet, animated: true, completion: nil)
+   }
+   
+   
+   //コメントしたユーザの報告ボタンがタップされたときの処理
+   @objc func TapReportCommentedUserTableViewCell(_ sender: UIButton) {
+      let rowNum = sender.tag
+      print("\(rowNum)番目のcellのユーザの報告ボタンがタップされました")
+      
+      let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+             
+      let ReportAction = UIAlertAction(title: "Report", style: .destructive, handler: { (action: UIAlertAction!) in
+         print("Report押されたよ")
+         self.TapReportActionAgainstUsersPost()
+      })
       
       let BlockAction = UIAlertAction(title: "Block", style: .default, handler: { (action: UIAlertAction!) in
          print("Block押されたよ")
@@ -179,7 +210,6 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
          print("ActionSheetでCanselタップされた")
       })
       
-         
       ActionSheet.addAction(ReportAction)
       ActionSheet.addAction(BlockAction)
       ActionSheet.addAction(CanselAction)
@@ -187,7 +217,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       self.present(ActionSheet, animated: true, completion: nil)
    }
    
-   
+   //コメントしたユーザの画像がタップされたときの処理
    @objc func TapCommentedUsersImageViewButtonInterNetTableView(_ sender: UIButton) {
       let rowNum = sender.tag
       print("\(rowNum)番目のcellがタップされました")
@@ -223,6 +253,9 @@ extension InterNetCellTappedViewController {
       
       cell?.CommentedUsersNameLabel.text = "Kind Person"
       cell?.CommentedUsersCommentLabel.text = "This is a super good!"
+      
+      cell?.ReportUserButton.tag = indexPath.row
+      cell?.ReportUserButton.addTarget(self, action: #selector(TapReportCommentedUserTableViewCell(_:)), for: .touchUpInside)
       
       if indexPath.row % 3 == 0 {
          cell?.CommentedUsersCommentLabel.text = "apple. apple\nyou are apple\nif you have a any question, please contact us. thank you! \n\n ad ad ad\n lunch for you."

@@ -9,16 +9,29 @@
 import UIKit
 
 class OtherUsersProfileTableViewCell: UITableViewCell {
+   
+   @IBOutlet weak var OtherUsersNameImageView: UIImageView!
+   @IBOutlet weak var OtherUsersNameLabel: UILabel!
+   
+   @IBOutlet weak var OtherUsersPostedStageImageView: UIImageView!
+   @IBOutlet weak var OtherUsersPostedStageTitleLabel: UILabel!
+   
+   @IBOutlet weak var OtherUsersPostedStageRatedLabel: UILabel!
+   @IBOutlet weak var OtherUsersPostedStagePlayCountLabel: UILabel!
+   @IBOutlet weak var OtherUsersPostedStageDateLabel: UILabel!
+   
+   
+   @IBOutlet weak var OtherUsersPostReportButton: UIButton!
+   
+   override func awakeFromNib() {
+      super.awakeFromNib()
+      // Initialization code
+   }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+   override func setSelected(_ selected: Bool, animated: Bool) {
+      super.setSelected(selected, animated: animated)
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+      // Configure the view for the selected state
+   }
 
 }
