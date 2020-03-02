@@ -123,9 +123,14 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
          print("Block押されたよ")
       })
       
+      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+         print("ActionSheetでCanselタップされた")
+      })
+      
          
       ActionSheet.addAction(ReportAction)
       ActionSheet.addAction(BlockAction)
+      ActionSheet.addAction(CanselAction)
          
       self.present(ActionSheet, animated: true, completion: nil)
    }
