@@ -141,6 +141,24 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       self.present(ReportActionSheet, animated: true, completion: nil)
    }
    
+   //ユーザが投稿したものに対してブロックボタンが押されたときの処理
+   private func TapBlockActionAgainstUsersPost() {
+      let BlockAlertSheet = UIAlertController(title: "Block", message: nil, preferredStyle: .alert)
+      
+      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+         print("ReportActionSheetでCanselタップされた")
+      })
+      
+      let BlockAction = UIAlertAction(title: "Block", style: .destructive, handler: { (action: UIAlertAction!) in
+         print("Blockします。")
+      })
+      
+      BlockAlertSheet.addAction(BlockAction)
+      BlockAlertSheet.addAction(CanselAction)
+      
+      self.present(BlockAlertSheet, animated: true, completion: nil)
+   }
+   
    @IBAction func TapPostUsersStageReportButton(_ sender: Any) {
       print("ユーザステージの報告ボタンタップされた")
 
@@ -154,6 +172,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       
       let BlockAction = UIAlertAction(title: "Block", style: .default, handler: { (action: UIAlertAction!) in
          print("Block押されたよ")
+         self.TapBlockActionAgainstUsersPost()
       })
       
       let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
