@@ -42,7 +42,7 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
    
    @objc func TapOtherUsersPostReportButton(_ sender: UIButton) {
       let rowNum = sender.tag
-      print("\(rowNum)番目のcellのユーザの報告ボタンがタップされました")
+      print("\(rowNum)番目のcellの報告ボタンがタップされました")
       
       let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
              
@@ -128,7 +128,7 @@ extension OtherUsersProfileViewController {
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = self.OtherUesrsProfileTableView.dequeueReusableCell(withIdentifier: "OtherUsersProfileCell", for: indexPath) as? OtherUsersProfileTableViewCell
       
-      cell?..OtherUsersPostReportButton = indexPath.row
+      cell?.OtherUsersPostReportButton.tag = indexPath.row
       cell?.OtherUsersPostReportButton.addTarget(self, action: #selector(TapOtherUsersPostReportButton(_:)), for: .touchUpInside)
 
       return cell!
