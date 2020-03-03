@@ -22,11 +22,19 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
    var db: Firestore!
    
    var usersName: String = ""
+   var usersImage = UIImage()
+   
+   let usersImageViewWide: CGFloat = 70
+   //テキストフィールドに書き込む最大の文字数。
+   let maxTextfieldLength = 25
+   
    
    override func viewDidLoad() {
       super.viewDidLoad()
       SetUpTextField()
       SetUpNavigationBarItem()
+      
+      SetUpUsersImageButton()
       
       SetUpFireStoreSetting()
       //自分の取得する
@@ -39,6 +47,14 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
       //doneにする処理
       UsersNameTextField.returnKeyType = .done
       UsersNameTextField.delegate = self
+      //オブザーバ登録
+      NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(notification:)),
+          name: UITextField.textDidChangeNotification, object: UsersNameTextField)
+   }
+
+   //オブザーバの片付けをする。
+   deinit {
+      NotificationCenter.default.removeObserver(self)
    }
    
    func SetUpNavigationBarItem() {
@@ -49,6 +65,13 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
       let DoneItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(TapSaveEditProfileButton))
       DoneItem.tintColor = .black
       self.navigationItem.rightBarButtonItem = DoneItem
+   }
+   
+   func SetUpUsersImageButton() {
+      //EditUserProfileImageButton.setImage(someImage, for: .normal)
+      EditUserProfileImageButton.layer.borderWidth = 0.5
+      EditUserProfileImageButton.layer.cornerRadius = self.usersImageViewWide / 2
+      EditUserProfileImageButton.layer.masksToBounds = true
    }
    
    private func SetUpFireStoreSetting() {
@@ -101,8 +124,32 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
       })
    }
    
+   public func getUsersImage(image: UIImage) {
+      self.usersImage = image
+   }
+   
+   public func getUsersName(name: String) {
+      self.usersName = name
+   }
+   
    
    @IBAction func TapEditUserProfileImageButton(_ sender: Any) {
+   }
+   
+   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+       UsersNameTextField.resignFirstResponder()
+       return true
+   }
+   
+   //MARK:- テキストフィールドの処理を記載。
+   //制限を超えた場合は，表示されないようにする。
+   @objc func textFieldDidChange(notification: NSNotification) {
+      let textField = notification.object as! UITextField
+      if let text = textField.text {
+         if textField.markedTextRange == nil && text.count > maxTextfieldLength {
+            textField.text = text.prefix(maxTextfieldLength).description
+         }
+      }
    }
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
