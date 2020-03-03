@@ -61,9 +61,10 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
       print("tap editProfile")
       
       let EditProfileSB = UIStoryboard(name: "EditProfileViewControllerSB", bundle: nil)
-      let EditProfileVC = EditProfileSB.instantiateViewController(withIdentifier: "EditProfileVC") as! EditProfileViewController
+      let EditProfileVC = EditProfileSB.instantiateViewController(withIdentifier: "EditProfileVCNavigationController")
+      EditProfileVC.modalPresentationStyle = .fullScreen
       
-      self.navigationController?.pushViewController(EditProfileVC, animated: true)
+      self.present(EditProfileVC, animated: true, completion: nil)
    }
    
    func SetUpRefleshControl() {

@@ -8,6 +8,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="C8I-DD-gLy">
+            <objects>
+                <navigationController storyboardIdentifier="EditProfileVCNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2oy-hL-YlR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ea7-MA-taV">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gOW-iB-lCd" kind="relationship" relationship="rootViewController" id="K68-Pw-M3V"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HLS-lv-sCM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1341" y="53"/>
+        </scene>
         <!--Edit Profile View Controller-->
         <scene sceneID="PK7-by-YS5">
             <objects>
@@ -17,15 +33,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1F-uB-Kb7">
-                                <rect key="frame" x="172" y="64" width="70" height="70"/>
+                                <rect key="frame" x="172" y="108" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="UBD-a0-xFv"/>
                                     <constraint firstAttribute="height" constant="70" id="ilp-Pt-7or"/>
                                 </constraints>
                                 <state key="normal" image="33p39Red.png"/>
+                                <connections>
+                                    <action selector="TapEditUserProfileImageButton:" destination="gOW-iB-lCd" eventType="touchUpInside" id="hNH-fp-w9i"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgL-mx-w5i">
-                                <rect key="frame" x="20" y="144" width="374" height="21"/>
+                                <rect key="frame" x="20" y="188" width="374" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="97w-sb-QVc"/>
                                 </constraints>
@@ -34,7 +53,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zfa-U7-9ed">
-                                <rect key="frame" x="88" y="186" width="306" height="34"/>
+                                <rect key="frame" x="88" y="230" width="306" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="CFa-zk-c9c"/>
                                 </constraints>
@@ -42,7 +61,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGR-bi-Csl">
-                                <rect key="frame" x="20" y="193" width="60" height="21"/>
+                                <rect key="frame" x="20" y="237" width="60" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="DrP-bB-BlW"/>
                                     <constraint firstAttribute="width" constant="60" id="ZNc-yz-pfH"/>
@@ -67,10 +86,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0kb-gZ-Bsg"/>
                     </view>
+                    <navigationItem key="navigationItem" id="D8f-bt-FA9"/>
+                    <connections>
+                        <outlet property="EditUserProfileImageButton" destination="w1F-uB-Kb7" id="zrI-jb-ylM"/>
+                        <outlet property="NameLabel" destination="MGR-bi-Csl" id="ukP-Sj-aHA"/>
+                        <outlet property="UsersNameTextField" destination="zfa-U7-9ed" id="hKo-cr-Me8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mYP-9l-1n1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="40.579710144927539" y="156.69642857142856"/>
+            <point key="canvasLocation" x="-594" y="53"/>
         </scene>
     </scenes>
     <resources>
