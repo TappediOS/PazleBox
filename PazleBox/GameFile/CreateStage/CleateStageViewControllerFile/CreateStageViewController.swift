@@ -65,6 +65,8 @@ class CleateStageViewController: UIViewController {
    
    var FillContentsArray: [[Contents]] = Array()
    
+   var StageTitle: String = ""
+   
    var DontMoveNodeNum = 0
    var ShouldMoveNodeNum = 0
    
@@ -742,7 +744,29 @@ class CleateStageViewController: UIViewController {
       self.FinishChouseResPuzzleButton?.isEnabled = false
       self.FinishChouseResPuzzleButton?.alpha = 0.65
       
-      SaveStageUserCreated()
+      ShowWriteStageTitleAlertView()
+   }
+   
+   
+   //MARK:- ステージ名を欠かす処理
+   //TODO: ローカライズしようね。
+   func ShowWriteStageTitleAlertView() {
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let WrriteStageAlert = SCLAlertView(appearance: Appearanse)
+      let StageTitleTextField = WrriteStageAlert.addTextField("ステージ名")
+      
+      WrriteStageAlert.addButton("とうろく") {
+         let NoName = "No Name"
+         if StageTitleTextField.text!.isEmpty == false {
+            self.StageTitle = StageTitleTextField.text ?? NoName
+         } else {
+            self.StageTitle = NoName
+         }
+         self.SaveStageUserCreated()
+      }
+      let Title = "タイトル"
+      let WriteTitle = "タイトルを記入してください"
+      WrriteStageAlert.showEdit(Title, subTitle: WriteTitle)
    }
    
    func trimmingImage(_ image: UIImage, trimmingArea: CGRect) -> UIImage {
@@ -763,8 +787,8 @@ class CleateStageViewController: UIViewController {
       UIGraphicsEndImageContext()
             
       if let UseImage = GetAllViewImage.cropping(to: ( BackImageView?.GetRectForScreenshot() )!) {
-         let ResizeW = UseImage.size.width * 0.285
-         let ResizeH = UseImage.size.height * 0.285
+         let ResizeW = UseImage.size.width * 0.245
+         let ResizeH = UseImage.size.height * 0.245
          let RetruenImage = UseImage.ResizeUIImage(width: ResizeW, height: ResizeH)
          return RetruenImage?.pngData() as! NSData
       }else{
@@ -792,7 +816,7 @@ class CleateStageViewController: UIViewController {
       let FireStore = Firestores(uid: UID)
       
       FireStore.AddStageData(StageArrayForContents: FillContentsArray, MaxPiceNum: PiceImageArray.count,
-                             PiceArry: PiceImageArray, ImageData: ImageData)
+                             PiceArry: PiceImageArray, ImageData: ImageData, StageTitle: StageTitle)
       
       
    }

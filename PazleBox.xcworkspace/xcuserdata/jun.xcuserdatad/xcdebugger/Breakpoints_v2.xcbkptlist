@@ -2614,7 +2614,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
-            landmarkName = "AddStageData(StageArrayForContents:MaxPiceNum:PiceArry:ImageData:)"
+            landmarkName = "AddStageData(StageArrayForContents:MaxPiceNum:PiceArry:ImageData:StageTitle:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2628,8 +2628,8 @@
             filePath = "PazleBox/GameFile/CreateStage/CleateStageViewControllerFile/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "527"
-            endingLineNumber = "527"
+            startingLineNumber = "529"
+            endingLineNumber = "529"
             landmarkName = "WorkForPiceUserPiceUp()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2644,8 +2644,8 @@
             filePath = "PazleBox/GameFile/CreateStage/CleateStageViewControllerFile/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "501"
-            endingLineNumber = "501"
+            startingLineNumber = "503"
+            endingLineNumber = "503"
             landmarkName = "PiceTouchEndedCatchNotification(notification:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2660,8 +2660,8 @@
             filePath = "PazleBox/GameFile/CreateStage/CleateStageViewControllerFile/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "593"
-            endingLineNumber = "593"
+            startingLineNumber = "595"
+            endingLineNumber = "595"
             landmarkName = "TappedCell(CellNum:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2892,8 +2892,8 @@
             filePath = "PazleBox/GameFile/CreateStage/CleateStageViewControllerFile/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "594"
-            endingLineNumber = "594"
+            startingLineNumber = "596"
+            endingLineNumber = "596"
             landmarkName = "TappedCell(CellNum:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2908,8 +2908,8 @@
             filePath = "PazleBox/GameFile/CreateStage/CleateStageViewControllerFile/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "780"
-            endingLineNumber = "780"
+            startingLineNumber = "804"
+            endingLineNumber = "804"
             landmarkName = "SaveStageUserCreated()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3132,9 +3132,9 @@
             filePath = "PazleBox/GameFile/CreateStage/FireStore/FireStores.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "AddStageData(StageArrayForContents:MaxPiceNum:PiceArry:ImageData:)"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "AddStageData(StageArrayForContents:MaxPiceNum:PiceArry:ImageData:StageTitle:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3404,8 +3404,8 @@
             filePath = "PazleBox/GameFile/CreateStage/CleateStageViewControllerFile/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
             landmarkName = "StartLoadingAnimation()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3694,8 +3694,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "996"
             endingLineNumber = "996"
-            landmarkName = "TutorialViewController"
-            landmarkType = "3">
+            landmarkName = "ClearTapImageViewCatchNotification(notificaton:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3788,8 +3788,8 @@
             filePath = "PazleBox/GameFile/CreateStage/CleateStageViewControllerFile/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "viewDidLayoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4251,6 +4251,22 @@
             startingLineNumber = "43"
             endingLineNumber = "43"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FF877929-C2F1-4404-B35B-3CD06B53C80D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/GameFile/CreateStage/FireStore/FireStores.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "AddStageData(StageArrayForContents:MaxPiceNum:PiceArry:ImageData:StageTitle:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

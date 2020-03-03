@@ -796,26 +796,27 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
    
    
    //MARK:- 保存する関数
+   //チュートリアルなんで保存しないよー。
    private func SaveStageUserCreated() {
       
       //ローディングアニメーション開始
       //止める時は，下の2つの関数のいずれかで停止。
       // ErrSentStageCatchNotification()
       // SuccessSentStagePiceTouchEndedCatchNotification()
-      self.StartLoadingAnimation()
-      
-      let SaveDataBase = UserCreateStageDataBase()
-      let ImageData: NSData = SaveStageViewUseScreenshot()
-      
-      SaveDataBase.AddStage(StageArrayForContents: FillContentsArray, MaxPiceNum: PiceImageArray.count,
-                            PiceArry: PiceImageArray, ImageData: ImageData)
-      
-      let UID = UserDefaults.standard.object(forKey: "UID") as! String
-      let FireStore = Firestores(uid: UID)
-      
-      FireStore.AddStageData(StageArrayForContents: FillContentsArray, MaxPiceNum: PiceImageArray.count,
-                             PiceArry: PiceImageArray, ImageData: ImageData)
-      
+//      self.StartLoadingAnimation()
+//
+//      let SaveDataBase = UserCreateStageDataBase()
+//      let ImageData: NSData = SaveStageViewUseScreenshot()
+//
+//      SaveDataBase.AddStage(StageArrayForContents: FillContentsArray, MaxPiceNum: PiceImageArray.count,
+//                            PiceArry: PiceImageArray, ImageData: ImageData)
+//
+//      let UID = UserDefaults.standard.object(forKey: "UID") as! String
+//      let FireStore = Firestores(uid: UID)
+//
+//      FireStore.AddStageData(StageArrayForContents: FillContentsArray, MaxPiceNum: PiceImageArray.count,
+//                             PiceArry: PiceImageArray, ImageData: ImageData)
+//
       
    }
    

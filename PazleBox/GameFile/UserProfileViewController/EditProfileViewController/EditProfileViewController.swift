@@ -37,8 +37,6 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
       SetUpUsersImageButton()
       
       SetUpFireStoreSetting()
-      //自分の取得する
-      GetUserDataFromDataBase()
    }
    
    private func SetUpTextField() {
@@ -78,35 +76,6 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
-     }
-   
-   private func FSSetUpLabelText(document: DocumentSnapshot) {
-      if let userName = document.data()?["name"] as? String {
-         UsersNameTextField.text = userName
-         usersName = userName
-      }
-   }
-     
-   //MARK:-  ユーザデータ取得
-   private func GetUserDataFromDataBase() {
-      print("自分のデータの取得開始")
-      let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
-      print("UID = \(uid)")
-      db.collection("users").document(uid).getDocument { (document, err) in
-         if let err = err {
-            print("データベースからのデータ取得エラー: \(err)")
-            self.Play3DtouchError()
-         }
-           
-         if let document = document, document.exists {
-            //ドキュメントが存在していたらセットアップをする
-            self.FSSetUpLabelText(document: document)
-         } else {
-            print("Document does not exist")
-              
-         }
-         print("ユーザネームとプレイ回数のデータの取得完了")
-      }
    }
    
    //MARK:- NaviBarでバツボタン押されたときの処理
@@ -117,11 +86,10 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
       })
    }
    
+   //TODO: ここでデータをセーブする処理を行う
    @objc func TapSaveEditProfileButton() {
       print("Saveボタンタップされた")
-      self.dismiss(animated: true, completion: {
-         print("EditProfileVCのdismiss完了")
-      })
+
    }
    
    public func getUsersImage(image: UIImage) {
@@ -133,6 +101,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
    }
    
    
+   //MARK:- 画像を変更する処理をする画面を表示する
    @IBAction func TapEditUserProfileImageButton(_ sender: Any) {
    }
    

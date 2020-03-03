@@ -24,7 +24,7 @@ class Firestores {
       db = Firestore.firestore()
    }
    
-   public func AddStageData(StageArrayForContents: [[Contents]], MaxPiceNum: Int, PiceArry: [PiceImageView], ImageData: NSData?) {
+   public func AddStageData(StageArrayForContents: [[Contents]], MaxPiceNum: Int, PiceArry: [PiceImageView], ImageData: NSData?, StageTitle: String) {
       
       var docData: [String: Any] = ["addUser" : self.UID,
                                     "addDate" : Timestamp(date: Date()),
@@ -32,8 +32,10 @@ class Firestores {
                                     "ReviewAve" : 0,
                                     "ReviewCount" : 0]
       
+      docData.updateValue(StageTitle, forKey: "StageTitle")
       docData.updateValue(MaxPiceNum, forKey: "MaxPiceNum")
       docData.updateValue(ImageData!, forKey: "ImageData")
+      
       
       
       var PiceCount = 0
@@ -71,6 +73,13 @@ class Firestores {
 //         print("value: \(value)\n")
 //      }
       
+      let imageDataSize = Double(ImageData?.length ?? 0)
+      print("\n-------- 保存する画像の容量 ----------")
+      print(" Byte:  \(imageDataSize)")
+      print("KByte:  \(imageDataSize * 0.001)")
+      print("MByte:  \(imageDataSize * 0.001 * 0.001)")
+      print("GByte:  \(imageDataSize * 0.001 * 0.001 * 0.001)")
+      print("-------- 保存する画像の容量 ----------\n")
       
       
       // Add a new document with a generated id.
