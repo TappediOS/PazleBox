@@ -26,7 +26,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
    
    let usersImageViewWide: CGFloat = 70
    //テキストフィールドに書き込む最大の文字数。
-   let maxTextfieldLength = 25
+   let maxTextfieldLength = 30
    
    
    override func viewDidLoad() {
