@@ -59,6 +59,11 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    
    @objc func TapEditProfileButton(sender: UIBarButtonItem) {
       print("tap editProfile")
+      
+      let EditProfileSB = UIStoryboard(name: "EditProfileViewControllerSB", bundle: nil)
+      let EditProfileVC = EditProfileSB.instantiateViewController(withIdentifier: "EditProfileVC") as! EditProfileViewController
+      
+      self.navigationController?.pushViewController(EditProfileVC, animated: true)
    }
    
    func SetUpRefleshControl() {
