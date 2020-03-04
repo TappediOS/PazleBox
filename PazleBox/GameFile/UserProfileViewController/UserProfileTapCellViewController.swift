@@ -11,7 +11,7 @@ import UIKit
 
 class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    @IBOutlet weak var UsersStageCommentTableView: UITableView!
-   
+   
    
    @IBOutlet weak var UsersProfileImageView: UIImageView!
    @IBOutlet weak var UsersNameLabel: UILabel!

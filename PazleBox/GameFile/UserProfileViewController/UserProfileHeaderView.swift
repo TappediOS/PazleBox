@@ -12,11 +12,13 @@ import UIKit
 class UserProfileHeaderView: UIView {
    
    
+   @IBOutlet weak var UsersNameLabel: UILabel!
    
    
    override init(frame: CGRect){
       super.init(frame: frame)
       loadNib()
+      SetUpUsersNameLabel()
    }
    
    required init(coder aDecoder: NSCoder) {
@@ -28,5 +30,10 @@ class UserProfileHeaderView: UIView {
       let view = Bundle.main.loadNibNamed("UserProfileHeaderView", owner: self, options: nil)?.first as! UIView
       view.frame = self.bounds
       self.addSubview(view)
+   }
+   
+   func SetUpUsersNameLabel() {
+      self.UsersNameLabel.adjustsFontSizeToFitWidth = true
+      self.UsersNameLabel.minimumScaleFactor = 0.4
    }
 }
