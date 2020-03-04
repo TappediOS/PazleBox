@@ -39,6 +39,8 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    var StageArray: [[Contents]] = Array()
    var PlayStageData = PlayStageRefInfo()
    
+   var isLoadingGameVC = false
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -138,12 +140,13 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    @IBAction func TapPostUsersStagePlayButton(_ sender: Any) {
       print("ユーザステージのプレイボタンタップされた")
       PostUsersStagePlayBuutton.isEnabled = false //2度押し禁止する処理
+      isLoadingGameVC = true
       PresentGameViewController()
    }
    
    /// GameVCをプレゼントする関数
    func PresentGameViewController() {
-      GameSound.PlaySoundsTapButton()
+      //GameSound.PlaySoundsTapButton()
       let CleateSB = UIStoryboard(name: "CleateStageSB", bundle: nil)
       let GameVC = CleateSB.instantiateViewController(withIdentifier: "UsersGameView") as! UsersGameViewController
 
@@ -156,6 +159,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       self.present(GameVC, animated: true, completion: {
          print("プレゼント終わった")
          self.PostUsersStagePlayBuutton.isEnabled = true //ボタンロック解除
+         self.isLoadingGameVC = false
       })
    }
    
@@ -274,6 +278,12 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    
    //コメントしたユーザの画像がタップされたときの処理
    @objc func TapCommentedUsersImageViewButtonInterNetTableView(_ sender: UIButton) {
+      
+      guard self.isLoadingGameVC == false else {
+         print("コメントしたユーザの画像タップされたけど，ローディング中やから何もしない.")
+         return
+      }
+      
       let rowNum = sender.tag
       print("\(rowNum)番目のcellがタップされました")
       
