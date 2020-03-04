@@ -463,7 +463,7 @@ class SellectInternetStageViewController: UIViewController {
       //Usingの配列を使用してどデータのやり取りをする。
       //Segmentのでりゲードを利用して変更するべきである。
       PiceArray = GetPiceArrayFromDataBase(StageDic: UsingStageDatas[CellNum])
-      StageArray = GetPiceArrayFromDataBase(StageDic: UsingStageDatas[CellNum])
+      StageArray = GetStageArrayFromDataBase(StageDic: UsingStageDatas[CellNum])
       PlayStageData = GetPlayStageInfoFromDataBase(StageDic: UsingStageDatas[CellNum])
    }
    

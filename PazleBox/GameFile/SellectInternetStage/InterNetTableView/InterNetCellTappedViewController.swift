@@ -32,6 +32,11 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
 
    let ButtonCornerRadius: CGFloat = 6.5
    
+   //GameSceneを読み込むのに必要なデータ
+   var PiceArray: [PiceInfo] = Array()
+   var StageArray: [[Contents]] = Array()
+   var PlayStageData = PlayStageRefInfo()
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -114,9 +119,39 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       self.PostUsersStagePlayCount = stagePlayCount
    }
    
+   //MARK:- 画面遷移する前にプレイするステージデータをセットする
+   public func setPiceArray(_ piceArray: [PiceInfo]) {
+      self.PiceArray = piceArray
+   }
+   
+   public func setStageArray(_ stageArray: [[Contents]]) {
+      self.StageArray = stageArray
+   }
+   
+   public func setPlayStageData(_ playStageData: PlayStageRefInfo) {
+      self.PlayStageData = playStageData
+   }
+   
    
    @IBAction func TapPostUsersStagePlayButton(_ sender: Any) {
       print("ユーザステージのプレイボタンタップされた")
+      PresentGameViewController()
+   }
+   
+   /// GameVCをプレゼントする関数
+   func PresentGameViewController() {
+      let CleateSB = UIStoryboard(name: "CleateStageSB", bundle: nil)
+      let GameVC = CleateSB.instantiateViewController(withIdentifier: "UsersGameView") as! UsersGameViewController
+
+      GameVC.LoadPiceArray(PiceArray: PiceArray)
+      GameVC.LoadStageArray(StageArray: StageArray)
+      GameVC.LoadPlayStageData(RefID: PlayStageData.RefID, stageDataForNoDocExsist: self.PlayStageData)
+      GameVC.modalPresentationStyle = .fullScreen
+      //HomeViewに対してBGMを消してって通知を送る
+      NotificationCenter.default.post(name: .StopHomeViewBGM, object: nil, userInfo: nil)
+      self.present(GameVC, animated: true, completion: {
+         print("プレゼント終わった")
+      })
    }
    
    
