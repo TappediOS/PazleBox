@@ -70,12 +70,16 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    }
    func InitPostUsersUserNBameLabel() {
       self.PostUsersUserNBameLabel.text = self.PostUsersUserName
+      self.PostUsersUserNBameLabel.adjustsFontSizeToFitWidth = true
+      self.PostUsersUserNBameLabel.minimumScaleFactor = 0.4
    }
    func InitPostUsersStageImageView() {
       self.PostUsersStageImageView.image = self.PostUsersStageImage
    }
    func InitPostUsersStageTitleLabel() {
       self.PostUsersStageTitleLabel.text = self.PostUsersStageTitle
+      self.PostUsersStageTitleLabel.adjustsFontSizeToFitWidth = true
+      self.PostUsersStageTitleLabel.minimumScaleFactor = 0.4
    }
    func InitPostUsersStageReviewLabel() {
       self.PostUsersStageReviewLabel.text = self.PostUsersStageReivew
