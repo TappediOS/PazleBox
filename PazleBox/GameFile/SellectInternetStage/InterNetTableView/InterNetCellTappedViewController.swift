@@ -137,6 +137,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    
    @IBAction func TapPostUsersStagePlayButton(_ sender: Any) {
       print("ユーザステージのプレイボタンタップされた")
+      PostUsersStagePlayBuutton.isEnabled = false //2度押し禁止する処理
       PresentGameViewController()
    }
    
@@ -154,6 +155,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       NotificationCenter.default.post(name: .StopHomeViewBGM, object: nil, userInfo: nil)
       self.present(GameVC, animated: true, completion: {
          print("プレゼント終わった")
+         PostUsersStagePlayBuutton.isEnabled = true //ボタンロック解除
       })
    }
    
