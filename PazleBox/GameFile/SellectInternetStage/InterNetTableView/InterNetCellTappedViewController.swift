@@ -200,23 +200,28 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    
    
    //コメントしたユーザの報告ボタンがタップされたときの処理
+   //TODO:- ローカライズね。
    @objc func TapReportCommentedUserTableViewCell(_ sender: UIButton) {
       let rowNum = sender.tag
       print("\(rowNum)番目のcellのユーザの報告ボタンがタップされました")
       
       let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+      
+      let Report = NSLocalizedString("Report", comment: "")
+      let Block = NSLocalizedString("Block", comment: "")
+      let Cansel = NSLocalizedString("Cansel", comment: "")
              
-      let ReportAction = UIAlertAction(title: "Report", style: .destructive, handler: { (action: UIAlertAction!) in
+      let ReportAction = UIAlertAction(title: Report, style: .destructive, handler: { (action: UIAlertAction!) in
          print("Report押されたよ")
          self.TapReportActionAgainstUsersPost()
       })
       
-      let BlockAction = UIAlertAction(title: "Block", style: .default, handler: { (action: UIAlertAction!) in
+      let BlockAction = UIAlertAction(title: Block, style: .default, handler: { (action: UIAlertAction!) in
          print("Block押されたよ")
          self.TapBlockActionAgainstUsersPost()
       })
       
-      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+      let CanselAction = UIAlertAction(title: Cansel, style: .cancel, handler: { (action: UIAlertAction!) in
          print("ActionSheetでCanselタップされた")
       })
       

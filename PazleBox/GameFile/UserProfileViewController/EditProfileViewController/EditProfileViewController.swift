@@ -32,6 +32,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
    override func viewDidLoad() {
       super.viewDidLoad()
       SetUpTextField()
+      SetUpNavigationController()
       SetUpNavigationBarItem()
       
       SetUpUsersImageButton()
@@ -53,6 +54,11 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
    //オブザーバの片付けをする。
    deinit {
       NotificationCenter.default.removeObserver(self)
+   }
+   
+   func SetUpNavigationController() {
+      //TODO:- ローカライズすること
+      self.navigationItem.title = NSLocalizedString("Edit Profile", comment: "")
    }
    
    func SetUpNavigationBarItem() {
@@ -100,9 +106,54 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
       self.usersName = name
    }
    
+   func TapTakePhotoAction() {
+      
+   }
+   
+   func TapSelectPhotoAction() {
+      
+   }
+   
+   func TapDeletePhotoAction() {
+      
+   }
+   
    
    //MARK:- 画像を変更する処理をする画面を表示する
    @IBAction func TapEditUserProfileImageButton(_ sender: Any) {
+      let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+      
+      let TakePhoto = NSLocalizedString("Tale Photo", comment: "")
+      let SelectPhoto = NSLocalizedString("Select Photo", comment: "")
+      let DeletePhoto = NSLocalizedString("Delete Photo", comment: "")
+      let Cansel = NSLocalizedString("Cansel", comment: "")
+      
+      
+      let TakePhotoAction = UIAlertAction(title: TakePhoto, style: .default, handler: { (action: UIAlertAction!) in
+         print("Take押されたよ")
+         self.TapTakePhotoAction()
+      })
+      
+      let SelectPhotoAction = UIAlertAction(title: SelectPhoto, style: .default, handler: { (action: UIAlertAction!) in
+         print("Select押されたよ")
+         self.TapSelectPhotoAction()
+      })
+      
+      let DeletePhotoAction = UIAlertAction(title: DeletePhoto, style: .destructive, handler: { (action: UIAlertAction!) in
+         print("Block押されたよ")
+         self.TapDeletePhotoAction()
+      })
+      
+      let CanselAction = UIAlertAction(title: Cansel, style: .cancel, handler: { (action: UIAlertAction!) in
+         print("ActionSheetでCanselタップされた")
+      })
+      
+      ActionSheet.addAction(TakePhotoAction)
+      ActionSheet.addAction(SelectPhotoAction)
+      ActionSheet.addAction(DeletePhotoAction)
+      ActionSheet.addAction(CanselAction)
+         
+      self.present(ActionSheet, animated: true, completion: nil)
    }
    
    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
