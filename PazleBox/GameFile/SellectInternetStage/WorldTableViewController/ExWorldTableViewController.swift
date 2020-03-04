@@ -37,6 +37,9 @@ extension WorldTableViewController {
       
       cell?.UserNameLabel.text = "Raid on was"
       
+      let StageTitle = UsingStageDatas[indexPath.item]["StageTitle"] as! String
+      cell?.UsersStageTitlelLabel.text = StageTitle
+      
       let reviewNum = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat
       cell?.UsersStageReviewLabel.text = String(floor(Double(reviewNum) * 100) / 100) + " / 5"
       cell?.UsersStagePlayCountLabel.text = String(UsingStageDatas[indexPath.item]["PlayCount"] as! Int)

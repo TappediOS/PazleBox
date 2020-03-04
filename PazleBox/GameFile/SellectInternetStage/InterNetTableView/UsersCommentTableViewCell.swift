@@ -19,6 +19,23 @@ class UsersCommentTableViewCell: UITableViewCell {
    
    @IBOutlet weak var ReportUserButton: UIButton!
    
+   override func awakeFromNib() {
+      super.awakeFromNib()
+      // Initialization code
+      
+      SetUpCommentedUsersNameLabel()
+   }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+   
+   func SetUpCommentedUsersNameLabel() {
+      CommentedUsersNameLabel.adjustsFontSizeToFitWidth = true
+      CommentedUsersNameLabel.minimumScaleFactor = 0.4
+   }
    
    @IBAction func TapCommentedUsersImageViewButton(_ sender: Any) {
       print("userの画像がタップされました")

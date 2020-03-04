@@ -215,6 +215,12 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       if let value = document["ReviewCount"] as? Int {
          StageData.updateValue(value, forKey: "ReviewCount")
       }
+      
+      if let value = document["StageTitle"] as? String {
+         StageData.updateValue(value, forKey: "StageTitle")
+      } else {
+         StageData.updateValue("Nothing", forKey: "StageTitle")
+      }
             
       if let value = document["addUser"] as? String {
          StageData.updateValue(value, forKey: "addUser")

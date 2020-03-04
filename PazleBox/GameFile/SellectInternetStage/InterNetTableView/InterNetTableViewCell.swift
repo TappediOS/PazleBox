@@ -28,6 +28,24 @@ class InterNetTableViewCell: UITableViewCell {
    @IBOutlet weak var GameScreenshotImageView: UIImageView!
    
    
+   override func awakeFromNib() {
+      super.awakeFromNib()
+      // Initialization code
+      
+      SetUpUsersStageTitlelLabel()
+   }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+   
+   func SetUpUsersStageTitlelLabel() {
+      PuzzleTitleLabel.adjustsFontSizeToFitWidth = true
+      PuzzleTitleLabel.minimumScaleFactor = 0.4
+   }
+   
    
    @IBAction func TapUserImageViewButton(_ sender: Any) {
       //print("tableview cell の中のUserimageがタップされました")

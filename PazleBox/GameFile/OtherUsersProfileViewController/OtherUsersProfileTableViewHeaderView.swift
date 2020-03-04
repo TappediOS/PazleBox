@@ -14,11 +14,13 @@ class OtherUsersProfileTableViewHeaderView: UIView {
    @IBOutlet weak var FollowOrUnFollowButton: UIButton!
    let ButtonCornerRadius: CGFloat = 6.5
    
+   @IBOutlet weak var OtherUsersNameLabel: UILabel!
    
    override init(frame: CGRect){
       super.init(frame: frame)
       loadNib()
       InitFollowOrUnFollowButton()
+      SetUpOtherUsersNameLabel()
    }
       
    required init(coder aDecoder: NSCoder) {
@@ -58,6 +60,11 @@ class OtherUsersProfileTableViewHeaderView: UIView {
    
    public func getFollowOrUnFollowButton() -> UIButton {
       return self.FollowOrUnFollowButton
+   }
+   
+   func SetUpOtherUsersNameLabel() {
+      self.OtherUsersNameLabel.adjustsFontSizeToFitWidth = true
+      self.OtherUsersNameLabel.minimumScaleFactor = 0.4
    }
    
    

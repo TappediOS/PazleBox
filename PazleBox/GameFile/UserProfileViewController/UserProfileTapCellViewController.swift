@@ -11,7 +11,7 @@ import UIKit
 
 class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    @IBOutlet weak var UsersStageCommentTableView: UITableView!
-   
+   
    
    @IBOutlet weak var UsersProfileImageView: UIImageView!
    @IBOutlet weak var UsersNameLabel: UILabel!
@@ -66,12 +66,16 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
    }
    func InitUsersNameLabel() {
       self.UsersNameLabel.text = self.UsersName
+      self.UsersNameLabel.adjustsFontSizeToFitWidth = true
+      self.UsersNameLabel.minimumScaleFactor = 0.4
    }
    func InitUsersPostedStageImageView() {
       self.UsersPostedStageImageView.image = self.UsersPostedStageImage
    }
    func InitUsersPostedStageTitleLabel() {
       self.UsersPostedStageTitleLabel.text = self.UsersPostedStageTitle
+      self.UsersPostedStageTitleLabel.adjustsFontSizeToFitWidth = true
+      self.UsersPostedStageTitleLabel.minimumScaleFactor = 0.4
    }
    func InitUsersPostedStageReviewLabel() {
       self.UsersPostedStageReviewLabel.text = self.UsersPostedStageReview
