@@ -51,8 +51,8 @@ extension WorldTableViewController {
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       // セルの選択を解除する
       tableView.deselectRow(at: indexPath, animated: true)
+      
       let InterNetCellTappedVCSB = UIStoryboard(name: "InterNetTableView", bundle: nil)
-
       let InterNetCellTappedVC = InterNetCellTappedVCSB.instantiateViewController(withIdentifier: "InterNetCellTappedVC") as! InterNetCellTappedViewController
       
       let ImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
@@ -60,16 +60,19 @@ extension WorldTableViewController {
          let Image = UIImage(data: data as Data)
          InterNetCellTappedVC.setPostUsersStageImage(stageImage: Image!)
       }
+      //let UserName = UsingStageDatas[indexPath.item]["StageTitle"] as! String
+      let StageTitle = UsingStageDatas[indexPath.item]["StageTitle"] as! String
+      let reviewNum = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat
+      let PlayCount = UsingStageDatas[indexPath.item]["PlayCount"] as! Int
       
       InterNetCellTappedVC.setUsersImage(usersImage: UIImage(named: "hammer.png")!)
       InterNetCellTappedVC.setUsersName(usersName: "Supar Boy")
       
-      InterNetCellTappedVC.setPostUsersStageTitle(stageTitle: "Drop Card")
+      InterNetCellTappedVC.setPostUsersStageTitle(stageTitle: StageTitle)
       
-      let reviewNum = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat
       
       InterNetCellTappedVC.setPostUsersStageReview(stageReview: String(floor(Double(reviewNum) * 100) / 100) + " / 5")
-      InterNetCellTappedVC.setPostUsersStagePlayCount(stagePlayCount: String(UsingStageDatas[indexPath.item]["PlayCount"] as! Int))
+      InterNetCellTappedVC.setPostUsersStagePlayCount(stagePlayCount: String(PlayCount))
       
       self.navigationController?.pushViewController(InterNetCellTappedVC, animated: true)
    }

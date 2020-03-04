@@ -30,17 +30,17 @@ extension InterNetTableViewController {
          cell?.GameScreenshotImageView.image = Image
       }
       
+      let StageTitle = UsingStageDatas[indexPath.item]["StageTitle"] as! String
+      let reviewNum = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat
+      let UserName = UsingStageDatas[indexPath.item]["StageTitle"] as! String
    
       cell?.UserImageViewButton.setImage(UIImage(named: "person.png")!, for: .normal)
       cell?.UserImageViewButton.tag = indexPath.row
       cell?.UserImageViewButton.addTarget(self, action: #selector(TapUserImageButtonInterNetTableView(_:)), for: .touchUpInside)
       
       cell?.UserNameLabel.text = "Raid on was"
-      
-      let StageTitle = UsingStageDatas[indexPath.item]["StageTitle"] as! String
       cell?.PuzzleTitleLabel.text = StageTitle
       
-      let reviewNum = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat
       cell?.RatedLabel.text = String(floor(Double(reviewNum) * 100) / 100) + " / 5"
       cell?.PlayCountLabel.text = String(UsingStageDatas[indexPath.item]["PlayCount"] as! Int)
       cell?.CreatedDayLabel.text = UsingStageDatas[indexPath.item]["addDate"] as! String
@@ -58,16 +58,19 @@ extension InterNetTableViewController {
          let Image = UIImage(data: data as Data)
          InterNetCellTappedVC.setPostUsersStageImage(stageImage: Image!)
       }
+      //let UserName = UsingStageDatas[indexPath.item]["StageTitle"] as! String
+      let StageTitle = UsingStageDatas[indexPath.item]["StageTitle"] as! String
+      let reviewNum = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat
+      let PlayCount = UsingStageDatas[indexPath.item]["PlayCount"] as! Int
       
       InterNetCellTappedVC.setUsersImage(usersImage: UIImage(named: "hammer.png")!)
       InterNetCellTappedVC.setUsersName(usersName: "Supar Boy")
       
-      InterNetCellTappedVC.setPostUsersStageTitle(stageTitle: "Drop Card")
+      InterNetCellTappedVC.setPostUsersStageTitle(stageTitle: StageTitle)
       
-      let reviewNum = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat
       
       InterNetCellTappedVC.setPostUsersStageReview(stageReview: String(floor(Double(reviewNum) * 100) / 100) + " / 5")
-      InterNetCellTappedVC.setPostUsersStagePlayCount(stagePlayCount: String(UsingStageDatas[indexPath.item]["PlayCount"] as! Int))
+      InterNetCellTappedVC.setPostUsersStagePlayCount(stagePlayCount: String(PlayCount))
       
       self.navigationController?.pushViewController(InterNetCellTappedVC, animated: true)
    }
