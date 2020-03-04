@@ -32,6 +32,8 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
 
    let ButtonCornerRadius: CGFloat = 6.5
    
+   let GameSound = GameSounds()
+   
    //GameSceneを読み込むのに必要なデータ
    var PiceArray: [PiceInfo] = Array()
    var StageArray: [[Contents]] = Array()
@@ -140,6 +142,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    
    /// GameVCをプレゼントする関数
    func PresentGameViewController() {
+      GameSound.PlaySoundsTapButton()
       let CleateSB = UIStoryboard(name: "CleateStageSB", bundle: nil)
       let GameVC = CleateSB.instantiateViewController(withIdentifier: "UsersGameView") as! UsersGameViewController
 
