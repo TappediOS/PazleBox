@@ -155,7 +155,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       NotificationCenter.default.post(name: .StopHomeViewBGM, object: nil, userInfo: nil)
       self.present(GameVC, animated: true, completion: {
          print("プレゼント終わった")
-         PostUsersStagePlayBuutton.isEnabled = true //ボタンロック解除
+         self.PostUsersStagePlayBuutton.isEnabled = true //ボタンロック解除
       })
    }
    
