@@ -17,11 +17,14 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
    @IBOutlet weak var EditUserProfileImageButton: UIButton!
    @IBOutlet weak var NameLabel: UILabel!
    
+   var isChangeUsersImage = false
+   
    @IBOutlet weak var UsersNameTextField: UITextField!
    
    var db: Firestore!
    
-   var usersName: String = ""
+   var UserNameWhenShowThisVC: String = ""
+   var UserNameWhenDismissThisVC: String = ""
    var usersImage = UIImage()
    
    let usersImageViewWide: CGFloat = 70
@@ -95,6 +98,21 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
    //TODO: ここでデータをセーブする処理を行う
    @objc func TapSaveEditProfileButton() {
       print("Saveボタンタップされた")
+      UserNameWhenDismissThisVC = self.UsersNameTextField.text ?? NSLocalizedString("Guest", comment: "")
+      
+      if (UserNameWhenDismissThisVC == UserNameWhenShowThisVC) && !isChangeUsersImage {
+         print("名前も画像も変更されていない!")
+         return
+      }
+      
+      if UserNameWhenDismissThisVC != UserNameWhenShowThisVC {
+         print("名前が変更されているので保存する")
+         
+      }
+      
+      if isChangeUsersImage {
+         print("画像が変更されているので保存する")
+      }
 
    }
    
@@ -103,7 +121,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
    }
    
    public func getUsersName(name: String) {
-      self.usersName = name
+      self.UserNameWhenShowThisVC = name
    }
    
    func TapTakePhotoAction() {
