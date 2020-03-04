@@ -74,6 +74,17 @@ extension WorldTableViewController {
       InterNetCellTappedVC.setPostUsersStageReview(stageReview: String(floor(Double(reviewNum) * 100) / 100) + " / 5")
       InterNetCellTappedVC.setPostUsersStagePlayCount(stagePlayCount: String(PlayCount))
       
+      
+      //ステージデータをセットする
+      let PiceArray = GetPiceArrayFromDataBase(StageDic: UsingStageDatas[indexPath.item])
+      let StageArray = GetStageArrayFromDataBase(StageDic: UsingStageDatas[indexPath.item])
+      let PlayStageData = GetPlayStageInfoFromDataBase(StageDic: UsingStageDatas[indexPath.item])
+      
+      
+      InterNetCellTappedVC.setPiceArray(PiceArray)
+      InterNetCellTappedVC.setStageArray(StageArray)
+      InterNetCellTappedVC.setPlayStageData(PlayStageData)
+      
       self.navigationController?.pushViewController(InterNetCellTappedVC, animated: true)
    }
    

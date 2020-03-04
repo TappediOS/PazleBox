@@ -38,6 +38,6 @@ class UsersCommentTableViewCell: UITableViewCell {
    }
    
    @IBAction func TapCommentedUsersImageViewButton(_ sender: Any) {
-      print("userの画像がタップされました")
+      //print("userの画像がタップされました")
    }
 }
