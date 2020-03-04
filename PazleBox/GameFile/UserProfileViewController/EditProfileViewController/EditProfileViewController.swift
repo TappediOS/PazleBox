@@ -123,7 +123,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
    @IBAction func TapEditUserProfileImageButton(_ sender: Any) {
       let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
       
-      let TakePhoto = NSLocalizedString("Tale Photo", comment: "")
+      let TakePhoto = NSLocalizedString("Take Photo", comment: "")
       let SelectPhoto = NSLocalizedString("Select Photo", comment: "")
       let DeletePhoto = NSLocalizedString("Delete Photo", comment: "")
       let Cansel = NSLocalizedString("Cansel", comment: "")
