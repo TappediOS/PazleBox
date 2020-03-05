@@ -11,5 +11,15 @@ import UIKit
 class UserProfileTableViewCell: UITableViewCell {
 
     
-
+   @IBOutlet weak var UsersPfofileImageView: UIImageView!
+   @IBOutlet weak var UsersNameLabel: UILabel!
+   
+   
+   @IBOutlet weak var UsersPostedStageImageView: UIImageView!
+   @IBOutlet weak var UsersPostedStageTitleLabel: UILabel!
+   
+   
+   @IBOutlet weak var UsersPostedStageReviewLabel: UILabel!
+   @IBOutlet weak var UsersPostedStagePlayCountLabel: UILabel!
+   @IBOutlet weak var UsersPostedStageAddDateLabel: UILabel!
 }

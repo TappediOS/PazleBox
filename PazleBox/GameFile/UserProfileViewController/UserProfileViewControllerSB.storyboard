@@ -146,6 +146,15 @@
                                                 <constraint firstItem="dST-Dl-5vY" firstAttribute="top" secondItem="1E3-Jn-6v2" secondAttribute="bottom" constant="15" id="wjr-nB-t7d"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="UsersNameLabel" destination="9Of-hF-aTg" id="8YU-zS-11I"/>
+                                            <outlet property="UsersPfofileImageView" destination="uAK-cy-QhW" id="QQl-EK-xTY"/>
+                                            <outlet property="UsersPostedStageAddDateLabel" destination="UP3-iT-3LS" id="Ttw-GH-yH3"/>
+                                            <outlet property="UsersPostedStageImageView" destination="sqV-J8-zrb" id="CMs-vR-PiB"/>
+                                            <outlet property="UsersPostedStagePlayCountLabel" destination="dST-Dl-5vY" id="tTs-hZ-MeK"/>
+                                            <outlet property="UsersPostedStageReviewLabel" destination="1E3-Jn-6v2" id="dMN-r0-0g4"/>
+                                            <outlet property="UsersPostedStageTitleLabel" destination="4Cu-jp-vwy" id="cUU-YQ-5V0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

@@ -174,7 +174,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             //読み取りが終わってからデリゲードを入れる必要がある
             self.UserProfileTableView.delegate = self
             self.UserProfileTableView.dataSource = self
-            
+            self.UserProfileTableView.reloadData()
             //ローディングアニメーションの停止。
             self.StopLoadingAnimation()
       }
@@ -274,6 +274,12 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
          StageData.updateValue(value, forKey: "ReviewCount")
       }
       
+      if let value = document["StageTitle"] as? String {
+         StageData.updateValue(value, forKey: "StageTitle")
+      } else {
+         StageData.updateValue("Nothing", forKey: "StageTitle")
+      }
+      
       if let value = document["addUser"] as? String {
          StageData.updateValue(value, forKey: "addUser")
       }
@@ -335,7 +341,21 @@ extension UserProfileViewController {
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = self.UserProfileTableView.dequeueReusableCell(withIdentifier: "UserProfileTableCell", for: indexPath) as? UserProfileTableViewCell
       
-
+      let ImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
+      if let data = ImageData {
+         let Image = UIImage(data: data as Data)
+         cell?.UsersPostedStageImageView.image = Image
+      }
+      let StageTitle = UsingStageDatas[indexPath.item]["StageTitle"] as! String
+      let reviewNum = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat
+      let PlayCount = UsingStageDatas[indexPath.item]["PlayCount"] as! Int
+      let addDate = UsingStageDatas[indexPath.item]["addDate"] as! String
+      
+      cell?.UsersPfofileImageView.image = UIImage(named: "person.png")!
+      cell?.UsersPostedStageTitleLabel.text = StageTitle
+      cell?.UsersPostedStageReviewLabel.text = String(floor(Double(reviewNum) * 100) / 100) + " / 5"
+      cell?.UsersPostedStagePlayCountLabel.text = String(PlayCount)
+      cell?.UsersPostedStageAddDateLabel.text = addDate
       return cell!
    }
    
