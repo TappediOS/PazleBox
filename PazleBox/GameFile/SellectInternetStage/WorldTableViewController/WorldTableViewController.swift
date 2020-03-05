@@ -57,17 +57,17 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       InitSegmentedControl()
    }
    
+   //MARK:- segmentのオートレイアウトをしている
    override func viewWillLayoutSubviews() {
       super.viewWillLayoutSubviews()
       if #available(iOS 11.0, *) {
-         let safeAreBottom = self.view.safeAreaInsets.bottom
+         let safeAreTop = self.view.safeAreaInsets.top
          self.segmentedControl?.snp.makeConstraints { make in
-            make.bottom.equalTo(view.snp.bottom).offset(-(safeAreBottom + 10))
-            make.leading.equalTo(view.snp.leading).offset(28)
-            make.trailing.equalTo(view.snp.trailing).offset(-28)
+            make.top.equalTo(view.snp.top).offset(safeAreTop + 12)
+            make.leading.equalTo(view.snp.leading).offset(20)
+            make.trailing.equalTo(view.snp.trailing).offset(-20)
             make.height.equalTo(40)
          }
-
       }
    }
    
@@ -348,6 +348,8 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       segmentedControl = TwicketSegmentedControl()
       segmentedControl?.setSegmentItems(titles)
       segmentedControl?.delegate = self
+      
+      segmentedControl?.backgroundColor = UIColor.white.withAlphaComponent(0.75)
       
       view.addSubview(segmentedControl!)
    }
