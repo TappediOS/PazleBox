@@ -21,6 +21,10 @@ import NVActivityIndicatorView
 class UserProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
    @IBOutlet weak var UserProfileTableView: UITableView!
+   
+   //画面遷移するときに選択されているcellのIndexPath
+   var UserProfileTableViewSellectedIndexPath = IndexPath()
+   
    let sectionHeaderHeight: CGFloat = 200
    
    var RefleshControl = UIRefreshControl()
@@ -49,6 +53,33 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
       SetUpFireStoreSetting()
       //自分の取得する
       GetMyStageDataFromDataBase()
+   }
+   
+   override func viewDidAppear(_ animated: Bool) {
+      super.viewDidAppear(true)
+      print("viewがAppearされた後")
+      CheckDeletedUsersStage()
+   }
+   
+   func CheckDeletedUsersStage() {
+      let isDeletedUsersStage = UserDefaults.standard.bool(forKey: "isDeleteUsersPostedCell")
+      if isDeletedUsersStage == false {
+         print("ユーザのステージは削除されていません")
+         return
+      }
+      print("ユーザのステージが削除されています")
+      let DeletedUsersStageCellNum = UserDefaults.standard.integer(forKey: "DeleteUsersPostedCellNum")
+      print("\(DeletedUsersStageCellNum) 番目のcellが削除されています")
+      
+      self.UsingStageDatas.remove(at: DeletedUsersStageCellNum)
+      UserProfileTableView.deleteRows(at: [UserProfileTableViewSellectedIndexPath], with: .automatic)
+      ReSetUserDefaultsDeletedStage()
+   }
+   
+   func ReSetUserDefaultsDeletedStage() {
+      UserDefaults.standard.set(false, forKey: "isDeleteUsersPostedCell")
+      UserDefaults.standard.set(0, forKey: "DeleteUsersPostedCellNum")
+      UserDefaults.standard.synchronize()
    }
    
    func SetUpNavigationController() {

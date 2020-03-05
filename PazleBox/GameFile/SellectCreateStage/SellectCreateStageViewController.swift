@@ -259,8 +259,6 @@ class SellectCreateStageViewController: UIViewController {
          ShowDeleteView(CellNum: SentNum)
          
          GameSound.PlaySoundsTapButton()
-         
-         
       }else{
          print("誰が来たからからない")
       }

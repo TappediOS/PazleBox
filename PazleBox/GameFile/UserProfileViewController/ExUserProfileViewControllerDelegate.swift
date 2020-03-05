@@ -51,6 +51,8 @@ extension UserProfileViewController {
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       // セルの選択を解除する
       tableView.deselectRow(at: indexPath, animated: true)
+      UserProfileTableViewSellectedIndexPath = indexPath
+      
       let UserProfileTapCellViewController = self.storyboard?.instantiateViewController(withIdentifier: "UserProfileTapCellVC") as! UserProfileTapCellViewController
       
       let ImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
@@ -81,6 +83,8 @@ extension UserProfileViewController {
       UserProfileTapCellViewController.setPiceArray(PiceArray)
       UserProfileTapCellViewController.setStageArray(StageArray)
       UserProfileTapCellViewController.setPlayStageData(PlayStageData)
+      
+      UserProfileTapCellViewController.setTopVCTableViewCellNum(indexPath.item)
          
       self.navigationController?.pushViewController(UserProfileTapCellViewController, animated: true)
    }

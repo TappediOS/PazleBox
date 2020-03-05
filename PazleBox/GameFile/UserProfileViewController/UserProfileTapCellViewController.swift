@@ -8,6 +8,15 @@
 
 import Foundation
 import UIKit
+import ChameleonFramework
+import RealmSwift
+import TapticEngine
+import FlatUIKit
+import Hero
+import Firebase
+import FirebaseFirestore
+import SCLAlertView
+import NVActivityIndicatorView
 
 class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    @IBOutlet weak var UsersStageCommentTableView: UITableView!
@@ -35,17 +44,27 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
    @IBOutlet weak var UsersPostedStageDeleteButton: UIButton!
    
    let ButtonCornerRadius: CGFloat = 6.5
+   let GameSound = GameSounds()
    
    //GameSceneを読み込むのに必要なデータ
    var PiceArray: [PiceInfo] = Array()
    var StageArray: [[Contents]] = Array()
    var PlayStageData = PlayStageRefInfo()
    
-   var isLoadingGameVC = false
+   //どこのcellをタップして画面遷移されたかを決めている。
+   var TopVCTableViewCellNum = 0
+   
+   var isAbleToTapPlayDeleteButton = false
+   
+   var db: Firestore!
+   
+   var LoadActivityView: NVActivityIndicatorView?
    
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      InitLoadActivityView()
+      SetUpFireStoreSetting()
       SetUpNavigationController()
       InitUsersProfileImageView()
       InitUsersNameLabel()
@@ -60,6 +79,22 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
       
       self.UsersStageCommentTableView.delegate = self
       self.UsersStageCommentTableView.dataSource = self
+   }
+   
+   private func InitLoadActivityView() {
+      let spalete: CGFloat = 5 //横幅 viewWide / X　になる。
+      let Viewsize = self.view.frame.width / spalete
+      let StartX = self.view.frame.width / 2 - (Viewsize / 2)
+      let StartY = self.view.frame.height / 2 - (Viewsize / 2)
+      let Rect = CGRect(x: StartX, y: StartY, width: Viewsize, height: Viewsize)
+      LoadActivityView = NVActivityIndicatorView(frame: Rect, type: .ballSpinFadeLoader, color: UIColor.flatMint(), padding: 0)
+      self.view.addSubview(LoadActivityView!)
+   }
+   
+   private func SetUpFireStoreSetting() {
+      let settings = FirestoreSettings()
+      Firestore.firestore().settings = settings
+      db = Firestore.firestore()
    }
    
    func SetUpNavigationController() {
@@ -135,22 +170,48 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
    }
    
    //MARK:- 画面遷移する前にプレイするステージデータをセットする
-     public func setPiceArray(_ piceArray: [PiceInfo]) {
-        self.PiceArray = piceArray
-     }
+   public func setPiceArray(_ piceArray: [PiceInfo]) {
+      self.PiceArray = piceArray
+   }
      
-     public func setStageArray(_ stageArray: [[Contents]]) {
-        self.StageArray = stageArray
-     }
+   public func setStageArray(_ stageArray: [[Contents]]) {
+      self.StageArray = stageArray
+   }
      
-     public func setPlayStageData(_ playStageData: PlayStageRefInfo) {
-        self.PlayStageData = playStageData
-     }
+   public func setPlayStageData(_ playStageData: PlayStageRefInfo) {
+      self.PlayStageData = playStageData
+   }
    
+   public func setTopVCTableViewCellNum(_ cellNum: Int) {
+      self.TopVCTableViewCellNum = cellNum
+   }
+   
+   //MARK:- ローディングアニメーション再生
+   private func StartLoadingAnimation() {
+      print("ローディングアニメーション再生")
+      self.LoadActivityView?.startAnimating()
+      return
+   }
+   
+   public func StopLoadingAnimation() {
+      print("ローディングアニメーション停止")
+      if LoadActivityView?.isAnimating == true {
+         self.LoadActivityView?.stopAnimating()
+      }
+   }
+   
+   private func AbleToEachButton() {
+      self.UsersPostedStagePlayButton.isEnabled = true
+      self.UsersPostedStageDeleteButton.isEnabled = true
+      self.isAbleToTapPlayDeleteButton = true
+   }
+   
+   //MARK:- プレイボタン押されたときの処理
    @IBAction func TapUsersStagePlayButton(_ sender: Any) {
       print("Play Buttonタップされたよ")
       UsersPostedStagePlayButton.isEnabled = false //2度押し禁止する処理
-      isLoadingGameVC = true
+      UsersPostedStageDeleteButton.isEnabled = false
+      isAbleToTapPlayDeleteButton = false
       PresentGameViewController()
    }
    
@@ -168,13 +229,110 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
       NotificationCenter.default.post(name: .StopHomeViewBGM, object: nil, userInfo: nil)
       self.present(GameVC, animated: true, completion: {
          print("プレゼント終わった")
-         self.UsersPostedStagePlayButton.isEnabled = true //ボタンロック解除
-         self.isLoadingGameVC = false
+         self.AbleToEachButton()
       })
    }
    
+   //MARK:- 削除ボタン押されたときの処理
    @IBAction func TapUsersStageDeleteButton(_ sender: Any) {
-       print("Delete Buttonタップされたよ")
+      print("Delete Buttonタップされたよ")
+      GameSound.PlaySoundsTapButton()
+      UsersPostedStagePlayButton.isEnabled = false //2度押し禁止する処理
+      UsersPostedStageDeleteButton.isEnabled = false
+      isAbleToTapPlayDeleteButton = false
+      ShowDeleteView()
+   }
+   
+   private func  ShowDeleteView() {
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+
+      ComleateView.addButton(NSLocalizedString("Delete", comment: "")){
+         self.Play3DtouchHeavy()
+         self.GameSound.PlaySoundsTapButton()
+         self.DeleteDocumentForFireStore()
+         ComleateView.removeFromParent()
+      }
+      ComleateView.addButton(NSLocalizedString("Cancel", comment: "")){
+         self.Play3DtouchHeavy()
+         ComleateView.removeFromParent()
+         self.AbleToEachButton()
+      }
+      let delStage = NSLocalizedString("delStage", comment: "")
+      let cantBack = NSLocalizedString("cantBack", comment: "")
+      ComleateView.showWarning(delStage, subTitle: cantBack)
+   }
+   
+   //MARK:- FireStoreからデータを削除する関数
+   private func DeleteDocumentForFireStore() {
+      self.StartLoadingAnimation()
+      
+      let docID = PlayStageData.RefID
+      print("\n\n---データの削除開始---\n\n")
+      print("docID = \(docID)")
+      print("uid = \(String(describing: UserDefaults.standard.string(forKey: "UID")))")
+      
+      db.collection("Stages").document(docID).delete() { err in
+         if let err = err {
+            print("\n削除するのにエラーが発生:\n\(err)")
+            self.ShowErrDeleteStageInStoreSaveAlertView()
+            self.StopLoadingAnimation()
+            return
+         }else {
+            print("削除成功しました。")
+            self.DecrementCreateStageNum()
+            self.ShowSuccDeleteStageInStoreSaveAlertView()
+            self.StopLoadingAnimation()
+         }
+      }
+   }
+   
+   private func ShowErrDeleteStageInStoreSaveAlertView() {
+      Play3DtouchError()
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      ComleateView.addButton("OK"){
+         self.dismiss(animated: true)
+         self.Play3DtouchHeavy()
+         self.GameSound.PlaySoundsTapButton()
+         self.AbleToEachButton()
+      }
+      let Error = NSLocalizedString("err", comment: "")
+      let errDele = NSLocalizedString("errDele", comment: "")
+      let checkNet = NSLocalizedString("checkNet", comment: "")
+      ComleateView.showError(Error, subTitle: errDele + "\n" + checkNet)
+   }
+   
+   private func ShowSuccDeleteStageInStoreSaveAlertView() {
+      Play3DtouchSuccess()
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      ComleateView.addButton("OK"){
+         self.Play3DtouchHeavy()
+         self.GameSound.PlaySoundsTapButton()
+         self.AbleToEachButton()
+         self.ReturnPopToRootViewController()
+      }
+      let suc = NSLocalizedString("suc", comment: "")
+      let sucDele = NSLocalizedString("sucDele", comment: "")
+      ComleateView.showSuccess(suc, subTitle: sucDele)
+   }
+   
+   //MARK:- 登録ステージ数をデクリメントする
+   private func DecrementCreateStageNum() {
+      let CreateStageNum: Int = UserDefaults.standard.integer(forKey: "CreateStageNum")
+      print("\nステージ送信完了したので登録しているステージ数を\nデクリメントします。")
+      UserDefaults.standard.set(CreateStageNum - 1, forKey: "CreateStageNum")
+      let AfterCreateStageNum: Int = UserDefaults.standard.integer(forKey: "CreateStageNum")
+      print("デクリメント完了しました")
+      print("登録数は：　\(CreateStageNum) から　\(AfterCreateStageNum) に更新されました\n\n")
+   }
+   
+   func ReturnPopToRootViewController() {
+      UserDefaults.standard.set(true, forKey: "isDeleteUsersPostedCell")
+      UserDefaults.standard.set(TopVCTableViewCellNum, forKey: "DeleteUsersPostedCellNum")
+      UserDefaults.standard.synchronize()
+      self.navigationController?.popToRootViewController(animated: true)
    }
    
    @objc func TapUserImageButtonUserProfileTapCellComment(_ sender: UIButton) {
@@ -265,6 +423,12 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
       
       self.present(BlockAlertSheet, animated: true, completion: nil)
    }
+   
+   func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
+   func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
+   func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
+   func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
+   func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
 }
 
 extension UserProfileTapCellViewController {
