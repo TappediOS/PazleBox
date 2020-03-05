@@ -395,6 +395,8 @@
 		BFBDA433240DE34A00A6AA64 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA432240DE34A00A6AA64 /* EditProfileViewController.swift */; };
 		BFBDA4362410C10800A6AA64 /* ExUserProfileViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA4352410C10800A6AA64 /* ExUserProfileViewControllerDelegate.swift */; };
 		BFBDA4382410C16E00A6AA64 /* ExUserProfileViewControllerGetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA4372410C16E00A6AA64 /* ExUserProfileViewControllerGetData.swift */; };
+		BFBDA43A24114BD100A6AA64 /* CropViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBDA43924114BD100A6AA64 /* CropViewController.framework */; };
+		BFBDA43B24114BD100A6AA64 /* CropViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFBDA43924114BD100A6AA64 /* CropViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
 		BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D422428287007C8FA1 /* Assets.xcassets */; };
 		BFC6C5D9224283BD007C8FA1 /* Test.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D8224283BD007C8FA1 /* Test.sks */; };
@@ -809,6 +811,20 @@
 			remoteInfo = PazleBox;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BFBDA43C24114BD200A6AA64 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BFBDA43B24114BD100A6AA64 /* CropViewController.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		23639FCB16B4DCCF8E13A1D3 /* Pods-PazleBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PazleBox.debug.xcconfig"; path = "Target Support Files/Pods-PazleBox/Pods-PazleBox.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1226,6 +1242,7 @@
 		BFBDA432240DE34A00A6AA64 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		BFBDA4352410C10800A6AA64 /* ExUserProfileViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUserProfileViewControllerDelegate.swift; sourceTree = "<group>"; };
 		BFBDA4372410C16E00A6AA64 /* ExUserProfileViewControllerGetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUserProfileViewControllerGetData.swift; sourceTree = "<group>"; };
+		BFBDA43924114BD100A6AA64 /* CropViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CropViewController.framework; path = Carthage/Build/iOS/CropViewController.framework; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
 		BFC6C5D422428287007C8FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC6C5D8224283BD007C8FA1 /* Test.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Test.sks; sourceTree = "<group>"; };
@@ -1633,6 +1650,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFFA2A7B22336D760023BB71 /* SpriteKitEasingSwift.framework in Frameworks */,
+				BFBDA43A24114BD100A6AA64 /* CropViewController.framework in Frameworks */,
 				C568DD1EF47C3315C5F1E752 /* Pods_PazleBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3092,6 +3110,7 @@
 		F18F91965E347613F23DE2B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFBDA43924114BD100A6AA64 /* CropViewController.framework */,
 				BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */,
 				BFFA2A7C22336D760023BB71 /* TapticEngine.framework */,
 				E806537451A9DDED852EEBA6 /* Pods_PazleBox.framework */,
@@ -3115,6 +3134,8 @@
 				BF60EE002227B9C0006BF4B7 /* ShellScript */,
 				7485616176AF9BD2A7C327AD /* [CP] Embed Pods Frameworks */,
 				DAC1568ACEA363353B75D587 /* [CP] Copy Pods Resources */,
+				BFBDA43C24114BD200A6AA64 /* Embed Frameworks */,
+				BFBDA43D24114BF500A6AA64 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -3825,6 +3846,24 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n#${PODS_ROOT}/SwiftLint/swiftlint\n#else\n#echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n\nif [ $CONFIGURATION = \"Debug\" ]; then\n${PODS_ROOT}/LicensePlist/license-plist --output-path $PRODUCT_NAME/Settings.bundle\nfi\n";
 		};
+		BFBDA43D24114BF500A6AA64 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/CropViewController.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
 		DAC1568ACEA363353B75D587 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -4400,6 +4439,10 @@
 				CURRENT_PROJECT_VERSION = 37;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9R4W53MKG7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PazleBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4426,6 +4469,10 @@
 				CURRENT_PROJECT_VERSION = 37;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9R4W53MKG7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PazleBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

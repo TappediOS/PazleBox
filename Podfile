@@ -48,7 +48,6 @@ target 'PazleBox' do
   pod 'ESTabBarController-swift'
   pod 'pop', '~> 1.0'
 
-  pod 'CropViewController'
 
 end
 
@@ -102,6 +101,4 @@ target 'PazleBoxUITests' do
   pod 'TwicketSegmentedControl'
 
   pod 'ESTabBarController-swift'
-  pod 'CropViewController'
-
 end

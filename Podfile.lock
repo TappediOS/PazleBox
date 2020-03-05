@@ -16,7 +16,6 @@ PODS:
   - COSTouchVisualizer (1.0.6)
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
-  - CropViewController (2.5.2)
   - ESTabBarController-swift (2.7)
   - Fabric (1.10.2)
   - FBSDKCoreKit (5.13.1):
@@ -284,7 +283,6 @@ DEPENDENCIES:
   - ChameleonFramework/Swift
   - COSTouchVisualizer
   - Crashlytics
-  - CropViewController
   - ESTabBarController-swift
   - Firebase
   - Firebase/AdMob
@@ -319,7 +317,6 @@ SPEC REPOS:
     - ChameleonFramework
     - COSTouchVisualizer
     - Crashlytics
-    - CropViewController
     - ESTabBarController-swift
     - Fabric
     - FBSDKCoreKit
@@ -389,7 +386,6 @@ SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   COSTouchVisualizer: a398089327a6c02897823614d7447ccc97198997
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
-  CropViewController: 1aac40093c5739e60d992b04724a55d12a689a4c
   ESTabBarController-swift: 4fb52ad03d94d0717ef97bc9eb09a5abfdded0a2
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   FBSDKCoreKit: 8fb98209109fb684937f05d534305edb18c20207
@@ -444,6 +440,6 @@ SPEC CHECKSUMS:
   TwicketSegmentedControl: 6d7a4cf243657e0ac3f00d06d873a25334c04042
   ViewAnimator: 5af1c6f3b310f012bf081259c43717aa54fbae73
 
-PODFILE CHECKSUM: 69866c9ab146b5faeaaec74202f19c7c777709f4
+PODFILE CHECKSUM: 5af081b82c8211c076b5082c58168bffd4767bde
 
 COCOAPODS: 1.8.4

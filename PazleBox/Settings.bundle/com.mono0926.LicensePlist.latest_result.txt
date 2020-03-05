@@ -23,14 +23,6 @@ name: Crashlytics, nameSpecified:
 body: Fabric: Copyright 20…
 version: 3.14.0
 
-name: CropViewController, nameSpecified: 
-body: The MIT License (MIT…
-version: 2.5.2
-
-name: CropViewController, nameSpecified: 
-body: The MIT License (MIT…
-version: 2.5.2
-
 name: ESTabBarController-swift, nameSpecified: 
 body: The MIT License (MIT…
 version: 2.7
@@ -415,6 +407,8 @@ version: 2.7.0
 name: ViewAnimator, nameSpecified: 
 body: Copyright (c) 2018 m…
 version: 2.7.0
+
+name: TOCropViewController, nameSpecified: , owner: TimOliver, version: 2.5.2
 
 add-version-numbers: false
 

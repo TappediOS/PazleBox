@@ -246,6 +246,8 @@ extension EditProfileViewController: UINavigationControllerDelegate, UIImagePick
       cropController.cropView.cropBoxResizeEnabled = false
       
       cropController.delegate = self
+      
+      //cropController.modalPresentationStyle = .fullScreen
 
       //pickerを閉じたら、cropControllerを表示する。
       picker.dismiss(animated: true) {
