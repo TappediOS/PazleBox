@@ -336,7 +336,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
 
 extension UserProfileViewController {
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 25
+      return UsingStageDatas.count
    }
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
