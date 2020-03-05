@@ -15,9 +15,7 @@ import Firebase
 import Hero
 import SnapKit
 
-class StageMakingViewController: UIViewController, GADBannerViewDelegate{
-   
-   
+class StageMakingViewController: UIViewController{
    @IBOutlet weak var StageMakingButton: FUIButton!
    
    @IBOutlet weak var InfoLabel: UILabel!
@@ -29,8 +27,6 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
    var FViewH: CGFloat = 0
    
    var BackGroundImageView: BackGroundImageViews?
-   
-   
    let userDefaults = UserDefaults.standard
    
    let MaxRegiStageCount = 18
@@ -41,15 +37,9 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
    let HeroID = HeroIDs()
    let GameSound = GameSounds()
    
-   let StageMakingBannerView = GADBannerView()
-   let BannerViewReqest = GADRequest()
-   let BANNER_VIEW_TEST_ID: String = "ca-app-pub-3940256099942544/2934735716"
-   let BANNER_VIEW_ID: String = "ca-app-pub-1460017825820383/2813553721"
-   let BANNER_VIEW_HIGHT: CGFloat = 50
-   
+
    override func viewDidLoad() {
       super.viewDidLoad()
-      
       self.hero.isEnabled = true
       
       InitViewSize()
@@ -71,23 +61,6 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
       //NOTE:- ここでボタンがタップできるかどうかを判断
       SetUpStageMakingButton()
       
-      InitAllADCheck()
-   }
-   
-   override func viewWillAppear(_ animated: Bool) {
-      super.viewWillAppear(true)
-      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false{
-         if StageMakingBannerView.isHidden == true {
-            StageMakingBannerView.isHidden = false
-         }
-         return
-      }
-      
-      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == true {
-         if StageMakingBannerView.isHidden == false {
-            StageMakingBannerView.isHidden = true
-         }
-      }
    }
    
    override func viewDidAppear(_ animated: Bool) {
@@ -95,31 +68,6 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
       InitInfoLabel()
       InitRemainingLabel()
       SetUpStageMakingButton()
-   }
-   
-   //safeArea取得するために必要。
-   override func viewDidLayoutSubviews() {
-      super.viewDidLayoutSubviews()
-      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false{
-         self.SNPBannerView()
-      }
-      
-   }
-   
-   //MARK:- SNPの設定。
-   func SNPBannerView() {
-      StageMakingBannerView.snp.makeConstraints{ make in
-         make.height.equalTo(BANNER_VIEW_HIGHT)
-         make.width.equalTo(self.view.frame.width)
-         make.leading.equalTo(self.view.snp.leading).offset(0)
-         if #available(iOS 11, *) {
-            print("safeArea.bottom = \(self.view.safeAreaInsets.bottom)")
-            make.bottom.equalTo(self.view.snp.bottom).offset(-self.view.safeAreaInsets.bottom)
-         } else {
-            //iOS11以下は，X系が存在していない。
-            make.top.equalTo(self.view.snp.top).offset(0)
-         }
-      }
    }
    
    //MARK:- 初期化
@@ -143,8 +91,7 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
    private func  InitAccessibilityIdentifires() {
      
    }
-   
-   
+
    
    private func InitEachButton() {
       InitButton(StageMakingButton)
@@ -245,41 +192,6 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
       }
    }
    
-   //MARK:- 広告のチェックと初期化
-   private func InitAllADCheck() {
-      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false{
-         self.InitBannerView()
-      }else{
-         print("課金をしているので広告の初期化は行いません")
-      }
-   }
-   
-   private func InitBannerView() {
-      #if DEBUG
-         print("\n\n--------INFO ADMOB--------------\n")
-         print("Google Mobile ads SDK Versioin -> " + GADRequest.sdkVersion() + "\n")
-         self.StageMakingBannerView.adUnitID = BANNER_VIEW_TEST_ID
-         self.BannerViewReqest.testDevices = ["9d012329e337de42666c706e842b7819"];
-         print("バナー広告：テスト環境\n\n")
-      #else
-         print("\n\n--------INFO ADMOB--------------\n")
-         print("Google Mobile ads SDK Versioin -> " + GADRequest.sdkVersion() + "\n")
-         self.StageMakingBannerView.adUnitID = BANNER_VIEW_ID
-         print("バナー広告：本番環境")
-      #endif
-      
-      //GameClearBannerView.backgroundColor = .black
-      StageMakingBannerView.frame = CGRect(x: 0, y: ViewH - BANNER_VIEW_HIGHT, width: ViewW, height: BANNER_VIEW_HIGHT)
-      self.view.addSubview(StageMakingBannerView)
-      self.view.bringSubviewToFront(StageMakingBannerView)
-      
-      StageMakingBannerView.rootViewController = self
-      StageMakingBannerView.load(BannerViewReqest)
-      StageMakingBannerView.delegate = self
-   }
-   
-   
-   
    private func SetUpStageMakingButton() {
       guard UsersRegiStageCount == MaxRegiStageCount else {
          print("まだ作れます。")
@@ -325,39 +237,4 @@ class StageMakingViewController: UIViewController, GADBannerViewDelegate{
    private func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
    private func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
    private func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
-   
-   
-   //MARK:- ADMOB
-   /// Tells the delegate an ad request loaded an ad.
-   func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-      print("広告(banner)のロードが完了しました。")
-   }
-   
-   /// Tells the delegate an ad request failed.
-   func adView(_ bannerView: GADBannerView,
-               didFailToReceiveAdWithError error: GADRequestError) {
-      print("広告(banner)のロードに失敗しました。: \(error.localizedDescription)")
-   }
-   
-   /// Tells the delegate that a full-screen view will be presented in response
-   /// to the user clicking on an ad.
-   func adViewWillPresentScreen(_ bannerView: GADBannerView) {
-      print("adViewWillPresentScreen")
-   }
-   
-   /// Tells the delegate that the full-screen view will be dismissed.
-   func adViewWillDismissScreen(_ bannerView: GADBannerView) {
-      print("adViewWillDismissScreen")
-   }
-   
-   /// Tells the delegate that the full-screen view has been dismissed.
-   func adViewDidDismissScreen(_ bannerView: GADBannerView) {
-      print("adViewDidDismissScreen")
-   }
-   
-   /// Tells the delegate that a user click will open another app (such as
-   /// the App Store), backgrounding the current app.
-   func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
-      print("adViewWillLeaveApplication")
-   }
 }

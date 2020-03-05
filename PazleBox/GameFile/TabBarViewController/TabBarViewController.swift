@@ -8,14 +8,26 @@
 
 import UIKit
 import ESTabBarController_swift
+import FlatUIKit
+import TapticEngine
+import ChameleonFramework
+import Firebase
+import Hero
+import SnapKit
 
-class PuzzleTabBarController: ESTabBarController {
+class PuzzleTabBarController: ESTabBarController, GADBannerViewDelegate {
    
    var image = UIImage()
    var selectedImage = UIImage()
    
    private var GameBGM: BGM?
    let GameSound = GameSounds()
+   
+   let PuzzleMakerTabBarBannerView = GADBannerView()
+   let BannerViewReqest = GADRequest()
+   let BANNER_VIEW_TEST_ID: String = "ca-app-pub-3940256099942544/2934735716"
+   let BANNER_VIEW_ID: String = "ca-app-pub-1460017825820383/4639498022"
+   let BANNER_VIEW_HIGHT: CGFloat = 50
    
    //viewWillAppearで初期化しているから，dismissしたときに複数回初期化することになるのを防ぐ.
    var firstOpenForBGM = true
@@ -24,7 +36,7 @@ class PuzzleTabBarController: ESTabBarController {
       super.viewDidLoad()
       
       InitNotificationCenter()
-      
+      InitAllADCheck()
    }
    
    
@@ -45,6 +57,19 @@ class PuzzleTabBarController: ESTabBarController {
          StartBGM()
          firstOpenForBGM = false
       }
+      
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false{
+         if PuzzleMakerTabBarBannerView.isHidden == true {
+            PuzzleMakerTabBarBannerView.isHidden = false
+         }
+         return
+      }
+      
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == true {
+         if PuzzleMakerTabBarBannerView.isHidden == false {
+            PuzzleMakerTabBarBannerView.isHidden = true
+         }
+      }
    }
    
    override func viewDidAppear(_ animated: Bool) {
@@ -57,7 +82,29 @@ class PuzzleTabBarController: ESTabBarController {
       }else{
          print("BGMにnil入っててんけど？")
       }
-      
+   }
+   
+   //safeArea取得するために必要。
+   override func viewDidLayoutSubviews() {
+      super.viewDidLayoutSubviews()
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false{
+         self.SNPBannerView()
+      }
+   }
+   
+   //MARK:- SNPの設定。これでsafeAreaにバナーviewを合わせている。
+   func SNPBannerView() {
+      PuzzleMakerTabBarBannerView.snp.makeConstraints{ make in
+         make.height.equalTo(BANNER_VIEW_HIGHT)
+         make.width.equalTo(self.view.frame.width)
+         make.leading.equalTo(self.view.snp.leading).offset(0)
+         if #available(iOS 11, *) {
+            print("safeArea.bottom = \(self.view.safeAreaInsets.bottom)")
+            make.bottom.equalTo(self.tabBar.snp.top).offset(0)
+         } else {
+            make.top.equalTo(self.tabBar.snp.top).offset(0)
+         }
+      }
    }
     
    required init?(coder aDecoder: NSCoder) {
@@ -156,6 +203,39 @@ class PuzzleTabBarController: ESTabBarController {
    private func InitNotificationCenter() {
       NotificationCenter.default.addObserver(self, selector: #selector(StopHomeBGMCatchNotification(notification:)), name: .StopHomeViewBGM, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(StartHomeBGMCatchNotification(notification:)), name: .StartHomeViewBGM, object: nil)
+   }
+   
+   //MARK:- 広告のチェックと初期化
+   private func InitAllADCheck() {
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false{
+         self.InitBannerView()
+      }else{
+         print("課金をしているので広告の初期化は行いません")
+      }
+   }
+   
+   private func InitBannerView() {
+      #if DEBUG
+         print("\n\n--------INFO ADMOB--------------\n")
+         print("Google Mobile ads SDK Versioin -> " + GADRequest.sdkVersion() + "\n")
+         self.PuzzleMakerTabBarBannerView.adUnitID = BANNER_VIEW_TEST_ID
+         self.BannerViewReqest.testDevices = ["9d012329e337de42666c706e842b7819"];
+         print("バナー広告：テスト環境\n\n")
+      #else
+         print("\n\n--------INFO ADMOB--------------\n")
+         print("Google Mobile ads SDK Versioin -> " + GADRequest.sdkVersion() + "\n")
+         self.PuzzleMakerTabBarBannerView.adUnitID = BANNER_VIEW_ID
+         print("バナー広告：本番環境")
+      #endif
+      
+      //GameClearBannerView.backgroundColor = .black
+      PuzzleMakerTabBarBannerView.frame = CGRect(x: 0, y: view.frame.height - BANNER_VIEW_HIGHT, width: view.frame.width, height: BANNER_VIEW_HIGHT)
+      self.view.addSubview(PuzzleMakerTabBarBannerView)
+      self.view.bringSubviewToFront(PuzzleMakerTabBarBannerView)
+      
+      PuzzleMakerTabBarBannerView.rootViewController = self
+      PuzzleMakerTabBarBannerView.load(BannerViewReqest)
+      PuzzleMakerTabBarBannerView.delegate = self
    }
    
    private func InitBGM() {
@@ -279,5 +359,39 @@ class PuzzleTabBarController: ESTabBarController {
       }else{
          return UIImage(named: "person_fill.png")!
       }
+   }
+   
+   //MARK:- ADMOB
+   /// Tells the delegate an ad request loaded an ad.
+   func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+      print("広告(banner)のロードが完了しました。")
+   }
+   
+   /// Tells the delegate an ad request failed.
+   func adView(_ bannerView: GADBannerView,
+               didFailToReceiveAdWithError error: GADRequestError) {
+      print("広告(banner)のロードに失敗しました。: \(error.localizedDescription)")
+   }
+   
+   /// Tells the delegate that a full-screen view will be presented in response
+   /// to the user clicking on an ad.
+   func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+      print("adViewWillPresentScreen")
+   }
+   
+   /// Tells the delegate that the full-screen view will be dismissed.
+   func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+      print("adViewWillDismissScreen")
+   }
+   
+   /// Tells the delegate that the full-screen view has been dismissed.
+   func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+      print("adViewDidDismissScreen")
+   }
+   
+   /// Tells the delegate that a user click will open another app (such as
+   /// the App Store), backgrounding the current app.
+   func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+      print("adViewWillLeaveApplication")
    }
 }
