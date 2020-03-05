@@ -349,7 +349,7 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       segmentedControl?.setSegmentItems(titles)
       segmentedControl?.delegate = self
       
-      segmentedControl?.backgroundColor = UIColor.white.withAlphaComponent(0.75)
+      segmentedControl?.backgroundColor = UIColor.white.withAlphaComponent(0.87)
       
       view.addSubview(segmentedControl!)
    }

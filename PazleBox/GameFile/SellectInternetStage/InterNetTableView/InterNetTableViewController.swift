@@ -41,9 +41,6 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
       SetUpFireStoreSetting()
       
       GetLatestStageDataFromDataBase()
-      
-
-      
    }
    
    func SetUpNavigationController() {

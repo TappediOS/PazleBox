@@ -60,6 +60,7 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
    
    var LoadActivityView: NVActivityIndicatorView?
    
+   private var RefleshControl = UIRefreshControl()
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -72,6 +73,7 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
       InitUsersPostedStageTitleLabel()
       InitUsersPostedStageReviewLabel()
       InitUsersPostedStagePalyCountLabel()
+      SetUpRefleshControl()
       
       SetUpPlayButtonAndDeleteButtonTitle()
       SetUpPostUsersStageButton(sender: UsersPostedStagePlayButton)
@@ -124,6 +126,11 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
    }
    func InitUsersPostedStagePalyCountLabel() {
       self.UsersPostedStagePalyCountLabel.text = self.UsersPostedStagePlayCount
+   }
+   
+   private func SetUpRefleshControl() {
+      self.UsersStageCommentTableView.refreshControl = self.RefleshControl
+      self.RefleshControl.addTarget(self, action: #selector(self.ReloadCommentDataFromFireStore(sender:)), for: .valueChanged)
    }
    
    
@@ -204,6 +211,11 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
       self.UsersPostedStagePlayButton.isEnabled = true
       self.UsersPostedStageDeleteButton.isEnabled = true
       self.isAbleToTapPlayDeleteButton = true
+   }
+   
+   //MARK:- コメントのリロードを行う
+   @objc func ReloadCommentDataFromFireStore(sender: UIRefreshControl) {
+      RefleshControl.endRefreshing()
    }
    
    //MARK:- プレイボタン押されたときの処理

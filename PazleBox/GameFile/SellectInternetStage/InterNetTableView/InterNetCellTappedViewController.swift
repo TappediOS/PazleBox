@@ -41,6 +41,8 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    
    var isLoadingGameVC = false
    
+   private var RefleshControl = UIRefreshControl()
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -52,6 +54,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       InitPostUsersStageReviewLabel()
       InitPostUsersStagePlayCountLabel()
       SetUpPostUsersStagePlayButton()
+      SetUpRefleshControl()
       
       self.UsersCommentTableView.delegate = self
       self.UsersCommentTableView.dataSource = self
@@ -71,6 +74,11 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       PostUsersStagePlayBuutton.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       PostUsersStagePlayBuutton.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
       PostUsersStagePlayBuutton.layer.cornerRadius =  ButtonCornerRadius
+   }
+   
+   private func SetUpRefleshControl() {
+      self.UsersCommentTableView.refreshControl = self.RefleshControl
+      self.RefleshControl.addTarget(self, action: #selector(self.ReloadCommentDataFromFireStore(sender:)), for: .valueChanged)
    }
    
    //MARK:- viewDidLoadで画面遷移前に取得した各値をセットする
@@ -137,6 +145,12 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    }
    
    
+   //MARK:- コメントのリロードを行う
+   @objc func ReloadCommentDataFromFireStore(sender: UIRefreshControl) {
+      RefleshControl.endRefreshing()
+   }
+   
+   //MARK:- プレイボタン押されたときの処理
    @IBAction func TapPostUsersStagePlayButton(_ sender: Any) {
       print("ユーザステージのプレイボタンタップされた")
       PostUsersStagePlayBuutton.isEnabled = false //2度押し禁止する処理

@@ -3916,8 +3916,8 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/InterNetTableView/InterNetCellTappedViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "setUsersImage(usersImage:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3964,8 +3964,8 @@
             filePath = "PazleBox/GameFile/UserProfileViewController/UserProfileTapCellViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "467"
-            endingLineNumber = "467"
+            startingLineNumber = "479"
+            endingLineNumber = "479"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3980,8 +3980,8 @@
             filePath = "PazleBox/GameFile/UserProfileViewController/UserProfileTapCellViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3990,22 +3990,6 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "FD33FE3D-8071-46D4-8757-8059010478EB"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PazleBox/GameFile/UserProfileViewController/UserProfileTapCellViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2CC380FE-63FF-445A-B960-8A3D02657229"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -4021,6 +4005,22 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "2CC380FE-63FF-445A-B960-8A3D02657229"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/GameFile/UserProfileViewController/UserProfileTapCellViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "DF3AC9C5-836E-45F0-AE7A-8ACBC2FE643B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -4028,8 +4028,8 @@
             filePath = "PazleBox/GameFile/UserProfileViewController/UserProfileTapCellViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4044,8 +4044,8 @@
             filePath = "PazleBox/GameFile/UserProfileViewController/UserProfileTapCellViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "447"
-            endingLineNumber = "447"
+            startingLineNumber = "459"
+            endingLineNumber = "459"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -4168,8 +4168,8 @@
             filePath = "PazleBox/GameFile/UserProfileViewController/UserProfileTapCellViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4216,8 +4216,8 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/InterNetTableView/InterNetCellTappedViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "PresentGameViewController()"
             landmarkType = "7">
          </BreakpointContent>
