@@ -131,7 +131,12 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
    }
    
    func TapTakePhotoAction() {
-      
+      let PhotoPickerVC = UIImagePickerController()
+      PhotoPickerVC.sourceType = .camera
+      PhotoPickerVC.delegate = self
+      present(PhotoPickerVC, animated: true, completion: {
+         print("Photo Pickekrが表示されました")
+      })
    }
    
    func TapSelectPhotoAction() {
