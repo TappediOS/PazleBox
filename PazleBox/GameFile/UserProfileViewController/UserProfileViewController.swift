@@ -153,6 +153,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
       print("UID = \(uid)")
       db.collection("Stages")
          .whereField("addUser", isEqualTo: uid)
+         .order(by: "addDate", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
             if let err = err {
