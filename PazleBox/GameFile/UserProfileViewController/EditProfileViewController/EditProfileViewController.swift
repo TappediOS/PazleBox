@@ -11,6 +11,7 @@ import UIKit
 import TapticEngine
 import Firebase
 import FirebaseFirestore
+import CropViewController
 
 class EditProfileViewController: UIViewController, UITextFieldDelegate {
    
@@ -87,12 +88,16 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
         db = Firestore.firestore()
    }
    
-   //MARK:- NaviBarでバツボタン押されたときの処理
-   @objc func TapStopEditProfileButton() {
-      print("キャンセルボタンタップされた")
+   private func DismissEditProfileVC() {
       self.dismiss(animated: true, completion: {
          print("EditProfileVCのdismiss完了")
       })
+   }
+   
+   //MARK:- NaviBarでバツボタン押されたときの処理
+   @objc func TapStopEditProfileButton() {
+      print("キャンセルボタンタップされた")
+      DismissEditProfileVC()
    }
    
    //TODO: ここでデータをセーブする処理を行う
@@ -102,6 +107,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
       
       if (UserNameWhenDismissThisVC == UserNameWhenShowThisVC) && !isChangeUsersImage {
          print("名前も画像も変更されていない!")
+         DismissEditProfileVC()
          return
       }
       
@@ -129,7 +135,12 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
    }
    
    func TapSelectPhotoAction() {
-      
+      let PhotoPickerVC = UIImagePickerController()
+      PhotoPickerVC.sourceType = .photoLibrary
+      PhotoPickerVC.delegate = self
+      present(PhotoPickerVC, animated: true, completion: {
+         print("Photo Pickekrが表示されました")
+      })
    }
    
    func TapDeletePhotoAction() {
@@ -158,7 +169,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
       })
       
       let DeletePhotoAction = UIAlertAction(title: DeletePhoto, style: .destructive, handler: { (action: UIAlertAction!) in
-         print("Block押されたよ")
+         print("Delete押されたよ")
          self.TapDeletePhotoAction()
       })
       
@@ -190,9 +201,79 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
       }
    }
    
+   
+   
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
    func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
    func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
    func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
    func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
+}
+
+extension EditProfileViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate,  CropViewControllerDelegate {
+   
+   func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+      // キャンセルボタンを押された時に呼ばれる
+      print("イメージピッカーでキャンセル押された")
+      picker.dismiss(animated: true, completion: nil)
+   }
+   
+   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+      guard let pickerImage = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage) else { return }
+
+      //CropViewControllerを初期化する。pickerImageを指定する。
+      let cropController = CropViewController(croppingStyle: .circular, image: pickerImage)
+
+      
+      //AspectRatioのサイズをimageViewのサイズに合わせる。
+      //cropController.customAspectRatio = EditUserProfileImageButton.frame.size
+      cropController.aspectRatioPreset = .presetSquare
+      
+      cropController.aspectRatioPickerButtonHidden = true  //アスペクトボタン
+      cropController.resetAspectRatioEnabled = false  //リセットボタン
+      cropController.rotateButtonsHidden = false      //回転ボタン
+
+      cropController.cancelButtonTitle = NSLocalizedString("Cancel", comment: "")
+      cropController.doneButtonTitle = NSLocalizedString("Done", comment: "")
+      
+      //cropBoxのサイズを固定する。
+      cropController.cropView.cropBoxResizeEnabled = false
+      
+      cropController.delegate = self
+
+      //pickerを閉じたら、cropControllerを表示する。
+      picker.dismiss(animated: true) {
+         self.present(cropController, animated: true, completion: nil)
+      }
+   }
+   
+   func cropViewController(_ cropViewController: CropViewController, didFinishCancelled cancelled: Bool) {
+      print("Crop VCでキャンセル押されました")
+   }
+
+   func cropViewController(_ cropViewController: CropViewController, didCropToCircularImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
+      //トリミング編集が終えたら、呼び出される。
+      print("トリミング編集が終えた")
+      updateImageViewWithImage(image, fromCropViewController: cropViewController)
+   }
+
+   func updateImageViewWithImage(_ image: UIImage, fromCropViewController cropViewController: CropViewController) {
+      print("トリミングした画像をimageViewのimageに代入する。")
+      
+      let resizeImage = image.ResizeUIImage(width: usersImageViewWide, height: usersImageViewWide)
+      
+      //トリミングした画像をimageViewのimageに代入する。
+      self.EditUserProfileImageButton.setImage(resizeImage, for: .normal)
+      
+      print("\n元のサイズ:        \((image.pngData()! as NSData).length)")
+      print("リサイズ後のサイズ:　\(String(describing: (resizeImage?.pngData() as! NSData).length))\n")
+
+      //画像を変化させたフラグを立てる
+      isChangeUsersImage = true
+      cropViewController.dismiss(animated: true, completion: {
+         print("画像を編集して，CropVCを閉じました")
+         
+      })
+   }
 }

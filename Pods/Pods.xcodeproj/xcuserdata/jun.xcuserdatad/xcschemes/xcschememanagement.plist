@@ -34,6 +34,26 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>CropViewController-framework-TOCropViewControllerBundle.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>CropViewController-framework.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>CropViewController-library-TOCropViewControllerBundle.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>CropViewController-library.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ESTabBarController-swift-framework.xcscheme</key>
 		<dict>
 			<key>isShown</key>
