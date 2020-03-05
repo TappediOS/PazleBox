@@ -36,6 +36,13 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
    
    let ButtonCornerRadius: CGFloat = 6.5
    
+   //GameSceneを読み込むのに必要なデータ
+   var PiceArray: [PiceInfo] = Array()
+   var StageArray: [[Contents]] = Array()
+   var PlayStageData = PlayStageRefInfo()
+   
+   var isLoadingGameVC = false
+   
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -127,10 +134,44 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
       self.UsersPostedStagePlayCount = stagePlayCount
    }
    
+   //MARK:- 画面遷移する前にプレイするステージデータをセットする
+     public func setPiceArray(_ piceArray: [PiceInfo]) {
+        self.PiceArray = piceArray
+     }
+     
+     public func setStageArray(_ stageArray: [[Contents]]) {
+        self.StageArray = stageArray
+     }
+     
+     public func setPlayStageData(_ playStageData: PlayStageRefInfo) {
+        self.PlayStageData = playStageData
+     }
+   
    @IBAction func TapUsersStagePlayButton(_ sender: Any) {
       print("Play Buttonタップされたよ")
+      UsersPostedStagePlayButton.isEnabled = false //2度押し禁止する処理
+      isLoadingGameVC = true
+      PresentGameViewController()
    }
    
+   /// GameVCをプレゼントする関数
+   func PresentGameViewController() {
+      //GameSound.PlaySoundsTapButton()
+      let CleateSB = UIStoryboard(name: "CleateStageSB", bundle: nil)
+      let GameVC = CleateSB.instantiateViewController(withIdentifier: "UsersGameView") as! UsersGameViewController
+
+      GameVC.LoadPiceArray(PiceArray: PiceArray)
+      GameVC.LoadStageArray(StageArray: StageArray)
+      GameVC.LoadPlayStageData(RefID: PlayStageData.RefID, stageDataForNoDocExsist: self.PlayStageData)
+      GameVC.modalPresentationStyle = .fullScreen
+      //HomeViewに対してBGMを消してって通知を送る
+      NotificationCenter.default.post(name: .StopHomeViewBGM, object: nil, userInfo: nil)
+      self.present(GameVC, animated: true, completion: {
+         print("プレゼント終わった")
+         self.UsersPostedStagePlayButton.isEnabled = true //ボタンロック解除
+         self.isLoadingGameVC = false
+      })
+   }
    
    @IBAction func TapUsersStageDeleteButton(_ sender: Any) {
        print("Delete Buttonタップされたよ")

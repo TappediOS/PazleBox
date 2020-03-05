@@ -393,6 +393,8 @@
 		BFBDA42B240CF2C500A6AA64 /* Gear.png in Resources */ = {isa = PBXBuildFile; fileRef = BFBDA42A240CF2C500A6AA64 /* Gear.png */; };
 		BFBDA431240DE33300A6AA64 /* EditProfileViewControllerSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBDA430240DE33300A6AA64 /* EditProfileViewControllerSB.storyboard */; };
 		BFBDA433240DE34A00A6AA64 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA432240DE34A00A6AA64 /* EditProfileViewController.swift */; };
+		BFBDA4362410C10800A6AA64 /* ExUserProfileViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA4352410C10800A6AA64 /* ExUserProfileViewControllerDelegate.swift */; };
+		BFBDA4382410C16E00A6AA64 /* ExUserProfileViewControllerGetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA4372410C16E00A6AA64 /* ExUserProfileViewControllerGetData.swift */; };
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
 		BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D422428287007C8FA1 /* Assets.xcassets */; };
 		BFC6C5D9224283BD007C8FA1 /* Test.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D8224283BD007C8FA1 /* Test.sks */; };
@@ -1222,6 +1224,8 @@
 		BFBDA42A240CF2C500A6AA64 /* Gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gear.png; sourceTree = "<group>"; };
 		BFBDA430240DE33300A6AA64 /* EditProfileViewControllerSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfileViewControllerSB.storyboard; sourceTree = "<group>"; };
 		BFBDA432240DE34A00A6AA64 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		BFBDA4352410C10800A6AA64 /* ExUserProfileViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUserProfileViewControllerDelegate.swift; sourceTree = "<group>"; };
+		BFBDA4372410C16E00A6AA64 /* ExUserProfileViewControllerGetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUserProfileViewControllerGetData.swift; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
 		BFC6C5D422428287007C8FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC6C5D8224283BD007C8FA1 /* Test.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Test.sks; sourceTree = "<group>"; };
@@ -2300,6 +2304,8 @@
 				BFBDA42F240DE30F00A6AA64 /* EditProfileViewController */,
 				BF7748CD24038E4C00AA5E9C /* UserProfileViewControllerSB.storyboard */,
 				BF7748CF24038E6600AA5E9C /* UserProfileViewController.swift */,
+				BFBDA4352410C10800A6AA64 /* ExUserProfileViewControllerDelegate.swift */,
+				BFBDA4372410C16E00A6AA64 /* ExUserProfileViewControllerGetData.swift */,
 				BF874B002404C6860078E931 /* UserProfileTableViewCell.swift */,
 				BFDCBECB240622ED006C6D4A /* UserProfileTapCellViewController.swift */,
 				BFDCBECD24062AF2006C6D4A /* ProfileVCtapCellCommentCell.swift */,
@@ -3970,6 +3976,7 @@
 				BF33300222492B31009B3042 /* ExGameSeceneEasyP2.swift in Sources */,
 				BF332F8E224926CA009B3042 /* E4.swift in Sources */,
 				BF552EA2226DDD2B00756E16 /* E32.swift in Sources */,
+				BFBDA4382410C16E00A6AA64 /* ExUserProfileViewControllerGetData.swift in Sources */,
 				BF552EA6226DDD3700756E16 /* E34.swift in Sources */,
 				BFFA3E7723D1794100CE3B16 /* ExTutorialVCLayout.swift in Sources */,
 				BF552EF6226DDE4900756E16 /* N44.swift in Sources */,
@@ -4012,6 +4019,7 @@
 				BF2674EC2227B6A3003D370F /* GameViewController.swift in Sources */,
 				BF552EA0226DDD2800756E16 /* E31.swift in Sources */,
 				BF332FD6224927D5009B3042 /* N20.swift in Sources */,
+				BFBDA4362410C10800A6AA64 /* ExUserProfileViewControllerDelegate.swift in Sources */,
 				BF552EAA226DDD3D00756E16 /* E36.swift in Sources */,
 				BFFA2A8C223384D80023BB71 /* HardCreate.swift in Sources */,
 				BFF6D7A32297B695000253A2 /* ManageLeaderboard.swift in Sources */,
