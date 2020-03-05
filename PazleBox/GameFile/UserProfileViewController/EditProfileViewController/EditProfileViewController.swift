@@ -255,6 +255,7 @@ extension EditProfileViewController: UINavigationControllerDelegate, UIImagePick
    
    func cropViewController(_ cropViewController: CropViewController, didFinishCancelled cancelled: Bool) {
       print("Crop VCでキャンセル押されました")
+      cropViewController.dismiss(animated: true, completion: nil)
    }
 
    func cropViewController(_ cropViewController: CropViewController, didCropToCircularImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
