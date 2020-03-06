@@ -177,7 +177,7 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate {
    
    func InitAddACommentButton() {
       let ButtonW = ViewW / 6 * 4
-      let ButtonH = StarViewWide * 0.5
+      let ButtonH = ButtonW * 0.65
       let startX = ViewW / 6
       let startY = ViewH / 5 * 2 - StarViewWide + ButtonH * 0.75
       
@@ -207,6 +207,7 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate {
       // TextViewをViewに追加する.
       TapToCommentButton.isEnabled = false
       CommentTextView.isHidden = false
+      self.CommentTextView.becomeFirstResponder()
       self.bringSubviewToFront(CommentTextView)
    }
    
@@ -227,16 +228,18 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate {
       self.CommentTextView.backgroundColor = .white
           
       // 角に丸みをつける.
-      self.CommentTextView.layer.masksToBounds = true
+      self.CommentTextView.layer.masksToBounds = false
       self.CommentTextView.layer.cornerRadius = 10   // 丸みのサイズ
       self.CommentTextView.layer.borderWidth = 1   // 枠線の太さ
       self.CommentTextView.layer.borderColor = UIColor.black.cgColor    // 枠線の色
       self.CommentTextView.font = UIFont(name: "HiraMaruProN-W4", size: 14)   // フォントの設定をする.
       self.CommentTextView.textColor = UIColor.black  // フォントの色の設定をする.
       self.CommentTextView.textAlignment = .left   // 左詰めの設定をする.
-      self.CommentTextView.layer.shadowOpacity = 0.5  // 影の濃さを設定する.
-      self.CommentTextView.layer.shadowOffset = CGSize(width: 2, height: 2)
+      self.CommentTextView.layer.shadowOpacity = 0.1  // 影の濃さを設定する.
+      self.CommentTextView.layer.shadowOffset = CGSize(width: 1, height: 1)
       self.CommentTextView.layer.shadowRadius = 10
+      self.CommentTextView.layer.shadowColor = UIColor.black.cgColor
+      
       self.CommentTextView.isEditable = true
       self.CommentTextView.isHidden = true
       
