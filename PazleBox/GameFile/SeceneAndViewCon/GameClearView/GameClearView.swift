@@ -177,7 +177,7 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate {
    
    func InitAddACommentButton() {
       let ButtonW = ViewW / 6 * 4
-      let ButtonH = ButtonW * 0.65
+      let ButtonH = StarViewWide * 0.5
       let startX = ViewW / 6
       let startY = ViewH / 5 * 2 - StarViewWide + ButtonH * 0.75
       
@@ -221,14 +221,14 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate {
       let StartX = ViewW / 7
       let StartY = ViewH / 5 * 2 - StarViewWide * 1.5
       let TextViewW = ViewW / 7 * 5
-      let TextViewH = TextViewW
+      let TextViewH = TextViewW * 0.6
       let Frame = CGRect(x: StartX, y: StartY, width: TextViewW, height: TextViewH)
       
       self.CommentTextView = UITextView(frame: Frame)
       self.CommentTextView.backgroundColor = .white
           
       // 角に丸みをつける.
-      self.CommentTextView.layer.masksToBounds = false
+      self.CommentTextView.layer.masksToBounds = true
       self.CommentTextView.layer.cornerRadius = 10   // 丸みのサイズ
       self.CommentTextView.layer.borderWidth = 1   // 枠線の太さ
       self.CommentTextView.layer.borderColor = UIColor.black.cgColor    // 枠線の色
