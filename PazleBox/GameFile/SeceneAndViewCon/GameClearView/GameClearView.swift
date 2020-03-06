@@ -16,7 +16,7 @@ import ViewAnimator
 import Hero
 import NVActivityIndicatorView
 
-class GameClearView: UIView, GADBannerViewDelegate {
+class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate {
    
    var StarView1 = AnimationView(name: "StarStar")
    var StarView2 = AnimationView(name: "StarStar")
@@ -80,6 +80,9 @@ class GameClearView: UIView, GADBannerViewDelegate {
    
    var LoadActivityView: NVActivityIndicatorView?
    
+   var CommentTextView = UITextView()
+   var isRegisterComment = false
+   
    override init(frame: CGRect) {
       super.init(frame: frame)
       
@@ -119,6 +122,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
       //InitGameClearLabel()
       InitAddACommentButton()
       InitCountOfNextADLabel()
+      InitCommentTextView()
       
       InitLoadActivityView(frame: frame)
       
@@ -192,13 +196,108 @@ class GameClearView: UIView, GADBannerViewDelegate {
    
    @objc func TapAddACommentButton(sender: UIButton) {
       print("コメント追加ボタンタップされたよ")
+      
+      if isRegisterComment == true {
+         print("既にコメントを登録しています")
+         return
+      }
+      
       GameSound.PlaySoundsTapButton()
+      // TextViewをViewに追加する.
+      TapToCommentButton.isEnabled = false
+      CommentTextView.isHidden = false
+      KiraView1.bringSubviewToFront(CommentTextView)
+      KiraView2.bringSubviewToFront(CommentTextView)
+      KiraView3.bringSubviewToFront(CommentTextView)
    }
    
    private func InitReviewView(frame: CGRect) {
       let ReviewViewFrame = CGRect(x: FoundViewW, y: FoundViewH * 3 + FoundViewH / 2, width: FoundViewW * 6, height: FoundViewH * 2)
       self.ReviewedView = ReviewView(frame: ReviewViewFrame)
       self.addSubview(ReviewedView!)
+   }
+   
+   private func InitCommentTextView() {
+      let StartX = ViewW / 7
+      let StartY = ViewH / 5 * 2 - StarViewWide * 1.5
+      let TextViewW = ViewW / 7 * 5
+      let TextViewH = TextViewW
+      let Frame = CGRect(x: StartX, y: StartY, width: TextViewW, height: TextViewH)
+      
+      self.CommentTextView = UITextView(frame: Frame)
+      self.CommentTextView.backgroundColor = .white
+          
+      // 角に丸みをつける.
+      self.CommentTextView.layer.masksToBounds = true
+      self.CommentTextView.layer.cornerRadius = 10   // 丸みのサイズ
+      self.CommentTextView.layer.borderWidth = 1   // 枠線の太さ
+      self.CommentTextView.layer.borderColor = UIColor.black.cgColor    // 枠線の色
+      self.CommentTextView.font = UIFont(name: "HiraMaruProN-W4", size: 14)   // フォントの設定をする.
+      self.CommentTextView.textColor = UIColor.black  // フォントの色の設定をする.
+      self.CommentTextView.textAlignment = .left   // 左詰めの設定をする.
+      self.CommentTextView.layer.shadowOpacity = 0.5  // 影の濃さを設定する.
+      self.CommentTextView.layer.shadowOffset = CGSize(width: 2, height: 2)
+      self.CommentTextView.layer.shadowRadius = 10
+      self.CommentTextView.isEditable = true
+      self.CommentTextView.isHidden = true
+      
+      let CommentInputAccessroryView = getInputAccessoryView()
+      self.CommentTextView.inputAccessoryView = CommentInputAccessroryView
+      self.CommentTextView.delegate = self
+      
+      self.addSubview(self.CommentTextView)
+   }
+   
+   private func getInputAccessoryView() -> UIView {
+      let InputAccessoryViewH: CGFloat = 50
+      let InputAccessoryView = UIView()
+      InputAccessoryView.frame.size.height = InputAccessoryViewH
+      InputAccessoryView.backgroundColor = .secondarySystemBackground
+      
+      let CloseButton = UIButton(frame: CGRect(x: 4, y: 4, width: 50, height: 50 - 8))
+      CloseButton.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
+      CloseButton.imageView?.tintColor = .systemRed
+      CloseButton.addTarget(self, action: #selector(TapCloseCommentTextView(_:)), for: .touchUpInside)
+      
+      let PaperPlaneButton = UIButton(frame: CGRect(x: ViewW - 50 - 4, y: 4, width: 50, height: 50 - 8))
+      PaperPlaneButton.setImage(UIImage(systemName: "paperplane.fill"), for: .normal)
+      PaperPlaneButton.imageView?.tintColor = .systemIndigo
+      PaperPlaneButton.addTarget(self, action: #selector(TapSentCommentTextView(_:)), for: .touchUpInside)
+      
+      InputAccessoryView.addSubview(CloseButton)
+      InputAccessoryView.addSubview(PaperPlaneButton)
+      
+      return InputAccessoryView
+   }
+   
+   @objc func TapCloseCommentTextView(_ sender: UIButton) {
+      print("コメントTextView閉じるボタンタップされたよ")
+      CommentTextView.resignFirstResponder()
+      CommentTextView.text = ""
+      CommentTextView.isHidden = true
+      TapToCommentButton.isEnabled = true
+   }
+   
+   @objc func TapSentCommentTextView(_ sender: UIButton) {
+      print("コメントTextView送るボタンタップされたよ")
+      let SentComment = CommentTextView.text ?? ""
+      CommentTextView.resignFirstResponder()
+      CommentTextView.isHidden = true
+      TapToCommentButton.isEnabled = true
+      
+      if SentComment == "" {
+         print("からコメントは送りません")
+         return
+      }
+      
+      print("\n---- 登録するコメント ----")
+      print(SentComment)
+      print("---- 登録するコメント ----\n")
+      
+      isRegisterComment = true
+      //TODO:- ローカライズしてね。
+      TapToCommentButton.setTitle("送信済み", for: .normal)
+      TapToCommentButton.alpha = 0.85
    }
    
    //Ad Check
