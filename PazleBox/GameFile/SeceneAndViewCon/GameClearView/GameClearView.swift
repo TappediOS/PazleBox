@@ -172,10 +172,10 @@ class GameClearView: UIView, GADBannerViewDelegate {
    }
    
    func InitAddACommentButton() {
-      let ButtonW = ViewW / 7 * 5
-      let ButtonH = StarViewWide * 0.65
-      let startX = ViewW / 7
-      let startY = ViewH / 5 * 2 - StarViewWide + ButtonH * 0.4
+      let ButtonW = ViewW / 6 * 4
+      let ButtonH = StarViewWide * 0.5
+      let startX = ViewW / 6
+      let startY = ViewH / 5 * 2 - StarViewWide + ButtonH * 0.75
       
       let ButtonFrame = CGRect(x: startX, y: startY, width: ButtonW, height: ButtonH)
       
@@ -185,8 +185,14 @@ class GameClearView: UIView, GADBannerViewDelegate {
       TapToCommentButton.titleLabel?.adjustsFontSizeToFitWidth = true
       TapToCommentButton.layer.cornerRadius = ButtonFrame.height / 2
       TapToCommentButton.backgroundColor = .systemTeal
+      TapToCommentButton.addTarget(self, action: #selector(self.TapAddACommentButton(sender:)), for: .touchUpInside)
       
       self.addSubview(TapToCommentButton)
+   }
+   
+   @objc func TapAddACommentButton(sender: UIButton) {
+      print("コメント追加ボタンタップされたよ")
+      GameSound.PlaySoundsTapButton()
    }
    
    private func InitReviewView(frame: CGRect) {
