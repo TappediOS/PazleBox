@@ -194,6 +194,7 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate {
       self.addSubview(TapToCommentButton)
    }
    
+   //MARK:- コメントを書くボタンがタップされた
    @objc func TapAddACommentButton(sender: UIButton) {
       print("コメント追加ボタンタップされたよ")
       
@@ -206,9 +207,7 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate {
       // TextViewをViewに追加する.
       TapToCommentButton.isEnabled = false
       CommentTextView.isHidden = false
-      KiraView1.bringSubviewToFront(CommentTextView)
-      KiraView2.bringSubviewToFront(CommentTextView)
-      KiraView3.bringSubviewToFront(CommentTextView)
+      self.bringSubviewToFront(CommentTextView)
    }
    
    private func InitReviewView(frame: CGRect) {
@@ -278,6 +277,7 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate {
       TapToCommentButton.isEnabled = true
    }
    
+   //MARK:- コメントTextView送るボタンタップされた
    @objc func TapSentCommentTextView(_ sender: UIButton) {
       print("コメントTextView送るボタンタップされたよ")
       let SentComment = CommentTextView.text ?? ""
