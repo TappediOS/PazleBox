@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import DZNEmptyDataSet
 
 class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
@@ -58,6 +59,10 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       
       self.UsersCommentTableView.delegate = self
       self.UsersCommentTableView.dataSource = self
+      self.UsersCommentTableView.emptyDataSetSource = self
+      self.UsersCommentTableView.emptyDataSetDelegate = self
+      self.UsersCommentTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
+      
    }
    
    func SetUpNavigationController() {
@@ -348,6 +353,25 @@ extension InterNetCellTappedViewController {
       tableView.deselectRow(at: indexPath, animated: true)
 
       
+   }
+}
+
+extension InterNetCellTappedViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+   func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+       let str = NSLocalizedString("No Comment", comment: "")
+       let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
+       return NSAttributedString(string: str, attributes: attrs)
+   }
+   
+   func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+       let str = NSLocalizedString("No Comment Yet", comment: "")
+       let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
+       return NSAttributedString(string: str, attributes: attrs)
+   }
+
+   //スクロールできるようにする
+   func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+      return true
    }
 }
 

@@ -397,6 +397,8 @@
 		BFBDA4382410C16E00A6AA64 /* ExUserProfileViewControllerGetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA4372410C16E00A6AA64 /* ExUserProfileViewControllerGetData.swift */; };
 		BFBDA4FF2411561800A6AA64 /* CropViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBDA43924114BD100A6AA64 /* CropViewController.framework */; };
 		BFBDA5002411561800A6AA64 /* CropViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFBDA43924114BD100A6AA64 /* CropViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BFBDA50424124CB700A6AA64 /* DZNEmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBDA50324124CB600A6AA64 /* DZNEmptyDataSet.framework */; };
+		BFBDA50524124CB700A6AA64 /* DZNEmptyDataSet.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFBDA50324124CB600A6AA64 /* DZNEmptyDataSet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
 		BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D422428287007C8FA1 /* Assets.xcassets */; };
 		BFC6C5D9224283BD007C8FA1 /* Test.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D8224283BD007C8FA1 /* Test.sks */; };
@@ -819,6 +821,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BFBDA50524124CB700A6AA64 /* DZNEmptyDataSet.framework in Embed Frameworks */,
 				BFBDA5002411561800A6AA64 /* CropViewController.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -1243,6 +1246,7 @@
 		BFBDA4352410C10800A6AA64 /* ExUserProfileViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUserProfileViewControllerDelegate.swift; sourceTree = "<group>"; };
 		BFBDA4372410C16E00A6AA64 /* ExUserProfileViewControllerGetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUserProfileViewControllerGetData.swift; sourceTree = "<group>"; };
 		BFBDA43924114BD100A6AA64 /* CropViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CropViewController.framework; path = Carthage/Build/iOS/CropViewController.framework; sourceTree = "<group>"; };
+		BFBDA50324124CB600A6AA64 /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DZNEmptyDataSet.framework; path = Carthage/Build/iOS/DZNEmptyDataSet.framework; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
 		BFC6C5D422428287007C8FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC6C5D8224283BD007C8FA1 /* Test.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Test.sks; sourceTree = "<group>"; };
@@ -1651,6 +1655,7 @@
 			files = (
 				BFFA2A7B22336D760023BB71 /* SpriteKitEasingSwift.framework in Frameworks */,
 				BFBDA4FF2411561800A6AA64 /* CropViewController.framework in Frameworks */,
+				BFBDA50424124CB700A6AA64 /* DZNEmptyDataSet.framework in Frameworks */,
 				C568DD1EF47C3315C5F1E752 /* Pods_PazleBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3110,6 +3115,7 @@
 		F18F91965E347613F23DE2B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFBDA50324124CB600A6AA64 /* DZNEmptyDataSet.framework */,
 				BFBDA43924114BD100A6AA64 /* CropViewController.framework */,
 				BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */,
 				BFFA2A7C22336D760023BB71 /* TapticEngine.framework */,
@@ -3855,6 +3861,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)//Carthage/Build/iOS/CropViewController.framework",
+				"$(SRCROOT)//Carthage/Build/iOS/DZNEmptyDataSet.framework",
 			);
 			outputFileListPaths = (
 			);

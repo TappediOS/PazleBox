@@ -17,6 +17,7 @@ import Firebase
 import FirebaseFirestore
 import SCLAlertView
 import NVActivityIndicatorView
+import DZNEmptyDataSet
 
 class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    @IBOutlet weak var UsersStageCommentTableView: UITableView!
@@ -81,6 +82,9 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
       
       self.UsersStageCommentTableView.delegate = self
       self.UsersStageCommentTableView.dataSource = self
+      self.UsersStageCommentTableView.emptyDataSetSource = self
+      self.UsersStageCommentTableView.emptyDataSetDelegate = self
+      self.UsersStageCommentTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
    }
    
    private func InitLoadActivityView() {
@@ -480,5 +484,25 @@ extension UserProfileTapCellViewController {
       tableView.deselectRow(at: indexPath, animated: true)
       
       
+   }
+}
+
+extension UserProfileTapCellViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+   
+   func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+       let str = NSLocalizedString("コメントなし", comment: "")
+       let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
+       return NSAttributedString(string: str, attributes: attrs)
+   }
+   
+   func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+       let str = NSLocalizedString("まだコメントされてません", comment: "")
+       let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
+       return NSAttributedString(string: str, attributes: attrs)
+   }
+
+   //スクロールできるようにする
+   func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+      return true
    }
 }

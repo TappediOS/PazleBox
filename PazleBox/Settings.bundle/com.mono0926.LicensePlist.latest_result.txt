@@ -408,6 +408,8 @@ name: ViewAnimator, nameSpecified:
 body: Copyright (c) 2018 m…
 version: 2.7.0
 
+name: DZNEmptyDataSet, nameSpecified: , owner: dzenbot, version: v1.8.1
+
 name: TOCropViewController, nameSpecified: , owner: TimOliver, version: 2.5.2
 
 add-version-numbers: false
