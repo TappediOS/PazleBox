@@ -374,7 +374,9 @@ class GameClearView: UIView, GADBannerViewDelegate {
       ShowEachObjectForAnimation()
 
       //GameClearLabel?.animate(animations: [AniManager.BigToSmalAnimation], delay: AniManager.ClearLabelAnimationTime)
-      TapToCommentButton.animate(animations: [AniManager.BigToSmalAnimation], delay: AniManager.ClearLabelAnimationTime)
+      TapToCommentButton.animate(animations: [AniManager.BigToSmalAnimation], delay: AniManager.ClearLabelAnimationTime, completion:  {
+         self.TapToCommentButton.isEnabled = true
+      })
       ReviewedView!.StartReviewViewAnimation()
       CountOfNextADLabel?.animate(animations: [AniManager.SmalToBigAnimation], delay: AniManager.ADInfoLabelAnimationTime)
       GoHomeButton?.animate(animations: [AniManager.SmalToBigAnimation], delay: AniManager.HomeButtonAnimationTime, completion: {
@@ -392,7 +394,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
    
    //
    private func ShowEachObjectForAnimation() {
-      TapToCommentButton.isHidden = true
+      TapToCommentButton.isHidden = false
       //GameClearLabel!.isHidden = false
       ReviewedView!.ShowEachObjectForAnimation()
       CountOfNextADLabel!.isHidden = false
@@ -415,6 +417,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
          AdButton.isHidden = true
       }
       //touchでない
+      TapToCommentButton.isEnabled = false
       GoHomeButton!.isEnabled = false
       NextButton!.isEnabled = false
       if let AdButton = NoAdButton {
