@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import DZNEmptyDataSet
 
 extension UserProfileViewController {
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -108,5 +109,25 @@ extension UserProfileViewController {
            top = -(safeAreaInset + offsetY)
        }
        scrollView.contentInset = UIEdgeInsets(top: top, left: 0, bottom: 0, right: 0)
+   }
+}
+
+//TODO:- ローカライズすること
+extension UserProfileViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+   func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+       let str = NSLocalizedString("ステージ投稿なし", comment: "")
+       let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
+       return NSAttributedString(string: str, attributes: attrs)
+   }
+   
+   func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+       let str = NSLocalizedString("ステージが投稿されたら表示されます", comment: "")
+       let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
+       return NSAttributedString(string: str, attributes: attrs)
+   }
+
+   //スクロールできるようにする
+   func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+      return true
    }
 }

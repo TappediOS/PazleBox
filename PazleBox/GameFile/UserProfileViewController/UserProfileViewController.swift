@@ -17,6 +17,7 @@ import Firebase
 import FirebaseFirestore
 import SCLAlertView
 import NVActivityIndicatorView
+import DZNEmptyDataSet
 
 class UserProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
@@ -201,6 +202,9 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             //読み取りが終わってからデリゲードを入れる必要がある
             self.UserProfileTableView.delegate = self
             self.UserProfileTableView.dataSource = self
+            self.UserProfileTableView.emptyDataSetSource = self
+            self.UserProfileTableView.emptyDataSetDelegate = self
+            self.UserProfileTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
             self.UserProfileTableView.reloadData()
             //ローディングアニメーションの停止。
             self.StopLoadingAnimation()

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import DZNEmptyDataSet
 
 class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
@@ -23,9 +24,12 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
       SetUpNavigationController()
       SetUpRefleshControl()
          
-      OtherUesrsProfileTableView.rowHeight = 160
-      OtherUesrsProfileTableView.delegate = self
-      OtherUesrsProfileTableView.dataSource = self
+      self.OtherUesrsProfileTableView.rowHeight = 160
+      self.OtherUesrsProfileTableView.delegate = self
+      self.OtherUesrsProfileTableView.dataSource = self
+      self.OtherUesrsProfileTableView.emptyDataSetSource = self
+      self.OtherUesrsProfileTableView.emptyDataSetDelegate = self
+      self.OtherUesrsProfileTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
    }
    
    func SetUpNavigationController() {
@@ -193,5 +197,25 @@ extension OtherUsersProfileViewController {
            top = -(safeAreaInset + offsetY)
        }
        scrollView.contentInset = UIEdgeInsets(top: top, left: 0, bottom: 0, right: 0)
+   }
+}
+
+//TODO:- ローカライズすること
+extension OtherUsersProfileViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+   func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+       let str = NSLocalizedString("ステージ投稿なし", comment: "")
+       let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
+       return NSAttributedString(string: str, attributes: attrs)
+   }
+   
+   func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+       let str = NSLocalizedString("ステージが投稿されたら表示されます", comment: "")
+       let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
+       return NSAttributedString(string: str, attributes: attrs)
+   }
+
+   //スクロールできるようにする
+   func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+      return true
    }
 }

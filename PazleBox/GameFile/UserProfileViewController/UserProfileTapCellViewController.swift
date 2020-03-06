@@ -487,8 +487,9 @@ extension UserProfileTapCellViewController {
    }
 }
 
+
+//TODO:- ローカライズすること
 extension UserProfileTapCellViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
-   
    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
        let str = NSLocalizedString("コメントなし", comment: "")
        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
@@ -496,7 +497,7 @@ extension UserProfileTapCellViewController: DZNEmptyDataSetSource, DZNEmptyDataS
    }
    
    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-       let str = NSLocalizedString("まだコメントされてません", comment: "")
+       let str = NSLocalizedString("コメントがついたら表示されます", comment: "")
        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
        return NSAttributedString(string: str, attributes: attrs)
    }
