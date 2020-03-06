@@ -70,7 +70,7 @@ class ReviewView : UIView {
       
       ReveiwLabel = UILabel(frame: LabelFrame)
       ReveiwLabel?.text = NSLocalizedString("Stage review", comment: "")
-      ReveiwLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 25)
+      ReveiwLabel?.font = UIFont(name: "HiraMaruProN-W4", size: 25)
       ReveiwLabel?.textAlignment = .center
       ReveiwLabel?.adjustsFontSizeToFitWidth = true
       ReveiwLabel?.adjustsFontForContentSizeCategory = true

@@ -58,6 +58,7 @@ class GameClearView: UIView, GADBannerViewDelegate {
    
    var GameClearLabel: UILabel?
    var CountOfNextADLabel : UILabel?
+   var TapToCommentButton = UIButton()
    
    let NextADString = NSLocalizedString("UntilNextAd", comment: "")
    
@@ -114,7 +115,9 @@ class GameClearView: UIView, GADBannerViewDelegate {
       InitConfeView2()
       InitConfeView3()
       
-      InitGameClearLabel()
+      //ClearLabelの代わりに，コメントをつけるボタンを追加した
+      //InitGameClearLabel()
+      InitAddACommentButton()
       InitCountOfNextADLabel()
       
       InitLoadActivityView(frame: frame)
@@ -146,29 +149,11 @@ class GameClearView: UIView, GADBannerViewDelegate {
       self.sendSubviewToBack(BackGroundImageView!)
    }
    
-   private func InitReviewView(frame: CGRect) {
-      let ReviewViewFrame = CGRect(x: FoundViewW, y: FoundViewH * 3 + FoundViewH / 2, width: FoundViewW * 6, height: FoundViewH * 2)
-      
-      self.ReviewedView = ReviewView(frame: ReviewViewFrame)
-      
-      self.addSubview(ReviewedView!)
-   }
-   
-   //Ad Check
-   private func InitAllADCheck() {
-      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false{
-         InitBannerView()
-      }else{
-         print("課金をしているので広告の初期化は行いません")
-      }
-   }
-   
    //MARK:- 初期化
+   //Clearってラベルは表示しない。
    private func InitGameClearLabel() {
-      
       let StartX = ViewW / 16
       let StartY = ViewH / 5 * 2 - StarViewWide - 5
-      
       let LabelW = ViewW / 8 * 7
       let LabelH = StarViewWide * 1.2
       
@@ -182,8 +167,44 @@ class GameClearView: UIView, GADBannerViewDelegate {
       GameClearLabel?.adjustsFontSizeToFitWidth = true
       GameClearLabel?.adjustsFontForContentSizeCategory = true
       GameClearLabel?.hero.id = HeroID.ClearLabelAndHomeViewLabel
-      self.addSubview(GameClearLabel!)
+      
+      //self.addSubview(GameClearLabel!)
    }
+   
+   func InitAddACommentButton() {
+      let ButtonW = ViewW / 7 * 5
+      let ButtonH = StarViewWide * 0.65
+      let startX = ViewW / 7
+      let startY = ViewH / 5 * 2 - StarViewWide + ButtonH * 0.4
+      
+      let ButtonFrame = CGRect(x: startX, y: startY, width: ButtonW, height: ButtonH)
+      
+      TapToCommentButton = UIButton(frame: ButtonFrame)
+      //TODO:- ローカライズすることp
+      TapToCommentButton.setTitle("Add a Comment", for: .normal)
+      TapToCommentButton.titleLabel?.adjustsFontSizeToFitWidth = true
+      TapToCommentButton.layer.cornerRadius = ButtonFrame.height / 2
+      TapToCommentButton.backgroundColor = .systemTeal
+      
+      self.addSubview(TapToCommentButton)
+   }
+   
+   private func InitReviewView(frame: CGRect) {
+      let ReviewViewFrame = CGRect(x: FoundViewW, y: FoundViewH * 3 + FoundViewH / 2, width: FoundViewW * 6, height: FoundViewH * 2)
+      self.ReviewedView = ReviewView(frame: ReviewViewFrame)
+      self.addSubview(ReviewedView!)
+   }
+   
+   //Ad Check
+   private func InitAllADCheck() {
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false{
+         InitBannerView()
+      }else{
+         print("課金をしているので広告の初期化は行いません")
+      }
+   }
+   
+   
    
    private func InitCountOfNextADLabel() {
       let StartX = FoundViewW * 2
@@ -352,7 +373,8 @@ class GameClearView: UIView, GADBannerViewDelegate {
    public func StartClearViewAnimation() {
       ShowEachObjectForAnimation()
 
-      GameClearLabel?.animate(animations: [AniManager.BigToSmalAnimation], delay: AniManager.ClearLabelAnimationTime)
+      //GameClearLabel?.animate(animations: [AniManager.BigToSmalAnimation], delay: AniManager.ClearLabelAnimationTime)
+      TapToCommentButton.animate(animations: [AniManager.BigToSmalAnimation], delay: AniManager.ClearLabelAnimationTime)
       ReviewedView!.StartReviewViewAnimation()
       CountOfNextADLabel?.animate(animations: [AniManager.SmalToBigAnimation], delay: AniManager.ADInfoLabelAnimationTime)
       GoHomeButton?.animate(animations: [AniManager.SmalToBigAnimation], delay: AniManager.HomeButtonAnimationTime, completion: {
@@ -370,7 +392,8 @@ class GameClearView: UIView, GADBannerViewDelegate {
    
    //
    private func ShowEachObjectForAnimation() {
-      GameClearLabel!.isHidden = false
+      TapToCommentButton.isHidden = true
+      //GameClearLabel!.isHidden = false
       ReviewedView!.ShowEachObjectForAnimation()
       CountOfNextADLabel!.isHidden = false
       GoHomeButton!.isHidden = false
@@ -382,7 +405,8 @@ class GameClearView: UIView, GADBannerViewDelegate {
    
    //見えないようにする
    public func SetUpForAnimatiomToHideEachViewAndButton() {
-      GameClearLabel!.isHidden = true
+      TapToCommentButton.isHidden = true
+      //GameClearLabel!.isHidden = true
       ReviewedView!.SetUpForAnimatiomToHideEachLabelAndImage()
       CountOfNextADLabel!.isHidden = true
       GoHomeButton!.isHidden = true

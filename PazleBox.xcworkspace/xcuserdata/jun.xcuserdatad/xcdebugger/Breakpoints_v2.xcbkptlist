@@ -1757,10 +1757,10 @@
             timestampString = "590043379.05116"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "257"
-            endingLineNumber = "257"
-            landmarkName = "IniiNextButton(frame:)"
-            landmarkType = "7">
+            startingLineNumber = "264"
+            endingLineNumber = "264"
+            landmarkName = "GameClearView"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1774,10 +1774,10 @@
             timestampString = "590043379.051218"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
-            landmarkName = "InitCountOfNextADLabel()"
-            landmarkType = "7">
+            startingLineNumber = "203"
+            endingLineNumber = "203"
+            landmarkName = "GameClearView"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2063,9 +2063,9 @@
             timestampString = "590043379.052193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "341"
-            endingLineNumber = "341"
-            landmarkName = "StartLoadingAnimation()"
+            startingLineNumber = "348"
+            endingLineNumber = "348"
+            landmarkName = "InitLoadActivityView(frame:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2080,9 +2080,9 @@
             timestampString = "590043379.052255"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "329"
-            endingLineNumber = "329"
-            landmarkName = "InitLoadActivityView(frame:)"
+            startingLineNumber = "336"
+            endingLineNumber = "336"
+            landmarkName = "InitGoHomeButton(frame:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4264,8 +4264,8 @@
             filePath = "PazleBox/GameFile/UserProfileViewController/EditProfileViewController/EditProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "276"
-            endingLineNumber = "276"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
             landmarkName = "updateImageViewWithImage(_:fromCropViewController:)"
             landmarkType = "7">
          </BreakpointContent>
