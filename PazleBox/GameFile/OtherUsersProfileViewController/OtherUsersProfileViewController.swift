@@ -132,7 +132,7 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
 
 extension OtherUsersProfileViewController {
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 25
+      return 0
    }
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
