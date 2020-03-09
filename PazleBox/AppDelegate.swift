@@ -69,6 +69,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
    
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       
+      //--------------------Sign in VC-----------------------//
+      UserDefaults.standard.register(defaults: ["isUserSignIn": false])
+      if UserDefaults.standard.bool(forKey: "AcceptAgreement") == false {
+         print("------------ログイン画面を表示する処理をします。--------------\n")
+         let storyboard = UIStoryboard(name: "LoginViewControllerSB", bundle: nil)
+         let AgreementVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
+         self.window = UIWindow(frame: UIScreen.main.bounds)
+         self.window?.rootViewController = AgreementVC
+         return true
+      } else {
+         print("\nログインしてるよ。")
+      }
+      //--------------------Sign in VC-----------------------//
+      
       //--------------------UITESTの処理 (1/2)-----------------------//
       var isUITesting = false
       if CommandLine.arguments.contains("--uitesting") {

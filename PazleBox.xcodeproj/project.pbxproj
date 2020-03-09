@@ -399,6 +399,8 @@
 		BFBDA5002411561800A6AA64 /* CropViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFBDA43924114BD100A6AA64 /* CropViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BFBDA50424124CB700A6AA64 /* DZNEmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBDA50324124CB600A6AA64 /* DZNEmptyDataSet.framework */; };
 		BFBDA50524124CB700A6AA64 /* DZNEmptyDataSet.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFBDA50324124CB600A6AA64 /* DZNEmptyDataSet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BFBDA5082416054900A6AA64 /* LoginViewControllerSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBDA5072416054900A6AA64 /* LoginViewControllerSB.storyboard */; };
+		BFBDA50A241605EA00A6AA64 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA509241605EA00A6AA64 /* LoginViewController.swift */; };
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
 		BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D422428287007C8FA1 /* Assets.xcassets */; };
 		BFC6C5D9224283BD007C8FA1 /* Test.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D8224283BD007C8FA1 /* Test.sks */; };
@@ -1247,6 +1249,8 @@
 		BFBDA4372410C16E00A6AA64 /* ExUserProfileViewControllerGetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUserProfileViewControllerGetData.swift; sourceTree = "<group>"; };
 		BFBDA43924114BD100A6AA64 /* CropViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CropViewController.framework; path = Carthage/Build/iOS/CropViewController.framework; sourceTree = "<group>"; };
 		BFBDA50324124CB600A6AA64 /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DZNEmptyDataSet.framework; path = Carthage/Build/iOS/DZNEmptyDataSet.framework; sourceTree = "<group>"; };
+		BFBDA5072416054900A6AA64 /* LoginViewControllerSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewControllerSB.storyboard; sourceTree = "<group>"; };
+		BFBDA509241605EA00A6AA64 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
 		BFC6C5D422428287007C8FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC6C5D8224283BD007C8FA1 /* Test.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Test.sks; sourceTree = "<group>"; };
@@ -1802,6 +1806,7 @@
 				BF89479222B9FCAB0014596B /* PieceViewController */,
 				BF1648F022C0C29E000CD1AB /* BackGroundImage */,
 				BF3C975D23F92E390004DF88 /* PuzzleMakerTapToPlayVC */,
+				BFBDA5062416050800A6AA64 /* LoginVC */,
 				BF48931C23B9BE9F0001FB04 /* TabBarViewController */,
 				BF7748CC24038E1200AA5E9C /* UserProfileViewController */,
 				BFDCBECF24079832006C6D4A /* OtherUsersProfileViewController */,
@@ -2593,6 +2598,15 @@
 				BFBDA432240DE34A00A6AA64 /* EditProfileViewController.swift */,
 			);
 			path = EditProfileViewController;
+			sourceTree = "<group>";
+		};
+		BFBDA5062416050800A6AA64 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				BFBDA5072416054900A6AA64 /* LoginViewControllerSB.storyboard */,
+				BFBDA509241605EA00A6AA64 /* LoginViewController.swift */,
+			);
+			path = LoginVC;
 			sourceTree = "<group>";
 		};
 		BFC6C5D722428296007C8FA1 /* Particle */ = {
@@ -3410,6 +3424,7 @@
 				BFF6D71722896610000253A2 /* 43p14Blue.png in Resources */,
 				BF7CE7CE226882370040352D /* KiraKira.json in Resources */,
 				BFF6D72922896610000253A2 /* 43p27Red.png in Resources */,
+				BFBDA5082416054900A6AA64 /* LoginViewControllerSB.storyboard in Resources */,
 				BF849E0722C25B20003E34CB /* BackGroundImageForIphone8PlusVar2.png in Resources */,
 				BFCE2617224A557B0099A775 /* 23p8Green.png in Resources */,
 				BFCE25C2224A466B0099A775 /* 33p22Green.png in Resources */,
@@ -3971,6 +3986,7 @@
 				BF552EC6226DDD7F00756E16 /* E50.swift in Sources */,
 				BF1A5EDD22B78616002C6733 /* CoinsID.swift in Sources */,
 				BF0FD356224371CE00E8F387 /* PutParticle.swift in Sources */,
+				BFBDA50A241605EA00A6AA64 /* LoginViewController.swift in Sources */,
 				BF332FB42249277A009B3042 /* N3.swift in Sources */,
 				BF3C975F23F92E660004DF88 /* PuzzleMakerTapToPlayViewController.swift in Sources */,
 				BF13BC9023BC71F200F2E36D /* ExSettingNOADS.swift in Sources */,
