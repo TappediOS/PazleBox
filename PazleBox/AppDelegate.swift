@@ -87,43 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       }
       //--------------------UITESTの処理 (1/2)-----------------------//
 
-      //--------------------FireBaseログイン-----------------------//
-      Auth.auth().signInAnonymously() { (authResult, error) in
-         guard let user = authResult?.user else { return }
-         let isAnonymous = user.isAnonymous
-         let uid = user.uid
-         let db = Firestore.firestore()
-         print("\n------------FireBaseログイン情報--------------")
-         print("匿名認証: \(isAnonymous)")
-         print("uid:     \(uid)")
-         
-         UserDefaults.standard.set(uid, forKey: "UID")
-         UserDefaults.standard.register(defaults: ["Logined": false])
-         
-         if UserDefaults.standard.bool(forKey: "Logined") == true {
-            print("\n--- ユーザーはログインしています ---\n")
-            db.collection("users").document(uid).updateData([
-               "LastLogin": FieldValue.serverTimestamp(),
-               ]) { err in
-                   if let err = err {
-                       print("Error updating document: \(err)")
-                   } else {
-                       print("Document successfully updated")
-                   }
-               }
-            Analytics.logEvent(AnalyticsEventLogin, parameters: nil)
-         }else{
-            print("\n--- ユーザーの初めてのFireBaseログイン ---\n")
-            print("------------ログイン画面を表示する処理をします。--------------\n")
-            let SetUpSB = UIStoryboard(name: "UsersSetUpViewControllerSB", bundle: nil)
-            let SetUpVC = SetUpSB.instantiateViewController(withIdentifier: "UsersSetUpVC") as! UsersSetUpViewCobtroller
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            self.window?.rootViewController = SetUpVC
-            isFirestLogin = true
-         }
-         print("------------FireBaseログイン情報--------------\n")
-      }
-      //--------------------FireBaseログイン-----------------------//
+      
       
       //--------------------利用規約VC-----------------------//
 //      UserDefaults.standard.register(defaults: ["AcceptAgreement": false])
@@ -212,8 +176,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       UIApplication.shared.applicationIconBadgeNumber = 0
       //------------------- プッシュ通知の赤いやつ消す-----------------//
       
+      
+      //--------------------FireBaseログイン-----------------------//
+      UserDefaults.standard.register(defaults: ["Logined": false])
+      Auth.auth().signInAnonymously() { (authResult, error) in
+         guard let user = authResult?.user else { return }
+         let isAnonymous = user.isAnonymous
+         let uid = user.uid
+         let db = Firestore.firestore()
+         print("\n------------FireBaseログイン情報--------------")
+         print("匿名認証: \(isAnonymous)")
+         print("uid:     \(uid)")
+         
+         UserDefaults.standard.set(uid, forKey: "UID")
+         
+         
+         if UserDefaults.standard.bool(forKey: "Logined") == true {
+            print("\n--- ユーザーはログインしています ---\n")
+            db.collection("users").document(uid).updateData([
+               "LastLogin": FieldValue.serverTimestamp(),
+               ]) { err in
+                   if let err = err {
+                       print("Error updating document: \(err)")
+                   } else {
+                       print("Document successfully updated")
+                   }
+               }
+            Analytics.logEvent(AnalyticsEventLogin, parameters: nil)
+         }else{
+            print("\n--- ユーザーの初めてのFireBaseログイン ---\n")
+            
+         }
+         print("------------FireBaseログイン情報--------------\n")
+      }
+      //--------------------FireBaseログイン-----------------------//
+      
+      print("------------SetUp画面を表示する処理をします。--------------\n")
+      if UserDefaults.standard.bool(forKey: "Logined") == false {
+         let SetUpSB = UIStoryboard(name: "UsersSetUpViewControllerSB", bundle: nil)
+         let SetUpVC = SetUpSB.instantiateViewController(withIdentifier: "UsersSetUpVC") as! UsersSetUpViewCobtroller
+         self.window = UIWindow(frame: UIScreen.main.bounds)
+         self.window?.rootViewController = SetUpVC
+         isFirestLogin = true
+      }
+      
+      
+      
       //-------------------Game Center-----------------//
       if isFirestLogin == true {
+         print("初めてのログインなのでゲームセンターはオープンしません")
          return true
       }
       

@@ -37,6 +37,8 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
    
    var db: Firestore!
    
+   let NoProfileImage = UIImage(named: "NoProfileImage.png")
+   
    override func viewDidLoad() {
       SetUpTextField()
       
@@ -63,7 +65,6 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
    }
    
    func SetUpUsersImageButton() {
-      let NoProfileImage = UIImage(named: "NoProfileImage.png")
       UsersProfileButton.setImage(NoProfileImage, for: .normal)
       UsersProfileButton.layer.borderWidth = 0.5
       UsersProfileButton.layer.cornerRadius = self.usersImageViewWide / 2
@@ -71,12 +72,16 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
    }
    
    func SetUpRegisterButton() {
-      let title = NSLocalizedString("Play", comment: "")
+      //TODO:- ローカライズする
+      let title = NSLocalizedString("Register", comment: "")
       RegisterButton.setTitle(title, for: .normal)
       RegisterButton.titleLabel?.adjustsFontSizeToFitWidth = true
       RegisterButton.titleLabel?.adjustsFontForContentSizeCategory = true
       RegisterButton.setTitleColor(UIColor.clouds(), for: .normal)
       RegisterButton.layer.cornerRadius =  5
+      RegisterButton.isEnabled = false
+      
+      usersImage = NoProfileImage!
    }
    
    private func SetUpFireStoreSetting() {
@@ -129,9 +134,79 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
    
    @IBAction func TapRegisterButton(_ sender: Any) {
       print("登録ボタンタップされた")
-      UserNameWhenTapRegisterButton = self.NameTextField.text ?? NSLocalizedString("Guest", comment: "")
       
+      let uid = UserDefaults.standard.string(forKey: "UID")!
+      let UserName = self.NameTextField.text ?? NSLocalizedString("Guest", comment: "")
+      let imageData = usersImage.pngData() as! NSData
+      
+      print("登録する名前は\(UserName)")
+      print("UID = \(uid)")
+      
+      RegisterUserFirebase(uid: uid, Name: UserName, profileImage: imageData)
     
+   }
+   
+   private func RegisterUserFirebase(uid: String, Name: String, profileImage: NSData) {
+      db.collection("users").document(uid).setData([
+         "name": Name,
+         "AccountCreatedDay": Timestamp(date: Date()),
+         "LastLogin": Timestamp(date: Date()),
+         "CreateStageNum": 0,
+         "ClearStageCount": 0,
+         "ProfileImage": profileImage,
+         "FollowNum": 0,
+         "FollowerNum": 0
+      ]) { err in
+         if let err = err {
+            print("Error writing document: \(err)")
+         } else {
+            print("Document successfully written!")
+            UserDefaults.standard.set(true, forKey: "Logined")
+         }
+      }
+      Analytics.logEvent(AnalyticsEventSignUp, parameters: nil)
+      self.ChekUserCreateStageNumFromFireStore(uid: uid)
+   }
+   
+   private func ChekUserCreateStageNumFromFireStore(uid: String) {
+      print("UID = \(uid)")
+      db.collection("Stages").whereField("addUser", isEqualTo: uid).getDocuments() { (querySnapshot, err) in
+         if let err = err {
+            print("データベースからのデータ取得エラー: \(err)")
+         } else {
+            let createStageNum: Int = querySnapshot!.documents.count
+            print("作成されているステージ数は， \(createStageNum) 個")
+            UserDefaults.standard.set(createStageNum, forKey: "CreateStageNum")
+            
+            if createStageNum != 0 {
+               self.UpdateCreateStageNumFirebase(uid: uid, createStageNum: createStageNum)
+            }else{
+               self.segeMainTabBarController()
+            }
+            
+            
+         }
+      }
+   }
+   
+   private func UpdateCreateStageNumFirebase(uid: String, createStageNum: Int) {
+      db.collection("users").document(uid).updateData(
+         ["CreateStageNum": createStageNum
+      ]) { err in
+         if let err = err {
+            print("Error writing document: \(err)")
+         }
+         self.segeMainTabBarController()
+      }
+   }
+   
+   private func segeMainTabBarController() {
+      let sb = UIStoryboard(name: "Main", bundle: nil)
+      let tabBarVC = sb.instantiateViewController(withIdentifier: "PuzzleTabBarC") as! PuzzleTabBarController
+      
+      tabBarVC.modalPresentationStyle = .fullScreen
+      
+      self.present(tabBarVC, animated: true, completion: nil)
    }
    
    func TapTakePhotoAction() {
@@ -153,8 +228,8 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
    }
    
    func TapDeletePhotoAction() {
-      let NoProfileImage = UIImage(named: "NoProfileImage.png")
       UsersProfileButton.setImage(NoProfileImage, for: .normal)
+      usersImage = NoProfileImage!
    }
    
    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -254,8 +329,7 @@ extension UsersSetUpViewCobtroller: UINavigationControllerDelegate, UIImagePicke
       print("\n元のサイズ:        \((image.pngData()! as NSData).length)")
       print("リサイズ後のサイズ:　\(String(describing: (resizeImage?.pngData() as! NSData).length))\n")
 
-      //画像を変化させたフラグを立てる
-      isChangeUsersImage = true
+      usersImage = resizeImage!
       cropViewController.dismiss(animated: true, completion: {
          print("画像を編集して，CropVCを閉じました")
          

@@ -35,12 +35,13 @@
                                     <action selector="TapChangeProfileButton:" destination="hID-nN-Xb8" eventType="touchUpInside" id="PQ6-8P-Oav"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQX-jV-8Pv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQX-jV-8Pv">
                                 <rect key="frame" x="172" y="137" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="FIy-rw-G0Q"/>
                                     <constraint firstAttribute="height" constant="70" id="MrD-5W-2vy"/>
                                 </constraints>
+                                <state key="normal" image="NoProfileImage.png"/>
                                 <connections>
                                     <action selector="TapChangeProfileButton:" destination="hID-nN-Xb8" eventType="touchUpInside" id="XxC-pd-Qty"/>
                                 </connections>
@@ -109,4 +110,7 @@
             <point key="canvasLocation" x="115.94202898550725" y="189.50892857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NoProfileImage.png" width="128" height="128"/>
+    </resources>
 </document>
