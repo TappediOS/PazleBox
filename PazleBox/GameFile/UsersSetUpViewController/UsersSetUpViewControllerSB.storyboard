@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Users Set Up View Cobtroller-->
+        <scene sceneID="QH7-5u-XuA">
+            <objects>
+                <viewController storyboardIdentifier="UsersSetUpVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hID-nN-Xb8" customClass="UsersSetUpViewCobtroller" customModule="PazleBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KPA-73-Q4m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ユーザ情報の登録" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0p-nv-zNc">
+                                <rect key="frame" x="20" y="64" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kwG-bb-EKe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9l7-Vj-fqv">
+                                <rect key="frame" x="20" y="215" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hVT-4T-ToY"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="プロフィール画像を設定"/>
+                                <connections>
+                                    <action selector="TapChangeProfileButton:" destination="hID-nN-Xb8" eventType="touchUpInside" id="PQ6-8P-Oav"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQX-jV-8Pv">
+                                <rect key="frame" x="172" y="137" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="FIy-rw-G0Q"/>
+                                    <constraint firstAttribute="height" constant="70" id="MrD-5W-2vy"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="TapChangeProfileButton:" destination="hID-nN-Xb8" eventType="touchUpInside" id="XxC-pd-Qty"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="udL-An-c9L">
+                                <rect key="frame" x="88" y="264" width="306" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="1BV-A6-Z2k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7NH-wm-oIx">
+                                <rect key="frame" x="20" y="270" width="60" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="5TE-Sw-iw8"/>
+                                    <constraint firstAttribute="height" constant="21" id="RR9-LR-Bge"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHd-KX-hqv">
+                                <rect key="frame" x="132" y="358" width="150" height="50"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ehS-Qt-BIr"/>
+                                    <constraint firstAttribute="width" constant="150" id="s1n-ur-9JM"/>
+                                </constraints>
+                                <state key="normal" title="とうろく"/>
+                                <connections>
+                                    <action selector="TapRegisterButton:" destination="hID-nN-Xb8" eventType="touchUpInside" id="mN6-oN-K8X"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dHd-KX-hqv" firstAttribute="top" secondItem="udL-An-c9L" secondAttribute="bottom" constant="60" id="3EY-6f-cOU"/>
+                            <constraint firstItem="wQX-jV-8Pv" firstAttribute="top" secondItem="W0p-nv-zNc" secondAttribute="bottom" constant="33" id="4wU-lI-ykN"/>
+                            <constraint firstItem="9l7-Vj-fqv" firstAttribute="top" secondItem="wQX-jV-8Pv" secondAttribute="bottom" constant="8" id="52e-7X-Tab"/>
+                            <constraint firstItem="W0p-nv-zNc" firstAttribute="top" secondItem="24o-nI-my6" secondAttribute="top" constant="20" id="5f8-9S-qIu"/>
+                            <constraint firstItem="wQX-jV-8Pv" firstAttribute="centerX" secondItem="KPA-73-Q4m" secondAttribute="centerX" id="Avc-Ni-Lw9"/>
+                            <constraint firstItem="udL-An-c9L" firstAttribute="top" secondItem="9l7-Vj-fqv" secondAttribute="bottom" constant="19" id="ByN-rv-gsi"/>
+                            <constraint firstItem="7NH-wm-oIx" firstAttribute="top" secondItem="9l7-Vj-fqv" secondAttribute="bottom" constant="25" id="DVO-Zj-U9n"/>
+                            <constraint firstItem="dHd-KX-hqv" firstAttribute="centerX" secondItem="KPA-73-Q4m" secondAttribute="centerX" id="EsH-Yv-zRY"/>
+                            <constraint firstItem="24o-nI-my6" firstAttribute="trailing" secondItem="9l7-Vj-fqv" secondAttribute="trailing" constant="20" id="GbS-0g-AHr"/>
+                            <constraint firstItem="24o-nI-my6" firstAttribute="trailing" secondItem="W0p-nv-zNc" secondAttribute="trailing" constant="20" id="KEN-FR-9zC"/>
+                            <constraint firstItem="W0p-nv-zNc" firstAttribute="leading" secondItem="24o-nI-my6" secondAttribute="leading" constant="20" id="Lzh-GH-lWs"/>
+                            <constraint firstItem="7NH-wm-oIx" firstAttribute="leading" secondItem="24o-nI-my6" secondAttribute="leading" constant="20" id="SeM-ce-abB"/>
+                            <constraint firstItem="9l7-Vj-fqv" firstAttribute="leading" secondItem="24o-nI-my6" secondAttribute="leading" constant="20" id="aRU-d0-u2H"/>
+                            <constraint firstItem="24o-nI-my6" firstAttribute="trailing" secondItem="udL-An-c9L" secondAttribute="trailing" constant="20" id="i2O-7O-VMQ"/>
+                            <constraint firstItem="udL-An-c9L" firstAttribute="leading" secondItem="7NH-wm-oIx" secondAttribute="trailing" constant="8" id="rmc-5M-Pw4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="24o-nI-my6"/>
+                    </view>
+                    <connections>
+                        <outlet property="ChangeProfileButton" destination="9l7-Vj-fqv" id="HM5-7c-Qv2"/>
+                        <outlet property="NameLabel" destination="7NH-wm-oIx" id="ziI-iW-e2S"/>
+                        <outlet property="NameTextField" destination="udL-An-c9L" id="yPh-h8-qci"/>
+                        <outlet property="RegisterButton" destination="dHd-KX-hqv" id="i65-of-bhE"/>
+                        <outlet property="UsersProfileButton" destination="wQX-jV-8Pv" id="GVK-da-MSn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kwb-9S-Gb1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115.94202898550725" y="189.50892857142856"/>
+        </scene>
+    </scenes>
+</document>

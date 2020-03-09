@@ -89,8 +89,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       UserDefaults.standard.register(defaults: ["isUserSignIn": false])
       if UserDefaults.standard.bool(forKey: "isUserSignIn") == false {
          print("------------ログイン画面を表示する処理をします。--------------\n")
-         let storyboard = UIStoryboard(name: "LoginViewControllerSB", bundle: nil)
-         let LoginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
+         let LoginSB = UIStoryboard(name: "UsersSetUpViewControllerSB", bundle: nil)
+         let LoginVC = LoginSB.instantiateViewController(withIdentifier: "UsersSetUpVC") as! UsersSetUpViewCobtroller
          self.window = UIWindow(frame: UIScreen.main.bounds)
          self.window?.rootViewController = LoginVC
          return true
