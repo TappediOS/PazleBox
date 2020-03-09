@@ -71,33 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       
       
-     
-      let auth = Auth.auth()
-      
-      
-      if auth.currentUser != nil {
-        print("currentUserはnilです")
-      } else {
-        print("currentUserはログインしています")
-         print("UID = \(String(describing: Auth.auth().currentUser?.uid))")
-      }
-      
-      
-      
-      
-      //--------------------Sign in VC-----------------------//
-      UserDefaults.standard.register(defaults: ["isUserSignIn": false])
-      if UserDefaults.standard.bool(forKey: "isUserSignIn") == false {
-         print("------------ログイン画面を表示する処理をします。--------------\n")
-         let LoginSB = UIStoryboard(name: "UsersSetUpViewControllerSB", bundle: nil)
-         let LoginVC = LoginSB.instantiateViewController(withIdentifier: "UsersSetUpVC") as! UsersSetUpViewCobtroller
-         self.window = UIWindow(frame: UIScreen.main.bounds)
-         self.window?.rootViewController = LoginVC
-         return true
-      } else {
-         print("\nログインしてるよ。")
-      }
-      //--------------------Sign in VC-----------------------//
+      var isFirestLogin = false
       
       //--------------------UITESTの処理 (1/2)-----------------------//
       var isUITesting = false
@@ -140,37 +114,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
             Analytics.logEvent(AnalyticsEventLogin, parameters: nil)
          }else{
             print("\n--- ユーザーの初めてのFireBaseログイン ---\n")
-            db.collection("users").document(uid).setData([
-               "name": NSLocalizedString("Guest", comment: ""),
-               "LastLogin": Timestamp(date: Date()),
-               "CreateStageNum": 0,
-               "ClearStageCount": 0
-            ]) { err in
-               if let err = err {
-                  print("Error writing document: \(err)")
-               } else {
-                  print("Document successfully written!")
-                  UserDefaults.standard.set(true, forKey: "Logined")
-               }
-            }
-            Analytics.logEvent(AnalyticsEventSignUp, parameters: nil)
-            self.ChekUserCreateStageNumFromFireStore(uid: uid)
+            print("------------ログイン画面を表示する処理をします。--------------\n")
+            let SetUpSB = UIStoryboard(name: "UsersSetUpViewControllerSB", bundle: nil)
+            let SetUpVC = SetUpSB.instantiateViewController(withIdentifier: "UsersSetUpVC") as! UsersSetUpViewCobtroller
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = SetUpVC
+            isFirestLogin = true
          }
          print("------------FireBaseログイン情報--------------\n")
       }
       //--------------------FireBaseログイン-----------------------//
       
       //--------------------利用規約VC-----------------------//
-      UserDefaults.standard.register(defaults: ["AcceptAgreement": false])
-      if UserDefaults.standard.bool(forKey: "AcceptAgreement") == false {
-         print("------------利用規約画面を表示する処理をします。--------------\n")
-         let storyboard = UIStoryboard(name: "UserAgreementViewController", bundle: nil)
-         let AgreementVC = storyboard.instantiateViewController(withIdentifier: "UserAgreementVC") as! UserAgreementViewController
-         self.window = UIWindow(frame: UIScreen.main.bounds)
-         self.window?.rootViewController = AgreementVC
-      } else {
-         print("\n利用規約Acceptしてるよ。")
-      }
+//      UserDefaults.standard.register(defaults: ["AcceptAgreement": false])
+//      if UserDefaults.standard.bool(forKey: "AcceptAgreement") == false {
+//         print("------------利用規約画面を表示する処理をします。--------------\n")
+//         let storyboard = UIStoryboard(name: "UserAgreementViewController", bundle: nil)
+//         let AgreementVC = storyboard.instantiateViewController(withIdentifier: "UserAgreementVC") as! UserAgreementViewController
+//         self.window = UIWindow(frame: UIScreen.main.bounds)
+//         self.window?.rootViewController = AgreementVC
+//      } else {
+//         print("\n利用規約Acceptしてるよ。")
+//      }
       //--------------------利用規約VC-----------------------//
       
       
@@ -223,7 +188,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       //--------------------UITESTの処理 (2/2)-----------------------//
       
       
+      //------------------- プッシュ通知-----------------//
+      // [START set_messaging_delegate]
+      Messaging.messaging().delegate = self
+      // [END set_messaging_delegate]
+      if #available(iOS 10.0, *) {
+         // For iOS 10 display notification (sent via APNS)
+         UNUserNotificationCenter.current().delegate = self
+         
+         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+         UNUserNotificationCenter.current().requestAuthorization(
+            options: authOptions,
+            completionHandler: {_, _ in })
+      } else {
+         let settings: UIUserNotificationSettings =
+            UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+         application.registerUserNotificationSettings(settings)
+      }
+      application.registerForRemoteNotifications()
+      //------------------- プッシュ通知-----------------//
+      
+      //------------------- プッシュ通知の赤いやつ消す-----------------//
+      UIApplication.shared.applicationIconBadgeNumber = 0
+      //------------------- プッシュ通知の赤いやつ消す-----------------//
+      
       //-------------------Game Center-----------------//
+      if isFirestLogin == true {
+         return true
+      }
+      
       print("\n------------Game Center--------------")
       if let rootView = self.window?.rootViewController {
          let player = GKLocalPlayer.local
@@ -252,49 +245,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       print("------------Game Center--------------\n")
       //------------------- Game Center-----------------//
       
-      
-      
-      //------------------- プッシュ通知-----------------//
-      // [START set_messaging_delegate]
-      Messaging.messaging().delegate = self
-      // [END set_messaging_delegate]
-      if #available(iOS 10.0, *) {
-         // For iOS 10 display notification (sent via APNS)
-         UNUserNotificationCenter.current().delegate = self
-         
-         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-         UNUserNotificationCenter.current().requestAuthorization(
-            options: authOptions,
-            completionHandler: {_, _ in })
-      } else {
-         let settings: UIUserNotificationSettings =
-            UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-         application.registerUserNotificationSettings(settings)
-      }
-      application.registerForRemoteNotifications()
-      //------------------- プッシュ通知-----------------//
-      
-      //------------------- プッシュ通知の赤いやつ消す-----------------//
-      UIApplication.shared.applicationIconBadgeNumber = 0
-      //------------------- プッシュ通知の赤いやつ消す-----------------//
-      
       return true
    }
    
-   //Firestoreに保存されているステージ数を取得してUser Defaultsに反映。
-   private func ChekUserCreateStageNumFromFireStore(uid: String) {
-      print("UID = \(uid)")
-      let db = Firestore.firestore()
-      db.collection("Stages").whereField("addUser", isEqualTo: uid).getDocuments() { (querySnapshot, err) in
-         if let err = err {
-            print("データベースからのデータ取得エラー: \(err)")
-         } else {
-            let createStageNum: Int = querySnapshot!.documents.count
-            print("作成されているステージ数は， \(createStageNum) 個")
-            UserDefaults.standard.set(createStageNum, forKey: "CreateStageNum")
-         }
-      }
-   }
+
 
    //MARK:- 元々あったやつ
    func applicationWillResignActive(_ application: UIApplication) {
