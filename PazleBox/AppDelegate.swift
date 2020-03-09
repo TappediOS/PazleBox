@@ -18,6 +18,7 @@ import GameKit
 import UserNotifications
 import COSTouchVisualizer
 import ChameleonFramework
+import AuthenticationServices
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowDelegate {
@@ -68,6 +69,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
    
    
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+      
+      
+     
+      let auth = Auth.auth()
+      
+      
+      if auth.currentUser != nil {
+        print("currentUserはnilです")
+      } else {
+        print("currentUserはログインしています")
+         print("UID = \(String(describing: Auth.auth().currentUser?.uid))")
+      }
+      
+      
+      
       
       //--------------------Sign in VC-----------------------//
       UserDefaults.standard.register(defaults: ["isUserSignIn": false])
