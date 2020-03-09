@@ -71,12 +71,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       
       //--------------------Sign in VC-----------------------//
       UserDefaults.standard.register(defaults: ["isUserSignIn": false])
-      if UserDefaults.standard.bool(forKey: "AcceptAgreement") == false {
+      if UserDefaults.standard.bool(forKey: "isUserSignIn") == false {
          print("------------ログイン画面を表示する処理をします。--------------\n")
          let storyboard = UIStoryboard(name: "LoginViewControllerSB", bundle: nil)
-         let AgreementVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
+         let LoginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
          self.window = UIWindow(frame: UIScreen.main.bounds)
-         self.window?.rootViewController = AgreementVC
+         self.window?.rootViewController = LoginVC
          return true
       } else {
          print("\nログインしてるよ。")
