@@ -140,12 +140,13 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
       let imageData = usersImage.pngData() as! NSData
       
       print("登録する名前は\(UserName)")
-      print("UID = \(uid)")
+      print("UID = \(uid)\n")
     
       
       
-      RegisterUserImageFireStorage(uid: uid, imageData: imageData)
+      
       RegisterUserFirebase(uid: uid, Name: UserName, profileImage: imageData)
+      RegisterUserImageFireStorage(uid: uid, imageData: imageData)
     
    }
    
@@ -153,6 +154,8 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
       let storage = Storage.storage()
       let storageRef = storage.reference()
       let ref = "UserProfileImage/" + uid + ".png"
+      
+      print("登録するRefは\(ref)")
       
       let ProfileImagesRef = storageRef.child(ref)
       
@@ -173,11 +176,25 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
             return
           }
          
-         print("ダウンロードURL = \(downloadURL)")
+         
+         self.RegisterProfileURLtoFirestore(uid: uid, downloadURL: downloadURL)
         }
       }
       
       
+   }
+   
+   private func RegisterProfileURLtoFirestore(uid: String, downloadURL: URL) {
+      let downloadURLStr: String = downloadURL.absoluteString
+      print("ダウンロードURL = \(downloadURLStr)")
+      db.collection("users").document(uid).updateData(
+         ["downloadProfileURL": downloadURLStr
+      ]) { err in
+         if let err = err {
+            print("Error writing document: \(err)")
+         }
+         self.segeMainTabBarController()
+      }
    }
    
    private func RegisterUserFirebase(uid: String, Name: String, profileImage: NSData) {
@@ -189,7 +206,8 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
          "ClearStageCount": 0,
          "ProfileImage": profileImage,
          "FollowNum": 0,
-         "FollowerNum": 0
+         "FollowerNum": 0,
+         "downloadProfileURL": "nil"
       ]) { err in
          if let err = err {
             print("Error writing document: \(err)")
@@ -215,7 +233,7 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
             if createStageNum != 0 {
                self.UpdateCreateStageNumFirebase(uid: uid, createStageNum: createStageNum)
             }else{
-               self.segeMainTabBarController()
+               //self.segeMainTabBarController()
             }
             
             
@@ -230,7 +248,7 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
          if let err = err {
             print("Error writing document: \(err)")
          }
-         self.segeMainTabBarController()
+         //self.segeMainTabBarController()
       }
    }
    
