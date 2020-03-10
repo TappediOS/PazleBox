@@ -785,11 +785,15 @@ class CleateStageViewController: UIViewController {
       let GetAllViewImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
       //コンテキストを閉じる
       UIGraphicsEndImageContext()
-            
+      
+      //80 * 110
       if let UseImage = GetAllViewImage.cropping(to: ( BackImageView?.GetRectForScreenshot() )!) {
-         let ResizeW = UseImage.size.width * 0.245
-         let ResizeH = UseImage.size.height * 0.245
+         let ResizeW: CGFloat = 80
+         let ResizeH: CGFloat = 110
          let RetruenImage = UseImage.ResizeUIImage(width: ResizeW, height: ResizeH)
+         print("元のデータは \(Double((UseImage.pngData() as! NSData).length) * 0.001) KByte")
+         print("UserImage = \(UseImage.size)")
+         print("Resize    = \(RetruenImage!.size)")
          return RetruenImage?.pngData() as! NSData
       }else{
          fatalError()

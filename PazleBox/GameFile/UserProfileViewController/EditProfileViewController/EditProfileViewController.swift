@@ -269,13 +269,19 @@ extension EditProfileViewController: UINavigationControllerDelegate, UIImagePick
    func updateImageViewWithImage(_ image: UIImage, fromCropViewController cropViewController: CropViewController) {
       print("トリミングした画像をimageViewのimageに代入する。")
       
-      let resizeImage = image.ResizeUIImage(width: usersImageViewWide, height: usersImageViewWide)
+      let resizeImage = image.ResizeUIImage(width: usersImageViewWide * 0.8, height: usersImageViewWide * 0.8)
       
       //トリミングした画像をimageViewのimageに代入する。
       self.EditUserProfileImageButton.setImage(resizeImage, for: .normal)
       
-      print("\n元のサイズ:        \((image.pngData()! as NSData).length)")
-      print("リサイズ後のサイズ:　\(String(describing: (resizeImage?.pngData() as! NSData).length))\n")
+      
+      let imageDataSize = Double((resizeImage?.pngData() as! NSData).length)
+      print("\n-------- 保存する画像の容量 ----------")
+      print(" Byte:  \(imageDataSize)")
+      print("KByte:  \(imageDataSize * 0.001)")
+      print("MByte:  \(imageDataSize * 0.001 * 0.001)")
+      print("GByte:  \(imageDataSize * 0.001 * 0.001 * 0.001)")
+      print("-------- 保存する画像の容量 ----------\n")
 
       //画像を変化させたフラグを立てる
       isChangeUsersImage = true

@@ -2891,8 +2891,8 @@
             filePath = "PazleBox/GameFile/CreateStage/CleateStageViewControllerFile/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "804"
-            endingLineNumber = "804"
+            startingLineNumber = "805"
+            endingLineNumber = "805"
             landmarkName = "SaveStageUserCreated()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4240,22 +4240,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3303B41E-938F-4A43-AA56-5108126E01DD"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PazleBox/GameFile/UserProfileViewController/EditProfileViewController/EditProfileViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "278"
-            endingLineNumber = "278"
-            landmarkName = "updateImageViewWithImage(_:fromCropViewController:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4E2301CE-66A7-4380-B12E-3204D308A1CB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -4361,7 +4345,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
             endingLineNumber = "103"
-            landmarkName = "TapOtherLoginButton(_:)"
+            landmarkName = "authUI(_:didSignInWith:error:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4377,7 +4361,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
             endingLineNumber = "115"
-            landmarkName = "authUI(_:didSignInWith:error:)"
+            landmarkName = "SaveUserToFirestore(SavedUser:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
