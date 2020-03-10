@@ -31,6 +31,7 @@ target 'PazleBox' do
   pod 'Firebase/Performance'
   pod 'Firebase/Messaging'
   
+  pod 'Firebase/Storage'
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
   pod 'FirebaseUI'

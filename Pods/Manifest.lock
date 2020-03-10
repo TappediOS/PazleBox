@@ -292,6 +292,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - Firebase/Performance
   - Firebase/RemoteConfig
+  - Firebase/Storage
   - FirebaseUI
   - FlatUIKit
   - Hero
@@ -440,6 +441,6 @@ SPEC CHECKSUMS:
   TwicketSegmentedControl: 6d7a4cf243657e0ac3f00d06d873a25334c04042
   ViewAnimator: 5af1c6f3b310f012bf081259c43717aa54fbae73
 
-PODFILE CHECKSUM: 5af081b82c8211c076b5082c58168bffd4767bde
+PODFILE CHECKSUM: cc8fb93fea54c7d48359ef27c3f9f9339f020a36
 
 COCOAPODS: 1.8.4

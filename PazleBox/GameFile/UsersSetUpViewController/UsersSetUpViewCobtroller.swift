@@ -12,7 +12,7 @@ import TapticEngine
 import Firebase
 import FirebaseFirestore
 import CropViewController
-
+import FirebaseStorage
 
 class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
    
@@ -141,9 +141,43 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
       
       print("登録する名前は\(UserName)")
       print("UID = \(uid)")
+    
       
+      
+      RegisterUserImageFireStorage(uid: uid, imageData: imageData)
       RegisterUserFirebase(uid: uid, Name: UserName, profileImage: imageData)
     
+   }
+   
+   private func RegisterUserImageFireStorage(uid: String, imageData: NSData) {
+      let storage = Storage.storage()
+      let storageRef = storage.reference()
+      let ref = "UserProfileImage/" + uid + ".png"
+      
+      let ProfileImagesRef = storageRef.child(ref)
+      
+      // Upload the file to the path "images/rivers.jpg"
+      let uploadTask = ProfileImagesRef.putData(imageData as Data, metadata: nil) { (metadata, error) in
+        guard let metadata = metadata else {
+          // Uh-oh, an error occurred!
+         print("Storegeにあげる時にエラー発生した")
+          return
+        }
+        // Metadata contains file metadata such as size, content-type.
+        let size = metadata.size
+        // You can also access to download URL after upload.
+        ProfileImagesRef.downloadURL { (url, error) in
+          guard let downloadURL = url else {
+            print("ダウンロードURL得るの失敗")
+            // Uh-oh, an error occurred!
+            return
+          }
+         
+         print("ダウンロードURL = \(downloadURL)")
+        }
+      }
+      
+      
    }
    
    private func RegisterUserFirebase(uid: String, Name: String, profileImage: NSData) {
