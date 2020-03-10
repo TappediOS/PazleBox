@@ -120,8 +120,11 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    @objc func TapEditProfileButton(sender: UIBarButtonItem) {
       print("tap editProfile")
       let EditProfileSB = UIStoryboard(name: "EditProfileViewControllerSB", bundle: nil)
-      let EditProfileVC = EditProfileSB.instantiateViewController(withIdentifier: "EditProfileVCNavigationController")
+      let EditProfileVC = EditProfileSB.instantiateViewController(withIdentifier: "EditProfileVCNavigationController") as! EditProfileViewController
       EditProfileVC.modalPresentationStyle = .fullScreen
+      
+      EditProfileVC.getUsersImage(image: self.usersProfileImagfe)
+      EditProfileVC.getUsersName(name: self.userName)
       
       self.present(EditProfileVC, animated: true, completion: nil)
    }
@@ -192,7 +195,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
                self.Play3DtouchError()
                self.ShowErrGetStageAlertView()
             } else {
-               self.Play3DtouchSuccess()
+               
                for document in querySnapshot!.documents {
                   //GetRawData()はEXファイルに存在している。
                   self.UsingStageDatas.append(self.GetRawData(document: document))
@@ -206,8 +209,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             self.GetUsersInfomationFromFireStore()
             
             
-            //ローディングアニメーションの停止。
-            self.StopLoadingAnimation()
+            
       }
    }
    
@@ -255,6 +257,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
          } else {
             // Data for "images/island.jpg" is returned
             self.usersProfileImagfe = UIImage(data: data!)!
+            self.Play3DtouchSuccess()
          }
          
          //読み取りが終わってからデリゲードを入れる必要がある
@@ -264,6 +267,9 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
          self.UserProfileTableView.emptyDataSetDelegate = self
          self.UserProfileTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
          self.UserProfileTableView.reloadData()
+         
+         //ローディングアニメーションの停止。
+         self.StopLoadingAnimation()
       }
    }
    
