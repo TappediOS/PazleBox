@@ -28,8 +28,8 @@ extension UserProfileViewController {
       let PlayCount = UsingStageDatas[indexPath.item]["PlayCount"] as! Int
       let addDate = UsingStageDatas[indexPath.item]["addDate"] as! String
       
-      cell?.UsersNameLabel.text = "Japn Qj"
-      cell?.UsersPfofileImageView.image = UIImage(named: "person.png")!
+      cell?.UsersNameLabel.text = self.userName
+      cell?.UsersPfofileImageView.image = self.usersProfileImagfe
       cell?.UsersPostedStageTitleLabel.text = StageTitle
       cell?.UsersPostedStageReviewLabel.text = String(floor(Double(reviewNum) * 100) / 100) + " / 5"
       cell?.UsersPostedStagePlayCountLabel.text = String(PlayCount)
@@ -46,6 +46,8 @@ extension UserProfileViewController {
    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
       //xibファイルから読み込んでヘッダを生成
       let HeaderView = UserProfileHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: sectionHeaderHeight))
+      HeaderView.UsersNameLabel.text = self.userName
+      HeaderView.UsersProfileImage.image = self.usersProfileImagfe
       return HeaderView
    }
    
@@ -66,8 +68,8 @@ extension UserProfileViewController {
       let reviewNum = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat
       let PlayCount = UsingStageDatas[indexPath.item]["PlayCount"] as! Int
       
-      UserProfileTapCellViewController.setUsersImage(usersImage: UIImage(named: "hammer.png")!)
-      UserProfileTapCellViewController.setUsersName(usersName: "Great Girl")
+      UserProfileTapCellViewController.setUsersImage(usersImage: self.usersProfileImagfe)
+      UserProfileTapCellViewController.setUsersName(usersName: self.userName)
       
       UserProfileTapCellViewController.setPostUsersStageTitle(stageTitle: StageTitle)
          

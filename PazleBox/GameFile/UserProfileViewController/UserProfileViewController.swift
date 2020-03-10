@@ -18,6 +18,7 @@ import FirebaseFirestore
 import SCLAlertView
 import NVActivityIndicatorView
 import DZNEmptyDataSet
+import FirebaseStorage
 
 class UserProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
@@ -43,6 +44,9 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    
    let GameSound = GameSounds()
    var LoadActivityView: NVActivityIndicatorView?
+   
+   var userName: String = ""
+   var usersProfileImagfe = UIImage()
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -199,15 +203,67 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             //Segmentタップした時に別の関数でCollecti onVie をリロードする。
             print("Delegate設定します。")
             
-            //読み取りが終わってからデリゲードを入れる必要がある
-            self.UserProfileTableView.delegate = self
-            self.UserProfileTableView.dataSource = self
-            self.UserProfileTableView.emptyDataSetSource = self
-            self.UserProfileTableView.emptyDataSetDelegate = self
-            self.UserProfileTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
-            self.UserProfileTableView.reloadData()
+            self.GetUsersInfomationFromFireStore()
+            
+            
             //ローディングアニメーションの停止。
             self.StopLoadingAnimation()
+      }
+   }
+   
+   private func GetUsersInfomationFromFireStore() {
+      let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
+      db.collection("users").document(uid).getDocument { (document, err) in
+         if let err = err {
+            print("データベースからのデータ取得エラー: \(err)")
+            self.Play3DtouchError()
+         }
+         
+         if let document = document, document.exists {
+            //ドキュメントが存在していたらセットアップをする
+            self.SetUsersName(document: document)
+            self.GetUsersPfofileImageURL(document: document)
+            
+         } else {
+            print("Document does not exist")
+            
+         }
+         print("ユーザネームとプレイ回数のデータの取得完了")
+      }
+   }
+   
+   private func SetUsersName(document: DocumentSnapshot) {
+      if let userName = document.data()?["name"] as? String {
+         self.userName = userName
+      }
+   }
+   private func GetUsersPfofileImageURL(document: DocumentSnapshot) {
+      if let downLoadUrlAsString = document.data()?["downloadProfileURL"] as? String {
+         print("データベースからえたプロ画のURL = \(downLoadUrlAsString)")
+         self.DownloadProfileFromStorege(downLoadURL: downLoadUrlAsString)
+      }
+   }
+   
+   private func DownloadProfileFromStorege(downLoadURL: String) {
+      let httpsReference = Storage.storage().reference(forURL: downLoadURL)
+      
+      httpsReference.getData(maxSize: 1 * 512 * 512) { data, error in
+         if let error = error {
+            print("プロ画取得エラー")
+            print(error.localizedDescription)
+            self.usersProfileImagfe = UIImage(named: "NoProfileImage.png")!
+         } else {
+            // Data for "images/island.jpg" is returned
+            self.usersProfileImagfe = UIImage(data: data!)!
+         }
+         
+         //読み取りが終わってからデリゲードを入れる必要がある
+         self.UserProfileTableView.delegate = self
+         self.UserProfileTableView.dataSource = self
+         self.UserProfileTableView.emptyDataSetSource = self
+         self.UserProfileTableView.emptyDataSetDelegate = self
+         self.UserProfileTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
+         self.UserProfileTableView.reloadData()
       }
    }
    

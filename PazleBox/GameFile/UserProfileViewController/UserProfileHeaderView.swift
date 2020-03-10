@@ -12,6 +12,7 @@ import UIKit
 class UserProfileHeaderView: UIView {
    
    
+   @IBOutlet weak var UsersProfileImage: UIImageView!
    @IBOutlet weak var UsersNameLabel: UILabel!
    
    
@@ -19,6 +20,7 @@ class UserProfileHeaderView: UIView {
       super.init(frame: frame)
       loadNib()
       SetUpUsersNameLabel()
+      SetUpUsersProfileImage()
    }
    
    required init(coder aDecoder: NSCoder) {
@@ -35,5 +37,11 @@ class UserProfileHeaderView: UIView {
    func SetUpUsersNameLabel() {
       self.UsersNameLabel.adjustsFontSizeToFitWidth = true
       self.UsersNameLabel.minimumScaleFactor = 0.4
+   }
+   
+   func SetUpUsersProfileImage() {
+      UsersProfileImage.layer.borderWidth = 0.5
+      UsersProfileImage.layer.cornerRadius = self.UsersProfileImage.frame.width / 2
+      UsersProfileImage.layer.masksToBounds = true
    }
 }
