@@ -163,7 +163,7 @@ class PuzzleTabBarController: ESTabBarController, GADBannerViewDelegate {
       selectedImage = getCartFillImage()
       title = NSLocalizedString("Pice", comment: "")
       let ShoppingStorybord = UIStoryboard(name: "ShoppingPiceVC", bundle: nil)
-      let ShoppingPiceVC = ShoppingStorybord.instantiateViewController(withIdentifier: "ShoppingPiceVC")
+      let ShoppingPiceVC = ShoppingStorybord.instantiateViewController(withIdentifier: "PiceShopNavigationVC")
       ShoppingPiceVC.tabBarItem = ESTabBarItem.init(TabBarBasicContentView(), title: title,
                                               image: image, selectedImage: selectedImage, tag: 3)
       ShoppingPiceVC.tabBarItem.accessibilityIdentifier = "tabBar_Cart"
