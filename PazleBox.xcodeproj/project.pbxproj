@@ -158,6 +158,7 @@
 		BF48932A23B9D2500001FB04 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = BF48932923B9D2500001FB04 /* play.png */; };
 		BF48932C23B9D26D0001FB04 /* play_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = BF48932B23B9D26D0001FB04 /* play_fill.png */; };
 		BF48932E23B9D3980001FB04 /* TabBarCenterContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF48932D23B9D3980001FB04 /* TabBarCenterContentsView.swift */; };
+		BF4CBD5F241A199B00D0C55F /* ExPiceShopEachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CBD5E241A199A00D0C55F /* ExPiceShopEachViewController.swift */; };
 		BF4F4E1823C5B109005B5D60 /* UsersSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4F4E1A23C5B109005B5D60 /* UsersSetting.storyboard */; };
 		BF519C69223CCBDE0087A4AC /* GetTilePOSITION.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */; };
 		BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C6A223F58920087A4AC /* ExNotification.swift */; };
@@ -1006,6 +1007,7 @@
 		BF48932923B9D2500001FB04 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		BF48932B23B9D26D0001FB04 /* play_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_fill.png; sourceTree = "<group>"; };
 		BF48932D23B9D3980001FB04 /* TabBarCenterContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCenterContentsView.swift; sourceTree = "<group>"; };
+		BF4CBD5E241A199A00D0C55F /* ExPiceShopEachViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExPiceShopEachViewController.swift; sourceTree = "<group>"; };
 		BF4F4E1923C5B109005B5D60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UsersSetting.storyboard; sourceTree = "<group>"; };
 		BF4F4E1C23C5B116005B5D60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UsersSetting.strings; sourceTree = "<group>"; };
 		BF4F4E1E23C5B11F005B5D60 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/UsersSetting.strings"; sourceTree = "<group>"; };
@@ -1778,6 +1780,7 @@
 			children = (
 				BF1A84CF241A0E92008FEDCB /* PiceShopEachViewControllerSB.storyboard */,
 				BF1A84D1241A0EA4008FEDCB /* PiceShopEachViewController.swift */,
+				BF4CBD5E241A199A00D0C55F /* ExPiceShopEachViewController.swift */,
 			);
 			path = PiceShopNextVC;
 			sourceTree = "<group>";
@@ -4179,6 +4182,7 @@
 				BFDCBECC240622ED006C6D4A /* UserProfileTapCellViewController.swift in Sources */,
 				BF89479422B9FCDC0014596B /* PieceStoreViewController.swift in Sources */,
 				BF552EE8226DDE1400756E16 /* N37.swift in Sources */,
+				BF4CBD5F241A199B00D0C55F /* ExPiceShopEachViewController.swift in Sources */,
 				BF8ABFD82279C6B100F275FA /* NormalSellectStage.swift in Sources */,
 				BF332FF42249282A009B3042 /* H14.swift in Sources */,
 				BFF6D78E228FC225000253A2 /* SentLeaderBord.swift in Sources */,

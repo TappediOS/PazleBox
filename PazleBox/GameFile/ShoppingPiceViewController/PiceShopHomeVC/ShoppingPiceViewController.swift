@@ -12,6 +12,8 @@ import UIKit
 class ShoppingPiceViewController: UIViewController {
    var BackGroundImageView: BackGroundImageViews?
    
+   
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       SetUpNavigationBar()
