@@ -62,10 +62,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="aDG-yb-w1j" firstAttribute="centerY" secondItem="Gzb-yn-Wv0" secondAttribute="centerY" id="9ej-IJ-adN"/>
-                            <constraint firstItem="aDG-yb-w1j" firstAttribute="leading" secondItem="nLj-fR-Uoi" secondAttribute="leading" constant="20" id="UOC-pr-iQ3"/>
                             <constraint firstItem="nLj-fR-Uoi" firstAttribute="trailing" secondItem="aDG-yb-w1j" secondAttribute="trailing" constant="20" id="WmX-CP-Yld"/>
+                            <constraint firstItem="aDG-yb-w1j" firstAttribute="centerY" secondItem="Gzb-yn-Wv0" secondAttribute="centerY" id="ePl-BS-b9s"/>
                             <constraint firstItem="aDG-yb-w1j" firstAttribute="centerX" secondItem="Gzb-yn-Wv0" secondAttribute="centerX" id="k0h-py-qT0"/>
+                            <constraint firstItem="aDG-yb-w1j" firstAttribute="leading" secondItem="nLj-fR-Uoi" secondAttribute="leading" constant="20" id="pRi-pp-UNT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nLj-fR-Uoi"/>
                     </view>

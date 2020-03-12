@@ -1769,6 +1769,22 @@
 			path = BuyCoinView;
 			sourceTree = "<group>";
 		};
+		BF1A84CD241A0E42008FEDCB /* PiceShopNextVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PiceShopNextVC;
+			sourceTree = "<group>";
+		};
+		BF1A84CE241A0E47008FEDCB /* PiceShopHomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				BF3C975923F928F80004DF88 /* ShoppingPiceVC.storyboard */,
+				BF3C975B23F9291D0004DF88 /* ShoppingPiceViewController.swift */,
+			);
+			path = PiceShopHomeVC;
+			sourceTree = "<group>";
+		};
 		BF1BD1E82279A2420047496B /* ClearInfomation */ = {
 			isa = PBXGroup;
 			children = (
@@ -2190,8 +2206,8 @@
 		BF3C975823F928AC0004DF88 /* ShoppingPiceViewController */ = {
 			isa = PBXGroup;
 			children = (
-				BF3C975923F928F80004DF88 /* ShoppingPiceVC.storyboard */,
-				BF3C975B23F9291D0004DF88 /* ShoppingPiceViewController.swift */,
+				BF1A84CE241A0E47008FEDCB /* PiceShopHomeVC */,
+				BF1A84CD241A0E42008FEDCB /* PiceShopNextVC */,
 			);
 			path = ShoppingPiceViewController;
 			sourceTree = "<group>";

@@ -14,7 +14,13 @@ class ShoppingPiceViewController: UIViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      SetUpNavigationBar()
       InitBackgroundImageView()
+   }
+   
+   //TODO:- ローカライズしてなぁ
+   private func SetUpNavigationBar() {
+      self.navigationItem.title = NSLocalizedString("Pice Shop", comment: "")
    }
    
    private func InitBackgroundImageView() {
