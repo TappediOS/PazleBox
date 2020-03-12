@@ -28,4 +28,18 @@ class ShoppingPiceViewController: UIViewController {
       self.view.addSubview(BackGroundImageView!)
       self.view.sendSubviewToBack(BackGroundImageView!)
    }
+   
+   
+   
+   @IBAction func TapShoppingPiceButton(_ sender: UIButton) {
+      let tag = sender.tag
+      print("タップされたボタンは\(tag)番目のボタンです")
+      
+      let PiceShopEachVCSB = UIStoryboard(name: "PiceShopEachViewControllerSB", bundle: nil)
+      let PiceShopEachCV = PiceShopEachVCSB.instantiateViewController(withIdentifier: "PiceShopEachVC") as! PiceShopEachViewController
+      
+      PiceShopEachCV.getPiceShopTag(tag: tag)
+      self.navigationController?.pushViewController(PiceShopEachCV, animated: true)
+      
+   }
 }
