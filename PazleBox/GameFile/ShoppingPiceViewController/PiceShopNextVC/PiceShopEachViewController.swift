@@ -16,9 +16,9 @@ class PiceShopEachViewController: UIViewController {
    @IBOutlet weak var PiceCollectionView: UICollectionView!
    //こいつがCollecti on viewのレイアウトを決めている
    //上下左右にどれだけの感覚を開けるかを決める。
-   let sectionInsets = UIEdgeInsets(top: 15.0, left: 8.0, bottom: 10.0, right: 8.0)
+   let sectionInsets = UIEdgeInsets(top: 15.0, left: 20, bottom: 12.0, right: 20)
    //Cellを横に何個入れるか
-   let itemsPerRow: CGFloat = 4
+   let itemsPerRow: CGFloat = 12
    
    var PiceShptTag = 0
    
@@ -63,6 +63,7 @@ class PiceShopEachViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       print("表示するタグ番号: \(PiceShptTag)\n")
+      self.hero.isEnabled = true
       SetUpNavigationBar()
       SetUpUsingPiceSet()
       SetUpPerchaseButton()
@@ -112,7 +113,7 @@ class PiceShopEachViewController: UIViewController {
       PiceCollectionView.layer.borderColor = UIColor.tertiarySystemBackground.cgColor
       PiceCollectionView.layer.cornerRadius = 5
       PiceCollectionView.layer.masksToBounds = true
-      PiceCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+      PiceCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "PiceShopCollectionViewCell")
       PiceCollectionView.delegate = self
       PiceCollectionView.dataSource = self
       PiceCollectionView.collectionViewLayout.invalidateLayout()
