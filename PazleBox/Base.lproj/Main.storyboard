@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zmL-sd-h9q">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -209,6 +208,22 @@
             </objects>
             <point key="canvasLocation" x="-3295" y="1407"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Gbd-6g-Z3x">
+            <objects>
+                <navigationController storyboardIdentifier="SettingNavigationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YKv-Uy-MHb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XFc-YQ-dUB">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="A36-2h-VCr" kind="relationship" relationship="rootViewController" id="zPm-ux-3Cr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Bk-sv-W1w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4684" y="2224"/>
+        </scene>
         <!--Setting Table View Controller-->
         <scene sceneID="f0i-Us-bJg">
             <objects>
@@ -375,6 +390,7 @@
                             <outlet property="delegate" destination="A36-2h-VCr" id="0Ff-Db-AdL"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="PgH-jE-2fu"/>
                     <connections>
                         <outlet property="ContactUsLabel" destination="Ohi-EA-ICP" id="Ol9-Xw-JVf"/>
                         <outlet property="CreditLabel" destination="rQk-Rt-9nC" id="QoB-dV-jb9"/>
@@ -387,7 +403,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zPF-qU-NIa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3295" y="2101"/>
+            <point key="canvasLocation" x="-3985" y="2223"/>
         </scene>
     </scenes>
 </document>

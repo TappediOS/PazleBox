@@ -115,18 +115,22 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    //MARK:- 設定ボタンを押したときの処理
    @objc func TapSettingButton(sender: UIBarButtonItem) {
       print("tap setting")
+      let MainStorybord = UIStoryboard(name: "Main", bundle: nil)
+      let SettingVC = MainStorybord.instantiateViewController(withIdentifier: "SettingNavigationVC")
+      SettingVC.modalPresentationStyle = .fullScreen
+      self.present(SettingVC, animated: true, completion: {
+         print("設定画面の表示完了\n")
+      })
    }
    
    @objc func TapEditProfileButton(sender: UIBarButtonItem) {
       print("tap editProfile")
       let EditProfileSB = UIStoryboard(name: "EditProfileViewControllerSB", bundle: nil)
-      let EditProfileVC = EditProfileSB.instantiateViewController(withIdentifier: "EditProfileVCNavigationController") as! EditProfileViewController
+      let EditProfileVC = EditProfileSB.instantiateViewController(withIdentifier: "EditProfileVCNavigationController")
       EditProfileVC.modalPresentationStyle = .fullScreen
-      
-      EditProfileVC.getUsersImage(image: self.usersProfileImagfe)
-      EditProfileVC.getUsersName(name: self.userName)
-      
-      self.present(EditProfileVC, animated: true, completion: nil)
+      self.present(EditProfileVC, animated: true, completion: {
+         print("EditProfileVCの表示完了\n")
+      })
    }
    
    func SetUpRefleshControl() {

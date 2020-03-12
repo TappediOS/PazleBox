@@ -155,36 +155,39 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
       let storageRef = storage.reference()
       let ref = "UserProfileImage/" + uid + ".png"
       
-      print("登録するRefは\(ref)")
+     
       
       let ProfileImagesRef = storageRef.child(ref)
       
-      // Upload the file to the path "images/rivers.jpg"
+      print("\n---------- プロ画をStorageに保存開始  ----------")
+      print("登録するRefは\(ref)")
       let uploadTask = ProfileImagesRef.putData(imageData as Data, metadata: nil) { (metadata, error) in
-        guard let metadata = metadata else {
-          // Uh-oh, an error occurred!
-         print("Storegeにあげる時にエラー発生した")
-          return
-        }
-        // Metadata contains file metadata such as size, content-type.
-        let size = metadata.size
-        // You can also access to download URL after upload.
-        ProfileImagesRef.downloadURL { (url, error) in
-          guard let downloadURL = url else {
-            print("ダウンロードURL得るの失敗")
-            // Uh-oh, an error occurred!
+      
+         guard let metadata = metadata else {
+            print("---------- プロ画をStorageに保存失敗  ----------\n")
             return
-          }
+         }
          
          
-         self.RegisterProfileURLtoFirestore(uid: uid, downloadURL: downloadURL)
-        }
+      
+         print("---------- プロ画をStorageに保存成功  ----------\n")
+         print("\n---------- プロ画のURLを取得開始  ----------")
+         ProfileImagesRef.downloadURL { (url, error) in
+            guard let downloadURL = url else {
+               print("---------- プロ画のURLを取得失敗  ----------\n")
+               return
+            }
+         
+            print("---------- プロ画のURLを取得成功  ----------\n")
+            self.RegisterProfileURLtoFirestore(uid: uid, downloadURL: downloadURL)
+         }
       }
       
       
    }
    
    private func RegisterProfileURLtoFirestore(uid: String, downloadURL: URL) {
+      print("\n---------- プロ画をのURLをFireStoreに保存開始  ----------")
       let downloadURLStr: String = downloadURL.absoluteString
       print("ダウンロードURL = \(downloadURLStr)")
       db.collection("users").document(uid).updateData(
@@ -192,12 +195,15 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
       ]) { err in
          if let err = err {
             print("Error writing document: \(err)")
+            print("---------- プロ画をのURLをFireStoreに保存失敗  ----------\n")
          }
+         print("---------- プロ画のURLをFireStoreに保存成功  ----------\n")
          self.segeMainTabBarController()
       }
    }
    
    private func RegisterUserFirebase(uid: String, Name: String, profileImage: NSData) {
+      print("\n---------- ユーザ情報をFireStoreに保存開始  ----------")
       db.collection("users").document(uid).setData([
          "name": Name,
          "AccountCreatedDay": Timestamp(date: Date()),
@@ -210,9 +216,11 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
          "downloadProfileURL": "nil"
       ]) { err in
          if let err = err {
+            print("---------- ユーザ情報をFireStoreに保存失敗  ----------\n")
             print("Error writing document: \(err)")
          } else {
-            print("Document successfully written!")
+            print("---------- ユーザ情報をFireStoreに保存成功  ----------\n")
+            print("ログインのUsredefaultsをtrueに変更します")
             UserDefaults.standard.set(true, forKey: "Logined")
          }
       }
@@ -253,12 +261,15 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
    }
    
    private func segeMainTabBarController() {
+      print("\n---------- MainVCの表示開始  ----------")
       let sb = UIStoryboard(name: "Main", bundle: nil)
       let tabBarVC = sb.instantiateViewController(withIdentifier: "PuzzleTabBarC") as! PuzzleTabBarController
       
       tabBarVC.modalPresentationStyle = .fullScreen
       
-      self.present(tabBarVC, animated: true, completion: nil)
+      self.present(tabBarVC, animated: true, completion: {
+         print("---------- MainVCの表示完了  ----------\n")
+      })
    }
    
    func TapTakePhotoAction() {

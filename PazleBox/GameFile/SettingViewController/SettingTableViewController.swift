@@ -46,6 +46,7 @@ class SettingTableViewController: UITableViewController, GKGameCenterControllerD
       // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
       // self.navigationItem.rightBarButtonItem = self.editButtonItem
       
+      SetUpNavigationController()
       SetUpView()
       
       SetUpLabelText()
@@ -53,8 +54,22 @@ class SettingTableViewController: UITableViewController, GKGameCenterControllerD
       
    }
    
+   private func SetUpNavigationController() {
+      let stopItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(TapStopSettingVC))
+      stopItem.tintColor = .black
+      self.navigationItem.leftBarButtonItem = stopItem
+   }
+   
+   //MARK:- NaviBarでバツボタン押されたときの処理
+   @objc func TapStopSettingVC() {
+      print("閉じるボタンタップされた")
+      self.dismiss(animated: true, completion: {
+         print("SettingVCのdismiss完了")
+      })
+   }
+   
    private func SetUpView() {
-      self.view.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
+
    }
    
    private func SetUpLabelText() {

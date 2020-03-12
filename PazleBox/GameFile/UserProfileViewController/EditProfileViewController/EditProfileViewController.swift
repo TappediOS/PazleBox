@@ -89,9 +89,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
    }
    
    private func DismissEditProfileVC() {
-      self.dismiss(animated: true, completion: {
-         print("EditProfileVCのdismiss完了")
-      })
+      
    }
    
    //MARK:- NaviBarでバツボタン押されたときの処理

@@ -211,8 +211,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       }
       //--------------------FireBaseログイン-----------------------//
       
-      print("------------SetUp画面を表示する処理をします。--------------\n")
+      
       if UserDefaults.standard.bool(forKey: "Logined") == false {
+         print("------------SetUp画面を表示する処理をします。--------------\n")
          let SetUpSB = UIStoryboard(name: "UsersSetUpViewControllerSB", bundle: nil)
          let SetUpVC = SetUpSB.instantiateViewController(withIdentifier: "UsersSetUpVC") as! UsersSetUpViewCobtroller
          self.window = UIWindow(frame: UIScreen.main.bounds)
