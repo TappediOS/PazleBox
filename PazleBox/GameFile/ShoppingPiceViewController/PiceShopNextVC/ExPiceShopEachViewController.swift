@@ -22,17 +22,16 @@ extension PiceShopEachViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-      let cell = PiceCollectionView.dequeueReusableCell(withReuseIdentifier: "PiceShopPiceCell", for: indexPath) as! PiceShopCollectionViewCell
-      
+      let cell = PiceCollectionView.dequeueReusableCell(withReuseIdentifier: "PiceShopPiceCell", for: indexPath)
 
-        
       let imageName = self.UsingPiceSet[indexPath.item]
       let PiceImage = UIImage(contentsOfFile: Bundle.main.path(forResource: imageName, ofType: "png")!)?.ResizeUIImage(width: 128, height: 128)
 
-      
-      cell.setPiceShopPiceImageView(image: PiceImage!)
-   
-      cell.hero.modifiers = [.fade, .scale(0.5)]
+      if let cell = cell as? PiceShopCollectionViewCell {
+         cell.setPiceShopPiceImageView(image: PiceImage!)
+      }
+
+      //cell.hero.modifiers = [.fade, .scale(0.5)]
 
       return cell
     }
@@ -77,5 +76,10 @@ extension PiceShopEachViewController: UICollectionViewDelegateFlowLayout {
    // セルの行間の設定
    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
       return 15.0
+   }
+
+
+   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+       return 0
    }
 }

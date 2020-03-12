@@ -160,6 +160,7 @@
 		BF48932E23B9D3980001FB04 /* TabBarCenterContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF48932D23B9D3980001FB04 /* TabBarCenterContentsView.swift */; };
 		BF4CBD5F241A199B00D0C55F /* ExPiceShopEachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CBD5E241A199A00D0C55F /* ExPiceShopEachViewController.swift */; };
 		BF4CBD61241A261E00D0C55F /* PiceShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CBD60241A261E00D0C55F /* PiceShopCollectionViewCell.swift */; };
+		BF4CBD63241A4B7100D0C55F /* ExPiceShopEachViewControllerPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CBD62241A4B7100D0C55F /* ExPiceShopEachViewControllerPurchase.swift */; };
 		BF4F4E1823C5B109005B5D60 /* UsersSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4F4E1A23C5B109005B5D60 /* UsersSetting.storyboard */; };
 		BF519C69223CCBDE0087A4AC /* GetTilePOSITION.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C68223CCBDE0087A4AC /* GetTilePOSITION.swift */; };
 		BF519C6B223F58920087A4AC /* ExNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF519C6A223F58920087A4AC /* ExNotification.swift */; };
@@ -1010,6 +1011,7 @@
 		BF48932D23B9D3980001FB04 /* TabBarCenterContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCenterContentsView.swift; sourceTree = "<group>"; };
 		BF4CBD5E241A199A00D0C55F /* ExPiceShopEachViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExPiceShopEachViewController.swift; sourceTree = "<group>"; };
 		BF4CBD60241A261E00D0C55F /* PiceShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiceShopCollectionViewCell.swift; sourceTree = "<group>"; };
+		BF4CBD62241A4B7100D0C55F /* ExPiceShopEachViewControllerPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExPiceShopEachViewControllerPurchase.swift; sourceTree = "<group>"; };
 		BF4F4E1923C5B109005B5D60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UsersSetting.storyboard; sourceTree = "<group>"; };
 		BF4F4E1C23C5B116005B5D60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UsersSetting.strings; sourceTree = "<group>"; };
 		BF4F4E1E23C5B11F005B5D60 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/UsersSetting.strings"; sourceTree = "<group>"; };
@@ -1783,6 +1785,7 @@
 				BF1A84CF241A0E92008FEDCB /* PiceShopEachViewControllerSB.storyboard */,
 				BF1A84D1241A0EA4008FEDCB /* PiceShopEachViewController.swift */,
 				BF4CBD5E241A199A00D0C55F /* ExPiceShopEachViewController.swift */,
+				BF4CBD62241A4B7100D0C55F /* ExPiceShopEachViewControllerPurchase.swift */,
 				BF4CBD60241A261E00D0C55F /* PiceShopCollectionViewCell.swift */,
 			);
 			path = PiceShopNextVC;
@@ -4190,6 +4193,7 @@
 				BF332FF42249282A009B3042 /* H14.swift in Sources */,
 				BFF6D78E228FC225000253A2 /* SentLeaderBord.swift in Sources */,
 				BF1FF2AD22311CE60047ED23 /* Stage.swift in Sources */,
+				BF4CBD63241A4B7100D0C55F /* ExPiceShopEachViewControllerPurchase.swift in Sources */,
 				BF332FDE224927F2009B3042 /* H4.swift in Sources */,
 				BF552F08226DDE8D00756E16 /* H23.swift in Sources */,
 				BF552ED4226DDDC300756E16 /* N27.swift in Sources */,

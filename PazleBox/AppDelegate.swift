@@ -132,12 +132,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       //-------------------User First Open-----------------//
       //-------------------Init Ad Flag On Users Devise-------------------//
       UserDefaults.standard.register(defaults: ["BuyRemoveAd": false])
+      UserDefaults.standard.register(defaults: ["BuyPiceSet1": false])
+      UserDefaults.standard.register(defaults: ["BuyPiceSet2": false])
+      UserDefaults.standard.register(defaults: ["BuyPiceSet3": false])
+      UserDefaults.standard.register(defaults: ["BuyPiceSet4": false])
       UserDefaults.standard.register(defaults: ["CreateStageNum": 0])
       if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == true {
          print("\n--- ユーザーは広告削除の課金をしています ---\n")
       }else{
          print("\n ---ユーザーは広告削除の課金をしてない. ---\n")
       }
+      let defaults = UserDefaults.standard
+      let DefaultsKey = "BuyPiceSet"
+      print("--------- Userの課金状況 ------------")
+      print("　広告削除の購入  \(defaults.bool(forKey: "BuyRemoveAd"))")
+      print("PiceSet1の購入: \(defaults.bool(forKey: DefaultsKey + "1"))")
+      print("PiceSet1の購入: \(defaults.bool(forKey: DefaultsKey + "2"))")
+      print("PiceSet1の購入: \(defaults.bool(forKey: DefaultsKey + "3"))")
+      print("PiceSet1の購入: \(defaults.bool(forKey: DefaultsKey + "4"))")
+      print("--------- Userの課金状況 ------------")
       let CreateStageNum = UserDefaults.standard.integer(forKey: "CreateStageNum")
       print("---ユーザの登録ステージ数:　\(CreateStageNum) 個----\n")
       //-------------------User First Open-----------------//

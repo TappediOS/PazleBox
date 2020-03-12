@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import Hero
+import SwiftyStoreKit
+import Firebase
 
 class PiceShopEachViewController: UIViewController {
    
@@ -18,13 +20,25 @@ class PiceShopEachViewController: UIViewController {
    //上下左右にどれだけの感覚を開けるかを決める。
    let sectionInsets = UIEdgeInsets(top: 4, left: 10, bottom: 15.0, right: 10)
    //Cellを横に何個入れるか
-   let itemsPerRow: CGFloat = 3
+   let itemsPerRow: CGFloat = 6
    
    var PiceShptTag = 0
    
+   let PICE_SET_1_ID = "Pice_Set_1"
+   let PICE_SET_2_ID = "Pice_Set_2"
+   let PICE_SET_3_ID = "Pice_Set_3"
+   let PICE_SET_4_ID = "Pice_Set_4"
+   let SECRET_CODE = "c8bf5f01b42f4f80ad32ffd00349d92d"
+   
+   var Using_PICE_SET_ID = ""
+   
+   var LockPurchasButton = false
    
    @IBOutlet weak var PerchaseButton: UIButton!
    @IBOutlet weak var RestoreButton: UIButton!
+   
+   
+   @IBOutlet weak var PriceLabel: UILabel!
    
    let PiceSet1 = ["33p7Red", "33p7Green", "33p7Blue",
                    "43p10Red", "43p10Green", "43p10Blue",
@@ -50,12 +64,12 @@ class PiceShopEachViewController: UIViewController {
                    "33p25Red","33p25Green","33p25Blue"
    ]
    
-   let PiceSet4 = ["33p7Red", "33p7Green", "33p7Blue",
-                   "43p10Red", "43p1Green", "43p10Blue",
-                   "23p14Red", "23p14Green", "23p14Blue",
-                   "23p12Red", "23p12Green", "23p12Blue",
-                   "43p26Red", "43p26Green", "43p26Blue",
-                   "33p25Red","33p25Green","33p25Blue"
+   let PiceSet4 = ["33p6Red", "33p6Green", "33p6Blue",
+                   "43p4Red", "43p4Green", "43p4Blue",
+                   "33p15Red", "33p15Green", "33p15Blue",
+                   "23p13Red", "23p13Green", "23p13Blue",
+                   "33p26Red", "33p26Green", "33p26Blue",
+                   "33p22Red","33p22Green","33p22Blue"
    ]
    
    var UsingPiceSet: [String] = Array()
@@ -63,12 +77,13 @@ class PiceShopEachViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       print("表示するタグ番号: \(PiceShptTag)\n")
-      self.hero.isEnabled = true
       SetUpNavigationBar()
       SetUpUsingPiceSet()
+      SetUpPriceLabel()
       SetUpPerchaseButton()
       SetUpRestoreButton()
       LoadCollectionView()
+      CheckIAPInfomation()
    }
    
    //TODO:- ローカライズしてなぁ
@@ -76,17 +91,26 @@ class PiceShopEachViewController: UIViewController {
       self.navigationItem.title = NSLocalizedString("Pice Set \(self.PiceShptTag)", comment: "")
    }
    
+   private func SetUpPriceLabel() {
+      PriceLabel.text = ""
+      PriceLabel.adjustsFontSizeToFitWidth = true
+   }
+   
    private func SetUpUsingPiceSet() {
       self.UsingPiceSet.removeAll()
       switch self.PiceShptTag {
       case 1:
          self.UsingPiceSet = self.PiceSet1
+         self.Using_PICE_SET_ID = self.PICE_SET_1_ID
       case 2:
          self.UsingPiceSet = self.PiceSet2
+         self.Using_PICE_SET_ID = self.PICE_SET_2_ID
       case 3:
          self.UsingPiceSet = self.PiceSet3
+         self.Using_PICE_SET_ID = self.PICE_SET_3_ID
       case 4:
          self.UsingPiceSet = self.PiceSet4
+         self.Using_PICE_SET_ID = self.PICE_SET_4_ID
       default:
          fatalError("訳のわからん数字が入ってる")
       }
@@ -109,18 +133,65 @@ class PiceShopEachViewController: UIViewController {
    }
    
    private func LoadCollectionView() {
-      PiceCollectionView.layer.borderWidth = 1
-      PiceCollectionView.layer.borderColor = UIColor.tertiarySystemBackground.cgColor
-      PiceCollectionView.layer.cornerRadius = 5
-      PiceCollectionView.layer.masksToBounds = true
       PiceCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "PiceShopCollectionViewCell")
       PiceCollectionView.delegate = self
       PiceCollectionView.dataSource = self
       PiceCollectionView.collectionViewLayout.invalidateLayout()
-      PiceCollectionView.hero.modifiers = [.cascade]
    }
    
    public func getPiceShopTag(tag: Int) {
       self.PiceShptTag = tag
+   }
+   
+   
+   @IBAction func TapParchasePiceSetButton(_ sender: Any) {
+      //すでに押されてたら帰る
+      if LockPurchasButton == true {
+         return
+      }
+      print("購入ボタンが押されました")
+      LockPurchasButton = true
+      Analytics.logEvent("TapParchasPiceSet\(PiceShptTag)", parameters: nil)
+      purchase(PRODUCT_ID: Using_PICE_SET_ID)
+   }
+   
+   
+   @IBAction func TapRestoreButton(_ sender: Any) {
+      SwiftyStoreKit.restorePurchases(atomically: true) { results in
+         if results.restoreFailedPurchases.count > 0 {
+            //リストアに失敗
+            print("リストアに失敗")
+         }
+         else if results.restoredPurchases.count > 0 {
+            print("リストアに成功")
+            //購入成功
+            let defaults = UserDefaults.standard
+            defaults.set(true, forKey: "BuyRemoveAd")
+            print("リストアに成功しました")
+            print("購入フラグを　\(defaults.bool(forKey: "BuyRemoveAd"))　に変更しました")
+            self.CompleateRestore()
+         }
+         else {
+            print("リストアするものがない")
+            print("Restorボタン押したけどなんも買ってないパターン")
+         }
+      }
+   }
+   
+   
+   private func CheckIAPInfomation() {
+      SwiftyStoreKit.retrieveProductsInfo([Using_PICE_SET_ID]) { result in
+         if let product = result.retrievedProducts.first {
+            let priceString = product.localizedPrice!
+            print("Product: \(product.localizedDescription), price: \(priceString)")
+            self.PriceLabel.text! = priceString
+         }
+         else if let invalidProductId = result.invalidProductIDs.first {
+            print("Invalid product identifier: \(invalidProductId)")
+         }
+         else {
+            print("Error: \(String(describing: result.error))")
+         }
+      }
    }
 }
