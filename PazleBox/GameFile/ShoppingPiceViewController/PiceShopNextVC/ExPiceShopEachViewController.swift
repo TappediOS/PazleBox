@@ -30,7 +30,7 @@ extension PiceShopEachViewController: UICollectionViewDataSource {
       let PiceImage = UIImage(contentsOfFile: Bundle.main.path(forResource: imageName, ofType: "png")!)?.ResizeUIImage(width: 128, height: 128)
 
       
-      cell.PiceShopPiceImageView.image = PiceImage
+      cell.setPiceShopPiceImageView(image: PiceImage!)
    
       cell.hero.modifiers = [.fade, .scale(0.5)]
 
@@ -43,6 +43,7 @@ extension PiceShopEachViewController: UICollectionViewDelegateFlowLayout {
    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
       let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+      //let paddingSpace = sectionInsets.left + sectionInsets.right + 10 * 2
       let availableWidth = view.frame.width - paddingSpace
       let widthPerItem = availableWidth / itemsPerRow
       

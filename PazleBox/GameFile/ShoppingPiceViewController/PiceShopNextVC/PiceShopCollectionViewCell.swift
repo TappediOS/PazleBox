@@ -22,4 +22,8 @@ class PiceShopCollectionViewCell: UICollectionViewCell {
        // cellを丸くする
        //self.layer.cornerRadius = 8.0
    }
+   
+   public func setPiceShopPiceImageView(image: UIImage) {
+      self.PiceShopPiceImageView.image = image
+   }
 }
