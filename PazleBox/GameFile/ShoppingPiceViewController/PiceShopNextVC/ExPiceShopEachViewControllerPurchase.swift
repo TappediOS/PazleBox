@@ -85,8 +85,9 @@ extension PiceShopEachViewController {
          case .success(let receipt):
             let purchaseResult = SwiftyStoreKit.verifyPurchase(productId: PRODUCT_ID, inReceipt: receipt)
             switch purchaseResult {
-            case .purchased:
+            case .purchased(let RecieptItem):
                print("購入の検証 成功")
+               print("購入しているアイテム: \(RecieptItem.productId)")
                self.LockPurchasButton = false
                  
             case .notPurchased:

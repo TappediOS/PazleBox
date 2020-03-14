@@ -41,14 +41,16 @@ extension PiceShopEachViewController: UICollectionViewDelegateFlowLayout {
    // Screenサイズに応じたセルサイズを返す
    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-      let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-      //let paddingSpace = sectionInsets.left + sectionInsets.right + 10 * 2
+      //let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+      let paddingSpace = sectionInsets.right + sectionInsets.left + cellPerInset * (itemsPerRow - 1)
       let availableWidth = view.frame.width - paddingSpace
       let widthPerItem = availableWidth / itemsPerRow
       
       let piceName = UsingPiceSet[indexPath.row].pregReplace(pattern: "p[0-9]+(Green|Blue|Red)", with: "")
       
       var hightPerItem = widthPerItem
+      
+      print("now: \(widthPerItem)  low: \(cellWide)")
       
       switch piceName {
       case "22", "33":

@@ -19,16 +19,19 @@ class PiceShopEachViewController: UIViewController {
    @IBOutlet weak var PiceCollectionView: UICollectionView!
    //こいつがCollecti on viewのレイアウトを決めている
    //上下左右にどれだけの感覚を開けるかを決める。
-   let sectionInsets = UIEdgeInsets(top: 4, left: 10, bottom: 15.0, right: 10)
+   let sectionInsets = UIEdgeInsets(top: 4, left: 20, bottom: 15.0, right: 20)
    //Cellを横に何個入れるか
-   let itemsPerRow: CGFloat = 6
+   let itemsPerRow: CGFloat = 3
+   //セル同士の間隔をどれくらいにするか
+   let cellPerInset: CGFloat = 12
+   var cellWide:CGFloat = 0
    
    var PiceShopTag = 0
    
-   let PICE_SET_1_ID = "Pice_Set_1"
-   let PICE_SET_2_ID = "Pice_Set_2"
-   let PICE_SET_3_ID = "Pice_Set_3"
-   let PICE_SET_4_ID = "Pice_Set_4"
+   let PICE_SET_1_ID = "Pice_Set_Part1"
+   let PICE_SET_2_ID = "Pice_Set_Part2"
+   let PICE_SET_3_ID = "Pice_Set_Part3"
+   let PICE_SET_4_ID = "Pice_Set_Part4"
    let SECRET_CODE = "c8bf5f01b42f4f80ad32ffd00349d92d"
    
    var Using_PICE_SET_ID = ""
@@ -137,7 +140,11 @@ class PiceShopEachViewController: UIViewController {
       PiceCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "PiceShopCollectionViewCell")
       PiceCollectionView.delegate = self
       PiceCollectionView.dataSource = self
-      PiceCollectionView.collectionViewLayout.invalidateLayout()
+      let margin = sectionInsets.right + sectionInsets.left + cellPerInset * (itemsPerRow - 1)
+      cellWide = (view.frame.width - margin) / itemsPerRow
+      let layout = UICollectionViewFlowLayout()
+      layout.itemSize = CGSize(width: cellWide, height: cellWide)
+      PiceCollectionView.collectionViewLayout = layout
    }
    
    public func getPiceShopTag(tag: Int) {
@@ -156,11 +163,11 @@ class PiceShopEachViewController: UIViewController {
       purchase(PRODUCT_ID: Using_PICE_SET_ID)
    }
    
+
    
    @IBAction func TapRestoreButton(_ sender: Any) {
       SwiftyStoreKit.restorePurchases(atomically: true) { results in
          if results.restoreFailedPurchases.count > 0 {
-            //リストアに失敗
             print("リストアに失敗 \(results.restoreFailedPurchases)")
          }
          else if results.restoredPurchases.count > 0 {
@@ -180,7 +187,8 @@ class PiceShopEachViewController: UIViewController {
                   print("\(DafaultsKey)　の購入フラグを　\(defaults.bool(forKey: DafaultsKey))　に変更しました")
                   self.CompleateRestore()
                } else {
-                  print("何かの課金をしているけど\(self.Using_PICE_SET_ID)は課金していません")
+                  print("何かの課金をしているけど\(proID)は課金していません")
+                  print("もしくはこのタイミングではリストアしません")
                   self.Play3DtouchError()
                }
             }
