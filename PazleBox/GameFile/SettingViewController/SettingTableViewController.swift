@@ -10,6 +10,7 @@ import UIKit
 import SwiftyStoreKit
 import Firebase
 import GameKit
+import TapticEngine
 
 class SettingTableViewController: UITableViewController, GKGameCenterControllerDelegate {
    
@@ -128,7 +129,11 @@ class SettingTableViewController: UITableViewController, GKGameCenterControllerD
       tableView.deselectRow(at: indexPath, animated: true)
    }
    
-   
+   func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
+   func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
+   func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
+   func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
+   func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
    
    
    

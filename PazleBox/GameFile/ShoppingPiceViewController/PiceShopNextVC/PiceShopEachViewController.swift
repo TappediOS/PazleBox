@@ -11,18 +11,19 @@ import UIKit
 import Hero
 import SwiftyStoreKit
 import Firebase
+import TapticEngine
 
 class PiceShopEachViewController: UIViewController {
    
    
    @IBOutlet weak var PiceCollectionView: UICollectionView!
    //こいつがCollecti on viewのレイアウトを決めている
-   //上下左右にどれだけの感覚を開けるかを決める。
+   //上下左右にどれだけの感覚を開けるかを決める。
    let sectionInsets = UIEdgeInsets(top: 4, left: 10, bottom: 15.0, right: 10)
    //Cellを横に何個入れるか
    let itemsPerRow: CGFloat = 6
    
-   var PiceShptTag = 0
+   var PiceShopTag = 0
    
    let PICE_SET_1_ID = "Pice_Set_1"
    let PICE_SET_2_ID = "Pice_Set_2"
@@ -76,7 +77,7 @@ class PiceShopEachViewController: UIViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      print("表示するタグ番号: \(PiceShptTag)\n")
+      print("表示するタグ番号: \(PiceShopTag)\n")
       SetUpNavigationBar()
       SetUpUsingPiceSet()
       SetUpPriceLabel()
@@ -88,7 +89,7 @@ class PiceShopEachViewController: UIViewController {
    
    //TODO:- ローカライズしてなぁ
    private func SetUpNavigationBar() {
-      self.navigationItem.title = NSLocalizedString("Pice Set \(self.PiceShptTag)", comment: "")
+      self.navigationItem.title = NSLocalizedString("Pice Set \(self.PiceShopTag)", comment: "")
    }
    
    private func SetUpPriceLabel() {
@@ -98,7 +99,7 @@ class PiceShopEachViewController: UIViewController {
    
    private func SetUpUsingPiceSet() {
       self.UsingPiceSet.removeAll()
-      switch self.PiceShptTag {
+      switch self.PiceShopTag {
       case 1:
          self.UsingPiceSet = self.PiceSet1
          self.Using_PICE_SET_ID = self.PICE_SET_1_ID
@@ -140,7 +141,7 @@ class PiceShopEachViewController: UIViewController {
    }
    
    public func getPiceShopTag(tag: Int) {
-      self.PiceShptTag = tag
+      self.PiceShopTag = tag
    }
    
    
@@ -151,7 +152,7 @@ class PiceShopEachViewController: UIViewController {
       }
       print("購入ボタンが押されました")
       LockPurchasButton = true
-      Analytics.logEvent("TapParchasPiceSet\(PiceShptTag)", parameters: nil)
+      Analytics.logEvent("TapParchasPiceSet\(PiceShopTag)", parameters: nil)
       purchase(PRODUCT_ID: Using_PICE_SET_ID)
    }
    
@@ -160,20 +161,35 @@ class PiceShopEachViewController: UIViewController {
       SwiftyStoreKit.restorePurchases(atomically: true) { results in
          if results.restoreFailedPurchases.count > 0 {
             //リストアに失敗
-            print("リストアに失敗")
+            print("リストアに失敗 \(results.restoreFailedPurchases)")
          }
          else if results.restoredPurchases.count > 0 {
-            print("リストアに成功")
+            print("リストアに成功。ユーザは何かしら課金をしている.")
             //購入成功
-            let defaults = UserDefaults.standard
-            defaults.set(true, forKey: "BuyRemoveAd")
-            print("リストアに成功しました")
-            print("購入フラグを　\(defaults.bool(forKey: "BuyRemoveAd"))　に変更しました")
-            self.CompleateRestore()
+            for result in results.restoredPurchases {
+               let proID = result.productId
+               print("購入している課金アイテムのID = \(proID)")
+               if proID == self.Using_PICE_SET_ID {
+                  print("課金しているアイテムとリストアしたいアイテムが一致しました")
+                  print("課金しているアイテムID　 = \(proID)")
+                  print("リストアしたいアイテムID = \(self.Using_PICE_SET_ID)")
+                  let defaults = UserDefaults.standard
+                  let DafaultsKey = "BuyPiceSet" + String(self.PiceShopTag)
+                  defaults.set(true, forKey: DafaultsKey)
+                  print("リストアに成功しました \(results.restoredPurchases)")
+                  print("\(DafaultsKey)　の購入フラグを　\(defaults.bool(forKey: DafaultsKey))　に変更しました")
+                  self.CompleateRestore()
+               } else {
+                  print("何かの課金をしているけど\(self.Using_PICE_SET_ID)は課金していません")
+                  self.Play3DtouchError()
+               }
+            }
+            
          }
          else {
             print("リストアするものがない")
             print("Restorボタン押したけどなんも買ってないパターン")
+            self.Play3DtouchError()
          }
       }
    }
@@ -194,4 +210,10 @@ class PiceShopEachViewController: UIViewController {
          }
       }
    }
+   
+   func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
+   func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
+   func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
+   func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
+   func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
 }

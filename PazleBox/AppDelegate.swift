@@ -145,7 +145,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       let defaults = UserDefaults.standard
       let DefaultsKey = "BuyPiceSet"
       print("--------- Userの課金状況 ------------")
-      print("　広告削除の購入  \(defaults.bool(forKey: "BuyRemoveAd"))")
+      print("　広告削除の購入: \(defaults.bool(forKey: "BuyRemoveAd"))")
       print("PiceSet1の購入: \(defaults.bool(forKey: DefaultsKey + "1"))")
       print("PiceSet1の購入: \(defaults.bool(forKey: DefaultsKey + "2"))")
       print("PiceSet1の購入: \(defaults.bool(forKey: DefaultsKey + "3"))")
