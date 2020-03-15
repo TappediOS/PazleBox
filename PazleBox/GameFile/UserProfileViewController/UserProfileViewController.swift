@@ -110,6 +110,9 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
       self.navigationItem.setRightBarButton(EditProfileItem, animated: true)
       
       // 左端スワイプで戻るために必要
+      //コメントとか画像からMy Pageを参照した時にこれがなかったら，スワイプで戻れない。
+      //セッティングボタン置いてなかったらいらん。
+      //あと，UIGestureRecognizerDelegateを継承追加するのと，viewWillDisappearでnilを追加するのは忘れたらあかんよ。
       self.navigationController?.interactivePopGestureRecognizer?.delegate = self
       
       //TODO:- ローカライズすること
