@@ -41,7 +41,7 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
       SetUpRefleshControl()
       SetUpFireStoreSetting()
       
-      GetLatestStageDataFromDataBase()
+      GetTimeLineDataFromDataBase()
    }
    
    func SetUpNavigationController() {
@@ -71,15 +71,16 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
    }
    
    //MARK:- 最新，回数，評価それぞれのデータを取得する。
-   private func GetLatestStageDataFromDataBase() {
-      print("Latestデータの取得開始")
+   private func GetTimeLineDataFromDataBase() {
+      print("\n---- TimeLineデータの更新開始 ----")
       self.StartLoadingAnimation() //ローディングアニメーションの再生。
       db.collection("Stages")
          .order(by: "addDate", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
             if let err = err {
-               print("データベースからのデータ取得エラー: \(err)")
+               print("Error: \(err)")
+               print("\n---- データベースからのデータ取得エラー ----\n")
                self.Play3DtouchError()
                self.ShowErrGetStageAlertView()
             } else {
@@ -88,7 +89,7 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
                   self.LatestStageDatas.append(self.GetRawData(document: document))
                }
             }
-            print("Latestデータの取得完了")
+            print("TimeLineデータの取得完了")
             //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
             //Segmentタップした時に別の関数でCollecti onVie をリロードする。
             self.UsingStageDatas = self.LatestStageDatas
@@ -103,6 +104,30 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
             self.InterNetTableView.reloadData()
              //ローディングアニメーションの停止
             self.StopLoadingAnimation()
+      }
+   }
+   
+   //MARK:- リロード処理
+   private func ReLoadTimeLineDataFromDataBase() {
+      print("\n---- TimeLineデータの更新開始 ----")
+      db.collection("Stages")
+         .order(by: "addDate", descending: true)
+         .limit(to: MaxGetStageNumFormDataBase)
+         .getDocuments() { (querySnapshot, err) in
+            if let err = err {
+               print("Error: \(err)")
+               print("\n---- データベースからのデータ取得エラー ----\n")
+            } else {
+               print("TimeLineデータの取得成功")
+               self.LatestStageDatas.removeAll()
+               for document in querySnapshot!.documents {
+                  self.LatestStageDatas.append(self.GetRawData(document: document))
+               }
+               print("---- TimeLineデータの更新完了 ----\n")
+               self.UsingStageDatas = self.LatestStageDatas
+               self.InterNetTableView.reloadData()
+            }
+            self.RefleshControl.endRefreshing()
       }
    }
    
@@ -136,7 +161,8 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
    
    
    @objc func ReloadDataFromFireStore(sender: UIRefreshControl) {
-      RefleshControl.endRefreshing()
+      print("TimeLineの更新をします。")
+      ReLoadTimeLineDataFromDataBase()
    }
    
    @objc func TapUserImageButtonInterNetTableView(_ sender: UIButton) {

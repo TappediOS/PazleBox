@@ -99,14 +99,15 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
    
    //MARK:- 最新，回数，評価それぞれのデータを取得する。
    private func GetLatestStageDataFromDataBase() {
-      print("Latestデータの取得開始")
+      print("\n---- Latestデータの取得開始 ----")
       self.StartLoadingAnimation() //ローディングアニメーションの再生。
       db.collection("Stages")
          .order(by: "addDate", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
             if let err = err {
-               print("データベースからのデータ取得エラー: \(err)")
+               print("Error: \(err)")
+               print("\n---- データベースからのデータ取得エラー ----")
                self.Play3DtouchError()
                self.ShowErrGetStageAlertView()
             } else {
@@ -115,7 +116,7 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
                   self.LatestStageDatas.append(self.GetRawData(document: document))
                }
             }
-            print("Latestデータの取得完了")
+            print("---- Latestデータの取得完了 ----\n")
             //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
             //Segmentタップした時に別の関数でCollecti onVie をリロードする。
             self.UsingStageDatas = self.LatestStageDatas
@@ -131,14 +132,16 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
    }
    
    private func GetPlayCountStageDataFromDataBase(){
-      print("PlayCountデータの取得開始")
+      print("\n---- PlayCountデータの取得開始 ----")
       db.collection("Stages").whereField("PlayCount", isGreaterThanOrEqualTo: 0)
          .order(by: "PlayCount", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
             if let err = err {
-               print("データベースからのデータ取得エラー: \(err)")
+               print("Error: \(err)")
+               print("---- データベースからのデータ取得エラー ----\n")
             } else {
+               print("PlayCountデータの取得成功")
                for document in querySnapshot!.documents {
                   self.PlayCountStageDatas.append(self.GetRawData(document: document))
                }
@@ -146,20 +149,21 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
             //ここでは必要な配列を作っただけで何もする必要はない。
             //ここで作った配列(self.LatestStageDatas)
             //はSegmentタップされたときにUsingStageDataに代入してリロードすればいい。
-            print("PlayCountデータの取得完了")
+            print("---- PlayCountデータの取得完了 ----\n")
       }
    }
    
    private func GetRatedStageDataFromDataBase() {
-      print("Ratedデータの取得開始")
+      print("\n---- Ratedデータの取得開始 ----")
       db.collection("Stages").whereField("ReviewAve", isGreaterThanOrEqualTo: 0)
          .order(by: "ReviewAve", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
             if let err = err {
-               print("データベースからのデータ取得エラー: \(err)")
+               print("Error: \(err)")
+               print("\n---- データベースからのデータ取得エラー ----\n")
             } else {
-            
+               print("Ratedデータの取得成功")
                for document in querySnapshot!.documents {
                   self.RatedStageDatas.append(self.GetRawData(document: document))
                }
@@ -167,7 +171,7 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
             //ここでは必要な配列を作っただけで何もする必要はない。
             //ここで作った配列(self.LatestStageDatas)
             //はSegmentタップされたときにUsingStageDataに代入してリロードすればいい。
-            print("Ratedデータの取得完了")
+            print("---- Ratedデータの取得完了 ----\n")
       }
    }
    
@@ -180,7 +184,8 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
             if let err = err {
-               print("データベースからのデータ取得エラー: \(err)")
+               print("Error: \(err)")
+               print("---- データベースからのデータ取得エラー ----\n")
             } else {
                print("Latestデータの取得成功")
                self.LatestStageDatas.removeAll()
@@ -202,7 +207,8 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
            .limit(to: MaxGetStageNumFormDataBase)
            .getDocuments() { (querySnapshot, err) in
               if let err = err {
-                 print("データベースからのデータ取得エラー: \(err)")
+                 print("Error: \(err)")
+                 print("---- データベースからのデータ取得エラー ----\n")
               } else {
                  print("PlayCountデータの取得完了")
                  self.PlayCountStageDatas.removeAll()
@@ -224,7 +230,8 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
             if let err = err {
-               print("データベースからのデータ取得エラー: \(err)")
+               print("Error: \(err)")
+               print("---- データベースからのデータ取得エラー ----\n")
             } else {
                print("Ratedデータの取得成功")
                self.RatedStageDatas.removeAll()
