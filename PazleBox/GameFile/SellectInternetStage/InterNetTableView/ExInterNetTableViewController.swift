@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import DZNEmptyDataSet
 
 extension InterNetTableViewController {
    //セクションの数を返す
@@ -85,7 +86,25 @@ extension InterNetTableViewController {
       
       self.navigationController?.pushViewController(InterNetCellTappedVC, animated: true)
    }
-   
-   
 }
 
+
+//TODO:- ローカライズすること
+extension InterNetTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+   func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+       let str = NSLocalizedString("ステージ投稿なし", comment: "")
+       let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
+       return NSAttributedString(string: str, attributes: attrs)
+   }
+   
+   func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+       let str = NSLocalizedString("他のユーザをフォローするとその人の投稿が表示されます", comment: "")
+       let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
+       return NSAttributedString(string: str, attributes: attrs)
+   }
+
+   //スクロールできるようにする
+   func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+      return true
+   }
+}

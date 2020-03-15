@@ -13,6 +13,7 @@ import FirebaseFirestore
 import Firebase
 import NVActivityIndicatorView
 import SCLAlertView
+import DZNEmptyDataSet
 
 class InterNetTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -96,6 +97,9 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
             //読み取りが終わってからデリゲードを入れる必要がある
             self.InterNetTableView.delegate = self
             self.InterNetTableView.dataSource = self
+            self.InterNetTableView.emptyDataSetSource = self
+            self.InterNetTableView.emptyDataSetDelegate = self
+            self.InterNetTableView.tableFooterView = UIView()
             self.InterNetTableView.reloadData()
              //ローディングアニメーションの停止
             self.StopLoadingAnimation()
