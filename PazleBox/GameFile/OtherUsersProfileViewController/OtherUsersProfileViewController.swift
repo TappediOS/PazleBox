@@ -150,7 +150,7 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
                   self.UsingStageDatas.append(self.GetRawData(document: document))
                }
             }
-            print("myデータの取得完了")
+            print("他のユーザのステージデータの取得完了")
             print("続いて，他のユーザのユーザ情報を取得します。")
             self.GetOtherUsersInfomationFromFireStore()
       }

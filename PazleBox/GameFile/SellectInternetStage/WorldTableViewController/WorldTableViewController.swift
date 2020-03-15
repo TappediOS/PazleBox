@@ -376,6 +376,8 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       let OtherUsersProfileSB = UIStoryboard(name: "OtherUsersProfileViewControllerSB", bundle: nil)
       let OtherUsersProfileVC = OtherUsersProfileSB.instantiateViewController(withIdentifier: "OtherUsersProfileVC") as! OtherUsersProfileViewController
    
+      let OtherUsersUID = UsingStageDatas[rowNum]["addUser"] as! String
+      OtherUsersProfileVC.fetchOtherUsersUIDbeforPushVC(uid: "OtherUsersUID")
       self.navigationController?.pushViewController(OtherUsersProfileVC, animated: true)
    }
    
