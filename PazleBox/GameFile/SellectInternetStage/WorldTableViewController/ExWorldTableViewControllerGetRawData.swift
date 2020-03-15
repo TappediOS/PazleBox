@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 import FirebaseFirestore
+import FirebaseStorage
 
 extension WorldTableViewController {
    func GetPiceArrayFromDataBase(StageDic: [String: Any]) -> [PiceInfo] {
@@ -85,6 +86,7 @@ extension WorldTableViewController {
    func GetRawData(document: DocumentSnapshot) -> ([String: Any]) {
       var StageData: [String: Any] =  ["documentID": document.documentID]
       var maxPiceNum: Int = 1
+      var addUser = ""
       
       if let value = document["ReviewAve"] as? CGFloat {
             StageData.updateValue(value, forKey: "ReviewAve")
@@ -104,8 +106,9 @@ extension WorldTableViewController {
          StageData.updateValue("Nothing", forKey: "StageTitle")
       }
       
-      if let value = document["addUser"] as? String {
-         StageData.updateValue(value, forKey: "addUser")
+      if let userName = document["addUser"] as? String {
+         StageData.updateValue(userName, forKey: "addUser")
+         addUser = userName
       }
       
       if let value = document["addDate"] as? Timestamp {

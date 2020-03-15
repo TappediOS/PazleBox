@@ -100,6 +100,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    }
    func InitPostUsersStageImageView() {
       self.PostUsersStageImageView.image = self.PostUsersStageImage
+      self.PostUsersStageImageView.contentMode = .scaleAspectFill
    }
    func InitPostUsersStageTitleLabel() {
       self.PostUsersStageTitleLabel.text = self.PostUsersStageTitle

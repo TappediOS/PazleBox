@@ -22,4 +22,17 @@ class UserProfileTableViewCell: UITableViewCell {
    @IBOutlet weak var UsersPostedStageReviewLabel: UILabel!
    @IBOutlet weak var UsersPostedStagePlayCountLabel: UILabel!
    @IBOutlet weak var UsersPostedStageAddDateLabel: UILabel!
+   
+   
+   override func awakeFromNib() {
+      super.awakeFromNib()
+      
+      SetUpUsersStageTitlelLabel()
+      UsersPostedStageImageView.contentMode = .scaleAspectFill
+   }
+   
+   private func SetUpUsersStageTitlelLabel() {
+      UsersPostedStageTitleLabel.adjustsFontSizeToFitWidth = true
+      UsersPostedStageTitleLabel.minimumScaleFactor = 0.4
+   }
 }

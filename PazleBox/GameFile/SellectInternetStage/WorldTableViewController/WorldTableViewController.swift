@@ -15,6 +15,7 @@ import NVActivityIndicatorView
 import SCLAlertView
 import TwicketSegmentedControl
 import SnapKit
+import FirebaseStorage
 
 class WorldTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    //こいつにCollectionVeiwで表示するやつを入れる。
@@ -40,6 +41,8 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
    var segmentedControl: TwicketSegmentedControl?
    
    var CanSellectStage: Bool = true
+   
+   var DownLoadProfileCounter = 0
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -97,6 +100,67 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       self.RefleshControl.addTarget(self, action: #selector(self.ReloadDataFromFireStore(sender:)), for: .valueChanged)
    }
    
+   private func FetchLatestStageDataPostUserNameAndProfileImage() {
+      for tmp in 0 ..< LatestStageDatas.count {
+         let usersUID = LatestStageDatas[tmp]["addUser"] as! String
+         print("\(usersUID)の名前とプロフィール画像を取得開始")
+         
+         db.collection("users").document(usersUID).getDocument(){ (document, err) in
+            if let err = err {
+               print("Error: \(err)")
+               print("UID = \(usersUID)")
+               print("\n---- データベースからのデータ取得エラー ----")
+            } else {
+               self.Play3DtouchLight()
+               if let document = document, document.exists, let doc = document.data() {
+                  let userName = doc["name"] as! String
+                  print("UserName = \(userName)")
+                  self.LatestStageDatas[tmp].updateValue(userName, forKey: "PostedUsersName")
+                  let profileURL = doc["downloadProfileURL"] as! String
+                  self.DownloadProfileFromStorege(arrayNum: tmp, downLoadURL: profileURL)
+               }
+            }
+         }
+      }
+   }
+   
+   private func DownloadProfileFromStorege(arrayNum: Int, downLoadURL: String) {
+      let httpsReference = Storage.storage().reference(forURL: downLoadURL)
+      
+      httpsReference.getData(maxSize: 1 * 512 * 512) { data, error in
+         if let error = error {
+            print("プロ画取得エラー")
+            print(error.localizedDescription)
+            let errorUsersImage = UIImage(named: "NoProfileImage.png")?.pngData()
+            self.LatestStageDatas[arrayNum].updateValue(errorUsersImage!, forKey: "PostedUsersProfileImage")
+         } else {
+            // Data for "images/island.jpg" is returned
+            print("プロ画取得成功!")
+            self.LatestStageDatas[arrayNum].updateValue(data!, forKey: "PostedUsersProfileImage")
+            self.Play3DtouchSuccess()
+         }
+         
+         self.DownLoadProfileCounter += 1
+         print("ダウンロードカウンター = \(self.DownLoadProfileCounter)")
+         print("arryNumカウンター = \(arrayNum)")
+         
+         if self.DownLoadProfileCounter == self.LatestStageDatas.count{
+            print("---- Latestデータの取得完了 ----\n")
+            //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
+            //Segmentタップした時に別の関数でCollecti onVie をリロードする。
+            self.UsingStageDatas = self.LatestStageDatas
+            print("Delegate設定します。")
+               
+            //読み取りが終わってからデリゲードを入れる必要がある
+            self.WorldTableView.delegate = self
+            self.WorldTableView.dataSource = self
+            self.WorldTableView.reloadData()
+             //ローディングアニメーションの停止
+            self.StopLoadingAnimation()
+         }
+      }
+   }
+   
    //MARK:- 最新，回数，評価それぞれのデータを取得する。
    private func GetLatestStageDataFromDataBase() {
       print("\n---- Latestデータの取得開始 ----")
@@ -115,19 +179,10 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
                for document in querySnapshot!.documents {
                   self.LatestStageDatas.append(self.GetRawData(document: document))
                }
+               print("配列の総数は \(self.LatestStageDatas.count)")
+               self.FetchLatestStageDataPostUserNameAndProfileImage()
             }
-            print("---- Latestデータの取得完了 ----\n")
-            //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
-            //Segmentタップした時に別の関数でCollecti onVie をリロードする。
-            self.UsingStageDatas = self.LatestStageDatas
-            print("Delegate設定します。")
-               
-            //読み取りが終わってからデリゲードを入れる必要がある
-            self.WorldTableView.delegate = self
-            self.WorldTableView.dataSource = self
-            self.WorldTableView.reloadData()
-             //ローディングアニメーションの停止
-            self.StopLoadingAnimation()
+            
       }
    }
    

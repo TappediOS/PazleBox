@@ -48,6 +48,8 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    var userName: String = ""
    var usersProfileImagfe = UIImage()
    
+   var isLoadingProfile = true
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       SetUpNavigationController()
@@ -58,6 +60,18 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
       SetUpFireStoreSetting()
       //自分の取得する
       GetMyStageDataFromDataBase()
+   }
+   
+   override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(true)
+      let isCangeProfile = UserDefaults.standard.bool(forKey: "ChangeUsersProfileInEditionVC")
+      if isCangeProfile == false {
+         print("プロフィールの変更は起きていません")
+         return
+      }
+      
+      GetMyStageDataFromDataBase()
+      UserDefaults.standard.set(false, forKey: "ChangeUsersProfileInEditionVC")
    }
    
    override func viewWillDisappear(_ animated: Bool) {
@@ -125,6 +139,10 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    
    //MARK:- 設定ボタンを押したときの処理
    @objc func TapSettingButton(sender: UIBarButtonItem) {
+      guard self.isLoadingProfile == false else {
+         print("プロフィール読み込み中です")
+         return
+      }
       print("tap setting")
       let MainStorybord = UIStoryboard(name: "Main", bundle: nil)
       let SettingVC = MainStorybord.instantiateViewController(withIdentifier: "SettingNavigationVC")
@@ -135,7 +153,13 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    }
    
    @objc func TapEditProfileButton(sender: UIBarButtonItem) {
+      guard self.isLoadingProfile == false else {
+         print("プロフィール読み込み中です")
+         return
+      }
       print("tap editProfile")
+      UserDefaults.standard.set(self.usersProfileImagfe.pngData() as! NSData, forKey: "UserProfileImageData")
+      UserDefaults.standard.set(self.userName, forKey: "UserProfileName")
       let EditProfileSB = UIStoryboard(name: "EditProfileViewControllerSB", bundle: nil)
       let EditProfileVC = EditProfileSB.instantiateViewController(withIdentifier: "EditProfileVCNavigationController")
       EditProfileVC.modalPresentationStyle = .fullScreen
@@ -278,10 +302,14 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
          self.UserProfileTableView.emptyDataSetDelegate = self
          self.UserProfileTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
          self.UserProfileTableView.reloadData()
-         
+         self.isLoadingProfile = false
          //ローディングアニメーションの停止。
          self.StopLoadingAnimation()
       }
+   }
+   
+   private func ReloadUserStageDataFromDataBase() {
+      
    }
    
    @objc func ReloadDataFromFireStore(sender: UIRefreshControl) {

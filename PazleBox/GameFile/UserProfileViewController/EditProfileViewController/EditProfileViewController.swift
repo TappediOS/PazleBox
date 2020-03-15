@@ -12,6 +12,7 @@ import TapticEngine
 import Firebase
 import FirebaseFirestore
 import CropViewController
+import FirebaseStorage
 
 class EditProfileViewController: UIViewController, UITextFieldDelegate {
    
@@ -32,6 +33,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
    //テキストフィールドに書き込む最大の文字数。
    let maxTextfieldLength = 30
    
+   var SavingToFireBase = false
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -40,11 +42,14 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
       SetUpNavigationBarItem()
       
       SetUpUsersImageButton()
+      SetUpUserNameWhenShowThisVC()
       
       SetUpFireStoreSetting()
    }
    
    private func SetUpTextField() {
+      let UserName = UserDefaults.standard.string(forKey: "UserProfileName")
+      UsersNameTextField.text = UserName ?? "Guests"
       //文字入ってない時はdoneを押せないようにする処理
       UsersNameTextField.enablesReturnKeyAutomatically = true
       //doneにする処理
@@ -76,10 +81,17 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
    }
    
    func SetUpUsersImageButton() {
-      //EditUserProfileImageButton.setImage(someImage, for: .normal)
+      let ImageData = UserDefaults.standard.data(forKey: "UserProfileImageData")
+      let ProfileImage = UIImage(data: ImageData!)
+      EditUserProfileImageButton.setImage(ProfileImage, for: .normal)
       EditUserProfileImageButton.layer.borderWidth = 0.5
       EditUserProfileImageButton.layer.cornerRadius = self.usersImageViewWide / 2
       EditUserProfileImageButton.layer.masksToBounds = true
+   }
+   
+   func SetUpUserNameWhenShowThisVC() {
+      let UserName = UserDefaults.standard.string(forKey: "UserProfileName")
+      UserNameWhenShowThisVC = UserName ?? "Guests"
    }
    
    private func SetUpFireStoreSetting() {
@@ -91,6 +103,8 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
    private func DismissEditProfileVC() {
       self.dismiss(animated: true, completion: {
          print("EditProfileVCのdismiss完了")
+         self.SavingToFireBase = false
+         self.UsersNameTextField.isEnabled = true
       })
    }
    
@@ -102,6 +116,10 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
    
    //TODO: ここでデータをセーブする処理を行う
    @objc func TapSaveEditProfileButton() {
+      guard self.SavingToFireBase == false else {
+         print("セーブ中です。")
+         return
+      }
       print("Saveボタンタップされた")
       UserNameWhenDismissThisVC = self.UsersNameTextField.text ?? NSLocalizedString("Guest", comment: "")
       
@@ -111,15 +129,77 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
          return
       }
       
-      if UserNameWhenDismissThisVC != UserNameWhenShowThisVC {
-         print("名前が変更されているので保存する")
-         
+      UserDefaults.standard.set(true, forKey: "ChangeUsersProfileInEditionVC")
+      self.SavingToFireBase = true
+      self.UsersNameTextField.isEnabled = false
+      
+      if (UserNameWhenDismissThisVC != UserNameWhenShowThisVC) && !isChangeUsersImage {
+         print("名前だけが変更されている")
+         SaveNewUserNameFireStore(onlyName: true)
+         return
       }
       
-      if isChangeUsersImage {
-         print("画像が変更されているので保存する")
+      if (UserNameWhenDismissThisVC == UserNameWhenShowThisVC) && isChangeUsersImage {
+         print("画像だけが変更されている")
+         SaveNewProfileImageCloudFunction(onlyImage: true)
+         return
       }
-
+      
+      if (UserNameWhenDismissThisVC != UserNameWhenShowThisVC) && isChangeUsersImage {
+         print("両方変更されている")
+         SaveNewUserNameFireStore(onlyName: false)
+         SaveNewProfileImageCloudFunction(onlyImage: false)
+         return
+      }
+   }
+   
+   private func SaveNewUserNameFireStore(onlyName: Bool) {
+      let newName = UserNameWhenDismissThisVC
+      let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
+      db.collection("users").document(uid).updateData([
+         "name": newName
+      ]) { err in
+         if let err = err {
+            print("Error writing document: \(err)")
+            print("---------- 変更した名前をFireStoreに保存失敗  ----------\n")
+         }
+         
+         if onlyName {
+            self.DismissEditProfileVC()
+         }
+      }
+   }
+   
+   private func SaveNewProfileImageCloudFunction(onlyImage: Bool) {
+      let newImage = self.EditUserProfileImageButton.imageView?.image
+      let imageData = newImage?.pngData() as! NSData
+      let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
+      let storage = Storage.storage()
+      let storageRef = storage.reference()
+      let ref = "UserProfileImage/" + uid + ".png"
+      
+      let ProfileImagesRef = storageRef.child(ref)
+      print("\n---------- プロ画をStorageに上書き開始  ----------")
+      print("登録するRefは\(ref)")
+      ProfileImagesRef.putData(imageData as Data, metadata: nil) { (metadata, error) in
+      
+         guard let metadata = metadata else {
+            print("---------- プロ画をStorageに上書き失敗  ----------\n")
+            return
+         }
+         print("---------- プロ画をStorageに上書き成功  ----------\n")
+         print("\n---------- プロ画のURLを取得開始  ----------")
+         ProfileImagesRef.downloadURL { (url, error) in
+            guard let downloadURL = url else {
+               print("---------- プロ画のURLを取得失敗  ----------\n")
+               return
+            }
+         
+            print("---------- プロ画のURLを取得成功  ----------\n")
+            print("DownLoadURL: \(downloadURL.absoluteString)")
+            self.DismissEditProfileVC()
+         }
+      }
    }
    
    public func getUsersImage(image: UIImage) {
@@ -155,6 +235,10 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
    
    //MARK:- 画像を変更する処理をする画面を表示する
    @IBAction func TapEditUserProfileImageButton(_ sender: Any) {
+      guard self.SavingToFireBase == false else {
+         print("セーブ中です。")
+         return
+      }
       let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
       
       let TakePhoto = NSLocalizedString("Take Photo", comment: "")
@@ -269,7 +353,7 @@ extension EditProfileViewController: UINavigationControllerDelegate, UIImagePick
    func updateImageViewWithImage(_ image: UIImage, fromCropViewController cropViewController: CropViewController) {
       print("トリミングした画像をimageViewのimageに代入する。")
       
-      let resizeImage = image.ResizeUIImage(width: usersImageViewWide * 0.8, height: usersImageViewWide * 0.8)
+      let resizeImage = image.ResizeUIImage(width: usersImageViewWide, height: usersImageViewWide)
       
       //トリミングした画像をimageViewのimageに代入する。
       self.EditUserProfileImageButton.setImage(resizeImage, for: .normal)

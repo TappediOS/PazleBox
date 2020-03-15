@@ -28,6 +28,7 @@ class WorldTableViewCell: UITableViewCell {
       // Initialization code
       
       SetUpUsersStageTitlelLabel()
+      UsersGameImageView.contentMode = .scaleAspectFill
    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -36,7 +37,7 @@ class WorldTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
    
-   func SetUpUsersStageTitlelLabel() {
+   private func SetUpUsersStageTitlelLabel() {
       UsersStageTitlelLabel.adjustsFontSizeToFitWidth = true
       UsersStageTitlelLabel.minimumScaleFactor = 0.4
    }

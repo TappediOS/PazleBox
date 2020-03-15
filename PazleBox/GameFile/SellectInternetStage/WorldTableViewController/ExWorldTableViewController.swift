@@ -24,18 +24,22 @@ extension WorldTableViewController {
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = self.WorldTableView.dequeueReusableCell(withIdentifier: "WorldTableViewCell", for: indexPath) as? WorldTableViewCell
       
-      let ImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
-      if let data = ImageData {
+      let StageImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
+      if let data = StageImageData {
          let Image = UIImage(data: data as Data)
          cell?.UsersGameImageView.image = Image
       }
       
+      let usersProfileData = UsingStageDatas[indexPath.item]["PostedUsersProfileImage"] as? NSData
+      if let ProfileData = usersProfileData {
+         let Image = UIImage(data: ProfileData as Data)
+         cell?.UsersImageViewButton.setImage(Image, for: .normal)
+      }
    
-      cell?.UsersImageViewButton.setImage(UIImage(named: "person.png")!, for: .normal)
       cell?.UsersImageViewButton.tag = indexPath.row
       cell?.UsersImageViewButton.addTarget(self, action: #selector(TapUserImageButtonWorldTableView(_:)), for: .touchUpInside)
       
-      cell?.UserNameLabel.text = "Raid on was"
+      cell?.UserNameLabel.text = UsingStageDatas[indexPath.row]["PostedUsersName"] as? String
       
       let StageTitle = UsingStageDatas[indexPath.item]["StageTitle"] as! String
       cell?.UsersStageTitlelLabel.text = StageTitle
@@ -43,7 +47,7 @@ extension WorldTableViewController {
       let reviewNum = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat
       cell?.UsersStageReviewLabel.text = String(floor(Double(reviewNum) * 100) / 100) + " / 5"
       cell?.UsersStagePlayCountLabel.text = String(UsingStageDatas[indexPath.item]["PlayCount"] as! Int)
-      cell?.UsersStagePostedDateLabel.text = UsingStageDatas[indexPath.item]["addDate"] as! String
+      cell?.UsersStagePostedDateLabel.text = UsingStageDatas[indexPath.item]["addDate"] as? String
 
       return cell!
    }

@@ -119,6 +119,7 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
    }
    func InitUsersPostedStageImageView() {
       self.UsersPostedStageImageView.image = self.UsersPostedStageImage
+      self.UsersPostedStageImageView.contentMode = .scaleAspectFill
    }
    func InitUsersPostedStageTitleLabel() {
       self.UsersPostedStageTitleLabel.text = self.UsersPostedStageTitle

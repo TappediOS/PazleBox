@@ -26,12 +26,20 @@ class OtherUsersProfileTableViewCell: UITableViewCell {
    override func awakeFromNib() {
       super.awakeFromNib()
       // Initialization code
+      
+      SetUpUsersStageTitlelLabel()
+      OtherUsersPostedStageImageView.contentMode = .scaleAspectFill
    }
 
    override func setSelected(_ selected: Bool, animated: Bool) {
       super.setSelected(selected, animated: animated)
 
       // Configure the view for the selected state
+   }
+   
+   private func SetUpUsersStageTitlelLabel() {
+      OtherUsersPostedStageTitleLabel.adjustsFontSizeToFitWidth = true
+      OtherUsersPostedStageTitleLabel.minimumScaleFactor = 0.4
    }
 
 }
