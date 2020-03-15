@@ -143,12 +143,30 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
       let rowNum = sender.tag
       print("\(rowNum)番目のcellがタップされました")
       
+      //本人をタップしてたら，
+      if TapedUserIsSelfInTimeLine(rowNum: rowNum) == true {
+         print("本人をタップしたので，UesrsProfileVCを表示します")
+         let UsersProfileSB = UIStoryboard(name: "UserProfileViewControllerSB", bundle: nil)
+         let UsersProfileVC = UsersProfileSB.instantiateViewController(withIdentifier: "UserProfileVC") as! UserProfileViewController
+         self.navigationController?.pushViewController(UsersProfileVC, animated: true)
+         return
+      }
+      
       let OtherUsersProfileSB = UIStoryboard(name: "OtherUsersProfileViewControllerSB", bundle: nil)
       let OtherUsersProfileVC = OtherUsersProfileSB.instantiateViewController(withIdentifier: "OtherUsersProfileVC") as! OtherUsersProfileViewController
       
       let OtherUsersUID = UsingStageDatas[rowNum]["addUser"] as! String
       OtherUsersProfileVC.fetchOtherUsersUIDbeforPushVC(uid: OtherUsersUID)
       self.navigationController?.pushViewController(OtherUsersProfileVC, animated: true)
+   }
+   
+   //タップした画像のユーザが本人かどうかを判定する
+   private func TapedUserIsSelfInTimeLine(rowNum: Int) -> Bool {
+      let TapedUsersUID = UsingStageDatas[rowNum]["addUser"] as! String
+      let UsersUID = UserDefaults.standard.string(forKey: "UID")
+      
+      if TapedUsersUID == UsersUID { return true}
+      return false
    }
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
