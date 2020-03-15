@@ -16,6 +16,7 @@ import TapticEngine
 class PiceShopEachViewController: UIViewController {
    
    
+   @IBOutlet weak var PurchaseInfoLabel: UILabel!
    @IBOutlet weak var PiceCollectionView: UICollectionView!
    //こいつがCollecti on viewのレイアウトを決めている
    //上下左右にどれだけの感覚を開けるかを決める。
@@ -84,6 +85,7 @@ class PiceShopEachViewController: UIViewController {
       SetUpNavigationBar()
       SetUpUsingPiceSet()
       SetUpPriceLabel()
+      SetUpPurchaseInfoLabel()
       SetUpPerchaseButton()
       SetUpRestoreButton()
       LoadCollectionView()
@@ -120,6 +122,16 @@ class PiceShopEachViewController: UIViewController {
       }
    }
    
+   //TODO:- ローカライズしてなぁ
+   private func SetUpPurchaseInfoLabel() {
+      let title = NSLocalizedString("以下のピースセットをステージ作りで使えるようになります", comment: "")
+      PurchaseInfoLabel.text = title
+      PurchaseInfoLabel.adjustsFontSizeToFitWidth = true
+      PurchaseInfoLabel.adjustsFontForContentSizeCategory = true
+      PurchaseInfoLabel.minimumScaleFactor = 0.45
+   }
+   
+   //TODO:- ローカライズしてなぁ
    private func SetUpPerchaseButton() {
       let title = NSLocalizedString("Perchase", comment: "")
       PerchaseButton.setTitle(title, for: .normal)
@@ -128,6 +140,7 @@ class PiceShopEachViewController: UIViewController {
       PerchaseButton.layer.cornerRadius =  5
    }
    
+   //TODO:- ローカライズしてなぁ
    private func SetUpRestoreButton() {
       let title = NSLocalizedString("Restore", comment: "")
       RestoreButton.setTitle(title, for: .normal)
@@ -136,6 +149,7 @@ class PiceShopEachViewController: UIViewController {
       RestoreButton.layer.cornerRadius =  5
    }
    
+   //TODO:- ローカライズしてなぁ
    private func LoadCollectionView() {
       PiceCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "PiceShopCollectionViewCell")
       PiceCollectionView.delegate = self

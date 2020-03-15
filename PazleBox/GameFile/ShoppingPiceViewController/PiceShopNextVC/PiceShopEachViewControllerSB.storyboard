@@ -22,7 +22,7 @@
                                     <constraint firstAttribute="height" constant="50" id="heb-ya-h4z"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="cLq-VM-qk9">
@@ -119,6 +119,7 @@
                         <outlet property="PerchaseButton" destination="pkd-he-pes" id="Nfg-Kt-XV3"/>
                         <outlet property="PiceCollectionView" destination="eEf-hE-vsg" id="Ul4-yM-VVS"/>
                         <outlet property="PriceLabel" destination="ZqH-or-GGv" id="X80-wj-EN7"/>
+                        <outlet property="PurchaseInfoLabel" destination="iJv-JS-Mpq" id="NGi-9M-C7C"/>
                         <outlet property="RestoreButton" destination="hSG-h6-At6" id="WJ1-L4-LJa"/>
                     </connections>
                 </viewController>
