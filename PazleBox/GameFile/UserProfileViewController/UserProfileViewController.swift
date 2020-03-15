@@ -266,6 +266,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             self.usersProfileImagfe = UIImage(named: "NoProfileImage.png")!
          } else {
             // Data for "images/island.jpg" is returned
+            print("プロ画取得成功!")
             self.usersProfileImagfe = UIImage(data: data!)!
             self.Play3DtouchSuccess()
          }

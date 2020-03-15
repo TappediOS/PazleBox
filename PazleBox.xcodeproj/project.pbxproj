@@ -256,7 +256,8 @@
 		BF552F3A226DDF3100756E16 /* H48.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F39226DDF3100756E16 /* H48.swift */; };
 		BF552F3C226DDF4700756E16 /* H49.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F3B226DDF4700756E16 /* H49.swift */; };
 		BF552F3E226DDF4D00756E16 /* H50.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F3D226DDF4D00756E16 /* H50.swift */; };
-		BF5BF8C9241DEC2500B0C096 /* OtherUsersProfileVCGetRawData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BF8C8241DEC2500B0C096 /* OtherUsersProfileVCGetRawData.swift */; };
+		BF5BF8C9241DEC2500B0C096 /* ExOtherUsersProfileVCGetRawData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BF8C8241DEC2500B0C096 /* ExOtherUsersProfileVCGetRawData.swift */; };
+		BF5BF8CB241DEFF200B0C096 /* ExOtherUsersProfileVCTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BF8CA241DEFF200B0C096 /* ExOtherUsersProfileVCTableView.swift */; };
 		BF60AC51224C8F1100D441D6 /* RePutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60AC50224C8F1100D441D6 /* RePutButton.swift */; };
 		BF60AC53224C952E00D441D6 /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60AC52224C952E00D441D6 /* Hint.swift */; };
 		BF60AC55224C981A00D441D6 /* Pouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60AC54224C981A00D441D6 /* Pouse.swift */; };
@@ -1113,7 +1114,8 @@
 		BF552F39226DDF3100756E16 /* H48.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H48.swift; sourceTree = "<group>"; };
 		BF552F3B226DDF4700756E16 /* H49.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H49.swift; sourceTree = "<group>"; };
 		BF552F3D226DDF4D00756E16 /* H50.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H50.swift; sourceTree = "<group>"; };
-		BF5BF8C8241DEC2500B0C096 /* OtherUsersProfileVCGetRawData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUsersProfileVCGetRawData.swift; sourceTree = "<group>"; };
+		BF5BF8C8241DEC2500B0C096 /* ExOtherUsersProfileVCGetRawData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExOtherUsersProfileVCGetRawData.swift; sourceTree = "<group>"; };
+		BF5BF8CA241DEFF200B0C096 /* ExOtherUsersProfileVCTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExOtherUsersProfileVCTableView.swift; sourceTree = "<group>"; };
 		BF60AC50224C8F1100D441D6 /* RePutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePutButton.swift; sourceTree = "<group>"; };
 		BF60AC52224C952E00D441D6 /* Hint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint.swift; sourceTree = "<group>"; };
 		BF60AC54224C981A00D441D6 /* Pouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pouse.swift; sourceTree = "<group>"; };
@@ -3022,7 +3024,8 @@
 			children = (
 				BFDCBED024079882006C6D4A /* OtherUsersProfileViewControllerSB.storyboard */,
 				BFDCBED224079894006C6D4A /* OtherUsersProfileViewController.swift */,
-				BF5BF8C8241DEC2500B0C096 /* OtherUsersProfileVCGetRawData.swift */,
+				BF5BF8CA241DEFF200B0C096 /* ExOtherUsersProfileVCTableView.swift */,
+				BF5BF8C8241DEC2500B0C096 /* ExOtherUsersProfileVCGetRawData.swift */,
 				BFDCBED82407A1E8006C6D4A /* OtherUsersProfileTabCellViewController.swift */,
 				BFDCBEDA2407AC75006C6D4A /* OtherUsersProfileTableViewCell.swift */,
 				BFDCBED424079E2D006C6D4A /* OtherUesrsProfileTableViewHeaderView.xib */,
@@ -4207,6 +4210,7 @@
 				BF552EF8226DDE4E00756E16 /* N45.swift in Sources */,
 				BF399B8422C4A14C003DD18A /* AppDelegate.swift in Sources */,
 				BF519C7D223FAA470087A4AC /* GetPuzzleArry.swift in Sources */,
+				BF5BF8CB241DEFF200B0C096 /* ExOtherUsersProfileVCTableView.swift in Sources */,
 				BF77E90D23FE743200E5EC91 /* InterNetTableViewController.swift in Sources */,
 				BFFA2A81223380720023BB71 /* EasyGet.swift in Sources */,
 				BF552F04226DDE8200756E16 /* H21.swift in Sources */,
@@ -4283,7 +4287,7 @@
 				BF552EB0226DDD4C00756E16 /* E39.swift in Sources */,
 				BF552EF0226DDE3700756E16 /* N41.swift in Sources */,
 				BF552F0E226DDEAB00756E16 /* H26.swift in Sources */,
-				BF5BF8C9241DEC2500B0C096 /* OtherUsersProfileVCGetRawData.swift in Sources */,
+				BF5BF8C9241DEC2500B0C096 /* ExOtherUsersProfileVCGetRawData.swift in Sources */,
 				BF73C2F5234AD86700745C7F /* SellectCreateStageViewController.swift in Sources */,
 				BF874AFF2404BEE10078E931 /* UserProfileHeaderView.swift in Sources */,
 				BF332FE4224927FE009B3042 /* H7.swift in Sources */,

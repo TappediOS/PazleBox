@@ -15,6 +15,9 @@ class OtherUsersProfileTableViewHeaderView: UIView {
    let ButtonCornerRadius: CGFloat = 6.5
    
    @IBOutlet weak var OtherUsersNameLabel: UILabel!
+   @IBOutlet weak var OtherUsersProfileImageView: UIImageView!
+   
+   
    
    override init(frame: CGRect){
       super.init(frame: frame)

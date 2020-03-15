@@ -19,11 +19,12 @@ import SCLAlertView
 import NVActivityIndicatorView
 import DZNEmptyDataSet
 import FirebaseStorage
+import DZNEmptyDataSet
 
 class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
    @IBOutlet weak var OtherUesrsProfileTableView: UITableView!
-   private let sectionHeaderHeight: CGFloat = 200
+   let sectionHeaderHeight: CGFloat = 200
       
    var RefleshControl = UIRefreshControl()
      
@@ -57,13 +58,6 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
       SetUpFireStoreSetting()
       //その人の取得する
       GetOtherUsersStageDataFromDataBase()
-         
-      self.OtherUesrsProfileTableView.rowHeight = 160
-      self.OtherUesrsProfileTableView.delegate = self
-      self.OtherUesrsProfileTableView.dataSource = self
-      self.OtherUesrsProfileTableView.emptyDataSetSource = self
-      self.OtherUesrsProfileTableView.emptyDataSetDelegate = self
-      self.OtherUesrsProfileTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
    }
    
    public func fetchOtherUsersUIDbeforPushVC(uid: String) {
@@ -199,6 +193,7 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
             self.usersProfileImagfe = UIImage(named: "NoProfileImage.png")!
          } else {
             // Data for "images/island.jpg" is returned
+            print("プロ画取得成功!")
             self.usersProfileImagfe = UIImage(data: data!)!
             self.Play3DtouchSuccess()
          }
@@ -312,95 +307,4 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
    func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
    func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
    func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
-}
-
-
-extension OtherUsersProfileViewController {
-   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 0
-   }
-   
-   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = self.OtherUesrsProfileTableView.dequeueReusableCell(withIdentifier: "OtherUsersProfileCell", for: indexPath) as? OtherUsersProfileTableViewCell
-      
-      cell?.OtherUsersPostReportButton.tag = indexPath.row
-      cell?.OtherUsersPostReportButton.addTarget(self, action: #selector(TapOtherUsersPostReportButton(_:)), for: .touchUpInside)
-
-      return cell!
-   }
-   
-   //ヘッダーの高さを設定
-   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
-      return sectionHeaderHeight
-   }
-   
-   //ヘッダーに使うUIViewを返す
-   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
-      //xibファイルから読み込んでヘッダを生成
-      let HeaderView = OtherUsersProfileTableViewHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: sectionHeaderHeight))
-      let followButton = HeaderView.getFollowOrUnFollowButton()
-      followButton.addTarget(self, action: #selector(TapFollowOrUnFollowButton(_:)), for: .touchUpInside)
-      return HeaderView
-   }
-   
-   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      // セルの選択を解除する
-      tableView.deselectRow(at: indexPath, animated: true)
-      //InterNetTableVCのcellタップイベントと同様にして画面遷移すればいい。
-      let InterNetTableVCSB = UIStoryboard(name: "InterNetTableView", bundle: nil)
-      let InterNetCellTappedVC = InterNetTableVCSB.instantiateViewController(withIdentifier: "InterNetCellTappedVC") as! InterNetCellTappedViewController
-      
-      InterNetCellTappedVC.setPostUsersStageImage(stageImage: UIImage(named: "23p2Red")!)
-      InterNetCellTappedVC.setUsersImage(usersImage: UIImage(named: "hammer.png")!)
-      InterNetCellTappedVC.setUsersName(usersName: "Supar Boy")
-      
-      InterNetCellTappedVC.setPostUsersStageTitle(stageTitle: "Drop Card")
-      
-      
-      InterNetCellTappedVC.setPostUsersStageReview(stageReview: "1.92 / 5 ")
-      InterNetCellTappedVC.setPostUsersStagePlayCount(stagePlayCount: "542")
-      
-      self.navigationController?.pushViewController(InterNetCellTappedVC, animated: true)
-   }
-   
-   
-   //スクロールした際にtableviewのヘッダを動かす
-   func scrollViewDidScroll(_ scrollView: UIScrollView) {
-       /// sectionHeaderが上部に残らないようにする
-       let offsetY = scrollView.contentOffset.y
-       let safeAreaInset: CGFloat = scrollView.safeAreaInsets.top
-
-       let top: CGFloat
-       if offsetY > sectionHeaderHeight{
-           /// 一番上のheaderの最下部が画面外へ出ている状態
-           top = -(safeAreaInset + sectionHeaderHeight)
-       } else if offsetY < -safeAreaInset {
-           /// 初期状態からメニューを下に引っ張っている状態
-           top = 0
-       } else {
-           /// safeArea内を一番上のheaderが移動している状態
-           top = -(safeAreaInset + offsetY)
-       }
-       scrollView.contentInset = UIEdgeInsets(top: top, left: 0, bottom: 0, right: 0)
-   }
-}
-
-//TODO:- ローカライズすること
-extension OtherUsersProfileViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
-   func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-       let str = NSLocalizedString("ステージ投稿なし", comment: "")
-       let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
-       return NSAttributedString(string: str, attributes: attrs)
-   }
-   
-   func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-       let str = NSLocalizedString("ステージが投稿されたら表示されます", comment: "")
-       let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
-       return NSAttributedString(string: str, attributes: attrs)
-   }
-
-   //スクロールできるようにする
-   func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
-      return true
-   }
 }

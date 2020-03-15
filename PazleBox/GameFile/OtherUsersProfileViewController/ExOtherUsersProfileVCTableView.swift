@@ -1,0 +1,121 @@
+//
+//  ExOtherUsersProfileVCTableView.swift
+//  PazleBox
+//
+//  Created by jun on 2020/03/15.
+//  Copyright © 2020 jun. All rights reserved.
+//
+
+import Foundation
+import UIKit
+import DZNEmptyDataSet
+
+
+extension OtherUsersProfileViewController {
+   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      return UsingStageDatas.count
+   }
+   
+   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      let cell = self.OtherUesrsProfileTableView.dequeueReusableCell(withIdentifier: "OtherUsersProfileCell", for: indexPath) as? OtherUsersProfileTableViewCell
+      
+      let ImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
+      if let data = ImageData {
+         let Image = UIImage(data: data as Data)
+         cell?.OtherUsersPostedStageImageView.image = Image
+      }
+      let StageTitle = UsingStageDatas[indexPath.item]["StageTitle"] as! String
+      let reviewNum = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat
+      let PlayCount = UsingStageDatas[indexPath.item]["PlayCount"] as! Int
+      let addDate = UsingStageDatas[indexPath.item]["addDate"] as! String
+      
+      cell?.OtherUsersPostReportButton.tag = indexPath.row
+      cell?.OtherUsersPostReportButton.addTarget(self, action: #selector(TapOtherUsersPostReportButton(_:)), for: .touchUpInside)
+      
+      cell?.OtherUsersNameLabel.text = self.userName
+      cell?.OtherUsersNameImageView.image = self.usersProfileImagfe
+      cell?.OtherUsersPostedStageTitleLabel.text = StageTitle
+      cell?.OtherUsersPostedStageRatedLabel.text = String(floor(Double(reviewNum) * 100) / 100) + " / 5"
+      cell?.OtherUsersPostedStagePlayCountLabel.text = String(PlayCount)
+      cell?.OtherUsersPostedStageDateLabel.text = addDate
+
+      return cell!
+   }
+   
+   //ヘッダーの高さを設定
+   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
+      return sectionHeaderHeight
+   }
+   
+   //ヘッダーに使うUIViewを返す
+   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
+      //xibファイルから読み込んでヘッダを生成
+      let HeaderView = OtherUsersProfileTableViewHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: sectionHeaderHeight))
+      let followButton = HeaderView.getFollowOrUnFollowButton()
+      followButton.addTarget(self, action: #selector(TapFollowOrUnFollowButton(_:)), for: .touchUpInside)
+      HeaderView.OtherUsersNameLabel.text = self.userName
+      HeaderView.OtherUsersProfileImageView.image = self.usersProfileImagfe
+      return HeaderView
+   }
+   
+   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      // セルの選択を解除する
+      tableView.deselectRow(at: indexPath, animated: true)
+      //InterNetTableVCのcellタップイベントと同様にして画面遷移すればいい。
+      let InterNetTableVCSB = UIStoryboard(name: "InterNetTableView", bundle: nil)
+      let InterNetCellTappedVC = InterNetTableVCSB.instantiateViewController(withIdentifier: "InterNetCellTappedVC") as! InterNetCellTappedViewController
+      
+      InterNetCellTappedVC.setPostUsersStageImage(stageImage: UIImage(named: "23p2Red")!)
+      InterNetCellTappedVC.setUsersImage(usersImage: UIImage(named: "hammer.png")!)
+      InterNetCellTappedVC.setUsersName(usersName: "Supar Boy")
+      
+      InterNetCellTappedVC.setPostUsersStageTitle(stageTitle: "Drop Card")
+      
+      
+      InterNetCellTappedVC.setPostUsersStageReview(stageReview: "1.92 / 5 ")
+      InterNetCellTappedVC.setPostUsersStagePlayCount(stagePlayCount: "542")
+      
+      self.navigationController?.pushViewController(InterNetCellTappedVC, animated: true)
+   }
+   
+   
+   //スクロールした際にtableviewのヘッダを動かす
+   func scrollViewDidScroll(_ scrollView: UIScrollView) {
+       /// sectionHeaderが上部に残らないようにする
+       let offsetY = scrollView.contentOffset.y
+       let safeAreaInset: CGFloat = scrollView.safeAreaInsets.top
+
+       let top: CGFloat
+       if offsetY > sectionHeaderHeight{
+           /// 一番上のheaderの最下部が画面外へ出ている状態
+           top = -(safeAreaInset + sectionHeaderHeight)
+       } else if offsetY < -safeAreaInset {
+           /// 初期状態からメニューを下に引っ張っている状態
+           top = 0
+       } else {
+           /// safeArea内を一番上のheaderが移動している状態
+           top = -(safeAreaInset + offsetY)
+       }
+       scrollView.contentInset = UIEdgeInsets(top: top, left: 0, bottom: 0, right: 0)
+   }
+}
+
+//TODO:- ローカライズすること
+extension OtherUsersProfileViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+   func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+       let str = NSLocalizedString("ステージ投稿なし", comment: "")
+       let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
+       return NSAttributedString(string: str, attributes: attrs)
+   }
+   
+   func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+       let str = NSLocalizedString("ステージが投稿されたら表示されます", comment: "")
+       let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
+       return NSAttributedString(string: str, attributes: attrs)
+   }
+
+   //スクロールできるようにする
+   func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+      return true
+   }
+}
