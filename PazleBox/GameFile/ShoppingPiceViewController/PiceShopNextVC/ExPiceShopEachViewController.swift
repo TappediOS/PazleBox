@@ -77,7 +77,7 @@ extension PiceShopEachViewController: UICollectionViewDelegateFlowLayout {
 
    // セルの行間の設定
    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-      return 15.0
+      return 18.0
    }
 
 

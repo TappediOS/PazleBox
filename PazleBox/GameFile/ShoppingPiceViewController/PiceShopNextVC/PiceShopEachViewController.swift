@@ -19,7 +19,7 @@ class PiceShopEachViewController: UIViewController {
    @IBOutlet weak var PiceCollectionView: UICollectionView!
    //こいつがCollecti on viewのレイアウトを決めている
    //上下左右にどれだけの感覚を開けるかを決める。
-   let sectionInsets = UIEdgeInsets(top: 4, left: 20, bottom: 15.0, right: 20)
+   let sectionInsets = UIEdgeInsets(top: 5, left: 20, bottom: 18, right: 20)
    //Cellを横に何個入れるか
    let itemsPerRow: CGFloat = 3
    //セル同士の間隔をどれくらいにするか
