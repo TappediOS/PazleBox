@@ -171,6 +171,74 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       }
    }
    
+   
+   //MARK:- リロード処理
+   private func ReLoadLatestStageDataFromDataBase() {
+      print("\n---- Latestデータの更新開始 ----")
+      db.collection("Stages")
+         .order(by: "addDate", descending: true)
+         .limit(to: MaxGetStageNumFormDataBase)
+         .getDocuments() { (querySnapshot, err) in
+            if let err = err {
+               print("データベースからのデータ取得エラー: \(err)")
+            } else {
+               print("Latestデータの取得成功")
+               self.LatestStageDatas.removeAll()
+               for document in querySnapshot!.documents {
+                  self.LatestStageDatas.append(self.GetRawData(document: document))
+               }
+               print("---- Latestデータの更新完了 ----\n")
+               self.UsingStageDatas = self.LatestStageDatas
+               self.WorldTableView.reloadData()
+            }
+            self.RefleshControl.endRefreshing()
+      }
+   }
+   
+   private func ReLoadPlayCountStageDataFromDataBase(){
+        print("\n---- PlayCountデータの更新開始 ----")
+        db.collection("Stages").whereField("PlayCount", isGreaterThanOrEqualTo: 0)
+           .order(by: "PlayCount", descending: true)
+           .limit(to: MaxGetStageNumFormDataBase)
+           .getDocuments() { (querySnapshot, err) in
+              if let err = err {
+                 print("データベースからのデータ取得エラー: \(err)")
+              } else {
+                 print("PlayCountデータの取得完了")
+                 self.PlayCountStageDatas.removeAll()
+                 for document in querySnapshot!.documents {
+                    self.PlayCountStageDatas.append(self.GetRawData(document: document))
+                 }
+                 print("---- PlayCountデータの更新完了 ----\n")
+                 self.UsingStageDatas = self.PlayCountStageDatas
+                 self.WorldTableView.reloadData()
+              }
+              self.RefleshControl.endRefreshing()
+        }
+     }
+   
+   private func ReLoadRatedStageDataFromDataBase() {
+      print("\n---- Ratedデータの更新開始 ----")
+      db.collection("Stages").whereField("ReviewAve", isGreaterThanOrEqualTo: 0)
+         .order(by: "ReviewAve", descending: true)
+         .limit(to: MaxGetStageNumFormDataBase)
+         .getDocuments() { (querySnapshot, err) in
+            if let err = err {
+               print("データベースからのデータ取得エラー: \(err)")
+            } else {
+               print("Ratedデータの取得成功")
+               self.RatedStageDatas.removeAll()
+               for document in querySnapshot!.documents {
+                  self.RatedStageDatas.append(self.GetRawData(document: document))
+               }
+               print("---- Ratedデータの更新完了 ----\n")
+               self.UsingStageDatas = self.RatedStageDatas
+               self.WorldTableView.reloadData()
+            }
+            self.RefleshControl.endRefreshing()
+      }
+   }
+   
    private func ShowErrGetStageAlertView() {
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
       let ComleateView = SCLAlertView(appearance: Appearanse)
@@ -216,7 +284,26 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       
       
    @objc func ReloadDataFromFireStore(sender: UIRefreshControl) {
-      RefleshControl.endRefreshing()
+      guard let indexNum = self.segmentedControl?.selectedSegmentIndex else {
+         print("リロードする前に，セグメントのインデックスがnilやから中止する。")
+         RefleshControl.endRefreshing()
+         return
+      }
+      
+      switch indexNum{
+      case 0:
+         print("Latestの更新をします。")
+         ReLoadLatestStageDataFromDataBase()
+      case 1:
+         print("PlayCountの更新をします。")
+         ReLoadPlayCountStageDataFromDataBase()
+         print("Ratingの更新をします。")
+      case 2:
+         ReLoadRatedStageDataFromDataBase()
+      default:
+         print("nilじゃなかったら何？")
+         RefleshControl.endRefreshing()
+      }
    }
       
    @objc func TapUserImageButtonWorldTableView(_ sender: UIButton) {
