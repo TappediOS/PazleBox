@@ -19,16 +19,16 @@ class PiceShopCollectionViewCell: UICollectionViewCell {
    }
    
    private func SetUpCell() {
-      self.layer.borderWidth = 0.65
+      self.layer.borderWidth = 0.7
       self.layer.borderColor = UIColor.black.cgColor
-      self.layer.cornerRadius = 9
+      self.layer.cornerRadius = 10
       self.backgroundColor = .secondarySystemBackground
    }
    
    private func SetUpPiceShopPiceImageView() {
-      self.PiceShopPiceImageView.layer.borderWidth = 0.45
+      self.PiceShopPiceImageView.layer.borderWidth = 0.42
       self.PiceShopPiceImageView.layer.borderColor = UIColor.black.cgColor
-      self.PiceShopPiceImageView.layer.cornerRadius = 4
+      self.PiceShopPiceImageView.layer.cornerRadius = 4.5
    }
    
    public func setPiceShopPiceImageView(image: UIImage) {
