@@ -14,14 +14,21 @@ class PiceShopCollectionViewCell: UICollectionViewCell {
    
    override func awakeFromNib() {
       super.awakeFromNib()
+      SetUpCell()
       SetUpPiceShopPiceImageView()
    }
    
+   private func SetUpCell() {
+      self.layer.borderWidth = 0.65
+      self.layer.borderColor = UIColor.black.cgColor
+      self.layer.cornerRadius = 9
+      self.backgroundColor = .secondarySystemBackground
+   }
+   
    private func SetUpPiceShopPiceImageView() {
-      //self.layer.borderWidth = 0.5
-      //self.layer.borderColor = UIColor.systemBackground.cgColor
-      //self.layer.cornerRadius = 8
-      //self.backgroundColor = .secondarySystemBackground
+      self.PiceShopPiceImageView.layer.borderWidth = 0.45
+      self.PiceShopPiceImageView.layer.borderColor = UIColor.black.cgColor
+      self.PiceShopPiceImageView.layer.cornerRadius = 4
    }
    
    public func setPiceShopPiceImageView(image: UIImage) {

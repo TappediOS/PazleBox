@@ -56,11 +56,11 @@ extension PiceShopEachViewController: UICollectionViewDelegateFlowLayout {
       case "22", "33":
          hightPerItem *= 1
       case "23":
-         hightPerItem *= 1.12
+         hightPerItem *= 1.13
       case "32":
-         hightPerItem *= 0.8
+         hightPerItem *= 0.85
       case "43":
-         hightPerItem *= 0.9
+         hightPerItem *= 0.86
       case "42":
          hightPerItem *= 2 / 4
       default:
