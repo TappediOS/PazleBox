@@ -154,18 +154,15 @@ class PiceShopEachViewController: UIViewController {
    
    @IBAction func TapParchasePiceSetButton(_ sender: Any) {
       //すでに押されてたら帰る
-      if LockPurchasButton == true {
-         return
-      }
+      if LockPurchasButton == true { return }
       print("購入ボタンが押されました")
       LockPurchasButton = true
       Analytics.logEvent("TapParchasPiceSet\(PiceShopTag)", parameters: nil)
       purchase(PRODUCT_ID: Using_PICE_SET_ID)
    }
    
-
-   
    @IBAction func TapRestoreButton(_ sender: Any) {
+      print("リストアボタンが押されました")
       SwiftyStoreKit.restorePurchases(atomically: true) { results in
          if results.restoreFailedPurchases.count > 0 {
             print("リストアに失敗 \(results.restoreFailedPurchases)")

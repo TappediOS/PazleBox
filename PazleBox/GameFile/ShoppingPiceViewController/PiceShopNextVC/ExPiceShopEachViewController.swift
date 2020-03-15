@@ -11,13 +11,13 @@ import UIKit
 
 extension PiceShopEachViewController: UICollectionViewDelegate {
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-     print("Cellタップされた Cell: \(indexPath.item)")
+     //print("Cellタップされた Cell: \(indexPath.item)")
    }
 }
 
 extension PiceShopEachViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      print("ステージ数の合計: \(self.UsingPiceSet.count)")
+      print("購入するピースの合計数: \(self.UsingPiceSet.count)\n")
       return self.UsingPiceSet.count
     }
 
@@ -32,7 +32,6 @@ extension PiceShopEachViewController: UICollectionViewDataSource {
       }
 
       //cell.hero.modifiers = [.fade, .scale(0.5)]
-
       return cell
     }
 }
@@ -45,12 +44,8 @@ extension PiceShopEachViewController: UICollectionViewDelegateFlowLayout {
       let paddingSpace = sectionInsets.right + sectionInsets.left + cellPerInset * (itemsPerRow - 1)
       let availableWidth = view.frame.width - paddingSpace
       let widthPerItem = availableWidth / itemsPerRow
-      
-      let piceName = UsingPiceSet[indexPath.row].pregReplace(pattern: "p[0-9]+(Green|Blue|Red)", with: "")
-      
       var hightPerItem = widthPerItem
-      
-      print("now: \(widthPerItem)  low: \(cellWide)")
+      let piceName = UsingPiceSet[indexPath.row].pregReplace(pattern: "p[0-9]+(Green|Blue|Red)", with: "")
       
       switch piceName {
       case "22", "33":
@@ -66,7 +61,6 @@ extension PiceShopEachViewController: UICollectionViewDelegateFlowLayout {
       default:
          print("これ忘れているよ")
       }
-      
       
       return CGSize(width: widthPerItem, height: hightPerItem)
    }
