@@ -149,14 +149,18 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
             //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
             //Segmentタップした時に別の関数でCollecti onVie をリロードする。
             self.UsingStageDatas = self.LatestStageDatas
-            print("Delegate設定します。")
-               
-            //読み取りが終わってからデリゲードを入れる必要がある
-            self.WorldTableView.delegate = self
-            self.WorldTableView.dataSource = self
             self.WorldTableView.reloadData()
-             //ローディングアニメーションの停止
-            self.StopLoadingAnimation()
+         
+            //リフレッシュかそうでないかで処理を変える
+            if self.RefleshControl.isRefreshing == false {
+               self.StopLoadingAnimation()
+               print("Delegate設定します。")
+               //読み取りが終わってからデリゲードを入れる必要がある
+               self.WorldTableView.delegate = self
+               self.WorldTableView.dataSource = self
+            } else {
+               self.RefleshControl.endRefreshing()
+            }
          }
       }
    }
@@ -164,7 +168,11 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
    //MARK:- 最新，回数，評価それぞれのデータを取得する。
    private func GetLatestStageDataFromDataBase() {
       print("\n---- Latestデータの取得開始 ----")
-      self.StartLoadingAnimation() //ローディングアニメーションの再生。
+      self.LatestStageDatas.removeAll()
+      self.DownLoadProfileCounter = 0
+      if self.RefleshControl.isRefreshing == false {
+         self.StartLoadingAnimation() //ローディングアニメーションの再生。
+      }
       db.collection("Stages")
          .order(by: "addDate", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
@@ -188,6 +196,8 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
    
    private func GetPlayCountStageDataFromDataBase(){
       print("\n---- PlayCountデータの取得開始 ----")
+      self.LatestStageDatas.removeAll()
+      self.DownLoadProfileCounter = 0
       db.collection("Stages").whereField("PlayCount", isGreaterThanOrEqualTo: 0)
          .order(by: "PlayCount", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
@@ -210,6 +220,8 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
    
    private func GetRatedStageDataFromDataBase() {
       print("\n---- Ratedデータの取得開始 ----")
+      self.LatestStageDatas.removeAll()
+      self.DownLoadProfileCounter = 0
       db.collection("Stages").whereField("ReviewAve", isGreaterThanOrEqualTo: 0)
          .order(by: "ReviewAve", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
@@ -355,7 +367,7 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       switch indexNum{
       case 0:
          print("Latestの更新をします。")
-         ReLoadLatestStageDataFromDataBase()
+         GetLatestStageDataFromDataBase()
       case 1:
          print("PlayCountの更新をします。")
          ReLoadPlayCountStageDataFromDataBase()
