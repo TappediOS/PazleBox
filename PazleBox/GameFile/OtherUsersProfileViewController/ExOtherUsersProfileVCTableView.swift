@@ -32,8 +32,8 @@ extension OtherUsersProfileViewController {
       cell?.OtherUsersPostReportButton.tag = indexPath.row
       cell?.OtherUsersPostReportButton.addTarget(self, action: #selector(TapOtherUsersPostReportButton(_:)), for: .touchUpInside)
       
-      cell?.OtherUsersNameLabel.text = self.userName
-      cell?.OtherUsersNameImageView.image = self.usersProfileImagfe
+      cell?.OtherUsersNameLabel.text = self.OtherUsersProfileName
+      cell?.OtherUsersNameImageView.image = self.OtherUsersProfileImage
       cell?.OtherUsersPostedStageTitleLabel.text = StageTitle
       cell?.OtherUsersPostedStageRatedLabel.text = String(floor(Double(reviewNum) * 100) / 100) + " / 5"
       cell?.OtherUsersPostedStagePlayCountLabel.text = String(PlayCount)
@@ -53,8 +53,8 @@ extension OtherUsersProfileViewController {
       let HeaderView = OtherUsersProfileTableViewHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: sectionHeaderHeight))
       let followButton = HeaderView.getFollowOrUnFollowButton()
       followButton.addTarget(self, action: #selector(TapFollowOrUnFollowButton(_:)), for: .touchUpInside)
-      HeaderView.OtherUsersNameLabel.text = self.userName
-      HeaderView.OtherUsersProfileImageView.image = self.usersProfileImagfe
+      HeaderView.OtherUsersNameLabel.text = self.OtherUsersProfileName
+      HeaderView.OtherUsersProfileImageView.image = self.OtherUsersProfileImage
       return HeaderView
    }
    
@@ -65,15 +65,33 @@ extension OtherUsersProfileViewController {
       let InterNetTableVCSB = UIStoryboard(name: "InterNetTableView", bundle: nil)
       let InterNetCellTappedVC = InterNetTableVCSB.instantiateViewController(withIdentifier: "InterNetCellTappedVC") as! InterNetCellTappedViewController
       
-      InterNetCellTappedVC.setPostUsersStageImage(stageImage: UIImage(named: "23p2Red")!)
-      InterNetCellTappedVC.setUsersImage(usersImage: UIImage(named: "hammer.png")!)
-      InterNetCellTappedVC.setUsersName(usersName: "Supar Boy")
+      let ImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
+      if let data = ImageData {
+         let Image = UIImage(data: data as Data)
+         InterNetCellTappedVC.setPostUsersStageImage(stageImage: Image!)
+      }
+      let StageTitle = UsingStageDatas[indexPath.item]["StageTitle"] as! String
+      let reviewNum = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat
+      let PlayCount = UsingStageDatas[indexPath.item]["PlayCount"] as! Int
       
-      InterNetCellTappedVC.setPostUsersStageTitle(stageTitle: "Drop Card")
+      InterNetCellTappedVC.setUsersImage(usersImage: self.OtherUsersProfileImage)
+      InterNetCellTappedVC.setUsersName(usersName: self.OtherUsersProfileName)
+      
+      InterNetCellTappedVC.setPostUsersStageTitle(stageTitle: StageTitle)
       
       
-      InterNetCellTappedVC.setPostUsersStageReview(stageReview: "1.92 / 5 ")
-      InterNetCellTappedVC.setPostUsersStagePlayCount(stagePlayCount: "542")
+      InterNetCellTappedVC.setPostUsersStageReview(stageReview: String(floor(Double(reviewNum) * 100) / 100) + " / 5")
+      InterNetCellTappedVC.setPostUsersStagePlayCount(stagePlayCount: String(PlayCount))
+      
+      //ステージデータをセットする
+      let PiceArray = GetPiceArrayFromDataBase(StageDic: UsingStageDatas[indexPath.item])
+      let StageArray = GetStageArrayFromDataBase(StageDic: UsingStageDatas[indexPath.item])
+      let PlayStageData = GetPlayStageInfoFromDataBase(StageDic: UsingStageDatas[indexPath.item])
+           
+           
+      InterNetCellTappedVC.setPiceArray(PiceArray)
+      InterNetCellTappedVC.setStageArray(StageArray)
+      InterNetCellTappedVC.setPlayStageData(PlayStageData)
       
       self.navigationController?.pushViewController(InterNetCellTappedVC, animated: true)
    }

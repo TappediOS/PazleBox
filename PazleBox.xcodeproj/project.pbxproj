@@ -258,6 +258,8 @@
 		BF552F3E226DDF4D00756E16 /* H50.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF552F3D226DDF4D00756E16 /* H50.swift */; };
 		BF5BF8C9241DEC2500B0C096 /* ExOtherUsersProfileVCGetRawData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BF8C8241DEC2500B0C096 /* ExOtherUsersProfileVCGetRawData.swift */; };
 		BF5BF8CB241DEFF200B0C096 /* ExOtherUsersProfileVCTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BF8CA241DEFF200B0C096 /* ExOtherUsersProfileVCTableView.swift */; };
+		BF5BF8CD241DF4D100B0C096 /* ExInterNetTableViewGetRawData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BF8CC241DF4D100B0C096 /* ExInterNetTableViewGetRawData.swift */; };
+		BF5BF8CF241DF55A00B0C096 /* ExWorldTableViewControllerGetRawData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BF8CE241DF55A00B0C096 /* ExWorldTableViewControllerGetRawData.swift */; };
 		BF60AC51224C8F1100D441D6 /* RePutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60AC50224C8F1100D441D6 /* RePutButton.swift */; };
 		BF60AC53224C952E00D441D6 /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60AC52224C952E00D441D6 /* Hint.swift */; };
 		BF60AC55224C981A00D441D6 /* Pouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60AC54224C981A00D441D6 /* Pouse.swift */; };
@@ -1116,6 +1118,8 @@
 		BF552F3D226DDF4D00756E16 /* H50.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H50.swift; sourceTree = "<group>"; };
 		BF5BF8C8241DEC2500B0C096 /* ExOtherUsersProfileVCGetRawData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExOtherUsersProfileVCGetRawData.swift; sourceTree = "<group>"; };
 		BF5BF8CA241DEFF200B0C096 /* ExOtherUsersProfileVCTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExOtherUsersProfileVCTableView.swift; sourceTree = "<group>"; };
+		BF5BF8CC241DF4D100B0C096 /* ExInterNetTableViewGetRawData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExInterNetTableViewGetRawData.swift; sourceTree = "<group>"; };
+		BF5BF8CE241DF55A00B0C096 /* ExWorldTableViewControllerGetRawData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExWorldTableViewControllerGetRawData.swift; sourceTree = "<group>"; };
 		BF60AC50224C8F1100D441D6 /* RePutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePutButton.swift; sourceTree = "<group>"; };
 		BF60AC52224C952E00D441D6 /* Hint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint.swift; sourceTree = "<group>"; };
 		BF60AC54224C981A00D441D6 /* Pouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pouse.swift; sourceTree = "<group>"; };
@@ -2406,6 +2410,7 @@
 				BF77E90A23FE6C2200E5EC91 /* InterNetTableView.storyboard */,
 				BF77E90C23FE743200E5EC91 /* InterNetTableViewController.swift */,
 				BF7748CA24026A0200AA5E9C /* ExInterNetTableViewController.swift */,
+				BF5BF8CC241DF4D100B0C096 /* ExInterNetTableViewGetRawData.swift */,
 				BF77E90E23FE760600E5EC91 /* InterNetTableViewCell.swift */,
 				BF77E91023FF9FDF00E5EC91 /* InterNetCellTappedViewController.swift */,
 				BF77E9122400C59C00E5EC91 /* UsersCommentTableViewCell.swift */,
@@ -2627,6 +2632,7 @@
 				BFBDA420240B918000A6AA64 /* WorldTableViewControllerSB.storyboard */,
 				BFBDA422240B948400A6AA64 /* WorldTableViewController.swift */,
 				BFBDA424240B959E00A6AA64 /* ExWorldTableViewController.swift */,
+				BF5BF8CE241DF55A00B0C096 /* ExWorldTableViewControllerGetRawData.swift */,
 				BFBDA426240B969E00A6AA64 /* ExWorldVCSegment.swift */,
 				BFBDA428240B9A4E00A6AA64 /* WorldTableViewCell.swift */,
 			);
@@ -4102,6 +4108,7 @@
 				BF94BDDE2352FC33001ACD11 /* ExSellectStageVCCollection.swift in Sources */,
 				BFBDA429240B9A4E00A6AA64 /* WorldTableViewCell.swift in Sources */,
 				BF552F38226DDF2D00756E16 /* H47.swift in Sources */,
+				BF5BF8CD241DF4D100B0C096 /* ExInterNetTableViewGetRawData.swift in Sources */,
 				BF332FEA2249280A009B3042 /* H10.swift in Sources */,
 				BF552ECE226DDDAC00756E16 /* N25.swift in Sources */,
 				BFF889A3229F830C0056A839 /* FirebasePerformanceManager.swift in Sources */,
@@ -4261,6 +4268,7 @@
 				BF552EBA226DDD6100756E16 /* E44.swift in Sources */,
 				BF4323C722D35822008DF038 /* CreateStageViewController.swift in Sources */,
 				BF552F36226DDF1C00756E16 /* H46.swift in Sources */,
+				BF5BF8CF241DF55A00B0C096 /* ExWorldTableViewControllerGetRawData.swift in Sources */,
 				BF1A84D2241A0EA4008FEDCB /* PiceShopEachViewController.swift in Sources */,
 				BF552EC4226DDD7B00756E16 /* E49.swift in Sources */,
 				BFF889A7229FC86A0056A839 /* ButtonColorManager.swift in Sources */,

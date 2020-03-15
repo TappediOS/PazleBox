@@ -44,8 +44,8 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
    let GameSound = GameSounds()
    var LoadActivityView: NVActivityIndicatorView?
    
-   var userName: String = ""
-   var usersProfileImagfe = UIImage()
+   var OtherUsersProfileName: String = ""
+   var OtherUsersProfileImage = UIImage()
       
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -173,7 +173,8 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
    
    private func SetUsersName(document: DocumentSnapshot) {
       if let userName = document.data()?["name"] as? String {
-         SetUpNavigationController(name: userName)
+         self.OtherUsersProfileName = userName
+         SetUpNavigationController(name: self.OtherUsersProfileName)
       }
    }
    private func GetUsersPfofileImageURL(document: DocumentSnapshot) {
@@ -190,11 +191,11 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
          if let error = error {
             print("プロ画取得エラー")
             print(error.localizedDescription)
-            self.usersProfileImagfe = UIImage(named: "NoProfileImage.png")!
+            self.OtherUsersProfileImage = UIImage(named: "NoProfileImage.png")!
          } else {
             // Data for "images/island.jpg" is returned
             print("プロ画取得成功!")
-            self.usersProfileImagfe = UIImage(data: data!)!
+            self.OtherUsersProfileImage = UIImage(data: data!)!
             self.Play3DtouchSuccess()
          }
          
