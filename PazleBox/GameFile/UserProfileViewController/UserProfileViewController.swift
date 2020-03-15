@@ -20,7 +20,7 @@ import NVActivityIndicatorView
 import DZNEmptyDataSet
 import FirebaseStorage
 
-class UserProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class UserProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
    
    @IBOutlet weak var UserProfileTableView: UITableView!
    
@@ -58,6 +58,11 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
       SetUpFireStoreSetting()
       //自分の取得する
       GetMyStageDataFromDataBase()
+   }
+   
+   override func viewWillDisappear(_ animated: Bool) {
+       //スワイプで戻る処理を無効にする
+       self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
    }
    
    override func viewDidAppear(_ animated: Bool) {
@@ -103,6 +108,9 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
       let EditProfileItem = UIBarButtonItem(title: EditProfile, style: .plain, target: self, action: #selector(TapEditProfileButton(sender:)))
       EditProfileItem.tintColor = .black
       self.navigationItem.setRightBarButton(EditProfileItem, animated: true)
+      
+      // 左端スワイプで戻るために必要
+      self.navigationController?.interactivePopGestureRecognizer?.delegate = self
       
       //TODO:- ローカライズすること
       self.navigationItem.title = NSLocalizedString("My Page", comment: "")
