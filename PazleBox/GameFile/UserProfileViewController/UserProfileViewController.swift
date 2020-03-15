@@ -196,7 +196,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
 
    //MARK:- 自分のステージデータを取得する。
    private func GetMyStageDataFromDataBase() {
-      print("自分のデータの取得開始")
+      print("自分のステージデータの取得開始")
       self.StartLoadingAnimation() //ローディングアニメーションの再生。
       let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
       print("UID = \(uid)")
@@ -216,15 +216,9 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
                   self.UsingStageDatas.append(self.GetRawData(document: document))
                }
             }
-            print("myデータの取得完了")
-            //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
-            //Segmentタップした時に別の関数でCollecti onVie をリロードする。
-            print("Delegate設定します。")
-            
+            print("自分のステージデータの取得完了")
+            print("続いて，自分のユーザ情報の取得開始")
             self.GetUsersInfomationFromFireStore()
-            
-            
-            
       }
    }
    
@@ -243,7 +237,8 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             
          } else {
             print("Document does not exist")
-            
+            self.ShowErrGetStageAlertView()
+            self.StopLoadingAnimation()
          }
          print("ユーザネームとプレイ回数のデータの取得完了")
       }

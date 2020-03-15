@@ -8,7 +8,17 @@
 
 import Foundation
 import UIKit
+import ChameleonFramework
+import RealmSwift
+import TapticEngine
+import FlatUIKit
+import Hero
+import Firebase
+import FirebaseFirestore
+import SCLAlertView
+import NVActivityIndicatorView
 import DZNEmptyDataSet
+import FirebaseStorage
 
 class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
@@ -16,13 +26,37 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
    private let sectionHeaderHeight: CGFloat = 200
       
    var RefleshControl = UIRefreshControl()
-      
+     
+   var OtherUsersUID = ""
+   
+   //こいつにTableVeiwで表示するやつを入れる。
+   var UsingStageDatas: [([String: Any])] = Array()
+   
+   var PiceArray: [PiceInfo] = Array()
+   var StageArray: [[Contents]] = Array()
+   var PlayStageData = PlayStageRefInfo()
+   
+   //Firestoreからどれだけとってくるかのやつ。
+   let MaxGetStageNumFormDataBase = 21
+   var db: Firestore!
+   
+   let GameSound = GameSounds()
+   var LoadActivityView: NVActivityIndicatorView?
+   
+   var userName: String = ""
+   var usersProfileImagfe = UIImage()
       
    override func viewDidLoad() {
       super.viewDidLoad()
-      
-      SetUpNavigationController()
+      ShowUsersInfo()
+      SetUpNavigationController(name: "")
+      SetUpUserProfileTableView()
       SetUpRefleshControl()
+      
+      InitLoadActivityView()
+      SetUpFireStoreSetting()
+      //その人の取得する
+      GetOtherUsersStageDataFromDataBase()
          
       self.OtherUesrsProfileTableView.rowHeight = 160
       self.OtherUesrsProfileTableView.delegate = self
@@ -32,9 +66,154 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
       self.OtherUesrsProfileTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
    }
    
-   func SetUpNavigationController() {
-      //TODO:- UserNameを入れる
-      self.navigationItem.title = NSLocalizedString("Joe", comment: "")
+   public func fetchOtherUsersUIDbeforPushVC(uid: String) {
+      OtherUsersUID = uid
+   }
+   
+   func ShowUsersInfo() {
+      print("\n----以下のUserのプロフィールVCを表示します----\n")
+      print("UID: \(self.OtherUsersUID)")
+      print("---------------------------------\n\n")
+   }
+   
+   func SetUpNavigationController(name: String) {
+      self.navigationItem.title = name
+   }
+   
+   func SetUpUserProfileTableView() {
+      OtherUesrsProfileTableView.rowHeight = 160
+   }
+   
+   private func InitLoadActivityView() {
+      let spalete: CGFloat = 5 //横幅 viewWide / X　になる。
+      let Viewsize = self.view.frame.width / spalete
+      let StartX = self.view.frame.width / 2 - (Viewsize / 2)
+      let StartY = self.view.frame.height / 2 - (Viewsize / 2)
+      let Rect = CGRect(x: StartX, y: StartY, width: Viewsize, height: Viewsize)
+      LoadActivityView = NVActivityIndicatorView(frame: Rect, type: .ballSpinFadeLoader, color: UIColor.flatMint(), padding: 0)
+      self.view.addSubview(LoadActivityView!)
+   }
+   
+   private func SetUpFireStoreSetting() {
+      let settings = FirestoreSettings()
+      Firestore.firestore().settings = settings
+      db = Firestore.firestore()
+   }
+   
+   //MARK:- ローディングアニメーション再生
+   private func StartLoadingAnimation() {
+      print("ローディングアニメーション再生")
+      self.LoadActivityView?.startAnimating()
+      return
+   }
+   
+   public func StopLoadingAnimation() {
+      print("ローディングアニメーション停止")
+      if LoadActivityView?.isAnimating == true {
+         self.LoadActivityView?.stopAnimating()
+      }
+   }
+   
+   private func ShowErrGetStageAlertView() {
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      ComleateView.addButton("OK"){
+         ComleateView.dismiss(animated: true)
+         self.Play3DtouchHeavy()
+         self.GameSound.PlaySoundsTapButton()
+      }
+      let Error = NSLocalizedString("err", comment: "")
+      let errGetDoc = NSLocalizedString("errGetDoc", comment: "")
+      let checkNet = NSLocalizedString("checkNet", comment: "")
+      ComleateView.showError(Error, subTitle: errGetDoc + "\n" + checkNet)
+   }
+   
+   //MARK:- 他のステージデータを取得する。
+   private func GetOtherUsersStageDataFromDataBase() {
+      print("他のユーザのステージデータの取得開始")
+      self.StartLoadingAnimation() //ローディングアニメーションの再生。
+      let uid = self.OtherUsersUID
+      print("UID = \(uid)")
+      db.collection("Stages")
+         .whereField("addUser", isEqualTo: uid)
+         .order(by: "addDate", descending: true)
+         .limit(to: MaxGetStageNumFormDataBase)
+         .getDocuments() { (querySnapshot, err) in
+            if let err = err {
+               print("データベースからのデータ取得エラー: \(err)")
+               self.Play3DtouchError()
+               self.ShowErrGetStageAlertView()
+            } else {
+               
+               for document in querySnapshot!.documents {
+                  //GetRawData()はEXファイルに存在している。
+                  self.UsingStageDatas.append(self.GetRawData(document: document))
+               }
+            }
+            print("myデータの取得完了")
+            print("続いて，他のユーザのユーザ情報を取得します。")
+            self.GetOtherUsersInfomationFromFireStore()
+      }
+   }
+   
+   private func GetOtherUsersInfomationFromFireStore() {
+      db.collection("users").document(self.OtherUsersUID).getDocument { (document, err) in
+         if let err = err {
+            print("データベースからのデータ取得エラー: \(err)")
+            self.Play3DtouchError()
+         }
+         
+         if let document = document, document.exists {
+            //ドキュメントが存在していたらセットアップをする
+            self.SetUsersName(document: document)
+            self.GetUsersPfofileImageURL(document: document)
+            
+         } else {
+            print("Document does not exist")
+            self.ShowErrGetStageAlertView()
+            self.StopLoadingAnimation()
+         }
+         print("ユーザネームとプレイ回数のデータの取得完了")
+      }
+   }
+   
+   private func SetUsersName(document: DocumentSnapshot) {
+      if let userName = document.data()?["name"] as? String {
+         SetUpNavigationController(name: userName)
+      }
+   }
+   private func GetUsersPfofileImageURL(document: DocumentSnapshot) {
+      if let downLoadUrlAsString = document.data()?["downloadProfileURL"] as? String {
+         print("データベースからえたプロ画のURL = \(downLoadUrlAsString)")
+         self.DownloadProfileFromStorege(downLoadURL: downLoadUrlAsString)
+      }
+   }
+   
+   private func DownloadProfileFromStorege(downLoadURL: String) {
+      let httpsReference = Storage.storage().reference(forURL: downLoadURL)
+      
+      httpsReference.getData(maxSize: 1 * 512 * 512) { data, error in
+         if let error = error {
+            print("プロ画取得エラー")
+            print(error.localizedDescription)
+            self.usersProfileImagfe = UIImage(named: "NoProfileImage.png")!
+         } else {
+            // Data for "images/island.jpg" is returned
+            self.usersProfileImagfe = UIImage(data: data!)!
+            self.Play3DtouchSuccess()
+         }
+         
+         //読み取りが終わってからデリゲードを入れる必要がある
+         self.OtherUesrsProfileTableView.delegate = self
+         self.OtherUesrsProfileTableView.dataSource = self
+         self.OtherUesrsProfileTableView.emptyDataSetSource = self
+         self.OtherUesrsProfileTableView.emptyDataSetDelegate = self
+         self.OtherUesrsProfileTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
+         self.OtherUesrsProfileTableView.reloadData()
+         
+         //ローディングアニメーションの停止。
+         self.StopLoadingAnimation()
+      }
    }
       
    func SetUpRefleshControl() {
@@ -127,6 +306,12 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
       
       self.present(BlockAlertSheet, animated: true, completion: nil)
    }
+   
+   func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
+   func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
+   func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
+   func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
+   func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
 }
 
 

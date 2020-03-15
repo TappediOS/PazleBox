@@ -44,6 +44,9 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    
    private var RefleshControl = UIRefreshControl()
    
+   //こいつにCollectionVeiwで表示するやつを入れる。
+   var UsingCommentedStageDatas: [([String: Any])] = Array()
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -297,7 +300,6 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    
    //コメントしたユーザの画像がタップされたときの処理
    @objc func TapCommentedUsersImageViewButtonInterNetTableView(_ sender: UIButton) {
-      
       guard self.isLoadingGameVC == false else {
          print("コメントしたユーザの画像タップされたけど，ローディング中やから何もしない.")
          return
@@ -306,10 +308,29 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       let rowNum = sender.tag
       print("\(rowNum)番目のcellがタップされました")
       
+      //TODO: コメントをとったら，ユーザが自分かどうかを判定して画面遷移すること
+//      //本人をタップしてたら，
+//      if TapedCommentedUserIsSelf(rowNum: rowNum) == true {
+//         print("本人をタップしたので，UesrsProfileVCを表示します")
+//         let UsersProfileSB = UIStoryboard(name: "UserProfileViewControllerSB", bundle: nil)
+//         let UsersProfileVC = UsersProfileSB.instantiateViewController(withIdentifier: "UserProfileVC") as! UserProfileViewController
+//         self.navigationController?.pushViewController(UsersProfileVC, animated: true)
+//         return
+//      }
+      
       let OtherUsersProfileSB = UIStoryboard(name: "OtherUsersProfileViewControllerSB", bundle: nil)
       let OtherUsersProfileVC = OtherUsersProfileSB.instantiateViewController(withIdentifier: "OtherUsersProfileVC") as! OtherUsersProfileViewController
             
       self.navigationController?.pushViewController(OtherUsersProfileVC, animated: true)
+   }
+   
+   //タップした画像のユーザが本人かどうかを判定する
+   private func TapedCommentedUserIsSelf(rowNum: Int) -> Bool {
+      let TapedUsersUID = UsingCommentedStageDatas[rowNum]["addUser"] as! String
+      let UsersUID = UserDefaults.standard.string(forKey: "UID")
+      
+      if TapedUsersUID == UsersUID { return true}
+      return false
    }
    
 }
