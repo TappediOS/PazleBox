@@ -188,7 +188,7 @@ class PiceShopEachViewController: UIViewController {
                   self.CompleateRestore()
                } else {
                   print("何かの課金をしているけど\(proID)は課金していません")
-                  print("もしくはこのタイミングではリストアしません")
+                  print("もしくはこのタイミングではリストアしません\n")
                   self.Play3DtouchError()
                }
             }
