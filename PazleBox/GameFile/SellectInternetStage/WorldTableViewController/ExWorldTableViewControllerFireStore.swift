@@ -132,6 +132,7 @@ extension WorldTableViewController {
       }
    }
    
+   
    func GetRatedStageDataFromDataBase() {
       print("\n---- Ratedデータの取得開始 ----")
       self.LatestStageDatas.removeAll()
