@@ -551,6 +551,8 @@
 		BFDD3EED227D7E5200B9E6B0 /* BadgeScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDD3EEC227D7E5200B9E6B0 /* BadgeScale.swift */; };
 		BFE0AB18235AB82E003B2C58 /* CreateHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0AB17235AB82E003B2C58 /* CreateHomeViewController.swift */; };
 		BFE0AB1A235AC04B003B2C58 /* ExCreateStageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0AB19235AC04B003B2C58 /* ExCreateStageVC.swift */; };
+		BFE1D3152420B9F700794349 /* SomeUsersListViewControllerSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFE1D3142420B9F700794349 /* SomeUsersListViewControllerSB.storyboard */; };
+		BFE1D3172420B9FF00794349 /* SomeUsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1D3162420B9FF00794349 /* SomeUsersListViewController.swift */; };
 		BFF6D5CE227D9323000253A2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D5CD227D9323000253A2 /* Settings.bundle */; };
 		BFF6D5D4227ED73A000253A2 /* 33p23Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D5D1227ED73A000253A2 /* 33p23Green.png */; };
 		BFF6D5D5227ED73A000253A2 /* 33p23Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D5D2227ED73A000253A2 /* 33p23Red.png */; };
@@ -1418,6 +1420,8 @@
 		BFDD3EEC227D7E5200B9E6B0 /* BadgeScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeScale.swift; sourceTree = "<group>"; };
 		BFE0AB17235AB82E003B2C58 /* CreateHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHomeViewController.swift; sourceTree = "<group>"; };
 		BFE0AB19235AC04B003B2C58 /* ExCreateStageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCreateStageVC.swift; sourceTree = "<group>"; };
+		BFE1D3142420B9F700794349 /* SomeUsersListViewControllerSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SomeUsersListViewControllerSB.storyboard; sourceTree = "<group>"; };
+		BFE1D3162420B9FF00794349 /* SomeUsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeUsersListViewController.swift; sourceTree = "<group>"; };
 		BFF6D5CD227D9323000253A2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		BFF6D5D1227ED73A000253A2 /* 33p23Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 33p23Green.png; sourceTree = "<group>"; };
 		BFF6D5D2227ED73A000253A2 /* 33p23Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 33p23Red.png; sourceTree = "<group>"; };
@@ -1854,6 +1858,7 @@
 				BF1648F022C0C29E000CD1AB /* BackGroundImage */,
 				BF3C975D23F92E390004DF88 /* PuzzleMakerTapToPlayVC */,
 				BFBDA5062416050800A6AA64 /* LoginVC */,
+				BFE1D3132420B9B900794349 /* SomeUsersListViewController */,
 				BFBDA50B24163BBA00A6AA64 /* UsersSetUpViewController */,
 				BF48931C23B9BE9F0001FB04 /* TabBarViewController */,
 				BF7748CC24038E1200AA5E9C /* UserProfileViewController */,
@@ -3090,6 +3095,15 @@
 			path = CreateHomeView;
 			sourceTree = "<group>";
 		};
+		BFE1D3132420B9B900794349 /* SomeUsersListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BFE1D3142420B9F700794349 /* SomeUsersListViewControllerSB.storyboard */,
+				BFE1D3162420B9FF00794349 /* SomeUsersListViewController.swift */,
+			);
+			path = SomeUsersListViewController;
+			sourceTree = "<group>";
+		};
 		BFF6D799229527AE000253A2 /* GameClearView */ = {
 			isa = PBXGroup;
 			children = (
@@ -3514,6 +3528,7 @@
 				BFF6D65C22853EC7000253A2 /* 33p40Blue.png in Resources */,
 				BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */,
 				BFCE263F224A58A60099A775 /* 32p7Red.png in Resources */,
+				BFE1D3152420B9F700794349 /* SomeUsersListViewControllerSB.storyboard in Resources */,
 				BFCE25B1224A466B0099A775 /* 33p5Green.png in Resources */,
 				BFF6D65D22853EC7000253A2 /* 33p40Green.png in Resources */,
 				BF7CD93C2240B89800F8302B /* 22p3Red.png in Resources */,
@@ -4193,6 +4208,7 @@
 				BF552EFE226DDE6100756E16 /* N48.swift in Sources */,
 				BFBDA433240DE34A00A6AA64 /* EditProfileViewController.swift in Sources */,
 				BF1BD1EE2279C4120047496B /* HardStageClearInfomation.swift in Sources */,
+				BFE1D3172420B9FF00794349 /* SomeUsersListViewController.swift in Sources */,
 				BF7CE793226083920040352D /* GoHomeNode.swift in Sources */,
 				BF552F00226DDE6C00756E16 /* N49.swift in Sources */,
 				BF332FC4224927AE009B3042 /* N11.swift in Sources */,
