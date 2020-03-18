@@ -16,7 +16,7 @@ import ViewAnimator
 import Hero
 import NVActivityIndicatorView
 
-class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate {
+class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate, UITextFieldDelegate {
    
    var StarView1 = AnimationView(name: "StarStar")
    var StarView2 = AnimationView(name: "StarStar")
@@ -82,6 +82,8 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate {
    
    var CommentTextView = UITextView()
    var isRegisterComment = false
+   //テキストフィールドに書き込む最大の文字数。
+   let maxTextfieldLength = 128
    
    override init(frame: CGRect) {
       super.init(frame: frame)
@@ -144,6 +146,11 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate {
    
    private func InitNotificationCenter() {
       NotificationCenter.default.addObserver(self, selector: #selector(CompleateBuyNoAdsInClearView(notification:)), name: .BuyNoAdsInClearView, object: nil)
+   }
+   
+   //オブザーバの片付けをする。
+   deinit {
+      NotificationCenter.default.removeObserver(self)
    }
    
    //MARK:- バックグラウンドimage を設定
@@ -211,6 +218,17 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate {
       self.bringSubviewToFront(CommentTextView)
    }
    
+   //MARK:- テキストViewの処理を記載。
+   //制限を超えた場合は，表示されないようにする。
+   @objc func CommentViewDidChange(notification: NSNotification) {
+      let textView = notification.object as! UITextView
+      if let text = textView.text {
+         if textView.markedTextRange == nil && text.count > maxTextfieldLength {
+            textView.text = text.prefix(maxTextfieldLength).description
+         }
+      }
+   }
+   
    private func InitReviewView(frame: CGRect) {
       let ReviewViewFrame = CGRect(x: FoundViewW, y: FoundViewH * 3 + FoundViewH / 2, width: FoundViewW * 6, height: FoundViewH * 2)
       self.ReviewedView = ReviewView(frame: ReviewViewFrame)
@@ -246,6 +264,11 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate {
       let CommentInputAccessroryView = getInputAccessoryView()
       self.CommentTextView.inputAccessoryView = CommentInputAccessroryView
       self.CommentTextView.delegate = self
+      //文字入ってない時はdoneを押せないようにする処理
+      CommentTextView.enablesReturnKeyAutomatically = true
+      
+      NotificationCenter.default.addObserver(self, selector: #selector(CommentViewDidChange(notification:)),
+                                             name: UITextView.textDidChangeNotification, object: CommentTextView)
       
       self.addSubview(self.CommentTextView)
    }
@@ -283,13 +306,35 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate {
    //MARK:- コメントTextView送るボタンタップされた
    @objc func TapSentCommentTextView(_ sender: UIButton) {
       print("コメントTextView送るボタンタップされたよ")
-      let SentComment = CommentTextView.text ?? ""
+      var SentComment = CommentTextView.text ?? ""
       CommentTextView.resignFirstResponder()
       CommentTextView.isHidden = true
       TapToCommentButton.isEnabled = true
       
+      if let text = CommentTextView.text {
+         if CommentTextView.markedTextRange == nil && text.count > maxTextfieldLength {
+            SentComment = text.prefix(maxTextfieldLength).description
+         }
+      }
+      
       if SentComment == "" {
          print("からコメントは送りません")
+         return
+      }
+      
+      let AllCount = SentComment.count
+      let BlankCount = SentComment.components(separatedBy: " ").count
+      let JaBlankCount = SentComment.components(separatedBy: "　").count
+      let NewLineCount = SentComment.components(separatedBy: .newlines).count
+      let TabCount = SentComment.components(separatedBy: "\t").count
+      
+      let AllBlankCount = BlankCount + JaBlankCount + NewLineCount + TabCount
+      
+      print("全ての文字数　:\(AllCount)")
+      print("空白の総数   :\(AllBlankCount)")
+       
+      if AllCount == AllBlankCount {
+         print("全部空白です")
          return
       }
       
