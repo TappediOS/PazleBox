@@ -316,6 +316,38 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
       RefleshControl.endRefreshing()
    }
    
+   
+   private func PresentSomeUsersListVC(ListType: UsersListType) {
+      let SomeUsersListSB = UIStoryboard(name: "SomeUsersListViewControllerSB", bundle: nil)
+      let SomeUsersListVC = SomeUsersListSB.instantiateViewController(withIdentifier: "SomeUsersListVC") as! SomeUsersListViewController
+      
+      SomeUsersListVC.setListType(type: ListType)
+      
+      SomeUsersListVC.modalPresentationStyle = .fullScreen
+      self.navigationController?.pushViewController(SomeUsersListVC, animated: true)
+   }
+   
+   //MARK:- Labelがタップされたときの処理
+   @objc func TapFollowingLabel(_ sender: UITapGestureRecognizer) {
+      print("フォローのラベルがタップされました")
+      PresentSomeUsersListVC(ListType: .Follow)
+   }
+   
+   @objc func TapFollowerLabel(_ sender: UITapGestureRecognizer) {
+      print("フォロワーのラベルがタップされました")
+      PresentSomeUsersListVC(ListType: .Follower)
+   }
+   
+   @objc func TapFollowingCountLabel(_ sender: UITapGestureRecognizer) {
+      print("フォロー数のラベルがタップされました")
+      PresentSomeUsersListVC(ListType: .Follow)
+   }
+   
+   @objc func TapFollowerCountLabel(_ sender: UITapGestureRecognizer) {
+      print("フォロワー数のラベルがタップされました")
+      PresentSomeUsersListVC(ListType: .Follower)
+   }
+   
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
    func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
    func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
