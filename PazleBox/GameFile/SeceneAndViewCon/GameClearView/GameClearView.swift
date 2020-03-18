@@ -323,10 +323,10 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate, UITextFi
       }
       
       let AllCount = SentComment.count
-      let BlankCount = SentComment.components(separatedBy: " ").count
-      let JaBlankCount = SentComment.components(separatedBy: "　").count
-      let NewLineCount = SentComment.components(separatedBy: .newlines).count
-      let TabCount = SentComment.components(separatedBy: "\t").count
+      let BlankCount = SentComment.components(separatedBy: " ").count - 1
+      let JaBlankCount = SentComment.components(separatedBy: "　").count - 1
+      let NewLineCount = SentComment.components(separatedBy: .newlines).count - 1
+      let TabCount = SentComment.components(separatedBy: "\t").count - 1
       
       let AllBlankCount = BlankCount + JaBlankCount + NewLineCount + TabCount
       
@@ -334,7 +334,7 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate, UITextFi
       print("空白の総数   :\(AllBlankCount)")
        
       if AllCount == AllBlankCount {
-         print("全部空白です")
+         print("全部空白とかタブとかです")
          return
       }
       

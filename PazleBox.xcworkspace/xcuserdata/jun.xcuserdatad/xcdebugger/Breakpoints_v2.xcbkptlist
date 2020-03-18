@@ -1757,8 +1757,8 @@
             timestampString = "590043379.05116"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "379"
-            endingLineNumber = "379"
+            startingLineNumber = "401"
+            endingLineNumber = "401"
             landmarkName = "InitBannerView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1774,8 +1774,8 @@
             timestampString = "590043379.051218"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "318"
-            endingLineNumber = "318"
+            startingLineNumber = "329"
+            endingLineNumber = "329"
             landmarkName = "TapSentCommentTextView(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2046,8 +2046,8 @@
             timestampString = "590043379.052193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "463"
-            endingLineNumber = "463"
+            startingLineNumber = "485"
+            endingLineNumber = "485"
             landmarkName = "InitGoHomeButton(frame:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2063,8 +2063,8 @@
             timestampString = "590043379.052255"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "451"
-            endingLineNumber = "451"
+            startingLineNumber = "473"
+            endingLineNumber = "473"
             landmarkName = "InitGoHomeButton(frame:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -4523,6 +4523,22 @@
             endingLineNumber = "93"
             landmarkName = "InterNetTableViewController"
             landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE965B9B-7A68-4A5F-91FB-E402FD946A58"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/GameFile/SeceneAndViewCon/GameClearView/GameClearView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
+            landmarkName = "TapSentCommentTextView(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
