@@ -553,6 +553,8 @@
 		BFE0AB1A235AC04B003B2C58 /* ExCreateStageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0AB19235AC04B003B2C58 /* ExCreateStageVC.swift */; };
 		BFE1D3152420B9F700794349 /* SomeUsersListViewControllerSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFE1D3142420B9F700794349 /* SomeUsersListViewControllerSB.storyboard */; };
 		BFE1D3172420B9FF00794349 /* SomeUsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1D3162420B9FF00794349 /* SomeUsersListViewController.swift */; };
+		BFE1D3192420BCE500794349 /* SomeUsersListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1D3182420BCE500794349 /* SomeUsersListCellTableViewCell.swift */; };
+		BFE1D31B2420BF8800794349 /* ExSomeUsersListViewControllerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1D31A2420BF8800794349 /* ExSomeUsersListViewControllerTableView.swift */; };
 		BFF6D5CE227D9323000253A2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D5CD227D9323000253A2 /* Settings.bundle */; };
 		BFF6D5D4227ED73A000253A2 /* 33p23Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D5D1227ED73A000253A2 /* 33p23Green.png */; };
 		BFF6D5D5227ED73A000253A2 /* 33p23Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D5D2227ED73A000253A2 /* 33p23Red.png */; };
@@ -1422,6 +1424,8 @@
 		BFE0AB19235AC04B003B2C58 /* ExCreateStageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCreateStageVC.swift; sourceTree = "<group>"; };
 		BFE1D3142420B9F700794349 /* SomeUsersListViewControllerSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SomeUsersListViewControllerSB.storyboard; sourceTree = "<group>"; };
 		BFE1D3162420B9FF00794349 /* SomeUsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeUsersListViewController.swift; sourceTree = "<group>"; };
+		BFE1D3182420BCE500794349 /* SomeUsersListCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeUsersListCellTableViewCell.swift; sourceTree = "<group>"; };
+		BFE1D31A2420BF8800794349 /* ExSomeUsersListViewControllerTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSomeUsersListViewControllerTableView.swift; sourceTree = "<group>"; };
 		BFF6D5CD227D9323000253A2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		BFF6D5D1227ED73A000253A2 /* 33p23Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 33p23Green.png; sourceTree = "<group>"; };
 		BFF6D5D2227ED73A000253A2 /* 33p23Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 33p23Red.png; sourceTree = "<group>"; };
@@ -3100,6 +3104,8 @@
 			children = (
 				BFE1D3142420B9F700794349 /* SomeUsersListViewControllerSB.storyboard */,
 				BFE1D3162420B9FF00794349 /* SomeUsersListViewController.swift */,
+				BFE1D31A2420BF8800794349 /* ExSomeUsersListViewControllerTableView.swift */,
+				BFE1D3182420BCE500794349 /* SomeUsersListCellTableViewCell.swift */,
 			);
 			path = SomeUsersListViewController;
 			sourceTree = "<group>";
@@ -4100,6 +4106,7 @@
 				BF7748CB24026A0200AA5E9C /* ExInterNetTableViewController.swift in Sources */,
 				BF8ABFDA2279C6B900F275FA /* HardSellectStage.swift in Sources */,
 				BF60AC51224C8F1100D441D6 /* RePutButton.swift in Sources */,
+				BFE1D3192420BCE500794349 /* SomeUsersListCellTableViewCell.swift in Sources */,
 				BF332FA622492711009B3042 /* E16.swift in Sources */,
 				BF332FB22249276F009B3042 /* N2.swift in Sources */,
 				BF552EDA226DDDD700756E16 /* N30.swift in Sources */,
@@ -4304,6 +4311,7 @@
 				BF9F80AC236013F6003512B0 /* TopViewIAP.swift in Sources */,
 				BFF889A922A39A5A0056A839 /* NoAdsButton.swift in Sources */,
 				BF1A5EE522B78A5C002C6733 /* CoinsIAPManager.swift in Sources */,
+				BFE1D31B2420BF8800794349 /* ExSomeUsersListViewControllerTableView.swift in Sources */,
 				BF1BD1EC2279C4060047496B /* NormalStageClearInfomation.swift in Sources */,
 				BFDCDBB3234205AA00AD6E4F /* CleanChackStage.swift in Sources */,
 				BF332FFA2249283C009B3042 /* H17.swift in Sources */,
