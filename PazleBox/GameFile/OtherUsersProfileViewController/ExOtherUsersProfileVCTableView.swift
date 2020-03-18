@@ -55,6 +55,19 @@ extension OtherUsersProfileViewController {
       followButton.addTarget(self, action: #selector(TapFollowOrUnFollowButton(_:)), for: .touchUpInside)
       HeaderView.OtherUsersNameLabel.text = self.OtherUsersProfileName
       HeaderView.OtherUsersProfileImageView.image = self.OtherUsersProfileImage
+      
+      //フォローフォロワーラベルをタップしたとの処理を書いた
+      let TapFollowingGesture = UITapGestureRecognizer(target: self, action: #selector(TapFollowingLabel(_:)))
+      let TapFollowingCountGesture = UITapGestureRecognizer(target: self, action: #selector(TapFollowingCountLabel(_:)))
+      let TapFollowerGesture = UITapGestureRecognizer(target: self, action: #selector(TapFollowerLabel(_:)))
+      let TapFollowerCountGesture = UITapGestureRecognizer(target: self, action: #selector(TapFollowerCountLabel(_:)))
+           
+      HeaderView.OtherUsersFollowingLabel.addGestureRecognizer(TapFollowingGesture)
+      HeaderView.OtherUsersFollowingCountLabel.addGestureRecognizer(TapFollowingCountGesture)
+      HeaderView.OtherUsersFollowersLabel.addGestureRecognizer(TapFollowerGesture)
+      HeaderView.OtherUsersFollowersCountLabel.addGestureRecognizer(TapFollowerCountGesture)
+           
+      
       return HeaderView
    }
    

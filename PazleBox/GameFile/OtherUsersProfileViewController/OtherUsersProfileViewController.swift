@@ -303,6 +303,38 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
       self.present(BlockAlertSheet, animated: true, completion: nil)
    }
    
+   
+   private func OtherUsersPresentSomeUsersListVC(ListType: UsersListType) {
+      let SomeUsersListSB = UIStoryboard(name: "SomeUsersListViewControllerSB", bundle: nil)
+      let SomeUsersListVC = SomeUsersListSB.instantiateViewController(withIdentifier: "SomeUsersListVC") as! SomeUsersListViewController
+      
+      SomeUsersListVC.setListType(type: ListType)
+      
+      SomeUsersListVC.modalPresentationStyle = .fullScreen
+      self.navigationController?.pushViewController(SomeUsersListVC, animated: true)
+   }
+   
+   //MARK:- Labelがタップされたときの処理
+   @objc func TapFollowingLabel(_ sender: UITapGestureRecognizer) {
+      print("OtherUserでフォローのラベルがタップされました")
+      OtherUsersPresentSomeUsersListVC(ListType: .Follow)
+   }
+   
+   @objc func TapFollowerLabel(_ sender: UITapGestureRecognizer) {
+      print("OtherUserでフォロワーのラベルがタップされました")
+      OtherUsersPresentSomeUsersListVC(ListType: .Follower)
+   }
+   
+   @objc func TapFollowingCountLabel(_ sender: UITapGestureRecognizer) {
+      print("OtherUserでフォロー数のラベルがタップされました")
+      OtherUsersPresentSomeUsersListVC(ListType: .Follow)
+   }
+   
+   @objc func TapFollowerCountLabel(_ sender: UITapGestureRecognizer) {
+      print("OtherUserでフォロワー数のラベルがタップされました")
+      OtherUsersPresentSomeUsersListVC(ListType: .Follower)
+   }
+   
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
    func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
    func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
