@@ -10,7 +10,15 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OtherUsersProfileTableViewHeaderView" customModule="PazleBox" customModuleProvider="target">
             <connections>
                 <outlet property="FollowOrUnFollowButton" destination="7Iu-Dk-6wU" id="Kj2-ew-Uzo"/>
+                <outlet property="OtherUsersFollowersCountLabel" destination="yea-Sw-J3g" id="vgz-YS-ZHL"/>
+                <outlet property="OtherUsersFollowersLabel" destination="ETv-NT-uo2" id="ol6-Ha-x9Y"/>
+                <outlet property="OtherUsersFollowingCountLabel" destination="ba3-aR-SGj" id="zkk-J9-FJS"/>
+                <outlet property="OtherUsersFollowingLabel" destination="10W-Ub-Dh6" id="Xp4-W0-0mr"/>
                 <outlet property="OtherUsersNameLabel" destination="0Fg-ps-uRM" id="Ldn-A1-lQr"/>
+                <outlet property="OtherUsersPlayCountLabel" destination="ta3-xV-0eX" id="aaJ-Ne-zlI"/>
+                <outlet property="OtherUsersPlayCountNumLabel" destination="f98-MT-6ya" id="sNK-TS-F1H"/>
+                <outlet property="OtherUsersPostLabel" destination="L1M-hK-aoM" id="fdR-VJ-qvp"/>
+                <outlet property="OtherUsersPostsCountLabel" destination="cFD-pn-eAU" id="t5e-Zj-Iy1"/>
                 <outlet property="OtherUsersProfileImageView" destination="toh-3Q-kHK" id="qs5-Oj-uRM"/>
             </connections>
         </placeholder>

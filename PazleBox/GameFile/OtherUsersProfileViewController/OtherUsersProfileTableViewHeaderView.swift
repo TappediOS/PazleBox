@@ -18,12 +18,26 @@ class OtherUsersProfileTableViewHeaderView: UIView {
    @IBOutlet weak var OtherUsersProfileImageView: UIImageView!
    
    
+   @IBOutlet weak var OtherUsersPostLabel: UILabel!
+   @IBOutlet weak var OtherUsersFollowingLabel: UILabel!
+
+   @IBOutlet weak var OtherUsersPlayCountLabel: UILabel!
+   
+   @IBOutlet weak var OtherUsersFollowersLabel: UILabel!
+   @IBOutlet weak var OtherUsersPostsCountLabel: UILabel!
+   @IBOutlet weak var OtherUsersFollowingCountLabel: UILabel!
+   
+   @IBOutlet weak var OtherUsersFollowersCountLabel: UILabel!
+   
+   @IBOutlet weak var OtherUsersPlayCountNumLabel: UILabel!
    
    override init(frame: CGRect){
       super.init(frame: frame)
       loadNib()
       InitFollowOrUnFollowButton()
       SetUpOtherUsersNameLabel()
+      
+      InitAllLabelsIsUserInteractionEnabled()
    }
       
    required init(coder aDecoder: NSCoder) {
@@ -74,4 +88,18 @@ class OtherUsersProfileTableViewHeaderView: UIView {
    @IBAction func TapFollowOrUnFollowButton(_ sender: Any) {
    }
    
+   func InitAllLabelsIsUserInteractionEnabled() {
+      OtherUsersNameLabel.isUserInteractionEnabled = false
+      OtherUsersPostLabel.isUserInteractionEnabled = false
+      OtherUsersPostLabel.isUserInteractionEnabled = false
+      
+      //この4個はタップできるようにする
+      OtherUsersFollowersLabel.isUserInteractionEnabled = true
+      OtherUsersPostsCountLabel.isUserInteractionEnabled = true
+      OtherUsersFollowingCountLabel.isUserInteractionEnabled = true
+      OtherUsersFollowersCountLabel.isUserInteractionEnabled = true
+      
+      OtherUsersPlayCountLabel.isUserInteractionEnabled = false
+      OtherUsersPlayCountNumLabel.isUserInteractionEnabled = false
+   }
 }
