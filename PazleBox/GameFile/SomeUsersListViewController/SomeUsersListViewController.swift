@@ -60,7 +60,7 @@ class SomeUsersListViewController: UIViewController {
       case .None:
          NavigationTitle = NSLocalizedString("None", comment: "")
       case .Follow:
-         NavigationTitle = NSLocalizedString("Follow", comment: "")
+         NavigationTitle = NSLocalizedString("Following", comment: "")
       case .Follower:
       NavigationTitle = NSLocalizedString("Follower", comment: "")
       case .Block:
