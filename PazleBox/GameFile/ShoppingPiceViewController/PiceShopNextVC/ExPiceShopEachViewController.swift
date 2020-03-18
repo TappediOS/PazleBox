@@ -39,19 +39,20 @@ extension PiceShopEachViewController: UICollectionViewDataSource {
 extension PiceShopEachViewController: UICollectionViewDelegateFlowLayout {
    // Screenサイズに応じたセルサイズを返す
    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-      //let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-      let paddingSpace = sectionInsets.right + sectionInsets.left + cellPerInset * (itemsPerRow - 1)
-      let availableWidth = view.frame.width - paddingSpace
-      let widthPerItem = availableWidth / itemsPerRow
-      var hightPerItem = widthPerItem
+      //let paddingSpace = sectionInsets.right + sectionInsets.left + cellPerInset * (itemsPerRow - 1)
+      //let availableWidth = view.frame.width - paddingSpace
+      //let widthPerItem = availableWidth / itemsPerRow
+      var hightPerItem = cellWide
       let piceName = UsingPiceSet[indexPath.row].pregReplace(pattern: "p[0-9]+(Green|Blue|Red)", with: "")
+      
+      //print(widthPerItem)
+      //print("\(cellWide)\n")
       
       switch piceName {
       case "22", "33":
          hightPerItem *= 1
       case "23":
-         hightPerItem *= 1.13
+         hightPerItem *= 1.15
       case "32":
          hightPerItem *= 0.85
       case "43":
@@ -62,7 +63,7 @@ extension PiceShopEachViewController: UICollectionViewDelegateFlowLayout {
          print("これ忘れているよ")
       }
       
-      return CGSize(width: widthPerItem, height: hightPerItem)
+      return CGSize(width: self.cellWide, height: hightPerItem)
    }
 
    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
