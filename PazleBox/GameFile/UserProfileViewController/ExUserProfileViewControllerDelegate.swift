@@ -48,6 +48,8 @@ extension UserProfileViewController {
       let HeaderView = UserProfileHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: sectionHeaderHeight))
       HeaderView.UsersNameLabel.text = self.userName
       HeaderView.UsersProfileImage.image = self.usersProfileImagfe
+      
+      
       return HeaderView
    }
    

@@ -9,7 +9,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserProfileHeaderView" customModule="PazleBox" customModuleProvider="target">
             <connections>
+                <outlet property="UsersFollowersCountLabel" destination="C9O-5I-E9T" id="6TS-wX-6RC"/>
+                <outlet property="UsersFollowersLabel" destination="4zo-OZ-W3d" id="uW6-WK-TqO"/>
+                <outlet property="UsersFollowingCountLabel" destination="g2z-7f-KNb" id="GNb-CE-9CJ"/>
+                <outlet property="UsersFollowingLabel" destination="lnV-Up-c1W" id="55z-Fg-zhW"/>
                 <outlet property="UsersNameLabel" destination="Srb-Zs-lQh" id="bfp-aJ-pTg"/>
+                <outlet property="UsersPlayCountLabel" destination="f17-xA-nk9" id="ZPl-41-lMM"/>
+                <outlet property="UsersPlayCountNumLabel" destination="ZFn-Bq-R8Q" id="fQc-cT-ike"/>
+                <outlet property="UsersPostCountLabel" destination="SEC-tY-D7k" id="vKx-Sj-efN"/>
+                <outlet property="UsersPostsLabel" destination="TBR-vU-S8g" id="7iX-pY-VeI"/>
                 <outlet property="UsersProfileImage" destination="AYx-fQ-u79" id="TGI-e1-xug"/>
             </connections>
         </placeholder>

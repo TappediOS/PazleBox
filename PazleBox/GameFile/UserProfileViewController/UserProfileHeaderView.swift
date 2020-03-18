@@ -16,11 +16,27 @@ class UserProfileHeaderView: UIView {
    @IBOutlet weak var UsersNameLabel: UILabel!
    
    
+   
+   @IBOutlet weak var UsersPostsLabel: UILabel!
+   @IBOutlet weak var UsersFollowingLabel: UILabel!
+   @IBOutlet weak var UsersFollowersLabel: UILabel!
+   @IBOutlet weak var UsersPlayCountLabel: UILabel!
+   
+   
+   @IBOutlet weak var UsersPostCountLabel: UILabel!
+   @IBOutlet weak var UsersFollowingCountLabel: UILabel!
+   @IBOutlet weak var UsersFollowersCountLabel: UILabel!
+   @IBOutlet weak var UsersPlayCountNumLabel: UILabel!
+   
+   
+   
    override init(frame: CGRect){
       super.init(frame: frame)
       loadNib()
       SetUpUsersNameLabel()
       SetUpUsersProfileImage()
+      
+      InitAllLabelsIsUserInteractionEnabled()
    }
    
    required init(coder aDecoder: NSCoder) {
@@ -43,5 +59,20 @@ class UserProfileHeaderView: UIView {
       UsersProfileImage.layer.borderWidth = 0.5
       UsersProfileImage.layer.cornerRadius = self.UsersProfileImage.frame.width / 2
       UsersProfileImage.layer.masksToBounds = true
+   }
+   
+   func InitAllLabelsIsUserInteractionEnabled() {
+      UsersNameLabel.isUserInteractionEnabled = false
+      UsersPostsLabel.isUserInteractionEnabled = false
+      UsersPostCountLabel.isUserInteractionEnabled = false
+      
+      //この4個はタップできるようにする
+      UsersFollowingLabel.isUserInteractionEnabled = true
+      UsersFollowingCountLabel.isUserInteractionEnabled = true
+      UsersFollowersLabel.isUserInteractionEnabled = true
+      UsersFollowersCountLabel.isUserInteractionEnabled = true
+      
+      UsersPlayCountLabel.isUserInteractionEnabled = false
+      UsersPlayCountNumLabel.isUserInteractionEnabled = false
    }
 }
