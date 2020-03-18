@@ -91,11 +91,11 @@ class OtherUsersProfileTableViewHeaderView: UIView {
    func InitAllLabelsIsUserInteractionEnabled() {
       OtherUsersNameLabel.isUserInteractionEnabled = false
       OtherUsersPostLabel.isUserInteractionEnabled = false
-      OtherUsersPostLabel.isUserInteractionEnabled = false
+      OtherUsersPostsCountLabel.isUserInteractionEnabled = false
       
       //この4個はタップできるようにする
       OtherUsersFollowersLabel.isUserInteractionEnabled = true
-      OtherUsersPostsCountLabel.isUserInteractionEnabled = true
+      OtherUsersFollowingLabel.isUserInteractionEnabled = true
       OtherUsersFollowingCountLabel.isUserInteractionEnabled = true
       OtherUsersFollowersCountLabel.isUserInteractionEnabled = true
       
