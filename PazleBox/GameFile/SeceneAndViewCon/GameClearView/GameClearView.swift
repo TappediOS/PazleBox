@@ -82,6 +82,7 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate, UITextFi
    
    var CommentTextView = UITextView()
    var isRegisterComment = false
+   var SentCommentToFireStore = ""
    //テキストフィールドに書き込む最大の文字数。
    let maxTextfieldLength = 128
    
@@ -303,6 +304,16 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate, UITextFi
       TapToCommentButton.isEnabled = true
    }
    
+   
+   //MARK:- GameVCからコメントを取り出すときの処理
+   public func GetisRegisterComment() -> Bool {
+      return self.isRegisterComment
+   }
+   
+   public func GetSentCommentToFireStore() -> String {
+      return self.SentCommentToFireStore
+   }
+   
    //MARK:- コメントTextView送るボタンタップされた
    @objc func TapSentCommentTextView(_ sender: UIButton) {
       print("コメントTextView送るボタンタップされたよ")
@@ -338,11 +349,14 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate, UITextFi
          return
       }
       
+      isRegisterComment = true
+      self.SentCommentToFireStore = SentComment
+      
       print("\n---- 登録するコメント ----")
-      print(SentComment)
+      print(self.SentCommentToFireStore)
       print("---- 登録するコメント ----\n")
       
-      isRegisterComment = true
+      
       //TODO:- ローカライズしてね。
       TapToCommentButton.setTitle("送信済み", for: .normal)
       TapToCommentButton.alpha = 0.85

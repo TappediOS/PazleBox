@@ -24,13 +24,33 @@ class Firestores {
       db = Firestore.firestore()
    }
    
-   public func AddStageData(StageArrayForContents: [[Contents]], MaxPiceNum: Int, PiceArry: [PiceImageView], ImageData: NSData?, StageTitle: String) {
+   public func AddStageData(StageArrayForContents: [[Contents]], MaxPiceNum: Int, PiceArry: [PiceImageView], ImageData: NSData?, StageTitle: String, addUserName: String, addUsersProfileURL: String) {
+      
+      let Stageuid = NSUUID()
+      let StageuidStr = Stageuid.uuidString
+      
+      let StageCommentUid = NSUUID()
+      let StageCommentUidStr = StageCommentUid.uuidString
+      
+      var ShowTimeLineUserUID = Array<Any>()
+      ShowTimeLineUserUID.append(self.UID)
+      
+      print("\n----- 保存するユーザ情報 -----")
+      print("Name =       \(addUserName)")
+      print("ProfileURL = \(addUsersProfileURL)")
+      print("----- 保存するユーザ情報 -----\n")
       
       var docData: [String: Any] = ["addUser" : self.UID,
                                     "addDate" : Timestamp(date: Date()),
                                     "PlayCount" : 0,
                                     "ReviewAve" : 0,
-                                    "ReviewCount" : 0]
+                                    "ReviewCount" : 0,
+                                    "StageID" : StageuidStr,
+                                    "StageCommentUid" : StageCommentUidStr,
+                                    "addUserName" : addUserName,
+                                    "ShowTimeLineUserUID": ShowTimeLineUserUID,
+                                    "addUsersProfileImageURL": addUsersProfileURL,
+                                    "published" : true]
       
       docData.updateValue(StageTitle, forKey: "StageTitle")
       docData.updateValue(MaxPiceNum, forKey: "MaxPiceNum")
@@ -84,16 +104,40 @@ class Firestores {
       
       // Add a new document with a generated id.
       var ref: DocumentReference? = nil
-      ref = db.collection("Stages").addDocument(data: docData) { err in
+//      db.collection("Stage").document(StageuidStr).setData(docData) { err in
+//         if let err = err {
+//            print("\nError adding document: \(err)\n")
+//            self.sentErrSetntStageToFireStore()
+//            self.sentFirebaseLogEvent(MaxPiceNum: MaxPiceNum)
+//         } else {
+//            print("\n\nDocument added with ID: \(ref!.documentID)\n")
+//            self.sentSuccessSentStageToFireStore()
+//         }
+//      }
+      
+      ref = db.collection("users").document(self.UID).collection("Stages").addDocument(data: docData) { err in
          if let err = err {
-            print("\nError adding document: \(err)\n")
+            print("\n----- ステージ投稿エラー -----")
+            print("Error: \(err.localizedDescription)")
             self.sentErrSetntStageToFireStore()
             self.sentFirebaseLogEvent(MaxPiceNum: MaxPiceNum)
          } else {
-            print("\n\nDocument added with ID: \(ref!.documentID)\n")
+            print("\n----- ステージ投稿成功! -----")
             self.sentSuccessSentStageToFireStore()
          }
       }
+      
+
+//      ref = db.collection("Stages").addDocument(data: docData) { err in
+//         if let err = err {
+//            print("\nError adding document: \(err)\n")
+//            self.sentErrSetntStageToFireStore()
+//            self.sentFirebaseLogEvent(MaxPiceNum: MaxPiceNum)
+//         } else {
+//            print("\n\nDocument added with ID: \(ref!.documentID)\n")
+//            self.sentSuccessSentStageToFireStore()
+//         }
+//      }
    }
    
    private func sentErrSetntStageToFireStore () {

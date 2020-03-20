@@ -47,6 +47,10 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
    let ButtonCornerRadius: CGFloat = 6.5
    let GameSound = GameSounds()
    
+   var PostUsersProfileURL = ""
+   var PostUsersUID = ""
+   var PostedStageCommentID = ""
+   
    //GameSceneを読み込むのに必要なデータ
    var PiceArray: [PiceInfo] = Array()
    var StageArray: [[Contents]] = Array()
@@ -181,6 +185,18 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
       self.UsersPostedStagePlayCount = stagePlayCount
    }
    
+   public func setPostUsersUID(postUsersUID: String) {
+      self.PostUsersUID = postUsersUID
+   }
+   
+   public func setPostUsersProfileURL(postUsersProfileURL: String) {
+      self.PostUsersProfileURL = postUsersProfileURL
+   }
+   
+   public func setPostedStageCommentID(CommentID: String) {
+      self.PostedStageCommentID = CommentID
+   }
+   
    //MARK:- 画面遷移する前にプレイするステージデータをセットする
    public func setPiceArray(_ piceArray: [PiceInfo]) {
       self.PiceArray = piceArray
@@ -237,6 +253,12 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
       //GameSound.PlaySoundsTapButton()
       let CleateSB = UIStoryboard(name: "CleateStageSB", bundle: nil)
       let GameVC = CleateSB.instantiateViewController(withIdentifier: "UsersGameView") as! UsersGameViewController
+      
+      GameVC.LoadUsersInfo()
+      GameVC.LoadUsersNameOfPostedStages(name: self.UsersName)
+      GameVC.LoadLoadUsersUIDOfPostedStages(postedUsersUID: self.PostUsersUID)
+      GameVC.LoadUsersProfileImageURLOfPostedStages(profileURL: self.PostUsersProfileURL)
+      GameVC.LoadStageCommentIDofPostedStages(CommentID: self.PostedStageCommentID)
 
       GameVC.LoadPiceArray(PiceArray: PiceArray)
       GameVC.LoadStageArray(StageArray: StageArray)

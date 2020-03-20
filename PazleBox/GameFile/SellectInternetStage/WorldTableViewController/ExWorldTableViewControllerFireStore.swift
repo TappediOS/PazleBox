@@ -54,8 +54,6 @@ extension WorldTableViewController {
          }
          
          self.DownLoadProfileCounter += 1
-         print("ダウンロードカウンター = \(self.DownLoadProfileCounter)")
-         print("arryNumカウンター = \(arrayNum)")
          
          if self.DownLoadProfileCounter == self.LatestStageDatas.count{
             print("---- Latestデータの取得完了 ----\n")
@@ -87,7 +85,7 @@ extension WorldTableViewController {
          self.StartLoadingAnimation() //ローディングアニメーションの再生。
       }
       
-      db.collection("Stages")
+      db.collectionGroup("Stages")
          .order(by: "addDate", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
@@ -104,15 +102,34 @@ extension WorldTableViewController {
                print("配列の総数は \(self.LatestStageDatas.count)")
                self.FetchLatestStageDataPostUserNameAndProfileImage()
             }
-            
       }
+      
+      //こっちはRootにStage入れてた頃の取得方法
+//      db.collection("Stages")
+//         .order(by: "addDate", descending: true)
+//         .limit(to: MaxGetStageNumFormDataBase)
+//         .getDocuments() { (querySnapshot, err) in
+//            if let err = err {
+//               print("Error: \(err)")
+//               print("\n---- データベースからのデータ取得エラー ----")
+//               self.Play3DtouchError()
+//               self.ShowErrGetStageAlertView()
+//            } else {
+//               self.Play3DtouchSuccess()
+//               for document in querySnapshot!.documents {
+//                  self.LatestStageDatas.append(self.GetRawData(document: document))
+//               }
+//               print("配列の総数は \(self.LatestStageDatas.count)")
+//               self.FetchLatestStageDataPostUserNameAndProfileImage()
+//            }
+//      }
    }
    
    func GetPlayCountStageDataFromDataBase(){
       print("\n---- PlayCountデータの取得開始 ----")
       self.LatestStageDatas.removeAll()
       self.DownLoadProfileCounter = 0
-      db.collection("Stages").whereField("PlayCount", isGreaterThanOrEqualTo: 0)
+      db.collectionGroup("Stages").whereField("PlayCount", isGreaterThanOrEqualTo: 0)
          .order(by: "PlayCount", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
@@ -137,7 +154,7 @@ extension WorldTableViewController {
       print("\n---- Ratedデータの取得開始 ----")
       self.LatestStageDatas.removeAll()
       self.DownLoadProfileCounter = 0
-      db.collection("Stages").whereField("ReviewAve", isGreaterThanOrEqualTo: 0)
+      db.collectionGroup("Stages").whereField("ReviewAve", isGreaterThanOrEqualTo: 0)
          .order(by: "ReviewAve", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in

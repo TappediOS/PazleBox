@@ -8,6 +8,14 @@
 
 import Foundation
 import UIKit
+import TapticEngine
+import FirebaseFirestore
+import Firebase
+import NVActivityIndicatorView
+import SCLAlertView
+import TwicketSegmentedControl
+import SnapKit
+import FirebaseStorage
 import DZNEmptyDataSet
 
 class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -29,6 +37,10 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    var PostUsersStageReivew = ""
    var PostUsersStagePlayCount = ""
    
+   var PostUsersProfileURL = ""
+   var PostUsersUID = ""
+   var PostedStageCommentID = ""
+   
    @IBOutlet weak var UsersCommentTableView: UITableView!
 
    let ButtonCornerRadius: CGFloat = 6.5
@@ -43,6 +55,10 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    var isLoadingGameVC = false
    
    private var RefleshControl = UIRefreshControl()
+   
+   var db: Firestore!
+   let MaxGetCommentNumFormDataBase = 40
+   var DownLoadProfileCounter = 0
    
    //こいつにCollectionVeiwで表示するやつを入れる。
    var UsingCommentedStageDatas: [([String: Any])] = Array()
@@ -60,11 +76,10 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       SetUpPostUsersStagePlayButton()
       SetUpRefleshControl()
       
-      self.UsersCommentTableView.delegate = self
-      self.UsersCommentTableView.dataSource = self
-      self.UsersCommentTableView.emptyDataSetSource = self
-      self.UsersCommentTableView.emptyDataSetDelegate = self
-      self.UsersCommentTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
+      SetUpFireStoreSetting()
+      GetStageCommentDataFromFireStore()
+      
+      
       
    }
    
@@ -114,6 +129,12 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       self.PostUsersStagePlayCountLabel.text = self.PostUsersStagePlayCount
    }
    
+   private func SetUpFireStoreSetting() {
+      let settings = FirestoreSettings()
+      Firestore.firestore().settings = settings
+      db = Firestore.firestore()
+   }
+   
    
    //MARK:- 画面遷移する前にポストユーザの画面の各値をセットする
    public func setUsersImage(usersImage: UIImage) {
@@ -140,6 +161,18 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       self.PostUsersStagePlayCount = stagePlayCount
    }
    
+   public func setPostUsersUID(postUsersUID: String) {
+      self.PostUsersUID = postUsersUID
+   }
+   
+   public func setPostUsersProfileURL(postUsersProfileURL: String) {
+      self.PostUsersProfileURL = postUsersProfileURL
+   }
+   
+   public func setPostedStageCommentID(CommentID: String) {
+      self.PostedStageCommentID = CommentID
+   }
+   
    //MARK:- 画面遷移する前にプレイするステージデータをセットする
    public func setPiceArray(_ piceArray: [PiceInfo]) {
       self.PiceArray = piceArray
@@ -153,6 +186,131 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       self.PlayStageData = playStageData
    }
    
+   
+   private func FetchCommentDataPostUserProfileImage() {
+      
+      //コメントない時はForぶん回らんからTableViewの設定してreturn
+      if UsingCommentedStageDatas.count == 0 {
+         self.UsersCommentTableView.delegate = self
+         self.UsersCommentTableView.dataSource = self
+         self.UsersCommentTableView.emptyDataSetSource = self
+         self.UsersCommentTableView.emptyDataSetDelegate = self
+         self.UsersCommentTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
+         return
+      }
+      
+      for tmp in 0 ..< UsingCommentedStageDatas.count {
+         let URL = UsingCommentedStageDatas[tmp]["CommentUsersProfileURL"] as! String
+         let httpsReference = Storage.storage().reference(forURL: URL)
+         
+         httpsReference.getData(maxSize: 1 * 512 * 512) { data, error in
+            if let error = error {
+               print("プロ画取得エラー")
+               print(error.localizedDescription)
+               let errorUsersImage = UIImage(named: "NoProfileImage.png")?.pngData()
+               self.UsingCommentedStageDatas[tmp].updateValue(errorUsersImage!, forKey: "PostedUsersProfileImage")
+            } else {
+               // Data for "images/island.jpg" is returned
+               print("プロ画取得成功!")
+               self.UsingCommentedStageDatas[tmp].updateValue(data!, forKey: "CommentedUsersProfileImage")
+               self.Play3DtouchSuccess()
+            }
+            
+            self.DownLoadProfileCounter += 1
+               
+            if self.DownLoadProfileCounter == self.UsingCommentedStageDatas.count{
+               print("---- Latestデータの取得完了 ----\n")
+               //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
+               //Segmentタップした時に別の関数でCollecti onVie をリロードする。
+               self.UsersCommentTableView.reloadData()
+            
+               //リフレッシュかそうでないかで処理を変える
+               if self.RefleshControl.isRefreshing == false {
+                  //self.StopLoadingAnimation()
+                  print("Delegate設定します。")
+                  //読み取りが終わってからデリゲードを入れる必要がある
+                  self.UsersCommentTableView.delegate = self
+                  self.UsersCommentTableView.dataSource = self
+                  self.UsersCommentTableView.emptyDataSetSource = self
+                  self.UsersCommentTableView.emptyDataSetDelegate = self
+                  self.UsersCommentTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
+               } else {
+                  self.RefleshControl.endRefreshing()
+               }
+            }
+         }
+      }
+   }
+   
+   
+   private func GetStageCommentDataFromFireStore() {
+      print("\n---- コメントデータの取得開始 ----")
+      let DocID = self.PostedStageCommentID
+      
+      db.collection("StageComment").document(DocID).collection("Comment")
+         .order(by: "AddDate", descending: true)
+         .limit(to: MaxGetCommentNumFormDataBase)
+         .getDocuments() { (querySnapshot, err) in
+            if let err = err {
+               print("Error: \(err)")
+               print("\n---- データベースからのデータ取得エラー ----")
+               //self.Play3DtouchError()
+               //self.ShowErrGetStageAlertView()
+            } else {
+               //self.Play3DtouchSuccess()
+               for document in querySnapshot!.documents {
+                  self.UsingCommentedStageDatas.append(self.GetCommentRaw(document: document))
+               }
+               print("配列の総数は \(self.UsingCommentedStageDatas.count)")
+               self.FetchCommentDataPostUserProfileImage()
+            }
+      }
+   }
+   
+   /// ドキュメントからデータを読み込み配列として返す関数
+   /// - Parameter document: forぶんでDocを回したときに呼び出す。
+   func GetCommentRaw(document: DocumentSnapshot) -> ([String: Any]) {
+      var CommentData: [String: Any] =  ["documentID": document.documentID]
+      
+      if let value = document["AddDate"] as? Timestamp {
+         let date: Date = value.dateValue()
+         
+         let formatter = DateFormatter()
+         formatter.dateStyle = .short
+         formatter.timeStyle = .none
+         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: .current)!
+         let dataAsString: String = formatter.string(from: date)
+         //print(dataAsString)
+         //NOTE:- String型で保存されていることに注意！
+         CommentData.updateValue((dataAsString), forKey: "AddDate")
+      }
+      
+      if let value = document["CommentBody"] as? String {
+         CommentData.updateValue(value, forKey: "CommentBody")
+      }
+      
+      if let value = document["CommentID"] as? String {
+         CommentData.updateValue(value, forKey: "ReviewAve")
+      }
+      
+      if let value = document["CommentUserUID"] as? String {
+         CommentData.updateValue(value, forKey: "CommentUserUID")
+      }
+      
+      if let value = document["CommentUsersProfileURL"] as? String {
+         CommentData.updateValue(value, forKey: "CommentUsersProfileURL")
+      }
+      
+      if let value = document["isPublished"] as? Bool {
+         CommentData.updateValue(value, forKey: "isPublished")
+      }
+      
+      if let value = document["CommentUsersName"] as? String {
+         CommentData.updateValue(value, forKey: "CommentUsersName")
+      }
+      
+      return CommentData
+   }
    
    //MARK:- コメントのリロードを行う
    @objc func ReloadCommentDataFromFireStore(sender: UIRefreshControl) {
@@ -173,6 +331,12 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       let CleateSB = UIStoryboard(name: "CleateStageSB", bundle: nil)
       let GameVC = CleateSB.instantiateViewController(withIdentifier: "UsersGameView") as! UsersGameViewController
 
+      GameVC.LoadUsersInfo()
+      GameVC.LoadUsersNameOfPostedStages(name: self.PostUsersUserName)
+      GameVC.LoadLoadUsersUIDOfPostedStages(postedUsersUID: self.PostUsersUID)
+      GameVC.LoadUsersProfileImageURLOfPostedStages(profileURL: self.PostUsersProfileURL)
+      GameVC.LoadStageCommentIDofPostedStages(CommentID: self.PostedStageCommentID)
+      
       GameVC.LoadPiceArray(PiceArray: PiceArray)
       GameVC.LoadStageArray(StageArray: StageArray)
       GameVC.LoadPlayStageData(RefID: PlayStageData.RefID, stageDataForNoDocExsist: self.PlayStageData)
@@ -309,30 +473,39 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       let rowNum = sender.tag
       print("\(rowNum)番目のcellがタップされました")
       
-      //TODO: コメントをとったら，ユーザが自分かどうかを判定して画面遷移すること
-//      //本人をタップしてたら，
-//      if TapedCommentedUserIsSelf(rowNum: rowNum) == true {
-//         print("本人をタップしたので，UesrsProfileVCを表示します")
-//         let UsersProfileSB = UIStoryboard(name: "UserProfileViewControllerSB", bundle: nil)
-//         let UsersProfileVC = UsersProfileSB.instantiateViewController(withIdentifier: "UserProfileVC") as! UserProfileViewController
-//         self.navigationController?.pushViewController(UsersProfileVC, animated: true)
-//         return
-//      }
-      
+      //本人をタップしてたら，
+      if TapedCommentedUserIsSelf(rowNum: rowNum) == true {
+         print("本人をタップしたので，UesrsProfileVCを表示します")
+         let UsersProfileSB = UIStoryboard(name: "UserProfileViewControllerSB", bundle: nil)
+         let UsersProfileVC = UsersProfileSB.instantiateViewController(withIdentifier: "UserProfileVC") as! UserProfileViewController
+         self.navigationController?.pushViewController(UsersProfileVC, animated: true)
+         return
+      }
+      //本人以外をタップしてたら
+      print("他人をタップしたので，OtherUesrsProfileVCを表示します")
       let OtherUsersProfileSB = UIStoryboard(name: "OtherUsersProfileViewControllerSB", bundle: nil)
       let OtherUsersProfileVC = OtherUsersProfileSB.instantiateViewController(withIdentifier: "OtherUsersProfileVC") as! OtherUsersProfileViewController
-            
+      
+      let OtherUsersUID = UsingCommentedStageDatas[rowNum]["CommentUserUID"] as! String
+      OtherUsersProfileVC.fetchOtherUsersUIDbeforPushVC(uid: OtherUsersUID)
       self.navigationController?.pushViewController(OtherUsersProfileVC, animated: true)
    }
    
    //タップした画像のユーザが本人かどうかを判定する
    private func TapedCommentedUserIsSelf(rowNum: Int) -> Bool {
-      let TapedUsersUID = UsingCommentedStageDatas[rowNum]["addUser"] as! String
+      let TapedUsersUID = UsingCommentedStageDatas[rowNum]["CommentUserUID"] as! String
       let UsersUID = UserDefaults.standard.string(forKey: "UID")
       
       if TapedUsersUID == UsersUID { return true}
       return false
    }
+   
+   
+   func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
+   func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
+   func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
+   func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
+   func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
    
 }
 
@@ -344,28 +517,32 @@ extension InterNetCellTappedViewController {
    
    //テーブルの行数を返す
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 20
+      return UsingCommentedStageDatas.count
    }
    
    //Cellを返す
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = self.UsersCommentTableView.dequeueReusableCell(withIdentifier: "UsersCommentCell", for: indexPath) as? UsersCommentTableViewCell
       
+      let usersProfileData = UsingCommentedStageDatas[indexPath.item]["CommentedUsersProfileImage"] as? NSData
+      if let ProfileData = usersProfileData {
+         let Image = UIImage(data: ProfileData as Data)
+         cell?.CommentedUsersImageViewButton.setImage(Image, for: .normal)
+      }
       
-      cell?.CommentedUsersImageViewButton.setImage(UIImage(named: "person.png")!, for: .normal)
+      let UserName = UsingCommentedStageDatas[indexPath.item]["CommentUsersName"] as! String
+      let CommentBody = UsingCommentedStageDatas[indexPath.item]["CommentBody"] as! String
+      
       cell?.CommentedUsersImageViewButton.tag = indexPath.row
       cell?.CommentedUsersImageViewButton.addTarget(self, action: #selector(TapCommentedUsersImageViewButtonInterNetTableView(_:)), for: .touchUpInside)
       
       
-      cell?.CommentedUsersNameLabel.text = "Kind Person"
-      cell?.CommentedUsersCommentLabel.text = "This is a super good!"
+      cell?.CommentedUsersNameLabel.text = UserName
+      cell?.CommentedUsersCommentLabel.text = CommentBody
       
       cell?.ReportUserButton.tag = indexPath.row
       cell?.ReportUserButton.addTarget(self, action: #selector(TapReportCommentedUserTableViewCell(_:)), for: .touchUpInside)
       
-      if indexPath.row % 3 == 0 {
-         cell?.CommentedUsersCommentLabel.text = "apple. apple\nyou are apple\nif you have a any question, please contact us. thank you! \n\n ad ad ad\n lunch for you."
-      }
 
       return cell!
    }

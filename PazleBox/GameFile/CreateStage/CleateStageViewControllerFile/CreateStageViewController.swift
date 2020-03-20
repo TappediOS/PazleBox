@@ -14,6 +14,7 @@ import FlatUIKit
 import SnapKit
 import SCLAlertView
 import Firebase
+import FirebaseFirestore
 import NVActivityIndicatorView
 
 class CleateStageViewController: UIViewController {
@@ -73,6 +74,9 @@ class CleateStageViewController: UIViewController {
    //くるくる回るview
    var LoadActivityView: NVActivityIndicatorView?
    
+   var db: Firestore!
+   var userName: String = ""
+   var userProfileURL: String = ""
    
    //いま対応してるのは，23,32,33,43,
    let photos = ["33p7Red", "33p21Blue","23p13Green","43p10Red","23p5Red",
@@ -112,6 +116,9 @@ class CleateStageViewController: UIViewController {
       GetStartBackImageViewY()
       
       InitNotification()
+      
+      SetUpFireStoreSetting()
+      GetUsersInfomationFromFireStore()
       
       InitFinishCreatePuzzleButton()
       InitFinishChouseResPuzzleButton()
@@ -174,6 +181,37 @@ class CleateStageViewController: UIViewController {
    override func viewWillDisappear(_ animated: Bool) {
       super.viewWillDisappear(animated)
 
+   }
+   
+   private func SetUpFireStoreSetting() {
+      let settings = FirestoreSettings()
+      Firestore.firestore().settings = settings
+      db = Firestore.firestore()
+   }
+   
+   //サーバから名前とプロ画のURLを取得する
+   private func GetUsersInfomationFromFireStore() {
+      let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
+      db.collection("users").document(uid).getDocument { (document, err) in
+         if let err = err {
+            print("データベースからのデータ取得エラー: \(err)")
+            self.Play3DtouchError()
+         }
+         
+         if let document = document, document.exists {
+            //ドキュメントが存在していたらセットアップをする
+            if let userName = document.data()?["name"] as? String {
+               self.userName = userName
+            }
+            if let downLoadUrlAsString = document.data()?["downloadProfileURL"] as? String {
+               print("データベースからえたプロ画のURL = \(downLoadUrlAsString)")
+               self.userProfileURL = downLoadUrlAsString
+            }
+         } else {
+            print("Document does not exist")
+         }
+         print("ユーザネームとプロ画URLのデータの取得完了")
+      }
    }
    
    private func ShowOnPiceView() {
@@ -820,7 +858,7 @@ class CleateStageViewController: UIViewController {
       let FireStore = Firestores(uid: UID)
       
       FireStore.AddStageData(StageArrayForContents: FillContentsArray, MaxPiceNum: PiceImageArray.count,
-                             PiceArry: PiceImageArray, ImageData: ImageData, StageTitle: StageTitle)
+                             PiceArry: PiceImageArray, ImageData: ImageData, StageTitle: StageTitle, addUserName: self.userName, addUsersProfileURL: self.userProfileURL)
       
       
    }

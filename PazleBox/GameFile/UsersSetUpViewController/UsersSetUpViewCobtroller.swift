@@ -167,8 +167,6 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
             print("---------- プロ画をStorageに保存失敗  ----------\n")
             return
          }
-         
-         
       
          print("---------- プロ画をStorageに保存成功  ----------\n")
          print("\n---------- プロ画のURLを取得開始  ----------")
@@ -204,15 +202,25 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
    
    private func RegisterUserFirebase(uid: String, Name: String, profileImage: NSData) {
       print("\n---------- ユーザ情報をFireStoreに保存開始  ----------")
+      let Biography: String = ""
+      let FollowArray = Array<Any>()
+      let FollowerArray = Array<Any>()
+      let BlockArray = Array<Any>()
+      var TimeLineShowList = Array<Any>()
+      TimeLineShowList.append(uid)
       db.collection("users").document(uid).setData([
          "name": Name,
+         "usersUID": uid,
+         "Biography": Biography,
+         "isPublished": true,
          "AccountCreatedDay": Timestamp(date: Date()),
          "LastLogin": Timestamp(date: Date()),
          "CreateStageNum": 0,
          "ClearStageCount": 0,
-         "ProfileImage": profileImage,
-         "FollowNum": 0,
-         "FollowerNum": 0,
+         "Follow": FollowArray,
+         "Follower": FollowerArray,
+         "Block": BlockArray,
+         "TimeLineShowList": TimeLineShowList,
          "downloadProfileURL": "nil"
       ]) { err in
          if let err = err {

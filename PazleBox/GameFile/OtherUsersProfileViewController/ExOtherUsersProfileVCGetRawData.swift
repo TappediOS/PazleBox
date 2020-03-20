@@ -67,12 +67,13 @@ extension OtherUsersProfileViewController {
    func GetPlayStageInfoFromDataBase(StageDic: [String: Any]) -> PlayStageRefInfo {
       var stageInfo = PlayStageRefInfo()
       
+      let addUser = StageDic["addUser"] as! String
       let refID = StageDic["documentID"] as! String
       let playCount = StageDic["PlayCount"] as! Int
       let reviewCount = StageDic["ReviewCount"] as! Int
       let reviewAve = StageDic["ReviewAve"] as! CGFloat
       
-      stageInfo.RefID = refID
+      stageInfo.RefID = "users/" + addUser + "/Stages/" + refID
       stageInfo.PlayCount = playCount
       stageInfo.ReviewCount = reviewCount
       stageInfo.ReviewAve = reviewAve
@@ -106,6 +107,22 @@ extension OtherUsersProfileViewController {
       
       if let value = document["addUser"] as? String {
          StageData.updateValue(value, forKey: "addUser")
+      }
+      
+      if let value = document["addUserName"] as? String {
+         StageData.updateValue(value, forKey: "addUserName")
+      }
+      
+      if let value = document["addUsersProfileImageURL"] as? String {
+         StageData.updateValue(value, forKey: "addUsersProfileImageURL")
+      }
+      
+      if let value = document["StageCommentUid"] as? String {
+         StageData.updateValue(value, forKey: "StageCommentUid")
+      }
+      
+      if let value = document["StageID"] as? String {
+         StageData.updateValue(value, forKey: "StageID")
       }
       
       if let value = document["addDate"] as? Timestamp {

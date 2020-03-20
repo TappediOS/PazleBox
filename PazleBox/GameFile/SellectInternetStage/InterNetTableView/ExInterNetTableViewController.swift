@@ -59,13 +59,16 @@ extension InterNetTableViewController {
          let Image = UIImage(data: data as Data)
          InterNetCellTappedVC.setPostUsersStageImage(stageImage: Image!)
       }
-      //let UserName = UsingStageDatas[indexPath.item]["StageTitle"] as! String
       let StageTitle = UsingStageDatas[indexPath.item]["StageTitle"] as! String
       let reviewNum = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat
       let PlayCount = UsingStageDatas[indexPath.item]["PlayCount"] as! Int
+      let UserUID = UsingStageDatas[indexPath.item]["addUser"] as! String
+      let UserName = UsingStageDatas[indexPath.item]["addUserName"] as! String
+      let UserProfileURL = UsingStageDatas[indexPath.item]["addUsersProfileImageURL"] as! String
+      let StageCommentID = UsingStageDatas[indexPath.item]["StageCommentUid"] as! String
       
       InterNetCellTappedVC.setUsersImage(usersImage: UIImage(named: "hammer.png")!)
-      InterNetCellTappedVC.setUsersName(usersName: "Supar Boy")
+      InterNetCellTappedVC.setUsersName(usersName: UserName)
       
       InterNetCellTappedVC.setPostUsersStageTitle(stageTitle: StageTitle)
       
@@ -73,6 +76,9 @@ extension InterNetTableViewController {
       InterNetCellTappedVC.setPostUsersStageReview(stageReview: String(floor(Double(reviewNum) * 100) / 100) + " / 5")
       InterNetCellTappedVC.setPostUsersStagePlayCount(stagePlayCount: String(PlayCount))
       
+      InterNetCellTappedVC.setPostUsersUID(postUsersUID: UserUID)
+      InterNetCellTappedVC.setPostUsersProfileURL(postUsersProfileURL: UserProfileURL)
+      InterNetCellTappedVC.setPostedStageCommentID(CommentID: StageCommentID)
       
       //ステージデータをセットする
       let PiceArray = GetPiceArrayFromDataBase(StageDic: UsingStageDatas[indexPath.item])

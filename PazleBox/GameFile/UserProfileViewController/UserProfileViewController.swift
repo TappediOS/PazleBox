@@ -224,8 +224,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
       self.StartLoadingAnimation() //ローディングアニメーションの再生。
       let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
       print("UID = \(uid)")
-      db.collection("Stages")
-         .whereField("addUser", isEqualTo: uid)
+      db.collection("users").document(uid).collection("Stages")
          .order(by: "addDate", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in

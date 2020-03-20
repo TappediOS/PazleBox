@@ -66,6 +66,16 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    
    let networkChecker = NetworkCheck()
    
+   var PostedUsersUID = ""
+   var PostedUsersName = ""
+   var PostedusersProfileURL = ""
+   var CommentRefID = ""
+   
+   
+   var usersUID = ""
+   var usersName = ""
+   var usersProfileURL = ""
+   
    //スワイプ無効にするやつ
    @available(iOS 11, *)
    override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge{
@@ -151,6 +161,49 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    
    //MARK:- 選択画面でVC生成したらPresentする前にyobu
    //読み込み前に実行する
+   public func LoadUsersInfo() {
+      let UsersUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+      
+      db.collection("users").document(UsersUID).getDocument() { (document, err) in
+         if let err = err {
+            print("データベースからのデータ取得エラー: \(err)")
+            return
+         }
+         
+         if let document = document, document.exists {
+            //ドキュメントが存在していたらセットアップをする
+            if let userName = document.data()?["name"] as? String {
+               self.usersName = userName
+            }
+            if let usersProfileURL = document.data()?["downloadProfileURL"] as? String {
+               self.usersProfileURL = usersProfileURL
+            }
+            self.usersUID = UsersUID
+
+            
+         } else {
+            print("Document does not exist")
+            return
+         }
+      }
+   }
+   
+   public func LoadUsersNameOfPostedStages(name: String) {
+      self.PostedUsersName = name
+   }
+   
+   public func LoadLoadUsersUIDOfPostedStages(postedUsersUID: String) {
+      self.PostedUsersUID = postedUsersUID
+   }
+   
+   public func LoadUsersProfileImageURLOfPostedStages(profileURL: String) {
+      self.PostedusersProfileURL = profileURL
+   }
+   
+   public func LoadStageCommentIDofPostedStages(CommentID: String) {
+      self.CommentRefID = CommentID
+   }
+   
    public func LoadStageNumber(Num: Int) {
       SellectStageNumber = Num
       userDefaults.set(Num, forKey: "StageNum")
@@ -165,7 +218,8 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    }
    
    public func LoadPlayStageData(RefID: String, stageDataForNoDocExsist: PlayStageRefInfo) {
-      let Ref = db.collection("Stages").document(RefID)
+      //let Ref = db.collection("Stages").document(RefID)
+      let Ref = db.document(RefID)
       
       Ref.getDocument { (document, error) in
          if let document = document, document.exists, let doc = document.data() {
@@ -305,7 +359,7 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    //ステージのプレイ回数をインクリメント
    private func SavePlayStageCountToFireStore() {
       let RefID = PlayStageData.RefID
-      let Ref = db.collection("Stages").document(RefID)
+      let Ref = db.document(RefID)
       let playCount = PlayStageData.PlayCount
       
       print("FireStoreにPlayCount送信開始")
@@ -340,7 +394,7 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    
    private func ReviewUpdate(newValue: CGFloat) {
       let RefID = PlayStageData.RefID
-      let Ref = db.collection("Stages").document(RefID)
+      let Ref = db.document(RefID)
       
       Ref.updateData([
          "ReviewAve": newValue
@@ -356,7 +410,7 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    private func ReviewCountUpdate() {
       let ReivewCount = PlayStageData.ReviewCount
       let RefID = PlayStageData.RefID
-      let Ref = db.collection("Stages").document(RefID)
+      let Ref = db.document(RefID)
       
       Ref.updateData([
          "ReviewCount": FieldValue.increment(Int64(1))
@@ -421,6 +475,43 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       } else {
          print("PlayCountがnilだったから更新しない")
          return
+      }
+   }
+   
+   //MARK:- コメントをFirestoreに保存する処理
+   private func SaveStageCommentToFireStore() {
+      let isRegisterComment = ClearView?.GetisRegisterComment()
+      let SentCommentToFireStore: String = ClearView?.GetSentCommentToFireStore() ?? ""
+      
+      if isRegisterComment == false {
+         print("ユーザはコメントを登録していません\n")
+         return
+      } else {
+         print("\n---- 送信するコメント ----")
+         print(SentCommentToFireStore)
+         print("---- 送信するコメント ----\n")
+      }
+      
+      let StageCommentRef = "StageComment/" + self.CommentRefID + "/Comment/"
+      let CommentID = NSUUID()
+      let CommentIDStr = CommentID.uuidString
+      
+      
+      db.collection(StageCommentRef).addDocument(data: [
+         "CommentBody": SentCommentToFireStore,
+         "CommentUserUID": self.usersUID,
+         "CommentUsersName": self.usersName,
+         "CommentUsersProfileURL": self.usersProfileURL,
+         "AddDate": FieldValue.serverTimestamp(),
+         "CommentID": CommentIDStr,
+         "isPublished": true
+      ]) { err in
+         if let err = err {
+            print("---------- コメントをFireStoreに保存失敗  ----------\n")
+            print("Error writing document: \(err.localizedDescription)")
+         } else {
+            print("---------- コメントをFireStoreに保存成功  ----------\n")
+         }
       }
    }
 
@@ -513,6 +604,7 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
       //Homeに帰る処理はGoBackViewController()にきさい。
       //つまり，したの関数から飛ばす
       SaveReviewAveCountToFireStore()
+      SaveStageCommentToFireStore()
    }
    
    private func GoBackViewController() {

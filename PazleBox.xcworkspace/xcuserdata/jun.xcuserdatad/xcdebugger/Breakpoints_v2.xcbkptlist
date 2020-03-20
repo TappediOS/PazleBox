@@ -1757,8 +1757,8 @@
             timestampString = "590043379.05116"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "401"
-            endingLineNumber = "401"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
             landmarkName = "InitBannerView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1774,8 +1774,8 @@
             timestampString = "590043379.051218"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "329"
-            endingLineNumber = "329"
+            startingLineNumber = "340"
+            endingLineNumber = "340"
             landmarkName = "TapSentCommentTextView(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2046,8 +2046,8 @@
             timestampString = "590043379.052193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "485"
-            endingLineNumber = "485"
+            startingLineNumber = "499"
+            endingLineNumber = "499"
             landmarkName = "InitGoHomeButton(frame:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2063,8 +2063,8 @@
             timestampString = "590043379.052255"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "473"
-            endingLineNumber = "473"
+            startingLineNumber = "487"
+            endingLineNumber = "487"
             landmarkName = "InitGoHomeButton(frame:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2291,8 +2291,8 @@
             filePath = "PazleBox/GameFile/UserStageSecenAndVC/UsersGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2307,8 +2307,8 @@
             filePath = "PazleBox/GameFile/UserStageSecenAndVC/UsersGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
             landmarkName = "UsersGameViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -2323,8 +2323,8 @@
             filePath = "PazleBox/GameFile/UserStageSecenAndVC/UsersGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
             landmarkName = "InitGameViewAndShowView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2595,9 +2595,9 @@
             filePath = "PazleBox/GameFile/CreateStage/FireStore/FireStores.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "AddStageData(StageArrayForContents:MaxPiceNum:PiceArry:ImageData:StageTitle:)"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "AddStageData(StageArrayForContents:MaxPiceNum:PiceArry:ImageData:StageTitle:addUserName:addUsersProfileURL:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2613,7 +2613,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "529"
             endingLineNumber = "529"
-            landmarkName = "WorkForPiceUserPiceUp()"
+            landmarkName = "PiceTouchMovedCatchNotification(notification:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2629,7 +2629,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "503"
             endingLineNumber = "503"
-            landmarkName = "PiceTouchEndedCatchNotification(notification:)"
+            landmarkName = "PiceTouchStartCatchNotification(notification:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2893,7 +2893,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "805"
             endingLineNumber = "805"
-            landmarkName = "SaveStageUserCreated()"
+            landmarkName = "ShowWriteStageTitleAlertView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3051,8 +3051,8 @@
             filePath = "PazleBox/GameFile/UserStageSecenAndVC/UsersGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "352"
-            endingLineNumber = "352"
+            startingLineNumber = "406"
+            endingLineNumber = "406"
             landmarkName = "ReviewUpdate(newValue:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3115,9 +3115,9 @@
             filePath = "PazleBox/GameFile/CreateStage/FireStore/FireStores.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "AddStageData(StageArrayForContents:MaxPiceNum:PiceArry:ImageData:StageTitle:)"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "AddStageData(StageArrayForContents:MaxPiceNum:PiceArry:ImageData:StageTitle:addUserName:addUsersProfileURL:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3131,8 +3131,8 @@
             filePath = "PazleBox/GameFile/UserStageSecenAndVC/UsersGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "343"
-            endingLineNumber = "343"
+            startingLineNumber = "397"
+            endingLineNumber = "397"
             landmarkName = "ReviewUpdate(newValue:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3147,8 +3147,8 @@
             filePath = "PazleBox/GameFile/UserStageSecenAndVC/UsersGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "384"
-            endingLineNumber = "384"
+            startingLineNumber = "438"
+            endingLineNumber = "438"
             landmarkName = "SaveReviewAveCountToFireStore()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3163,8 +3163,8 @@
             filePath = "PazleBox/GameFile/UserStageSecenAndVC/UsersGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "327"
-            endingLineNumber = "327"
+            startingLineNumber = "381"
+            endingLineNumber = "381"
             landmarkName = "SaveUsersPlayStageCountToFireStore()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3179,8 +3179,8 @@
             filePath = "PazleBox/GameFile/UserStageSecenAndVC/UsersGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "408"
-            endingLineNumber = "408"
+            startingLineNumber = "462"
+            endingLineNumber = "462"
             landmarkName = "SaveReviewAveCountToFireStore()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3195,8 +3195,8 @@
             filePath = "PazleBox/GameFile/UserStageSecenAndVC/UsersGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "407"
-            endingLineNumber = "407"
+            startingLineNumber = "461"
+            endingLineNumber = "461"
             landmarkName = "SaveReviewAveCountToFireStore()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3211,8 +3211,8 @@
             filePath = "PazleBox/GameFile/UserStageSecenAndVC/UsersGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "378"
-            endingLineNumber = "378"
+            startingLineNumber = "432"
+            endingLineNumber = "432"
             landmarkName = "SaveReviewAveCountToFireStore()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3227,8 +3227,8 @@
             filePath = "PazleBox/GameFile/UserStageSecenAndVC/UsersGameViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "382"
-            endingLineNumber = "382"
+            startingLineNumber = "436"
+            endingLineNumber = "436"
             landmarkName = "SaveReviewAveCountToFireStore()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3373,7 +3373,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "232"
             endingLineNumber = "232"
-            landmarkName = "StartLoadingAnimation()"
+            landmarkName = "ShowCheckStage()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3741,7 +3741,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "146"
             endingLineNumber = "146"
-            landmarkName = "viewDidLayoutSubviews()"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3899,8 +3899,8 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/InterNetTableView/InterNetCellTappedViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "InterNetCellTappedViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -3947,10 +3947,10 @@
             filePath = "PazleBox/GameFile/UserProfileViewController/UserProfileTapCellViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "483"
-            endingLineNumber = "483"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
+            startingLineNumber = "484"
+            endingLineNumber = "484"
+            landmarkName = "UserProfileTapCellViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3965,8 +3965,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
             endingLineNumber = "67"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            landmarkName = "UserProfileTapCellViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -4027,9 +4027,9 @@
             filePath = "PazleBox/GameFile/UserProfileViewController/UserProfileTapCellViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "463"
-            endingLineNumber = "463"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "464"
+            endingLineNumber = "464"
+            landmarkName = "TapBlockActionAgainstUsersPost()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4167,9 +4167,9 @@
             filePath = "PazleBox/GameFile/CreateStage/FireStore/FireStores.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "AddStageData(StageArrayForContents:MaxPiceNum:PiceArry:ImageData:StageTitle:)"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "AddStageData(StageArrayForContents:MaxPiceNum:PiceArry:ImageData:StageTitle:addUserName:addUsersProfileURL:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4192,22 +4192,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "862EE29C-D176-4E33-9A27-DB43E0B75C72"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PazleBox/GameFile/SellectInternetStage/InterNetTableView/InterNetCellTappedViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "TapPostUsersStagePlayButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "0EAEF869-D849-4E26-810B-5019F0AD1BF6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -4215,8 +4199,8 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/InterNetTableView/ExInterNetTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -4423,8 +4407,8 @@
             filePath = "PazleBox/GameFile/ShoppingPiceViewController/PiceShopNextVC/ExPiceShopEachViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "collectionView(_:layout:sizeForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -4503,8 +4487,8 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/InterNetTableView/ExInterNetTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "InterNetTableViewController"
             landmarkType = "21">
          </BreakpointContent>
@@ -4519,9 +4503,25 @@
             filePath = "PazleBox/GameFile/SeceneAndViewCon/GameClearView/GameClearView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "335"
-            endingLineNumber = "335"
+            startingLineNumber = "346"
+            endingLineNumber = "346"
             landmarkName = "TapSentCommentTextView(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6FB42154-228F-420A-9A29-B5A957B481F8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PazleBox/GameFile/CreateStage/FireStore/FireStores.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "AddStageData(StageArrayForContents:MaxPiceNum:PiceArry:ImageData:StageTitle:addUserName:addUsersProfileURL:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
