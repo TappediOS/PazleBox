@@ -78,7 +78,6 @@ extension WorldTableViewController {
          InterNetCellTappedVC.setUsersImage(usersImage: Image!)
       }
       
-      InterNetCellTappedVC.setUsersImage(usersImage: UIImage(named: "hammer.png")!)
       InterNetCellTappedVC.setUsersName(usersName: UserName)
       
       InterNetCellTappedVC.setPostUsersStageTitle(stageTitle: StageTitle)
