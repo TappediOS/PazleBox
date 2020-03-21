@@ -387,7 +387,7 @@ extension AppDelegate : MessagingDelegate {
       let userUID = UserDefaults.standard.string(forKey: "UID")
       
       if let uid = userUID {
-         db.collection("users").document(uid).updateData([
+         db.collection("users").document(uid).setData([
          "FcmToken": fcmToken,
          ]) { err in
             if let err = err {
