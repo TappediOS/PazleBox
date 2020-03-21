@@ -117,6 +117,10 @@ extension UserProfileViewController {
          StageData.updateValue(value, forKey: "addUsersProfileImageURL")
       }
       
+      if let value = document["FcmToken"] as? String {
+         StageData.updateValue(value, forKey: "FcmToken")
+      }
+      
       if let value = document["StageCommentUid"] as? String {
          StageData.updateValue(value, forKey: "StageCommentUid")
       }

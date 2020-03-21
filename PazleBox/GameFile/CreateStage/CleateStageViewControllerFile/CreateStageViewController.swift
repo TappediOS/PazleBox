@@ -77,6 +77,7 @@ class CleateStageViewController: UIViewController {
    var db: Firestore!
    var userName: String = ""
    var userProfileURL: String = ""
+   var usersFcmToken: String = ""
    
    //いま対応してるのは，23,32,33,43,
    let photos = ["33p7Red", "33p21Blue","23p13Green","43p10Red","23p5Red",
@@ -189,7 +190,7 @@ class CleateStageViewController: UIViewController {
       db = Firestore.firestore()
    }
    
-   //サーバから名前とプロ画のURLを取得する
+   //MARK:- サーバから名前とプロ画のURLを取得する
    private func GetUsersInfomationFromFireStore() {
       let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
       db.collection("users").document(uid).getDocument { (document, err) in
@@ -206,6 +207,9 @@ class CleateStageViewController: UIViewController {
             if let downLoadUrlAsString = document.data()?["downloadProfileURL"] as? String {
                print("データベースからえたプロ画のURL = \(downLoadUrlAsString)")
                self.userProfileURL = downLoadUrlAsString
+            }
+            if let fcmToken = document.data()?["FcmToken"] as? String {
+               self.usersFcmToken = fcmToken
             }
          } else {
             print("Document does not exist")
@@ -858,7 +862,7 @@ class CleateStageViewController: UIViewController {
       let FireStore = Firestores(uid: UID)
       
       FireStore.AddStageData(StageArrayForContents: FillContentsArray, MaxPiceNum: PiceImageArray.count,
-                             PiceArry: PiceImageArray, ImageData: ImageData, StageTitle: StageTitle, addUserName: self.userName, addUsersProfileURL: self.userProfileURL)
+                             PiceArry: PiceImageArray, ImageData: ImageData, StageTitle: StageTitle, addUserName: self.userName, addUsersProfileURL: self.userProfileURL, UsersFcmToken: self.usersFcmToken)
       
       
    }

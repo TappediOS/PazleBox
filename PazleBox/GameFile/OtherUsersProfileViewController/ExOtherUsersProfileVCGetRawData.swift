@@ -121,6 +121,10 @@ extension OtherUsersProfileViewController {
          StageData.updateValue(value, forKey: "StageCommentUid")
       }
       
+      if let value = document["FcmToken"] as? String {
+         StageData.updateValue(value, forKey: "FcmToken")
+      }
+      
       if let value = document["StageID"] as? String {
          StageData.updateValue(value, forKey: "StageID")
       }

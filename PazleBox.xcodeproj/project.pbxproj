@@ -555,6 +555,7 @@
 		BFE1D3172420B9FF00794349 /* SomeUsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1D3162420B9FF00794349 /* SomeUsersListViewController.swift */; };
 		BFE1D3192420BCE500794349 /* SomeUsersListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1D3182420BCE500794349 /* SomeUsersListCellTableViewCell.swift */; };
 		BFE1D31B2420BF8800794349 /* ExSomeUsersListViewControllerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1D31A2420BF8800794349 /* ExSomeUsersListViewControllerTableView.swift */; };
+		BFE1D31D24262FA700794349 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE1D31C24262FA700794349 /* MapKit.framework */; };
 		BFF6D5CE227D9323000253A2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D5CD227D9323000253A2 /* Settings.bundle */; };
 		BFF6D5D4227ED73A000253A2 /* 33p23Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D5D1227ED73A000253A2 /* 33p23Green.png */; };
 		BFF6D5D5227ED73A000253A2 /* 33p23Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D5D2227ED73A000253A2 /* 33p23Red.png */; };
@@ -1426,6 +1427,7 @@
 		BFE1D3162420B9FF00794349 /* SomeUsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeUsersListViewController.swift; sourceTree = "<group>"; };
 		BFE1D3182420BCE500794349 /* SomeUsersListCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeUsersListCellTableViewCell.swift; sourceTree = "<group>"; };
 		BFE1D31A2420BF8800794349 /* ExSomeUsersListViewControllerTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSomeUsersListViewControllerTableView.swift; sourceTree = "<group>"; };
+		BFE1D31C24262FA700794349 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BFF6D5CD227D9323000253A2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		BFF6D5D1227ED73A000253A2 /* 33p23Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 33p23Green.png; sourceTree = "<group>"; };
 		BFF6D5D2227ED73A000253A2 /* 33p23Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 33p23Red.png; sourceTree = "<group>"; };
@@ -1693,6 +1695,7 @@
 			files = (
 				BFFA2A7B22336D760023BB71 /* SpriteKitEasingSwift.framework in Frameworks */,
 				BFBDA4FF2411561800A6AA64 /* CropViewController.framework in Frameworks */,
+				BFE1D31D24262FA700794349 /* MapKit.framework in Frameworks */,
 				BFBDA50424124CB700A6AA64 /* DZNEmptyDataSet.framework in Frameworks */,
 				C568DD1EF47C3315C5F1E752 /* Pods_PazleBox.framework in Frameworks */,
 			);
@@ -3212,6 +3215,7 @@
 		F18F91965E347613F23DE2B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFE1D31C24262FA700794349 /* MapKit.framework */,
 				BFBDA50324124CB600A6AA64 /* DZNEmptyDataSet.framework */,
 				BFBDA43924114BD100A6AA64 /* CropViewController.framework */,
 				BFFA2A7A22336D760023BB71 /* SpriteKitEasingSwift.framework */,

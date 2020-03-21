@@ -66,6 +66,7 @@ extension InterNetTableViewController {
       let UserName = UsingStageDatas[indexPath.item]["addUserName"] as! String
       let UserProfileURL = UsingStageDatas[indexPath.item]["addUsersProfileImageURL"] as! String
       let StageCommentID = UsingStageDatas[indexPath.item]["StageCommentUid"] as! String
+      let FcmToken = UsingStageDatas[indexPath.item]["FcmToken"] as! String
       
       InterNetCellTappedVC.setUsersImage(usersImage: UIImage(named: "hammer.png")!)
       InterNetCellTappedVC.setUsersName(usersName: UserName)
@@ -79,6 +80,7 @@ extension InterNetTableViewController {
       InterNetCellTappedVC.setPostUsersUID(postUsersUID: UserUID)
       InterNetCellTappedVC.setPostUsersProfileURL(postUsersProfileURL: UserProfileURL)
       InterNetCellTappedVC.setPostedStageCommentID(CommentID: StageCommentID)
+      InterNetCellTappedVC.setFcmToken(FcmToken: FcmToken)
       
       //ステージデータをセットする
       let PiceArray = GetPiceArrayFromDataBase(StageDic: UsingStageDatas[indexPath.item])

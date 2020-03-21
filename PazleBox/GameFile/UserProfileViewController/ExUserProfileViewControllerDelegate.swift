@@ -81,6 +81,7 @@ extension UserProfileViewController {
       let UserUID = UsingStageDatas[indexPath.item]["addUser"] as! String
       let UserProfileURL = UsingStageDatas[indexPath.item]["addUsersProfileImageURL"] as! String
       let StageCommentID = UsingStageDatas[indexPath.item]["StageCommentUid"] as! String
+      let FcmToken = UsingStageDatas[indexPath.item]["FcmToken"] as! String
       
       UserProfileTapCellViewController.setUsersImage(usersImage: self.usersProfileImagfe)
       UserProfileTapCellViewController.setUsersName(usersName: self.userName)
@@ -99,6 +100,7 @@ extension UserProfileViewController {
       UserProfileTapCellViewController.setPostUsersUID(postUsersUID: UserUID)
       UserProfileTapCellViewController.setPostUsersProfileURL(postUsersProfileURL: UserProfileURL)
       UserProfileTapCellViewController.setPostedStageCommentID(CommentID: StageCommentID)
+      UserProfileTapCellViewController.setFcmToken(FcmToken: FcmToken)
       
       
       UserProfileTapCellViewController.setPiceArray(PiceArray)

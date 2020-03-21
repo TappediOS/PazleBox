@@ -24,7 +24,7 @@ class Firestores {
       db = Firestore.firestore()
    }
    
-   public func AddStageData(StageArrayForContents: [[Contents]], MaxPiceNum: Int, PiceArry: [PiceImageView], ImageData: NSData?, StageTitle: String, addUserName: String, addUsersProfileURL: String) {
+   public func AddStageData(StageArrayForContents: [[Contents]], MaxPiceNum: Int, PiceArry: [PiceImageView], ImageData: NSData?, StageTitle: String, addUserName: String, addUsersProfileURL: String, UsersFcmToken: String) {
       
       let Stageuid = NSUUID()
       let StageuidStr = Stageuid.uuidString
@@ -50,6 +50,7 @@ class Firestores {
                                     "addUserName" : addUserName,
                                     "ShowTimeLineUserUID": ShowTimeLineUserUID,
                                     "addUsersProfileImageURL": addUsersProfileURL,
+                                    "FcmToken": UsersFcmToken,
                                     "published" : true]
       
       docData.updateValue(StageTitle, forKey: "StageTitle")

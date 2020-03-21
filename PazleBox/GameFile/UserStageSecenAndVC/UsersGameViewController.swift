@@ -69,12 +69,14 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    var PostedUsersUID = ""
    var PostedUsersName = ""
    var PostedusersProfileURL = ""
+   var PostedUsersFcmToken = ""
    var CommentRefID = ""
    
    
    var usersUID = ""
    var usersName = ""
    var usersProfileURL = ""
+   var usersFcmToken = ""
    
    //スワイプ無効にするやつ
    @available(iOS 11, *)
@@ -178,6 +180,9 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
             if let usersProfileURL = document.data()?["downloadProfileURL"] as? String {
                self.usersProfileURL = usersProfileURL
             }
+            if let usersFcmToken = document.data()?["FcmToken"] as? String {
+               self.usersFcmToken = usersFcmToken
+            }
             self.usersUID = UsersUID
 
             
@@ -202,6 +207,10 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
    
    public func LoadStageCommentIDofPostedStages(CommentID: String) {
       self.CommentRefID = CommentID
+   }
+   
+   public func LoadPostedUsersFcmToken(PostedUsersFcmToken: String) {
+      self.PostedUsersFcmToken = PostedUsersFcmToken
    }
    
    public func LoadStageNumber(Num: Int) {
@@ -502,6 +511,8 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
          "CommentUserUID": self.usersUID,
          "CommentUsersName": self.usersName,
          "CommentUsersProfileURL": self.usersProfileURL,
+         "CommentUsersFcmToken": self.usersFcmToken,
+         "CommentedUsersFcmToken": self.PostedUsersFcmToken,
          "AddDate": FieldValue.serverTimestamp(),
          "CommentID": CommentIDStr,
          "isPublished": true

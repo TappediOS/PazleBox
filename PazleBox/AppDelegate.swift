@@ -272,6 +272,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       print("------------Game Center--------------\n")
       //------------------- Game Center-----------------//
       
+      InstanceID.instanceID().instanceID { (result, error) in
+        if let error = error {
+          print("Error fetching remote instance ID: \(error)")
+        } else if let result = result {
+          print("Remote instance ID token: \(result.token)")
+        }
+      }
+      
       return true
    }
    
@@ -337,6 +345,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       print(userInfo)
       
       completionHandler(UIBackgroundFetchResult.newData)
+   }
+   
+   func application(_ application: UIApplication,
+       didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+
+      Messaging.messaging().apnsToken = deviceToken
+
    }
 
 }

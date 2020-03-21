@@ -50,6 +50,7 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
    var PostUsersProfileURL = ""
    var PostUsersUID = ""
    var PostedStageCommentID = ""
+   var PostedUsersFcmToken = ""
    
    //GameSceneを読み込むのに必要なデータ
    var PiceArray: [PiceInfo] = Array()
@@ -197,6 +198,10 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
       self.PostedStageCommentID = CommentID
    }
    
+   public func setFcmToken(FcmToken: String) {
+      self.PostedUsersFcmToken = FcmToken
+   }
+   
    //MARK:- 画面遷移する前にプレイするステージデータをセットする
    public func setPiceArray(_ piceArray: [PiceInfo]) {
       self.PiceArray = piceArray
@@ -259,6 +264,7 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
       GameVC.LoadLoadUsersUIDOfPostedStages(postedUsersUID: self.PostUsersUID)
       GameVC.LoadUsersProfileImageURLOfPostedStages(profileURL: self.PostUsersProfileURL)
       GameVC.LoadStageCommentIDofPostedStages(CommentID: self.PostedStageCommentID)
+      GameVC.LoadPostedUsersFcmToken(PostedUsersFcmToken: self.PostedUsersFcmToken)
 
       GameVC.LoadPiceArray(PiceArray: PiceArray)
       GameVC.LoadStageArray(StageArray: StageArray)

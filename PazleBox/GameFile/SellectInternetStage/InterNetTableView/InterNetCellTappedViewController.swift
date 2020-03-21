@@ -40,6 +40,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    var PostUsersProfileURL = ""
    var PostUsersUID = ""
    var PostedStageCommentID = ""
+   var PostedUsersFcmToken = ""
    
    @IBOutlet weak var UsersCommentTableView: UITableView!
 
@@ -171,6 +172,10 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    
    public func setPostedStageCommentID(CommentID: String) {
       self.PostedStageCommentID = CommentID
+   }
+   
+   public func setFcmToken(FcmToken: String) {
+      self.PostedUsersFcmToken = FcmToken
    }
    
    //MARK:- 画面遷移する前にプレイするステージデータをセットする
@@ -336,6 +341,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       GameVC.LoadLoadUsersUIDOfPostedStages(postedUsersUID: self.PostUsersUID)
       GameVC.LoadUsersProfileImageURLOfPostedStages(profileURL: self.PostUsersProfileURL)
       GameVC.LoadStageCommentIDofPostedStages(CommentID: self.PostedStageCommentID)
+      GameVC.LoadPostedUsersFcmToken(PostedUsersFcmToken: self.PostedUsersFcmToken)
       
       GameVC.LoadPiceArray(PiceArray: PiceArray)
       GameVC.LoadStageArray(StageArray: StageArray)
