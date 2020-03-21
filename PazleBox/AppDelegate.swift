@@ -165,29 +165,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       //--------------------UITESTの処理 (2/2)-----------------------//
       
       
-      //------------------- プッシュ通知-----------------//
-      // [START set_messaging_delegate]
-      Messaging.messaging().delegate = self
-      // [END set_messaging_delegate]
-      if #available(iOS 10.0, *) {
-         // For iOS 10 display notification (sent via APNS)
-         UNUserNotificationCenter.current().delegate = self
-         
-         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-         UNUserNotificationCenter.current().requestAuthorization(
-            options: authOptions,
-            completionHandler: {_, _ in })
-      } else {
-         let settings: UIUserNotificationSettings =
-            UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-         application.registerUserNotificationSettings(settings)
-      }
-      application.registerForRemoteNotifications()
-      //------------------- プッシュ通知-----------------//
       
-      //------------------- プッシュ通知の赤いやつ消す-----------------//
-      UIApplication.shared.applicationIconBadgeNumber = 0
-      //------------------- プッシュ通知の赤いやつ消す-----------------//
       
       
       //--------------------FireBaseログイン-----------------------//
@@ -223,6 +201,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
          print("------------FireBaseログイン情報--------------\n")
       }
       //--------------------FireBaseログイン-----------------------//
+      
+      //------------------- プッシュ通知-----------------//
+      // [START set_messaging_delegate]
+      Messaging.messaging().delegate = self
+      // [END set_messaging_delegate]
+      if #available(iOS 10.0, *) {
+         // For iOS 10 display notification (sent via APNS)
+         UNUserNotificationCenter.current().delegate = self
+         
+         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+         UNUserNotificationCenter.current().requestAuthorization(
+            options: authOptions,
+            completionHandler: {_, _ in })
+      } else {
+         let settings: UIUserNotificationSettings =
+            UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+         application.registerUserNotificationSettings(settings)
+      }
+      application.registerForRemoteNotifications()
+      //------------------- プッシュ通知-----------------//
+      
+      //------------------- プッシュ通知の赤いやつ消す-----------------//
+      UIApplication.shared.applicationIconBadgeNumber = 0
+      //------------------- プッシュ通知の赤いやつ消す-----------------//
       
       
       if UserDefaults.standard.bool(forKey: "Logined") == false {
@@ -379,6 +381,26 @@ extension AppDelegate : MessagingDelegate {
       NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
       // TODO: 必要に応じてトークンをアプリケーションサーバーに送信します。
       // Note: このコールバックは、アプリの起動時と新しいトークンが生成されるたびに発生します。
+      
+      print("\n------ FCMトークン更新されたので，Firestoreに登録しなおします ------")
+      let db = Firestore.firestore()
+      let userUID = UserDefaults.standard.string(forKey: "UID")
+      
+      if let uid = userUID {
+         db.collection("users").document(uid).updateData([
+         "FcmToken": fcmToken,
+         ]) { err in
+            if let err = err {
+               print("Error FcmToken updating: \(err)")
+               print("------ FcmTokenのUpdateエラー発生し失敗------\n")
+            } else {
+               print("------ FcmTokenのUpdate成功しました ------\n")
+            }
+         }
+      } else {
+         print("------ userUIDにnilが入ってたので更新しません ------\n")
+      }
+      
    }
    //MARK: END refresh_token -
    
