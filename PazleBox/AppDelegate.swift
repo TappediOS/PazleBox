@@ -402,9 +402,7 @@ extension AppDelegate : MessagingDelegate {
       let userUID = UserDefaults.standard.string(forKey: "UID")
       
       if let uid = userUID {
-         db.collection("users").document(uid).setData([
-         "FcmToken": fcmToken,
-         ]) { err in
+         db.collection("users").document(uid).setData(["FcmToken": fcmToken,], merge: true) { err in
             if let err = err {
                print("Error FcmToken updating: \(err)")
                print("------ FcmTokenのUpdateエラー発生し失敗------\n")
