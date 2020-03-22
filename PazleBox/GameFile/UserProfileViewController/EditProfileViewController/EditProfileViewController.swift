@@ -156,7 +156,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
    private func SaveNewUserNameFireStore(onlyName: Bool) {
       let newName = UserNameWhenDismissThisVC
       let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
-      db.collection("users").document(uid).updateData([
+      db.collection("users").document(uid).collection("MonitoredUserInfo").document("UserInfo").updateData([
          "name": newName
       ]) { err in
          if let err = err {

@@ -152,12 +152,14 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
       })
    }
    
+   //MARK:- プロフィール編集ボタン押された
    @objc func TapEditProfileButton(sender: UIBarButtonItem) {
       guard self.isLoadingProfile == false else {
          print("プロフィール読み込み中です")
          return
       }
       print("tap editProfile")
+      //名前とプロ画は保存してから画面遷移する。
       UserDefaults.standard.set(self.usersProfileImagfe.pngData() as! NSData, forKey: "UserProfileImageData")
       UserDefaults.standard.set(self.userName, forKey: "UserProfileName")
       let EditProfileSB = UIStoryboard(name: "EditProfileViewControllerSB", bundle: nil)
@@ -222,6 +224,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    private func GetMyStageDataFromDataBase() {
       print("自分のステージデータの取得開始")
       self.StartLoadingAnimation() //ローディングアニメーションの再生。
+      self.UsingStageDatas.removeAll() //データ取得する前に，配列を空にする
       let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
       print("UID = \(uid)")
       db.collection("users").document(uid).collection("Stages")
@@ -255,9 +258,25 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
          
          if let document = document, document.exists {
             //ドキュメントが存在していたらセットアップをする
-            self.SetUsersName(document: document)
             self.GetUsersPfofileImageURL(document: document)
-            
+         } else {
+            print("Document does not exist")
+            self.ShowErrGetStageAlertView()
+            self.StopLoadingAnimation()
+         }
+         print("ユーザネームとプレイ回数のデータの取得完了")
+      }
+      
+      //名前の取得はMonitoredUserInfoから行う。
+      db.collection("users").document(uid).collection("MonitoredUserInfo").document("UserInfo").getDocument { (document, err) in
+         if let err = err {
+            print("データベースからのデータ取得エラー: \(err)")
+            self.Play3DtouchError()
+         }
+         
+         if let document = document, document.exists {
+            //ドキュメントが存在していたらセットアップをする
+            self.SetUsersName(document: document)
          } else {
             print("Document does not exist")
             self.ShowErrGetStageAlertView()
