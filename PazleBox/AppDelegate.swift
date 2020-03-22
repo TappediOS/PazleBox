@@ -402,6 +402,9 @@ extension AppDelegate : MessagingDelegate {
       let userUID = UserDefaults.standard.string(forKey: "UID")
       
       if let uid = userUID {
+         //setData()を使う時はmergeをtrueにする。
+         //こうすることで，Document全体を上書きせずに，そのFieldを追加することができる.
+         //ちなみに，updateData()を使うと，Document全体を上書きはされないけど，そのFieldがなかったら失敗する。
          db.collection("users").document(uid).setData(["FcmToken": fcmToken,], merge: true) { err in
             if let err = err {
                print("Error FcmToken updating: \(err)")
