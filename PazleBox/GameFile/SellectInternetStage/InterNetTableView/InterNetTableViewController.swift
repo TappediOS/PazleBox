@@ -21,7 +21,7 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
    var UsingStageDatas: [([String: Any])] = Array()
      
    //それぞれFirestoreでとってきてだいにゅうする。
-   var LatestStageDatas: [([String: Any])] = Array()
+   var TimeLineData: [([String: Any])] = Array()
    
    @IBOutlet weak var InterNetTableView: UITableView!
    var RefleshControl = UIRefreshControl()
@@ -88,13 +88,13 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
             } else {
                self.Play3DtouchSuccess()
                for document in querySnapshot!.documents {
-                  self.LatestStageDatas.append(self.GetRawData(document: document))
+                  self.TimeLineData.append(self.GetRawData(document: document))
                }
             }
             print("TimeLineデータの取得完了")
             //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
             //Segmentタップした時に別の関数でCollecti onVie をリロードする。
-            self.UsingStageDatas = self.LatestStageDatas
+            self.UsingStageDatas = self.TimeLineData
             print("Delegate設定します。")
                
             //読み取りが終わってからデリゲードを入れる必要がある
@@ -112,25 +112,31 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
    //MARK:- リロード処理
    private func ReLoadTimeLineDataFromDataBase() {
       print("\n---- TimeLineデータの更新開始 ----")
-      db.collection("Stages")
+      
+      let UsersUID = UserDefaults.standard.string(forKey: "UID")
+      TimeLineData.removeAll()
+      db.collectionGroup("Stages")
+         .whereField("ShowTimeLineUserUID", arrayContains: UsersUID ?? "")
          .order(by: "addDate", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
             if let err = err {
                print("Error: \(err)")
                print("\n---- データベースからのデータ取得エラー ----\n")
+               self.Play3DtouchError()
+               self.ShowErrGetStageAlertView()
             } else {
-               print("TimeLineデータの取得成功")
-               self.LatestStageDatas.removeAll()
+               self.Play3DtouchSuccess()
                for document in querySnapshot!.documents {
-                  self.LatestStageDatas.append(self.GetRawData(document: document))
+                  self.TimeLineData.append(self.GetRawData(document: document))
                }
-               print("---- TimeLineデータの更新完了 ----\n")
-               self.UsingStageDatas = self.LatestStageDatas
-               self.InterNetTableView.reloadData()
+               print("TimeLineデータの取得完了")
             }
+            self.UsingStageDatas = self.TimeLineData
+            self.InterNetTableView.reloadData()
             self.RefleshControl.endRefreshing()
       }
+
    }
    
    private func ShowErrGetStageAlertView() {
