@@ -73,8 +73,10 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
    //MARK:- 最新，回数，評価それぞれのデータを取得する。
    private func GetTimeLineDataFromDataBase() {
       print("\n---- TimeLineデータの更新開始 ----")
+      let UsersUID = UserDefaults.standard.string(forKey: "UID")
       self.StartLoadingAnimation() //ローディングアニメーションの再生。
-      db.collection("Stages")
+      db.collectionGroup("Stages")
+         .whereField("ShowTimeLineUserUID", arrayContains: UsersUID ?? "")
          .order(by: "addDate", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
