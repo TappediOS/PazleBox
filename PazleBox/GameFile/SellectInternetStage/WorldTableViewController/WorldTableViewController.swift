@@ -51,6 +51,7 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
    override func viewDidLoad() {
       super.viewDidLoad()
       WorldTableView.rowHeight = 160
+      WorldTableView.contentInset = UIEdgeInsets(top: 61.0, left: 0, bottom: 0, right: 0)
       
       SetUpNavigationController()
       InitLoadActivityView()
@@ -70,7 +71,7 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       if #available(iOS 11.0, *) {
          let safeAreTop = self.view.safeAreaInsets.top
          self.segmentedControl?.snp.makeConstraints { make in
-            make.top.equalTo(view.snp.top).offset(safeAreTop + 12)
+            make.top.equalTo(view.snp.top).offset(safeAreTop + 11)
             make.leading.equalTo(view.snp.leading).offset(20)
             make.trailing.equalTo(view.snp.trailing).offset(-20)
             make.height.equalTo(40)
