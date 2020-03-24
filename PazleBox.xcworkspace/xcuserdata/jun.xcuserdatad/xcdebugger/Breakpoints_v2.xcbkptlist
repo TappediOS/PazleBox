@@ -3901,8 +3901,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "147"
             endingLineNumber = "147"
-            landmarkName = "InitPostUsersStagePlayCountLabel()"
-            landmarkType = "7">
+            landmarkName = "InterNetCellTappedViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
