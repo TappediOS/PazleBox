@@ -31,6 +31,9 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
    
    var LoadActivityView: NVActivityIndicatorView?
    
+   var DownLoadProfileCounter = 0
+   var isFetchDataWhenDidLoadThisVC = true
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       InterNetTableView.rowHeight = 160
@@ -70,76 +73,7 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
       self.RefleshControl.addTarget(self, action: #selector(self.ReloadDataFromFireStore(sender:)), for: .valueChanged)
    }
    
-   //MARK:- 最新，回数，評価それぞれのデータを取得する。
-   private func GetTimeLineDataFromDataBase() {
-      print("\n---- TimeLineデータの更新開始 ----")
-      let UsersUID = UserDefaults.standard.string(forKey: "UID")
-      self.StartLoadingAnimation() //ローディングアニメーションの再生。
-      db.collectionGroup("Stages")
-         .whereField("ShowTimeLineUserUID", arrayContains: UsersUID ?? "")
-         .order(by: "addDate", descending: true)
-         .limit(to: MaxGetStageNumFormDataBase)
-         .getDocuments() { (querySnapshot, err) in
-            if let err = err {
-               print("Error: \(err)")
-               print("\n---- データベースからのデータ取得エラー ----\n")
-               self.Play3DtouchError()
-               self.ShowErrGetStageAlertView()
-            } else {
-               self.Play3DtouchSuccess()
-               for document in querySnapshot!.documents {
-                  self.TimeLineData.append(self.GetRawData(document: document))
-               }
-            }
-            print("TimeLineデータの取得完了")
-            //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
-            //Segmentタップした時に別の関数でCollecti onVie をリロードする。
-            self.UsingStageDatas = self.TimeLineData
-            print("Delegate設定します。")
-               
-            //読み取りが終わってからデリゲードを入れる必要がある
-            self.InterNetTableView.delegate = self
-            self.InterNetTableView.dataSource = self
-            self.InterNetTableView.emptyDataSetSource = self
-            self.InterNetTableView.emptyDataSetDelegate = self
-            self.InterNetTableView.tableFooterView = UIView()
-            self.InterNetTableView.reloadData()
-             //ローディングアニメーションの停止
-            self.StopLoadingAnimation()
-      }
-   }
-   
-   //MARK:- リロード処理
-   private func ReLoadTimeLineDataFromDataBase() {
-      print("\n---- TimeLineデータの更新開始 ----")
-      
-      let UsersUID = UserDefaults.standard.string(forKey: "UID")
-      TimeLineData.removeAll()
-      db.collectionGroup("Stages")
-         .whereField("ShowTimeLineUserUID", arrayContains: UsersUID ?? "")
-         .order(by: "addDate", descending: true)
-         .limit(to: MaxGetStageNumFormDataBase)
-         .getDocuments() { (querySnapshot, err) in
-            if let err = err {
-               print("Error: \(err)")
-               print("\n---- データベースからのデータ取得エラー ----\n")
-               self.Play3DtouchError()
-               self.ShowErrGetStageAlertView()
-            } else {
-               self.Play3DtouchSuccess()
-               for document in querySnapshot!.documents {
-                  self.TimeLineData.append(self.GetRawData(document: document))
-               }
-               print("TimeLineデータの取得完了")
-            }
-            self.UsingStageDatas = self.TimeLineData
-            self.InterNetTableView.reloadData()
-            self.RefleshControl.endRefreshing()
-      }
-
-   }
-   
-   private func ShowErrGetStageAlertView() {
+   func ShowErrGetStageAlertView() {
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
       let ComleateView = SCLAlertView(appearance: Appearanse)
       ComleateView.addButton("OK"){
@@ -153,7 +87,7 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
    }
    
    //MARK:- ローディングアニメーション再生
-   private func StartLoadingAnimation() {
+   func StartLoadingAnimation() {
       print("ローディングアニメーション再生")
       self.LoadActivityView?.startAnimating()
       return
@@ -166,11 +100,16 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
       }
    }
    
-   
-   
+   //MARK:- タイムラインのリロード処理
    @objc func ReloadDataFromFireStore(sender: UIRefreshControl) {
+      guard self.isFetchDataWhenDidLoadThisVC == false else {
+         print("まだ最初のローディングをしている最中なので引っ張って更新はできません")
+         RefleshControl.endRefreshing()
+         return
+      }
       print("TimeLineの更新をします。")
-      ReLoadTimeLineDataFromDataBase()
+      GetTimeLineDataFromDataBase()
+      
    }
    
    @objc func TapUserImageButtonInterNetTableView(_ sender: UIButton) {

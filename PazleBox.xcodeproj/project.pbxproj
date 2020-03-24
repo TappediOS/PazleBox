@@ -556,6 +556,7 @@
 		BFE1D3192420BCE500794349 /* SomeUsersListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1D3182420BCE500794349 /* SomeUsersListCellTableViewCell.swift */; };
 		BFE1D31B2420BF8800794349 /* ExSomeUsersListViewControllerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1D31A2420BF8800794349 /* ExSomeUsersListViewControllerTableView.swift */; };
 		BFE1D31D24262FA700794349 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE1D31C24262FA700794349 /* MapKit.framework */; };
+		BFE1D31F2429BEC600794349 /* ExInterNetTableVCFireStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1D31E2429BEC600794349 /* ExInterNetTableVCFireStore.swift */; };
 		BFF6D5CE227D9323000253A2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D5CD227D9323000253A2 /* Settings.bundle */; };
 		BFF6D5D4227ED73A000253A2 /* 33p23Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D5D1227ED73A000253A2 /* 33p23Green.png */; };
 		BFF6D5D5227ED73A000253A2 /* 33p23Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF6D5D2227ED73A000253A2 /* 33p23Red.png */; };
@@ -1428,6 +1429,7 @@
 		BFE1D3182420BCE500794349 /* SomeUsersListCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeUsersListCellTableViewCell.swift; sourceTree = "<group>"; };
 		BFE1D31A2420BF8800794349 /* ExSomeUsersListViewControllerTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSomeUsersListViewControllerTableView.swift; sourceTree = "<group>"; };
 		BFE1D31C24262FA700794349 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		BFE1D31E2429BEC600794349 /* ExInterNetTableVCFireStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExInterNetTableVCFireStore.swift; sourceTree = "<group>"; };
 		BFF6D5CD227D9323000253A2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		BFF6D5D1227ED73A000253A2 /* 33p23Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 33p23Green.png; sourceTree = "<group>"; };
 		BFF6D5D2227ED73A000253A2 /* 33p23Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 33p23Red.png; sourceTree = "<group>"; };
@@ -2424,6 +2426,7 @@
 				BF77E90A23FE6C2200E5EC91 /* InterNetTableView.storyboard */,
 				BF77E90C23FE743200E5EC91 /* InterNetTableViewController.swift */,
 				BF7748CA24026A0200AA5E9C /* ExInterNetTableViewController.swift */,
+				BFE1D31E2429BEC600794349 /* ExInterNetTableVCFireStore.swift */,
 				BF5BF8CC241DF4D100B0C096 /* ExInterNetTableViewGetRawData.swift */,
 				BF77E90E23FE760600E5EC91 /* InterNetTableViewCell.swift */,
 				BF77E91023FF9FDF00E5EC91 /* InterNetCellTappedViewController.swift */,
@@ -4279,6 +4282,7 @@
 				BF4323CB22D35F28008DF038 /* BackTileImageView.swift in Sources */,
 				BF552EE0226DDDF100756E16 /* N33.swift in Sources */,
 				BF332FE622492802009B3042 /* H8.swift in Sources */,
+				BFE1D31F2429BEC600794349 /* ExInterNetTableVCFireStore.swift in Sources */,
 				BF332FE2224927F8009B3042 /* H6.swift in Sources */,
 				BF552F30226DDF1100756E16 /* H43.swift in Sources */,
 				BF552E8C226DDCE600756E16 /* E21.swift in Sources */,
