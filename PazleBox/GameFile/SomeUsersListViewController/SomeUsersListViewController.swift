@@ -147,31 +147,43 @@ class SomeUsersListViewController: UIViewController {
       }
    }
    
+   private func GetFollowerListFromFireStore() {
+      self.StartLoadingAnimation()
+      self.UsingStageDatas.removeAll()
+      db.collection("users").document(self.UsersUID).getDocument() { (document, err) in
+         if let err = err {
+             print("データベースからのデータ取得エラー: \(err)")
+            self.Play3DtouchError()
+         }
+         
+         if let document = document, document.exists {
+            if let FollowList = document.data()?["Follower"] as? Array<Any> {
+               print("FollowListゲットできた")
+               self.FetchUsersInfoInList(FollowList)
+            }
+         }
+      }
+   }
+   private func GetBlockListFromFireStore() {
+      self.StartLoadingAnimation()
+      self.UsingStageDatas.removeAll()
+      db.collection("users").document(self.UsersUID).collection("MonitoredUserInfo").document("UserInfo").getDocument() { (document, err) in
+         if let err = err {
+             print("データベースからのデータ取得エラー: \(err)")
+            self.Play3DtouchError()
+         }
+         
+         if let document = document, document.exists {
+            if let FollowList = document.data()?["Block"] as? Array<Any> {
+               print("FollowListゲットできた")
+               self.FetchUsersInfoInList(FollowList)
+            }
+         }
+      }
+   }
+   
    private func FetchUsersInfoInList(_ List: Array<Any>) {
       var ListStr = ConvArrayAnyToArrayStrint(ArrayAny: List)
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
       ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
       ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
       ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
@@ -216,7 +228,6 @@ class SomeUsersListViewController: UIViewController {
             
          }
       }
-      
    }
    
    func FetchUsersProfileImage() {
@@ -278,12 +289,7 @@ class SomeUsersListViewController: UIViewController {
       return result
    }
    
-   private func GetFollowerListFromFireStore() {
-      self.StartLoadingAnimation()
-   }
-   private func GetBlockListFromFireStore() {
-      self.StartLoadingAnimation()
-   }
+   
    
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }

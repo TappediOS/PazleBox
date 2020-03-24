@@ -43,9 +43,9 @@ extension SomeUsersListViewController: UITableViewDelegate, UITableViewDataSourc
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       // セルの選択を解除する
       tableView.deselectRow(at: indexPath, animated: true)
-      
+      let TappedCellsUID = UsingStageDatas[indexPath.item]["usersUID"] as! String
       //本人をタップしてたら，
-      if TapedCommentedUserIsSelf(rowNum: indexPath.item) == true {
+      if TappedCellsUID == self.UsersUID {
          print("本人をタップしたので，UesrsProfileVCを表示します")
          let UsersProfileSB = UIStoryboard(name: "UserProfileViewControllerSB", bundle: nil)
          let UsersProfileVC = UsersProfileSB.instantiateViewController(withIdentifier: "UserProfileVC") as! UserProfileViewController
@@ -57,17 +57,8 @@ extension SomeUsersListViewController: UITableViewDelegate, UITableViewDataSourc
       let OtherUsersProfileSB = UIStoryboard(name: "OtherUsersProfileViewControllerSB", bundle: nil)
       let OtherUsersProfileVC = OtherUsersProfileSB.instantiateViewController(withIdentifier: "OtherUsersProfileVC") as! OtherUsersProfileViewController
       
-      let OtherUsersUID = UsingStageDatas[indexPath.item]["CommentUserUID"] as! String
-      OtherUsersProfileVC.fetchOtherUsersUIDbeforPushVC(uid: OtherUsersUID)
+      OtherUsersProfileVC.fetchOtherUsersUIDbeforPushVC(uid: TappedCellsUID)
       self.navigationController?.pushViewController(OtherUsersProfileVC, animated: true)
-      
-   }
-   
-   //タップした画像のユーザが本人かどうかを判定する
-   private func TapedCommentedUserIsSelf(rowNum: Int) -> Bool {
-      let TapedUsersUID = UsingStageDatas[rowNum]["CommentUserUID"] as! String
-      if TapedUsersUID == self.UsersUID { return true }
-      return false
    }
 }
 
