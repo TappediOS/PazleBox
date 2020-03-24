@@ -42,7 +42,10 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
    
    var CanSellectStage: Bool = true
    
-   var DownLoadProfileCounter = 0
+   //For文で回す時に，どれだけ回して，どのタイミングで更新するかを測るやつ.
+   var DownLoadProfileCounterForLatest = 0
+   var DownLoadProfileCounterForPlayCount = 0
+   var DownLoadProfileCounterForRated = 0
    
    //最初の自動ダウンロードが終わってるかどうか
    //これがtrueの時は引っ張って更新ができなくなる

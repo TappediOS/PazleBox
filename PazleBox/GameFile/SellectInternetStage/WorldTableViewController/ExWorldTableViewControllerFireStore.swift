@@ -50,9 +50,9 @@ extension WorldTableViewController {
             self.Play3DtouchSuccess()
          }
          
-         self.DownLoadProfileCounter += 1
+         self.DownLoadProfileCounterForLatest += 1
          
-         if self.DownLoadProfileCounter == self.LatestStageDatas.count{
+         if self.DownLoadProfileCounterForLatest == self.LatestStageDatas.count{
             print("---- Latestデータの取得完了 ----\n")
             //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
             //Segmentタップした時に別の関数でCollecti onVie をリロードする。
@@ -114,9 +114,9 @@ extension WorldTableViewController {
             self.Play3DtouchSuccess()
          }
          
-         self.DownLoadProfileCounter += 1
+         self.DownLoadProfileCounterForPlayCount += 1
          
-         if self.DownLoadProfileCounter == self.PlayCountStageDatas.count{
+         if self.DownLoadProfileCounterForPlayCount == self.PlayCountStageDatas.count{
             print("---- PlayCountデータの取得完了 ----\n")
             //リフレッシュ中なら表示をする
             if self.RefleshControl.isRefreshing == true {
@@ -168,9 +168,9 @@ extension WorldTableViewController {
             self.Play3DtouchSuccess()
          }
          
-         self.DownLoadProfileCounter += 1
+         self.DownLoadProfileCounterForRated += 1
          
-         if self.DownLoadProfileCounter == self.RatedStageDatas.count{
+         if self.DownLoadProfileCounterForRated == self.RatedStageDatas.count{
             print("---- Ratedデータの取得完了 ----\n")
             if self.RefleshControl.isRefreshing == true {
                print("---- リフレッシュ中なのでRatedのデータでリロードします ----\n")
@@ -187,7 +187,7 @@ extension WorldTableViewController {
    func GetLatestStageDataFromDataBase() {
       print("\n---- Latestデータの取得開始 ----")
       self.LatestStageDatas.removeAll()
-      self.DownLoadProfileCounter = 0
+      self.DownLoadProfileCounterForLatest = 0
       if self.RefleshControl.isRefreshing == false {
          self.StartLoadingAnimation() //ローディングアニメーションの再生。
       }
@@ -215,7 +215,7 @@ extension WorldTableViewController {
    func GetPlayCountStageDataFromDataBase(){
       print("\n---- PlayCountデータの取得開始 ----")
       self.PlayCountStageDatas.removeAll()
-      self.DownLoadProfileCounter = 0
+      self.DownLoadProfileCounterForPlayCount = 0
       db.collectionGroup("Stages").whereField("PlayCount", isGreaterThanOrEqualTo: 0)
          .order(by: "PlayCount", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
@@ -238,7 +238,7 @@ extension WorldTableViewController {
    func GetRatedStageDataFromDataBase() {
       print("\n---- Ratedデータの取得開始 ----")
       self.RatedStageDatas.removeAll()
-      self.DownLoadProfileCounter = 0
+      self.DownLoadProfileCounterForRated = 0
       db.collectionGroup("Stages").whereField("ReviewAve", isGreaterThanOrEqualTo: 0)
          .order(by: "ReviewAve", descending: true)
          .limit(to: MaxGetStageNumFormDataBase)
