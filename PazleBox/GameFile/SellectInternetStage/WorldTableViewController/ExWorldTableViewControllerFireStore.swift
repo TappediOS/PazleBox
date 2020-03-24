@@ -16,7 +16,6 @@ extension WorldTableViewController {
    func FetchLatestStageDataPostUserNameAndProfileImage() {
       for tmp in 0 ..< LatestStageDatas.count {
          let usersUID = LatestStageDatas[tmp]["addUser"] as! String
-         print("\(usersUID)の名前とプロフィール画像を取得開始")
          
          db.collection("users").document(usersUID).getDocument(){ (document, err) in
             if let err = err {
@@ -27,7 +26,6 @@ extension WorldTableViewController {
                self.Play3DtouchLight()
                if let document = document, document.exists, let doc = document.data() {
                   let userName = doc["name"] as! String
-                  print("UserName = \(userName)")
                   self.LatestStageDatas[tmp].updateValue(userName, forKey: "PostedUsersName")
                   let profileURL = doc["downloadProfileURL"] as! String
                   self.DownloadLatestProfileFromStorege(arrayNum: tmp, downLoadURL: profileURL)
@@ -48,7 +46,6 @@ extension WorldTableViewController {
             self.LatestStageDatas[arrayNum].updateValue(errorUsersImage!, forKey: "PostedUsersProfileImage")
          } else {
             // Data for "images/island.jpg" is returned
-            print("プロ画取得成功!")
             self.LatestStageDatas[arrayNum].updateValue(data!, forKey: "PostedUsersProfileImage")
             self.Play3DtouchSuccess()
          }
@@ -135,7 +132,6 @@ extension WorldTableViewController {
    func FetchRatedStageDataPostUserNameAndProfileImage() {
       for tmp in 0 ..< RatedStageDatas.count {
          let usersUID = RatedStageDatas[tmp]["addUser"] as! String
-         print("\(usersUID)の名前とプロフィール画像を取得開始")
          
          db.collection("users").document(usersUID).getDocument(){ (document, err) in
             if let err = err {
@@ -146,7 +142,6 @@ extension WorldTableViewController {
                self.Play3DtouchLight()
                if let document = document, document.exists, let doc = document.data() {
                   let userName = doc["name"] as! String
-                  print("UserName = \(userName)")
                   self.RatedStageDatas[tmp].updateValue(userName, forKey: "PostedUsersName")
                   let profileURL = doc["downloadProfileURL"] as! String
                   self.DownloadRatedProfileFromStorege(arrayNum: tmp, downLoadURL: profileURL)
