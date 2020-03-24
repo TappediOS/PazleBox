@@ -75,7 +75,7 @@ extension WorldTableViewController {
          }
       }
    }
-   //MARK:- 最新のデータからユーザの名前とプロ画を取得するここまで
+   //MARK: 最新のデータからユーザの名前とプロ画を取得するここまで
    
    //MARK:- プレイ回数のデータからユーザの名前とプロ画を取得する。
    func FetchPlayCountStageDataPostUserNameAndProfileImage() {
@@ -129,7 +129,7 @@ extension WorldTableViewController {
          }
       }
    }
-   //MARK:- 最新のデータからユーザの名前とプロ画を取得するここまで
+   //MARK: 最新のデータからユーザの名前とプロ画を取得するここまで
    
    //MARK:- 最新のデータからユーザの名前とプロ画を取得する。
    func FetchRatedStageDataPostUserNameAndProfileImage() {
@@ -185,7 +185,7 @@ extension WorldTableViewController {
          }
       }
    }
-   //MARK:- 最新のデータからユーザの名前とプロ画を取得するここまで
+   //MARK: 最新のデータからユーザの名前とプロ画を取得するここまで
    
    //MARK:- 最新，回数，評価それぞれのデータを取得する。
    func GetLatestStageDataFromDataBase() {
@@ -258,75 +258,6 @@ extension WorldTableViewController {
             }
             print("Ratedの配列の総数は \(self.PlayCountStageDatas.count)")
             self.FetchRatedStageDataPostUserNameAndProfileImage()
-      }
-   }
-   
-   
-   //MARK:- リロード処理
-   func ReLoadLatestStageDataFromDataBase() {
-      print("\n---- Latestデータの更新開始 ----")
-      db.collection("Stages")
-         .order(by: "addDate", descending: true)
-         .limit(to: MaxGetStageNumFormDataBase)
-         .getDocuments() { (querySnapshot, err) in
-            if let err = err {
-               print("Error: \(err)")
-               print("---- データベースからのデータ取得エラー ----\n")
-            } else {
-               print("Latestデータの取得成功")
-               self.LatestStageDatas.removeAll()
-               for document in querySnapshot!.documents {
-                  self.LatestStageDatas.append(self.GetRawData(document: document))
-               }
-               print("---- Latestデータの更新完了 ----\n")
-               self.UsingStageDatas = self.LatestStageDatas
-               self.WorldTableView.reloadData()
-            }
-            self.RefleshControl.endRefreshing()
-      }
-   }
-   
-   func ReLoadPlayCountStageDataFromDataBase(){
-        print("\n---- PlayCountデータの更新開始 ----")
-        db.collection("Stages").whereField("PlayCount", isGreaterThanOrEqualTo: 0)
-           .order(by: "PlayCount", descending: true)
-           .limit(to: MaxGetStageNumFormDataBase)
-           .getDocuments() { (querySnapshot, err) in
-              if let err = err {
-                 print("Error: \(err)")
-                 print("---- データベースからのデータ取得エラー ----\n")
-              } else {
-                 print("PlayCountデータの取得完了")
-                 self.PlayCountStageDatas.removeAll()
-                 for document in querySnapshot!.documents {
-                    self.PlayCountStageDatas.append(self.GetRawData(document: document))
-                 }
-                 print("---- PlayCountデータの更新完了 ----\n")
-                 self.UsingStageDatas = self.PlayCountStageDatas
-                 self.WorldTableView.reloadData()
-              }
-              self.RefleshControl.endRefreshing()
-        }
-     }
-   
-   func ReLoadRatedStageDataFromDataBase() {
-      print("\n---- Ratedデータの更新開始 ----")
-      db.collection("Stages").whereField("ReviewAve", isGreaterThanOrEqualTo: 0)
-         .order(by: "ReviewAve", descending: true)
-         .limit(to: MaxGetStageNumFormDataBase)
-         .getDocuments() { (querySnapshot, err) in
-            if let err = err {
-               print("Error: \(err)")
-               print("---- データベースからのデータ取得エラー ----\n")
-            } else {
-               print("Ratedデータの取得成功")
-               self.RatedStageDatas.removeAll()
-               for document in querySnapshot!.documents {
-                  self.RatedStageDatas.append(self.GetRawData(document: document))
-               }
-               print("---- Ratedデータの更新完了 ----\n")
-            }
-            self.RefleshControl.endRefreshing()
       }
    }
 }
