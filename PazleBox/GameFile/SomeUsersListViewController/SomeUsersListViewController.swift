@@ -27,6 +27,9 @@ class SomeUsersListViewController: UIViewController {
    
    @IBOutlet weak var SomeUsersListTableView: UITableView!
    
+   //こいつにCollectionVeiwで表示するやつを入れる。
+   var UsingStageDatas: [([String: Any])] = Array()
+   
    let cellHeight: CGFloat = 72
    let proFileImageHeight: CGFloat = 50
    
@@ -37,10 +40,25 @@ class SomeUsersListViewController: UIViewController {
    
    var LoadActivityView: NVActivityIndicatorView?
    
+   let UsersUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       SetUpListTableView()
       SetUpNavigationController()
+      SetUpFireStoreSetting()
+      InitLoadActivityView()
+      
+      switch self.ListType {
+      case .None:
+         break
+      case .Follow:
+         GetFollowListFromFireStore()
+      case .Follower:
+         GetFollowerListFromFireStore()
+      case .Block:
+         GetBlockListFromFireStore()
+      }
       
       self.SomeUsersListTableView.delegate = self
       self.SomeUsersListTableView.dataSource = self
@@ -101,6 +119,48 @@ class SomeUsersListViewController: UIViewController {
       if LoadActivityView?.isAnimating == true {
          self.LoadActivityView?.stopAnimating()
       }
+   }
+   
+   private func GetFollowListFromFireStore() {
+      self.StartLoadingAnimation()
+   
+      db.collection("users").document(self.UsersUID).getDocument() { (document, err) in
+         if let err = err {
+             print("データベースからのデータ取得エラー: \(err)")
+            self.Play3DtouchError()
+         }
+         
+         if let document = document, document.exists {
+            if let FollowList = document.data()?["Follow"] as? Array<Any> {
+               print("FollowListゲットできた")
+               self.FetchUsersNameAndImageInList(FollowList)
+            }
+         }
+      }
+   }
+   
+   private func FetchUsersNameAndImageInList(_ List: Array<Any>) {
+      let ListStr = ConvArrayAnyToArrayStrint(ArrayAny: List)
+      print(ListStr)
+      
+      
+   }
+   
+   private func ConvArrayAnyToArrayStrint(ArrayAny: Array<Any>) -> [String] {
+      var result = Array<String>()
+      for tmp in ArrayAny {
+         if let str = tmp as? String {
+            result.append(str)
+         }
+      }
+      return result
+   }
+   
+   private func GetFollowerListFromFireStore() {
+      self.StartLoadingAnimation()
+   }
+   private func GetBlockListFromFireStore() {
+      self.StartLoadingAnimation()
    }
    
    
