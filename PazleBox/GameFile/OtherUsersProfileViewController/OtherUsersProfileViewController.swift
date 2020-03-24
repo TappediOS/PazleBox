@@ -46,6 +46,9 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
    
    var OtherUsersProfileName: String = ""
    var OtherUsersProfileImage = UIImage()
+   var OtherusersFollowerNum = 0
+   var OtherusersFollowNum = 0
+   var OtherusersPlayCountNum = 0
       
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -162,6 +165,15 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
          
          if let document = document, document.exists {
             //ドキュメントが存在していたらセットアップをする
+            if let FollowArray = document.data()?["Follow"] as? Array<Any> {
+               self.OtherusersFollowNum = FollowArray.count
+            }
+            if let FollowerArray = document.data()?["Follower"] as? Array<Any> {
+               self.OtherusersFollowerNum = FollowerArray.count
+            }
+            if let PlayCount = document.data()?["ClearStageCount"] as? Int {
+               self.OtherusersPlayCountNum = PlayCount
+            }
             self.SetUsersName(document: document)
             self.GetUsersPfofileImageURL(document: document)
             

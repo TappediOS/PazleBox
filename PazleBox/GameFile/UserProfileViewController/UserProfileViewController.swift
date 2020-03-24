@@ -47,6 +47,9 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    
    var userName: String = ""
    var usersProfileImagfe = UIImage()
+   var usersFollowerNum = 0
+   var usersFollowNum = 0
+   var usersPlayCountNum = 0
    
    var isLoadingProfile = true
    
@@ -261,7 +264,20 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
          
          if let document = document, document.exists {
             //ドキュメントが存在していたらセットアップをする
+            
+            if let FollowArray = document.data()?["Follow"] as? Array<Any> {
+               self.usersFollowNum = FollowArray.count
+            }
+            if let FollowerArray = document.data()?["Follower"] as? Array<Any> {
+               self.usersFollowerNum = FollowerArray.count
+            }
+            if let PlayCount = document.data()?["ClearStageCount"] as? Int {
+               self.usersPlayCountNum = PlayCount
+            }
+            
             self.GetUsersPfofileImageURL(document: document)
+            
+            
          } else {
             print("Document does not exist")
             self.ShowErrGetStageAlertView()

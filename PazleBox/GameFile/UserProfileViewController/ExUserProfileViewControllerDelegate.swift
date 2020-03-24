@@ -48,6 +48,10 @@ extension UserProfileViewController {
       let HeaderView = UserProfileHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: sectionHeaderHeight))
       HeaderView.UsersNameLabel.text = self.userName
       HeaderView.UsersProfileImage.image = self.usersProfileImagfe
+      HeaderView.UsersFollowingCountLabel.text = String(self.usersFollowNum)
+      HeaderView.UsersFollowersCountLabel.text = String(self.usersFollowerNum)
+      HeaderView.UsersPlayCountNumLabel.text = String(self.usersPlayCountNum)
+      HeaderView.UsersPostCountLabel.text = String(UsingStageDatas.count)
       
       //フォローフォロワーラベルをタップしたとの処理を書いた
       let TapFollowingGesture = UITapGestureRecognizer(target: self, action: #selector(TapFollowingLabel(_:)))
