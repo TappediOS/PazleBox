@@ -44,6 +44,10 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
    
    var DownLoadProfileCounter = 0
    
+   //最初の自動ダウンロードが終わってるかどうか
+   //これがtrueの時は引っ張って更新ができなくなる
+   var isFetchDataWhenDidLoadThisVC = true
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       WorldTableView.rowHeight = 160
@@ -151,6 +155,12 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
    @objc func ReloadDataFromFireStore(sender: UIRefreshControl) {
       guard let indexNum = self.segmentedControl?.selectedSegmentIndex else {
          print("リロードする前に，セグメントのインデックスがnilやから中止する。")
+         RefleshControl.endRefreshing()
+         return
+      }
+      
+      guard self.isFetchDataWhenDidLoadThisVC == false else {
+         print("まだ最初のローディングをしている最中なので引っ張って更新はできません")
          RefleshControl.endRefreshing()
          return
       }

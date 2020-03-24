@@ -58,6 +58,7 @@ extension WorldTableViewController {
             //Segmentタップした時に別の関数でCollecti onVie をリロードする。
             self.UsingStageDatas = self.LatestStageDatas
             self.WorldTableView.reloadData()
+            self.isFetchDataWhenDidLoadThisVC = false //これでリロードできるようになる
          
             //リフレッシュかそうでないかで処理を変える
             if self.RefleshControl.isRefreshing == false {
