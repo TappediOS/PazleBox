@@ -512,19 +512,44 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
    }
    
    @objc func TapUserImageButtonUserProfileTapCellComment(_ sender: UIButton) {
+      guard self.isAbleToTapPlayDeleteButton == false else {
+         print("コメントしたユーザの画像タップされたけど，ローディング中やから何もしない.")
+         return
+      }
       let rowNum = sender.tag
       print("\(rowNum)番目のcellがタップされました")
         
+      //本人をタップしてたら，
+      if TapedCommentedUserIsSelf(rowNum: rowNum) == true {
+         print("本人をタップしたので，UesrsProfileVCを表示します")
+         let UsersProfileSB = UIStoryboard(name: "UserProfileViewControllerSB", bundle: nil)
+         let UsersProfileVC = UsersProfileSB.instantiateViewController(withIdentifier: "UserProfileVC") as! UserProfileViewController
+         self.navigationController?.pushViewController(UsersProfileVC, animated: true)
+         return
+      }
+      //本人以外をタップしてたら
+      print("他人をタップしたので，OtherUesrsProfileVCを表示します")
       let OtherUsersProfileSB = UIStoryboard(name: "OtherUsersProfileViewControllerSB", bundle: nil)
       let OtherUsersProfileVC = OtherUsersProfileSB.instantiateViewController(withIdentifier: "OtherUsersProfileVC") as! OtherUsersProfileViewController
-              
+      
+      let OtherUsersUID = UsingCommentedStageDatas[rowNum]["CommentUserUID"] as! String
+      OtherUsersProfileVC.fetchOtherUsersUIDbeforPushVC(uid: OtherUsersUID)
       self.navigationController?.pushViewController(OtherUsersProfileVC, animated: true)
+   }
+   
+   //タップした画像のユーザが本人かどうかを判定する
+   private func TapedCommentedUserIsSelf(rowNum: Int) -> Bool {
+      let TapedUsersUID = UsingCommentedStageDatas[rowNum]["CommentUserUID"] as! String
+      let UsersUID = UserDefaults.standard.string(forKey: "UID")
+      
+      if TapedUsersUID == UsersUID { return true}
+      return false
    }
    
    
    @objc func TapUsersCommentReportButton(_ sender: UIButton) {
       guard self.isAbleToTapPlayDeleteButton == false else {
-         print("コメントしたユーザの画像タップされたけど，ローディング中やから何もしない.")
+         print("コメントしたユーザの報告タップされたけど，ローディング中やから何もしない.")
          return
       }
       let rowNum = sender.tag

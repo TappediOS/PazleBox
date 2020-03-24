@@ -444,6 +444,10 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    //コメントしたユーザの報告ボタンがタップされたときの処理
    //TODO:- ローカライズね。
    @objc func TapReportCommentedUserTableViewCell(_ sender: UIButton) {
+      guard self.isLoadingGameVC == false else {
+         print("コメントしたユーザの報告タップされたけど，ローディング中やから何もしない.")
+         return
+      }
       let rowNum = sender.tag
       print("\(rowNum)番目のcellのユーザの報告ボタンがタップされました")
       
