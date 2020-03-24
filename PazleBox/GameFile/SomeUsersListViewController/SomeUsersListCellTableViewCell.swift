@@ -13,6 +13,7 @@ class SomeUsersListTableViewCell: UITableViewCell {
    @IBOutlet weak var UsersProfileImageView: UIImageView!
    @IBOutlet weak var UsersNameLabel: UILabel!
    
+   var ListUsersUID = ""
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -18,7 +18,7 @@ extension SomeUsersListViewController: UITableViewDelegate, UITableViewDataSourc
    
    //テーブルの行数を返す
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 30
+      return self.UsingStageDatas.count
    }
    
    //Cellを返す
@@ -26,15 +26,16 @@ extension SomeUsersListViewController: UITableViewDelegate, UITableViewDataSourc
       let cell = self.SomeUsersListTableView.dequeueReusableCell(withIdentifier: "SomeUsersListCell", for: indexPath) as? SomeUsersListTableViewCell
         
    
-//      let usersProfileData = UsingStageDatas[indexPath.item]["PostedUsersProfileImage"] as? NSData
-//      if let ProfileData = usersProfileData {
-//         let Image = UIImage(data: ProfileData as Data)
-//         cell?.UsersImageViewButton.setImage(Image, for: .normal)
-//      }
+      let usersProfileData = UsingStageDatas[indexPath.item]["UsersProfileImage"] as? NSData
+      if let ProfileData = usersProfileData {
+         let Image = UIImage(data: ProfileData as Data)
+         cell?.UsersProfileImageView.image = Image
+      }
 
-      //cell?.UsersNameLabel.text = UsingStageDatas[indexPath.row]["PostedUsersName"] as? String
-      cell?.UsersNameLabel.text = "Yon Yon"
-      cell?.UsersProfileImageView.image = UIImage(named: "NoProfileImage.png")
+      cell?.UsersNameLabel.text = UsingStageDatas[indexPath.row]["name"] as? String
+    
+      cell?.ListUsersUID = UsingStageDatas[indexPath.row]["usersUID"] as! String
+      
 
       return cell!
    }
@@ -42,7 +43,31 @@ extension SomeUsersListViewController: UITableViewDelegate, UITableViewDataSourc
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       // セルの選択を解除する
       tableView.deselectRow(at: indexPath, animated: true)
-      //self.navigationController?.pushViewController(InterNetCellTappedVC, animated: true)
+      
+      //本人をタップしてたら，
+      if TapedCommentedUserIsSelf(rowNum: indexPath.item) == true {
+         print("本人をタップしたので，UesrsProfileVCを表示します")
+         let UsersProfileSB = UIStoryboard(name: "UserProfileViewControllerSB", bundle: nil)
+         let UsersProfileVC = UsersProfileSB.instantiateViewController(withIdentifier: "UserProfileVC") as! UserProfileViewController
+         self.navigationController?.pushViewController(UsersProfileVC, animated: true)
+         return
+      }
+      //本人以外をタップしてたら
+      print("他人をタップしたので，OtherUesrsProfileVCを表示します")
+      let OtherUsersProfileSB = UIStoryboard(name: "OtherUsersProfileViewControllerSB", bundle: nil)
+      let OtherUsersProfileVC = OtherUsersProfileSB.instantiateViewController(withIdentifier: "OtherUsersProfileVC") as! OtherUsersProfileViewController
+      
+      let OtherUsersUID = UsingStageDatas[indexPath.item]["CommentUserUID"] as! String
+      OtherUsersProfileVC.fetchOtherUsersUIDbeforPushVC(uid: OtherUsersUID)
+      self.navigationController?.pushViewController(OtherUsersProfileVC, animated: true)
+      
+   }
+   
+   //タップした画像のユーザが本人かどうかを判定する
+   private func TapedCommentedUserIsSelf(rowNum: Int) -> Bool {
+      let TapedUsersUID = UsingStageDatas[rowNum]["CommentUserUID"] as! String
+      if TapedUsersUID == self.UsersUID { return true }
+      return false
    }
 }
 

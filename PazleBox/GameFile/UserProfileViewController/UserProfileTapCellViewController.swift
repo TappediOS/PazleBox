@@ -510,6 +510,7 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
       self.navigationController?.popToRootViewController(animated: true)
    }
    
+   //MARK:- コメントしたユーザの画像タップされたときの処理
    @objc func TapUserImageButtonUserProfileTapCellComment(_ sender: UIButton) {
       guard self.isAbleToTapPlayDeleteButton == false else {
          print("コメントしたユーザの画像タップされたけど，ローディング中やから何もしない.")

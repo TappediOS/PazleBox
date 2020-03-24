@@ -11,6 +11,7 @@ import UIKit
 import TapticEngine
 import FirebaseFirestore
 import Firebase
+import FirebaseStorage
 import NVActivityIndicatorView
 import SCLAlertView
 import DZNEmptyDataSet
@@ -41,6 +42,8 @@ class SomeUsersListViewController: UIViewController {
    var LoadActivityView: NVActivityIndicatorView?
    
    let UsersUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+   var FetchUsersInfoCounter = 0
+   var DownLoadProfileCounter = 0
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -59,16 +62,13 @@ class SomeUsersListViewController: UIViewController {
       case .Block:
          GetBlockListFromFireStore()
       }
-      
-      self.SomeUsersListTableView.delegate = self
-      self.SomeUsersListTableView.dataSource = self
-      self.SomeUsersListTableView.emptyDataSetSource = self
-      self.SomeUsersListTableView.emptyDataSetDelegate = self
-      self.SomeUsersListTableView.tableFooterView = UIView()
    }
    
    func SetUpListTableView() {
       SomeUsersListTableView.rowHeight = cellHeight
+      var BottonInsets: CGFloat = 0
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false { BottonInsets = 50 }
+      SomeUsersListTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: BottonInsets, right: 0)
    }
    
    //TODO:- ローカライズする
@@ -107,6 +107,14 @@ class SomeUsersListViewController: UIViewController {
       self.view.addSubview(LoadActivityView!)
    }
    
+   private func SetTabeleViewDelegate() {
+      self.SomeUsersListTableView.delegate = self
+      self.SomeUsersListTableView.dataSource = self
+      self.SomeUsersListTableView.emptyDataSetSource = self
+      self.SomeUsersListTableView.emptyDataSetDelegate = self
+      self.SomeUsersListTableView.tableFooterView = UIView()
+   }
+   
    //MARK:- ローディングアニメーション再生
    func StartLoadingAnimation() {
       print("ローディングアニメーション再生")
@@ -123,7 +131,7 @@ class SomeUsersListViewController: UIViewController {
    
    private func GetFollowListFromFireStore() {
       self.StartLoadingAnimation()
-   
+      self.UsingStageDatas.removeAll()
       db.collection("users").document(self.UsersUID).getDocument() { (document, err) in
          if let err = err {
              print("データベースからのデータ取得エラー: \(err)")
@@ -133,17 +141,131 @@ class SomeUsersListViewController: UIViewController {
          if let document = document, document.exists {
             if let FollowList = document.data()?["Follow"] as? Array<Any> {
                print("FollowListゲットできた")
-               self.FetchUsersNameAndImageInList(FollowList)
+               self.FetchUsersInfoInList(FollowList)
             }
          }
       }
    }
    
-   private func FetchUsersNameAndImageInList(_ List: Array<Any>) {
-      let ListStr = ConvArrayAnyToArrayStrint(ArrayAny: List)
+   private func FetchUsersInfoInList(_ List: Array<Any>) {
+      var ListStr = ConvArrayAnyToArrayStrint(ArrayAny: List)
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
       print(ListStr)
       
+      let ListCount = ListStr.count
+      if ListCount == 0 {
+         SetTabeleViewDelegate()
+         return
+      }
       
+      for tmp in 0 ..< ListCount {
+         let fetchUsersUID = ListStr[tmp]
+         db.collection("users").document(fetchUsersUID).getDocument() { doc, err in
+            if let err = err {
+               print("ユーザのドキュメント取得エラ-")
+               print("Err: \(err.localizedDescription)")
+            }
+            
+            if let doc = doc, doc.exists {
+               self.UsingStageDatas.append(self.GetRawData(document: doc))
+            } else {
+               print("ドキュメントが存在しませんでした")
+            }
+            
+            self.FetchUsersInfoCounter += 1
+            
+            if self.FetchUsersInfoCounter == ListCount {
+               print("UserInfoダウンロード完了")
+               print("次にプロフィールをダウンロードします")
+               self.FetchUsersProfileImage()
+            }
+            
+         }
+      }
+      
+   }
+   
+   func FetchUsersProfileImage() {
+      for tmp in 0 ..< self.UsingStageDatas.count {
+         let URL = self.UsingStageDatas[tmp]["downloadProfileURL"] as! String
+         let httpsReference = Storage.storage().reference(forURL: URL)
+         
+         httpsReference.getData(maxSize: 1 * 512 * 512) { data, error in
+            if let error = error {
+               print("プロ画取得エラー")
+               print(error.localizedDescription)
+               let errorUsersImage = UIImage(named: "NoProfileImage.png")?.pngData()
+               self.UsingStageDatas[tmp].updateValue(errorUsersImage!, forKey: "UsersProfileImage")
+            } else {
+               // Data for "images/island.jpg" is returned
+               self.UsingStageDatas[tmp].updateValue(data!, forKey: "UsersProfileImage")
+               self.Play3DtouchSuccess()
+            }
+            
+            self.DownLoadProfileCounter += 1
+               
+            if self.DownLoadProfileCounter == self.UsingStageDatas.count {
+               print("---- プロフィール画像の取得完了 ----\n")
+               //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
+               //Segmentタップした時に別の関数でCollecti onVie をリロードする。
+               self.StopLoadingAnimation()
+               self.SetTabeleViewDelegate()
+            }
+         }
+      }
+   }
+   
+   /// ドキュメントからデータを読み込み配列として返す関数
+   /// - Parameter document: forぶんでDocを回したときに呼び出す。
+   func GetRawData(document: DocumentSnapshot) -> ([String: Any]) {
+      var UsersData: [String: Any] =  ["documentID": document.documentID]
+      
+      if let value = document["name"] as? String {
+         UsersData.updateValue(value, forKey: "name")
+      }
+      
+      if let value = document["usersUID"] as? String {
+         UsersData.updateValue(value, forKey: "usersUID")
+      }
+      
+      if let value = document["downloadProfileURL"] as? String {
+         UsersData.updateValue(value, forKey: "downloadProfileURL")
+      }
+      return UsersData
    }
    
    private func ConvArrayAnyToArrayStrint(ArrayAny: Array<Any>) -> [String] {
