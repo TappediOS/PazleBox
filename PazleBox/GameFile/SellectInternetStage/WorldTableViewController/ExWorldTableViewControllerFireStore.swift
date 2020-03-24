@@ -67,6 +67,7 @@ extension WorldTableViewController {
                self.WorldTableView.delegate = self
                self.WorldTableView.dataSource = self
             } else {
+               print("---- リフレッシュ中なのでLatestのデータでリロードします ----\n")
                self.RefleshControl.endRefreshing()
             }
          }
@@ -162,7 +163,6 @@ extension WorldTableViewController {
             self.RatedStageDatas[arrayNum].updateValue(errorUsersImage!, forKey: "PostedUsersProfileImage")
          } else {
             // Data for "images/island.jpg" is returned
-            print("プロ画取得成功!")
             self.RatedStageDatas[arrayNum].updateValue(data!, forKey: "PostedUsersProfileImage")
             self.Play3DtouchSuccess()
          }
