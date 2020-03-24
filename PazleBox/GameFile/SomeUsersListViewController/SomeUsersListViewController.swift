@@ -45,6 +45,9 @@ class SomeUsersListViewController: UIViewController {
    var FetchUsersInfoCounter = 0
    var DownLoadProfileCounter = 0
    
+   
+   var ShowUsersUID = ""
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       SetUpListTableView()
@@ -91,6 +94,10 @@ class SomeUsersListViewController: UIViewController {
       self.ListType = type
    }
    
+   public func setShowUsersUID(uid: String) {
+      self.ShowUsersUID = uid
+   }
+   
    private func SetUpFireStoreSetting() {
       let settings = FirestoreSettings()
       Firestore.firestore().settings = settings
@@ -132,7 +139,7 @@ class SomeUsersListViewController: UIViewController {
    private func GetFollowListFromFireStore() {
       self.StartLoadingAnimation()
       self.UsingStageDatas.removeAll()
-      db.collection("users").document(self.UsersUID).getDocument() { (document, err) in
+      db.collection("users").document(self.ShowUsersUID).getDocument() { (document, err) in
          if let err = err {
              print("データベースからのデータ取得エラー: \(err)")
             self.Play3DtouchError()
@@ -150,7 +157,7 @@ class SomeUsersListViewController: UIViewController {
    private func GetFollowerListFromFireStore() {
       self.StartLoadingAnimation()
       self.UsingStageDatas.removeAll()
-      db.collection("users").document(self.UsersUID).getDocument() { (document, err) in
+      db.collection("users").document(self.ShowUsersUID).getDocument() { (document, err) in
          if let err = err {
              print("データベースからのデータ取得エラー: \(err)")
             self.Play3DtouchError()

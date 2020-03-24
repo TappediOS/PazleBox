@@ -355,10 +355,12 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    
    
    private func PresentSomeUsersListVC(ListType: UsersListType) {
+      let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
       let SomeUsersListSB = UIStoryboard(name: "SomeUsersListViewControllerSB", bundle: nil)
       let SomeUsersListVC = SomeUsersListSB.instantiateViewController(withIdentifier: "SomeUsersListVC") as! SomeUsersListViewController
       
       SomeUsersListVC.setListType(type: ListType)
+      SomeUsersListVC.setShowUsersUID(uid: uid)
       
       SomeUsersListVC.modalPresentationStyle = .fullScreen
       self.navigationController?.pushViewController(SomeUsersListVC, animated: true)

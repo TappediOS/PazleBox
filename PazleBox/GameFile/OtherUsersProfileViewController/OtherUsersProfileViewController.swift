@@ -324,6 +324,7 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
       let SomeUsersListVC = SomeUsersListSB.instantiateViewController(withIdentifier: "SomeUsersListVC") as! SomeUsersListViewController
       
       SomeUsersListVC.setListType(type: ListType)
+      SomeUsersListVC.setShowUsersUID(uid: self.OtherUsersUID)
       
       SomeUsersListVC.modalPresentationStyle = .fullScreen
       self.navigationController?.pushViewController(SomeUsersListVC, animated: true)
