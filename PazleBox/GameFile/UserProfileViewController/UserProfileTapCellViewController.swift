@@ -443,23 +443,22 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
    private func DeleteDocumentForFireStore() {
       self.StartLoadingAnimation()
       
-      let docID = PlayStageData.RefID
-      print("\n\n---データの削除開始---\n\n")
-      print("docID = \(docID)")
+      let docRef = PlayStageData.RefID
+      print("\n\n--- データの削除開始---\n")
+      print("docID = \(docRef)")
       print("uid = \(String(describing: UserDefaults.standard.string(forKey: "UID")))")
       
-      db.collection("Stages").document(docID).delete() { err in
+      db.document(docRef).delete() { err in
          if let err = err {
             print("\n削除するのにエラーが発生:\n\(err)")
             self.ShowErrDeleteStageInStoreSaveAlertView()
             self.StopLoadingAnimation()
             return
-         }else {
-            print("削除成功しました。")
-            self.DecrementCreateStageNum()
-            self.ShowSuccDeleteStageInStoreSaveAlertView()
-            self.StopLoadingAnimation()
          }
+         print("---  データの削除成功しました---\n\n")
+         self.DecrementCreateStageNum()
+         self.ShowSuccDeleteStageInStoreSaveAlertView()
+         self.StopLoadingAnimation()
       }
    }
    
