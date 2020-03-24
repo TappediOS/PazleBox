@@ -24,17 +24,14 @@ class Firestores {
       db = Firestore.firestore()
    }
    
-   public func AddStageData(StageArrayForContents: [[Contents]], MaxPiceNum: Int, PiceArry: [PiceImageView], ImageData: NSData?, StageTitle: String, addUserName: String, addUsersProfileURL: String, UsersFcmToken: String) {
+   public func AddStageData(StageArrayForContents: [[Contents]], MaxPiceNum: Int, PiceArry: [PiceImageView], ImageData: NSData?, StageTitle: String, addUserName: String, addUsersProfileURL: String, UsersFcmToken: String, TimeLineShowList: Array<Any>) {
       
       let Stageuid = NSUUID()
       let StageuidStr = Stageuid.uuidString
       
       let StageCommentUid = NSUUID()
       let StageCommentUidStr = StageCommentUid.uuidString
-      
-      var ShowTimeLineUserUID = Array<Any>()
-      ShowTimeLineUserUID.append(self.UID)
-      
+
       print("\n----- 保存するユーザ情報 -----")
       print("Name =       \(addUserName)")
       print("ProfileURL = \(addUsersProfileURL)")
@@ -48,7 +45,7 @@ class Firestores {
                                     "StageID" : StageuidStr,
                                     "StageCommentUid" : StageCommentUidStr,
                                     "addUserName" : addUserName,
-                                    "ShowTimeLineUserUID": ShowTimeLineUserUID,
+                                    "ShowTimeLineUserUID": TimeLineShowList,
                                     "addUsersProfileImageURL": addUsersProfileURL,
                                     "FcmToken": UsersFcmToken,
                                     "published" : true]

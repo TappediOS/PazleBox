@@ -78,6 +78,7 @@ class CleateStageViewController: UIViewController {
    var userName: String = ""
    var userProfileURL: String = ""
    var usersFcmToken: String = ""
+   var TimeLineShowList = Array<Any>()
    
    //いま対応してるのは，23,32,33,43,
    let photos = ["33p7Red", "33p21Blue","23p13Green","43p10Red","23p5Red",
@@ -210,6 +211,9 @@ class CleateStageViewController: UIViewController {
             }
             if let fcmToken = document.data()?["FcmToken"] as? String {
                self.usersFcmToken = fcmToken
+            }
+            if let TimeLineShowList = document.data()?["TimeLineShowList"] as? Array<Any> {
+               self.TimeLineShowList = TimeLineShowList
             }
          } else {
             print("Document does not exist")
@@ -862,7 +866,7 @@ class CleateStageViewController: UIViewController {
       let FireStore = Firestores(uid: UID)
       
       FireStore.AddStageData(StageArrayForContents: FillContentsArray, MaxPiceNum: PiceImageArray.count,
-                             PiceArry: PiceImageArray, ImageData: ImageData, StageTitle: StageTitle, addUserName: self.userName, addUsersProfileURL: self.userProfileURL, UsersFcmToken: self.usersFcmToken)
+                             PiceArry: PiceImageArray, ImageData: ImageData, StageTitle: StageTitle, addUserName: self.userName, addUsersProfileURL: self.userProfileURL, UsersFcmToken: self.usersFcmToken, TimeLineShowList: self.TimeLineShowList)
       
       
    }
