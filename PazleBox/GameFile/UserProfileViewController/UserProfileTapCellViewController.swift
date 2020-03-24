@@ -67,7 +67,6 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
    
    var LoadActivityView: NVActivityIndicatorView?
    
-   private var RefleshControl = UIRefreshControl()
    
    //こいつにcommentTableviewで表示するやつを入れる。
    var UsingCommentedStageDatas: [([String: Any])] = Array()
@@ -86,7 +85,6 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
       InitUsersPostedStageTitleLabel()
       InitUsersPostedStageReviewLabel()
       InitUsersPostedStagePalyCountLabel()
-      SetUpRefleshControl()
       
       SetUpPlayButtonAndDeleteButtonTitle()
       SetUpPostUsersStageButton(sender: UsersPostedStagePlayButton)
@@ -147,10 +145,6 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
       self.UsersPostedStagePalyCountLabel.text = self.UsersPostedStagePlayCount
    }
    
-   private func SetUpRefleshControl() {
-      self.UsersStageCommentTableView.refreshControl = self.RefleshControl
-      self.RefleshControl.addTarget(self, action: #selector(self.ReloadCommentDataFromFireStore(sender:)), for: .valueChanged)
-   }
    
    
    private func SetUpPlayButtonAndDeleteButtonTitle() {
@@ -257,25 +251,17 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
             
             self.DownLoadProfileCounter += 1
                
-            if self.DownLoadProfileCounter == self.UsingCommentedStageDatas.count{
+            if self.DownLoadProfileCounter == self.UsingCommentedStageDatas.count {
                print("---- 自分のステージのコメントデータの取得完了 ----\n")
                //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
                //Segmentタップした時に別の関数でCollecti onVie をリロードする。
                self.UsersStageCommentTableView.reloadData()
-            
-               //リフレッシュかそうでないかで処理を変える
-               if self.RefleshControl.isRefreshing == false {
-                  //self.StopLoadingAnimation()
-                  print("Delegate設定します。")
-                  //読み取りが終わってからデリゲードを入れる必要がある
-                  self.UsersStageCommentTableView.delegate = self
-                  self.UsersStageCommentTableView.dataSource = self
-                  self.UsersStageCommentTableView.emptyDataSetSource = self
-                  self.UsersStageCommentTableView.emptyDataSetDelegate = self
-                  self.UsersStageCommentTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
-               } else {
-                  self.RefleshControl.endRefreshing()
-               }
+               //読み取りが終わってからデリゲードを入れる必要がある
+               self.UsersStageCommentTableView.delegate = self
+               self.UsersStageCommentTableView.dataSource = self
+               self.UsersStageCommentTableView.emptyDataSetSource = self
+               self.UsersStageCommentTableView.emptyDataSetDelegate = self
+               self.UsersStageCommentTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
             }
          }
       }
@@ -370,11 +356,7 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
       self.isAbleToTapPlayDeleteButton = true
    }
    
-   //MARK:- コメントのリロードを行う
-   @objc func ReloadCommentDataFromFireStore(sender: UIRefreshControl) {
-      RefleshControl.endRefreshing()
-   }
-   
+
    //MARK:- プレイボタン押されたときの処理
    @IBAction func TapUsersStagePlayButton(_ sender: Any) {
       print("Play Buttonタップされたよ")

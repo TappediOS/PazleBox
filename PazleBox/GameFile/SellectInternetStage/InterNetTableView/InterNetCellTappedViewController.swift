@@ -55,7 +55,6 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    
    var isLoadingGameVC = false
    
-   private var RefleshControl = UIRefreshControl()
    
    var db: Firestore!
    let MaxGetCommentNumFormDataBase = 40
@@ -76,7 +75,6 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       InitPostUsersStageReviewLabel()
       InitPostUsersStagePlayCountLabel()
       SetUpPostUsersStagePlayButton()
-      SetUpRefleshControl()
       
       SetUpFireStoreSetting()
       GetStageCommentDataFromFireStore()
@@ -107,11 +105,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       PostUsersStagePlayBuutton.layer.cornerRadius =  ButtonCornerRadius
    }
    
-   private func SetUpRefleshControl() {
-      self.UsersCommentTableView.refreshControl = self.RefleshControl
-      self.RefleshControl.addTarget(self, action: #selector(self.ReloadCommentDataFromFireStore(sender:)), for: .valueChanged)
-   }
-   
+ 
    //MARK:- viewDidLoadで画面遷移前に取得した各値をセットする
    func InitPostUsersImageView() {
       self.PostUsersImageView.image = self.PostusersImage
@@ -233,20 +227,13 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
                //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
                //Segmentタップした時に別の関数でCollecti onVie をリロードする。
                self.UsersCommentTableView.reloadData()
-            
-               //リフレッシュかそうでないかで処理を変える
-               if self.RefleshControl.isRefreshing == false {
-                  //self.StopLoadingAnimation()
-                  print("Delegate設定します。")
-                  //読み取りが終わってからデリゲードを入れる必要がある
-                  self.UsersCommentTableView.delegate = self
-                  self.UsersCommentTableView.dataSource = self
-                  self.UsersCommentTableView.emptyDataSetSource = self
-                  self.UsersCommentTableView.emptyDataSetDelegate = self
-                  self.UsersCommentTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
-               } else {
-                  self.RefleshControl.endRefreshing()
-               }
+               print("Delegate設定します。")
+               //読み取りが終わってからデリゲードを入れる必要がある
+               self.UsersCommentTableView.delegate = self
+               self.UsersCommentTableView.dataSource = self
+               self.UsersCommentTableView.emptyDataSetSource = self
+               self.UsersCommentTableView.emptyDataSetDelegate = self
+               self.UsersCommentTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
             }
          }
       }
@@ -320,11 +307,6 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       }
       
       return CommentData
-   }
-   
-   //MARK:- コメントのリロードを行う
-   @objc func ReloadCommentDataFromFireStore(sender: UIRefreshControl) {
-      RefleshControl.endRefreshing()
    }
    
    //MARK:- プレイボタン押されたときの処理
