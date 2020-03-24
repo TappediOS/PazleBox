@@ -59,8 +59,8 @@ extension WorldTableViewController {
       let InterNetCellTappedVCSB = UIStoryboard(name: "InterNetTableView", bundle: nil)
       let InterNetCellTappedVC = InterNetCellTappedVCSB.instantiateViewController(withIdentifier: "InterNetCellTappedVC") as! InterNetCellTappedViewController
       
-      let ProfileImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
-      if let data = ProfileImageData {
+      let StageImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
+      if let data = StageImageData {
          let Image = UIImage(data: data as Data)
          InterNetCellTappedVC.setPostUsersStageImage(stageImage: Image!)
       }
