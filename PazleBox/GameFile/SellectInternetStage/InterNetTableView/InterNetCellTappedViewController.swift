@@ -200,7 +200,6 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    
    
    private func FetchCommentDataPostUserProfileImage() {
-      
       //コメントない時はForぶん回らんからTableViewの設定してreturn
       if UsingCommentedStageDatas.count == 0 {
          self.UsersCommentTableView.delegate = self
@@ -223,7 +222,6 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
                self.UsingCommentedStageDatas[tmp].updateValue(errorUsersImage!, forKey: "PostedUsersProfileImage")
             } else {
                // Data for "images/island.jpg" is returned
-               print("プロ画取得成功!")
                self.UsingCommentedStageDatas[tmp].updateValue(data!, forKey: "CommentedUsersProfileImage")
                self.Play3DtouchSuccess()
             }
@@ -231,7 +229,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
             self.DownLoadProfileCounter += 1
                
             if self.DownLoadProfileCounter == self.UsingCommentedStageDatas.count{
-               print("---- Latestデータの取得完了 ----\n")
+               print("---- コメントデータの取得完了 ----\n")
                //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
                //Segmentタップした時に別の関数でCollecti onVie をリロードする。
                self.UsersCommentTableView.reloadData()
