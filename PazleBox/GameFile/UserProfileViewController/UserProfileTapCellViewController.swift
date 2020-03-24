@@ -94,7 +94,6 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
    }
    
    func SetUpUsersStageCommentTableView() {
-      UsersStageCommentTableView.rowHeight = 100
       var BottonInsets: CGFloat = 0
       if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false { BottonInsets = 50 }
       UsersStageCommentTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: BottonInsets, right: 0)

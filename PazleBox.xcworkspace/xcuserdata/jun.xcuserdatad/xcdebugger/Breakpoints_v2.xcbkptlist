@@ -3899,8 +3899,8 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/InterNetTableView/InterNetCellTappedViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "InterNetCellTappedViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -3947,8 +3947,8 @@
             filePath = "PazleBox/GameFile/UserProfileViewController/UserProfileTapCellViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "498"
-            endingLineNumber = "498"
+            startingLineNumber = "497"
+            endingLineNumber = "497"
             landmarkName = "UserProfileTapCellViewController"
             landmarkType = "21">
          </BreakpointContent>
@@ -4027,8 +4027,8 @@
             filePath = "PazleBox/GameFile/UserProfileViewController/UserProfileTapCellViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "478"
-            endingLineNumber = "478"
+            startingLineNumber = "477"
+            endingLineNumber = "477"
             landmarkName = "TapBlockActionAgainstUsersPost()"
             landmarkType = "7">
          </BreakpointContent>
