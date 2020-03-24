@@ -84,7 +84,7 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
    func SetUpWorldTableView() {
       WorldTableView.rowHeight = 160
       var BottonInsets: CGFloat = 0
-      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == true {
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false {
          BottonInsets = 50
       }
       WorldTableView.contentInset = UIEdgeInsets(top: 61.0, left: 0, bottom: BottonInsets, right: 0)

@@ -88,7 +88,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    func SetUpUsersCommentTableView() {
       UsersCommentTableView.rowHeight = 100
       var BottonInsets: CGFloat = 0
-      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == true { BottonInsets = 50 }
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false { BottonInsets = 50 }
       UsersCommentTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: BottonInsets, right: 0)
    }
    
