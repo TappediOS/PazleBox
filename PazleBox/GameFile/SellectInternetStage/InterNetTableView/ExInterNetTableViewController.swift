@@ -62,8 +62,8 @@ extension InterNetTableViewController {
       tableView.deselectRow(at: indexPath, animated: true)
       let InterNetCellTappedVC = self.storyboard?.instantiateViewController(withIdentifier: "InterNetCellTappedVC") as! InterNetCellTappedViewController
       
-      let ImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
-      if let data = ImageData {
+      let ProfileImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
+      if let data = ProfileImageData {
          let Image = UIImage(data: data as Data)
          InterNetCellTappedVC.setPostUsersStageImage(stageImage: Image!)
       }
@@ -76,7 +76,6 @@ extension InterNetTableViewController {
       let StageCommentID = UsingStageDatas[indexPath.item]["StageCommentUid"] as! String
       let FcmToken = UsingStageDatas[indexPath.item]["FcmToken"] as! String
       
-      InterNetCellTappedVC.setUsersImage(usersImage: UIImage(named: "hammer.png")!)
       InterNetCellTappedVC.setUsersName(usersName: UserName)
       
       InterNetCellTappedVC.setPostUsersStageTitle(stageTitle: StageTitle)
