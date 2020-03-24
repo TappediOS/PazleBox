@@ -25,21 +25,29 @@ extension InterNetTableViewController {
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = self.InterNetTableView.dequeueReusableCell(withIdentifier: "InterNetCell", for: indexPath) as? InterNetTableViewCell
       
-      let ImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
-      if let data = ImageData {
+      let StageImageData = UsingStageDatas[indexPath.item]["ImageData"] as? NSData
+      if let data = StageImageData {
          let Image = UIImage(data: data as Data)
          cell?.GameScreenshotImageView.image = Image
       }
       
-      let StageTitle = UsingStageDatas[indexPath.item]["StageTitle"] as! String
-      let reviewNum = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat
-      let UserName = UsingStageDatas[indexPath.item]["StageTitle"] as! String
-   
-      cell?.UserImageViewButton.setImage(UIImage(named: "person.png")!, for: .normal)
+      let usersProfileData = UsingStageDatas[indexPath.item]["PostedUsersProfileImage"] as? NSData
+      if let ProfileData = usersProfileData {
+         let Image = UIImage(data: ProfileData as Data)
+         cell?.UserImageViewButton.setImage(Image, for: .normal)
+      }
+      
       cell?.UserImageViewButton.tag = indexPath.row
       cell?.UserImageViewButton.addTarget(self, action: #selector(TapUserImageButtonInterNetTableView(_:)), for: .touchUpInside)
       
-      cell?.UserNameLabel.text = "Raid on was"
+      let StageTitle = UsingStageDatas[indexPath.item]["StageTitle"] as! String
+      let reviewNum = UsingStageDatas[indexPath.item]["ReviewAve"] as! CGFloat
+      let UserName = UsingStageDatas[indexPath.item]["PostedUsersName"] as! String
+   
+      
+      
+      
+      cell?.UserNameLabel.text = UserName
       cell?.PuzzleTitleLabel.text = StageTitle
       
       cell?.RatedLabel.text = String(floor(Double(reviewNum) * 100) / 100) + " / 5"

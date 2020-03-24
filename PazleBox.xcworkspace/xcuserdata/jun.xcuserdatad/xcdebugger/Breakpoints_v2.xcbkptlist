@@ -4199,8 +4199,8 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/InterNetTableView/ExInterNetTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -4487,8 +4487,8 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/InterNetTableView/ExInterNetTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "InterNetTableViewController"
             landmarkType = "21">
          </BreakpointContent>

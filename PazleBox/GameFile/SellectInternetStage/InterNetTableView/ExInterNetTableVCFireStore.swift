@@ -89,7 +89,6 @@ extension InterNetTableViewController {
          self.StartLoadingAnimation() //ローディングアニメーションの再生。
       }
       
-      self.StartLoadingAnimation() //ローディングアニメーションの再生。
       db.collectionGroup("Stages")
          .whereField("ShowTimeLineUserUID", arrayContains: UsersUID ?? "")
          .order(by: "addDate", descending: true)
