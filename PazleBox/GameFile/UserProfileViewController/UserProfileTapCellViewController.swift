@@ -70,6 +70,7 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      SetUpUsersStageCommentTableView()
       InitLoadActivityView()
       SetUpFireStoreSetting()
       SetUpNavigationController()
@@ -90,6 +91,13 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
       self.UsersStageCommentTableView.emptyDataSetSource = self
       self.UsersStageCommentTableView.emptyDataSetDelegate = self
       self.UsersStageCommentTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
+   }
+   
+   func SetUpUsersStageCommentTableView() {
+      UsersStageCommentTableView.rowHeight = 100
+      var BottonInsets: CGFloat = 0
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == true { BottonInsets = 50 }
+      UsersStageCommentTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: BottonInsets, right: 0)
    }
    
    private func InitLoadActivityView() {

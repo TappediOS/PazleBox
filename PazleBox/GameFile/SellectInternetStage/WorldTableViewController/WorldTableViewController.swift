@@ -53,9 +53,8 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      WorldTableView.rowHeight = 160
-      WorldTableView.contentInset = UIEdgeInsets(top: 61.0, left: 0, bottom: 0, right: 0)
-      
+
+      SetUpWorldTableView()
       SetUpNavigationController()
       InitLoadActivityView()
       SetUpRefleshControl()
@@ -80,6 +79,15 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
             make.height.equalTo(40)
          }
       }
+   }
+   
+   func SetUpWorldTableView() {
+      WorldTableView.rowHeight = 160
+      var BottonInsets: CGFloat = 0
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == true {
+         BottonInsets = 50
+      }
+      WorldTableView.contentInset = UIEdgeInsets(top: 61.0, left: 0, bottom: BottonInsets, right: 0)
    }
    
    func SetUpNavigationController() {

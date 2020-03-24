@@ -36,8 +36,8 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      InterNetTableView.rowHeight = 160
       
+      SetUpInterNetTableView()
       SetUpNavigationController()
       
       InitLoadActivityView()
@@ -45,6 +45,13 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
       SetUpFireStoreSetting()
       
       GetTimeLineDataFromDataBase()
+   }
+   
+   func SetUpInterNetTableView() {
+      InterNetTableView.rowHeight = 160
+      var BottonInsets: CGFloat = 0
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == true { BottonInsets = 50 }
+      InterNetTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: BottonInsets, right: 0)
    }
    
    func SetUpNavigationController() {
