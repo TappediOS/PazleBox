@@ -103,26 +103,6 @@ extension WorldTableViewController {
                self.FetchLatestStageDataPostUserNameAndProfileImage()
             }
       }
-      
-      //こっちはRootにStage入れてた頃の取得方法
-//      db.collection("Stages")
-//         .order(by: "addDate", descending: true)
-//         .limit(to: MaxGetStageNumFormDataBase)
-//         .getDocuments() { (querySnapshot, err) in
-//            if let err = err {
-//               print("Error: \(err)")
-//               print("\n---- データベースからのデータ取得エラー ----")
-//               self.Play3DtouchError()
-//               self.ShowErrGetStageAlertView()
-//            } else {
-//               self.Play3DtouchSuccess()
-//               for document in querySnapshot!.documents {
-//                  self.LatestStageDatas.append(self.GetRawData(document: document))
-//               }
-//               print("配列の総数は \(self.LatestStageDatas.count)")
-//               self.FetchLatestStageDataPostUserNameAndProfileImage()
-//            }
-//      }
    }
    
    func GetPlayCountStageDataFromDataBase(){
