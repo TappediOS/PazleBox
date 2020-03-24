@@ -183,24 +183,13 @@ class SomeUsersListViewController: UIViewController {
    }
    
    private func FetchUsersInfoInList(_ List: Array<Any>) {
-      var ListStr = ConvArrayAnyToArrayStrint(ArrayAny: List)
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
-      ListStr.append("E74lc0hmKkORMztkoEWFUcOf3li2")
+      let ListStr = ConvArrayAnyToArrayStrint(ArrayAny: List)
       print(ListStr)
       
       let ListCount = ListStr.count
       if ListCount == 0 {
-         SetTabeleViewDelegate()
+         self.StopLoadingAnimation()
+         self.SetTabeleViewDelegate()
          return
       }
       

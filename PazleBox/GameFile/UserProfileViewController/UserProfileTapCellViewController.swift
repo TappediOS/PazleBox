@@ -61,7 +61,7 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
    //どこのcellをタップして画面遷移されたかを決めている。
    var TopVCTableViewCellNum = 0
    
-   var isAbleToTapPlayDeleteButton = false
+   var isAbleToTapPlayDeleteButton = true
    
    var db: Firestore!
    
@@ -512,7 +512,7 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
    
    //MARK:- コメントしたユーザの画像タップされたときの処理
    @objc func TapUserImageButtonUserProfileTapCellComment(_ sender: UIButton) {
-      guard self.isAbleToTapPlayDeleteButton == false else {
+      guard self.isAbleToTapPlayDeleteButton == true else {
          print("コメントしたユーザの画像タップされたけど，ローディング中やから何もしない.")
          return
       }
@@ -548,7 +548,7 @@ class UserProfileTapCellViewController: UIViewController, UITableViewDelegate, U
    
    
    @objc func TapUsersCommentReportButton(_ sender: UIButton) {
-      guard self.isAbleToTapPlayDeleteButton == false else {
+      guard self.isAbleToTapPlayDeleteButton == true else {
          print("コメントしたユーザの報告タップされたけど，ローディング中やから何もしない.")
          return
       }
