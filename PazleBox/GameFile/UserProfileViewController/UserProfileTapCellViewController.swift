@@ -619,7 +619,7 @@ extension UserProfileTapCellViewController {
    
    //テーブルの行数を返す
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 20
+      return UsingCommentedStageDatas.count
    }
    
    //Cellを返す
