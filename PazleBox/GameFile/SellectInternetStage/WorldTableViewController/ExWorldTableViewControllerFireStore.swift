@@ -75,6 +75,117 @@ extension WorldTableViewController {
          }
       }
    }
+   //MARK:- 最新のデータからユーザの名前とプロ画を取得するここまで
+   
+   //MARK:- プレイ回数のデータからユーザの名前とプロ画を取得する。
+   func FetchPlayCountStageDataPostUserNameAndProfileImage() {
+      for tmp in 0 ..< PlayCountStageDatas.count {
+         let usersUID = PlayCountStageDatas[tmp]["addUser"] as! String
+         //print("\(usersUID)の名前とプロフィール画像を取得開始")
+         
+         db.collection("users").document(usersUID).getDocument(){ (document, err) in
+            if let err = err {
+               print("Error: \(err)")
+               print("UID = \(usersUID)")
+               print("\n---- データベースからのデータ取得エラー ----")
+            } else {
+               self.Play3DtouchLight()
+               if let document = document, document.exists, let doc = document.data() {
+                  let userName = doc["name"] as! String
+                  self.PlayCountStageDatas[tmp].updateValue(userName, forKey: "PostedUsersName")
+                  let profileURL = doc["downloadProfileURL"] as! String
+                  self.DownloadPlayCountProfileFromStorege(arrayNum: tmp, downLoadURL: profileURL)
+               }
+            }
+         }
+      }
+   }
+   
+   func DownloadPlayCountProfileFromStorege(arrayNum: Int, downLoadURL: String) {
+      let httpsReference = Storage.storage().reference(forURL: downLoadURL)
+      
+      httpsReference.getData(maxSize: 1 * 512 * 512) { data, error in
+         if let error = error {
+            print("プロ画取得エラー")
+            print(error.localizedDescription)
+            let errorUsersImage = UIImage(named: "NoProfileImage.png")?.pngData()
+            self.PlayCountStageDatas[arrayNum].updateValue(errorUsersImage!, forKey: "PostedUsersProfileImage")
+         } else {
+            self.PlayCountStageDatas[arrayNum].updateValue(data!, forKey: "PostedUsersProfileImage")
+            self.Play3DtouchSuccess()
+         }
+         
+         self.DownLoadProfileCounter += 1
+         
+         if self.DownLoadProfileCounter == self.PlayCountStageDatas.count{
+            print("---- PlayCountデータの取得完了 ----\n")
+            //リフレッシュ中なら表示をする
+            if self.RefleshControl.isRefreshing == true {
+               print("---- リフレッシュ中なのでPlayCountのデータでリロードします ----\n")
+               self.UsingStageDatas = self.PlayCountStageDatas
+               self.WorldTableView.reloadData()
+               self.RefleshControl.endRefreshing()
+            }
+         }
+      }
+   }
+   //MARK:- 最新のデータからユーザの名前とプロ画を取得するここまで
+   
+   //MARK:- 最新のデータからユーザの名前とプロ画を取得する。
+   func FetchRatedStageDataPostUserNameAndProfileImage() {
+      for tmp in 0 ..< RatedStageDatas.count {
+         let usersUID = RatedStageDatas[tmp]["addUser"] as! String
+         print("\(usersUID)の名前とプロフィール画像を取得開始")
+         
+         db.collection("users").document(usersUID).getDocument(){ (document, err) in
+            if let err = err {
+               print("Error: \(err)")
+               print("UID = \(usersUID)")
+               print("\n---- データベースからのデータ取得エラー ----")
+            } else {
+               self.Play3DtouchLight()
+               if let document = document, document.exists, let doc = document.data() {
+                  let userName = doc["name"] as! String
+                  print("UserName = \(userName)")
+                  self.RatedStageDatas[tmp].updateValue(userName, forKey: "PostedUsersName")
+                  let profileURL = doc["downloadProfileURL"] as! String
+                  self.DownloadRatedProfileFromStorege(arrayNum: tmp, downLoadURL: profileURL)
+               }
+            }
+         }
+      }
+   }
+   
+   func DownloadRatedProfileFromStorege(arrayNum: Int, downLoadURL: String) {
+      let httpsReference = Storage.storage().reference(forURL: downLoadURL)
+      
+      httpsReference.getData(maxSize: 1 * 512 * 512) { data, error in
+         if let error = error {
+            print("プロ画取得エラー")
+            print(error.localizedDescription)
+            let errorUsersImage = UIImage(named: "NoProfileImage.png")?.pngData()
+            self.RatedStageDatas[arrayNum].updateValue(errorUsersImage!, forKey: "PostedUsersProfileImage")
+         } else {
+            // Data for "images/island.jpg" is returned
+            print("プロ画取得成功!")
+            self.RatedStageDatas[arrayNum].updateValue(data!, forKey: "PostedUsersProfileImage")
+            self.Play3DtouchSuccess()
+         }
+         
+         self.DownLoadProfileCounter += 1
+         
+         if self.DownLoadProfileCounter == self.RatedStageDatas.count{
+            print("---- Ratedデータの取得完了 ----\n")
+            if self.RefleshControl.isRefreshing == true {
+               print("---- リフレッシュ中なのでRatedのデータでリロードします ----\n")
+               self.UsingStageDatas = self.RatedStageDatas
+               self.WorldTableView.reloadData()
+               self.RefleshControl.endRefreshing()
+            }
+         }
+      }
+   }
+   //MARK:- 最新のデータからユーザの名前とプロ画を取得するここまで
    
    //MARK:- 最新，回数，評価それぞれのデータを取得する。
    func GetLatestStageDataFromDataBase() {
@@ -99,7 +210,7 @@ extension WorldTableViewController {
                for document in querySnapshot!.documents {
                   self.LatestStageDatas.append(self.GetRawData(document: document))
                }
-               print("配列の総数は \(self.LatestStageDatas.count)")
+               print("Latestの配列の総数は \(self.LatestStageDatas.count)")
                self.FetchLatestStageDataPostUserNameAndProfileImage()
             }
       }
@@ -107,7 +218,7 @@ extension WorldTableViewController {
    
    func GetPlayCountStageDataFromDataBase(){
       print("\n---- PlayCountデータの取得開始 ----")
-      self.LatestStageDatas.removeAll()
+      self.PlayCountStageDatas.removeAll()
       self.DownLoadProfileCounter = 0
       db.collectionGroup("Stages").whereField("PlayCount", isGreaterThanOrEqualTo: 0)
          .order(by: "PlayCount", descending: true)
@@ -122,17 +233,15 @@ extension WorldTableViewController {
                   self.PlayCountStageDatas.append(self.GetRawData(document: document))
                }
             }
-            //ここでは必要な配列を作っただけで何もする必要はない。
-            //ここで作った配列(self.LatestStageDatas)
-            //はSegmentタップされたときにUsingStageDataに代入してリロードすればいい。
-            print("---- PlayCountデータの取得完了 ----\n")
+            print("PlayCountの配列の総数は \(self.PlayCountStageDatas.count)")
+            self.FetchPlayCountStageDataPostUserNameAndProfileImage()
       }
    }
    
    
    func GetRatedStageDataFromDataBase() {
       print("\n---- Ratedデータの取得開始 ----")
-      self.LatestStageDatas.removeAll()
+      self.RatedStageDatas.removeAll()
       self.DownLoadProfileCounter = 0
       db.collectionGroup("Stages").whereField("ReviewAve", isGreaterThanOrEqualTo: 0)
          .order(by: "ReviewAve", descending: true)
@@ -147,10 +256,8 @@ extension WorldTableViewController {
                   self.RatedStageDatas.append(self.GetRawData(document: document))
                }
             }
-            //ここでは必要な配列を作っただけで何もする必要はない。
-            //ここで作った配列(self.LatestStageDatas)
-            //はSegmentタップされたときにUsingStageDataに代入してリロードすればいい。
-            print("---- Ratedデータの取得完了 ----\n")
+            print("Ratedの配列の総数は \(self.PlayCountStageDatas.count)")
+            self.FetchRatedStageDataPostUserNameAndProfileImage()
       }
    }
    

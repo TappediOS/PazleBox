@@ -161,10 +161,10 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
          GetLatestStageDataFromDataBase()
       case 1:
          print("PlayCountの更新をします。")
-         ReLoadPlayCountStageDataFromDataBase()
+         GetPlayCountStageDataFromDataBase()
          print("Ratingの更新をします。")
       case 2:
-         ReLoadRatedStageDataFromDataBase()
+         GetRatedStageDataFromDataBase()
       default:
          print("nilじゃなかったら何？")
          RefleshControl.endRefreshing()
