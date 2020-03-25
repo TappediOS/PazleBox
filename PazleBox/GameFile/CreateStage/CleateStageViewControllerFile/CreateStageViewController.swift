@@ -80,6 +80,8 @@ class CleateStageViewController: UIViewController {
    var usersFcmToken: String = ""
    var TimeLineShowList = Array<Any>()
    
+   let UsersUID = UserDefaults.standard.string(forKey: "UID")
+   
    //いま対応してるのは，23,32,33,43,
    let photos = ["33p7Red", "33p21Blue","23p13Green","43p10Red","23p5Red",
    "23p14Green","43p19Red","33p34Red","23p12Green","23p11Red",
@@ -212,8 +214,9 @@ class CleateStageViewController: UIViewController {
             if let fcmToken = document.data()?["FcmToken"] as? String {
                self.usersFcmToken = fcmToken
             }
-            if let TimeLineShowList = document.data()?["TimeLineShowList"] as? Array<Any> {
+            if let TimeLineShowList = document.data()?["Follower"] as? Array<Any> {
                self.TimeLineShowList = TimeLineShowList
+               self.TimeLineShowList.append(self.UsersUID ?? "")
             }
          } else {
             print("Document does not exist")
