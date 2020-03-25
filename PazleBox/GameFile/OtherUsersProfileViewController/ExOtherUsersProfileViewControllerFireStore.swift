@@ -71,18 +71,19 @@ extension OtherUsersProfileViewController {
       //さらに，フォロワーとかの表示はできなくする
       if self.BlockList.contains(otherUID) {
          self.BlockFlag = true
-         self.isLoadingOtherUsersStage = false
-         self.UsingStageDatas = self.OtherUsersStageData
-         self.setTabeleviewDelegate()
+         GetOtherUsersInfomationFromFireStore()
          return
+      } else {
+         self.BlockFlag = false
       }
       //相手にブロックされていたときの処理
-      if self.BlockedList.contains(MyUID) {
+      if self.BlockedList.contains(otherUID) {
          self.BlockedFlag = true
          self.isLoadingOtherUsersStage = false
-         self.UsingStageDatas = self.OtherUsersStageData
-         self.setTabeleviewDelegate()
+         GetOtherUsersInfomationFromFireStore()
          return
+      } else {
+         self.BlockedFlag = false
       }
       //相手をフォローしていたときの処理
       //FollowボタンをFollowingにすれば良い
@@ -90,6 +91,8 @@ extension OtherUsersProfileViewController {
          self.FollowFlag = true
          GetOtherUsersStageDataFromDataBase()
          return
+      } else {
+         self.FollowFlag = false
       }
       
       //他のステージデータを取得する。
