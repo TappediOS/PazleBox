@@ -62,7 +62,6 @@ extension OtherUsersProfileViewController {
    }
    
    func ConditionalBranchingBasedOnFollowBlockBlockedList() {
-      let MyUID = UserDefaults.standard.string(forKey: "UID") ?? ""
       let otherUID = self.OtherUsersUID
       self.OtherUsersStageData.removeAll()
       //相手をブロックしていたときの処理
