@@ -25,8 +25,11 @@ import DZNEmptyDataSet
 extension OtherUsersProfileViewController {
    
    func GetMyFollowListAndBlockList() {
+      isLoadingOtherUsersStage = true
       print("\n----- 自分のフォロワーとブロックリストの取得開始 -----")
-      self.StartLoadingAnimation() //ローディングアニメーションの再生。
+      if self.RefleshControl.isRefreshing == false {
+         self.StartLoadingAnimation() //ローディングアニメーションの再生。
+      }
       let UsersUID = UserDefaults.standard.string(forKey: "UID") ?? ""
       
       db.collection("users").document(UsersUID).collection("MonitoredUserInfo").document("UserInfo").getDocument() { document, err in
@@ -61,19 +64,23 @@ extension OtherUsersProfileViewController {
    func ConditionalBranchingBasedOnFollowBlockBlockedList() {
       let MyUID = UserDefaults.standard.string(forKey: "UID") ?? ""
       let otherUID = self.OtherUsersUID
-      self.UsingStageDatas.removeAll()
+      self.OtherUsersStageData.removeAll()
       //相手をブロックしていたときの処理
       //FollowボタンをBlockedにすれば良い
       //その上でステージとか投稿とかは全て0で扱う。
       //さらに，フォロワーとかの表示はできなくする
       if self.BlockList.contains(otherUID) {
          self.BlockFlag = true
+         self.isLoadingOtherUsersStage = false
+         self.UsingStageDatas = self.OtherUsersStageData
          self.setTabeleviewDelegate()
          return
       }
       //相手にブロックされていたときの処理
       if self.BlockedList.contains(MyUID) {
          self.BlockedFlag = true
+         self.isLoadingOtherUsersStage = false
+         self.UsingStageDatas = self.OtherUsersStageData
          self.setTabeleviewDelegate()
          return
       }
@@ -108,7 +115,7 @@ extension OtherUsersProfileViewController {
                
                for document in querySnapshot!.documents {
                   //GetRawData()はEXファイルに存在している。
-                  self.UsingStageDatas.append(self.GetRawData(document: document))
+                  self.OtherUsersStageData.append(self.GetRawData(document: document))
                }
             }
             print("他のユーザのステージデータの取得完了")
@@ -174,7 +181,15 @@ extension OtherUsersProfileViewController {
             self.OtherUsersProfileImage = UIImage(data: data!)!
             self.Play3DtouchSuccess()
          }
+         self.isLoadingOtherUsersStage = false
+         self.UsingStageDatas = self.OtherUsersStageData
          
+         if self.RefleshControl.isRefreshing == true {
+            self.isLoadingOtherUsersStage = false
+            self.RefleshControl.endRefreshing()
+            self.OtherUesrsProfileTableView.reloadData()
+            return
+         }
          
          self.setTabeleviewDelegate()
          //ローディングアニメーションの停止。

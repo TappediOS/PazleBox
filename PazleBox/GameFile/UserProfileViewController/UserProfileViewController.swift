@@ -340,11 +340,11 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
          }
          
          self.UsingStageDatas = self.MyStageData
+         self.isLoadingProfile = false
          
          if self.RefleshControl.isRefreshing {
             self.RefleshControl.endRefreshing()
             self.UserProfileTableView.reloadData()
-            self.isLoadingProfile = false
             return
          }
          
@@ -355,7 +355,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
          self.UserProfileTableView.emptyDataSetDelegate = self
          self.UserProfileTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
          self.UserProfileTableView.reloadData()
-         self.isLoadingProfile = false
          //ローディングアニメーションの停止。
          self.StopLoadingAnimation()
       }
@@ -365,6 +364,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    @objc func ReloadDataFromFireStore(sender: UIRefreshControl) {
       if isLoadingProfile == true {
          print("リロード中です")
+         self.RefleshControl.endRefreshing()
          return
       }
       GetMyStageDataFromDataBase()

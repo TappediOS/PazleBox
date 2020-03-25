@@ -32,6 +32,7 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
    
    //こいつにTableVeiwで表示するやつを入れる。
    var UsingStageDatas: [([String: Any])] = Array()
+   var OtherUsersStageData: [([String: Any])] = Array()
    
    var PiceArray: [PiceInfo] = Array()
    var StageArray: [[Contents]] = Array()
@@ -57,6 +58,8 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
    var BlockFlag = false
    var BlockedFlag = false
    var FollowFlag = false
+   
+   var isLoadingOtherUsersStage = true
       
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -72,7 +75,6 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
       //自分のフォローリストとブロックリストを取得した上で，
       //otherUsernの情報を取得する
       GetMyFollowListAndBlockList()
-      GetOtherUsersStageDataFromDataBase()
    }
    
    public func fetchOtherUsersUIDbeforPushVC(uid: String) {
@@ -148,7 +150,12 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
    }
       
    @objc func ReloadDataFromFireStore(sender: UIRefreshControl) {
-      RefleshControl.endRefreshing()
+      if self.isLoadingOtherUsersStage == true {
+         print("リロード中です")
+         self.RefleshControl.endRefreshing()
+         return
+      }
+      GetMyFollowListAndBlockList()
    }
    
    @objc func TapFollowOrUnFollowButton(_ sender: UIButton) {
