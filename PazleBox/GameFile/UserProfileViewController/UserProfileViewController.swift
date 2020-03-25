@@ -33,6 +33,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    
    //こいつにTableVeiwで表示するやつを入れる。
    var UsingStageDatas: [([String: Any])] = Array()
+   var MyStageData: [([String: Any])] = Array()
    
    var PiceArray: [PiceInfo] = Array()
    var StageArray: [[Contents]] = Array()
@@ -233,7 +234,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
       if self.RefleshControl.isRefreshing == false {
          self.StartLoadingAnimation() //ローディングアニメーションの再生。
       }
-      self.UsingStageDatas.removeAll() //データ取得する前に，配列を空にする
+      self.MyStageData.removeAll() //データ取得する前に，配列を空にする
       let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
       print("UID = \(uid)")
       db.collection("users").document(uid).collection("Stages")
@@ -249,7 +250,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
                
                for document in querySnapshot!.documents {
                   //GetRawData()はEXファイルに存在している。
-                  self.UsingStageDatas.append(self.GetRawData(document: document))
+                  self.MyStageData.append(self.GetRawData(document: document))
                }
             }
             print("自分のステージデータの取得完了")
@@ -338,6 +339,8 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             self.Play3DtouchSuccess()
          }
          
+         self.UsingStageDatas = self.MyStageData
+         
          if self.RefleshControl.isRefreshing {
             self.RefleshControl.endRefreshing()
             self.UserProfileTableView.reloadData()
@@ -360,6 +363,10 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    
    
    @objc func ReloadDataFromFireStore(sender: UIRefreshControl) {
+      if isLoadingProfile == true {
+         print("リロード中です")
+         return
+      }
       GetMyStageDataFromDataBase()
    }
    
