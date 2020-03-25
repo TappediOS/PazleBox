@@ -415,6 +415,7 @@
 		BFBDA50F241641AB00A6AA64 /* UsersSetUpViewCobtroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBDA50E241641AB00A6AA64 /* UsersSetUpViewCobtroller.swift */; };
 		BFBDA5112416484F00A6AA64 /* NoProfileImage.png in Resources */ = {isa = PBXBuildFile; fileRef = BFBDA5102416484E00A6AA64 /* NoProfileImage.png */; };
 		BFBE46CB242B118E0007E1D5 /* ExOtherUsersProfileViewControllerFireStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBE46CA242B118E0007E1D5 /* ExOtherUsersProfileViewControllerFireStore.swift */; };
+		BFBE46CD242B5C9B0007E1D5 /* ExUserProfileViewControllerFireStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBE46CC242B5C9B0007E1D5 /* ExUserProfileViewControllerFireStore.swift */; };
 		BFC6C5D522428287007C8FA1 /* GameSetParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */; };
 		BFC6C5D622428287007C8FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D422428287007C8FA1 /* Assets.xcassets */; };
 		BFC6C5D9224283BD007C8FA1 /* Test.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C5D8224283BD007C8FA1 /* Test.sks */; };
@@ -1285,6 +1286,7 @@
 		BFBDA50E241641AB00A6AA64 /* UsersSetUpViewCobtroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersSetUpViewCobtroller.swift; sourceTree = "<group>"; };
 		BFBDA5102416484E00A6AA64 /* NoProfileImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoProfileImage.png; sourceTree = "<group>"; };
 		BFBE46CA242B118E0007E1D5 /* ExOtherUsersProfileViewControllerFireStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExOtherUsersProfileViewControllerFireStore.swift; sourceTree = "<group>"; };
+		BFBE46CC242B5C9B0007E1D5 /* ExUserProfileViewControllerFireStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUserProfileViewControllerFireStore.swift; sourceTree = "<group>"; };
 		BFC6C5D322428287007C8FA1 /* GameSetParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSetParticle.sks; sourceTree = "<group>"; };
 		BFC6C5D422428287007C8FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC6C5D8224283BD007C8FA1 /* Test.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Test.sks; sourceTree = "<group>"; };
@@ -2397,6 +2399,7 @@
 				BF7748CD24038E4C00AA5E9C /* UserProfileViewControllerSB.storyboard */,
 				BF7748CF24038E6600AA5E9C /* UserProfileViewController.swift */,
 				BFBDA4352410C10800A6AA64 /* ExUserProfileViewControllerDelegate.swift */,
+				BFBE46CC242B5C9B0007E1D5 /* ExUserProfileViewControllerFireStore.swift */,
 				BFBDA4372410C16E00A6AA64 /* ExUserProfileViewControllerGetData.swift */,
 				BF874B002404C6860078E931 /* UserProfileTableViewCell.swift */,
 				BFDCBECB240622ED006C6D4A /* UserProfileTapCellViewController.swift */,
@@ -4296,6 +4299,7 @@
 				BF13BC9423BC78EB00F2E36D /* ExSettingUserInfo.swift in Sources */,
 				BF33300622492B4C009B3042 /* ExGameSeceneHardP2.swift in Sources */,
 				BF1648F222C0C2CC000CD1AB /* BackGroundImageView.swift in Sources */,
+				BFBE46CD242B5C9B0007E1D5 /* ExUserProfileViewControllerFireStore.swift in Sources */,
 				BF73C2F22349C03F00745C7F /* UserCreateStageDB.swift in Sources */,
 				BF1A5EDB22B78609002C6733 /* BuyCoinView.swift in Sources */,
 				BF552E9E226DDD1B00756E16 /* E30.swift in Sources */,
