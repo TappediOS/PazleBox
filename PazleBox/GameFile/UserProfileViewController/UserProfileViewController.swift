@@ -345,9 +345,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
       }
    }
    
-   private func ReloadUserStageDataFromDataBase() {
-      
-   }
    
    @objc func ReloadDataFromFireStore(sender: UIRefreshControl) {
       RefleshControl.endRefreshing()
