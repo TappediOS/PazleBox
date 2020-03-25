@@ -103,18 +103,6 @@ extension OtherUsersProfileViewController {
       return HeaderView
    }
    
-   @objc func TapBlockedButtonForUnBlockedUser(_ sender: UIButton) {
-      print("UnBlockedするためにBlockedButtonタップされました")
-   }
-   
-   @objc func TapFollowingButtonForUnFollowUser(_ sender: UIButton) {
-      print("UnFollowするためにFollowingButtonタップされました")
-   }
-   
-   @objc func TapFollwButtonForFollwUser(_ sender: UIButton) {
-      print("FollowするためにFollowButtonタップされました")
-   }
-   
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       // セルの選択を解除する
       tableView.deselectRow(at: indexPath, animated: true)

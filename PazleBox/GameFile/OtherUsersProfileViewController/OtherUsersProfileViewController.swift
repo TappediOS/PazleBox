@@ -67,6 +67,8 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
       
       InitLoadActivityView()
       SetUpFireStoreSetting()
+      
+      
       //自分のフォローリストとブロックリストを取得した上で，
       //otherUsernの情報を取得する
       GetMyFollowListAndBlockList()
@@ -241,6 +243,68 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
       
       SomeUsersListVC.modalPresentationStyle = .fullScreen
       self.navigationController?.pushViewController(SomeUsersListVC, animated: true)
+   }
+   
+   private func TapUnFollowActionButton() {
+      print("\n----- ユーザID\(self.OtherUsersUID)")
+      print("のアンフォロー開始 -----")
+      let UsersUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+      db.collection("users").document(UsersUID).collection("MonitoredUserInfo").document("UserInfo").updateData([
+         "Follow": FieldValue.arrayRemove([self.OtherUsersUID])
+      ]) { err in
+         if let err = err {
+            print("Err: \(err.localizedDescription)")
+            print("----- アンフォロー失敗 -----")
+         } else {
+            print("----- アンフォロー成功 -----\n")
+            self.FollowFlag = false
+            self.OtherUesrsProfileTableView.reloadData()
+         }
+      }
+   }
+   
+   //MARK:- フォローとかblockedとかのボタンが押されたときの処理
+   @objc func TapFollwButtonForFollwUser(_ sender: UIButton) {
+      print("FollowするためにFollowButtonタップされました")
+      print("\n----- ユーザID\(self.OtherUsersUID)")
+      print("のフォロー開始 -----")
+      let UsersUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+      db.collection("users").document(UsersUID).collection("MonitoredUserInfo").document("UserInfo").updateData([
+         "Follow": FieldValue.arrayUnion([self.OtherUsersUID])
+      ]) { err in
+         if let err = err {
+            print("Err: \(err.localizedDescription)")
+            print("----- フォロー失敗 -----")
+         } else {
+            print("----- フォロー成功 -----\n")
+            self.FollowFlag = true
+            self.OtherUesrsProfileTableView.reloadData()
+         }
+      }
+   }
+   
+   @objc func TapFollowingButtonForUnFollowUser(_ sender: UIButton) {
+      print("UnFollowするためにFollowingButtonタップされました")
+      let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+      //TODO:- ローカライズ
+      let title = "UnFollow" + self.OtherUsersProfileName
+      let UnFollowAction = UIAlertAction(title: title, style: .destructive, handler: { (action: UIAlertAction!) in
+         print("UnFollowAction押されたよ")
+         self.TapUnFollowActionButton()
+      })
+      
+      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+         print("UnFollw?でCanselタップされた")
+      })
+      
+      ActionSheet.addAction(UnFollowAction)
+      ActionSheet.addAction(CanselAction)
+         
+      self.present(ActionSheet, animated: true, completion: nil)
+   }
+   
+   @objc func TapBlockedButtonForUnBlockedUser(_ sender: UIButton) {
+      print("UnBlockedするためにBlockedButtonタップされました")
    }
    
    //MARK:- Labelがタップされたときの処理

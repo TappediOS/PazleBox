@@ -63,7 +63,7 @@ class OtherUsersProfileTableViewHeaderView: UIView {
    
    //TODO:- ローカライズすること
    public func SetUpFollowOrFollowingOrBlockedButtonAsFollowButton() {
-      self.FollowOrFollowingOrBlockedButton.setTitle("Follw", for: .normal)
+      self.FollowOrFollowingOrBlockedButton.setTitle("Follow", for: .normal)
       self.FollowOrFollowingOrBlockedButton.setTitleColor(UIColor.white, for: .normal)
       self.FollowOrFollowingOrBlockedButton.backgroundColor = .systemTeal
       self.FollowOrFollowingOrBlockedButton.layer.borderColor = .none
