@@ -229,7 +229,10 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    //MARK:- 自分のステージデータを取得する。
    private func GetMyStageDataFromDataBase() {
       print("自分のステージデータの取得開始")
-      self.StartLoadingAnimation() //ローディングアニメーションの再生。
+      isLoadingProfile = true
+      if self.RefleshControl.isRefreshing == false {
+         self.StartLoadingAnimation() //ローディングアニメーションの再生。
+      }
       self.UsingStageDatas.removeAll() //データ取得する前に，配列を空にする
       let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
       print("UID = \(uid)")
@@ -241,6 +244,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
                print("データベースからのデータ取得エラー: \(err)")
                self.Play3DtouchError()
                self.ShowErrGetStageAlertView()
+               self.RefleshControl.endRefreshing()
             } else {
                
                for document in querySnapshot!.documents {
@@ -282,6 +286,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             print("Document does not exist")
             self.ShowErrGetStageAlertView()
             self.StopLoadingAnimation()
+            self.RefleshControl.endRefreshing()
          }
          print("ユーザネームとプレイ回数のデータの取得完了")
       }
@@ -300,6 +305,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             print("Document does not exist")
             self.ShowErrGetStageAlertView()
             self.StopLoadingAnimation()
+            self.RefleshControl.endRefreshing()
          }
          print("ユーザネームとプレイ回数のデータの取得完了")
       }
@@ -332,6 +338,13 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             self.Play3DtouchSuccess()
          }
          
+         if self.RefleshControl.isRefreshing {
+            self.RefleshControl.endRefreshing()
+            self.UserProfileTableView.reloadData()
+            self.isLoadingProfile = false
+            return
+         }
+         
          //読み取りが終わってからデリゲードを入れる必要がある
          self.UserProfileTableView.delegate = self
          self.UserProfileTableView.dataSource = self
@@ -347,7 +360,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    
    
    @objc func ReloadDataFromFireStore(sender: UIRefreshControl) {
-      RefleshControl.endRefreshing()
+      GetMyStageDataFromDataBase()
    }
    
    
