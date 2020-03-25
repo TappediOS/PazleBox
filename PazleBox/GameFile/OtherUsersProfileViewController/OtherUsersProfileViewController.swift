@@ -49,6 +49,14 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
    var OtherusersFollowerNum = 0
    var OtherusersFollowNum = 0
    var OtherusersPlayCountNum = 0
+   
+   var FollowList = Array<String>()
+   var BlockList = Array<String>()
+   var BlockedList = Array<String>()
+   
+   var BlockFlag = false
+   var BlockedFlag = false
+   var FollowFlag = false
       
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -59,7 +67,9 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
       
       InitLoadActivityView()
       SetUpFireStoreSetting()
-      //その人の取得する
+      //自分のフォローリストとブロックリストを取得した上で，
+      //otherUsernの情報を取得する
+      GetMyFollowListAndBlockList()
       GetOtherUsersStageDataFromDataBase()
    }
    

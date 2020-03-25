@@ -10,8 +10,8 @@ import UIKit
 
 class OtherUsersProfileTableViewHeaderView: UIView {
    
-   
-   @IBOutlet weak var FollowOrUnFollowButton: UIButton!
+   //FollowするためかUnFollowするためかBlockしている状態かを表すボタン
+   @IBOutlet weak var FollowOrFollowingOrBlockedButton: UIButton!
    let ButtonCornerRadius: CGFloat = 6.5
    
    @IBOutlet weak var OtherUsersNameLabel: UILabel!
@@ -34,7 +34,7 @@ class OtherUsersProfileTableViewHeaderView: UIView {
    override init(frame: CGRect){
       super.init(frame: frame)
       loadNib()
-      InitFollowOrUnFollowButton()
+      InitFollowOrFollowingOrBlockedButton()
       SetUpOtherUsersNameLabel()
       
       InitAllLabelsIsUserInteractionEnabled()
@@ -52,31 +52,60 @@ class OtherUsersProfileTableViewHeaderView: UIView {
    }
    
    
-   func InitFollowOrUnFollowButton() {
-      self.FollowOrUnFollowButton.titleLabel?.adjustsFontSizeToFitWidth = true
-      self.FollowOrUnFollowButton.titleLabel?.adjustsFontForContentSizeCategory = true
-      self.FollowOrUnFollowButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 18)
-      self.FollowOrUnFollowButton.layer.cornerRadius =  ButtonCornerRadius
-      SetUpFollowOrUnFollowButtonAsFollowButton()
+   func InitFollowOrFollowingOrBlockedButton() {
+      self.FollowOrFollowingOrBlockedButton.titleLabel?.adjustsFontSizeToFitWidth = true
+      self.FollowOrFollowingOrBlockedButton.titleLabel?.adjustsFontForContentSizeCategory = true
+      self.FollowOrFollowingOrBlockedButton.titleLabel?.font = UIFont.boldFlatFont (ofSize: 18)
+      self.FollowOrFollowingOrBlockedButton.layer.cornerRadius =  ButtonCornerRadius
+      //self.FollowOrFollowingOrBlockedButton.isEnabled = false
+      //self.FollowOrFollowingOrBlockedButton.isHidden = true
    }
    
-   public func SetUpFollowOrUnFollowButtonAsFollowButton() {
-      self.FollowOrUnFollowButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
-      self.FollowOrUnFollowButton.backgroundColor = .systemTeal
-      self.FollowOrUnFollowButton.layer.borderColor = .none
-      self.FollowOrUnFollowButton.layer.borderWidth = 0
+   //TODO:- ローカライズすること
+   public func SetUpFollowOrFollowingOrBlockedButtonAsFollowButton() {
+      self.FollowOrFollowingOrBlockedButton.setTitle("Follw", for: .normal)
+      self.FollowOrFollowingOrBlockedButton.setTitleColor(UIColor.white, for: .normal)
+      self.FollowOrFollowingOrBlockedButton.backgroundColor = .systemTeal
+      self.FollowOrFollowingOrBlockedButton.layer.borderColor = .none
+      self.FollowOrFollowingOrBlockedButton.layer.borderWidth = 0
+      self.FollowOrFollowingOrBlockedButton.isEnabled = true
+      self.FollowOrFollowingOrBlockedButton.isHidden = false
    }
    
-   public func SetUpFollowOrUnFollowButtonAsUnFollowButton() {
-      self.FollowOrUnFollowButton.setTitle("Following", for: .normal)
-      self.FollowOrUnFollowButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
-      self.FollowOrUnFollowButton.backgroundColor = .white
-      self.FollowOrUnFollowButton.layer.borderColor = UIColor.black.cgColor
-      self.FollowOrUnFollowButton.layer.borderWidth = 1.0
+   //TODO:- ローカライズすること
+   public func SetUpFollowOrFollowingOrBlockedButtonAsUnFollowButton() {
+      self.FollowOrFollowingOrBlockedButton.setTitle("Following", for: .normal)
+      self.FollowOrFollowingOrBlockedButton.setTitleColor(UIColor.black, for: .normal)
+      self.FollowOrFollowingOrBlockedButton.backgroundColor = .white
+      self.FollowOrFollowingOrBlockedButton.layer.borderColor = UIColor.black.cgColor
+      self.FollowOrFollowingOrBlockedButton.layer.borderWidth = 1.0
+      self.FollowOrFollowingOrBlockedButton.isEnabled = true
+      self.FollowOrFollowingOrBlockedButton.isHidden = false
+   }
+   
+   //TODO:- ローカライズすること
+   public func SetUpFollowOrFollowingOrBlockedButtonAsBlockedButton() {
+      self.FollowOrFollowingOrBlockedButton.setTitle("Blocked", for: .normal)
+      self.FollowOrFollowingOrBlockedButton.setTitleColor(UIColor.white, for: .normal)
+      self.FollowOrFollowingOrBlockedButton.backgroundColor = .systemRed
+      self.FollowOrFollowingOrBlockedButton.layer.borderColor = .none
+      self.FollowOrFollowingOrBlockedButton.layer.borderWidth = 0
+      self.FollowOrFollowingOrBlockedButton.isEnabled = true
+      self.FollowOrFollowingOrBlockedButton.isHidden = false
+   }
+   
+   public func SetUpFollowOrFollowingOrBlockedButtonAsCantWorkButtonBecauseUserBlockedUserThatShowOtherUsersVC() {
+      self.FollowOrFollowingOrBlockedButton.setTitle("", for: .normal)
+      self.FollowOrFollowingOrBlockedButton.setTitleColor(.none, for: .normal)
+      self.FollowOrFollowingOrBlockedButton.backgroundColor = .none
+      self.FollowOrFollowingOrBlockedButton.layer.borderColor = .none
+      self.FollowOrFollowingOrBlockedButton.layer.borderWidth = 0
+      self.FollowOrFollowingOrBlockedButton.isEnabled = false
+      self.FollowOrFollowingOrBlockedButton.isHidden = true
    }
    
    public func getFollowOrUnFollowButton() -> UIButton {
-      return self.FollowOrUnFollowButton
+      return self.FollowOrFollowingOrBlockedButton
    }
    
    func SetUpOtherUsersNameLabel() {

@@ -23,10 +23,76 @@ import DZNEmptyDataSet
 
 
 extension OtherUsersProfileViewController {
+   
+   func GetMyFollowListAndBlockList() {
+      print("\n----- 自分のフォロワーとブロックリストの取得開始 -----")
+      self.StartLoadingAnimation() //ローディングアニメーションの再生。
+      let UsersUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+      
+      db.collection("users").document(UsersUID).collection("MonitoredUserInfo").document("UserInfo").getDocument() { document, err in
+         if let err = err {
+            print("Err: \(err.localizedDescription)")
+            print("\n----- 自分のフォロワーとブロックリストの取得失敗 -----")
+         }
+         
+         if let document = document, document.exists {
+            if let Follow = document.data()?["Follow"] as? Array<Any> {
+               self.FollowList = Follow.filter { ($0 as? String) != nil } as! [String]
+            }
+            if let Block = document.data()?["Block"] as? Array<Any> {
+               self.BlockList = Block.filter { ($0 as? String) != nil } as! [String]
+            }
+            if let Blocked = document.data()?["Blocked"] as? Array<Any> {
+               self.BlockedList = Blocked.filter { ($0 as? String) != nil } as! [String]
+            }
+         } else {
+            print("\n----- 自分のフォロワーとブロックリストの取得失敗(ドキュメントが存在しない) -----")
+         }
+         
+         print("\n----- 自分のフォロワーとブロックリストの取得成功 -----")
+         print("Follow: \(self.FollowList)")
+         print("Block: \(self.BlockList)")
+         print("Blocked: \(self.BlockedList)")
+         self.ConditionalBranchingBasedOnFollowBlockBlockedList()
+      }
+      
+   }
+   
+   func ConditionalBranchingBasedOnFollowBlockBlockedList() {
+      let MyUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+      let otherUID = self.OtherUsersUID
+      self.UsingStageDatas.removeAll()
+      //相手をブロックしていたときの処理
+      //FollowボタンをBlockedにすれば良い
+      //その上でステージとか投稿とかは全て0で扱う。
+      //さらに，フォロワーとかの表示はできなくする
+      if self.BlockList.contains(otherUID) {
+         self.BlockFlag = true
+         self.setTabeleviewDelegate()
+         return
+      }
+      //相手にブロックされていたときの処理
+      if self.BlockedList.contains(MyUID) {
+         self.BlockedFlag = true
+         self.setTabeleviewDelegate()
+         return
+      }
+      //相手をフォローしていたときの処理
+      //FollowボタンをFollowingにすれば良い
+      if self.FollowList.contains(otherUID) {
+         self.FollowFlag = true
+         GetOtherUsersStageDataFromDataBase()
+         return
+      }
+      
+      //他のステージデータを取得する。
+      GetOtherUsersStageDataFromDataBase()
+   }
+   
    //MARK:- 他のステージデータを取得する。
    func GetOtherUsersStageDataFromDataBase() {
       print("他のユーザのステージデータの取得開始")
-      self.StartLoadingAnimation() //ローディングアニメーションの再生。
+      
       let uid = self.OtherUsersUID
       print("UID = \(uid)")
             
@@ -109,16 +175,20 @@ extension OtherUsersProfileViewController {
             self.Play3DtouchSuccess()
          }
          
-         //読み取りが終わってからデリゲードを入れる必要がある
-         self.OtherUesrsProfileTableView.delegate = self
-         self.OtherUesrsProfileTableView.dataSource = self
-         self.OtherUesrsProfileTableView.emptyDataSetSource = self
-         self.OtherUesrsProfileTableView.emptyDataSetDelegate = self
-         self.OtherUesrsProfileTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
-         self.OtherUesrsProfileTableView.reloadData()
          
+         self.setTabeleviewDelegate()
          //ローディングアニメーションの停止。
          self.StopLoadingAnimation()
       }
+   }
+   
+   func setTabeleviewDelegate() {
+      //読み取りが終わってからデリゲードを入れる必要がある
+      self.OtherUesrsProfileTableView.delegate = self
+      self.OtherUesrsProfileTableView.dataSource = self
+      self.OtherUesrsProfileTableView.emptyDataSetSource = self
+      self.OtherUesrsProfileTableView.emptyDataSetDelegate = self
+      self.OtherUesrsProfileTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
+      self.OtherUesrsProfileTableView.reloadData()
    }
 }

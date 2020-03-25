@@ -51,8 +51,6 @@ extension OtherUsersProfileViewController {
    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
       //xibファイルから読み込んでヘッダを生成
       let HeaderView = OtherUsersProfileTableViewHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: sectionHeaderHeight))
-      let followButton = HeaderView.getFollowOrUnFollowButton()
-      followButton.addTarget(self, action: #selector(TapFollowOrUnFollowButton(_:)), for: .touchUpInside)
       HeaderView.OtherUsersNameLabel.text = self.OtherUsersProfileName
       HeaderView.OtherUsersProfileImageView.image = self.OtherUsersProfileImage
       HeaderView.OtherUsersFollowingCountLabel.text = String(self.OtherusersFollowNum)
@@ -60,7 +58,37 @@ extension OtherUsersProfileViewController {
       HeaderView.OtherUsersPlayCountNumLabel.text = String(self.OtherusersPlayCountNum)
       HeaderView.OtherUsersPostsCountLabel.text = String(UsingStageDatas.count)
       
-      //フォローフォロワーラベルをタップしたとの処理を書いた
+      //ブロックしてるかされてるかやったら0代入してreturn
+      if (self.BlockFlag == true || self.BlockedFlag == true) {
+         HeaderView.OtherUsersFollowingCountLabel.text = "0"
+         HeaderView.OtherUsersFollowersCountLabel.text = "0"
+         HeaderView.OtherUsersPlayCountNumLabel.text = "0"
+         HeaderView.OtherUsersPostsCountLabel.text = "0"
+         
+         if self.BlockedFlag == true {
+            HeaderView.SetUpFollowOrFollowingOrBlockedButtonAsCantWorkButtonBecauseUserBlockedUserThatShowOtherUsersVC()
+         }
+         
+         if self.BlockFlag == true {
+            HeaderView.SetUpFollowOrFollowingOrBlockedButtonAsBlockedButton()
+            HeaderView.FollowOrFollowingOrBlockedButton.addTarget(self, action: #selector(self.TapBlockedButtonForUnBlockedUser(_:)), for: .touchUpInside)
+         }
+         return HeaderView
+      }
+      
+      //followしてたら，変更するボタンをfollwingに変更する
+      if self.FollowFlag == true {
+         HeaderView.SetUpFollowOrFollowingOrBlockedButtonAsUnFollowButton()
+         HeaderView.FollowOrFollowingOrBlockedButton.addTarget(self, action: #selector(self.TapFollowingButtonForUnFollowUser(_:)), for: .touchUpInside)
+      }
+      
+      if self.FollowFlag == false {
+         HeaderView.SetUpFollowOrFollowingOrBlockedButtonAsFollowButton()
+         HeaderView.FollowOrFollowingOrBlockedButton.addTarget(self, action: #selector(self.TapFollwButtonForFollwUser(_:)), for: .touchUpInside)
+      }
+      
+      //フォローフォロワーラベルをタップしたときの処理
+      //ただし，この処理はBlockフラグもしくはBlockedFlagが立っていた時には走らない
       let TapFollowingGesture = UITapGestureRecognizer(target: self, action: #selector(TapFollowingLabel(_:)))
       let TapFollowingCountGesture = UITapGestureRecognizer(target: self, action: #selector(TapFollowingCountLabel(_:)))
       let TapFollowerGesture = UITapGestureRecognizer(target: self, action: #selector(TapFollowerLabel(_:)))
@@ -73,6 +101,18 @@ extension OtherUsersProfileViewController {
            
       
       return HeaderView
+   }
+   
+   @objc func TapBlockedButtonForUnBlockedUser(_ sender: UIButton) {
+      print("UnBlockedするためにBlockedButtonタップされました")
+   }
+   
+   @objc func TapFollowingButtonForUnFollowUser(_ sender: UIButton) {
+      print("UnFollowするためにFollowingButtonタップされました")
+   }
+   
+   @objc func TapFollwButtonForFollwUser(_ sender: UIButton) {
+      print("FollowするためにFollowButtonタップされました")
    }
    
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
