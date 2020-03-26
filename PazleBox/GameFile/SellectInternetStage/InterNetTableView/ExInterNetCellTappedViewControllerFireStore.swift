@@ -104,7 +104,7 @@ extension InterNetCellTappedViewController {
             } else {
                //self.Play3DtouchSuccess()
                for document in querySnapshot!.documents {
-                  if let userUID = document["addUser"] as? String, self.BlockList.contains(userUID) {
+                  if let userUID = document["CommentUserUID"] as? String, self.BlockList.contains(userUID) {
                      print("\(userUID)をブロックしているのでこいつの最新データは取得しない")
                      continue
                   }
