@@ -11,7 +11,6 @@ import FirebaseStorage
 import FirebaseFirestore
 import UIKit
 
-
 extension InterNetCellTappedViewController {
    //MARK:- ブロックリストをFireStoreからフェッチする
    //で，fetchtypeでその後どれを取得するかを決める
@@ -86,7 +85,6 @@ extension InterNetCellTappedViewController {
       }
    }
    
-   
    func GetStageCommentDataFromFireStore() {
       print("\n---- コメントデータの取得開始 ----")
       let DocID = self.PostedStageCommentID
@@ -95,23 +93,23 @@ extension InterNetCellTappedViewController {
          .order(by: "AddDate", descending: true)
          .limit(to: MaxGetCommentNumFormDataBase)
          .getDocuments() { (querySnapshot, err) in
-            if let err = err {
-               print("Error: \(err)")
-               print("\n---- データベースからのデータ取得エラー ----")
-               //self.Play3DtouchError()
-               //self.ShowErrGetStageAlertView()
-            } else {
-               //self.Play3DtouchSuccess()
-               for document in querySnapshot!.documents {
-                  if let userUID = document["CommentUserUID"] as? String, self.BlockList.contains(userUID) {
-                     print("\(userUID)をブロックしているのでこいつのコメントデータは取得しない")
-                     continue
-                  }
-                  self.UsingCommentedStageDatas.append(self.GetCommentRaw(document: document))
+         if let err = err {
+            print("Error: \(err)")
+            print("\n---- データベースからのデータ取得エラー ----")
+            //self.Play3DtouchError()
+            //self.ShowErrGetStageAlertView()
+         } else {
+            //self.Play3DtouchSuccess()
+            for document in querySnapshot!.documents {
+               if let userUID = document["CommentUserUID"] as? String, self.BlockList.contains(userUID) {
+                  print("\(userUID)をブロックしているのでこいつのコメントデータは取得しない")
+                  continue
                }
-               print("配列の総数は \(self.UsingCommentedStageDatas.count)")
-               self.FetchCommentDataPostUserProfileImage()
+               self.UsingCommentedStageDatas.append(self.GetCommentRaw(document: document))
             }
+            print("配列の総数は \(self.UsingCommentedStageDatas.count)")
+            self.FetchCommentDataPostUserProfileImage()
+         }
       }
    }
 }
