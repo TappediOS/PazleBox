@@ -299,6 +299,9 @@
 		BF67C2A5235DB9D200EBFB00 /* ExCreateStageDidLayoutSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67C2A4235DB9D200EBFB00 /* ExCreateStageDidLayoutSubviews.swift */; };
 		BF67C2A8235EB70800EBFB00 /* ExCreateStageInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67C2A7235EB70800EBFB00 /* ExCreateStageInit.swift */; };
 		BF6871C723B9FBA3005013A9 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6871C623B9FBA3005013A9 /* SettingTableViewController.swift */; };
+		BF6AA645242C942200307CFA /* ExInterNetCellTappedViewControllerTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6AA644242C942200307CFA /* ExInterNetCellTappedViewControllerTableViewDelegate.swift */; };
+		BF6AA647242C946900307CFA /* ExInterNetCellTappedViewControllerFireStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6AA646242C946900307CFA /* ExInterNetCellTappedViewControllerFireStore.swift */; };
+		BF6AA649242C94E400307CFA /* ExInterNetCellTappedViewControllerGetRawData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6AA648242C94E400307CFA /* ExInterNetCellTappedViewControllerGetRawData.swift */; };
 		BF6B60CD23A787D8002FD8A1 /* NetworkCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6B60CC23A787D8002FD8A1 /* NetworkCheck.swift */; };
 		BF72916C2361866E00E8D947 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF72916E2361866E00E8D947 /* InfoPlist.strings */; };
 		BF7291742365A85E00E8D947 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7291732365A85E00E8D947 /* SnapshotHelper.swift */; };
@@ -1170,6 +1173,9 @@
 		BF67C2A4235DB9D200EBFB00 /* ExCreateStageDidLayoutSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCreateStageDidLayoutSubviews.swift; sourceTree = "<group>"; };
 		BF67C2A7235EB70800EBFB00 /* ExCreateStageInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCreateStageInit.swift; sourceTree = "<group>"; };
 		BF6871C623B9FBA3005013A9 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		BF6AA644242C942200307CFA /* ExInterNetCellTappedViewControllerTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExInterNetCellTappedViewControllerTableViewDelegate.swift; sourceTree = "<group>"; };
+		BF6AA646242C946900307CFA /* ExInterNetCellTappedViewControllerFireStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExInterNetCellTappedViewControllerFireStore.swift; sourceTree = "<group>"; };
+		BF6AA648242C94E400307CFA /* ExInterNetCellTappedViewControllerGetRawData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExInterNetCellTappedViewControllerGetRawData.swift; sourceTree = "<group>"; };
 		BF6B60CC23A787D8002FD8A1 /* NetworkCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCheck.swift; sourceTree = "<group>"; };
 		BF72916D2361866E00E8D947 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BF72916F2361867600E8D947 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -2441,6 +2447,9 @@
 				BF5BF8CC241DF4D100B0C096 /* ExInterNetTableViewGetRawData.swift */,
 				BF77E90E23FE760600E5EC91 /* InterNetTableViewCell.swift */,
 				BF77E91023FF9FDF00E5EC91 /* InterNetCellTappedViewController.swift */,
+				BF6AA644242C942200307CFA /* ExInterNetCellTappedViewControllerTableViewDelegate.swift */,
+				BF6AA646242C946900307CFA /* ExInterNetCellTappedViewControllerFireStore.swift */,
+				BF6AA648242C94E400307CFA /* ExInterNetCellTappedViewControllerGetRawData.swift */,
 				BF77E9122400C59C00E5EC91 /* UsersCommentTableViewCell.swift */,
 			);
 			path = InterNetTableView;
@@ -4115,6 +4124,7 @@
 				BF552F3A226DDF3100756E16 /* H48.swift in Sources */,
 				BF332FA822492716009B3042 /* E17.swift in Sources */,
 				BF552E98226DDD1100756E16 /* E27.swift in Sources */,
+				BF6AA645242C942200307CFA /* ExInterNetCellTappedViewControllerTableViewDelegate.swift in Sources */,
 				BF552E8E226DDCEE00756E16 /* E22.swift in Sources */,
 				BF332FC2224927AA009B3042 /* N10.swift in Sources */,
 				BF552E90226DDCF200756E16 /* E23.swift in Sources */,
@@ -4152,6 +4162,7 @@
 				BFFA3E7723D1794100CE3B16 /* ExTutorialVCLayout.swift in Sources */,
 				BF552EF6226DDE4900756E16 /* N44.swift in Sources */,
 				BF94BDDE2352FC33001ACD11 /* ExSellectStageVCCollection.swift in Sources */,
+				BF6AA647242C946900307CFA /* ExInterNetCellTappedViewControllerFireStore.swift in Sources */,
 				BFBDA429240B9A4E00A6AA64 /* WorldTableViewCell.swift in Sources */,
 				BF552F38226DDF2D00756E16 /* H47.swift in Sources */,
 				BF5BF8CD241DF4D100B0C096 /* ExInterNetTableViewGetRawData.swift in Sources */,
@@ -4188,6 +4199,7 @@
 				BF552EC2226DDD7600756E16 /* E48.swift in Sources */,
 				BF332FD0224927C9009B3042 /* N17.swift in Sources */,
 				BFBDA427240B969E00A6AA64 /* ExWorldVCSegment.swift in Sources */,
+				BF6AA649242C94E400307CFA /* ExInterNetCellTappedViewControllerGetRawData.swift in Sources */,
 				BF2674EC2227B6A3003D370F /* GameViewController.swift in Sources */,
 				BF552EA0226DDD2800756E16 /* E31.swift in Sources */,
 				BF332FD6224927D5009B3042 /* N20.swift in Sources */,
