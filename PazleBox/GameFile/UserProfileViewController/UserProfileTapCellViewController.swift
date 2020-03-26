@@ -71,6 +71,8 @@ class UserProfileTapCellViewController: UIViewController {
    let MaxGetCommentNumFormDataBase = 40
    var DownLoadProfileCounter = 0
    
+   var BlockList = Array<String>()
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       SetUpUsersStageCommentTableView()
@@ -88,7 +90,7 @@ class UserProfileTapCellViewController: UIViewController {
       SetUpPostUsersStageButton(sender: UsersPostedStagePlayButton)
       SetUpPostUsersStageButton(sender: UsersPostedStageDeleteButton)
       
-      GetUsersStageCommentDataFromFireStore()
+      FetchBlockListFromFireStore()
    }
    
    func SetUpUsersStageCommentTableView() {

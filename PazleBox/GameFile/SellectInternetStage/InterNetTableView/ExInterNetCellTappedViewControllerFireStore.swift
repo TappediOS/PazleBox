@@ -13,7 +13,6 @@ import UIKit
 
 
 extension InterNetCellTappedViewController {
-   
    //MARK:- ブロックリストをFireStoreからフェッチする
    //で，fetchtypeでその後どれを取得するかを決める
    func FetchBlockListFromFireStore() {
