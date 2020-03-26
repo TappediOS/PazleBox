@@ -13,6 +13,8 @@ import Firebase
 import FirebaseFirestore
 import CropViewController
 import FirebaseStorage
+import NVActivityIndicatorView
+import SCLAlertView
 
 class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
    
@@ -28,8 +30,15 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
    
    @IBOutlet weak var RegisterButton: UIButton!
    
+   
+   @IBOutlet weak var ReLoadCheckUserExistFireStoreButton: UIButton!
+   
+   
+   
    var UserNameWhenTapRegisterButton: String = ""
    var usersImage = UIImage()
+   
+   var LoadActivityView: NVActivityIndicatorView?
    
    let usersImageViewWide: CGFloat = 70
    //テキストフィールドに書き込む最大の文字数。
@@ -39,12 +48,32 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
    
    let NoProfileImage = UIImage(named: "NoProfileImage.png")
    
+   var isFinishRegistorProfileImageFirebaseStorage = false
+   var isFinishRegistorUserInfoFireStore = false
+   
    override func viewDidLoad() {
+      InitLoadActivityView()
       SetUpTextField()
-      
       SetUpUsersImageButton()
+      SetUpReLoadCheckUserExistFireStoreButton()
       SetUpRegisterButton()
       SetUpFireStoreSetting()
+      
+      
+      DisableReLoadCheckUserExistFireStoreButton()
+      DisableChangeProfileButtonAndTextField()
+      
+      CheckUserFirstLoginOrReDownloadApp()
+   }
+   
+   private func InitLoadActivityView() {
+      let spalete: CGFloat = 5
+      let Viewsize = self.view.frame.width / spalete
+      let StartX = self.view.frame.width / 2 - (Viewsize / 2)
+      let StartY = self.view.frame.height / 2 - (Viewsize / 2)
+      let Rect = CGRect(x: StartX, y: StartY, width: Viewsize, height: Viewsize)
+      LoadActivityView = NVActivityIndicatorView(frame: Rect, type: .ballSpinFadeLoader, color: UIColor.flatMint(), padding: 0)
+      self.view.addSubview(LoadActivityView!)
    }
    
    
@@ -71,6 +100,11 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
       UsersProfileButton.layer.masksToBounds = true
    }
    
+   func SetUpReLoadCheckUserExistFireStoreButton() {
+      ReLoadCheckUserExistFireStoreButton.layer.borderWidth = 0.5
+      ReLoadCheckUserExistFireStoreButton.layer.cornerRadius = 10
+   }
+   
    func SetUpRegisterButton() {
       //TODO:- ローカライズする
       let title = NSLocalizedString("Register", comment: "")
@@ -89,6 +123,90 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
    }
+   
+   private func DisableReLoadCheckUserExistFireStoreButton() {
+      self.ReLoadCheckUserExistFireStoreButton.isEnabled = false
+      self.ReLoadCheckUserExistFireStoreButton.isHidden = true
+   }
+   
+   private func EnableReLoadCheckUserExistFireStoreButton() {
+      self.ReLoadCheckUserExistFireStoreButton.isEnabled = true
+      self.ReLoadCheckUserExistFireStoreButton.isHidden = false
+   }
+   
+   private func DisableChangeProfileButtonAndTextField() {
+      self.UsersProfileButton.isEnabled = false
+      self.ChangeProfileButton.isEnabled = false
+      self.NameTextField.isEnabled = false
+   }
+   
+   private func EnableChangeProfileButtonAndTextField() {
+      self.UsersProfileButton.isEnabled = true
+      self.ChangeProfileButton.isEnabled = true
+      self.NameTextField.isEnabled = false
+   }
+   
+   private func CheckUserFirstLoginOrReDownloadApp() {
+      self.StartLoadingAnimation()
+      let uid = UserDefaults.standard.string(forKey: "UID")!
+      print("--- 初めての登録かアプリ再ダウンロードかの調査開始 ---")
+      print("--- UIDがFireStoreの/user/uidにあるか調べる: \(uid) ---")
+      db.collection("users").document(uid).getDocument() { document, err in
+         self.StopLoadingAnimation() //Stop Animation
+         if let err = err {
+            print("データベースからのデータ取得エラー: \(err)")
+            self.ShowErrGetUserInfoForCheckUserRegisterAppAlertView()
+            self.EnableReLoadCheckUserExistFireStoreButton()
+            return
+         }
+         
+         if let document = document, document.exists {
+            print("--- UIDがFireStoreに存在しました! ---")
+            print("UserDefaults[Logined]をtrueに変更してMainTabBarを開きます")
+            UserDefaults.standard.set(true, forKey: "Logined")
+            self.segeMainTabBarController()
+         } else {
+            print("--- UIDがFireStoreに存在しませんでした ---")
+            print("--- ボタンとtextFieldを使用可能にします---")
+            self.EnableChangeProfileButtonAndTextField()
+         }
+      }
+   }
+   
+   
+   @IBAction func TapReLoadCheckUserExistFireStoreButton(_ sender: Any) {
+      CheckUserFirstLoginOrReDownloadApp()
+      DisableReLoadCheckUserExistFireStoreButton()
+   }
+   
+   func ShowErrGetUserInfoForCheckUserRegisterAppAlertView() {
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      ComleateView.addButton("OK"){
+         ComleateView.dismiss(animated: true)
+         self.Play3DtouchHeavy()
+      }
+      let Error = NSLocalizedString("err", comment: "")
+      let errGetDoc = NSLocalizedString("errGetDoc", comment: "")
+      let checkNet = NSLocalizedString("checkNet", comment: "")
+      ComleateView.showError(Error, subTitle: errGetDoc + "\n" + checkNet)
+   }
+   
+   //MARK:- ローディングアニメーション再生
+   func StartLoadingAnimation() {
+      print("ローディングアニメーション再生")
+      self.LoadActivityView?.startAnimating()
+      return
+   }
+   
+   func StopLoadingAnimation() {
+      print("ローディングアニメーション停止")
+      if LoadActivityView?.isAnimating == true {
+         self.LoadActivityView?.stopAnimating()
+      }
+   }
+   
+   
    
    private func DismissEditProfileVC() {
       self.dismiss(animated: true, completion: {
@@ -180,23 +298,59 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
             self.RegisterProfileURLtoFirestore(uid: uid, downloadURL: downloadURL)
          }
       }
-      
-      
    }
    
    private func RegisterProfileURLtoFirestore(uid: String, downloadURL: URL) {
       print("\n---------- プロ画をのURLをFireStoreに保存開始  ----------")
       let downloadURLStr: String = downloadURL.absoluteString
       print("ダウンロードURL = \(downloadURLStr)")
-      db.collection("users").document(uid).updateData(
+      db.collection("users").document(uid).setData(
          ["downloadProfileURL": downloadURLStr
-      ]) { err in
+      ], merge: true) { err in
          if let err = err {
             print("Error writing document: \(err)")
             print("---------- プロ画をのURLをFireStoreに保存失敗  ----------\n")
          }
          print("---------- プロ画のURLをFireStoreに保存成功  ----------\n")
-         self.segeMainTabBarController()
+         self.isFinishRegistorProfileImageFirebaseStorage = true
+         if self.isFinishRegistorUserInfoFireStore == true {
+            print("firestoreも登録終わってるからMainTabBar表示します")
+            self.segeMainTabBarController()
+         }
+      }
+   }
+   
+   private func RegisterMonitoredUserInfoFirebStore(uid: String, name: String) {
+      print("\n---------- MonitoerdUserInfoをFireStoreに保存開始  ----------")
+      let EmptyArray = Array<Any>()
+      var TimeLineShowListArray = Array<Any>()
+      TimeLineShowListArray.append(uid)
+     
+      //FcmTokenは別途登録する.appDelegateで。そのタイミングがいつになるかわからんからここではsetData()
+      //を使う。ただし，mergeをtrueにする
+      //逆に言えば，appDelegateで更新する際もsetData() + mergeをtrue.
+      db.collection("users").document(uid).collection("MonitoredUserInfo").document("UserInfo").setData([
+         "name": name,
+         "usersUID": uid,
+         "Block": EmptyArray,
+         "Blocked": EmptyArray,
+         "Follow": EmptyArray,
+         "Follower": EmptyArray,
+         "TimeLineShowList": TimeLineShowListArray
+      ], merge: true) { err in
+         if let err = err {
+            print("---------- MonitoerdUserInfoをFireStoreに保存失敗  ----------\n")
+            print("Error writing document: \(err)")
+         } else {
+            print("---------- MonitoerdUserInfoをFireStoreに保存成功  ----------\n")
+            print("ログインのUsredefaultsをtrueに変更します")
+            UserDefaults.standard.set(true, forKey: "Logined")
+            self.isFinishRegistorUserInfoFireStore = true
+            if self.isFinishRegistorProfileImageFirebaseStorage == true {
+               print("storageも登録終わってるからMainTabBar表示します")
+               self.segeMainTabBarController()
+            }
+         }
       }
    }
    
@@ -205,7 +359,6 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
       let Biography: String = ""
       let FollowArray = Array<Any>()
       let FollowerArray = Array<Any>()
-      let BlockArray = Array<Any>()
       var TimeLineShowList = Array<Any>()
       TimeLineShowList.append(uid)
       db.collection("users").document(uid).setData([
@@ -219,7 +372,6 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
          "ClearStageCount": 0,
          "Follow": FollowArray,
          "Follower": FollowerArray,
-         "Block": BlockArray,
          "TimeLineShowList": TimeLineShowList,
          "downloadProfileURL": "nil"
       ]) { err in
@@ -228,8 +380,7 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
             print("Error writing document: \(err)")
          } else {
             print("---------- ユーザ情報をFireStoreに保存成功  ----------\n")
-            print("ログインのUsredefaultsをtrueに変更します")
-            UserDefaults.standard.set(true, forKey: "Logined")
+            self.RegisterMonitoredUserInfoFirebStore(uid: uid, name: Name)
          }
       }
       Analytics.logEvent(AnalyticsEventSignUp, parameters: nil)
@@ -238,7 +389,7 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
    
    private func ChekUserCreateStageNumFromFireStore(uid: String) {
       print("UID = \(uid)")
-      db.collection("Stages").whereField("addUser", isEqualTo: uid).getDocuments() { (querySnapshot, err) in
+      db.collectionGroup("Stages").whereField("addUser", isEqualTo: uid).getDocuments() { (querySnapshot, err) in
          if let err = err {
             print("データベースからのデータ取得エラー: \(err)")
          } else {
@@ -248,11 +399,7 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
             
             if createStageNum != 0 {
                self.UpdateCreateStageNumFirebase(uid: uid, createStageNum: createStageNum)
-            }else{
-               //self.segeMainTabBarController()
             }
-            
-            
          }
       }
    }
@@ -262,9 +409,10 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
          ["CreateStageNum": createStageNum
       ]) { err in
          if let err = err {
+            print("作成されているステージ数の再登録エラー")
             print("Error writing document: \(err)")
          }
-         //self.segeMainTabBarController()
+         print("作成されているステージ数の再登録完了")
       }
    }
    

@@ -76,6 +76,19 @@
                                     <action selector="TapRegisterButton:" destination="hID-nN-Xb8" eventType="touchUpInside" id="mN6-oN-K8X"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5RZ-tD-OAb">
+                                <rect key="frame" x="169.5" y="443" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="l0x-zu-q7I"/>
+                                    <constraint firstAttribute="height" constant="75" id="lOf-KE-GmK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="arrow.2.circlepath.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="TapReLoadCheckUserExistFireStoreButton:" destination="hID-nN-Xb8" eventType="touchUpInside" id="nhi-62-Ef7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -91,8 +104,10 @@
                             <constraint firstItem="24o-nI-my6" firstAttribute="trailing" secondItem="W0p-nv-zNc" secondAttribute="trailing" constant="20" id="KEN-FR-9zC"/>
                             <constraint firstItem="W0p-nv-zNc" firstAttribute="leading" secondItem="24o-nI-my6" secondAttribute="leading" constant="20" id="Lzh-GH-lWs"/>
                             <constraint firstItem="7NH-wm-oIx" firstAttribute="leading" secondItem="24o-nI-my6" secondAttribute="leading" constant="20" id="SeM-ce-abB"/>
+                            <constraint firstItem="5RZ-tD-OAb" firstAttribute="centerX" secondItem="KPA-73-Q4m" secondAttribute="centerX" id="VId-cE-Q0g"/>
                             <constraint firstItem="9l7-Vj-fqv" firstAttribute="leading" secondItem="24o-nI-my6" secondAttribute="leading" constant="20" id="aRU-d0-u2H"/>
                             <constraint firstItem="24o-nI-my6" firstAttribute="trailing" secondItem="udL-An-c9L" secondAttribute="trailing" constant="20" id="i2O-7O-VMQ"/>
+                            <constraint firstItem="5RZ-tD-OAb" firstAttribute="top" secondItem="dHd-KX-hqv" secondAttribute="bottom" constant="35" id="lJ9-Uz-3sN"/>
                             <constraint firstItem="udL-An-c9L" firstAttribute="leading" secondItem="7NH-wm-oIx" secondAttribute="trailing" constant="8" id="rmc-5M-Pw4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="24o-nI-my6"/>
@@ -101,6 +116,7 @@
                         <outlet property="ChangeProfileButton" destination="9l7-Vj-fqv" id="HM5-7c-Qv2"/>
                         <outlet property="NameLabel" destination="7NH-wm-oIx" id="ziI-iW-e2S"/>
                         <outlet property="NameTextField" destination="udL-An-c9L" id="yPh-h8-qci"/>
+                        <outlet property="ReLoadCheckUserExistFireStoreButton" destination="5RZ-tD-OAb" id="cPu-8O-dX1"/>
                         <outlet property="RegisterButton" destination="dHd-KX-hqv" id="i65-of-bhE"/>
                         <outlet property="UsersProfileButton" destination="wQX-jV-8Pv" id="GVK-da-MSn"/>
                     </connections>
@@ -112,5 +128,6 @@
     </scenes>
     <resources>
         <image name="NoProfileImage.png" width="128" height="128"/>
+        <image name="arrow.2.circlepath.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>

@@ -408,11 +408,22 @@ extension AppDelegate : MessagingDelegate {
          db.collection("users").document(uid).setData(["FcmToken": fcmToken,], merge: true) { err in
             if let err = err {
                print("Error FcmToken updating: \(err)")
-               print("------ FcmTokenのUpdateエラー発生し失敗------\n")
+               print("------ FcmTokenのUpdate(user/に対し)エラー発生し失敗------\n")
             } else {
-               print("------ FcmTokenのUpdate成功しました ------\n")
+               print("------ FcmTokenのUpdate(user/に対し)成功しました ------\n")
             }
          }
+         
+         db.collection("users").document(uid).setData(["FcmToken": fcmToken,], merge: true) { err in
+            if let err = err {
+               print("Error FcmToken updating: \(err)")
+               print("------ FcmTokenのUpdate(MonitoredUserInfo/に対し)エラー発生し失敗------\n")
+            } else {
+               print("------ FcmTokenのUpdate(MonitoredUserInfo/に対し)成功しました ------\n")
+            }
+         }
+         
+         
       } else {
          print("------ userUIDにnilが入ってたので更新しません ------\n")
       }
