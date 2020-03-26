@@ -13,6 +13,34 @@ import UIKit
 
 
 extension InterNetCellTappedViewController {
+   
+   //MARK:- ブロックリストをFireStoreからフェッチする
+   //で，fetchtypeでその後どれを取得するかを決める
+   func FetchBlockListFromFireStore() {
+      print("\n----- 自分のブロックリストの取得開始 -----")
+      let UsersUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+      db.collection("users").document(UsersUID).collection("MonitoredUserInfo").document("UserInfo").getDocument() { document, err in
+         if let err = err {
+            print("Err: \(err.localizedDescription)")
+            print("\n----- 自分のブロックリストの取得失敗 -----")
+         }
+              
+         if let document = document, document.exists {
+            //BlockListを取得してStringに直して配列に追加
+            if let Block = document.data()?["Block"] as? Array<Any> {
+               self.BlockList = Block.filter { ($0 as? String) != nil } as! [String]
+            }
+         } else {
+            print("\n----- 自分のブロックリストの取得失敗(ドキュメントが存在しない) -----")
+         }
+              
+         print("\n----- 自分のブロックリストの取得成功 -----")
+         print("Block: \(self.BlockList)")
+         self.GetStageCommentDataFromFireStore()
+      }
+   }
+   
+   
    private func FetchCommentDataPostUserProfileImage() {
       //コメントない時はForぶん回らんからTableViewの設定してreturn
       if UsingCommentedStageDatas.count == 0 {
@@ -76,6 +104,10 @@ extension InterNetCellTappedViewController {
             } else {
                //self.Play3DtouchSuccess()
                for document in querySnapshot!.documents {
+                  if let userUID = document["addUser"] as? String, self.BlockList.contains(userUID) {
+                     print("\(userUID)をブロックしているのでこいつの最新データは取得しない")
+                     continue
+                  }
                   self.UsingCommentedStageDatas.append(self.GetCommentRaw(document: document))
                }
                print("配列の総数は \(self.UsingCommentedStageDatas.count)")

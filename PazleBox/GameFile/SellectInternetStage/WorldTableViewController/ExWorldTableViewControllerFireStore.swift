@@ -32,7 +32,7 @@ extension WorldTableViewController {
       db.collection("users").document(UsersUID).collection("MonitoredUserInfo").document("UserInfo").getDocument() { document, err in
          if let err = err {
             print("Err: \(err.localizedDescription)")
-            print("\n----- 自分のフォロワーとブロックリストの取得失敗 -----")
+            print("\n----- 自分のブロックリストの取得失敗 -----")
          }
               
          if let document = document, document.exists {

@@ -63,6 +63,8 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    //こいつにCollectionVeiwで表示するやつを入れる。
    var UsingCommentedStageDatas: [([String: Any])] = Array()
    
+   var BlockList = Array<String>()
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -77,10 +79,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       SetUpPostUsersStagePlayButton()
       
       SetUpFireStoreSetting()
-      GetStageCommentDataFromFireStore()
-      
-      
-      
+      FetchBlockListFromFireStore()
    }
    
    func SetUpUsersCommentTableView() {
@@ -193,10 +192,6 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    }
    
    
-   
-   
-  
-   
    //MARK:- プレイボタン押されたときの処理
    @IBAction func TapPostUsersStagePlayButton(_ sender: Any) {
       print("ユーザステージのプレイボタンタップされた")
@@ -205,7 +200,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       PresentGameViewController()
    }
    
-   /// GameVCをプレゼントする関数
+   //MARK:- GameVCをプレゼントする関数
    func PresentGameViewController() {
       //GameSound.PlaySoundsTapButton()
       let CleateSB = UIStoryboard(name: "CleateStageSB", bundle: nil)
@@ -232,7 +227,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    }
    
    
-   //ユーザが投稿したものに対してレポートボタンが押されたときの処理
+   //MARK:- ユーザが投稿したものに対してレポートボタンが押されたときの処理
    //TODO: ローカライズすること
    private func TapReportActionAgainstUsersPost() {
       let ReportActionSheet = UIAlertController(title: "Report", message: nil, preferredStyle: .actionSheet)
@@ -264,7 +259,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       self.present(ReportActionSheet, animated: true, completion: nil)
    }
    
-   //ユーザが投稿したものに対してブロックボタンが押されたときの処理
+   //MARK:- ユーザが投稿したものに対してブロックボタンが押されたときの処理
    //TODO: ローカライズすること
    private func TapBlockActionAgainstUsersPost() {
       let BlockAlertSheet = UIAlertController(title: "Block", message: nil, preferredStyle: .alert)
@@ -284,6 +279,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    }
    
    //TODO: ローカライズすること
+   //MARK:- ユーザステージの報告ボタンタップされた処理
    @IBAction func TapPostUsersStageReportButton(_ sender: Any) {
       print("ユーザステージの報告ボタンタップされた")
 
@@ -311,7 +307,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    }
    
    
-   //コメントしたユーザの報告ボタンがタップされたときの処理
+   //MARK:- コメントしたユーザの報告ボタンがタップされたときの処理
    //TODO:- ローカライズね。
    @objc func TapReportCommentedUserTableViewCell(_ sender: UIButton) {
       guard self.isLoadingGameVC == false else {
@@ -348,7 +344,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       self.present(ActionSheet, animated: true, completion: nil)
    }
    
-   //コメントしたユーザの画像がタップされたときの処理
+   //MARK:- コメントしたユーザの画像がタップされたときの処理
    @objc func TapCommentedUsersImageViewButtonInterNetTableView(_ sender: UIButton) {
       guard self.isLoadingGameVC == false else {
          print("コメントしたユーザの画像タップされたけど，ローディング中やから何もしない.")
@@ -385,14 +381,9 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       return false
    }
    
-   
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
    func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
    func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
    func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
    func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
-   
 }
-
-
-
