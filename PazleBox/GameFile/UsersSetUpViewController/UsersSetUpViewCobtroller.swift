@@ -63,7 +63,12 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
       DisableReLoadCheckUserExistFireStoreButton()
       DisableChangeProfileButtonAndTextField()
       
-      CheckUserFirstLoginOrReDownloadApp()
+      self.StartLoadingAnimation()
+      DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
+         self.CheckUserFirstLoginOrReDownloadApp()
+      }
+      
+      
    }
    
    private func InitLoadActivityView() {
@@ -143,11 +148,15 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
    private func EnableChangeProfileButtonAndTextField() {
       self.UsersProfileButton.isEnabled = true
       self.ChangeProfileButton.isEnabled = true
-      self.NameTextField.isEnabled = false
+      self.NameTextField.isEnabled = true
    }
    
+   //MARK:- 自分のデータがすでにサーバー上にあるかのチェック
    private func CheckUserFirstLoginOrReDownloadApp() {
-      self.StartLoadingAnimation()
+      if self.LoadActivityView?.isAnimating == false {
+         self.StartLoadingAnimation()
+      }
+      
       let uid = UserDefaults.standard.string(forKey: "UID")!
       print("--- 初めての登録かアプリ再ダウンロードかの調査開始 ---")
       print("--- UIDがFireStoreの/user/uidにあるか調べる: \(uid) ---")
@@ -164,6 +173,8 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
             print("--- UIDがFireStoreに存在しました! ---")
             print("UserDefaults[Logined]をtrueに変更してMainTabBarを開きます")
             UserDefaults.standard.set(true, forKey: "Logined")
+            //mainVCを表示すると同時に既に登録しているステージ数を調査
+            self.ChekUserCreateStageNumFromFireStore(uid: uid)
             self.segeMainTabBarController()
          } else {
             print("--- UIDがFireStoreに存在しませんでした ---")
@@ -173,8 +184,9 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
       }
    }
    
-   
+   //自分のデータがすでにサーバー上にあるかのチェックでエラーした場合のリロードボタンが押されたときの処理
    @IBAction func TapReLoadCheckUserExistFireStoreButton(_ sender: Any) {
+      //再チェックと自身のボタンを無効にする
       CheckUserFirstLoginOrReDownloadApp()
       DisableReLoadCheckUserExistFireStoreButton()
    }
@@ -384,9 +396,9 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
          }
       }
       Analytics.logEvent(AnalyticsEventSignUp, parameters: nil)
-      self.ChekUserCreateStageNumFromFireStore(uid: uid)
    }
    
+   //
    private func ChekUserCreateStageNumFromFireStore(uid: String) {
       print("UID = \(uid)")
       db.collectionGroup("Stages").whereField("addUser", isEqualTo: uid).getDocuments() { (querySnapshot, err) in
@@ -416,6 +428,7 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
       }
    }
    
+   //MARK:- MainVCの表示
    private func segeMainTabBarController() {
       print("\n---------- MainVCの表示開始  ----------")
       let sb = UIStoryboard(name: "Main", bundle: nil)

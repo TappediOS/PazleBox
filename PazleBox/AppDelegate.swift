@@ -273,14 +273,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       //------------------- Game Center-----------------//
       
       InstanceID.instanceID().instanceID { (result, error) in
-        if let error = error {
-          print("Error fetching remote instance ID: \(error)")
-        } else if let result = result {
-          print("Remote instance ID token: \(result.token)")
-        }
+         if let error = error {
+            print("Error fetching remote instance ID: \(error)")
+         } else if let result = result {
+            print("Remote instance ID token: \(result.token)")
+            self.updateFcmToken(FcmToken: result.token)
+         }
       }
       
       return true
+   }
+   
+   private func updateFcmToken(FcmToken: String) {
+      let UserUID = UserDefaults.standard.string(forKey: "UID")
+      if UserUID == nil {
+         print("多分最初にアプリを起動した")
+         return
+      }
+      
+      if let uid = UserUID {
+         let db = Firestore.firestore()
+         db.collection("users").document(uid).setData(["FcmToken": FcmToken,], merge: true) { err in
+            if let err = err {
+               print("Error FcmToken updating: \(err)")
+               print("------ FcmTokenのUpdate(user/に対し)エラー発生し失敗------\n")
+            } else {
+               print("------ FcmTokenのUpdate(user/に対し)成功しました ------\n")
+            }
+         }
+         
+         db.collection("users").document(uid).collection("MonitoredUserInfo").document("UserInfo").setData(["FcmToken": FcmToken,], merge: true) { err in
+            if let err = err {
+               print("Error FcmToken updating: \(err)")
+               print("------ FcmTokenのUpdate(MonitoredUserInfo/に対し)エラー発生し失敗------\n")
+            } else {
+               print("------ FcmTokenのUpdate(MonitoredUserInfo/に対し)成功しました ------\n")
+            }
+         }
+      }
    }
    
 
@@ -349,7 +379,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
    
    func application(_ application: UIApplication,
        didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-
+      print("deviceTokenをmessaging()に貼り付けた")
       Messaging.messaging().apnsToken = deviceToken
 
    }
@@ -414,7 +444,7 @@ extension AppDelegate : MessagingDelegate {
             }
          }
          
-         db.collection("users").document(uid).setData(["FcmToken": fcmToken,], merge: true) { err in
+         db.collection("users").document(uid).collection("MonitoredUserInfo").document("UserInfo").setData(["FcmToken": fcmToken,], merge: true) { err in
             if let err = err {
                print("Error FcmToken updating: \(err)")
                print("------ FcmTokenのUpdate(MonitoredUserInfo/に対し)エラー発生し失敗------\n")

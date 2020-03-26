@@ -54,30 +54,31 @@ extension InterNetTableViewController {
          
          if self.DownLoadProfileCounter == self.TimeLineData.count{
             print("---- TimeLineデータの取得完了 ----\n")
-            //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
-            //Segmentタップした時に別の関数でCollecti onVie をリロードする。
-            self.UsingStageDatas = self.TimeLineData
-            self.InterNetTableView.reloadData()
-            self.isFetchDataWhenDidLoadThisVC = false //これでリロードできるようになる
-         
-            //リフレッシュかそうでないかで処理を変える
-            if self.RefleshControl.isRefreshing == false {
-               self.StopLoadingAnimation()
-               print("Delegate設定します。")
-               //読み取りが終わってからデリゲードを入れる必要がある
-               self.InterNetTableView.delegate = self
-               self.InterNetTableView.dataSource = self
-               self.InterNetTableView.emptyDataSetSource = self
-               self.InterNetTableView.emptyDataSetDelegate = self
-               self.InterNetTableView.tableFooterView = UIView()
-            } else {
-               print("---- リフレッシュ中なのでTimeLineのデータでリロードします ----\n")
-               self.RefleshControl.endRefreshing()
-            }
+            self.setReloadTableViewOnBasedRefleshControl()
          }
       }
    }
    //MARK: TimeLineのデータからユーザの名前とプロ画を取得するここまで
+   
+   private func setReloadTableViewOnBasedRefleshControl() {
+      self.UsingStageDatas = self.TimeLineData
+      self.isFetchDataWhenDidLoadThisVC = false //これでリロードできるようになる
+      
+      if self.RefleshControl.isRefreshing == false {
+         self.StopLoadingAnimation()
+         print("Delegate設定します。")
+         //読み取りが終わってからデリゲードを入れる必要がある
+         self.InterNetTableView.delegate = self
+         self.InterNetTableView.dataSource = self
+         self.InterNetTableView.emptyDataSetSource = self
+         self.InterNetTableView.emptyDataSetDelegate = self
+         self.InterNetTableView.tableFooterView = UIView()
+      } else {
+         print("---- リフレッシュ中なのでTimeLineのデータでリロードします ----\n")
+         self.RefleshControl.endRefreshing()
+         self.InterNetTableView.reloadData()
+      }
+   }
 
    //MARK:- TimeLineのデータを取得する。
    func GetTimeLineDataFromDataBase() {
@@ -106,6 +107,14 @@ extension InterNetTableViewController {
                }
             }
             print("TimeLineの配列の総数は \(self.TimeLineData.count)")
+            
+            //配列の総数が0のときはそのままdelegateを設定する
+            if self.TimeLineData.count == 0 {
+               self.setReloadTableViewOnBasedRefleshControl()
+               return
+            }
+            
+            
             self.FetchTimeLineStageDataPostUserNameAndProfileImage()
       }
    }
