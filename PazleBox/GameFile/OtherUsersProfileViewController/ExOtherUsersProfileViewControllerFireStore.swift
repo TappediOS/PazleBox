@@ -21,7 +21,7 @@ extension OtherUsersProfileViewController {
       isLoadingOtherUsersStage = true
       print("\n----- 自分のフォロワーとブロックリストの取得開始 -----")
       if self.RefleshControl.isRefreshing == false {
-         self.StartLoadingAnimation() //ローディングアニメーションの再生。
+         self.StartLoadingAnimation()
       }
       let UsersUID = UserDefaults.standard.string(forKey: "UID") ?? ""
       
@@ -197,7 +197,7 @@ extension OtherUsersProfileViewController {
       self.OtherUesrsProfileTableView.dataSource = self
       self.OtherUesrsProfileTableView.emptyDataSetSource = self
       self.OtherUesrsProfileTableView.emptyDataSetDelegate = self
-      self.OtherUesrsProfileTableView.tableFooterView = UIView() //コメントが0の時にcell間の線を消すテクニック
+      self.OtherUesrsProfileTableView.tableFooterView = UIView()
       self.OtherUesrsProfileTableView.reloadData()
    }
 }
