@@ -128,9 +128,9 @@ extension WorldTableViewController {
          }
       }
    }
-   //MARK: 最新のデータからユーザの名前とプロ画を取得するここまで
+   //MARK: プレイ回数のデータからユーザの名前とプロ画を取得するここまで
    
-   //MARK:- 最新のデータからユーザの名前とプロ画を取得する。
+   //MARK:- 評価順のデータからユーザの名前とプロ画を取得する。
    func FetchRatedStageDataPostUserNameAndProfileImage() {
       for tmp in 0 ..< RatedStageDatas.count {
          let usersUID = RatedStageDatas[tmp]["addUser"] as! String
@@ -181,13 +181,14 @@ extension WorldTableViewController {
          }
       }
    }
-   //MARK: 最新のデータからユーザの名前とプロ画を取得するここまで
+   //MARK: 評価順のデータからユーザの名前とプロ画を取得するここまで
    
-   //MARK:- 最新，回数，評価それぞれのデータを取得する。
+   //MARK:- 最新のデータを取得する。
    func GetLatestStageDataFromDataBase() {
       print("\n---- Latestデータの取得開始 ----")
       self.LatestStageDatas.removeAll()
       self.DownLoadProfileCounterForLatest = 0
+      //最初に開いた時にはくるくるのアニメーションを表示させる
       if self.RefleshControl.isRefreshing == false {
          self.StartLoadingAnimation() //ローディングアニメーションの再生。
       }
@@ -212,6 +213,7 @@ extension WorldTableViewController {
       }
    }
    
+   //MARK:- プレイ回数データを取得する。
    func GetPlayCountStageDataFromDataBase(){
       print("\n---- PlayCountデータの取得開始 ----")
       self.PlayCountStageDatas.removeAll()
@@ -234,7 +236,7 @@ extension WorldTableViewController {
       }
    }
    
-   
+   //MARK:- 評価のデータを取得する。
    func GetRatedStageDataFromDataBase() {
       print("\n---- Ratedデータの取得開始 ----")
       self.RatedStageDatas.removeAll()
