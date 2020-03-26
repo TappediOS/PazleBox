@@ -105,7 +105,7 @@ extension InterNetCellTappedViewController {
                //self.Play3DtouchSuccess()
                for document in querySnapshot!.documents {
                   if let userUID = document["CommentUserUID"] as? String, self.BlockList.contains(userUID) {
-                     print("\(userUID)をブロックしているのでこいつの最新データは取得しない")
+                     print("\(userUID)をブロックしているのでこいつのコメントデータは取得しない")
                      continue
                   }
                   self.UsingCommentedStageDatas.append(self.GetCommentRaw(document: document))
