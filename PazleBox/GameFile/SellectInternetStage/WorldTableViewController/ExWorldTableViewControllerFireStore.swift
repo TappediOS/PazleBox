@@ -11,7 +11,56 @@ import FirebaseStorage
 import FirebaseFirestore
 import UIKit
 
+enum FetchType {
+   case all
+   case latest
+   case playCount
+   case rated
+}
+
 extension WorldTableViewController {
+   
+   //MARK:- ブロックリストをFireStoreからフェッチする
+   //で，fetchtypeでその後どれを取得するかを決める
+   func FetchBlockListFromFireStore(FetchType: FetchType) {
+      print("\n----- 自分のブロックリストの取得開始 -----")
+      if self.RefleshControl.isRefreshing == false {
+         self.StartLoadingAnimation()
+      }
+      let UsersUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+
+      db.collection("users").document(UsersUID).collection("MonitoredUserInfo").document("UserInfo").getDocument() { document, err in
+         if let err = err {
+            print("Err: \(err.localizedDescription)")
+            print("\n----- 自分のフォロワーとブロックリストの取得失敗 -----")
+         }
+              
+         if let document = document, document.exists {
+            //BlockListを取得してStringに直して配列に追加
+            if let Block = document.data()?["Block"] as? Array<Any> {
+               self.BlockList = Block.filter { ($0 as? String) != nil } as! [String]
+            }
+         } else {
+            print("\n----- 自分のブロックリストの取得失敗(ドキュメントが存在しない) -----")
+         }
+              
+         print("\n----- 自分のブロックリストの取得成功 -----")
+         print("Block: \(self.BlockList)")
+         switch FetchType {
+         case .all:
+            self.GetLatestStageDataFromDataBase()
+            self.GetRatedStageDataFromDataBase()
+            self.GetPlayCountStageDataFromDataBase()
+         case .latest:
+            self.GetLatestStageDataFromDataBase()
+         case .playCount:
+            self.GetPlayCountStageDataFromDataBase()
+         case .rated:
+            self.GetRatedStageDataFromDataBase()
+         }
+      }
+   }
+   
    //MARK:- 最新のデータからユーザの名前とプロ画を取得する。
    func FetchLatestStageDataPostUserNameAndProfileImage() {
       for tmp in 0 ..< LatestStageDatas.count {
@@ -205,6 +254,10 @@ extension WorldTableViewController {
             } else {
                self.Play3DtouchSuccess()
                for document in querySnapshot!.documents {
+                  if let userUID = document["addUser"] as? String, self.BlockList.contains(userUID) {
+                     print("\(userUID)をブロックしているのでこいつの最新データは取得しない")
+                     continue
+                  }
                   self.LatestStageDatas.append(self.GetRawData(document: document))
                }
                print("Latestの配列の総数は \(self.LatestStageDatas.count)")
@@ -228,6 +281,10 @@ extension WorldTableViewController {
             } else {
                print("PlayCountデータの取得成功")
                for document in querySnapshot!.documents {
+                  if let userUID = document["addUser"] as? String, self.BlockList.contains(userUID) {
+                     print("\(userUID)をブロックしているのでこいつのプレイ回数データは取得しない")
+                     continue
+                  }
                   self.PlayCountStageDatas.append(self.GetRawData(document: document))
                }
             }

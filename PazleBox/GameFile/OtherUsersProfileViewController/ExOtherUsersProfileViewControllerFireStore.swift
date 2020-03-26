@@ -53,6 +53,7 @@ extension OtherUsersProfileViewController {
       }
    }
    
+   //関数GetMyFollowListAndBlockList()で取得したリストに基づいて条件分岐をする
    func ConditionalBranchingBasedOnFollowBlockBlockedList() {
       let otherUID = self.OtherUsersUID
       self.OtherUsersStageData.removeAll()

@@ -51,6 +51,8 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
    //これがtrueの時は引っ張って更新ができなくなる
    var isFetchDataWhenDidLoadThisVC = true
    
+   var BlockList = Array<String>()
+   
    override func viewDidLoad() {
       super.viewDidLoad()
 
@@ -60,9 +62,7 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       SetUpRefleshControl()
       SetUpFireStoreSetting()
       
-      GetLatestStageDataFromDataBase()
-      GetRatedStageDataFromDataBase()
-      GetPlayCountStageDataFromDataBase()
+      FetchBlockListFromFireStore(FetchType: .all)
       
       InitSegmentedControl()
    }
@@ -180,13 +180,13 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       switch indexNum{
       case 0:
          print("Latestの更新をします。")
-         GetLatestStageDataFromDataBase()
+         FetchBlockListFromFireStore(FetchType: .latest)
       case 1:
          print("PlayCountの更新をします。")
-         GetPlayCountStageDataFromDataBase()
+         FetchBlockListFromFireStore(FetchType: .playCount)
          print("Ratingの更新をします。")
       case 2:
-         GetRatedStageDataFromDataBase()
+         FetchBlockListFromFireStore(FetchType: .rated)
       default:
          print("nilじゃなかったら何？")
          RefleshControl.endRefreshing()
