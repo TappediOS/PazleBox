@@ -224,14 +224,14 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
    //ユーザが投稿したものに対してブロックボタンが押されたときの処理
    //TODO: ローカライズすること
    private func TapBlockActionAgainstUsersPost() {
-      let BlockAlertSheet = UIAlertController(title: "Block", message: nil, preferredStyle: .alert)
+      let BlockAlertSheet = UIAlertController(title: "Block " + self.OtherUsersProfileName, message: nil, preferredStyle: .alert)
       
       let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
          print("BlockActionSheetでCanselタップされた")
       })
       
       let BlockAction = UIAlertAction(title: "Block", style: .destructive, handler: { (action: UIAlertAction!) in
-         print("Blockします。")
+         print("Blockします: \(self.OtherUsersUID)")
       })
       
       BlockAlertSheet.addAction(BlockAction)

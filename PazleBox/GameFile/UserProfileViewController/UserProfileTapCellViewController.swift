@@ -416,6 +416,7 @@ class UserProfileTapCellViewController: UIViewController {
    
    
    //MARK:- Reportボタン押されたときの処理
+   //TODO:- ローカライズね。
    @objc func TapUsersCommentReportButton(_ sender: UIButton) {
       guard self.isAbleToTapPlayDeleteButton == true else {
          print("コメントしたユーザの報告タップされたけど，ローディング中やから何もしない.")
@@ -433,6 +434,8 @@ class UserProfileTapCellViewController: UIViewController {
          return
       }
       
+      let UserName = UsingCommentedStageDatas[rowNum]["CommentUsersName"] as! String
+      
       let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
              
       let ReportAction = UIAlertAction(title: "Report", style: .destructive, handler: { (action: UIAlertAction!) in
@@ -442,7 +445,7 @@ class UserProfileTapCellViewController: UIViewController {
       
       let BlockAction = UIAlertAction(title: "Block", style: .default, handler: { (action: UIAlertAction!) in
          print("Block押されたよ")
-         self.TapBlockActionAgainstUsersPost()
+         self.TapBlockActionAgainstUsersPost(UserName: UserName, uid: TapStagePostUsersUID)
       })
       
       let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
@@ -490,15 +493,15 @@ class UserProfileTapCellViewController: UIViewController {
    
    //ユーザが投稿したものに対してブロックボタンが押されたときの処理
    //TODO: ローカライズすること
-   private func TapBlockActionAgainstUsersPost() {
-      let BlockAlertSheet = UIAlertController(title: "Block", message: nil, preferredStyle: .alert)
+   private func TapBlockActionAgainstUsersPost(UserName: String, uid: String) {
+      let BlockAlertSheet = UIAlertController(title: "Block " + UserName, message: nil, preferredStyle: .alert)
       
       let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
          print("BlockActionSheetでCanselタップされた")
       })
       
       let BlockAction = UIAlertAction(title: "Block", style: .destructive, handler: { (action: UIAlertAction!) in
-         print("Blockします。")
+         print("Blockします: \(uid)")
       })
       
       BlockAlertSheet.addAction(BlockAction)

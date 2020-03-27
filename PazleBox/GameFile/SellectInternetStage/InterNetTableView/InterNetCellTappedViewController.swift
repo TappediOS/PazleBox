@@ -261,15 +261,17 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    
    //MARK:- ユーザが投稿したものに対してブロックボタンが押されたときの処理
    //TODO: ローカライズすること
-   private func TapBlockActionAgainstUsersPost() {
-      let BlockAlertSheet = UIAlertController(title: "Block", message: nil, preferredStyle: .alert)
+   //ユーザが投稿したものに対してブロックボタンが押されたときの処理
+   //TODO: ローカライズすること
+   private func TapBlockActionAgainstUsersPost(UserName: String, uid: String) {
+      let BlockAlertSheet = UIAlertController(title: "Block " + UserName, message: nil, preferredStyle: .alert)
       
       let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
          print("BlockActionSheetでCanselタップされた")
       })
       
       let BlockAction = UIAlertAction(title: "Block", style: .destructive, handler: { (action: UIAlertAction!) in
-         print("Blockします。")
+         print("Blockします: \(uid)")
       })
       
       BlockAlertSheet.addAction(BlockAction)
@@ -283,10 +285,16 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    @IBAction func TapPostUsersStageReportButton(_ sender: UIButton) {
       print("ユーザステージの報告ボタンタップされた")
       
-      //let tag = sender.tag
+      let tag = sender.tag
+      print("\(tag)番目のcellの報告ボタンがタップされました")
       
+      let UsersUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+      //自分のコメントをタップしていたら
+      if self.PostUsersUID == UsersUID {
+         print("自分のステージをタップしているのでアクションシートは表示しません\n")
+         return
+      }
       
-
       let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
              
       let ReportAction = UIAlertAction(title: "Report", style: .destructive, handler: { (action: UIAlertAction!) in
@@ -296,7 +304,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       
       let BlockAction = UIAlertAction(title: "Block", style: .default, handler: { (action: UIAlertAction!) in
          print("Block押されたよ")
-         self.TapBlockActionAgainstUsersPost()
+         self.TapBlockActionAgainstUsersPost(UserName: self.PostUsersUserName, uid: self.PostUsersUID)
       })
       
       let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
@@ -330,6 +338,8 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
          return
       }
       
+      let UserName = UsingCommentedStageDatas[rowNum]["CommentUsersName"] as! String
+      
       let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
       
       let Report = NSLocalizedString("Report", comment: "")
@@ -343,7 +353,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       
       let BlockAction = UIAlertAction(title: Block, style: .default, handler: { (action: UIAlertAction!) in
          print("Block押されたよ")
-         self.TapBlockActionAgainstUsersPost()
+         self.TapBlockActionAgainstUsersPost(UserName: UserName, uid: TapStagePostUsersUID)
       })
       
       let CanselAction = UIAlertAction(title: Cansel, style: .cancel, handler: { (action: UIAlertAction!) in
