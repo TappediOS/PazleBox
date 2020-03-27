@@ -307,6 +307,24 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
       }
    }
    
+   private func TapUnBlockActionButton() {
+      print("\n----- ユーザID\(self.OtherUsersUID)")
+      print("のブロック解除開始 -----")
+      let UsersUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+      db.collection("users").document(UsersUID).collection("MonitoredUserInfo").document("UserInfo").updateData([
+         "Block": FieldValue.arrayRemove([self.OtherUsersUID])
+      ]) { err in
+         if let err = err {
+            print("Error: \(err)")
+            print("----- ブロック解除するのにエラーが発生しました -----\n")
+            self.ShowErrBlockUserFireStoreAlertView()
+            return
+         }
+         print("----- ブロック解除することに成功しました -----\n")
+         self.GetMyFollowListAndBlockList()  //強制リロード
+      }
+   }
+   
    //MARK:- フォローとかblockedとかのボタンが押されたときの処理
    @objc func TapFollwButtonForFollwUser(_ sender: UIButton) {
       print("FollowするためにFollowButtonタップされました")
@@ -349,6 +367,23 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
    
    @objc func TapBlockedButtonForUnBlockedUser(_ sender: UIButton) {
       print("UnBlockedするためにBlockedButtonタップされました")
+      print("UnFollowするためにFollowingButtonタップされました")
+      let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+      //TODO:- ローカライズ
+      let title = "UnBlock" + self.OtherUsersProfileName
+      let UnFollowAction = UIAlertAction(title: title, style: .destructive, handler: { (action: UIAlertAction!) in
+         print("UnBlockAction押されたよ")
+         self.TapUnBlockActionButton()
+      })
+      
+      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+         print("UnBlockでCanselタップされた")
+      })
+      
+      ActionSheet.addAction(UnFollowAction)
+      ActionSheet.addAction(CanselAction)
+         
+      self.present(ActionSheet, animated: true, completion: nil)
    }
    
    //MARK:- Labelがタップされたときの処理
