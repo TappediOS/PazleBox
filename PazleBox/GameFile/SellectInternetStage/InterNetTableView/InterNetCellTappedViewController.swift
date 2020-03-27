@@ -280,8 +280,12 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    
    //TODO: ローカライズすること
    //MARK:- ユーザステージの報告ボタンタップされた処理
-   @IBAction func TapPostUsersStageReportButton(_ sender: Any) {
+   @IBAction func TapPostUsersStageReportButton(_ sender: UIButton) {
       print("ユーザステージの報告ボタンタップされた")
+      
+      //let tag = sender.tag
+      
+      
 
       let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
              
@@ -316,6 +320,15 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       }
       let rowNum = sender.tag
       print("\(rowNum)番目のcellのユーザの報告ボタンがタップされました")
+      
+      let TapStagePostUsersUID = UsingCommentedStageDatas[rowNum]["CommentUserUID"] as! String
+      let UsersUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+      
+      //自分のコメントをタップしていたら
+      if TapStagePostUsersUID == UsersUID {
+         print("自分のコメントをタップしているのでアクションシートは表示しません\n")
+         return
+      }
       
       let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
       
