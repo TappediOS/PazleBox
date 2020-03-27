@@ -64,6 +64,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    var UsingCommentedStageDatas: [([String: Any])] = Array()
    
    var BlockList = Array<String>()
+   var BlockedList = Array<String>()
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -79,7 +80,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       SetUpPostUsersStagePlayButton()
       
       SetUpFireStoreSetting()
-      FetchBlockListFromFireStore()
+      FetchBlockListAndBlockedListFromFireStore()
    }
    
    func SetUpUsersCommentTableView() {

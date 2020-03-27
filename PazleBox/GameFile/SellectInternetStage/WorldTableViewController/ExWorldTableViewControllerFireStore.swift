@@ -22,7 +22,7 @@ extension WorldTableViewController {
    
    //MARK:- ブロックリストをFireStoreからフェッチする
    //で，fetchtypeでその後どれを取得するかを決める
-   func FetchBlockListFromFireStore(FetchType: FetchType) {
+   func FetchBlockListAndBlockedListFromFireStore(FetchType: FetchType) {
       print("\n----- 自分のブロックリストの取得開始 -----")
       if self.RefleshControl.isRefreshing == false {
          self.StartLoadingAnimation()
@@ -39,6 +39,10 @@ extension WorldTableViewController {
             //BlockListを取得してStringに直して配列に追加
             if let Block = document.data()?["Block"] as? Array<Any> {
                self.BlockList = Block.filter { ($0 as? String) != nil } as! [String]
+            }
+            //BlockedListを取得してStringに直して配列に追加
+            if let Blocked = document.data()?["Blocked"] as? Array<Any> {
+               self.BlockedList = Blocked.filter { ($0 as? String) != nil } as! [String]
             }
          } else {
             print("\n----- 自分のブロックリストの取得失敗(ドキュメントが存在しない) -----")
@@ -258,6 +262,10 @@ extension WorldTableViewController {
                      print("\(userUID)をブロックしているのでこいつの最新データは取得しない")
                      continue
                   }
+                  if let userUID = document["addUser"] as? String, self.BlockedList.contains(userUID) {
+                     print("\(userUID)にブロックされているのでこいつの最新データは取得しない")
+                     continue
+                  }
                   self.LatestStageDatas.append(self.GetRawData(document: document))
                }
                print("Latestの配列の総数は \(self.LatestStageDatas.count)")
@@ -285,6 +293,10 @@ extension WorldTableViewController {
                      print("\(userUID)をブロックしているのでこいつのプレイ回数データは取得しない")
                      continue
                   }
+                  if let userUID = document["addUser"] as? String, self.BlockedList.contains(userUID) {
+                     print("\(userUID)にブロックされているのでこいつのプレイ回数データは取得しない")
+                     continue
+                  }
                   self.PlayCountStageDatas.append(self.GetRawData(document: document))
                }
             }
@@ -308,6 +320,14 @@ extension WorldTableViewController {
             } else {
                print("Ratedデータの取得成功")
                for document in querySnapshot!.documents {
+                  if let userUID = document["addUser"] as? String, self.BlockList.contains(userUID) {
+                     print("\(userUID)をブロックしているのでこいつの評価データは取得しない")
+                     continue
+                  }
+                  if let userUID = document["addUser"] as? String, self.BlockedList.contains(userUID) {
+                     print("\(userUID)にブロックされているのでこいつの評価データは取得しない")
+                     continue
+                  }
                   self.RatedStageDatas.append(self.GetRawData(document: document))
                }
             }

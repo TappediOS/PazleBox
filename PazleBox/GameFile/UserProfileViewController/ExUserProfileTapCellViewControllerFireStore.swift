@@ -19,7 +19,7 @@ import FirebaseStorage
 extension UserProfileTapCellViewController {
    //MARK:- ブロックリストをFireStoreからフェッチする
    //で，fetchtypeでその後どれを取得するかを決める
-   func FetchBlockListFromFireStore() {
+   func FetchBlockAndBlockedListFromFireStore() {
       print("\n----- 自分のブロックリストの取得開始 -----")
       let UsersUID = UserDefaults.standard.string(forKey: "UID") ?? ""
       db.collection("users").document(UsersUID).collection("MonitoredUserInfo").document("UserInfo").getDocument() { document, err in
@@ -32,6 +32,10 @@ extension UserProfileTapCellViewController {
             //BlockListを取得してStringに直して配列に追加
             if let Block = document.data()?["Block"] as? Array<Any> {
                self.BlockList = Block.filter { ($0 as? String) != nil } as! [String]
+            }
+            //BlockedListを取得してStringに直して配列に追加
+            if let Blocked = document.data()?["Blocked"] as? Array<Any> {
+               self.BlockedList = Blocked.filter { ($0 as? String) != nil } as! [String]
             }
          } else {
             print("\n----- 自分のブロックリストの取得失敗(ドキュメントが存在しない) -----")
@@ -106,6 +110,10 @@ extension UserProfileTapCellViewController {
                for document in querySnapshot!.documents {
                   if let userUID = document["CommentUserUID"] as? String, self.BlockList.contains(userUID) {
                      print("\(userUID)をブロックしているのでこいつのコメントデータは取得しない")
+                     continue
+                  }
+                  if let userUID = document["addUser"] as? String, self.BlockedList.contains(userUID) {
+                     print("\(userUID)にブロックされているのでこいつのコメントデータは取得しない")
                      continue
                   }
                   self.UsingCommentedStageDatas.append(self.GetCommentRaw(document: document))

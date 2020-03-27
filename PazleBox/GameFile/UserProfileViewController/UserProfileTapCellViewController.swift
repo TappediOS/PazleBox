@@ -72,6 +72,7 @@ class UserProfileTapCellViewController: UIViewController {
    var DownLoadProfileCounter = 0
    
    var BlockList = Array<String>()
+   var BlockedList = Array<String>()
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -90,7 +91,7 @@ class UserProfileTapCellViewController: UIViewController {
       SetUpPostUsersStageButton(sender: UsersPostedStagePlayButton)
       SetUpPostUsersStageButton(sender: UsersPostedStageDeleteButton)
       
-      FetchBlockListFromFireStore()
+      FetchBlockAndBlockedListFromFireStore()
    }
    
    func SetUpUsersStageCommentTableView() {

@@ -52,6 +52,7 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
    var isFetchDataWhenDidLoadThisVC = true
    
    var BlockList = Array<String>()
+   var BlockedList = Array<String>()
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -62,7 +63,7 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       SetUpRefleshControl()
       SetUpFireStoreSetting()
       
-      FetchBlockListFromFireStore(FetchType: .all)
+      FetchBlockListAndBlockedListFromFireStore(FetchType: .all)
       
       InitSegmentedControl()
    }
@@ -180,13 +181,13 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       switch indexNum{
       case 0:
          print("Latestの更新をします。")
-         FetchBlockListFromFireStore(FetchType: .latest)
+         FetchBlockListAndBlockedListFromFireStore(FetchType: .latest)
       case 1:
          print("PlayCountの更新をします。")
-         FetchBlockListFromFireStore(FetchType: .playCount)
+         FetchBlockListAndBlockedListFromFireStore(FetchType: .playCount)
          print("Ratingの更新をします。")
       case 2:
-         FetchBlockListFromFireStore(FetchType: .rated)
+         FetchBlockListAndBlockedListFromFireStore(FetchType: .rated)
       default:
          print("nilじゃなかったら何？")
          RefleshControl.endRefreshing()
