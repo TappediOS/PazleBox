@@ -424,6 +424,15 @@ class UserProfileTapCellViewController: UIViewController {
       let rowNum = sender.tag
       print("\(rowNum)番目のcellの報告ボタンがタップされました")
       
+      let TapStagePostUsersUID = UsingCommentedStageDatas[rowNum]["CommentUserUID"] as! String
+      let UsersUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+      
+      //自分のコメントをタップしていたら
+      if TapStagePostUsersUID == UsersUID {
+         print("自分のコメントをタップしているのでアクションシートは表示しません\n")
+         return
+      }
+      
       let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
              
       let ReportAction = UIAlertAction(title: "Report", style: .destructive, handler: { (action: UIAlertAction!) in
