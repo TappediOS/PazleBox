@@ -4011,8 +4011,8 @@
             filePath = "PazleBox/GameFile/UserProfileViewController/UserProfileTapCellViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "509"
-            endingLineNumber = "509"
+            startingLineNumber = "526"
+            endingLineNumber = "526"
             landmarkName = "TapBlockActionAgainstUsersPost(UserName:uid:)"
             landmarkType = "7">
          </BreakpointContent>

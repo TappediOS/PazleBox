@@ -330,6 +330,23 @@ class UserProfileTapCellViewController: UIViewController {
       }
    }
    
+   //ブロックするのにエラーが発生したときの処理
+   private func ShowErrBlockUserFireStoreAlertView() {
+      Play3DtouchError()
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      ComleateView.addButton("OK"){
+         self.dismiss(animated: true)
+         self.Play3DtouchHeavy()
+         self.GameSound.PlaySoundsTapButton()
+      }
+      let Error = NSLocalizedString("err", comment: "")
+      let errDele = NSLocalizedString("errBlock", comment: "") //TODO: ローカライズする
+      let checkNet = NSLocalizedString("checkNet", comment: "")
+      ComleateView.showError(Error, subTitle: errDele + "\n" + checkNet)
+   }
+   
+   //ステージを削除するのにエラーが発生したときの処理
    private func ShowErrDeleteStageInStoreSaveAlertView() {
       Play3DtouchError()
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
@@ -501,13 +518,31 @@ class UserProfileTapCellViewController: UIViewController {
       })
       
       let BlockAction = UIAlertAction(title: "Block", style: .destructive, handler: { (action: UIAlertAction!) in
-         print("Blockします: \(uid)")
+         self.BlockUserFireStore(blockUsersUID: uid)
       })
       
       BlockAlertSheet.addAction(BlockAction)
       BlockAlertSheet.addAction(CanselAction)
       
       self.present(BlockAlertSheet, animated: true, completion: nil)
+   }
+   
+   private func BlockUserFireStore(blockUsersUID: String) {
+      print("\n------ Userのブロックを開始しますBlockします ------")
+      print("uid: \(blockUsersUID)")
+      let UsersUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+      db.collection("users").document(UsersUID).collection("MonitoredUserInfo").document("UserInfo").updateData([
+         "Block": FieldValue.arrayUnion([blockUsersUID]),
+         "Follower": FieldValue.arrayRemove([blockUsersUID])
+      ]) { err in
+         if let err = err {
+            print("Error: \(err)")
+            print("----- ブロックするのにエラーが発生しました -----\n")
+            self.ShowErrBlockUserFireStoreAlertView()
+            return
+         }
+         print("----- ブロックすることに成功しました -----\n")
+      }
    }
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
