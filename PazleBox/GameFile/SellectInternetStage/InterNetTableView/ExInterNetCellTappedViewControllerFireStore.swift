@@ -109,7 +109,7 @@ extension InterNetCellTappedViewController {
                   print("\(userUID)をブロックしているのでこいつのコメントデータは取得しない")
                   continue
                }
-               if let userUID = document["addUser"] as? String, self.BlockedList.contains(userUID) {
+               if let userUID = document["CommentUserUID"] as? String, self.BlockedList.contains(userUID) {
                   print("\(userUID)にブロックされているのでこいつのコメントデータは取得しない")
                   continue
                }
