@@ -443,21 +443,24 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    
    //MARK:- ユーザが投稿したステージに対してレポートボタンが押されたときの処理
    //TODO: ローカライズすること
-   private func TapReportActionAgainstUsersPostStage() {
+   private func TapReportActionAgainstUsersPostStage(TappedCellNum: Int) {
       let ReportActionSheet = UIAlertController(title: "Report", message: nil, preferredStyle: .actionSheet)
       
       let StringInappropriate = "Contains illegal characters"
       let StringInappropriateAction = UIAlertAction(title: StringInappropriate, style: .default, handler: { (action: UIAlertAction!) in
          print("不適切な文字を含むボタンが押された押されたよ")
+         self.ReportStageIncludeStringInappropriate(TappedCellNum: TappedCellNum)
       })
       let ImageInappropriate = "Contains inappropriate images"
       let ImageInappropriateAction = UIAlertAction(title: ImageInappropriate, style: .default, handler: { (action: UIAlertAction!) in
          print("不適切な画像を含むボタンが押された押されたよ")
+         self.ReportStageIncludeImageInappropriate(TappedCellNum: TappedCellNum)
       })
       
       let Other = "Other"
       let OtherInappropriateAction = UIAlertAction(title: Other, style: .default, handler: { (action: UIAlertAction!) in
          print("その他ボタンが押された押されたよ")
+         self.ReportStageOther(TappedCellNum: TappedCellNum)
       })
                       
       let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
@@ -531,7 +534,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
              
       let ReportAction = UIAlertAction(title: "Report", style: .destructive, handler: { (action: UIAlertAction!) in
          print("Report押されたよ")
-         self.TapReportActionAgainstUsersPostStage()
+         self.TapReportActionAgainstUsersPostStage(TappedCellNum: tag)
       })
       
       let BlockAction = UIAlertAction(title: "Block", style: .default, handler: { (action: UIAlertAction!) in
