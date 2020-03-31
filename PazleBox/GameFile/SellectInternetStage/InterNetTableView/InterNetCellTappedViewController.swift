@@ -322,20 +322,88 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
          print("------ 不適切なその他を含むコメントをFirestoreに登録成功 ------\n")
       }
    }
+   //MARK:- コメントをFireStoreに登録するここまで
    
    //MARK:- StageをFireStoreに登録する
    //MARK: 不適切な文字を含むStage
    private func ReportStageIncludeStringInappropriate(TappedCellNum: Int) {
+      print("\n------ 不適切な文字を含むStageをFirestoreに登録開始 ------")
+      let ReportUserUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+      let CommentID = UsingCommentedStageDatas[TappedCellNum]["CommentID"] as! String
+      let CommentBody = UsingCommentedStageDatas[TappedCellNum]["CommentBody"] as! String
+      let CommentUserUID = UsingCommentedStageDatas[TappedCellNum]["CommentUserUID"] as! String
+      let CommentUserName = UsingCommentedStageDatas[TappedCellNum]["CommentUsersName"] as! String
+      let CommentUsersProfileURL = UsingCommentedStageDatas[TappedCellNum]["CommentUsersProfileURL"] as! String
       
+      db.collection("Report").document("StageReport").collection("StringInappropriateComment").addDocument(data: [
+         "ReportUserUID": ReportUserUID,
+         "CommentID": CommentID,
+         "CommentBody": CommentBody,
+         "CommentUserUID": CommentUserUID,
+         "CommentUserName": CommentUserName,
+         "CommentUsersProfileURL": CommentUsersProfileURL
+      ]) { err in
+         if let err = err {
+            print("Error: \(err.localizedDescription)")
+            print("------ 不適切な文字を含むStageをFirestoreに登録失敗 ------\n")
+            return
+         }
+         print("------ 不適切な文字を含むStageをFirestoreに登録成功 ------\n")
+      }
    }
    //MARK: 不適切な画像を含むStage
    private func ReportStageIncludeImageInappropriate(TappedCellNum: Int) {
+      print("\n------ 不適切な画像を含むStageをFirestoreに登録開始 ------")
+      let ReportUserUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+      let CommentID = UsingCommentedStageDatas[TappedCellNum]["CommentID"] as! String
+      let CommentBody = UsingCommentedStageDatas[TappedCellNum]["CommentBody"] as! String
+      let CommentUserUID = UsingCommentedStageDatas[TappedCellNum]["CommentUserUID"] as! String
+      let CommentUserName = UsingCommentedStageDatas[TappedCellNum]["CommentUsersName"] as! String
+      let CommentUsersProfileURL = UsingCommentedStageDatas[TappedCellNum]["CommentUsersProfileURL"] as! String
       
+      db.collection("Report").document("StageReport").collection("ImageInappropriateComment").addDocument(data: [
+         "ReportUserUID": ReportUserUID,
+         "CommentID": CommentID,
+         "CommentBody": CommentBody,
+         "CommentUserUID": CommentUserUID,
+         "CommentUserName": CommentUserName,
+         "CommentUsersProfileURL": CommentUsersProfileURL
+      ]) { err in
+         if let err = err {
+            print("Error: \(err.localizedDescription)")
+            print("------ 不適切な画像を含むStageをFirestoreに登録失敗 ------\n")
+            return
+         }
+         print("------ 不適切な画像を含むStageをFirestoreに登録成功 ------\n")
+      }
    }
    //MARK: その他のStage
    private func ReportStageOther(TappedCellNum: Int) {
+      print("\n------ 不適切なその他を含むStageをFirestoreに登録開始 ------")
+      let ReportUserUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+      let CommentID = UsingCommentedStageDatas[TappedCellNum]["CommentID"] as! String
+      let CommentBody = UsingCommentedStageDatas[TappedCellNum]["CommentBody"] as! String
+      let CommentUserUID = UsingCommentedStageDatas[TappedCellNum]["CommentUserUID"] as! String
+      let CommentUserName = UsingCommentedStageDatas[TappedCellNum]["CommentUsersName"] as! String
+      let CommentUsersProfileURL = UsingCommentedStageDatas[TappedCellNum]["CommentUsersProfileURL"] as! String
       
+      db.collection("Report").document("StageReport").collection("OtherComment").addDocument(data: [
+         "ReportUserUID": ReportUserUID,
+         "CommentID": CommentID,
+         "CommentBody": CommentBody,
+         "CommentUserUID": CommentUserUID,
+         "CommentUserName": CommentUserName,
+         "CommentUsersProfileURL": CommentUsersProfileURL
+      ]) { err in
+         if let err = err {
+            print("Error: \(err.localizedDescription)")
+            print("------ 不適切なその他を含むStageをFirestoreに登録失敗 ------\n")
+            return
+         }
+         print("------ 不適切なその他を含むStageをFirestoreに登録成功 ------\n")
+      }
    }
+   //MARK:- StageをFireStoreに登録するここまで
    
    
    //MARK:- ユーザが投稿したコメントに対してレポートボタンが押されたときの処理
