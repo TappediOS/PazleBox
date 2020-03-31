@@ -260,7 +260,8 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
          "CommentBody": CommentBody,
          "CommentUserUID": CommentUserUID,
          "CommentUserName": CommentUserName,
-         "CommentUsersProfileURL": CommentUsersProfileURL
+         "CommentUsersProfileURL": CommentUsersProfileURL,
+         "ReportedDay": FieldValue.serverTimestamp()
       ]) { err in
          if let err = err {
             print("Error: \(err.localizedDescription)")
@@ -286,7 +287,8 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
          "CommentBody": CommentBody,
          "CommentUserUID": CommentUserUID,
          "CommentUserName": CommentUserName,
-         "CommentUsersProfileURL": CommentUsersProfileURL
+         "CommentUsersProfileURL": CommentUsersProfileURL,
+         "ReportedDay": FieldValue.serverTimestamp()
       ]) { err in
          if let err = err {
             print("Error: \(err.localizedDescription)")
@@ -312,7 +314,8 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
          "CommentBody": CommentBody,
          "CommentUserUID": CommentUserUID,
          "CommentUserName": CommentUserName,
-         "CommentUsersProfileURL": CommentUsersProfileURL
+         "CommentUsersProfileURL": CommentUsersProfileURL,
+         "ReportedDay": FieldValue.serverTimestamp()
       ]) { err in
          if let err = err {
             print("Error: \(err.localizedDescription)")
@@ -329,19 +332,14 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    private func ReportStageIncludeStringInappropriate(TappedCellNum: Int) {
       print("\n------ 不適切な文字を含むStageをFirestoreに登録開始 ------")
       let ReportUserUID = UserDefaults.standard.string(forKey: "UID") ?? ""
-      let CommentID = UsingCommentedStageDatas[TappedCellNum]["CommentID"] as! String
-      let CommentBody = UsingCommentedStageDatas[TappedCellNum]["CommentBody"] as! String
-      let CommentUserUID = UsingCommentedStageDatas[TappedCellNum]["CommentUserUID"] as! String
-      let CommentUserName = UsingCommentedStageDatas[TappedCellNum]["CommentUsersName"] as! String
-      let CommentUsersProfileURL = UsingCommentedStageDatas[TappedCellNum]["CommentUsersProfileURL"] as! String
       
-      db.collection("Report").document("StageReport").collection("StringInappropriateComment").addDocument(data: [
+      db.collection("Report").document("StageReport").collection("StringInappropriateStage").addDocument(data: [
          "ReportUserUID": ReportUserUID,
-         "CommentID": CommentID,
-         "CommentBody": CommentBody,
-         "CommentUserUID": CommentUserUID,
-         "CommentUserName": CommentUserName,
-         "CommentUsersProfileURL": CommentUsersProfileURL
+         "ReportedUsersUID": self.PostUsersUID,
+         "ReportedUserName": self.PostUsersUserName,
+         "ReportedProfileURL": self.PostUsersProfileURL,
+         "ReportedStageTitle": self.PostUsersStageTitle,
+         "ReportedDay": FieldValue.serverTimestamp()
       ]) { err in
          if let err = err {
             print("Error: \(err.localizedDescription)")
@@ -355,19 +353,14 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    private func ReportStageIncludeImageInappropriate(TappedCellNum: Int) {
       print("\n------ 不適切な画像を含むStageをFirestoreに登録開始 ------")
       let ReportUserUID = UserDefaults.standard.string(forKey: "UID") ?? ""
-      let CommentID = UsingCommentedStageDatas[TappedCellNum]["CommentID"] as! String
-      let CommentBody = UsingCommentedStageDatas[TappedCellNum]["CommentBody"] as! String
-      let CommentUserUID = UsingCommentedStageDatas[TappedCellNum]["CommentUserUID"] as! String
-      let CommentUserName = UsingCommentedStageDatas[TappedCellNum]["CommentUsersName"] as! String
-      let CommentUsersProfileURL = UsingCommentedStageDatas[TappedCellNum]["CommentUsersProfileURL"] as! String
       
-      db.collection("Report").document("StageReport").collection("ImageInappropriateComment").addDocument(data: [
+      db.collection("Report").document("StageReport").collection("ImageInappropriateStage").addDocument(data: [
          "ReportUserUID": ReportUserUID,
-         "CommentID": CommentID,
-         "CommentBody": CommentBody,
-         "CommentUserUID": CommentUserUID,
-         "CommentUserName": CommentUserName,
-         "CommentUsersProfileURL": CommentUsersProfileURL
+         "ReportedUsersUID": self.PostUsersUID,
+         "ReportedUserName": self.PostUsersUserName,
+         "ReportedProfileURL": self.PostUsersProfileURL,
+         "ReportedStageTitle": self.PostUsersStageTitle,
+         "ReportedDay": FieldValue.serverTimestamp()
       ]) { err in
          if let err = err {
             print("Error: \(err.localizedDescription)")
@@ -381,19 +374,14 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    private func ReportStageOther(TappedCellNum: Int) {
       print("\n------ 不適切なその他を含むStageをFirestoreに登録開始 ------")
       let ReportUserUID = UserDefaults.standard.string(forKey: "UID") ?? ""
-      let CommentID = UsingCommentedStageDatas[TappedCellNum]["CommentID"] as! String
-      let CommentBody = UsingCommentedStageDatas[TappedCellNum]["CommentBody"] as! String
-      let CommentUserUID = UsingCommentedStageDatas[TappedCellNum]["CommentUserUID"] as! String
-      let CommentUserName = UsingCommentedStageDatas[TappedCellNum]["CommentUsersName"] as! String
-      let CommentUsersProfileURL = UsingCommentedStageDatas[TappedCellNum]["CommentUsersProfileURL"] as! String
       
-      db.collection("Report").document("StageReport").collection("OtherComment").addDocument(data: [
+      db.collection("Report").document("StageReport").collection("OtherStage").addDocument(data: [
          "ReportUserUID": ReportUserUID,
-         "CommentID": CommentID,
-         "CommentBody": CommentBody,
-         "CommentUserUID": CommentUserUID,
-         "CommentUserName": CommentUserName,
-         "CommentUsersProfileURL": CommentUsersProfileURL
+         "ReportedUsersUID": self.PostUsersUID,
+         "ReportedUserName": self.PostUsersUserName,
+         "ReportedProfileURL": self.PostUsersProfileURL,
+         "ReportedStageTitle": self.PostUsersStageTitle,
+         "ReportedDay": FieldValue.serverTimestamp()
       ]) { err in
          if let err = err {
             print("Error: \(err.localizedDescription)")
