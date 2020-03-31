@@ -38,7 +38,7 @@ extension InterNetCellTappedViewController {
       }
         
       if let value = document["CommentID"] as? String {
-         CommentData.updateValue(value, forKey: "ReviewAve")
+         CommentData.updateValue(value, forKey: "CommentID")
       }
         
       if let value = document["CommentUserUID"] as? String {
