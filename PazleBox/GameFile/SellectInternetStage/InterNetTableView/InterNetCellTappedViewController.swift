@@ -246,6 +246,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    //MARK:- コメントをFireStoreに登録する
    //MARK: 不適切な文字を含むコメント
    private func ReportCommentIncludeStringInappropriate(TappedCellNum: Int) {
+      print("\n------ 不適切な文字を含むコメントをFirestoreに登録開始 ------")
       let ReportUserUID = UserDefaults.standard.string(forKey: "UID") ?? ""
       let CommentID = UsingCommentedStageDatas[TappedCellNum]["CommentID"] as! String
       let CommentBody = UsingCommentedStageDatas[TappedCellNum]["CommentBody"] as! String
@@ -260,15 +261,66 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
          "CommentUserUID": CommentUserUID,
          "CommentUserName": CommentUserName,
          "CommentUsersProfileURL": CommentUsersProfileURL
-      ])
+      ]) { err in
+         if let err = err {
+            print("Error: \(err.localizedDescription)")
+            print("------ 不適切な文字を含むコメントをFirestoreに登録失敗 ------\n")
+            return
+         }
+         print("------ 不適切な文字を含むコメントをFirestoreに登録成功 ------\n")
+      }
    }
    //MARK: 不適切な画像を含むコメント
    private func ReportCommentIncludeImageInappropriate(TappedCellNum: Int) {
+      print("\n------ 不適切な画像を含むコメントをFirestoreに登録開始 ------")
+      let ReportUserUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+      let CommentID = UsingCommentedStageDatas[TappedCellNum]["CommentID"] as! String
+      let CommentBody = UsingCommentedStageDatas[TappedCellNum]["CommentBody"] as! String
+      let CommentUserUID = UsingCommentedStageDatas[TappedCellNum]["CommentUserUID"] as! String
+      let CommentUserName = UsingCommentedStageDatas[TappedCellNum]["CommentUsersName"] as! String
+      let CommentUsersProfileURL = UsingCommentedStageDatas[TappedCellNum]["CommentUsersProfileURL"] as! String
       
+      db.collection("Report").document("CommentReport").collection("ImageInappropriateComment").addDocument(data: [
+         "ReportUserUID": ReportUserUID,
+         "CommentID": CommentID,
+         "CommentBody": CommentBody,
+         "CommentUserUID": CommentUserUID,
+         "CommentUserName": CommentUserName,
+         "CommentUsersProfileURL": CommentUsersProfileURL
+      ]) { err in
+         if let err = err {
+            print("Error: \(err.localizedDescription)")
+            print("------ 不適切な画像を含むコメントをFirestoreに登録失敗 ------\n")
+            return
+         }
+         print("------ 不適切な画像を含むコメントをFirestoreに登録成功 ------\n")
+      }
    }
    //MARK: その他のコメント
    private func ReportCommentOther(TappedCellNum: Int) {
+      print("\n------ 不適切なその他を含むコメントをFirestoreに登録開始 ------")
+      let ReportUserUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+      let CommentID = UsingCommentedStageDatas[TappedCellNum]["CommentID"] as! String
+      let CommentBody = UsingCommentedStageDatas[TappedCellNum]["CommentBody"] as! String
+      let CommentUserUID = UsingCommentedStageDatas[TappedCellNum]["CommentUserUID"] as! String
+      let CommentUserName = UsingCommentedStageDatas[TappedCellNum]["CommentUsersName"] as! String
+      let CommentUsersProfileURL = UsingCommentedStageDatas[TappedCellNum]["CommentUsersProfileURL"] as! String
       
+      db.collection("Report").document("CommentReport").collection("OtherComment").addDocument(data: [
+         "ReportUserUID": ReportUserUID,
+         "CommentID": CommentID,
+         "CommentBody": CommentBody,
+         "CommentUserUID": CommentUserUID,
+         "CommentUserName": CommentUserName,
+         "CommentUsersProfileURL": CommentUsersProfileURL
+      ]) { err in
+         if let err = err {
+            print("Error: \(err.localizedDescription)")
+            print("------ 不適切なその他を含むコメントをFirestoreに登録失敗 ------\n")
+            return
+         }
+         print("------ 不適切なその他を含むコメントをFirestoreに登録成功 ------\n")
+      }
    }
    
    //MARK:- StageをFireStoreに登録する
@@ -299,11 +351,13 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       let ImageInappropriate = "Contains inappropriate images"
       let ImageInappropriateAction = UIAlertAction(title: ImageInappropriate, style: .default, handler: { (action: UIAlertAction!) in
          print("不適切な画像を含むボタンが押された押されたよ")
+         self.ReportCommentIncludeImageInappropriate(TappedCellNum: TappedCellNum)
       })
       
       let Other = "Other"
       let OtherInappropriateAction = UIAlertAction(title: Other, style: .default, handler: { (action: UIAlertAction!) in
          print("その他ボタンが押された押されたよ")
+         self.ReportCommentOther(TappedCellNum: TappedCellNum)
       })
                       
       let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
