@@ -337,7 +337,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
    func applicationWillTerminate(_ application: UIApplication) {
       // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
    }
-   //MARK: 元々あったやつ -
+   //MARK: 元々あったやつここまで -
    
    //MARK: 通知のデリゲート
    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
@@ -377,13 +377,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       completionHandler(UIBackgroundFetchResult.newData)
    }
    
-   func application(_ application: UIApplication,
-       didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+   func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
       print("deviceTokenをmessaging()に貼り付けた")
       Messaging.messaging().apnsToken = deviceToken
-
    }
-
+   
+   func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+       // APNsの登録えらー
+      print("Failed to register to APNs: \(error)")
+   }
 }
 
 
