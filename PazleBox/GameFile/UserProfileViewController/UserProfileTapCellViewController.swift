@@ -432,68 +432,110 @@ class UserProfileTapCellViewController: UIViewController {
       return false
    }
    
-   
-   //MARK:- Reportボタン押されたときの処理
-   //TODO:- ローカライズね。
-   @objc func TapUsersCommentReportButton(_ sender: UIButton) {
-      guard self.isAbleToTapPlayDeleteButton == true else {
-         print("コメントしたユーザの報告タップされたけど，ローディング中やから何もしない.")
-         return
+   //MARK:- コメントをFireStoreに登録する
+   //MARK: 不適切な文字を含むコメント
+   private func ReportCommentIncludeStringInappropriate(TappedCellNum: Int) {
+      print("\n------ 不適切な文字を含むコメントをFirestoreに登録開始 ------")
+      let ReportUserUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+      let CommentID = UsingCommentedStageDatas[TappedCellNum]["CommentID"] as! String
+      let CommentBody = UsingCommentedStageDatas[TappedCellNum]["CommentBody"] as! String
+      let CommentUserUID = UsingCommentedStageDatas[TappedCellNum]["CommentUserUID"] as! String
+      let CommentUserName = UsingCommentedStageDatas[TappedCellNum]["CommentUsersName"] as! String
+      let CommentUsersProfileURL = UsingCommentedStageDatas[TappedCellNum]["CommentUsersProfileURL"] as! String
+      
+      db.collection("Report").document("CommentReport").collection("StringInappropriateComment").addDocument(data: [
+         "ReportUserUID": ReportUserUID,
+         "CommentID": CommentID,
+         "CommentBody": CommentBody,
+         "CommentUserUID": CommentUserUID,
+         "CommentUserName": CommentUserName,
+         "CommentUsersProfileURL": CommentUsersProfileURL,
+         "ReportedDay": FieldValue.serverTimestamp()
+      ]) { err in
+         if let err = err {
+            print("Error: \(err.localizedDescription)")
+            print("------ 不適切な文字を含むコメントをFirestoreに登録失敗 ------\n")
+            return
+         }
+         print("------ 不適切な文字を含むコメントをFirestoreに登録成功 ------\n")
       }
-      let rowNum = sender.tag
-      print("\(rowNum)番目のcellの報告ボタンがタップされました")
-      
-      let TapStagePostUsersUID = UsingCommentedStageDatas[rowNum]["CommentUserUID"] as! String
-      let UsersUID = UserDefaults.standard.string(forKey: "UID") ?? ""
-      
-      //自分のコメントをタップしていたら
-      if TapStagePostUsersUID == UsersUID {
-         print("自分のコメントをタップしているのでアクションシートは表示しません\n")
-         return
-      }
-      
-      let UserName = UsingCommentedStageDatas[rowNum]["CommentUsersName"] as! String
-      
-      let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-             
-      let ReportAction = UIAlertAction(title: "Report", style: .destructive, handler: { (action: UIAlertAction!) in
-         print("Report押されたよ")
-         self.TapReportActionAgainstUsersPost()
-      })
-      
-      let BlockAction = UIAlertAction(title: "Block", style: .default, handler: { (action: UIAlertAction!) in
-         print("Block押されたよ")
-         self.TapBlockActionAgainstUsersPost(UserName: UserName, uid: TapStagePostUsersUID)
-      })
-      
-      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-         print("ActionSheetでCanselタップされた")
-      })
-      
-      ActionSheet.addAction(ReportAction)
-      ActionSheet.addAction(BlockAction)
-      ActionSheet.addAction(CanselAction)
-         
-      self.present(ActionSheet, animated: true, completion: nil)
    }
+   //MARK: 不適切な画像を含むコメント
+   private func ReportCommentIncludeImageInappropriate(TappedCellNum: Int) {
+      print("\n------ 不適切な画像を含むコメントをFirestoreに登録開始 ------")
+      let ReportUserUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+      let CommentID = UsingCommentedStageDatas[TappedCellNum]["CommentID"] as! String
+      let CommentBody = UsingCommentedStageDatas[TappedCellNum]["CommentBody"] as! String
+      let CommentUserUID = UsingCommentedStageDatas[TappedCellNum]["CommentUserUID"] as! String
+      let CommentUserName = UsingCommentedStageDatas[TappedCellNum]["CommentUsersName"] as! String
+      let CommentUsersProfileURL = UsingCommentedStageDatas[TappedCellNum]["CommentUsersProfileURL"] as! String
+      
+      db.collection("Report").document("CommentReport").collection("ImageInappropriateComment").addDocument(data: [
+         "ReportUserUID": ReportUserUID,
+         "CommentID": CommentID,
+         "CommentBody": CommentBody,
+         "CommentUserUID": CommentUserUID,
+         "CommentUserName": CommentUserName,
+         "CommentUsersProfileURL": CommentUsersProfileURL,
+         "ReportedDay": FieldValue.serverTimestamp()
+      ]) { err in
+         if let err = err {
+            print("Error: \(err.localizedDescription)")
+            print("------ 不適切な画像を含むコメントをFirestoreに登録失敗 ------\n")
+            return
+         }
+         print("------ 不適切な画像を含むコメントをFirestoreに登録成功 ------\n")
+      }
+   }
+   //MARK: その他のコメント
+   private func ReportCommentOther(TappedCellNum: Int) {
+      print("\n------ 不適切なその他を含むコメントをFirestoreに登録開始 ------")
+      let ReportUserUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+      let CommentID = UsingCommentedStageDatas[TappedCellNum]["CommentID"] as! String
+      let CommentBody = UsingCommentedStageDatas[TappedCellNum]["CommentBody"] as! String
+      let CommentUserUID = UsingCommentedStageDatas[TappedCellNum]["CommentUserUID"] as! String
+      let CommentUserName = UsingCommentedStageDatas[TappedCellNum]["CommentUsersName"] as! String
+      let CommentUsersProfileURL = UsingCommentedStageDatas[TappedCellNum]["CommentUsersProfileURL"] as! String
+      
+      db.collection("Report").document("CommentReport").collection("OtherComment").addDocument(data: [
+         "ReportUserUID": ReportUserUID,
+         "CommentID": CommentID,
+         "CommentBody": CommentBody,
+         "CommentUserUID": CommentUserUID,
+         "CommentUserName": CommentUserName,
+         "CommentUsersProfileURL": CommentUsersProfileURL,
+         "ReportedDay": FieldValue.serverTimestamp()
+      ]) { err in
+         if let err = err {
+            print("Error: \(err.localizedDescription)")
+            print("------ 不適切なその他を含むコメントをFirestoreに登録失敗 ------\n")
+            return
+         }
+         print("------ 不適切なその他を含むコメントをFirestoreに登録成功 ------\n")
+      }
+   }
+   //MARK:- コメントをFireStoreに登録するここまで
    
-   //ユーザが投稿したものに対してレポートボタンが押されたときの処理
+   //MARK:- ユーザが投稿したものに対してレポートボタンが押されたときの処理
    //TODO: ローカライズすること
-   private func TapReportActionAgainstUsersPost() {
+   private func TapReportActionAgainstUsersPost(TappedCellNum: Int) {
       let ReportActionSheet = UIAlertController(title: "Report", message: nil, preferredStyle: .actionSheet)
       
       let StringInappropriate = "Contains illegal characters"
       let StringInappropriateAction = UIAlertAction(title: StringInappropriate, style: .default, handler: { (action: UIAlertAction!) in
          print("不適切な文字を含むボタンが押された押されたよ")
+         self.ReportCommentIncludeStringInappropriate(TappedCellNum: TappedCellNum)
       })
       let ImageInappropriate = "Contains inappropriate images"
       let ImageInappropriateAction = UIAlertAction(title: ImageInappropriate, style: .default, handler: { (action: UIAlertAction!) in
          print("不適切な画像を含むボタンが押された押されたよ")
+         self.ReportCommentIncludeImageInappropriate(TappedCellNum: TappedCellNum)
       })
       
       let Other = "Other"
       let OtherInappropriateAction = UIAlertAction(title: Other, style: .default, handler: { (action: UIAlertAction!) in
          print("その他ボタンが押された押されたよ")
+         self.ReportCommentOther(TappedCellNum: TappedCellNum)
       })
                       
       let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
@@ -545,6 +587,53 @@ class UserProfileTapCellViewController: UIViewController {
          print("----- ブロックすることに成功しました -----\n")
       }
    }
+   
+   
+   //MARK:- Reportボタン押されたときの処理
+   //TODO:- ローカライズね。
+   @objc func TapUsersCommentReportButton(_ sender: UIButton) {
+      guard self.isAbleToTapPlayDeleteButton == true else {
+         print("コメントしたユーザの報告タップされたけど，ローディング中やから何もしない.")
+         return
+      }
+      let rowNum = sender.tag
+      print("\(rowNum)番目のcellの報告ボタンがタップされました")
+      
+      let TapStagePostUsersUID = UsingCommentedStageDatas[rowNum]["CommentUserUID"] as! String
+      let UsersUID = UserDefaults.standard.string(forKey: "UID") ?? ""
+      
+      //自分のコメントをタップしていたら
+      if TapStagePostUsersUID == UsersUID {
+         print("自分のコメントをタップしているのでアクションシートは表示しません\n")
+         return
+      }
+      
+      let UserName = UsingCommentedStageDatas[rowNum]["CommentUsersName"] as! String
+      
+      let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+             
+      let ReportAction = UIAlertAction(title: "Report", style: .destructive, handler: { (action: UIAlertAction!) in
+         print("Report押されたよ")
+         self.TapReportActionAgainstUsersPost(TappedCellNum: rowNum)
+      })
+      
+      let BlockAction = UIAlertAction(title: "Block", style: .default, handler: { (action: UIAlertAction!) in
+         print("Block押されたよ")
+         self.TapBlockActionAgainstUsersPost(UserName: UserName, uid: TapStagePostUsersUID)
+      })
+      
+      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+         print("ActionSheetでCanselタップされた")
+      })
+      
+      ActionSheet.addAction(ReportAction)
+      ActionSheet.addAction(BlockAction)
+      ActionSheet.addAction(CanselAction)
+         
+      self.present(ActionSheet, animated: true, completion: nil)
+   }
+   
+   
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
    func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
