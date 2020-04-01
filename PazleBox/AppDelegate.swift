@@ -291,6 +291,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
          return
       }
       
+      UserDefaults.standard.register(defaults: ["UserDefaultFcmToken": ""])
+      let UserDefaultFcmToken = UserDefaults.standard.string(forKey: "UserDefaultFcmToken") ?? ""
+      
+      //FCMTokenを保存しておいて，それと一致してたらreturnする。そうでなかったら書き込む。これで書き込みが増えるのを防ぐ
+      if FcmToken == UserDefaultFcmToken {
+         print("FcmTokenは既に保存されてるのと同じなのでFireStoreに書き込みません")
+         return
+      }
+      
+      print("新しいFCM TokenをUserDefaultsに保存します")
+      UserDefaults.standard.set(FcmToken, forKey: "UserDefaultFcmToken")
+      
       if let uid = UserUID {
          let db = Firestore.firestore()
          db.collection("users").document(uid).setData(["FcmToken": FcmToken,], merge: true) { err in
@@ -310,6 +322,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
                print("------ FcmTokenのUpdate(MonitoredUserInfo/に対し)成功しました ------\n")
             }
          }
+         
+         db.collectionGroup("Stages").whereField("addUser", isEqualTo: uid).getDocuments() { documentSnapshot, err in
+            if let err = err {
+               print("Error FcmToken updating: \(err)")
+               print("------ FcmTokenのUpdate(Stage/に対し)エラー発生し失敗------\n")
+               return
+            }
+            
+            for doc in documentSnapshot!.documents {
+               doc.reference.updateData(["FcmToken": FcmToken])
+            }
+            print("------ FcmTokenのUpdate(Stage/に対し)成功しました------\n")
+         }
+         
       }
    }
    
@@ -433,6 +459,9 @@ extension AppDelegate : MessagingDelegate {
       let db = Firestore.firestore()
       let userUID = UserDefaults.standard.string(forKey: "UID")
       
+      print("新しいFCM TokenをUserDefaultsに保存します")
+      UserDefaults.standard.set(fcmToken, forKey: "UserDefaultFcmToken")
+      
       if let uid = userUID {
          //setData()を使う時はmergeをtrueにする。
          //こうすることで，Document全体を上書きせずに，そのFieldを追加することができる.
@@ -453,6 +482,19 @@ extension AppDelegate : MessagingDelegate {
             } else {
                print("------ FcmTokenのUpdate(MonitoredUserInfo/に対し)成功しました ------\n")
             }
+         }
+         
+         db.collectionGroup("Stages").whereField("addUser", isEqualTo: uid).getDocuments() { documentSnapshot, err in
+            if let err = err {
+               print("Error FcmToken updating: \(err)")
+               print("------ FcmTokenのUpdate(Stage/に対し)エラー発生し失敗------\n")
+               return
+            }
+            
+            for doc in documentSnapshot!.documents {
+               doc.reference.updateData(["FcmToken": fcmToken])
+            }
+            print("------ FcmTokenのUpdate(Stage/に対し)成功しました------\n")
          }
          
          
