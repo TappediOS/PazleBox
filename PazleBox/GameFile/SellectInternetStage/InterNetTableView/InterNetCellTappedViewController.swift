@@ -109,6 +109,8 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    //MARK:- viewDidLoadで画面遷移前に取得した各値をセットする
    func InitPostUsersImageView() {
       self.PostUsersImageView.image = self.PostusersImage
+      self.PostUsersImageView.layer.cornerRadius = self.PostUsersImageView.frame.width / 2
+      self.PostUsersImageView.layer.masksToBounds = true
    }
    func InitPostUsersUserNBameLabel() {
       self.PostUsersUserNBameLabel.text = self.PostUsersUserName

@@ -124,6 +124,8 @@ class UserProfileTapCellViewController: UIViewController {
    //MARK:- viewDidLoadで画面遷移前に取得した各値をセットする
    func InitUsersProfileImageView() {
       self.UsersProfileImageView.image = self.UsersProfileImage
+      self.UsersProfileImageView.layer.cornerRadius = self.UsersProfileImageView.frame.width / 2
+      self.UsersProfileImageView.layer.masksToBounds = true
    }
    func InitUsersNameLabel() {
       self.UsersNameLabel.text = self.UsersName
