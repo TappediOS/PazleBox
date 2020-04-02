@@ -559,11 +559,11 @@ extension UsersSetUpViewCobtroller: UINavigationControllerDelegate, UIImagePicke
       self.UsersProfileButton.setImage(resizeImage, for: .normal)
       
       print("\n元のサイズ:        \((image.pngData()! as NSData).length)")
-      print("リサイズ後のサイズpng:　\(String(describing: (resizeImage?.pngData() as! NSData).length))\n")
-      print("リサイズ後のサイズjpeg1:　\(String(describing: (resizeImage?.jpegData(compressionQuality: 1) as! NSData).length))\n")
-      print("リサイズ後のサイズjpeg0.9:　\(String(describing: (resizeImage?.jpegData(compressionQuality: 0.9) as! NSData).length))\n")
-      print("リサイズ後のサイズjpeg0.75:　\(String(describing: (resizeImage?.jpegData(compressionQuality: 0.75) as! NSData).length))\n")
-      print("リサイズ後のサイズjpeg0.5:　\(String(describing: (resizeImage?.jpegData(compressionQuality: 0.5) as! NSData).length))\n")
+      print("リサイズ後のサイズpng:　\(String(describing: (resizeImage?.pngData() as! NSData).length))")
+      print("リサイズ後のサイズjpeg1:　\(String(describing: (resizeImage?.jpegData(compressionQuality: 1) as! NSData).length))")
+      print("リサイズ後のサイズjpeg0.9:　\(String(describing: (resizeImage?.jpegData(compressionQuality: 0.9) as! NSData).length))")
+      print("リサイズ後のサイズjpeg0.75:　\(String(describing: (resizeImage?.jpegData(compressionQuality: 0.75) as! NSData).length))")
+      print("リサイズ後のサイズjpeg0.5:　\(String(describing: (resizeImage?.jpegData(compressionQuality: 0.5) as! NSData).length))")
       print("リサイズ後のサイズjpeg0.25:　\(String(describing: (resizeImage?.jpegData(compressionQuality: 0.25) as! NSData).length))\n")
 
       usersImage = resizeImage!
