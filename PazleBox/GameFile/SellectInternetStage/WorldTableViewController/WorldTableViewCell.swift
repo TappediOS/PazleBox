@@ -28,6 +28,7 @@ class WorldTableViewCell: UITableViewCell {
       // Initialization code
       
       SetUpUsersStageTitlelLabel()
+      SetUpUsersProfileImage()
       UsersGameImageView.contentMode = .scaleAspectFill
    }
 
@@ -42,4 +43,8 @@ class WorldTableViewCell: UITableViewCell {
       UsersStageTitlelLabel.minimumScaleFactor = 0.4
    }
 
+   func SetUpUsersProfileImage() {
+      UsersImageViewButton.layer.cornerRadius = self.UsersImageViewButton.frame.width / 2
+      UsersImageViewButton.layer.masksToBounds = true
+   }
 }

@@ -21,6 +21,7 @@ class ProfileVCtapCellCommentCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+      SetUpUsersProfileImage()
       SetUpCommentedUsersNameLabel()
     }
 
@@ -34,9 +35,14 @@ class ProfileVCtapCellCommentCell: UITableViewCell {
       UserNameLabel.adjustsFontSizeToFitWidth = true
       UserNameLabel.minimumScaleFactor = 0.4
    }
+   
+   func SetUpUsersProfileImage() {
+      UsersImageButton.layer.cornerRadius = UsersImageButton.frame.width / 2
+      UsersImageButton.layer.masksToBounds = true
+   }
 
    @IBAction func TapUsersImageButton(_ sender: Any) {
-      print("コメントしたユーザのプロフィール画像がタップされた")
+      //print("コメントしたユーザのプロフィール画像がタップされた")
    }
    
    

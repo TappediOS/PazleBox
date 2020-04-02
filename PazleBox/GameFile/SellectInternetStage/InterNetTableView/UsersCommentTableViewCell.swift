@@ -22,7 +22,7 @@ class UsersCommentTableViewCell: UITableViewCell {
    override func awakeFromNib() {
       super.awakeFromNib()
       // Initialization code
-      
+      SetUpCommentedUsersProfileImage()
       SetUpCommentedUsersNameLabel()
    }
 
@@ -31,6 +31,11 @@ class UsersCommentTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+   
+   func SetUpCommentedUsersProfileImage() {
+      CommentedUsersImageViewButton.layer.cornerRadius = self.CommentedUsersImageViewButton.frame.width / 2
+      CommentedUsersImageViewButton.layer.masksToBounds = true
+   }
    
    func SetUpCommentedUsersNameLabel() {
       CommentedUsersNameLabel.adjustsFontSizeToFitWidth = true

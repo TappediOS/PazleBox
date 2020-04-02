@@ -33,7 +33,7 @@ class InterNetTableViewCell: UITableViewCell {
       // Initialization code
       
       SetUpUsersStageTitlelLabel()
-      
+      SetUpUsersProfileImage()
       GameScreenshotImageView.contentMode = .scaleAspectFill
    }
 
@@ -42,6 +42,11 @@ class InterNetTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+   
+   func SetUpUsersProfileImage() {
+      UserImageViewButton.layer.cornerRadius = UserImageViewButton.frame.width / 2
+      UserImageViewButton.layer.masksToBounds = true
+   }
    
    func SetUpUsersStageTitlelLabel() {
       PuzzleTitleLabel.adjustsFontSizeToFitWidth = true

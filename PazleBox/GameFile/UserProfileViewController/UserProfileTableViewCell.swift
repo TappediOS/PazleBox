@@ -26,9 +26,14 @@ class UserProfileTableViewCell: UITableViewCell {
    
    override func awakeFromNib() {
       super.awakeFromNib()
-      
+      SetUpUsersProfileImage()
       SetUpUsersStageTitlelLabel()
       UsersPostedStageImageView.contentMode = .scaleAspectFill
+   }
+   
+   func SetUpUsersProfileImage() {
+      UsersPfofileImageView.layer.cornerRadius = UsersPfofileImageView.frame.width / 2
+      UsersPfofileImageView.layer.masksToBounds = true
    }
    
    private func SetUpUsersStageTitlelLabel() {
