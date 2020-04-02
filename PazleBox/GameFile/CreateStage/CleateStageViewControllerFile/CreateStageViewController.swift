@@ -824,7 +824,7 @@ class CleateStageViewController: UIViewController {
        return trimImage
    }
    
-   //UIImageをDataにして返す関数
+   //UIImageをNSDataにして返す関数
    private func SaveStageViewUseScreenshot() -> NSData {
       //コンテキスト開始
       UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0.0)
@@ -835,15 +835,12 @@ class CleateStageViewController: UIViewController {
       //コンテキストを閉じる
       UIGraphicsEndImageContext()
       
-      //80 * 110
+      //80 * 110にリサイズする。これはcellで自分で決めたから
       if let UseImage = GetAllViewImage.cropping(to: ( BackImageView?.GetRectForScreenshot() )!) {
          let ResizeW: CGFloat = 80
          let ResizeH: CGFloat = 110
          let RetruenImage = UseImage.ResizeUIImage(width: ResizeW, height: ResizeH)
-         print("元のデータは \(Double((UseImage.pngData() as! NSData).length) * 0.001) KByte")
-         print("UserImage = \(UseImage.size)")
-         print("Resize    = \(RetruenImage!.size)")
-         return RetruenImage?.pngData() as! NSData
+         return RetruenImage?.jpegData(compressionQuality: 0.5) as! NSData
       }else{
          fatalError()
       }
