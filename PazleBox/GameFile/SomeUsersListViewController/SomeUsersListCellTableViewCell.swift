@@ -15,15 +15,19 @@ class SomeUsersListTableViewCell: UITableViewCell {
    
    var ListUsersUID = ""
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+   override func awakeFromNib() {
+      super.awakeFromNib()
+      // Initialization code
+      SetUpUsersProfileImageView()
+   }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+   override func setSelected(_ selected: Bool, animated: Bool) {
+      super.setSelected(selected, animated: animated)
+      // Configure the view for the selected state
+   }
+   
+   func SetUpUsersProfileImageView() {
+      UsersProfileImageView.layer.cornerRadius = UsersProfileImageView.frame.width / 2
+      UsersProfileImageView.layer.masksToBounds = true
+   }
 }
