@@ -14,6 +14,7 @@ import ChameleonFramework
 import Firebase
 import Hero
 import SnapKit
+import SCLAlertView
 
 class StageMakingViewController: UIViewController{
    @IBOutlet weak var StageMakingButton: FUIButton!
@@ -209,15 +210,94 @@ class StageMakingViewController: UIViewController{
       RemainingLabel.hero.modifiers = [.arc(), .translate(x: +(ViewW - FViewW * 2), y: 0, z: 0)]
    }
    
+   //MARK:- チュートリアルVCを開く
+   private func showTutorialViewController() {
+      print("Tutorialに遷移します。")
+      StageMakingButton.hero.id = HeroID.MakingButton_Trash
+      InfoLabel.hero.id = HeroID.InfoLabel_Option
+      RemainingLabel.hero.id = HeroID.RemainingLabel_Label
+      
+      let Storybord = UIStoryboard(name: "TutorialViewController", bundle: nil)
+      let TutorialVC = Storybord.instantiateViewController(withIdentifier: "TutorialVC") as! TutorialViewController
+      TutorialVC.modalPresentationStyle = .fullScreen
+      TutorialVC.modalTransitionStyle = .crossDissolve
+      self.present(TutorialVC, animated: true, completion: {
+         print("TutorialVCにプレゼント終わった")
+         self.isLockButton = false
+      })
+   }
    
-   //NOTE:- タップしたら同一SB上の
+   private func ShowAskUserShowTutorialViewControllerWhenTapTutorialButton() {
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      
+      //TODO:- ローカライズ
+      ComleateView.addButton(NSLocalizedString("Show Tutorial", comment: "")){
+         self.Play3DtouchHeavy()
+         self.GameSound.PlaySoundsTapButton()
+         self.showTutorialViewController()
+         UserDefaults.standard.set(false, forKey: "FirstCreateStage")
+      }
+      ComleateView.addButton(NSLocalizedString("Cancel", comment: "")){
+         self.Play3DtouchHeavy()
+         UserDefaults.standard.set(false, forKey: "FirstCreateStage")
+         self.isLockButton = false
+      }
+      let delStage = NSLocalizedString("ステージの作りかた", comment: "")
+      let cantBack = NSLocalizedString("ステージを作るチュートリアルをしますか？", comment: "")
+      ComleateView.showWarning(delStage, subTitle: cantBack)
+   }
+   
+   
+   /// 初めてステージを作ろうとした時に表示されるAleartView
+   /// これの場合はCansel押された時にMakingVCを表示させている
+   private func ShowAskUserShowTutorialViewControllerWhenUserFirstCreateStage() {
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      
+      //TODO:- ローカライズ
+      ComleateView.addButton(NSLocalizedString("Show Tutorial", comment: "")){
+         self.Play3DtouchHeavy()
+         self.GameSound.PlaySoundsTapButton()
+         self.showTutorialViewController()
+         UserDefaults.standard.set(false, forKey: "FirstCreateStage")
+      }
+      ComleateView.addButton(NSLocalizedString("Cancel", comment: "")){
+         self.Play3DtouchHeavy()
+         UserDefaults.standard.set(false, forKey: "FirstCreateStage")
+         self.ShowStageMakingViewController()
+      }
+      let delStage = NSLocalizedString("初めてのステージつくり🎉", comment: "")
+      let cantBack = NSLocalizedString("ステージを作るチュートリアルをしますか？", comment: "")
+      ComleateView.showWarning(delStage, subTitle: cantBack)
+   }
+   
+   private func CheckUserFirstCreatStage() -> Bool {
+      if UserDefaults.standard.bool(forKey: "FirstCreateStage") == true {
+         return true
+      }
+      return false
+   }
+   
+   
+   //MARK:- Stage Making　ボタンがタップされたときの処理
    @IBAction func TapStageMakingButton(_ sender: Any) {
       Play3DtouchLight()
       if isLockButton == true { return }
       isLockButton = true
       
-      GameSound.PlaySoundsTapButton()
+      if CheckUserFirstCreatStage() == true {
+         ShowAskUserShowTutorialViewControllerWhenUserFirstCreateStage()
+         return
+      }
       
+      GameSound.PlaySoundsTapButton()
+      ShowStageMakingViewController()
+      
+   }
+   
+   //MARK:- Stage Making VCを開く
+   private func ShowStageMakingViewController() {
       StageMakingButton.hero.id = HeroID.MakingButton_Trash
       InfoLabel.hero.id = HeroID.InfoLabel_Option
       RemainingLabel.hero.id = HeroID.RemainingLabel_Label

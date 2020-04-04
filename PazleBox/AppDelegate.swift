@@ -136,6 +136,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       UserDefaults.standard.register(defaults: ["BuyPiceSet2": false])
       UserDefaults.standard.register(defaults: ["BuyPiceSet3": false])
       UserDefaults.standard.register(defaults: ["BuyPiceSet4": false])
+      UserDefaults.standard.register(defaults: ["FirstCreateStage": true])
+      UserDefaults.standard.set(true, forKey: "FirstCreateStage")
       UserDefaults.standard.register(defaults: ["CreateStageNum": 0])
       if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == true {
          print("\n--- ユーザーは広告削除の課金をしています ---\n")
