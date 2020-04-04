@@ -248,7 +248,7 @@ class StageMakingViewController: UIViewController{
       }
       let title = NSLocalizedString("ステージの作りかた", comment: "")
       let subTitle = NSLocalizedString("ステージを作るチュートリアルをしますか？", comment: "")
-      ComleateView.showInfo(title, subTitle: subTitle)
+      ComleateView.showTitle(title, subTitle: subTitle, timeout: .none, completeText: nil, style: .question, colorStyle: 0x007AFF, colorTextButton: nil, circleIconImage: nil, animationStyle: .topToBottom)
    }
    
    
@@ -267,8 +267,9 @@ class StageMakingViewController: UIViewController{
       }
       ComleateView.addButton(NSLocalizedString("Cancel", comment: "")){
          self.Play3DtouchHeavy()
+         self.GameSound.PlaySoundsTapButton()
          UserDefaults.standard.set(false, forKey: "FirstCreateStage")
-         self.ShowStageMakingViewController()
+         self.isLockButton = false
       }
       let title = NSLocalizedString("初めてのステージつくり🎉", comment: "")
       let subTitle = NSLocalizedString("ステージを作るチュートリアルをしますか？", comment: "")
