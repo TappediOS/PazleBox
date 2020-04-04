@@ -242,6 +242,7 @@ class StageMakingViewController: UIViewController{
       }
       ComleateView.addButton(NSLocalizedString("Cancel", comment: "")){
          self.Play3DtouchHeavy()
+         self.GameSound.PlaySoundsTapButton()
          UserDefaults.standard.set(false, forKey: "FirstCreateStage")
          self.isLockButton = false
       }
@@ -287,18 +288,23 @@ class StageMakingViewController: UIViewController{
       Play3DtouchLight()
       if isLockButton == true { return }
       isLockButton = true
+      GameSound.PlaySoundsTapButton()
       
       if CheckUserFirstCreatStage() == true {
          ShowAskUserShowTutorialViewControllerWhenUserFirstCreateStage()
          return
       }
       
-      GameSound.PlaySoundsTapButton()
+      
       ShowStageMakingViewController()
    }
    
    //MARK:- Question　ボタンがタップされたときの処理
    @IBAction func TapStageMakingQuestionButton(_ sender: Any) {
+      Play3DtouchLight()
+      if isLockButton == true { return }
+      isLockButton = true
+      self.GameSound.PlaySoundsTapButton()
       ShowAskUserShowTutorialViewControllerWhenTapTutorialButton()
    }
    
