@@ -245,9 +245,9 @@ class StageMakingViewController: UIViewController{
          UserDefaults.standard.set(false, forKey: "FirstCreateStage")
          self.isLockButton = false
       }
-      let delStage = NSLocalizedString("ステージの作りかた", comment: "")
-      let cantBack = NSLocalizedString("ステージを作るチュートリアルをしますか？", comment: "")
-      ComleateView.showWarning(delStage, subTitle: cantBack)
+      let title = NSLocalizedString("ステージの作りかた", comment: "")
+      let subTitle = NSLocalizedString("ステージを作るチュートリアルをしますか？", comment: "")
+      ComleateView.showInfo(title, subTitle: subTitle)
    }
    
    
@@ -269,9 +269,9 @@ class StageMakingViewController: UIViewController{
          UserDefaults.standard.set(false, forKey: "FirstCreateStage")
          self.ShowStageMakingViewController()
       }
-      let delStage = NSLocalizedString("初めてのステージつくり🎉", comment: "")
-      let cantBack = NSLocalizedString("ステージを作るチュートリアルをしますか？", comment: "")
-      ComleateView.showWarning(delStage, subTitle: cantBack)
+      let title = NSLocalizedString("初めてのステージつくり🎉", comment: "")
+      let subTitle = NSLocalizedString("ステージを作るチュートリアルをしますか？", comment: "")
+      ComleateView.showInfo(title, subTitle: subTitle)
    }
    
    private func CheckUserFirstCreatStage() -> Bool {
