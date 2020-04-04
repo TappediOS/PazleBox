@@ -45,12 +45,28 @@ class PiceShopEachViewController: UIViewController {
    
    @IBOutlet weak var PriceLabel: UILabel!
    
+   //CollectionViewの画像のキャッシュ
+   //UIImage.Resize()に数秒かかっててカクツクから，最初の表示の後にキャッシュして
+   //スクロールして再生成する時にキャッシュを使用してUIImage.Resize()を呼ばないようにする
+   //アプリを再起動するとキャッシュはクリアされるらしい
+   let CollectionViewImageCache = NSCache<AnyObject, AnyObject>()
+   
+   //15セットあるよ
    let PiceSet1 = ["33p7Red", "33p7Green", "33p7Blue",
                    "43p10Red", "43p10Green", "43p10Blue",
                    "23p14Red", "23p14Green", "23p14Blue",
                    "23p12Red", "23p12Green", "23p12Blue",
                    "43p26Red", "43p26Green", "43p26Blue",
-                   "33p25Red","33p25Green","33p25Blue"
+                   "33p25Red","33p25Green","33p25Blue",
+                   "33p7Red", "33p7Green", "33p7Blue",
+                   "43p10Red", "43p10Green", "43p10Blue",
+                   "23p14Red", "23p14Green", "23p14Blue",
+                   "23p12Red", "23p12Green", "23p12Blue",
+                   "43p26Red", "43p26Green", "43p26Blue",
+                   "43p10Red", "43p10Green", "43p10Blue",
+                   "23p14Red", "23p14Green", "23p14Blue",
+                   "23p12Red", "23p12Green", "23p12Blue",
+                   "43p26Red", "43p26Green", "43p26Blue"
                   ]
    
    let PiceSet2 = ["32p3Red", "32p3Green", "32p3Blue",
@@ -82,6 +98,7 @@ class PiceShopEachViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       print("表示するタグ番号: \(PiceShopTag)\n")
+      RemoveAllImageCache()
       SetUpNavigationBar()
       SetUpUsingPiceSet()
       SetUpPriceLabel()
@@ -90,6 +107,10 @@ class PiceShopEachViewController: UIViewController {
       SetUpRestoreButton()
       LoadCollectionView()
       CheckIAPInfomation()
+   }
+   
+   private func RemoveAllImageCache() {
+      CollectionViewImageCache.removeAllObjects()
    }
    
    //TODO:- ローカライズしてなぁ

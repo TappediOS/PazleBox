@@ -22,14 +22,22 @@ extension PiceShopEachViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-      let cell = PiceCollectionView.dequeueReusableCell(withReuseIdentifier: "PiceShopPiceCell", for: indexPath)
+      //print("\(indexPath.item)番目のCellを返す")
+      let cell = PiceCollectionView.dequeueReusableCell(withReuseIdentifier: "PiceShopPiceCell", for: indexPath) as! PiceShopCollectionViewCell
 
-      let imageName = self.UsingPiceSet[indexPath.item]
-      let PiceImage = UIImage(contentsOfFile: Bundle.main.path(forResource: imageName, ofType: "png")!)?.ResizeUIImage(width: 128, height: 128)
-
-      if let cell = cell as? PiceShopCollectionViewCell {
-         cell.setPiceShopPiceImageView(image: PiceImage!)
+      let imageName: String = self.UsingPiceSet[indexPath.item]
+      
+      //もしキャッシュされていたらその画像をセットする.とても速い!
+      if let cachedImage = CollectionViewImageCache.object(forKey: imageName as AnyObject) as? UIImage {
+         cell.setPiceShopPiceImageView(image: cachedImage)
+         return cell
       }
+      
+      //Noキャッシュならば，画像データを生成する//ResizeUIImage()はとても遅い。
+      let PiceImage = UIImage(contentsOfFile: Bundle.main.path(forResource: imageName, ofType: "png")!)?.ResizeUIImage(width: 128, height: 128)
+            
+      self.CollectionViewImageCache.setObject(PiceImage!, forKey: imageName as AnyObject)
+      cell.setPiceShopPiceImageView(image: PiceImage!)
 
       //cell.hero.modifiers = [.fade, .scale(0.5)]
       return cell
@@ -63,7 +71,8 @@ extension PiceShopEachViewController: UICollectionViewDelegateFlowLayout {
          print("これ忘れているよ")
       }
       
-      return CGSize(width: self.cellWide, height: hightPerItem)
+      let cellSize = CGSize(width: self.cellWide, height: hightPerItem)      
+      return cellSize
    }
 
    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
