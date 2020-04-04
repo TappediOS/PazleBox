@@ -22,6 +22,9 @@ class StageMakingViewController: UIViewController{
    @IBOutlet weak var InfoLabel: UILabel!
    @IBOutlet weak var RemainingLabel: UILabel!
    
+   @IBOutlet weak var StageMakingQuestionButton: UIButton!
+   
+   
    var ViewW: CGFloat = 0
    var ViewH: CGFloat = 0
    var FViewW: CGFloat = 0
@@ -61,7 +64,6 @@ class StageMakingViewController: UIViewController{
       
       //NOTE:- ここでボタンがタップできるかどうかを判断
       SetUpStageMakingButton()
-      
    }
    
    override func viewDidAppear(_ animated: Bool) {
@@ -293,7 +295,11 @@ class StageMakingViewController: UIViewController{
       
       GameSound.PlaySoundsTapButton()
       ShowStageMakingViewController()
-      
+   }
+   
+   //MARK:- Question　ボタンがタップされたときの処理
+   @IBAction func TapStageMakingQuestionButton(_ sender: Any) {
+      ShowAskUserShowTutorialViewControllerWhenTapTutorialButton()
    }
    
    //MARK:- Stage Making VCを開く

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -85,14 +84,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mvc-qY-ghK">
+                                <rect key="frame" x="334" y="64" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="mYR-hc-fFI"/>
+                                    <constraint firstAttribute="height" constant="60" id="pfw-eP-QTQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="questionmark.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40" weight="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="TapStageMakingQuestionButton:" destination="MEa-cb-ee7" eventType="touchUpInside" id="M3U-8V-xQ7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xxm-3U-dab" firstAttribute="trailing" secondItem="Mvc-qY-ghK" secondAttribute="trailing" constant="20" id="hmG-V4-UHb"/>
+                            <constraint firstItem="Mvc-qY-ghK" firstAttribute="top" secondItem="xxm-3U-dab" secondAttribute="top" constant="20" id="qUd-eC-0yX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xxm-3U-dab"/>
                     </view>
                     <connections>
                         <outlet property="InfoLabel" destination="09V-bE-jBC" id="OSj-se-gOY"/>
                         <outlet property="RemainingLabel" destination="Plm-SA-JAH" id="iHO-pU-BnW"/>
                         <outlet property="StageMakingButton" destination="3mw-g7-yRm" id="HLV-bl-hPj"/>
+                        <outlet property="StageMakingQuestionButton" destination="Mvc-qY-ghK" id="NBf-8g-dAK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qTL-GM-pyT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -269,4 +288,7 @@
             <point key="canvasLocation" x="-303" y="-687"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="questionmark.circle.fill" catalog="system" width="64" height="60"/>
+    </resources>
 </document>
