@@ -91,7 +91,7 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
       self.navigationItem.title = name
       
       let ellipsisItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis"), style: .plain, target: self, action: #selector(TapEllipsisButton(sender:)))
-      ellipsisItem.tintColor = .systemGray4
+      ellipsisItem.tintColor = .systemGray
       self.navigationItem.setRightBarButton(ellipsisItem, animated: true)
    }
    
@@ -184,6 +184,11 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
    }
    
    @objc func TapEllipsisButton(sender: UIBarButtonItem) {
+      if BlockList.contains(self.OtherUsersUID) == true {
+         print("ブロックしてるからブロックするアクションシートは表示しない")
+         return
+      }
+      
       print("ellipsisからのアクションシート表示")
       showActionSheetForReportOrBlockUser()
    }
