@@ -139,6 +139,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       UserDefaults.standard.register(defaults: ["FirstCreateStage": true])
       //TODO:- 以下の1行は後で消すこと
       UserDefaults.standard.set(true, forKey: "FirstCreateStage")
+      UserDefaults.standard.set(false, forKey: "BuyRemoveAd")
       UserDefaults.standard.register(defaults: ["CreateStageNum": 0])
       if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == true {
          print("\n--- ユーザーは広告削除の課金をしています ---\n")

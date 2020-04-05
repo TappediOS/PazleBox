@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import TapticEngine
+import Firebase
 
 class AboutPazzleMakerTableviewController: UITableViewController {
    
@@ -30,7 +31,6 @@ class AboutPazzleMakerTableviewController: UITableViewController {
    
    private func SetUpLabelText() {
       //UserInfoLabel.text = NSLocalizedString("UserInfo", comment: "")
-      
    }
       
    
@@ -68,16 +68,40 @@ class AboutPazzleMakerTableviewController: UITableViewController {
    }
    
    private func TapPrivacyPolicy() {
-      
+      let url = URL(string: "https://raw.githubusercontent.com/TappediOS/PazleBox/sub/Privacy%20Policy")
+      if let OpenURL = url {
+         if UIApplication.shared.canOpenURL(OpenURL){
+            Analytics.logEvent("OpenPrivacyPolicy", parameters: nil)
+            UIApplication.shared.open(OpenURL)
+         }else{
+            Analytics.logEvent("CantOpenOpenPrivacyPolicy", parameters: nil)
+            print("URL nil ちゃうのにひらけない")
+         }
+      }else{
+         print("URL 開こうとしたらNilやった")
+      }
    }
    
    private func TapTermsOfService() {
-      
+      let url = URL(string: "https://raw.githubusercontent.com/TappediOS/PazleBox/sub/User%20Agreement")
+      if let OpenURL = url {
+         if UIApplication.shared.canOpenURL(OpenURL){
+            Analytics.logEvent("OpenUserAgreement", parameters: nil)
+            UIApplication.shared.open(OpenURL)
+         }else{
+            Analytics.logEvent("CantOpenUserAgreement", parameters: nil)
+            print("URL nil ちゃうのにひらけない")
+         }
+      }else{
+         Analytics.logEvent("CantOpenURLWithNilSetting", parameters: nil)
+         print("URL 開こうとしたらNilやった")
+      }
    }
    
    private func TapLicense() {
       if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
          UIApplication.shared.open(url, options: [:], completionHandler: nil)
+         Analytics.logEvent("OpenLicense", parameters: nil)
       }
    }
    
