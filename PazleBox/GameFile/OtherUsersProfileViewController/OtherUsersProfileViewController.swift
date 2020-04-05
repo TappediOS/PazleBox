@@ -89,6 +89,10 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
    
    func SetUpNavigationController(name: String) {
       self.navigationItem.title = name
+      
+      let ellipsisItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis"), style: .plain, target: self, action: #selector(TapEllipsisButton(sender:)))
+      ellipsisItem.tintColor = .systemGray4
+      self.navigationItem.setRightBarButton(ellipsisItem, animated: true)
    }
    
    func SetUpUserProfileTableView() {
@@ -179,10 +183,19 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
       print("FollowOrUnFollowButtonがタップされた")
    }
    
+   @objc func TapEllipsisButton(sender: UIBarButtonItem) {
+      print("ellipsisからのアクションシート表示")
+      showActionSheetForReportOrBlockUser()
+   }
+   
+   
    @objc func TapOtherUsersPostReportButton(_ sender: UIButton) {
       let rowNum = sender.tag
       print("\(rowNum)番目のcellの報告ボタンがタップされました")
-      
+      showActionSheetForReportOrBlockUser()
+   }
+   
+   private func showActionSheetForReportOrBlockUser() {
       let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
              
       let ReportAction = UIAlertAction(title: "Report", style: .destructive, handler: { (action: UIAlertAction!) in
