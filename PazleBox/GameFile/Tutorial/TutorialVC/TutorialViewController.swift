@@ -378,9 +378,10 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       print("(\(CheckStandardX) , \(CheckStandardY))\n")
       
       if (PiceEndX > CheckStandardX) && (PiceStarY < CheckStandardY) {
-         print("\nゴミ箱の上にあった. PiceArryNum = \(SentNum)")
-         print("(\(PiceEndX) , \(PiceStarY)\n)")
-         return true
+         //print("\nゴミ箱の上にあった. PiceArryNum = \(SentNum)")
+         //print("(\(PiceEndX) , \(PiceStarY)\n)")
+         //チュートリアルの場合は必ずfalseが帰るようにしてピースを削除させなくする
+         //return true
       }
       return false
    }
