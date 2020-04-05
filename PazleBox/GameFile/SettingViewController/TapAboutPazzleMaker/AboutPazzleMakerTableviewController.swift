@@ -37,12 +37,10 @@ class AboutPazzleMakerTableviewController: UITableViewController {
    // MARK: - Table view data source
    // セクションの数を返します
    override func numberOfSections(in tableView: UITableView) -> Int {
-         // #warning Incomplete implementation, return the number of sections
       return numOfSection
    }
 
    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-           // #warning Incomplete implementation, return the number of rows
       switch section {
       case 0:
          return firstNumberOfRowsInSection
@@ -52,26 +50,35 @@ class AboutPazzleMakerTableviewController: UITableViewController {
    }
       
    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      tableView.deselectRow(at: indexPath, animated: true)
       print("section 番号: \(indexPath.section)")
       print("index   番号: \(indexPath.row)")
          
-//      switch indexPath.section {
-//      case 0:
-//         //TapUserInfo(rowNum: indexPath.row)
-//      case 1:
-//         //TapNoAds(rowNum: indexPath.row)
-//      case 2:
-//         //TapOther(rowNum: indexPath.row)
-//      default:
-//         print("ここにはこない")
-//         return
-//      }
+      switch indexPath.row {
+      case 0:
+         TapPrivacyPolicy()
+      case 1:
+         TapTermsOfService()
+      case 2:
+         TapLicense()
+      default:
+         print("ここにはこない")
+         return
+      }
+   }
+   
+   private func TapPrivacyPolicy() {
       
-     // if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
-      //   UIApplication.shared.open(url, options: [:], completionHandler: nil)
-     // }
+   }
+   
+   private func TapTermsOfService() {
       
-      tableView.deselectRow(at: indexPath, animated: true)
+   }
+   
+   private func TapLicense() {
+      if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
+         UIApplication.shared.open(url, options: [:], completionHandler: nil)
+      }
    }
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }

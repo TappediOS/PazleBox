@@ -63,7 +63,7 @@ extension SettingTableViewController {
       Analytics.logEvent("TapAboutPazzleMaker", parameters: nil)
       
       let AboutPMSB = UIStoryboard(name: "AboutPazzleMakerTableviewSB", bundle: nil)
-      let AboutPMVC = AboutPMSB.instantiateViewController(withIdentifier: "AboutPazzleMakerTable") as! AboutPazzleMakerTableviewController
+      let AboutPMVC = AboutPMSB.instantiateViewController(withIdentifier: "AboutPazzleMakerTableview")
       
       AboutPMVC.modalPresentationStyle = .fullScreen
       
