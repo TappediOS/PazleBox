@@ -48,8 +48,8 @@ extension TutorialViewController {
       NotificationCenter.default.addObserver(self, selector: #selector(PiceTouchMovedCatchNotification(notification:)), name: .PiceTouchMoved, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(PiceTouchEndedCatchNotification(notification:)), name: .PiceTouchEnded, object: nil)
       
-      NotificationCenter.default.addObserver(self, selector: #selector(ErrSentStageCatchNotification(notification:)), name: .ErrSentStageToFireStore, object: nil)
-      NotificationCenter.default.addObserver(self, selector: #selector(SuccessSentStagePiceTouchEndedCatchNotification(notification:)), name: .SuccessSentStageToFireStore, object: nil)
+      //NotificationCenter.default.addObserver(self, selector: #selector(ErrSentStageCatchNotification(notification:)), name: .ErrSentStageToFireStore, object: nil)
+      //NotificationCenter.default.addObserver(self, selector: #selector(SuccessSentStagePiceTouchEndedCatchNotification(notification:)), name: .SuccessSentStageToFireStore, object: nil)
       
       NotificationCenter.default.addObserver(self, selector: #selector(AdvanceTutorialCatchNotification(notificaton:)), name: .AdvanceTutorial, object: nil)
       
@@ -128,7 +128,7 @@ extension TutorialViewController {
       let Image = UIImage(named: "Pouse.png")?.ResizeUIImage(width: 128, height: 128)
       OptionButton.setImage(Image, for: .normal)
       view.addSubview(OptionButton)
-      OptionButton.isEnabled = false
+      OptionButton.isEnabled = true
    }
     
    func InitOnPiceView() {

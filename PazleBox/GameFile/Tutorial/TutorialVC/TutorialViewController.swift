@@ -681,7 +681,30 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
    }
    
    @objc func TapOptionButton() {
-
+      print("Tap OptionButton")
+      Play3DtouchLight()
+      GameSound.PlaySoundsTapButton()
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      //TODO:- ローカライズすること
+      ComleateView.addButton(NSLocalizedString("チュートリアルを終了", comment: "")){
+         if self.FinishChouseResPuzzleButton?.isHidden == false{
+            self.FinishChouseResPuzzleButton?.hero.id = self.HeroID.CreateBackAndCreatingFinButton
+         }
+         self.dismiss(animated: true)
+         self.Play3DtouchHeavy()
+         self.GameSound.PlaySoundsTapButton()
+         Analytics.logEvent("TapHomeCreateing", parameters: nil)
+      }
+      
+      ComleateView.addButton(NSLocalizedString("Cansel", comment: "")){
+         self.Play3DtouchHeavy()
+         self.GameSound.PlaySoundsTapButton()
+      }
+      
+      let title = NSLocalizedString("Pouse", comment: "")
+      let subTitle = NSLocalizedString("チュートリアルを終了しますか？", comment: "")   //TODO:- ローカライズすること
+      ComleateView.showInfo(title, subTitle: subTitle)
    }
    
    
@@ -761,120 +784,12 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       self.FinishChouseResPuzzleButton?.isEnabled = false
       self.FinishChouseResPuzzleButton?.alpha = 0.65
       
-      //MARK:- Tutorial
+      //MARK:- Tutorial終了
       tutorialManager.finishTapFinChoseResButton()
-      
-      //MARK:- チュートリアルなのでセーブする処理はしないよ。
-      //SaveStageUserCreated()
    }
    
-   func trimmingImage(_ image: UIImage, trimmingArea: CGRect) -> UIImage {
-       let imgRef = image.cgImage?.cropping(to: trimmingArea)
-       let trimImage = UIImage(cgImage: imgRef!, scale: image.scale, orientation: image.imageOrientation)
-       return trimImage
-   }
-   
-   //UIImageをDataにして返す関数
-   private func SaveStageViewUseScreenshot() -> NSData {
-      //コンテキスト開始
-      UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0.0)
-      //viewを書き出す
-      self.view.drawHierarchy(in: view.frame, afterScreenUpdates: false)
-      // imageにコンテキストの内容を書き出す
-      let GetAllViewImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-      //コンテキストを閉じる
-      UIGraphicsEndImageContext()
-            
-      if let UseImage = GetAllViewImage.cropping(to: ( BackImageView?.GetRectForScreenshot() )!) {
-         let ResizeW = UseImage.size.width * 0.285
-         let ResizeH = UseImage.size.height * 0.285
-         let RetruenImage = UseImage.ResizeUIImage(width: ResizeW, height: ResizeH)
-         return RetruenImage?.pngData() as! NSData
-      }else{
-         fatalError()
-      }
-   }
-   
-   
-   //MARK:- 保存する関数
-   //チュートリアルなんで保存しないよー。
-   private func SaveStageUserCreated() {
-      
-      //ローディングアニメーション開始
-      //止める時は，下の2つの関数のいずれかで停止。
-      // ErrSentStageCatchNotification()
-      // SuccessSentStagePiceTouchEndedCatchNotification()
-//      self.StartLoadingAnimation()
-//
-//      let SaveDataBase = UserCreateStageDataBase()
-//      let ImageData: NSData = SaveStageViewUseScreenshot()
-//
-//      SaveDataBase.AddStage(StageArrayForContents: FillContentsArray, MaxPiceNum: PiceImageArray.count,
-//                            PiceArry: PiceImageArray, ImageData: ImageData)
-//
-//      let UID = UserDefaults.standard.object(forKey: "UID") as! String
-//      let FireStore = Firestores(uid: UID)
-//
-//      FireStore.AddStageData(StageArrayForContents: FillContentsArray, MaxPiceNum: PiceImageArray.count,
-//                             PiceArry: PiceImageArray, ImageData: ImageData)
-//
-      
-   }
-   
-   
-   //MARK:- 保存成功と失敗を受け取る関数
-   @objc func ErrSentStageCatchNotification(notification: Notification) -> Void {
-      print("Errした通知受け取った。")
-      StopLoadingAnimation()
-      Play3DtouchError()
-      ShowErrSentFireStoreSaveAlertView()
-      Analytics.logEvent("ErrCleateStageCount", parameters: nil)
-   }
-   
-   @objc func SuccessSentStagePiceTouchEndedCatchNotification(notification: Notification) -> Void {
-      print("成功した通知受け取った。")
-      IncrementCreateStageNum()
-      StopLoadingAnimation()
-      Play3DtouchSuccess()
-      ShowCompleteSaveAlertView()
-      Analytics.logEvent("CreateStageCount", parameters: nil)
-   }
 
-   private func ShowErrSentFireStoreSaveAlertView() {
-      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
-      let ComleateView = SCLAlertView(appearance: Appearanse)
-      ComleateView.addButton("OK"){
-         self.dismiss(animated: true)
-         self.Play3DtouchHeavy()
-         self.GameSound.PlaySoundsTapButton()
-      }
-      let Error = NSLocalizedString("err", comment: "")
-      let errSave = NSLocalizedString("errSave", comment: "")
-      let checkNet = NSLocalizedString("checkNet", comment: "")
-      ComleateView.showError(Error, subTitle: errSave + "\n" + checkNet)
-   }
-   
-   private func ShowCompleteSaveAlertView() {
-      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
-      let ComleateView = SCLAlertView(appearance: Appearanse)
-      ComleateView.addButton("OK"){
-         self.dismiss(animated: true)
-         self.Play3DtouchHeavy()
-         self.GameSound.PlaySoundsTapButton()
-      }
-      let Suc = NSLocalizedString("suc", comment: "")
-      let sucSave = NSLocalizedString("sucSave", comment: "")
-      ComleateView.showSuccess(Suc, subTitle: sucSave)
-   }
-   
-   private func IncrementCreateStageNum() {
-      let CreateStageNum: Int = UserDefaults.standard.integer(forKey: "CreateStageNum")
-      print("\nステージ送信完了したので登録しているステージ数を\nインクリメントします。")
-      UserDefaults.standard.set(CreateStageNum + 1, forKey: "CreateStageNum")
-      let AfterCreateStageNum: Int = UserDefaults.standard.integer(forKey: "CreateStageNum")
-      print("インクリメント完了しました")
-      print("登録数は：　\(CreateStageNum) から　\(AfterCreateStageNum) に更新されました\n\n")
-   }
+
    
    //MARK: Tutorial
    //MARK:- Viewがタップされたときのイベント
