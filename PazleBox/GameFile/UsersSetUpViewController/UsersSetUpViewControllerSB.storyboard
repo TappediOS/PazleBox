@@ -84,7 +84,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="arrow.2.circlepath.circle.fill" catalog="system"/>
+                                <state key="normal" image="arrow.2.circlepath.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="44" scale="large" weight="semibold"/>
+                                </state>
                                 <connections>
                                     <action selector="TapReLoadCheckUserExistFireStoreButton:" destination="hID-nN-Xb8" eventType="touchUpInside" id="nhi-62-Ef7"/>
                                 </connections>
