@@ -19,7 +19,7 @@ extension SettingTableViewController {
       case 1:
          TapContactUs()
       case 2:
-         TapCredit()
+         TapAboutPazzleMaker()
       default:
          print("ここはありえないよね。")
          return
@@ -59,11 +59,16 @@ extension SettingTableViewController {
       }
    }
    
-   private func TapCredit() {
-      Analytics.logEvent("TapCredit", parameters: nil)
-      if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
-         UIApplication.shared.open(url, options: [:], completionHandler: nil)
-      }
+   private func TapAboutPazzleMaker() {
+      Analytics.logEvent("TapAboutPazzleMaker", parameters: nil)
+      
+      let AboutPMSB = UIStoryboard(name: "AboutPazzleMakerTableviewSB", bundle: nil)
+      let AboutPMVC = AboutPMSB.instantiateViewController(withIdentifier: "AboutPazzleMakerTable") as! AboutPazzleMakerTableviewController
+      
+      AboutPMVC.modalPresentationStyle = .fullScreen
+      
+      self.navigationController?.pushViewController(AboutPMVC, animated: true)
+
    }
    
 }
