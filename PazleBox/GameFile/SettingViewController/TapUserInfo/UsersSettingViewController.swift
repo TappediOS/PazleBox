@@ -16,15 +16,7 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
    
    let numOfSection = 2
    let firstNumberOfRowsInSection = 1
-   let secondNumberOfRowsInSection = 2
-   
-   
-   @IBOutlet weak var NicNameTextField: UITextField!
-   
-   @IBOutlet weak var PlayCountLabel: UILabel!
-   @IBOutlet weak var PlayCountNumLabel: UILabel!
-   @IBOutlet weak var PlaiedCountLabel: UILabel!
-   @IBOutlet weak var PlayedCountNumLabel: UILabel!
+   let secondNumberOfRowsInSection = 1
    
    var db: Firestore!
    
@@ -42,44 +34,13 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
       
       SetUpView()
       SetUpNavigationBar()
-      SetUpTextField()
-      SetUpLabelText()
-      SetUpFireStoreSetting()
-      //自分の取得する
-      GetUserDataFromDataBase()
+
    }
    
    //NOTE: viewWillDisappearにすると，Pagesheetを下げた瞬間に呼ばれる。
    override func viewDidDisappear(_ animated: Bool) {
       super.viewDidDisappear(true)
-      print("表示時　のニックネーム： \(self.usersName)")
-      print("閉じる時のニックネーム： \(String(describing: self.NicNameTextField.text))")
-      
-      //nilはだめ。
-      guard let newName = self.NicNameTextField.text else { return }
-      
-      //変わってない場合さよなら
-      guard newName != usersName else {
-         print("ニックネーム変わってないよね。")
-         return
-      }
-      
-      //空白文字の場合さよなら
-      guard newName != "" else { return }
-      
-      //書き込み
-      let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
-      db.collection("users").document(uid).updateData([
-         "name": newName
-      ]) { err in
-         if let err = err {
-            print("\nニックネームアップデートエラー: \(err)")
-            self.Play3DtouchError()
-         } else {
-            print("\nニックネームアップデート成功!")
-            Analytics.logEvent("changeNicName", parameters: ["afterName": newName])
-         }
-      }
+
       
    }
    
@@ -88,145 +49,10 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
    }
    
    private func SetUpNavigationBar() {
-      let stopItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(TapDoneButton))
-      stopItem.tintColor = .black
-      self.navigationItem.leftBarButtonItem = stopItem
-   }
-   
-   private func SetUpTextField() {
-      //文字入ってない時はdoneを押せないようにする処理
-      NicNameTextField.enablesReturnKeyAutomatically = true
-      //doneにする処理
-      NicNameTextField.returnKeyType = .done
-      NicNameTextField.delegate = self
-      //オブザーバ登録
-      NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(notification:)),
-                                             name: UITextField.textDidChangeNotification, object: NicNameTextField)
+      //TODO:- ローカライズ
+      self.navigationItem.title = NSLocalizedString("Account", comment: "")
    }
 
-   //オブザーバの片付けをする。
-   deinit {
-      NotificationCenter.default.removeObserver(self)
-   }
-   
-   private func SetUpLabelText() {
-      NicNameTextField.text = NSLocalizedString("Guest", comment: "")
-      
-      PlayCountLabel.text = NSLocalizedString("PlayCount", comment: "")
-      PlayCountNumLabel.text = "nil"
-      
-      PlaiedCountLabel.text = NSLocalizedString("NumberOfStagesPlayed", comment: "")
-      PlayedCountNumLabel.text = "nil"
-
-   }
-   
-   private func FSSetUpLabelText(document: DocumentSnapshot) {
-      if let userName = document.data()?["name"] as? String {
-         NicNameTextField.text = userName
-         usersName = userName
-      }
-      
-      if let ClearStageCount = document.data()?["ClearStageCount"] as? Int {
-         PlayCountNumLabel.text = String(ClearStageCount)
-      }
-   }
-   
-   //MARK:- あなたがステージをプレイした回数
-   private func CheckGameCenterPlayCount(document: DocumentSnapshot) {
-      if let ClearStageCount = document.data()?["ClearStageCount"] as? Int {
-         leaderBords.CheckUserCreatedStagesHaveBeenPlayed(playedCount: ClearStageCount)
-      }
-   }
-   
-   
-   //MARK:- あなたが作ったステージが他のプレーヤによってプレイされた回数
-   private func CheckGameCenterCreatedStagePlayCount() {
-      leaderBords.CheckSomeUserCreatedStagesHaveBeenPlayed(playCount: self.numOfStagePlayed)
-   }
-   
-   private func FSSetUPlayedCountNumLabelText() {
-      PlayedCountNumLabel.text = String(numOfStagePlayed)
-   }
-   
-   private func documentPlayCount(document: DocumentSnapshot) -> Int {
-      if let playCount = document["PlayCount"] as? Int {
-         return playCount
-      }
-      print("documentからプレイ回数が取得できてない。")
-      print("documentId = \(document.documentID)")
-      return 0
-   }
-   
-   private func SetUpFireStoreSetting() {
-      let settings = FirestoreSettings()
-      Firestore.firestore().settings = settings
-      db = Firestore.firestore()
-   }
-   
-   //MARK:-  ユーザデータ取得
-   private func GetUserDataFromDataBase() {
-      print("自分のデータの取得開始")
-      let uid = UserDefaults.standard.string(forKey: "UID") ?? ""
-      print("UID = \(uid)")
-      db.collection("users").document(uid).getDocument { (document, err) in
-         if let err = err {
-            print("データベースからのデータ取得エラー: \(err)")
-            self.Play3DtouchError()
-         }
-         
-         if let document = document, document.exists {
-            //ドキュメントが存在していたらセットアップをする
-            self.FSSetUpLabelText(document: document)
-            self.CheckGameCenterPlayCount(document: document)
-            
-         } else {
-            print("Document does not exist")
-            
-         }
-         print("ユーザネームとプレイ回数のデータの取得完了")
-      }
-      
-      db.collection("Stages").whereField("addUser", isEqualTo: uid).getDocuments() { (querySnapshot, err) in
-         if let err = err {
-            print("データベースからのデータ取得エラー: \(err)")
-            self.Play3DtouchError()
-         } else {
-            self.Play3DtouchSuccess()
-            for document in querySnapshot!.documents {
-               self.numOfStagePlayed += self.documentPlayCount(document: document)
-            }
-            self.FSSetUPlayedCountNumLabelText()
-            self.CheckGameCenterCreatedStagePlayCount()
-         }
-         print("作ったステージのプレイされた回数の取得完了")
-         print("合計は \(self.numOfStagePlayed)")
-      }
-   }
-   
-   //MARK:- テキストフィールドの処理を記載。
-   //制限を超えた場合は，表示されないようにする。
-   @objc func textFieldDidChange(notification: NSNotification) {
-      let textField = notification.object as! UITextField
-      if let text = textField.text {
-         if textField.markedTextRange == nil && text.count > maxTextfieldLength {
-            textField.text = text.prefix(maxTextfieldLength).description
-         }
-      }
-      
-   }
-   
-   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-       NicNameTextField.resignFirstResponder()
-       return true
-   }
-
-   //MARK:- NaviBarでバツボタン押されたときの処理
-   @objc func TapDoneButton() {
-      print("完了ボタンタップされた")
-      self.dismiss(animated: true, completion: {
-         print("SettingVCのdismiss完了")
-      })
-   }
    
    // MARK: - Table view data source
    // セクションの数を返します
@@ -255,10 +81,10 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
       
       switch indexPath.section {
       case 0:
-         TapNicName()
+         TapBlockAccounts()
          print("")
       case 1:
-         TapUserInfo(rowNum: indexPath.row)
+         TapDeleteAccount()
          print("")
       case 2:
          //TapOther(rowNum: indexPath.row)
@@ -272,12 +98,12 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
    }
    
    
-   func TapNicName() {
-      
+   func TapBlockAccounts() {
+      print("Block Accountsタップされた")
    }
    
-   func TapUserInfo(rowNum: Int) {
-      
+   func TapDeleteAccount() {
+      print("アカウント削除タップされた")
    }
    
    

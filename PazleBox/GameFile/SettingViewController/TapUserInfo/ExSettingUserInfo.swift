@@ -28,12 +28,12 @@ extension SettingTableViewController {
    
    func showUserSettingNavigationController() {
       let Storybord = UIStoryboard(name: "UsersSetting", bundle: nil)
-      let UserSettingNaviVC = Storybord.instantiateViewController(withIdentifier: "UserSettingNavigationC")
-      UserSettingNaviVC.modalPresentationStyle = .pageSheet
-      present(UserSettingNaviVC, animated: true, completion: {
-         print("UserSettingNaviVC画面にプレゼント完了")
-         Analytics.logEvent("OpenUserSettingNC", parameters: nil)
-      })
+      let UserSettingNaviVC = Storybord.instantiateViewController(withIdentifier: "UsersSettingVC")
+      UserSettingNaviVC.modalPresentationStyle = .fullScreen
+      
+      self.navigationController?.pushViewController(UserSettingNaviVC, animated: true)
+      Analytics.logEvent("OpenUserSettingNC", parameters: nil)
+
    }
    
    func showGameCenterViewController() {
