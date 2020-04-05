@@ -105,7 +105,7 @@ class CleateStageViewController: UIViewController {
    var BackGroundImageView: BackGroundImageViews?
    
    //MARK:- Piceがおける最大値
-   let MaxCanPutPiceNum = 7
+   let MaxCanPutPiceNum = 8
    var isMaxPutPice = false
       
    override func viewDidLoad() {
