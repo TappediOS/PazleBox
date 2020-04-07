@@ -182,18 +182,18 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
    @objc func TapFollowOrUnFollowButton(_ sender: UIButton) {
       print("FollowOrUnFollowButtonがタップされた")
    }
-   
+
+   //MARK:- BarItemからアクションシート表示
    @objc func TapEllipsisButton(sender: UIBarButtonItem) {
       if BlockList.contains(self.OtherUsersUID) == true {
          print("ブロックしてるからブロックするアクションシートは表示しない")
          return
       }
-      
       print("ellipsisからのアクションシート表示")
       showActionSheetForReportOrBlockUser()
    }
    
-   
+   //MARK:- TabelviewCellからアクションシート表示
    @objc func TapOtherUsersPostReportButton(_ sender: UIButton) {
       let rowNum = sender.tag
       print("\(rowNum)番目のcellの報告ボタンがタップされました")
