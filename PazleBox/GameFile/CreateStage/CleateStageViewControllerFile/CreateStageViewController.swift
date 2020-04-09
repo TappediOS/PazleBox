@@ -162,7 +162,7 @@ class CleateStageViewController: UIViewController {
       
       collectionView.collectionViewLayout.invalidateLayout()
       
-      //collectionView.hero.modifiers = [.cascade]
+      collectionView.hero.modifiers = [.cascade]
       collectionView.backgroundColor = UIColor.flatWhite().withAlphaComponent(0.5)
       
       InitHeroID()
