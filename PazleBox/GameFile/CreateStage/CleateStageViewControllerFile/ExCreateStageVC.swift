@@ -12,13 +12,15 @@ import Hero
 
 extension CleateStageViewController: UICollectionViewDataSource {
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      print("データベースのデータ数は,\(photos.count)")
-      return photos.count
+      print("使用するピースの数は, \(DefaultPiceSet.count)")
+      return DefaultPiceSet.count
    }
    
    //cellをそれぞれ返す
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as UICollectionViewCell
+      
+      print("cellNum = \(indexPath.item)")
       
       for subview in cell.contentView.subviews{
          subview.removeFromSuperview()
@@ -26,14 +28,14 @@ extension CleateStageViewController: UICollectionViewDataSource {
    
       let ImageView = UIImageView()
       ImageView.frame = cell.contentView.frame
-      ImageView.image = UIImage(contentsOfFile: Bundle.main.path(forResource: photos[indexPath.item], ofType: "png")!)?.ResizeUIImage(width: 64, height: 64)
+      ImageView.image = UIImage(contentsOfFile: Bundle.main.path(forResource: DefaultPiceSet[indexPath.item], ofType: "png")!)?.ResizeUIImage(width: 64, height: 64)
       
       cell.contentView.addSubview(ImageView)
       
       //heroつけた
       //消すんやったらInitHeroID()のCollecti onVie
       //のIDも削除したほうがいい
-      cell.hero.modifiers = [.fade, .scale(0.5)]
+      //cell.hero.modifiers = [.fade, .scale(0.5)]
       
       return cell
    }

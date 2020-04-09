@@ -83,16 +83,34 @@ class CleateStageViewController: UIViewController {
    let UsersUID = UserDefaults.standard.string(forKey: "UID")
    
    //いま対応してるのは，23,32,33,43,
-   let photos = ["33p7Red", "33p21Blue","23p13Green","43p10Red","23p5Red",
-   "23p14Green","43p19Red","33p34Red","23p12Green","23p11Red",
-   "43p26Blue", "33p8Green","43p8Green","33p25Blue","33p28Green",
-   "32p12Blue","32p3Red","43p32Blue","33p33Red","32p5Red",
-   "33p3Blue", "33p23Green","43p21Green","43p26Blue","43p28Blue",
-   "33p34Red","43p35Green","23p4Red","33p1Blue","32p13Green",
-   "33p16Blue", "33p11Red","33p38Red","23p7Green","32p3Red",
-   "43p34Blue","32p2Green","32p10Red","23p12Blue","43p14Green"]
+   let DefaultPiceSet = ["33p7Red", "33p21Blue","23p13Green","43p10Red","23p5Red",
+                         "23p14Green","43p19Red","33p34Red","23p12Green","23p11Red",
+                         "43p26Blue", "33p8Green","43p8Green","33p25Blue","33p28Green",
+                         "32p12Blue","32p3Red","43p32Blue","33p33Red","32p5Red",
+                         "33p3Blue", "33p23Green","43p21Green","43p26Blue","43p28Blue",
+                         "33p7Red", "33p21Blue","23p13Green","43p10Red","23p5Red",
+                         "23p14Green","43p19Red","33p34Red","23p12Green","23p11Red",
+                         "43p26Blue", "33p8Green","43p8Green","33p25Blue","33p28Green",
+                         "32p12Blue","32p3Red","43p32Blue","33p33Red","32p5Red",
+                         "33p3Blue", "33p23Green","43p21Green","43p26Blue","43p28Blue",
+                         "33p7Red", "33p21Blue","23p13Green","43p10Red","23p5Red",
+                         "23p14Green","43p19Red","33p34Red","23p12Green","23p11Red",
+                         "43p26Blue", "33p8Green","43p8Green","33p25Blue","33p28Green",
+                         "32p12Blue","32p3Red","43p32Blue","33p33Red","32p5Red",
+                         "33p3Blue", "33p23Green","43p21Green","43p26Blue","43p28Blue",
+                         "33p7Red", "33p21Blue","23p13Green","43p10Red","23p5Red",
+                         "23p14Green","43p19Red","33p34Red","23p12Green","23p11Red",
+                         "43p26Blue", "33p8Green","43p8Green","33p25Blue","33p28Green",
+                         "32p12Blue","32p3Red","43p32Blue","33p33Red","32p5Red",
+                         "33p3Blue", "33p23Green","43p21Green","43p26Blue","43p28Blue",
+                         "33p7Red", "33p21Blue","23p13Green","43p10Red","23p5Red",
+                         "23p14Green","43p19Red","33p34Red","23p12Green","23p11Red",
+                         "43p26Blue", "33p8Green","43p8Green","33p25Blue","33p28Green",
+                         "32p12Blue","32p3Red","43p32Blue","33p33Red","32p5Red",
+                         "33p3Blue", "33p23Green","43p21Green","43p26Blue","43p28Blue"
+                        ]
    
-   let sectionInsets = UIEdgeInsets(top: 0, left: 17, bottom: 0, right: -17)
+   let sectionInsets = UIEdgeInsets(top: 0, left: 17, bottom: 0, right: 17)
    let itemsPerRow: CGFloat = 1 //Cellを横に何個入れるか
    
    var CanUseAreaHeight: CGFloat = 0
@@ -105,7 +123,7 @@ class CleateStageViewController: UIViewController {
    var BackGroundImageView: BackGroundImageViews?
    
    //MARK:- Piceがおける最大値
-   let MaxCanPutPiceNum = 8
+   let MaxCanPutPiceNum = 7
    var isMaxPutPice = false
       
    override func viewDidLoad() {
@@ -144,7 +162,7 @@ class CleateStageViewController: UIViewController {
       
       collectionView.collectionViewLayout.invalidateLayout()
       
-      collectionView.hero.modifiers = [.cascade]
+      //collectionView.hero.modifiers = [.cascade]
       collectionView.backgroundColor = UIColor.flatWhite().withAlphaComponent(0.5)
       
       InitHeroID()
@@ -606,8 +624,8 @@ class CleateStageViewController: UIViewController {
    func TappedCell(CellNum: Int) {
       //画像の名前を色を除いて取得
       //例えば，23p43Blueの場合は23p43を抽出する
-      let PiceName: String = photos[CellNum].pregReplace(pattern: "(Green|Blue|Red)", with: "")
-      let PiceStyle = photos[CellNum].pregReplace(pattern: "p[0-9]+(Green|Blue|Red)", with: "")
+      let PiceName: String = DefaultPiceSet[CellNum].pregReplace(pattern: "(Green|Blue|Red)", with: "")
+      let PiceStyle = DefaultPiceSet[CellNum].pregReplace(pattern: "p[0-9]+(Green|Blue|Red)", with: "")
       switch  PiceStyle{
       case "23":
          GreenFlame = GreenFlame2_3
