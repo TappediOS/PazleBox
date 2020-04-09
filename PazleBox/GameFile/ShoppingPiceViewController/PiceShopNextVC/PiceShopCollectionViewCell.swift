@@ -33,6 +33,6 @@ class PiceShopCollectionViewCell: UICollectionViewCell {
    
    public func setPiceShopPiceImageView(image: UIImage) {
       self.PiceShopPiceImageView.image = image
-      self.PiceShopPiceImageView.contentMode = .scaleAspectFill
+      self.PiceShopPiceImageView.contentMode = .scaleToFill
    }
 }
