@@ -79,13 +79,13 @@ extension PiceShopEachViewController: UICollectionViewDelegateFlowLayout {
        return sectionInsets
    }
 
-   // セルの行間の設定
+   // セルの行間(n行目とn+1行目)の設定
    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
       return 18.0
    }
 
 
    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-       return 0
+      return self.cellPerInset - 2.5
    }
 }
