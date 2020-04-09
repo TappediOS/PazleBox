@@ -51,7 +51,8 @@ class PiceShopEachViewController: UIViewController {
    //アプリを再起動するとキャッシュはクリアされるらしい
    let CollectionViewImageCache = NSCache<AnyObject, AnyObject>()
    
-   //20セットあるよ
+   
+   
    let PiceSet1 = ["23p1Red", "23p1Green", "23p1Blue",
                    "23p4Red", "23p4Green", "23p4Blue",
                    "23p6Red", "23p6Green", "23p6Blue",
@@ -129,11 +130,11 @@ class PiceShopEachViewController: UIViewController {
                    "43p24Red", "43p24Green", "43p24Blue",
                   ]
    
-   let PiceSet4 = ["33p18", "33p18", "33p18",
-                   "33p39", "33p39", "33p39",
-                   "33p40", "33p40", "33p40",
-                   "33p41", "33p41", "33p41",
-                   "33p42", "33p42", "33p42",
+   let PiceSet4 = ["33p18Red", "33p18Green", "33p18Blue",
+                   "33p39Red", "33p39Green", "33p39Blue",
+                   "33p40Red", "33p40Green", "33p40Blue",
+                   "33p41Red", "33p41Green", "33p41Blue",
+                   "33p42Red", "33p42Green", "33p42Blue",
                    
                    "43p25Red", "43p25Green", "43p25Blue",
                    "43p27Red", "43p27Green", "43p27Blue",
