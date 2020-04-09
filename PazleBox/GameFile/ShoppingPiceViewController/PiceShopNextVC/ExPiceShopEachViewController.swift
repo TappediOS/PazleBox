@@ -32,14 +32,13 @@ extension PiceShopEachViewController: UICollectionViewDataSource {
          cell.setPiceShopPiceImageView(image: cachedImage)
          return cell
       }
-      
+
       //Noキャッシュならば，画像データを生成する//ResizeUIImage()はとても遅い。
       let PiceImage = UIImage(contentsOfFile: Bundle.main.path(forResource: PiceImageName, ofType: "png")!)?.ResizeUIImage(width: 128, height: 128)
             
       self.CollectionViewImageCache.setObject(PiceImage!, forKey: PiceImageName as AnyObject)
       cell.setPiceShopPiceImageView(image: PiceImage!)
 
-      //cell.hero.modifiers = [.fade, .scale(0.5)]
       return cell
     }
 }

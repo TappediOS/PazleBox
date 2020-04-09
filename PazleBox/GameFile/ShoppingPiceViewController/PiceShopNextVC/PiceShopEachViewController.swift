@@ -214,8 +214,9 @@ class PiceShopEachViewController: UIViewController {
    }
    
    private func SetUpPiceImageCache() {
-      DispatchQueue.global(qos: .userInitiated).async {
+      DispatchQueue.global(qos: .userInteractive).async {
          for PiceName in self.UsingPiceSet {
+            if self.CollectionViewImageCache.object(forKey: PiceName as AnyObject) != nil { continue } //既にキャッシュされてたらコンティニュー
             let PiceImage = UIImage(contentsOfFile: Bundle.main.path(forResource: PiceName, ofType: "png")!)?.ResizeUIImage(width: 128, height: 128)
             self.CollectionViewImageCache.setObject(PiceImage!, forKey: PiceName as AnyObject)
          }
