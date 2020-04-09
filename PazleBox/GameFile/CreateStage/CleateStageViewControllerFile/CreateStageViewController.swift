@@ -83,32 +83,49 @@ class CleateStageViewController: UIViewController {
    let UsersUID = UserDefaults.standard.string(forKey: "UID")
    
    //いま対応してるのは，23,32,33,43,
-   let DefaultPiceSet = ["33p7Red", "33p21Blue","23p13Green","43p10Red","23p5Red",
-                         "23p14Green","43p19Red","33p34Red","23p12Green","23p11Red",
-                         "43p26Blue", "33p8Green","43p8Green","33p25Blue","33p28Green",
-                         "32p12Blue","32p3Red","43p32Blue","33p33Red","32p5Red",
-                         "33p3Blue", "33p23Green","43p21Green","43p26Blue","43p28Blue",
-                         "33p7Red", "33p21Blue","23p13Green","43p10Red","23p5Red",
-                         "23p14Green","43p19Red","33p34Red","23p12Green","23p11Red",
-                         "43p26Blue", "33p8Green","43p8Green","33p25Blue","33p28Green",
-                         "32p12Blue","32p3Red","43p32Blue","33p33Red","32p5Red",
-                         "33p3Blue", "33p23Green","43p21Green","43p26Blue","43p28Blue",
-                         "33p7Red", "33p21Blue","23p13Green","43p10Red","23p5Red",
-                         "23p14Green","43p19Red","33p34Red","23p12Green","23p11Red",
-                         "43p26Blue", "33p8Green","43p8Green","33p25Blue","33p28Green",
-                         "32p12Blue","32p3Red","43p32Blue","33p33Red","32p5Red",
-                         "33p3Blue", "33p23Green","43p21Green","43p26Blue","43p28Blue",
-                         "33p7Red", "33p21Blue","23p13Green","43p10Red","23p5Red",
-                         "23p14Green","43p19Red","33p34Red","23p12Green","23p11Red",
-                         "43p26Blue", "33p8Green","43p8Green","33p25Blue","33p28Green",
-                         "32p12Blue","32p3Red","43p32Blue","33p33Red","32p5Red",
-                         "33p3Blue", "33p23Green","43p21Green","43p26Blue","43p28Blue",
-                         "33p7Red", "33p21Blue","23p13Green","43p10Red","23p5Red",
-                         "23p14Green","43p19Red","33p34Red","23p12Green","23p11Red",
-                         "43p26Blue", "33p8Green","43p8Green","33p25Blue","33p28Green",
-                         "32p12Blue","32p3Red","43p32Blue","33p33Red","32p5Red",
-                         "33p3Blue", "33p23Green","43p21Green","43p26Blue","43p28Blue"
+   let DefaultPiceSet = ["23p2Blue", "23p3Green", "23p5Red", "23p7Green", "23p11Red",
+                         "23p12Green", "23p13Green", "32p1Red", "32p2Blue", "32p5Blue",
+                         "32p7Green", "32p10Red", "32p12Green", "32p13Red", "33p1Blue",
+                         "33p2Red", "33p3Green", "33p6Red", "33p12Blue", "33p14Blue",
+                         "33p24Green", "33p28Green", "33p37Blue", "43p9Green", "43p26Blue",
                         ]
+   
+   let PiceSet1 = ["23p1Red", "23p4Red", "23p6Red", "23p8Red", "23p9Red",
+                  "23p10Red", "23p14Red", "32p3Red", "32p4Red","32p6Red",
+                  "32p8Red", "32p9Red", "32p10Red", "32p14Red", "33p5Red",
+                  "33p16Red", "33p23Red", "43p1Red", "43p2Red", "43p6Red",
+                  ]
+   
+   
+   let PiceSet2 = ["33p8Red", "33p9Red", "33p10Red", "33p11Red", "33p13Red",
+                   "33p15Red", "33p17Red", "33p19Red", "33p20Red", "33p22Red",
+                   "33p25Red", "33p26Red", "33p27Red", "33p43Red", "33p44Red",
+                   "43p3Red", "43p4Red", "43p5Red", "43p7Red", "43p8Red",
+   ]
+
+   
+   let PiceSet3 = ["33p7Red", "33p29Red", "33p30Red", "33p31Red", "33p32Red",
+                   "33p33Red", "33p34Red", "33p35Red", "33p36Red", "33p38Red",
+                   "43p10Red", "43p11Red", "43p12Red", "43p13Red", "43p14Red",
+                   "43p15Red", "43p16Red", "43p17Red", "43p18Red", "43p19Red",
+                   "43p20Red", "43p21Red", "43p22Red", "43p23Red", "43p24Red",
+                  ]
+   
+   
+   let PiceSet4 = ["33p18Red", "33p39Red", "33p40Red", "33p41Red", "33p42Red",
+                   "43p25Red", "43p27Red", "43p28Red", "43p29Red", "43p30Red",
+                   "43p31Red", "43p32Red", "43p33Red", "43p34Red", "43p35Red",
+                   "43p36Red", "43p37Red", "43p38Red", "43p39Red", "43p40Red",
+                   "43p41Red", "43p42Red", "43p43Red", "43p44Red", "43p45Red",
+                   "43p46Red", "43p47Red", "43p48Red", "43p49Red", "43p50Red",
+                  ]
+   
+   var UsingPiceSet = Array<String>()
+   
+   
+   
+   
+   
    
    let sectionInsets = UIEdgeInsets(top: 0, left: 17, bottom: 0, right: 17)
    let itemsPerRow: CGFloat = 1 //Cellを横に何個入れるか
@@ -154,16 +171,8 @@ class CleateStageViewController: UIViewController {
       
       CrearCheckedStage()
       
-      
-      collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
- 
-      collectionView.delegate = self
-      collectionView.dataSource = self
-      
-      collectionView.collectionViewLayout.invalidateLayout()
-      
-      collectionView.hero.modifiers = [.cascade]
-      collectionView.backgroundColor = UIColor.flatWhite().withAlphaComponent(0.5)
+      InitUsingPiceSet()
+      SetUpCollectionView()
       
       InitHeroID()
       InitAccessibilityIdentifires()
@@ -624,8 +633,8 @@ class CleateStageViewController: UIViewController {
    func TappedCell(CellNum: Int) {
       //画像の名前を色を除いて取得
       //例えば，23p43Blueの場合は23p43を抽出する
-      let PiceName: String = DefaultPiceSet[CellNum].pregReplace(pattern: "(Green|Blue|Red)", with: "")
-      let PiceStyle = DefaultPiceSet[CellNum].pregReplace(pattern: "p[0-9]+(Green|Blue|Red)", with: "")
+      let PiceName: String = UsingPiceSet[CellNum].pregReplace(pattern: "(Green|Blue|Red)", with: "")
+      let PiceStyle = UsingPiceSet[CellNum].pregReplace(pattern: "p[0-9]+(Green|Blue|Red)", with: "")
       switch  PiceStyle{
       case "23":
          GreenFlame = GreenFlame2_3

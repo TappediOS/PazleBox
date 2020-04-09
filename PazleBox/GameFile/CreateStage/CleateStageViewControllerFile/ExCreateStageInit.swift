@@ -140,4 +140,52 @@ extension CleateStageViewController {
       OptionButton.accessibilityIdentifier = "CleateStageVC_OptionButton"
       BackImageView?.accessibilityIdentifier = "CleateStageVC_BackImageView"
    }
+   
+   
+   func InitUsingPiceSet() {
+      UsingPiceSet = DefaultPiceSet
+      
+      let userdefaults = UserDefaults.standard
+      
+      if userdefaults.bool(forKey: "BuyPiceSet1") == true {
+         print("ユーザはピースセット1を購入しています")
+         UsingPiceSet += PiceSet1
+      } else {
+         print("ユーザはピースセット1を購入していません")
+      }
+      
+      if userdefaults.bool(forKey: "BuyPiceSet2") == true {
+         print("ユーザはピースセット2を購入しています")
+         UsingPiceSet += PiceSet2
+      } else {
+         print("ユーザはピースセット2を購入していません")
+      }
+      
+      if userdefaults.bool(forKey: "BuyPiceSet3") == true {
+         print("ユーザはピースセット3を購入しています")
+         UsingPiceSet += PiceSet3
+      } else {
+         print("ユーザはピースセット3を購入していません")
+      }
+      
+      if userdefaults.bool(forKey: "BuyPiceSet4") == true {
+         print("ユーザはピースセット4を購入しています")
+         UsingPiceSet += PiceSet4
+      } else {
+         print("ユーザはピースセット4を購入していません")
+      }
+   }
+   
+   
+   func SetUpCollectionView() {
+      self.collectionView.collectionViewLayout.invalidateLayout()
+      self.collectionView.hero.modifiers = [.cascade]
+      self.collectionView.backgroundColor = UIColor.flatWhite().withAlphaComponent(0.5)
+      self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+      self.collectionView.collectionViewLayout.invalidateLayout()
+      self.collectionView.hero.modifiers = [.cascade]
+      self.collectionView.backgroundColor = UIColor.flatWhite().withAlphaComponent(0.5)
+      self.collectionView.delegate = self
+      self.collectionView.dataSource = self
+   }
 }

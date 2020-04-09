@@ -12,8 +12,8 @@ import Hero
 
 extension CleateStageViewController: UICollectionViewDataSource {
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      print("使用するピースの数は, \(DefaultPiceSet.count)")
-      return DefaultPiceSet.count
+      print("使用するピースの数は, \(UsingPiceSet.count)")
+      return UsingPiceSet.count
    }
    
    //cellをそれぞれ返す
@@ -26,7 +26,7 @@ extension CleateStageViewController: UICollectionViewDataSource {
    
       let ImageView = UIImageView()
       ImageView.frame = cell.contentView.frame
-      ImageView.image = UIImage(contentsOfFile: Bundle.main.path(forResource: DefaultPiceSet[indexPath.item], ofType: "png")!)?.ResizeUIImage(width: 64, height: 64)
+      ImageView.image = UIImage(contentsOfFile: Bundle.main.path(forResource: UsingPiceSet[indexPath.item], ofType: "png")!)?.ResizeUIImage(width: 64, height: 64)
       
       cell.contentView.addSubview(ImageView)
       

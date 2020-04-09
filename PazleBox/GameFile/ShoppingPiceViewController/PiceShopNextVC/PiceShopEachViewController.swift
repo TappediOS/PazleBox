@@ -99,7 +99,6 @@ class PiceShopEachViewController: UIViewController {
                    "43p5Red", "43p5Green", "43p5Blue",
                    "43p7Red", "43p7Green", "43p7Blue",
                    "43p8Red", "43p8Green", "43p8Blue",
-                   
                   ]
    
    let PiceSet3 = ["33p7Red", "33p7Green", "33p7Blue",
