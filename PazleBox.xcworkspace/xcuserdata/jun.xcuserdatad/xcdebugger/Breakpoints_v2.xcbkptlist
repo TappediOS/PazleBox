@@ -4343,9 +4343,9 @@
             filePath = "PazleBox/GameFile/ShoppingPiceViewController/PiceShopNextVC/PiceShopEachViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
-            landmarkName = "TapRestoreButton(_:)"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
+            landmarkName = "getPiceShopTag(tag:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4359,9 +4359,9 @@
             filePath = "PazleBox/GameFile/ShoppingPiceViewController/PiceShopNextVC/PiceShopEachViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
-            landmarkName = "TapRestoreButton(_:)"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
+            landmarkName = "LoadCollectionView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4663,8 +4663,8 @@
             filePath = "PazleBox/GameFile/ShoppingPiceViewController/PiceShopNextVC/ExPiceShopEachViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "collectionView(_:layout:minimumInteritemSpacingForSectionAt:)"
             landmarkType = "7">
          </BreakpointContent>

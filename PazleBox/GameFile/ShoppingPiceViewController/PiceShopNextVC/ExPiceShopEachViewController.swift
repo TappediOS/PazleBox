@@ -68,7 +68,8 @@ extension PiceShopEachViewController: UICollectionViewDelegateFlowLayout {
       case "42":
          hightPerItem *= 2 / 4
       default:
-         print("これ忘れているよ")
+         print("Cellの大きさを決定するときのSwitch文で，")
+         print("\(piceName)の追加忘れているよ")
       }
       
       let cellSize = CGSize(width: self.cellWide, height: hightPerItem)      
