@@ -90,34 +90,34 @@ class CleateStageViewController: UIViewController {
                          "33p24Green", "33p28Green", "33p37Blue", "43p9Green", "43p26Blue",
                         ]
    
-   let PiceSet1 = ["23p1Red", "23p4Red", "23p6Red", "23p8Red", "23p9Red",
-                  "23p10Red", "23p14Red", "32p3Red", "32p4Red","32p6Red",
-                  "32p8Red", "32p9Red", "32p10Red", "32p14Red", "33p5Red",
-                  "33p16Red", "33p23Red", "43p1Red", "43p2Red", "43p6Red",
+   let PiceSet1 = ["23p1Red", "23p4Green", "23p6Red", "23p8Red", "23p9Blue",
+                  "23p10Green", "23p14Green", "32p3Blue", "32p4Red","32p6Blue",
+                  "32p8Red", "32p9Green", "32p10Blue", "32p14Blue", "33p5Blue",
+                  "33p16Green", "33p23Red", "43p1Green", "43p2Blue", "43p6Red",
                   ]
    
    
-   let PiceSet2 = ["33p8Red", "33p9Red", "33p10Red", "33p11Red", "33p13Red",
-                   "33p15Red", "33p17Red", "33p19Red", "33p20Red", "33p22Red",
-                   "33p25Red", "33p26Red", "33p27Red", "33p43Red", "33p44Red",
-                   "43p3Red", "43p4Red", "43p5Red", "43p7Red", "43p8Red",
+   let PiceSet2 = ["33p8Red", "33p9Red", "33p10Blue", "33p11Red", "33p13Green",
+                   "33p15Green", "33p17Blue", "33p19Green", "33p20Green", "33p22Red",
+                   "33p25Red", "33p26Blue", "33p27Blue", "33p43Green", "33p44Red",
+                   "43p3Blue", "43p4Green", "43p5Green", "43p7Red", "43p8Red",
    ]
 
    
-   let PiceSet3 = ["33p7Red", "33p29Red", "33p30Red", "33p31Red", "33p32Red",
-                   "33p33Red", "33p34Red", "33p35Red", "33p36Red", "33p38Red",
-                   "43p10Red", "43p11Red", "43p12Red", "43p13Red", "43p14Red",
-                   "43p15Red", "43p16Red", "43p17Red", "43p18Red", "43p19Red",
-                   "43p20Red", "43p21Red", "43p22Red", "43p23Red", "43p24Red",
+   let PiceSet3 = ["33p7Green", "33p29Blue", "33p30Blue", "33p31Green", "33p32Green",
+                   "33p33Blue", "33p34Red", "33p35Red", "33p36Green", "33p38Blue",
+                   "43p10Red", "43p11Green", "43p12Blue", "43p13Red", "43p14Red",
+                   "43p15Green", "43p16Red", "43p17Green", "43p18Red", "43p19Blue",
+                   "43p20Green", "43p21Red", "43p22Blue", "43p23Blue", "43p24Red",
                   ]
    
    
-   let PiceSet4 = ["33p18Red", "33p39Red", "33p40Red", "33p41Red", "33p42Red",
-                   "43p25Red", "43p27Red", "43p28Red", "43p29Red", "43p30Red",
-                   "43p31Red", "43p32Red", "43p33Red", "43p34Red", "43p35Red",
-                   "43p36Red", "43p37Red", "43p38Red", "43p39Red", "43p40Red",
-                   "43p41Red", "43p42Red", "43p43Red", "43p44Red", "43p45Red",
-                   "43p46Red", "43p47Red", "43p48Red", "43p49Red", "43p50Red",
+   let PiceSet4 = ["33p18Red", "33p39Blue", "33p40Blue", "33p41Red", "33p42Blue",
+                   "43p25Green", "43p27Red", "43p28Green", "43p29Blue", "43p30Red",
+                   "43p31Green", "43p32Blue", "43p33Red", "43p34Red", "43p35Green",
+                   "43p36Green", "43p37Blue", "43p38Blue", "43p39Green", "43p40Red",
+                   "43p41Red", "43p42Red", "43p43Blue", "43p44Red", "43p45Red",
+                   "43p46Blue", "43p47Green", "43p48Blue", "43p49Red", "43p50Green",
                   ]
    
    var UsingPiceSet = Array<String>()

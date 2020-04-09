@@ -2611,8 +2611,8 @@
             filePath = "PazleBox/GameFile/CreateStage/CleateStageViewControllerFile/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "556"
-            endingLineNumber = "556"
+            startingLineNumber = "547"
+            endingLineNumber = "547"
             landmarkName = "PiceTouchStartCatchNotification(notification:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2627,10 +2627,10 @@
             filePath = "PazleBox/GameFile/CreateStage/CleateStageViewControllerFile/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "530"
-            endingLineNumber = "530"
-            landmarkName = "CleateStageViewController"
-            landmarkType = "3">
+            startingLineNumber = "521"
+            endingLineNumber = "521"
+            landmarkName = "MovedPiceCatchNotification(notification:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2643,9 +2643,9 @@
             filePath = "PazleBox/GameFile/CreateStage/CleateStageViewControllerFile/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "622"
-            endingLineNumber = "622"
-            landmarkName = "PiceUpPiceImageView(notification:)"
+            startingLineNumber = "613"
+            endingLineNumber = "613"
+            landmarkName = "WorkForPiceUserPiceUp()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2875,10 +2875,10 @@
             filePath = "PazleBox/GameFile/CreateStage/CleateStageViewControllerFile/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "623"
-            endingLineNumber = "623"
-            landmarkName = "PiceUpPiceImageView(notification:)"
-            landmarkType = "7">
+            startingLineNumber = "614"
+            endingLineNumber = "614"
+            landmarkName = "CleateStageViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2891,9 +2891,9 @@
             filePath = "PazleBox/GameFile/CreateStage/CleateStageViewControllerFile/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "832"
-            endingLineNumber = "832"
-            landmarkName = "ShowWriteStageTitleAlertView()"
+            startingLineNumber = "823"
+            endingLineNumber = "823"
+            landmarkName = "TapFinChouseResPuzzleButton()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3371,9 +3371,9 @@
             filePath = "PazleBox/GameFile/CreateStage/CleateStageViewControllerFile/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
-            landmarkName = "NotShowOnPiceView()"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
+            landmarkName = "GetUsersInfomationFromFireStore()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
