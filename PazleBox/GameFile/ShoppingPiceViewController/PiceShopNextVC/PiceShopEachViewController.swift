@@ -170,6 +170,7 @@ class PiceShopEachViewController: UIViewController {
       RemoveAllImageCache()
       SetUpNavigationBar()
       SetUpUsingPiceSet()
+      SetUpPiceImageCache()
       SetUpPriceLabel()
       SetUpPurchaseInfoLabel()
       SetUpPerchaseButton()
@@ -210,6 +211,16 @@ class PiceShopEachViewController: UIViewController {
       default:
          fatalError("訳のわからん数字が入ってる")
       }
+   }
+   
+   private func SetUpPiceImageCache() {
+      DispatchQueue.global(qos: .userInitiated).async {
+         for PiceName in self.UsingPiceSet {
+            let PiceImage = UIImage(contentsOfFile: Bundle.main.path(forResource: PiceName, ofType: "png")!)?.ResizeUIImage(width: 128, height: 128)
+            self.CollectionViewImageCache.setObject(PiceImage!, forKey: PiceName as AnyObject)
+         }
+      }
+      
    }
    
    //TODO:- ローカライズしてなぁ

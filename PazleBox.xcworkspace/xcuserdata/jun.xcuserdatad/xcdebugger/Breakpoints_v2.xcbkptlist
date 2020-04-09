@@ -4343,8 +4343,8 @@
             filePath = "PazleBox/GameFile/ShoppingPiceViewController/PiceShopNextVC/PiceShopEachViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
             landmarkName = "TapRestoreButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -4359,8 +4359,8 @@
             filePath = "PazleBox/GameFile/ShoppingPiceViewController/PiceShopNextVC/PiceShopEachViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "273"
-            endingLineNumber = "273"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
             landmarkName = "TapRestoreButton(_:)"
             landmarkType = "7">
          </BreakpointContent>

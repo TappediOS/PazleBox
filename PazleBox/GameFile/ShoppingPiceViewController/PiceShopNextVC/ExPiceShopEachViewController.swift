@@ -25,18 +25,18 @@ extension PiceShopEachViewController: UICollectionViewDataSource {
       //print("\(indexPath.item)番目のCellを返す")
       let cell = PiceCollectionView.dequeueReusableCell(withReuseIdentifier: "PiceShopPiceCell", for: indexPath) as! PiceShopCollectionViewCell
 
-      let imageName: String = self.UsingPiceSet[indexPath.item]
+      let PiceImageName: String = self.UsingPiceSet[indexPath.item]
       
       //もしキャッシュされていたらその画像をセットする.とても速い!
-      if let cachedImage = CollectionViewImageCache.object(forKey: imageName as AnyObject) as? UIImage {
+      if let cachedImage = CollectionViewImageCache.object(forKey: PiceImageName as AnyObject) as? UIImage {
          cell.setPiceShopPiceImageView(image: cachedImage)
          return cell
       }
       
       //Noキャッシュならば，画像データを生成する//ResizeUIImage()はとても遅い。
-      let PiceImage = UIImage(contentsOfFile: Bundle.main.path(forResource: imageName, ofType: "png")!)?.ResizeUIImage(width: 128, height: 128)
+      let PiceImage = UIImage(contentsOfFile: Bundle.main.path(forResource: PiceImageName, ofType: "png")!)?.ResizeUIImage(width: 128, height: 128)
             
-      self.CollectionViewImageCache.setObject(PiceImage!, forKey: imageName as AnyObject)
+      self.CollectionViewImageCache.setObject(PiceImage!, forKey: PiceImageName as AnyObject)
       cell.setPiceShopPiceImageView(image: PiceImage!)
 
       //cell.hero.modifiers = [.fade, .scale(0.5)]
