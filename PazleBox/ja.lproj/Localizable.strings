@@ -89,7 +89,7 @@
 "errGetDoc" = "データの取得にに失敗しました";
 
 //NOTE:- こいつ呼び出す際は\n入れて改行すべし
-"checkNet" = "ネットワーク確認してください";
+"checkNet" = "ネットワーク状態を確認してください";
 
 //Worningで出すやつ。
 "delStage" = "ステージの削除";
@@ -154,3 +154,81 @@
 "Tutorial17" = "世界中のみんなが作ったステージも遊べるよ!!";
 
 //-------------------- チュートリアル --------------------//
+
+
+//TODO:- 他のファイルにもここ以下追加すること
+//-------------------- コメント書く --------------------//
+"SendAComment" = "Send a comment";
+"AlreadyWritten" = "Already written";
+//-------------------- コメント書く --------------------//
+
+
+
+//-------------------- Follow --------------------//
+"Follow" = "Follow"
+"Following" = "Following";
+"Followers" = "Followers";
+"BlockedAccounts" = "Blocked Accounts"
+"UnFollow" = "UnFollow";
+"UnBlock" = "UnBlock";
+"Block" = "Block";
+//-------------------- Follow --------------------//
+
+//User SetUp
+"Register" = "Register";
+
+
+//-------------------- TabBar --------------------//
+"TimeLine" = "Time Line";
+"PiceShop" = "Pice Shop"
+"MyPage" = "My Page";
+"EditProfile" = "Edit Profile";
+//-------------------- TabBar --------------------//
+
+//-------------------- No Table View --------------------//
+"NoStagePosts" = "No stage posts";
+"StageShowIf" = "It will be shown when the stage has been posted";
+"IfYouFollow" = "If you follow another user, their posts will be displayed";
+
+"NoComments" = "No Comments";
+"NoCommentYet" = "No Comment Yet";
+//-------------------- No Table View --------------------//
+
+//-------------------- navigationItem.title --------------------//
+"WorldStage" = "World Stages";
+"Stage" = "Stage";
+"PiceSet" = "Pice Set";
+//-------------------- navigationItem.title --------------------//
+
+"errBlock" = "Failed to block";
+
+
+//-------------------- Action Sheet --------------------//
+"Report" = "Report";
+"InapCharacters" = "Contains inappropriate characters";
+"InapImages" = "Contains inappropriate images";
+"Other" = "Other";
+//-------------------- Action Sheet --------------------//
+
+
+
+"IfYouBuyPice" = "You'll be able to use the following set of pieces in your stage making";
+
+"Purchase" = "Purchase";
+
+"Account" = "Account";
+
+"AboutPuzzleMaker" = "About Puzzle Maker";
+
+//-------------------- Tutorial Alert View --------------------//
+"ShowTutorial" = "Show Tutorial";
+"HowToCreateAStage" = "How to create a stage";
+"DoYouWantToShowTutorial" = "Do you want to do a tutorial on creating a stage?";
+"FirstTimeStageMaking" = "Making the stage for the first time 🎉";
+"FinishTheTutorial" = "Finish the tutorial"
+"DoYouWantToFinishTutorial" = "Do you want to finish the tutorial?";
+//-------------------- Tutorial Alert View --------------------//
+
+
+"StageName" = "Stage Name";
+"EnterStageName" = "Please enter a stage name";

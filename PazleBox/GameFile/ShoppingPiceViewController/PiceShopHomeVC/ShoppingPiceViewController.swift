@@ -20,9 +20,8 @@ class ShoppingPiceViewController: UIViewController {
       InitBackgroundImageView()
    }
    
-   //TODO:- ローカライズしてなぁ
    private func SetUpNavigationBar() {
-      self.navigationItem.title = NSLocalizedString("Pice Shop", comment: "")
+      self.navigationItem.title = NSLocalizedString("PiceShop", comment: "")
    }
    
    private func InitBackgroundImageView() {

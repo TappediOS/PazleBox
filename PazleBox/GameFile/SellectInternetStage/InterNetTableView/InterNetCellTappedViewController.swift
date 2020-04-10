@@ -90,7 +90,6 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    }
    
    func SetUpNavigationController() {
-      //TODO:- ローカライズする
       self.navigationItem.title = NSLocalizedString("Stage", comment: "")
    }
    
@@ -205,7 +204,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
          self.GameSound.PlaySoundsTapButton()
       }
       let Error = NSLocalizedString("err", comment: "")
-      let errDele = NSLocalizedString("errBlock", comment: "") //TODO: ローカライズする
+      let errDele = NSLocalizedString("errBlock", comment: "")
       let checkNet = NSLocalizedString("checkNet", comment: "")
       ComleateView.showError(Error, subTitle: errDele + "\n" + checkNet)
    }
@@ -397,92 +396,94 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    
    
    //MARK:- ユーザが投稿したコメントに対してレポートボタンが押されたときの処理
-   //TODO: ローカライズすること
    private func TapReportActionAgainstUsersPostComment(TappedCellNum: Int) {
-      let ReportActionSheet = UIAlertController(title: "Report", message: nil, preferredStyle: .actionSheet)
+      let Report = NSLocalizedString("Report", comment: "")
+      let ReportActionSheet = UIAlertController(title: Report, message: nil, preferredStyle: .actionSheet)
       
-      let StringInappropriate = "Contains illegal characters"
+      let StringInappropriate = NSLocalizedString("InapCharacters", comment: "")
       let StringInappropriateAction = UIAlertAction(title: StringInappropriate, style: .default, handler: { (action: UIAlertAction!) in
          print("不適切な文字を含むボタンが押された押されたよ")
          self.ReportCommentIncludeStringInappropriate(TappedCellNum: TappedCellNum)
       })
-      let ImageInappropriate = "Contains inappropriate images"
+      let ImageInappropriate = NSLocalizedString("InapImages", comment: "")
       let ImageInappropriateAction = UIAlertAction(title: ImageInappropriate, style: .default, handler: { (action: UIAlertAction!) in
          print("不適切な画像を含むボタンが押された押されたよ")
          self.ReportCommentIncludeImageInappropriate(TappedCellNum: TappedCellNum)
       })
       
-      let Other = "Other"
+      let Other = NSLocalizedString("Other", comment: "")
       let OtherInappropriateAction = UIAlertAction(title: Other, style: .default, handler: { (action: UIAlertAction!) in
          print("その他ボタンが押された押されたよ")
          self.ReportCommentOther(TappedCellNum: TappedCellNum)
       })
                       
-      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-         print("ReportActionSheetでCanselタップされた")
+      let Cancel = NSLocalizedString("Cancel", comment: "")
+      let CancelAction = UIAlertAction(title: Cancel, style: .cancel, handler: { (action: UIAlertAction!) in
+         print("ReportActionSheetでCancelタップされた")
       })
            
               
       ReportActionSheet.addAction(StringInappropriateAction)
       ReportActionSheet.addAction(ImageInappropriateAction)
       ReportActionSheet.addAction(OtherInappropriateAction)
-      ReportActionSheet.addAction(CanselAction)
+      ReportActionSheet.addAction(CancelAction)
               
       self.present(ReportActionSheet, animated: true, completion: nil)
    }
    
    //MARK:- ユーザが投稿したステージに対してレポートボタンが押されたときの処理
-   //TODO: ローカライズすること
    private func TapReportActionAgainstUsersPostStage(TappedCellNum: Int) {
-      let ReportActionSheet = UIAlertController(title: "Report", message: nil, preferredStyle: .actionSheet)
+      let Report = NSLocalizedString("Report", comment: "")
+      let ReportActionSheet = UIAlertController(title: Report, message: nil, preferredStyle: .actionSheet)
       
-      let StringInappropriate = "Contains illegal characters"
+      let StringInappropriate = NSLocalizedString("InapCharacters", comment: "")
       let StringInappropriateAction = UIAlertAction(title: StringInappropriate, style: .default, handler: { (action: UIAlertAction!) in
          print("不適切な文字を含むボタンが押された押されたよ")
          self.ReportStageIncludeStringInappropriate(TappedCellNum: TappedCellNum)
       })
-      let ImageInappropriate = "Contains inappropriate images"
+      let ImageInappropriate = NSLocalizedString("InapImages", comment: "")
       let ImageInappropriateAction = UIAlertAction(title: ImageInappropriate, style: .default, handler: { (action: UIAlertAction!) in
          print("不適切な画像を含むボタンが押された押されたよ")
          self.ReportStageIncludeImageInappropriate(TappedCellNum: TappedCellNum)
       })
       
-      let Other = "Other"
+      let Other = NSLocalizedString("Other", comment: "")
       let OtherInappropriateAction = UIAlertAction(title: Other, style: .default, handler: { (action: UIAlertAction!) in
          print("その他ボタンが押された押されたよ")
          self.ReportStageOther(TappedCellNum: TappedCellNum)
       })
                       
-      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-         print("ReportActionSheetでCanselタップされた")
+      let Cancel = NSLocalizedString("Cancel", comment: "")
+      let CancelAction = UIAlertAction(title: Cancel, style: .cancel, handler: { (action: UIAlertAction!) in
+         print("ReportActionSheetでCancelタップされた")
       })
            
               
       ReportActionSheet.addAction(StringInappropriateAction)
       ReportActionSheet.addAction(ImageInappropriateAction)
       ReportActionSheet.addAction(OtherInappropriateAction)
-      ReportActionSheet.addAction(CanselAction)
+      ReportActionSheet.addAction(CancelAction)
               
       self.present(ReportActionSheet, animated: true, completion: nil)
    }
    
    //MARK:- ユーザが投稿したものに対してブロックボタンが押されたときの処理
-   //TODO: ローカライズすること
    //ユーザが投稿したものに対してブロックボタンが押されたときの処理
-   //TODO: ローカライズすること
    private func TapBlockActionAgainstUsersPost(UserName: String, uid: String) {
-      let BlockAlertSheet = UIAlertController(title: "Block " + UserName, message: nil, preferredStyle: .alert)
+      let Block = NSLocalizedString("Block", comment: "")
+      let BlockAlertSheet = UIAlertController(title: Block + " " + UserName, message: nil, preferredStyle: .alert)
       
-      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+      let Cancel = NSLocalizedString("Cancel", comment: "")
+      let CancelAction = UIAlertAction(title: Cancel, style: .cancel, handler: { (action: UIAlertAction!) in
          print("BlockActionSheetでCanselタップされた")
       })
       
-      let BlockAction = UIAlertAction(title: "Block", style: .destructive, handler: { (action: UIAlertAction!) in
+      let BlockAction = UIAlertAction(title: Block, style: .destructive, handler: { (action: UIAlertAction!) in
          self.BlockUserFireStore(blockUsersUID: uid)
       })
       
       BlockAlertSheet.addAction(BlockAction)
-      BlockAlertSheet.addAction(CanselAction)
+      BlockAlertSheet.addAction(CancelAction)
       
       self.present(BlockAlertSheet, animated: true, completion: nil)
    }
@@ -505,7 +506,6 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       }
    }
    
-   //TODO: ローカライズすること
    //MARK:- ユーザステージの報告ボタンタップされた処理
    @IBAction func TapPostUsersStageReportButton(_ sender: UIButton) {
       print("ユーザステージの報告ボタンタップされた")
@@ -522,30 +522,32 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       
       let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
              
-      let ReportAction = UIAlertAction(title: "Report", style: .destructive, handler: { (action: UIAlertAction!) in
+      let Report = NSLocalizedString("Report", comment: "")
+      let ReportAction = UIAlertAction(title: Report, style: .destructive, handler: { (action: UIAlertAction!) in
          print("Report押されたよ")
          self.TapReportActionAgainstUsersPostStage(TappedCellNum: tag)
       })
       
-      let BlockAction = UIAlertAction(title: "Block", style: .default, handler: { (action: UIAlertAction!) in
+      let Block = NSLocalizedString("Block", comment: "")
+      let BlockAction = UIAlertAction(title: Block, style: .default, handler: { (action: UIAlertAction!) in
          print("Block押されたよ")
          self.TapBlockActionAgainstUsersPost(UserName: self.PostUsersUserName, uid: self.PostUsersUID)
       })
       
-      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-         print("ActionSheetでCanselタップされた")
+      let Cancel = NSLocalizedString("Cancel", comment: "")
+      let CancelAction = UIAlertAction(title: Cancel, style: .cancel, handler: { (action: UIAlertAction!) in
+         print("ActionSheetでCancelタップされた")
       })
       
       ActionSheet.addAction(ReportAction)
       ActionSheet.addAction(BlockAction)
-      ActionSheet.addAction(CanselAction)
+      ActionSheet.addAction(CancelAction)
          
       self.present(ActionSheet, animated: true, completion: nil)
    }
    
    
    //MARK:- コメントしたユーザの報告ボタンがタップされたときの処理
-   //TODO:- ローカライズね。
    @objc func TapReportCommentedUserTableViewCell(_ sender: UIButton) {
       guard self.isLoadingGameVC == false else {
          print("コメントしたユーザの報告タップされたけど，ローディング中やから何もしない.")
@@ -569,7 +571,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       
       let Report = NSLocalizedString("Report", comment: "")
       let Block = NSLocalizedString("Block", comment: "")
-      let Cansel = NSLocalizedString("Cansel", comment: "")
+      let Cancel = NSLocalizedString("Cancel", comment: "")
              
       let ReportAction = UIAlertAction(title: Report, style: .destructive, handler: { (action: UIAlertAction!) in
          print("Report押されたよ")
@@ -581,13 +583,13 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
          self.TapBlockActionAgainstUsersPost(UserName: UserName, uid: TapStagePostUsersUID)
       })
       
-      let CanselAction = UIAlertAction(title: Cansel, style: .cancel, handler: { (action: UIAlertAction!) in
-         print("ActionSheetでCanselタップされた")
+      let CancelAction = UIAlertAction(title: Cancel, style: .cancel, handler: { (action: UIAlertAction!) in
+         print("ActionSheetでCancelタップされた")
       })
       
       ActionSheet.addAction(ReportAction)
       ActionSheet.addAction(BlockAction)
-      ActionSheet.addAction(CanselAction)
+      ActionSheet.addAction(CancelAction)
          
       self.present(ActionSheet, animated: true, completion: nil)
    }

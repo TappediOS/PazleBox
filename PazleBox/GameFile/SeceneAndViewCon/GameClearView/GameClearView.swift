@@ -192,8 +192,8 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate, UITextFi
       let ButtonFrame = CGRect(x: startX, y: startY, width: ButtonW, height: ButtonH)
       
       TapToCommentButton = UIButton(frame: ButtonFrame)
-      //TODO:- ローカライズすることp
-      TapToCommentButton.setTitle("Add a Comment", for: .normal)
+      let title = NSLocalizedString("SendAComment", comment: "")
+      TapToCommentButton.setTitle(title, for: .normal)
       TapToCommentButton.titleLabel?.adjustsFontSizeToFitWidth = true
       TapToCommentButton.layer.cornerRadius = ButtonFrame.height / 2
       TapToCommentButton.backgroundColor = .systemTeal
@@ -357,8 +357,8 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate, UITextFi
       print("---- 登録するコメント ----\n")
       
       
-      //TODO:- ローカライズしてね。
-      TapToCommentButton.setTitle("送信済み", for: .normal)
+      let title = NSLocalizedString("AlreadyWritten", comment: "")
+      TapToCommentButton.setTitle(title, for: .normal)
       TapToCommentButton.alpha = 0.85
    }
    

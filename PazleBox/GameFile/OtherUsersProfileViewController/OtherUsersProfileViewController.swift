@@ -143,7 +143,7 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
          self.GameSound.PlaySoundsTapButton()
       }
       let Error = NSLocalizedString("err", comment: "")
-      let errDele = NSLocalizedString("errBlock", comment: "") //TODO: ローカライズする
+      let errDele = NSLocalizedString("errBlock", comment: "")
       let checkNet = NSLocalizedString("checkNet", comment: "")
       ComleateView.showError(Error, subTitle: errDele + "\n" + checkNet)
    }
@@ -202,67 +202,70 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
    
    private func showActionSheetForReportOrBlockUser() {
       let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-             
-      let ReportAction = UIAlertAction(title: "Report", style: .destructive, handler: { (action: UIAlertAction!) in
+            
+      let Report = NSLocalizedString("Report", comment: "")
+      let ReportAction = UIAlertAction(title: Report, style: .destructive, handler: { (action: UIAlertAction!) in
          print("Report押されたよ")
          self.TapReportActionAgainstUsersPost()
       })
       
-      let BlockAction = UIAlertAction(title: "Block", style: .default, handler: { (action: UIAlertAction!) in
+      let Block = NSLocalizedString("Block", comment: "")
+      let BlockAction = UIAlertAction(title: Block, style: .default, handler: { (action: UIAlertAction!) in
          print("Block押されたよ")
          self.TapBlockActionAgainstUsersPost()
       })
       
-      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-         print("ActionSheetでCanselタップされた")
+      let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+         print("ActionSheetでCancelタップされた")
       })
       
       ActionSheet.addAction(ReportAction)
       ActionSheet.addAction(BlockAction)
-      ActionSheet.addAction(CanselAction)
+      ActionSheet.addAction(CancelAction)
          
       self.present(ActionSheet, animated: true, completion: nil)
    }
    
    //ユーザが投稿したものに対してレポートボタンが押されたときの処理
-   //TODO: ローカライズすること
    private func TapReportActionAgainstUsersPost() {
-      let ReportActionSheet = UIAlertController(title: "Report", message: nil, preferredStyle: .actionSheet)
+      let Report = NSLocalizedString("Report", comment: "")
+      let ReportActionSheet = UIAlertController(title: Report, message: nil, preferredStyle: .actionSheet)
       
-      let StringInappropriate = "Contains illegal characters"
+      let StringInappropriate = NSLocalizedString("InapCharacters", comment: "")
       let StringInappropriateAction = UIAlertAction(title: StringInappropriate, style: .default, handler: { (action: UIAlertAction!) in
          print("不適切な文字を含むボタンが押された押されたよ")
       })
-      let ImageInappropriate = "Contains inappropriate images"
+      let ImageInappropriate = NSLocalizedString("InapImages", comment: "")
       let ImageInappropriateAction = UIAlertAction(title: ImageInappropriate, style: .default, handler: { (action: UIAlertAction!) in
          print("不適切な画像を含むボタンが押された押されたよ")
       })
       
-      let Other = "Other"
+      let Other = NSLocalizedString("Other", comment: "")
       let OtherInappropriateAction = UIAlertAction(title: Other, style: .default, handler: { (action: UIAlertAction!) in
          print("その他ボタンが押された押されたよ")
       })
                       
-      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-         print("ReportActionSheetでCanselタップされた")
+      let Cancel = NSLocalizedString("Cancel", comment: "")
+      let CancelAction = UIAlertAction(title: Cancel, style: .cancel, handler: { (action: UIAlertAction!) in
+         print("ReportActionSheetでCancelタップされた")
       })
-           
-              
+      
       ReportActionSheet.addAction(StringInappropriateAction)
       ReportActionSheet.addAction(ImageInappropriateAction)
       ReportActionSheet.addAction(OtherInappropriateAction)
-      ReportActionSheet.addAction(CanselAction)
+      ReportActionSheet.addAction(CancelAction)
               
       self.present(ReportActionSheet, animated: true, completion: nil)
    }
    
    //ユーザが投稿したものに対してブロックボタンが押されたときの処理
-   //TODO: ローカライズすること
    private func TapBlockActionAgainstUsersPost() {
-      let BlockAlertSheet = UIAlertController(title: "Block " + self.OtherUsersProfileName, message: nil, preferredStyle: .alert)
+      let Block = NSLocalizedString("Block", comment: "")
+      let BlockAlertSheet = UIAlertController(title: Block + " " + self.OtherUsersProfileName, message: nil, preferredStyle: .alert)
       
-      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-         print("BlockActionSheetでCanselタップされた")
+      let Cancel = NSLocalizedString("Cancel", comment: "")
+      let CancelAction = UIAlertAction(title: Cancel, style: .cancel, handler: { (action: UIAlertAction!) in
+         print("BlockActionSheetでCancelタップされた")
       })
       
       let BlockAction = UIAlertAction(title: "Block", style: .destructive, handler: { (action: UIAlertAction!) in
@@ -271,7 +274,7 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
       })
       
       BlockAlertSheet.addAction(BlockAction)
-      BlockAlertSheet.addAction(CanselAction)
+      BlockAlertSheet.addAction(CancelAction)
       
       self.present(BlockAlertSheet, animated: true, completion: nil)
    }
@@ -366,19 +369,20 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
    @objc func TapFollowingButtonForUnFollowUser(_ sender: UIButton) {
       print("UnFollowするためにFollowingButtonタップされました")
       let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-      //TODO:- ローカライズ
-      let title = "UnFollow" + self.OtherUsersProfileName
+      let UnFollow = NSLocalizedString("UnFollow", comment: "")
+      let title = UnFollow + " " + self.OtherUsersProfileName
       let UnFollowAction = UIAlertAction(title: title, style: .destructive, handler: { (action: UIAlertAction!) in
          print("UnFollowAction押されたよ")
          self.TapUnFollowActionButton()
       })
       
-      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-         print("UnFollw?でCanselタップされた")
+      let Cancel = NSLocalizedString("Cancel", comment: "")
+      let CancelAction = UIAlertAction(title: Cancel, style: .cancel, handler: { (action: UIAlertAction!) in
+         print("UnFollw?でCancelタップされた")
       })
       
       ActionSheet.addAction(UnFollowAction)
-      ActionSheet.addAction(CanselAction)
+      ActionSheet.addAction(CancelAction)
          
       self.present(ActionSheet, animated: true, completion: nil)
    }
@@ -387,19 +391,19 @@ class OtherUsersProfileViewController: UIViewController, UITableViewDelegate, UI
       print("UnBlockedするためにBlockedButtonタップされました")
       print("UnFollowするためにFollowingButtonタップされました")
       let ActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-      //TODO:- ローカライズ
-      let title = "UnBlock" + self.OtherUsersProfileName
+      let UnBlock = NSLocalizedString("UnBlock", comment: "")
+      let title = UnBlock + " " + self.OtherUsersProfileName
       let UnFollowAction = UIAlertAction(title: title, style: .destructive, handler: { (action: UIAlertAction!) in
          print("UnBlockAction押されたよ")
          self.TapUnBlockActionButton()
       })
       
-      let CanselAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-         print("UnBlockでCanselタップされた")
+      let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+         print("UnBlockでCancelタップされた")
       })
       
       ActionSheet.addAction(UnFollowAction)
-      ActionSheet.addAction(CanselAction)
+      ActionSheet.addAction(CancelAction)
          
       self.present(ActionSheet, animated: true, completion: nil)
    }

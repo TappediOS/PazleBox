@@ -49,7 +49,6 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
    }
    
    private func SetUpNavigationBar() {
-      //TODO:- ローカライズ
       self.navigationItem.title = NSLocalizedString("Account", comment: "")
    }
 

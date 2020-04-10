@@ -183,9 +183,9 @@ class PiceShopEachViewController: UIViewController {
       CollectionViewImageCache.removeAllObjects()
    }
    
-   //TODO:- ローカライズしてなぁ
    private func SetUpNavigationBar() {
-      self.navigationItem.title = NSLocalizedString("Pice Set \(self.PiceShopTag)", comment: "")
+      let PiceSet = NSLocalizedString("PiceSet", comment: "") + " " + String(self.PiceShopTag)
+      self.navigationItem.title = NSLocalizedString(PiceSet, comment: "")
    }
    
    private func SetUpPriceLabel() {
@@ -224,25 +224,22 @@ class PiceShopEachViewController: UIViewController {
       
    }
    
-   //TODO:- ローカライズしてなぁ
    private func SetUpPurchaseInfoLabel() {
-      let title = NSLocalizedString("以下のピースセットをステージ作りで使えるようになります", comment: "")
+      let title = NSLocalizedString("IfYouBuyPice", comment: "")
       PurchaseInfoLabel.text = title
       PurchaseInfoLabel.adjustsFontSizeToFitWidth = true
       PurchaseInfoLabel.adjustsFontForContentSizeCategory = true
       PurchaseInfoLabel.minimumScaleFactor = 0.45
    }
    
-   //TODO:- ローカライズしてなぁ
    private func SetUpPerchaseButton() {
-      let title = NSLocalizedString("Perchase", comment: "")
+      let title = NSLocalizedString("Purchase", comment: "")
       PerchaseButton.setTitle(title, for: .normal)
       PerchaseButton.titleLabel?.adjustsFontSizeToFitWidth = true
       PerchaseButton.titleLabel?.adjustsFontForContentSizeCategory = true
       PerchaseButton.layer.cornerRadius =  5
    }
    
-   //TODO:- ローカライズしてなぁ
    private func SetUpRestoreButton() {
       let title = NSLocalizedString("Restore", comment: "")
       RestoreButton.setTitle(title, for: .normal)
@@ -251,7 +248,6 @@ class PiceShopEachViewController: UIViewController {
       RestoreButton.layer.cornerRadius =  5
    }
    
-   //TODO:- ローカライズしてなぁ
    private func LoadCollectionView() {
       PiceCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "PiceShopCollectionViewCell")
       PiceCollectionView.delegate = self

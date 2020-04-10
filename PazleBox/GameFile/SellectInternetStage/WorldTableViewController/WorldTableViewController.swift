@@ -92,8 +92,7 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
    }
    
    func SetUpNavigationController() {
-      //TODO:- ローカライズする
-      self.navigationItem.title = NSLocalizedString("World Stage", comment: "")
+      self.navigationItem.title = NSLocalizedString("WorldStage", comment: "")
    }
    
    private func SetUpFireStoreSetting() {

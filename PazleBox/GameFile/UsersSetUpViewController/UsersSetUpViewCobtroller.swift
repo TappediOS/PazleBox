@@ -111,7 +111,6 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
    }
    
    func SetUpRegisterButton() {
-      //TODO:- ローカライズする
       let title = NSLocalizedString("Register", comment: "")
       RegisterButton.setTitle(title, for: .normal)
       RegisterButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -232,7 +231,7 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
       let TakePhoto = NSLocalizedString("Take Photo", comment: "")
       let SelectPhoto = NSLocalizedString("Select Photo", comment: "")
       let DeletePhoto = NSLocalizedString("Delete Photo", comment: "")
-      let Cansel = NSLocalizedString("Cansel", comment: "")
+      let Cancel = NSLocalizedString("Canel", comment: "")
       
       
       let TakePhotoAction = UIAlertAction(title: TakePhoto, style: .default, handler: { (action: UIAlertAction!) in
@@ -250,14 +249,14 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
          self.TapDeletePhotoAction()
       })
       
-      let CanselAction = UIAlertAction(title: Cansel, style: .cancel, handler: { (action: UIAlertAction!) in
-         print("ActionSheetでCanselタップされた")
+      let CancelAction = UIAlertAction(title: Cancel, style: .cancel, handler: { (action: UIAlertAction!) in
+         print("ActionSheetでCancelタップされた")
       })
       
       ActionSheet.addAction(TakePhotoAction)
       ActionSheet.addAction(SelectPhotoAction)
       ActionSheet.addAction(DeletePhotoAction)
-      ActionSheet.addAction(CanselAction)
+      ActionSheet.addAction(CancelAction)
          
       self.present(ActionSheet, animated: true, completion: nil)
    }

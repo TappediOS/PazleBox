@@ -825,13 +825,13 @@ class CleateStageViewController: UIViewController {
    
    
    //MARK:- ステージ名を欠かす処理
-   //TODO: ローカライズしようね。
    func ShowWriteStageTitleAlertView() {
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
       let WrriteStageAlert = SCLAlertView(appearance: Appearanse)
-      let StageTitleTextField = WrriteStageAlert.addTextField("ステージ名")
+      let StageName = NSLocalizedString("StageName", comment: "")
+      let StageTitleTextField = WrriteStageAlert.addTextField(StageName)
       
-      WrriteStageAlert.addButton("とうろく") {
+      WrriteStageAlert.addButton(NSLocalizedString("Register", comment: "")) {
          let NoName = "No Name"
          if StageTitleTextField.text!.isEmpty == false {
             self.StageTitle = StageTitleTextField.text ?? NoName
@@ -840,8 +840,8 @@ class CleateStageViewController: UIViewController {
          }
          self.SaveStageUserCreated()
       }
-      let Title = "タイトル"
-      let WriteTitle = "タイトルを記入してください"
+      let Title = NSLocalizedString("StageName", comment: "")
+      let WriteTitle = NSLocalizedString("EnterStageName", comment: "")
       WrriteStageAlert.showEdit(Title, subTitle: WriteTitle)
    }
    

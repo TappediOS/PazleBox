@@ -110,16 +110,15 @@ extension InterNetTableViewController {
 }
 
 
-//TODO:- ローカライズすること
 extension InterNetTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-       let str = NSLocalizedString("ステージ投稿なし", comment: "")
+       let str = NSLocalizedString("No stage posts", comment: "")
        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
        return NSAttributedString(string: str, attributes: attrs)
    }
    
    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-       let str = NSLocalizedString("他のユーザをフォローするとその人の投稿が表示されます", comment: "")
+       let str = NSLocalizedString("IfYouFollow", comment: "")
        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
        return NSAttributedString(string: str, attributes: attrs)
    }

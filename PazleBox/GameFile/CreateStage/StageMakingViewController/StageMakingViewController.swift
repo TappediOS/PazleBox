@@ -233,8 +233,7 @@ class StageMakingViewController: UIViewController{
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
       let ComleateView = SCLAlertView(appearance: Appearanse)
       
-      //TODO:- ローカライズ
-      ComleateView.addButton(NSLocalizedString("Show Tutorial", comment: "")){
+      ComleateView.addButton(NSLocalizedString("ShowTutorial", comment: "")){
          self.Play3DtouchHeavy()
          self.GameSound.PlaySoundsTapButton()
          self.showTutorialViewController()
@@ -246,20 +245,19 @@ class StageMakingViewController: UIViewController{
          UserDefaults.standard.set(false, forKey: "FirstCreateStage")
          self.isLockButton = false
       }
-      let title = NSLocalizedString("ステージの作りかた", comment: "")
-      let subTitle = NSLocalizedString("ステージを作るチュートリアルをしますか？", comment: "")
+      let title = NSLocalizedString("HowToCreateAStage", comment: "")
+      let subTitle = NSLocalizedString("DoYouWantToShowTutorial", comment: "")
       ComleateView.showTitle(title, subTitle: subTitle, timeout: .none, completeText: nil, style: .question, colorStyle: 0x007AFF, colorTextButton: nil, circleIconImage: nil, animationStyle: .topToBottom)
    }
    
    
    /// 初めてステージを作ろうとした時に表示されるAleartView
-   /// これの場合はCansel押された時にMakingVCを表示させている
+   /// これの場合はCancel押された時にMakingVCを表示させている
    private func ShowAskUserShowTutorialViewControllerWhenUserFirstCreateStage() {
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
       let ComleateView = SCLAlertView(appearance: Appearanse)
       
-      //TODO:- ローカライズ
-      ComleateView.addButton(NSLocalizedString("Show Tutorial", comment: "")){
+      ComleateView.addButton(NSLocalizedString("ShowTutorial", comment: "")){
          self.Play3DtouchHeavy()
          self.GameSound.PlaySoundsTapButton()
          self.showTutorialViewController()
@@ -271,8 +269,8 @@ class StageMakingViewController: UIViewController{
          UserDefaults.standard.set(false, forKey: "FirstCreateStage")
          self.isLockButton = false
       }
-      let title = NSLocalizedString("初めてのステージつくり🎉", comment: "")
-      let subTitle = NSLocalizedString("ステージを作るチュートリアルをしますか？", comment: "")
+      let title = NSLocalizedString("FirstTimeStageMaking", comment: "")
+      let subTitle = NSLocalizedString("DoYouWantToShowTutorial", comment: "")
       ComleateView.showInfo(title, subTitle: subTitle)
    }
    

@@ -66,8 +66,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
    }
    
    func SetUpNavigationController() {
-      //TODO:- ローカライズすること
-      self.navigationItem.title = NSLocalizedString("Edit Profile", comment: "")
+      self.navigationItem.title = NSLocalizedString("EditProfile", comment: "")
    }
    
    func SetUpNavigationBarItem() {
@@ -249,7 +248,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
       let TakePhoto = NSLocalizedString("Take Photo", comment: "")
       let SelectPhoto = NSLocalizedString("Select Photo", comment: "")
       let DeletePhoto = NSLocalizedString("Delete Photo", comment: "")
-      let Cansel = NSLocalizedString("Cansel", comment: "")
+      let Cancel = NSLocalizedString("Cancel", comment: "")
       
       
       let TakePhotoAction = UIAlertAction(title: TakePhoto, style: .default, handler: { (action: UIAlertAction!) in
@@ -267,14 +266,14 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
          self.TapDeletePhotoAction()
       })
       
-      let CanselAction = UIAlertAction(title: Cansel, style: .cancel, handler: { (action: UIAlertAction!) in
-         print("ActionSheetでCanselタップされた")
+      let CancelAction = UIAlertAction(title: Cancel, style: .cancel, handler: { (action: UIAlertAction!) in
+         print("ActionSheetでCancelタップされた")
       })
       
       ActionSheet.addAction(TakePhotoAction)
       ActionSheet.addAction(SelectPhotoAction)
       ActionSheet.addAction(DeletePhotoAction)
-      ActionSheet.addAction(CanselAction)
+      ActionSheet.addAction(CancelAction)
          
       self.present(ActionSheet, animated: true, completion: nil)
    }

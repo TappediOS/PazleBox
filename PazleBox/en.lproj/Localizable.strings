@@ -17,7 +17,7 @@
 "Continue" = "Continue";
 "Home" = "Home";
 
-"WathcAdAnd" = "Look at the ad and get a hint?";
+"WathcAdAnd" = "Watch the ads and get the tips";
 
 "AdNotFlow" = "Ad NOT Flow";
 "Ad Flow" = "Ad Flow";
@@ -30,10 +30,10 @@
 
 "PlayAgain" = "Play Again";
 
-"Clear10Stage" = "You Clear 10 Stages";
-"Clear100Stage" = "You Clear 100 Stages";
+"Clear10Stage" = "You've cleared 10 stages.";
+"Clear100Stage" = "You've cleared 100 stages.";
 
-"Congrats" = "Congrats!";
+"Congrats" = "Congratulations!";
 
 "ThankYou" = "Thank You!";
 "Ohthankyou" = "Oh, thanks...";
@@ -48,7 +48,7 @@
 "Done" = "Complete";
 
 
-"IfGoHome" = "The contents are not saved when you return to Home.";
+"IfGoHome" = "If you return to Home, the contents will not be saved.";
 
 "Saved" = "Saved";
 
@@ -91,7 +91,7 @@
 "errGetDoc" = "Failed to get data";
 
 //NOTE:- こいつ呼び出す際は\n入れて改行すべし
-"checkNet" = "Check network";
+"checkNet" = "Please check the network status.";
 
 //Worningで出すやつ。
 "delStage" = "Deleting a stage";
@@ -137,8 +137,8 @@
 "Tutorial6" = "Let's drag one piece and place it on the board!";
 
 "Tutorial7" = "☆ Excellent ☆";
-"Tutorial8" = "Let's tap on a different piece just like before!";
-"Tutorial9" = "Drag & drop when leaving so that it does not cover other pieces";
+"Tutorial8" = "Let's tap on a different Piece just like before!";
+"Tutorial9" = "Drag and drop it so that it doesn't stick to other pieces.";
 
 "Tutorial10" = "Tap this button when the stage is complete";
 

@@ -61,9 +61,9 @@ class OtherUsersProfileTableViewHeaderView: UIView {
       //self.FollowOrFollowingOrBlockedButton.isHidden = true
    }
    
-   //TODO:- ローカライズすること
    public func SetUpFollowOrFollowingOrBlockedButtonAsFollowButton() {
-      self.FollowOrFollowingOrBlockedButton.setTitle("Follow", for: .normal)
+      let Follow = NSLocalizedString("Follow", comment: "")
+      self.FollowOrFollowingOrBlockedButton.setTitle(Follow, for: .normal)
       self.FollowOrFollowingOrBlockedButton.setTitleColor(UIColor.white, for: .normal)
       self.FollowOrFollowingOrBlockedButton.backgroundColor = .systemTeal
       self.FollowOrFollowingOrBlockedButton.layer.borderColor = .none
@@ -72,9 +72,9 @@ class OtherUsersProfileTableViewHeaderView: UIView {
       self.FollowOrFollowingOrBlockedButton.isHidden = false
    }
    
-   //TODO:- ローカライズすること
    public func SetUpFollowOrFollowingOrBlockedButtonAsUnFollowButton() {
-      self.FollowOrFollowingOrBlockedButton.setTitle("Following", for: .normal)
+      let Following = NSLocalizedString("Following", comment: "")
+      self.FollowOrFollowingOrBlockedButton.setTitle(Following, for: .normal)
       self.FollowOrFollowingOrBlockedButton.setTitleColor(UIColor.black, for: .normal)
       self.FollowOrFollowingOrBlockedButton.backgroundColor = .white
       self.FollowOrFollowingOrBlockedButton.layer.borderColor = UIColor.black.cgColor
@@ -83,9 +83,9 @@ class OtherUsersProfileTableViewHeaderView: UIView {
       self.FollowOrFollowingOrBlockedButton.isHidden = false
    }
    
-   //TODO:- ローカライズすること
    public func SetUpFollowOrFollowingOrBlockedButtonAsBlockedButton() {
-      self.FollowOrFollowingOrBlockedButton.setTitle("Blocked", for: .normal)
+      let Block = NSLocalizedString("Block", comment: "")
+      self.FollowOrFollowingOrBlockedButton.setTitle(Block, for: .normal)
       self.FollowOrFollowingOrBlockedButton.setTitleColor(UIColor.white, for: .normal)
       self.FollowOrFollowingOrBlockedButton.backgroundColor = .systemRed
       self.FollowOrFollowingOrBlockedButton.layer.borderColor = .none

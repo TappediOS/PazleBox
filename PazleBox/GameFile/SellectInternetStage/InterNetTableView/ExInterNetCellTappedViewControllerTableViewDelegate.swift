@@ -58,16 +58,15 @@ extension InterNetCellTappedViewController {
 }
 
 
-//TODO:- ローカライズすること
 extension InterNetCellTappedViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-       let str = NSLocalizedString("No Comment", comment: "")
+       let str = NSLocalizedString("NoComments", comment: "")
        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
        return NSAttributedString(string: str, attributes: attrs)
    }
    
    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-       let str = NSLocalizedString("No Comment Yet", comment: "")
+       let str = NSLocalizedString("NoCommentYet", comment: "")
        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
        return NSAttributedString(string: str, attributes: attrs)
    }

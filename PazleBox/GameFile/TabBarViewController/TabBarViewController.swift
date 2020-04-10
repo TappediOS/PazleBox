@@ -137,8 +137,7 @@ class PuzzleTabBarController: ESTabBarController, GADBannerViewDelegate {
       //----- WorldVCを生成 ----//
       
       //----- Tabeviewとして生成 -----//
-      //TODO:- ローカライズする
-      title = NSLocalizedString("Home", comment: "")
+      title = NSLocalizedString("TimeLine", comment: "")
       image = getHouseImage()
       selectedImage = getHouseFillImage()
       let InterNetStorybord = UIStoryboard(name: "InterNetTableView", bundle: nil)
@@ -182,8 +181,7 @@ class PuzzleTabBarController: ESTabBarController, GADBannerViewDelegate {
       SettingVC.tabBarItem.accessibilityIdentifier = "tabBar_Setting"
       
       
-      //TODO:- "My Page"のローカライズする
-      title = NSLocalizedString("My Page", comment: "")
+      title = NSLocalizedString("MyPage", comment: "")
       //---- UserProfileVC ----//
       let UserProfileSB = UIStoryboard(name: "UserProfileViewControllerSB", bundle: nil)
       let UserProfileVC = UserProfileSB.instantiateViewController(withIdentifier: "UserProfileNavigationVC")

@@ -53,7 +53,6 @@ class SettingTableViewController: UITableViewController, GKGameCenterControllerD
       let stopItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(TapStopSettingVC))
       stopItem.tintColor = .black
       self.navigationItem.leftBarButtonItem = stopItem
-      //TODO:- ローカライズすること
       self.navigationItem.title = NSLocalizedString("Setting", comment: "")
    }
    

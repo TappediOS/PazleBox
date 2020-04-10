@@ -25,8 +25,7 @@ class AboutPazzleMakerTableviewController: UITableViewController {
    }
       
    private func SetUpNavigationController() {
-      //TODO:- ローカライズすること
-      self.navigationItem.title = NSLocalizedString("About Puzzle Maker", comment: "")
+      self.navigationItem.title = NSLocalizedString("AboutPuzzleMaker", comment: "")
    }
    
    private func SetUpLabelText() {

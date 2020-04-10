@@ -686,8 +686,7 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
       GameSound.PlaySoundsTapButton()
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
       let ComleateView = SCLAlertView(appearance: Appearanse)
-      //TODO:- ローカライズすること
-      ComleateView.addButton(NSLocalizedString("チュートリアルを終了", comment: "")){
+      ComleateView.addButton(NSLocalizedString("FinishTheTutorial", comment: "")){
          if self.FinishChouseResPuzzleButton?.isHidden == false{
             self.FinishChouseResPuzzleButton?.hero.id = self.HeroID.CreateBackAndCreatingFinButton
          }
@@ -697,13 +696,13 @@ class TutorialViewController: UIViewController, UIGestureRecognizerDelegate {
          Analytics.logEvent("TapHomeCreateing", parameters: nil)
       }
       
-      ComleateView.addButton(NSLocalizedString("Cansel", comment: "")){
+      ComleateView.addButton(NSLocalizedString("Cancel", comment: "")){
          self.Play3DtouchHeavy()
          self.GameSound.PlaySoundsTapButton()
       }
       
       let title = NSLocalizedString("Pouse", comment: "")
-      let subTitle = NSLocalizedString("チュートリアルを終了しますか？", comment: "")   //TODO:- ローカライズすること
+      let subTitle = NSLocalizedString("DoYouWantToFinishTutorial", comment: "")
       ComleateView.showInfo(title, subTitle: subTitle)
    }
    

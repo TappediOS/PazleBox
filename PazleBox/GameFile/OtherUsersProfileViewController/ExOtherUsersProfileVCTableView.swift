@@ -172,16 +172,15 @@ extension OtherUsersProfileViewController {
    }
 }
 
-//TODO:- ローカライズすること
 extension OtherUsersProfileViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-       let str = NSLocalizedString("ステージ投稿なし", comment: "")
+       let str = NSLocalizedString("No stage posts", comment: "")
        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
        return NSAttributedString(string: str, attributes: attrs)
    }
    
    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-       let str = NSLocalizedString("ステージが投稿されたら表示されます", comment: "")
+       let str = NSLocalizedString("It will be shown when the stage has been posted", comment: "")
        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
        return NSAttributedString(string: str, attributes: attrs)
    }

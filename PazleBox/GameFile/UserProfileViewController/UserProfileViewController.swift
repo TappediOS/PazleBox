@@ -122,7 +122,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
       SettingButtonItems.tintColor = .black
       self.navigationItem.setLeftBarButton(SettingButtonItems, animated: true)
       
-      let EditProfile = "Edit Profile"
+      let EditProfile = NSLocalizedString("EditProfile", comment: "")
       let EditProfileItem = UIBarButtonItem(title: EditProfile, style: .plain, target: self, action: #selector(TapEditProfileButton(sender:)))
       EditProfileItem.tintColor = .black
       self.navigationItem.setRightBarButton(EditProfileItem, animated: true)
@@ -133,8 +133,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
       //あと，UIGestureRecognizerDelegateを継承追加するのと，viewWillDisappearでnilを追加するのは忘れたらあかんよ。
       self.navigationController?.interactivePopGestureRecognizer?.delegate = self
       
-      //TODO:- ローカライズすること
-      self.navigationItem.title = NSLocalizedString("My Page", comment: "")
+      self.navigationItem.title = NSLocalizedString("MyPage", comment: "")
    }
    
    func SetUpUserProfileTableView() {

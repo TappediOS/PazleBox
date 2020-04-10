@@ -74,7 +74,6 @@ class SomeUsersListViewController: UIViewController {
       SomeUsersListTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: BottonInsets, right: 0)
    }
    
-   //TODO:- ローカライズする
    func SetUpNavigationController() {
       var NavigationTitle = "None"
       switch self.ListType {
@@ -83,9 +82,9 @@ class SomeUsersListViewController: UIViewController {
       case .Follow:
          NavigationTitle = NSLocalizedString("Following", comment: "")
       case .Follower:
-      NavigationTitle = NSLocalizedString("Follower", comment: "")
+      NavigationTitle = NSLocalizedString("Followers", comment: "")
       case .Block:
-         NavigationTitle = NSLocalizedString("Block", comment: "")
+         NavigationTitle = NSLocalizedString("BlockedAccounts", comment: "")
       }
       self.navigationItem.title = NavigationTitle
    }
