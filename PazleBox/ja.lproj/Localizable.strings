@@ -158,77 +158,77 @@
 
 //TODO:- 他のファイルにもここ以下追加すること
 //-------------------- コメント書く --------------------//
-"SendAComment" = "Send a comment";
-"AlreadyWritten" = "Already written";
+"SendAComment" = "コメントを送る";
+"AlreadyWritten" = "書き込み済み";
 //-------------------- コメント書く --------------------//
 
 
 
 //-------------------- Follow --------------------//
-"Follow" = "Follow"
-"Following" = "Following";
-"Followers" = "Followers";
-"BlockedAccounts" = "Blocked Accounts"
-"UnFollow" = "UnFollow";
-"UnBlock" = "UnBlock";
-"Block" = "Block";
+"Follow" = "フォロー";
+"Following" = "フォロー中";
+"Followers" = "フォロワー";
+"BlockedAccounts" = "ブロックしたアカウント";
+"UnFollow" = "フォーローを解除";
+"UnBlock" = "ブロックを解除";
+"Block" = "ブロック";
 //-------------------- Follow --------------------//
 
 //User SetUp
-"Register" = "Register";
+"Register" = "登録";
 
 
 //-------------------- TabBar --------------------//
-"TimeLine" = "Time Line";
-"PiceShop" = "Pice Shop"
-"MyPage" = "My Page";
-"EditProfile" = "Edit Profile";
+"TimeLine" = "タイムライン";
+"PiceShop" = "ピースショップ";
+"MyPage" = "マイページ";
+"EditProfile" = "プロフィール編集";
 //-------------------- TabBar --------------------//
 
 //-------------------- No Table View --------------------//
-"NoStagePosts" = "No stage posts";
-"StageShowIf" = "It will be shown when the stage has been posted";
-"IfYouFollow" = "If you follow another user, their posts will be displayed";
+"NoStagePosts" = "ステージ投稿なし";
+"StageShowIf" = "ステージが投稿されると表示されます";
+"IfYouFollow" = "フォローするとその人の投稿が表示されます";
 
-"NoComments" = "No Comments";
-"NoCommentYet" = "No Comment Yet";
+"NoComments" = "コメントなし";
+"NoCommentYet" = "コメントはまだありません";
 //-------------------- No Table View --------------------//
 
 //-------------------- navigationItem.title --------------------//
-"WorldStage" = "World Stages";
-"Stage" = "Stage";
-"PiceSet" = "Pice Set";
+"WorldStage" = "世界中のステージ";
+"Stage" = "ステージ";
+"PiceSet" = "ピースセット";
 //-------------------- navigationItem.title --------------------//
 
-"errBlock" = "Failed to block";
+"errBlock" = "ブロックするのに失敗しました";
 
 
 //-------------------- Action Sheet --------------------//
-"Report" = "Report";
-"InapCharacters" = "Contains inappropriate characters";
-"InapImages" = "Contains inappropriate images";
-"Other" = "Other";
+"Report" = "報告";
+"InapCharacters" = "不適切な文字を含んでいる";
+"InapImages" = "不適切な画像を含んでいる";
+"Other" = "その他";
 //-------------------- Action Sheet --------------------//
 
 
 
-"IfYouBuyPice" = "You'll be able to use the following set of pieces in your stage making";
+"IfYouBuyPice" = "以下のピースセットをステージ作りで使えるようになります";
 
-"Purchase" = "Purchase";
+"Purchase" = "購入";
 
-"Account" = "Account";
+"Account" = "アカウント";
 
-"AboutPuzzleMaker" = "About Puzzle Maker";
+"AboutPuzzleMaker" = "パズルメーカについて";
 
 //-------------------- Tutorial Alert View --------------------//
-"ShowTutorial" = "Show Tutorial";
-"HowToCreateAStage" = "How to create a stage";
-"DoYouWantToShowTutorial" = "Do you want to do a tutorial on creating a stage?";
-"FirstTimeStageMaking" = "Making the stage for the first time 🎉";
-"FinishTheTutorial" = "Finish the tutorial"
-"DoYouWantToFinishTutorial" = "Do you want to finish the tutorial?";
+"ShowTutorial" = "チュートリアルを表示";
+"HowToCreateAStage" = "ステージの作り方";
+"DoYouWantToShowTutorial" = "ステージを作るチュートリアルを表示しますか";
+"FirstTimeStageMaking" = "はじめてのステージつくり 🎉";
+"FinishTheTutorial" = "チュートリアルを終了";
+"DoYouWantToFinishTutorial" = "チュートリアルを終了しますか？";
 //-------------------- Tutorial Alert View --------------------//
 
 
-"StageName" = "Stage Name";
-"EnterStageName" = "Please enter a stage name";
+"StageName" = "ステージ名";
+"EnterStageName" = "ステージ名を決めよう!";
