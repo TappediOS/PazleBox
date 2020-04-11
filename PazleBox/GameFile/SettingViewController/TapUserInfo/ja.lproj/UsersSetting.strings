@@ -9,7 +9,7 @@
 "XKh-t6-Ott.text" = "プレイ回数";
 
 /* Class = "UITableViewSection"; headerTitle = "ニックネーム"; ObjectID = "gND-om-Fba"; */
-"gND-om-Fba.headerTitle" = "ニックネーム";
+"gND-om-Fba.headerTitle" = "セキュリティ";
 
 /* Class = "UILabel"; text = "10"; ObjectID = "sbj-OR-uhI"; */
 "sbj-OR-uhI.text" = "10";

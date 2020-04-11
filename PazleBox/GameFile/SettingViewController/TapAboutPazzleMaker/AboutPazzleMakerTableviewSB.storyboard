@@ -75,6 +75,11 @@
                             <outlet property="delegate" destination="Rid-zZ-Bwo" id="7zf-73-dTE"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="LicenseLabel" destination="CKe-00-LXp" id="3aS-T3-CjA"/>
+                        <outlet property="PrivacyPolicyLabel" destination="vuj-hI-fVx" id="EUb-79-0et"/>
+                        <outlet property="UserAgreementLabel" destination="LmU-v9-dlW" id="LHo-9U-g5L"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5MN-sP-kjH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

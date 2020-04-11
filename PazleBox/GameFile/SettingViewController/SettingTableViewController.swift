@@ -76,7 +76,7 @@ class SettingTableViewController: UITableViewController, GKGameCenterControllerD
       
       ReviewAppLabel.text = NSLocalizedString("AppReview", comment: "")
       ContactUsLabel.text = NSLocalizedString("Contact us", comment: "")
-      CreditLabel.text = NSLocalizedString("Credit", comment: "")
+      CreditLabel.text = NSLocalizedString("AboutPuzzleMaker", comment: "")
    }
    
    

@@ -17,6 +17,11 @@ class AboutPazzleMakerTableviewController: UITableViewController {
    let firstNumberOfRowsInSection = 3
 
    let GameSound = GameSounds()
+   
+   @IBOutlet weak var PrivacyPolicyLabel: UILabel!
+   @IBOutlet weak var UserAgreementLabel: UILabel!
+   @IBOutlet weak var LicenseLabel: UILabel!
+   
 
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -29,7 +34,9 @@ class AboutPazzleMakerTableviewController: UITableViewController {
    }
    
    private func SetUpLabelText() {
-      //UserInfoLabel.text = NSLocalizedString("UserInfo", comment: "")
+      PrivacyPolicyLabel.text = NSLocalizedString("PrivacyPolicy", comment: "")
+      UserAgreementLabel.text = NSLocalizedString("UserAgreement", comment: "")
+      LicenseLabel.text = NSLocalizedString("Credit", comment: "")
    }
       
    
