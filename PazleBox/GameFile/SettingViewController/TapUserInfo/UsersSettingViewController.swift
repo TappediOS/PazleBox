@@ -26,6 +26,11 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
    
    let leaderBords = ManageLeadearBoards()
    
+   
+   @IBOutlet weak var BlockAccountsLabel: UILabel!
+   @IBOutlet weak var DeleteAcountLabel: UILabel!
+   
+   
    //テキストフィールドに書き込む最大の文字数。
    let maxTextfieldLength = 6
    
@@ -34,7 +39,7 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
       
       SetUpView()
       SetUpNavigationBar()
-
+      SetUpLabelStr()
    }
    
    //NOTE: viewWillDisappearにすると，Pagesheetを下げた瞬間に呼ばれる。
@@ -50,6 +55,11 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
    
    private func SetUpNavigationBar() {
       self.navigationItem.title = NSLocalizedString("Account", comment: "")
+   }
+   
+   private func SetUpLabelStr() {
+      DeleteAcountLabel.text = NSLocalizedString("BlockedAccounts", comment: "")
+      DeleteAcountLabel.text = NSLocalizedString("DeleteAccount", comment: "")
    }
 
    

@@ -79,6 +79,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Hun-Rb-jxQ"/>
+                    <connections>
+                        <outlet property="BlockAccountsLabel" destination="Iin-WD-v1n" id="GqV-rj-b9Y"/>
+                        <outlet property="DeleteAcountLabel" destination="c4x-GE-paQ" id="bEM-rf-XBm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v38-nh-jo5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
