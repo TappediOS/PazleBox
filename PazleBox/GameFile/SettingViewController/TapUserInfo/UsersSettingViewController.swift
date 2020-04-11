@@ -58,7 +58,7 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
    }
    
    private func SetUpLabelStr() {
-      DeleteAcountLabel.text = NSLocalizedString("BlockedAccounts", comment: "")
+      BlockAccountsLabel.text = NSLocalizedString("BlockedAccounts", comment: "")
       DeleteAcountLabel.text = NSLocalizedString("DeleteAccount", comment: "")
    }
 
