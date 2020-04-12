@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "ライセンス"; ObjectID = "CKe-00-LXp"; */
+"CKe-00-LXp.text" = "ライセンス";
+
+/* Class = "UILabel"; text = "利用規約"; ObjectID = "LmU-v9-dlW"; */
+"LmU-v9-dlW.text" = "利用規約";
+
+/* Class = "UILabel"; text = "Privacy Policy"; ObjectID = "vuj-hI-fVx"; */
+"vuj-hI-fVx.text" = "Privacy Policy";
+
+/* Class = "UITableViewSection"; headerTitle = "About Pazzle Maker"; ObjectID = "z6c-lF-rwA"; */
+"z6c-lF-rwA.headerTitle" = "이 앱에 대하여";

@@ -325,7 +325,7 @@
 		BF78D91F23C99C0600334188 /* PuzzleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D91E23C99C0600334188 /* PuzzleTest.swift */; };
 		BF78D92123CACA4300334188 /* TopTabBarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D92023CACA4300334188 /* TopTabBarTest.swift */; };
 		BF78D92323CAD29900334188 /* SettingVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78D92223CAD29900334188 /* SettingVCTest.swift */; };
-		BF7BEDBD2439AB0E0009B2A4 /* AboutPazzleMakerTableviewSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF7BEDBC2439AB0E0009B2A4 /* AboutPazzleMakerTableviewSB.storyboard */; };
+		BF7B4EB12442D12700101E4A /* AboutPazzleMakerTableviewSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF7B4EB32442D12700101E4A /* AboutPazzleMakerTableviewSB.storyboard */; };
 		BF7BEDBF2439AC6D0009B2A4 /* AboutPazzleMakerTableviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7BEDBE2439AC6D0009B2A4 /* AboutPazzleMakerTableviewController.swift */; };
 		BF7CD91C2240B56300F8302B /* 12p1Red.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD9192240B56100F8302B /* 12p1Red.png */; };
 		BF7CD91D2240B56300F8302B /* 12p1Green.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7CD91A2240B56200F8302B /* 12p1Green.png */; };
@@ -1204,7 +1204,11 @@
 		BF78D91E23C99C0600334188 /* PuzzleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleTest.swift; sourceTree = "<group>"; };
 		BF78D92023CACA4300334188 /* TopTabBarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarTest.swift; sourceTree = "<group>"; };
 		BF78D92223CAD29900334188 /* SettingVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVCTest.swift; sourceTree = "<group>"; };
-		BF7BEDBC2439AB0E0009B2A4 /* AboutPazzleMakerTableviewSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutPazzleMakerTableviewSB.storyboard; sourceTree = "<group>"; };
+		BF7B4EB22442D12700101E4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AboutPazzleMakerTableviewSB.storyboard; sourceTree = "<group>"; };
+		BF7B4EB52442D13300101E4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AboutPazzleMakerTableviewSB.strings; sourceTree = "<group>"; };
+		BF7B4EB72442D13700101E4A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/AboutPazzleMakerTableviewSB.strings"; sourceTree = "<group>"; };
+		BF7B4EB92442D13900101E4A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/AboutPazzleMakerTableviewSB.strings; sourceTree = "<group>"; };
+		BF7B4EBB2442D13B00101E4A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/AboutPazzleMakerTableviewSB.strings; sourceTree = "<group>"; };
 		BF7BEDBE2439AC6D0009B2A4 /* AboutPazzleMakerTableviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPazzleMakerTableviewController.swift; sourceTree = "<group>"; };
 		BF7CD9192240B56100F8302B /* 12p1Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12p1Red.png; sourceTree = "<group>"; };
 		BF7CD91A2240B56200F8302B /* 12p1Green.png */ = {isa = PBXFileReference; explicitFileType = image.png; path = 12p1Green.png; sourceTree = "<group>"; };
@@ -2463,7 +2467,7 @@
 		BF7BEDBB2439AACE0009B2A4 /* TapAboutPazzleMaker */ = {
 			isa = PBXGroup;
 			children = (
-				BF7BEDBC2439AB0E0009B2A4 /* AboutPazzleMakerTableviewSB.storyboard */,
+				BF7B4EB32442D12700101E4A /* AboutPazzleMakerTableviewSB.storyboard */,
 				BF7BEDBE2439AC6D0009B2A4 /* AboutPazzleMakerTableviewController.swift */,
 			);
 			path = TapAboutPazzleMaker;
@@ -3535,7 +3539,7 @@
 				BFCE261E224A557B0099A775 /* 23p11Red.png in Resources */,
 				BFF6D71F22896610000253A2 /* 43p21Blue.png in Resources */,
 				BFF6D6472284152F000253A2 /* 32p14Blue.png in Resources */,
-				BF7BEDBD2439AB0E0009B2A4 /* AboutPazzleMakerTableviewSB.storyboard in Resources */,
+				BF7B4EB12442D12700101E4A /* AboutPazzleMakerTableviewSB.storyboard in Resources */,
 				BFF6D72722896610000253A2 /* 43p6Blue.png in Resources */,
 				BF2674F42227B6A4003D370F /* LaunchScreen.storyboard in Resources */,
 				BF72916C2361866E00E8D947 /* InfoPlist.strings in Resources */,
@@ -4481,6 +4485,18 @@
 				BF7291712361867900E8D947 /* ko */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BF7B4EB32442D12700101E4A /* AboutPazzleMakerTableviewSB.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF7B4EB22442D12700101E4A /* Base */,
+				BF7B4EB52442D13300101E4A /* en */,
+				BF7B4EB72442D13700101E4A /* zh-Hant */,
+				BF7B4EB92442D13900101E4A /* ja */,
+				BF7B4EBB2442D13B00101E4A /* ko */,
+			);
+			name = AboutPazzleMakerTableviewSB.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
