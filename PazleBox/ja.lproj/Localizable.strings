@@ -237,3 +237,7 @@
 "EnterStageName" = "ステージ名を決めよう!";
 
 "DeleteAccount" = "アカウントの削除";
+
+
+"STAGE_COMMENTED_NOTIFICATION" = "%@ さんがステージにコメントしました";
+"FOLLOWED_NOTIFICATION" = "%@ さんにフォローされました";

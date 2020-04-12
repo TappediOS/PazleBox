@@ -233,3 +233,7 @@
 "EnterStageName" = "現在是時候命名舞台了！";
 
 "DeleteAccount" = "刪除帳戶";
+
+
+"STAGE_COMMENTED_NOTIFICATION" = "%@ 在舞台上發表了評論";
+"FOLLOWED_NOTIFICATION" = "%@ 跟著你";

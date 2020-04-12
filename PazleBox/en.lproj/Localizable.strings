@@ -236,3 +236,7 @@
 "EnterStageName" = "It's time to name the stage!";
 
 "DeleteAccount" = "Delete Account";
+
+
+"STAGE_COMMENTED_NOTIFICATION" = "%@ commented on the stage";
+"FOLLOWED_NOTIFICATION" = "%@ followed you";
