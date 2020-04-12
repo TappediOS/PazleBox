@@ -238,5 +238,7 @@
 "DeleteAccount" = "Delete Account";
 
 
+//-------------------- Notification Localize --------------------//
 "STAGE_COMMENTED_NOTIFICATION" = "%@ commented on the stage";
 "FOLLOWED_NOTIFICATION" = "%@ followed you";
+//-------------------- Notification Localize --------------------//

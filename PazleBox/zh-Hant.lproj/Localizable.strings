@@ -235,5 +235,7 @@
 "DeleteAccount" = "刪除帳戶";
 
 
+//-------------------- Notification Localize --------------------//
 "STAGE_COMMENTED_NOTIFICATION" = "%@ 在舞台上發表了評論";
 "FOLLOWED_NOTIFICATION" = "%@ 跟著你";
+//-------------------- Notification Localize --------------------//
