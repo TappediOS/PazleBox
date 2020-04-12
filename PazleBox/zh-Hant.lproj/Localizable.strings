@@ -154,79 +154,79 @@
 
 //TODO:- 他のファイルにもここ以下追加すること
 //-------------------- コメント書く --------------------//
-"SendAComment" = "Send a comment";
-"AlreadyWritten" = "Already written";
+"SendAComment" = "發表評論";
+"AlreadyWritten" = "已經寫好了";
 //-------------------- コメント書く --------------------//
 
 
 
 //-------------------- Follow --------------------//
-"Follow" = "Follow";
-"Following" = "Following";
-"Followers" = "Followers";
-"BlockedAccounts" = "Blocked Accounts";
-"UnFollow" = "UnFollow";
-"UnBlock" = "UnBlock";
-"Block" = "Block";
+"Follow" = "跟隨";
+"Following" = "以下";
+"Followers" = "追隨者";
+"BlockedAccounts" = "帳戶被封鎖";
+"UnFollow" = "取消關注";
+"UnBlock" = "解除封鎖";
+"Block" = "塊";
 //-------------------- Follow --------------------//
 
 //User SetUp
-"Register" = "Register";
+"Register" = "寄存器";
 
 
 //-------------------- TabBar --------------------//
-"TimeLine" = "Time Line";
-"PiceShop" = "Pice Shop";
-"MyPage" = "My Page";
-"EditProfile" = "Edit Profile";
+"TimeLine" = "時間線";
+"PiceShop" = "香料店";
+"MyPage" = "我的頁面";
+"EditProfile" = "輪廓";
 //-------------------- TabBar --------------------//
 
 //-------------------- No Table View --------------------//
-"NoStagePosts" = "No stage posts";
-"StageShowIf" = "It will be shown when the stage has been posted";
-"IfYouFollow" = "If you follow another user, their posts will be displayed";
+"NoStagePosts" = "沒有舞台帖子";
+"StageShowIf" = "發布階段後將顯示它";
+"IfYouFollow" = "如果您關注其他用戶，則將顯示其帖子";
 
-"NoComments" = "No Comments";
-"NoCommentYet" = "No Comment Yet";
+"NoComments" = "沒意見";
+"NoCommentYet" = "暫無評論";
 //-------------------- No Table View --------------------//
 
 //-------------------- navigationItem.title --------------------//
-"WorldStage" = "World Stages";
-"Stage" = "Stage";
-"PiceSet" = "Pice Set";
+"WorldStage" = "世界舞台";
+"Stage" = "階段";
+"PiceSet" = "調味料套裝";
 //-------------------- navigationItem.title --------------------//
 
-"errBlock" = "Failed to block";
+"errBlock" = "封鎖失敗";
 
 
 //-------------------- Action Sheet --------------------//
-"Report" = "Report";
-"InapCharacters" = "Contains inappropriate characters";
-"InapImages" = "Contains inappropriate images";
-"Other" = "Other";
+"Report" = "報告";
+"InapCharacters" = "包含不適當的字符";
+"InapImages" = "包含不當圖片";
+"Other" = "其他";
 //-------------------- Action Sheet --------------------//
 
 
 
-"IfYouBuyPice" = "You'll be able to use the following set of pieces in your stage making";
+"IfYouBuyPice" = "您將可以在舞台製作中使用以下幾組作品";
 
-"Purchase" = "Purchase";
+"Purchase" = "採購";
 
-"Account" = "Account";
+"Account" = "帳戶";
 
-"AboutPuzzleMaker" = "About Puzzle Maker";
+"AboutPuzzleMaker" = "關於這個程序";
 
 //-------------------- Tutorial Alert View --------------------//
-"ShowTutorial" = "Show Tutorial";
-"HowToCreateAStage" = "How to create a stage";
-"DoYouWantToShowTutorial" = "Do you want to do a tutorial on creating a stage?";
-"FirstTimeStageMaking" = "Making the stage for the first time 🎉";
-"FinishTheTutorial" = "Finish the tutorial";
-"DoYouWantToFinishTutorial" = "Do you want to finish the tutorial?";
+"ShowTutorial" = "顯示教程";
+"HowToCreateAStage" = "如何建立舞台";
+"DoYouWantToShowTutorial" = "您想做一個關於創建舞台的教程嗎？";
+"FirstTimeStageMaking" = "第一次登台🎉";
+"FinishTheTutorial" = "完成教程";
+"DoYouWantToFinishTutorial" = "您要結束本教程嗎？";
 //-------------------- Tutorial Alert View --------------------//
 
 
-"StageName" = "Stage Name";
-"EnterStageName" = "It's time to name the stage!";
+"StageName" = "藝名";
+"EnterStageName" = "現在是時候命名舞台了！";
 
-"DeleteAccount" = "Delete Account";
+"DeleteAccount" = "刪除帳戶";

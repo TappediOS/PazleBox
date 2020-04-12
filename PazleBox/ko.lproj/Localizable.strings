@@ -157,79 +157,79 @@
 
 //TODO:- 他のファイルにもここ以下追加すること
 //-------------------- コメント書く --------------------//
-"SendAComment" = "Send a comment";
-"AlreadyWritten" = "Already written";
+"SendAComment" = "의견 보내기";
+"AlreadyWritten" = "이미 작성";
 //-------------------- コメント書く --------------------//
 
 
 
 //-------------------- Follow --------------------//
-"Follow" = "Follow";
-"Following" = "Following";
-"Followers" = "Followers";
-"BlockedAccounts" = "Blocked Accounts";
-"UnFollow" = "UnFollow";
-"UnBlock" = "UnBlock";
-"Block" = "Block";
+"Follow" = "따르다";
+"Following" = "수행원";
+"Followers" = "팔로워";
+"BlockedAccounts" = "차단 된 계정";
+"UnFollow" = "팔로우 해제";
+"UnBlock" = "차단 해제";
+"Block" = "블록";
 //-------------------- Follow --------------------//
 
 //User SetUp
-"Register" = "Register";
+"Register" = "레지스터";
 
 
 //-------------------- TabBar --------------------//
-"TimeLine" = "Time Line";
-"PiceShop" = "Pice Shop";
-"MyPage" = "My Page";
-"EditProfile" = "Edit Profile";
+"TimeLine" = "타임 라인";
+"PiceShop" = "파이스 샵";
+"MyPage" = "나의 페이지";
+"EditProfile" = "프로필";
 //-------------------- TabBar --------------------//
 
 //-------------------- No Table View --------------------//
-"NoStagePosts" = "No stage posts";
-"StageShowIf" = "It will be shown when the stage has been posted";
-"IfYouFollow" = "If you follow another user, their posts will be displayed";
+"NoStagePosts" = "무대 게시물이 없습니다";
+"StageShowIf" = "무대가 게시되면 표시됩니다";
+"IfYouFollow" = "다른 사용자를 팔로우하면 해당 게시물이 표시됩니다";
 
-"NoComments" = "No Comments";
-"NoCommentYet" = "No Comment Yet";
+"NoComments" = "코멘트가 없습니다";
+"NoCommentYet" = "아직 코멘트가 없습니다";
 //-------------------- No Table View --------------------//
 
 //-------------------- navigationItem.title --------------------//
-"WorldStage" = "World Stages";
-"Stage" = "Stage";
-"PiceSet" = "Pice Set";
+"WorldStage" = "세계 무대";
+"Stage" = "단계";
+"PiceSet" = "주사위 세트";
 //-------------------- navigationItem.title --------------------//
 
-"errBlock" = "Failed to block";
+"errBlock" = "차단하지 못했습니다";
 
 
 //-------------------- Action Sheet --------------------//
-"Report" = "Report";
-"InapCharacters" = "Contains inappropriate characters";
-"InapImages" = "Contains inappropriate images";
-"Other" = "Other";
+"Report" = "보고서";
+"InapCharacters" = "부적절한 문자를 포함";
+"InapImages" = "부적절한 이미지가 포함되어 있습니다";
+"Other" = "다른";
 //-------------------- Action Sheet --------------------//
 
 
 
-"IfYouBuyPice" = "You'll be able to use the following set of pieces in your stage making";
+"IfYouBuyPice" = "무대 제작에서 다음과 같은 세트를 사용할 수 있습니다";
 
-"Purchase" = "Purchase";
+"Purchase" = "매수";
 
-"Account" = "Account";
+"Account" = "계정";
 
-"AboutPuzzleMaker" = "About Puzzle Maker";
+"AboutPuzzleMaker" = "이 앱에 대하여";
 
 //-------------------- Tutorial Alert View --------------------//
-"ShowTutorial" = "Show Tutorial";
-"HowToCreateAStage" = "How to create a stage";
-"DoYouWantToShowTutorial" = "Do you want to do a tutorial on creating a stage?";
-"FirstTimeStageMaking" = "Making the stage for the first time 🎉";
-"FinishTheTutorial" = "Finish the tutorial";
-"DoYouWantToFinishTutorial" = "Do you want to finish the tutorial?";
+"ShowTutorial" = "튜토리얼 표시";
+"HowToCreateAStage" = "스테이지를 만드는 방법";
+"DoYouWantToShowTutorial" = "스테이지 만들기에 대한 자습서를 원하십니까?";
+"FirstTimeStageMaking" = "처음으로 무대 만들기 🎉";
+"FinishTheTutorial" = "튜토리얼 완료";
+"DoYouWantToFinishTutorial" = "튜토리얼을 마치시겠습니까?";
 //-------------------- Tutorial Alert View --------------------//
 
 
-"StageName" = "Stage Name";
-"EnterStageName" = "It's time to name the stage!";
+"StageName" = "예명";
+"EnterStageName" = "무대의 이름을 지을 시간입니다!";
 
-"DeleteAccount" = "Delete Account";
+"DeleteAccount" = "계정 삭제";
