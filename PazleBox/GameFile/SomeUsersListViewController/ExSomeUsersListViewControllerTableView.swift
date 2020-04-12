@@ -64,13 +64,13 @@ extension SomeUsersListViewController: UITableViewDelegate, UITableViewDataSourc
 
 extension SomeUsersListViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-       let str = NSLocalizedString("ユーザなし", comment: "")
+       let str = NSLocalizedString("NoUser", comment: "")
        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
        return NSAttributedString(string: str, attributes: attrs)
    }
    
    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-       let str = NSLocalizedString("表示するユーザはいません", comment: "")
+       let str = NSLocalizedString("NoUserYet", comment: "")
        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
        return NSAttributedString(string: str, attributes: attrs)
    }

@@ -188,6 +188,9 @@
 
 "NoComments" = "沒意見";
 "NoCommentYet" = "暫無評論";
+
+"NoUser" = "沒有使用者";
+"NoUserYet" = "沒有用戶顯示";
 //-------------------- No Table View --------------------//
 
 //-------------------- navigationItem.title --------------------//

@@ -2891,8 +2891,8 @@
             filePath = "PazleBox/GameFile/CreateStage/CleateStageViewControllerFile/CreateStageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "823"
-            endingLineNumber = "823"
+            startingLineNumber = "828"
+            endingLineNumber = "828"
             landmarkName = "TapFinChouseResPuzzleButton()"
             landmarkType = "7">
          </BreakpointContent>

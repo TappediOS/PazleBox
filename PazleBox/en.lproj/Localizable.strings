@@ -191,6 +191,9 @@
 
 "NoComments" = "No Comments";
 "NoCommentYet" = "No Comment Yet";
+
+"NoUser" = "No User";
+"NoUserYet" = "No users to display";
 //-------------------- No Table View --------------------//
 
 //-------------------- navigationItem.title --------------------//

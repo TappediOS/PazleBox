@@ -732,7 +732,7 @@ class CleateStageViewController: UIViewController {
       Play3DtouchLight()
       GameSound.PlaySoundsTapButton()
       Analytics.logEvent("TapOptionBtn", parameters: nil)
-      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: true)
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
       let ComleateView = SCLAlertView(appearance: Appearanse)
 
       ComleateView.addButton(NSLocalizedString("Home", comment: "")){
@@ -744,6 +744,11 @@ class CleateStageViewController: UIViewController {
          self.GameSound.PlaySoundsTapButton()
          Analytics.logEvent("TapHomeCreateing", parameters: nil)
       }
+      ComleateView.addButton(NSLocalizedString("Cancel", comment: "")) {
+         self.Play3DtouchLight()
+         self.GameSound.PlaySoundsTapButton()
+      }
+      
       ComleateView.showInfo(NSLocalizedString("Pouse", comment: ""), subTitle: NSLocalizedString("IfGoHome", comment: ""))
    }
    
