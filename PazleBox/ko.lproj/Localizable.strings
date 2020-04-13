@@ -242,3 +242,10 @@
 "STAGE_COMMENTED_NOTIFICATION" = "%@ 씨가 무대에 댓글을 남겼습니다";
 "FOLLOWED_NOTIFICATION" = "%@ 님이 팔로우했습니다";
 //-------------------- Notification Localize --------------------//
+
+
+//-------------------- User SetUp VC --------------------//
+"RegiUserInfo" = "사용자 정보 등록";
+"SetUpProfilePicture" = "프로필 사진 설정";
+"Name" = "이름";
+//-------------------- User SetUp VC --------------------//

@@ -462,6 +462,9 @@ extension AppDelegate : MessagingDelegate {
       // TODO: 必要に応じてトークンをアプリケーションサーバーに送信します。
       // Note: このコールバックは、アプリの起動時と新しいトークンが生成されるたびに発生します。
       
+      print("新しいFCM TokenをUserDefaultsに保存します")
+      UserDefaults.standard.set(fcmToken, forKey: "UserDefaultFcmToken")
+      
       let UserUID = UserDefaults.standard.string(forKey: "UID")
       if UserUID == nil {
          print("多分最初にアプリを起動した(UserUID == nil)(Delegate)")
@@ -478,8 +481,7 @@ extension AppDelegate : MessagingDelegate {
       let db = Firestore.firestore()
       let userUID = UserDefaults.standard.string(forKey: "UID")
       
-      print("新しいFCM TokenをUserDefaultsに保存します")
-      UserDefaults.standard.set(fcmToken, forKey: "UserDefaultFcmToken")
+      
       
       if let uid = userUID {
          //setData()を使う時はmergeをtrueにする。

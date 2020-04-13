@@ -120,6 +120,7 @@
                         <outlet property="NameTextField" destination="udL-An-c9L" id="yPh-h8-qci"/>
                         <outlet property="ReLoadCheckUserExistFireStoreButton" destination="5RZ-tD-OAb" id="cPu-8O-dX1"/>
                         <outlet property="RegisterButton" destination="dHd-KX-hqv" id="i65-of-bhE"/>
+                        <outlet property="RegisterUserInfoLabel" destination="W0p-nv-zNc" id="z48-cg-j31"/>
                         <outlet property="UsersProfileButton" destination="wQX-jV-8Pv" id="GVK-da-MSn"/>
                     </connections>
                 </viewController>

@@ -239,3 +239,10 @@
 "STAGE_COMMENTED_NOTIFICATION" = "%@ 在舞台上發表了評論";
 "FOLLOWED_NOTIFICATION" = "%@ 跟著你";
 //-------------------- Notification Localize --------------------//
+
+
+//-------------------- User SetUp VC --------------------//
+"RegiUserInfo" = "註冊用戶信息";
+"SetUpProfilePicture" = "設置您的個人資料圖片";
+"Name" = "名稱";
+//-------------------- User SetUp VC --------------------//

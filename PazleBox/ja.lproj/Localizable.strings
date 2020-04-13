@@ -244,3 +244,10 @@
 "STAGE_COMMENTED_NOTIFICATION" = "%@ さんがステージにコメントしました";
 "FOLLOWED_NOTIFICATION" = "%@ さんにフォローされました";
 //-------------------- Notification Localize --------------------//
+
+
+//-------------------- User SetUp VC --------------------//
+"RegiUserInfo" = "ユーザ情報の登録";
+"SetUpProfilePicture" = "プロフィール画像を設定";
+"Name" = "名前";
+//-------------------- User SetUp VC --------------------//

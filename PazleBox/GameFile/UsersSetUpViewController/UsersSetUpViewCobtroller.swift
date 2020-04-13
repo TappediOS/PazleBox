@@ -19,6 +19,7 @@ import SCLAlertView
 class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
    
    
+   @IBOutlet weak var RegisterUserInfoLabel: UILabel!
    @IBOutlet weak var UsersProfileButton: UIButton!
    @IBOutlet weak var ChangeProfileButton: UIButton!
    
@@ -56,7 +57,10 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
       SetUpTextField()
       SetUpUsersImageButton()
       SetUpReLoadCheckUserExistFireStoreButton()
+      SetUpRegisterUserInfoLabel()
       SetUpRegisterButton()
+      SetUpChangeProfileButton()
+      SetUpNameLabel()
       SetUpFireStoreSetting()
       
       
@@ -108,6 +112,11 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
       ReLoadCheckUserExistFireStoreButton.layer.cornerRadius = 10
    }
    
+   func SetUpRegisterUserInfoLabel() {
+      RegisterUserInfoLabel.text = NSLocalizedString("RegiUserInfo", comment: "")
+      RegisterUserInfoLabel.adjustsFontSizeToFitWidth = true
+   }
+   
    func SetUpRegisterButton() {
       let title = NSLocalizedString("Register", comment: "")
       RegisterButton.setTitle(title, for: .normal)
@@ -116,8 +125,18 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
       RegisterButton.setTitleColor(UIColor.clouds(), for: .normal)
       RegisterButton.layer.cornerRadius =  5
       RegisterButton.isEnabled = false
-      
       usersImage = NoProfileImage!
+   }
+   
+   func SetUpChangeProfileButton() {
+      let title = NSLocalizedString("Register", comment: "")
+      ChangeProfileButton.setTitle(title, for: .normal)
+      ChangeProfileButton.titleLabel?.adjustsFontSizeToFitWidth = true
+   }
+   
+   func SetUpNameLabel() {
+      RegisterUserInfoLabel.text = NSLocalizedString("Name", comment: "")
+      NameLabel.adjustsFontSizeToFitWidth = true
    }
    
    private func SetUpFireStoreSetting() {
@@ -125,7 +144,7 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
    }
-   
+
    private func DisableReLoadCheckUserExistFireStoreButton() {
       self.ReLoadCheckUserExistFireStoreButton.isEnabled = false
       self.ReLoadCheckUserExistFireStoreButton.isHidden = true
@@ -334,7 +353,10 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
       let EmptyArray = Array<Any>()
       var TimeLineShowListArray = Array<Any>()
       TimeLineShowListArray.append(uid)
+      
+      let FcmToken = UserDefaults.standard.string(forKey: "UserDefaultFcmToken") ?? ""
      
+      print("FcmToken = \(FcmToken)")
       //FcmTokenは別途登録する.appDelegateで。そのタイミングがいつになるかわからんからここではsetData()
       //を使う。ただし，mergeをtrueにする
       //逆に言えば，appDelegateで更新する際もsetData() + mergeをtrue.
@@ -345,7 +367,8 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
          "Blocked": EmptyArray,
          "Follow": EmptyArray,
          "Follower": EmptyArray,
-         "TimeLineShowList": TimeLineShowListArray
+         "TimeLineShowList": TimeLineShowListArray,
+         "FcmToken": FcmToken
       ], merge: true) { err in
          if let err = err {
             print("---------- MonitoerdUserInfoをFireStoreに保存失敗  ----------\n")
@@ -365,6 +388,7 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
    
    private func RegisterUserFirebase(uid: String, Name: String, profileImage: NSData) {
       print("\n---------- ユーザ情報をFireStoreに保存開始  ----------")
+      let FcmToken = UserDefaults.standard.string(forKey: "UserDefaultFcmToken") ?? ""
       let Biography: String = ""
       let FollowArray = Array<Any>()
       let FollowerArray = Array<Any>()
@@ -382,7 +406,8 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
          "Follow": FollowArray,
          "Follower": FollowerArray,
          "TimeLineShowList": TimeLineShowList,
-         "downloadProfileURL": "nil"
+         "downloadProfileURL": "nil",
+         "FcmToken": FcmToken
       ]) { err in
          if let err = err {
             print("---------- ユーザ情報をFireStoreに保存失敗  ----------\n")

@@ -242,3 +242,10 @@
 "STAGE_COMMENTED_NOTIFICATION" = "%@ commented on the stage";
 "FOLLOWED_NOTIFICATION" = "%@ followed you";
 //-------------------- Notification Localize --------------------//
+
+
+//-------------------- User SetUp VC --------------------//
+"RegiUserInfo" = "Registering User Information";
+"SetUpProfilePicture" = "Set up your profile picture";
+"Name" = "Name";
+//-------------------- User SetUp VC --------------------//
