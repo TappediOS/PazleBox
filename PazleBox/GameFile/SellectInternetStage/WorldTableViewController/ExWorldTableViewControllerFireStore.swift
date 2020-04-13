@@ -76,7 +76,6 @@ extension WorldTableViewController {
                print("UID = \(usersUID)")
                print("\n---- データベースからのデータ取得エラー ----")
             } else {
-               self.Play3DtouchLight()
                if let document = document, document.exists, let doc = document.data() {
                   let userName = doc["name"] as! String
                   self.LatestStageDatas[tmp].updateValue(userName, forKey: "PostedUsersName")
@@ -100,7 +99,6 @@ extension WorldTableViewController {
          } else {
             // Data for "images/island.jpg" is returned
             self.LatestStageDatas[arrayNum].updateValue(data!, forKey: "PostedUsersProfileImage")
-            self.Play3DtouchSuccess()
          }
          
          self.DownLoadProfileCounterForLatest += 1
@@ -116,6 +114,7 @@ extension WorldTableViewController {
             //リフレッシュかそうでないかで処理を変える
             if self.RefleshControl.isRefreshing == false {
                self.StopLoadingAnimation()
+               self.Play3DtouchSuccess()
                print("Delegate設定します。")
                //読み取りが終わってからデリゲードを入れる必要がある
                self.WorldTableView.delegate = self
@@ -141,7 +140,6 @@ extension WorldTableViewController {
                print("UID = \(usersUID)")
                print("\n---- データベースからのデータ取得エラー ----")
             } else {
-               self.Play3DtouchLight()
                if let document = document, document.exists, let doc = document.data() {
                   let userName = doc["name"] as! String
                   self.PlayCountStageDatas[tmp].updateValue(userName, forKey: "PostedUsersName")
@@ -164,7 +162,6 @@ extension WorldTableViewController {
             self.PlayCountStageDatas[arrayNum].updateValue(errorUsersImage!, forKey: "PostedUsersProfileImage")
          } else {
             self.PlayCountStageDatas[arrayNum].updateValue(data!, forKey: "PostedUsersProfileImage")
-            self.Play3DtouchSuccess()
          }
          
          self.DownLoadProfileCounterForPlayCount += 1
@@ -194,7 +191,6 @@ extension WorldTableViewController {
                print("UID = \(usersUID)")
                print("\n---- データベースからのデータ取得エラー ----")
             } else {
-               self.Play3DtouchLight()
                if let document = document, document.exists, let doc = document.data() {
                   let userName = doc["name"] as! String
                   self.RatedStageDatas[tmp].updateValue(userName, forKey: "PostedUsersName")
@@ -218,7 +214,6 @@ extension WorldTableViewController {
          } else {
             // Data for "images/island.jpg" is returned
             self.RatedStageDatas[arrayNum].updateValue(data!, forKey: "PostedUsersProfileImage")
-            self.Play3DtouchSuccess()
          }
          
          self.DownLoadProfileCounterForRated += 1
@@ -253,10 +248,8 @@ extension WorldTableViewController {
             if let err = err {
                print("Error: \(err)")
                print("\n---- データベースからのデータ取得エラー ----")
-               self.Play3DtouchError()
                self.ShowErrGetStageAlertView()
             } else {
-               self.Play3DtouchSuccess()
                for document in querySnapshot!.documents {
                   if let userUID = document["addUser"] as? String, self.BlockList.contains(userUID) {
                      print("\(userUID)をブロックしているのでこいつの最新データは取得しない")

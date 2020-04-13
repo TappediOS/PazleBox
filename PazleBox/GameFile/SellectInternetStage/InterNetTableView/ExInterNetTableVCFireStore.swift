@@ -23,7 +23,6 @@ extension InterNetTableViewController {
                print("UID = \(usersUID)")
                print("\n---- データベースからのデータ取得エラー ----")
             } else {
-               self.Play3DtouchLight()
                if let document = document, document.exists, let doc = document.data() {
                   let userName = doc["name"] as! String
                   self.TimeLineData[tmp].updateValue(userName, forKey: "PostedUsersName")
@@ -47,7 +46,6 @@ extension InterNetTableViewController {
          } else {
             // Data for "images/island.jpg" is returned
             self.TimeLineData[arrayNum].updateValue(data!, forKey: "PostedUsersProfileImage")
-            self.Play3DtouchSuccess()
          }
          
          self.DownLoadProfileCounter += 1
@@ -67,6 +65,7 @@ extension InterNetTableViewController {
       if self.RefleshControl.isRefreshing == false {
          self.StopLoadingAnimation()
          print("Delegate設定します。")
+         self.Play3DtouchSuccess()
          //読み取りが終わってからデリゲードを入れる必要がある
          self.InterNetTableView.delegate = self
          self.InterNetTableView.dataSource = self
@@ -101,7 +100,6 @@ extension InterNetTableViewController {
                self.Play3DtouchError()
                self.ShowErrGetStageAlertView()
             } else {
-               self.Play3DtouchSuccess()
                for document in querySnapshot!.documents {
                   self.TimeLineData.append(self.GetRawData(document: document))
                }
