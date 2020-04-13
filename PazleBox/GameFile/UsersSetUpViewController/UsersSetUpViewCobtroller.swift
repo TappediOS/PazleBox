@@ -67,8 +67,6 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
       DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
          self.CheckUserFirstLoginOrReDownloadApp()
       }
-      
-      
    }
    
    private func InitLoadActivityView() {

@@ -137,9 +137,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
       UserDefaults.standard.register(defaults: ["BuyPiceSet3": false])
       UserDefaults.standard.register(defaults: ["BuyPiceSet4": false])
       UserDefaults.standard.register(defaults: ["FirstCreateStage": true])
-      //TODO:- 以下の1行は後で消すこと
-      UserDefaults.standard.set(true, forKey: "FirstCreateStage")
-      UserDefaults.standard.set(false, forKey: "BuyRemoveAd")
       UserDefaults.standard.register(defaults: ["CreateStageNum": 0])
       if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == true {
          print("\n--- ユーザーは広告削除の課金をしています ---\n")
@@ -291,7 +288,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
    private func updateFcmToken(FcmToken: String) {
       let UserUID = UserDefaults.standard.string(forKey: "UID")
       if UserUID == nil {
-         print("多分最初にアプリを起動した")
+         print("多分最初にアプリを起動した(UserUID == nil)")
+         return
+      }
+      
+      let isLogined = UserDefaults.standard.bool(forKey: "Logined")
+      if isLogined == false {
+         print("isLoginedがfalse")
          return
       }
       
@@ -458,6 +461,18 @@ extension AppDelegate : MessagingDelegate {
       NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
       // TODO: 必要に応じてトークンをアプリケーションサーバーに送信します。
       // Note: このコールバックは、アプリの起動時と新しいトークンが生成されるたびに発生します。
+      
+      let UserUID = UserDefaults.standard.string(forKey: "UID")
+      if UserUID == nil {
+         print("多分最初にアプリを起動した(UserUID == nil)(Delegate)")
+         return
+      }
+      
+      let isLogined = UserDefaults.standard.bool(forKey: "Logined")
+      if isLogined == false {
+         print("isLoginedがfalse(Delegate)")
+         return
+      }
       
       print("\n------ FCMトークン更新されたので，Firestoreに登録しなおします ------")
       let db = Firestore.firestore()
