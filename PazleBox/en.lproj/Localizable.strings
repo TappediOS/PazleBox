@@ -235,7 +235,6 @@
 "StageName" = "Stage Name";
 "EnterStageName" = "It's time to name the stage!";
 
-"DeleteAccount" = "Delete Account";
 
 
 //-------------------- Notification Localize --------------------//
@@ -249,3 +248,18 @@
 "SetUpProfilePicture" = "Set up your profile picture";
 "Name" = "Name";
 //-------------------- User SetUp VC --------------------//
+
+
+//-------------------- Delete Account --------------------//
+"DeleteAccount" = "Delete Account";
+
+"DeleteInfo" = "Do you want to delete your account?";
+
+"Warning" = "Warning!!";
+"WarningInfo" = "Deleting your account will delete all stages and comments you've created. This action is irrevocable.";
+
+"AccountDeleteFailure" = "Account deletion failure";
+"AccountDeleteComplete" = "Account deletion complete";
+"ThankYouUsingThisApp" = "Thank you for using the app!🙂";
+"SeeYou" = "See you";
+//-------------------- Delete Account --------------------//

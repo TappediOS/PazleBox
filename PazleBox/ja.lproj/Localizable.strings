@@ -236,7 +236,6 @@
 "StageName" = "ステージ名";
 "EnterStageName" = "ステージ名を決めよう!";
 
-"DeleteAccount" = "アカウントの削除";
 
 
 
@@ -251,3 +250,18 @@
 "SetUpProfilePicture" = "プロフィール画像を設定";
 "Name" = "名前";
 //-------------------- User SetUp VC --------------------//
+
+
+//-------------------- Delete Account --------------------//
+"DeleteAccount" = "アカウントの削除";
+
+"DeleteInfo" = "アカウントを削除しますか？";
+
+"Warning" = "警告!!";
+"WarningInfo" = "アカウントを削除すると作成したステージやコメントが全て削除されます。この操作は取り消せません。";
+
+"AccountDeleteFailure" = "アカウント削除失敗";
+"AccountDeleteComplete" = "アカウント削除完了";
+"ThankYouUsingThisApp" = "アプリを使用していただきありがとうございました🙂";
+"SeeYou" = "またね";
+//-------------------- Delete Account --------------------//

@@ -287,7 +287,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
    
    private func updateFcmToken(FcmToken: String) {
       let UserUID = UserDefaults.standard.string(forKey: "UID")
-      if UserUID == nil {
+      if UserUID == nil || UserUID == "" {
          print("多分最初にアプリを起動した(UserUID == nil)")
          return
       }
@@ -466,7 +466,7 @@ extension AppDelegate : MessagingDelegate {
       UserDefaults.standard.set(fcmToken, forKey: "UserDefaultFcmToken")
       
       let UserUID = UserDefaults.standard.string(forKey: "UID")
-      if UserUID == nil {
+      if UserUID == nil || UserUID == "" {
          print("多分最初にアプリを起動した(UserUID == nil)(Delegate)")
          return
       }

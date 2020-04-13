@@ -235,7 +235,6 @@
 "StageName" = "예명";
 "EnterStageName" = "무대의 이름을 지을 시간입니다!";
 
-"DeleteAccount" = "계정 삭제";
 
 
 //-------------------- Notification Localize --------------------//
@@ -249,3 +248,18 @@
 "SetUpProfilePicture" = "프로필 사진 설정";
 "Name" = "이름";
 //-------------------- User SetUp VC --------------------//
+
+
+//-------------------- Delete Account --------------------//
+"DeleteAccount" = "계정 삭제";
+
+"DeleteInfo" = "계정을 삭제 하시겠습니까?";
+
+"Warning" = "경고!!";
+"WarningInfo" = "계정을 삭제하면 생성 한 모든 단계와 댓글이 삭제됩니다. 이 행동은 취소 할 수 없습니다.";
+
+"AccountDeleteFailure" = "계정 삭제 실패";
+"AccountDeleteComplete" = "계정 삭제 완료";
+"ThankYouUsingThisApp" = "앱을 이용해 주셔서 감사합니다🙂";
+"SeeYou" = "만나요";
+//-------------------- Delete Account --------------------//
