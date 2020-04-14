@@ -215,7 +215,7 @@ class UsersSettingTableViewController: UITableViewController, UITextFieldDelegat
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: true)
       let AlertView = SCLAlertView(appearance: Appearanse)
            
-      let title = NSLocalizedString("AccountDeleteComplete", comment: "")
+      let title = NSLocalizedString("AccountDeleteFailure", comment: "")
       let subTitle = NSLocalizedString("checkNet", comment: "")
       AlertView.showError(title, subTitle: subTitle)
    }

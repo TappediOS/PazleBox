@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import TapticEngine
 import Firebase
+import FirebaseAuth
 import FirebaseFirestore
 import CropViewController
 import FirebaseStorage
@@ -51,6 +52,9 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
    
    var isFinishRegistorProfileImageFirebaseStorage = false
    var isFinishRegistorUserInfoFireStore = false
+   
+   var isFailForUserUidIsNil = false
+   var FailForUserUidInNilCount = 0
    
    override func viewDidLoad() {
       InitLoadActivityView()
@@ -108,7 +112,7 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
    }
    
    func SetUpReLoadCheckUserExistFireStoreButton() {
-      ReLoadCheckUserExistFireStoreButton.layer.borderWidth = 0.5
+      ReLoadCheckUserExistFireStoreButton.layer.borderWidth = 0
       ReLoadCheckUserExistFireStoreButton.layer.cornerRadius = 10
    }
    
@@ -129,13 +133,13 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
    }
    
    func SetUpChangeProfileButton() {
-      let title = NSLocalizedString("Register", comment: "")
+      let title = NSLocalizedString("SetUpProfilePicture", comment: "")
       ChangeProfileButton.setTitle(title, for: .normal)
       ChangeProfileButton.titleLabel?.adjustsFontSizeToFitWidth = true
    }
    
    func SetUpNameLabel() {
-      RegisterUserInfoLabel.text = NSLocalizedString("Name", comment: "")
+      NameLabel.text = NSLocalizedString("Name", comment: "")
       NameLabel.adjustsFontSizeToFitWidth = true
    }
    
@@ -167,11 +171,32 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
       self.NameTextField.isEnabled = true
    }
    
+   private func showErrorAlertViewForUserUidIsNil() {
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let AlertView = SCLAlertView(appearance: Appearanse)
+      
+      AlertView.addButton("OK") {
+         self.Play3DtouchMedium()
+         self.EnableReLoadCheckUserExistFireStoreButton()
+      }
+           
+      let title = NSLocalizedString("err", comment: "")
+      let subTitle = NSLocalizedString("checkNet", comment: "")
+      AlertView.showError(title, subTitle: subTitle)
+   }
+   
    //MARK:- 自分のデータがすでにサーバー上にあるかのチェック
    private func CheckUserFirstLoginOrReDownloadApp() {
-      if self.LoadActivityView?.isAnimating == false {
-         self.StartLoadingAnimation()
+      
+      //UIDがnilのときの処理
+      if UserDefaults.standard.string(forKey: "UID") == nil {
+         self.isFailForUserUidIsNil = true
+         FailForUserUidInNilCount += 1
+         self.StopLoadingAnimation()
+         self.showErrorAlertViewForUserUidIsNil()
+         return
       }
+      self.isFailForUserUidIsNil = false
       
       let uid = UserDefaults.standard.string(forKey: "UID")!
       print("--- 初めての登録かアプリ再ダウンロードかの調査開始 ---")
@@ -181,7 +206,6 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
          if let err = err {
             print("データベースからのデータ取得エラー: \(err)")
             self.ShowErrGetUserInfoForCheckUserRegisterAppAlertView()
-            self.EnableReLoadCheckUserExistFireStoreButton()
             return
          }
          
@@ -202,10 +226,50 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
    
    //自分のデータがすでにサーバー上にあるかのチェックでエラーした場合のリロードボタンが押されたときの処理
    @IBAction func TapReLoadCheckUserExistFireStoreButton(_ sender: Any) {
-      //再チェックと自身のボタンを無効にする
-      CheckUserFirstLoginOrReDownloadApp()
-      DisableReLoadCheckUserExistFireStoreButton()
+      //自身のボタンを無効にする
+      self.DisableReLoadCheckUserExistFireStoreButton()
+      self.StartLoadingAnimation()
+      
+      //UID == nil のせいではないエラーの場合は際リロード
+      //UID == nil であっても1回目はこっちにはいる
+      if self.isFailForUserUidIsNil == false || FailForUserUidInNilCount == 1 {
+         self.CheckUserFirstLoginOrReDownloadApp()
+         return
+      }
+      
+      //2回以上UID がnilの場合はもう一回匿名ログインさせる
+      self.ReSignInAnonymously()
    }
+   
+   private func ReSignInAnonymously() {
+      Auth.auth().signInAnonymously() { (authResult, error) in
+         if let error = error {
+            print("再ログイン失敗")
+            print("Err: \(error.localizedDescription)")
+            self.showErrorAlertViewForUserUidIsNil()
+            self.StopLoadingAnimation()
+            return
+         }
+         guard let user = authResult?.user else {
+            print("userで失敗")
+            self.showErrorAlertViewForUserUidIsNil()
+            self.StopLoadingAnimation()
+            return
+         }
+         
+         let isAnonymous = user.isAnonymous
+         let uid = user.uid
+         
+         print("\n------------FireBaseログイン情報--------------")
+         print("匿名認証: \(isAnonymous)")
+         print("uid:     \(uid)")
+         
+         UserDefaults.standard.set(uid, forKey: "UID")
+         //ログイン成功したらもう一度調査する
+         self.CheckUserFirstLoginOrReDownloadApp()
+      }
+   }
+   
    
    func ShowErrGetUserInfoForCheckUserRegisterAppAlertView() {
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
@@ -213,6 +277,7 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
       ComleateView.addButton("OK"){
          ComleateView.dismiss(animated: true)
          self.Play3DtouchHeavy()
+         self.EnableReLoadCheckUserExistFireStoreButton()
       }
       let Error = NSLocalizedString("err", comment: "")
       let errGetDoc = NSLocalizedString("errGetDoc", comment: "")
