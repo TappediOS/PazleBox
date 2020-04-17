@@ -205,7 +205,7 @@ class ShoppingPiceViewController: UIViewController {
          make.centerY.equalTo(PiceSetTwoButton.snp.centerY)
       }
       
-      self.PiceTwoImageViewLeft33.snp.makeConstraints { make in
+      self.PiceTwoImageViewRight33.snp.makeConstraints { make in
          make.trailing.equalTo(PiceSetTwoButton.snp.trailing).offset(-PiceImageMargin)
          make.width.equalTo(PiceBaseWidth)
          make.height.equalTo(PiceBaseWidth)
