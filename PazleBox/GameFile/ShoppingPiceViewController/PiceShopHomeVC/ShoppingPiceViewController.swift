@@ -183,48 +183,54 @@ class ShoppingPiceViewController: UIViewController {
    private func NSPPiceOneImageView() {
       self.PiceOneImageViewLeft23.snp.makeConstraints { make in
          make.leading.equalTo(PiceSetOneButton.snp.leading).offset(PiceImageMargin)
-         make.width.equalTo(50)
-         make.height.equalTo(50 * 3 / 2)
+         make.width.equalTo(PiceBaseWidth)
+         make.height.equalTo(PiceBaseWidth * 3 / 2)
          make.centerY.equalTo(PiceSetOneButton.snp.centerY)
       }
       
       self.PiceOneImageViewRight23.snp.makeConstraints { make in
          make.trailing.equalTo(PiceSetOneButton.snp.trailing).offset(-PiceImageMargin)
-         make.width.equalTo(50)
-         make.height.equalTo(50 * 3 / 2)
+         make.width.equalTo(PiceBaseWidth)
+         make.height.equalTo(PiceBaseWidth * 3 / 2)
          make.centerY.equalTo(PiceSetOneButton.snp.centerY)
       }
    }
+   
+   
    private func NSPPiceTwoImageView() {
       self.PiceTwoImageViewLeft33.snp.makeConstraints { make in
          make.leading.equalTo(PiceSetTwoButton.snp.leading).offset(PiceImageMargin)
-         make.width.equalTo(50)
-         make.height.equalTo(50)
+         make.width.equalTo(PiceBaseWidth)
+         make.height.equalTo(PiceBaseWidth)
          make.centerY.equalTo(PiceSetTwoButton.snp.centerY)
       }
       
       self.PiceTwoImageViewLeft33.snp.makeConstraints { make in
          make.trailing.equalTo(PiceSetTwoButton.snp.trailing).offset(-PiceImageMargin)
-         make.width.equalTo(50)
-         make.height.equalTo(50)
+         make.width.equalTo(PiceBaseWidth)
+         make.height.equalTo(PiceBaseWidth)
          make.centerY.equalTo(PiceSetTwoButton.snp.centerY)
       }
    }
+   
+   
    private func NSPPiceThreeImageView() {
       self.PiceThreeImageViewLeft33.snp.makeConstraints { make in
          make.leading.equalTo(PiceSetThreeButton.snp.leading).offset(PiceImageMargin)
-         make.width.equalTo(50)
-         make.height.equalTo(50)
+         make.width.equalTo(PiceBaseWidth)
+         make.height.equalTo(PiceBaseWidth)
          make.centerY.equalTo(PiceSetThreeButton.snp.centerY)
       }
       
       self.PiceThreeImageViewRight33.snp.makeConstraints { make in
          make.trailing.equalTo(PiceSetThreeButton.snp.trailing).offset(-PiceImageMargin)
-         make.width.equalTo(50)
-         make.height.equalTo(50)
+         make.width.equalTo(PiceBaseWidth)
+         make.height.equalTo(PiceBaseWidth)
          make.centerY.equalTo(PiceSetThreeButton.snp.centerY)
       }
    }
+   
+   
    private func NSPPiceFourImageView() {
       self.PiceFourImageViewLeft43.snp.makeConstraints { make in
          make.leading.equalTo(PiceSetFourButton.snp.leading).offset(PiceImageMargin)
@@ -234,10 +240,10 @@ class ShoppingPiceViewController: UIViewController {
       }
       
       self.PiceFourImageViewRight43.snp.makeConstraints { make in
-         make.trailing.equalTo(PiceSetOneButton.snp.trailing).offset(-PiceImageMargin)
+         make.trailing.equalTo(PiceSetFourButton.snp.trailing).offset(-PiceImageMargin)
          make.width.equalTo(50)
          make.height.equalTo(50 * 3 / 4)
-         make.centerY.equalTo(PiceSetOneButton.snp.centerY)
+         make.centerY.equalTo(PiceSetFourButton.snp.centerY)
       }
    }
    
