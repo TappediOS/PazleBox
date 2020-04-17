@@ -7,3 +7,6 @@
 */
 
 CFBundleDisplayName = "Puzzle Maker";
+
+NSCameraUsageDescription = "프로필 사진을 찍습니다.";
+NSPhotoLibraryUsageDescription = "프로필 사진을 선택하십시오.";
