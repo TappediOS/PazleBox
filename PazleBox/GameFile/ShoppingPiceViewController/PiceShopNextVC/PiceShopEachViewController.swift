@@ -45,6 +45,8 @@ class PiceShopEachViewController: UIViewController {
    
    @IBOutlet weak var PriceLabel: UILabel!
    
+   let GameSound = GameSounds()
+   
    //CollectionViewの画像のキャッシュ
    //UIImage.Resize()に数秒かかっててカクツクから，最初の表示の後にキャッシュして
    //スクロールして再生成する時にキャッシュを使用してUIImage.Resize()を呼ばないようにする
@@ -268,6 +270,8 @@ class PiceShopEachViewController: UIViewController {
       //すでに押されてたら帰る
       if LockPurchasButton == true { return }
       print("購入ボタンが押されました")
+      GameSound.PlaySoundsTapButton()
+      Play3DtouchLight()
       LockPurchasButton = true
       Analytics.logEvent("TapParchasPiceSet\(PiceShopTag)", parameters: nil)
       purchase(PRODUCT_ID: Using_PICE_SET_ID)
@@ -275,6 +279,8 @@ class PiceShopEachViewController: UIViewController {
    
    @IBAction func TapRestoreButton(_ sender: Any) {
       print("リストアボタンが押されました")
+      GameSound.PlaySoundsTapButton()
+      Play3DtouchLight()
       SwiftyStoreKit.restorePurchases(atomically: true) { results in
          if results.restoreFailedPurchases.count > 0 {
             print("リストアに失敗 \(results.restoreFailedPurchases)")
