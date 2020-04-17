@@ -197,40 +197,40 @@ class ShoppingPiceViewController: UIViewController {
    }
    private func NSPPiceTwoImageView() {
       self.PiceTwoImageViewLeft33.snp.makeConstraints { make in
-         make.leading.equalTo(PiceSetOneButton.snp.leading).offset(PiceImageMargin)
+         make.leading.equalTo(PiceSetTwoButton.snp.leading).offset(PiceImageMargin)
          make.width.equalTo(50)
          make.height.equalTo(50)
-         make.centerY.equalTo(PiceSetOneButton.snp.centerY)
+         make.centerY.equalTo(PiceSetTwoButton.snp.centerY)
       }
       
       self.PiceTwoImageViewLeft33.snp.makeConstraints { make in
-         make.trailing.equalTo(PiceSetOneButton.snp.trailing).offset(-PiceImageMargin)
+         make.trailing.equalTo(PiceSetTwoButton.snp.trailing).offset(-PiceImageMargin)
          make.width.equalTo(50)
          make.height.equalTo(50)
-         make.centerY.equalTo(PiceSetOneButton.snp.centerY)
+         make.centerY.equalTo(PiceSetTwoButton.snp.centerY)
       }
    }
    private func NSPPiceThreeImageView() {
       self.PiceThreeImageViewLeft33.snp.makeConstraints { make in
-         make.leading.equalTo(PiceSetOneButton.snp.leading).offset(PiceImageMargin)
+         make.leading.equalTo(PiceSetThreeButton.snp.leading).offset(PiceImageMargin)
          make.width.equalTo(50)
          make.height.equalTo(50)
-         make.centerY.equalTo(PiceSetOneButton.snp.centerY)
+         make.centerY.equalTo(PiceSetThreeButton.snp.centerY)
       }
       
       self.PiceThreeImageViewRight33.snp.makeConstraints { make in
-         make.trailing.equalTo(PiceSetOneButton.snp.trailing).offset(-PiceImageMargin)
+         make.trailing.equalTo(PiceSetThreeButton.snp.trailing).offset(-PiceImageMargin)
          make.width.equalTo(50)
          make.height.equalTo(50)
-         make.centerY.equalTo(PiceSetOneButton.snp.centerY)
+         make.centerY.equalTo(PiceSetThreeButton.snp.centerY)
       }
    }
    private func NSPPiceFourImageView() {
       self.PiceFourImageViewLeft43.snp.makeConstraints { make in
-         make.leading.equalTo(PiceSetOneButton.snp.leading).offset(PiceImageMargin)
+         make.leading.equalTo(PiceSetFourButton.snp.leading).offset(PiceImageMargin)
          make.width.equalTo(50)
          make.height.equalTo(50 * 3 / 4)
-         make.centerY.equalTo(PiceSetOneButton.snp.centerY)
+         make.centerY.equalTo(PiceSetFourButton.snp.centerY)
       }
       
       self.PiceFourImageViewRight43.snp.makeConstraints { make in
@@ -242,7 +242,7 @@ class ShoppingPiceViewController: UIViewController {
    }
    
    
-   
+   //MARK:- ボタンがタップされた
    @IBAction func TapShoppingPiceButton(_ sender: UIButton) {
       let tag = sender.tag
       print("タップされたボタンは\(tag)番目のボタンです")
