@@ -80,21 +80,20 @@ class ShoppingPiceViewController: UIViewController {
       self.view.sendSubviewToBack(BackGroundImageView!)
    }
    
-   //TODO:- ローカライズ
    private func SetUpPiceSetOneButton() {
-      let title = NSLocalizedString("ピースセット1", comment: "")
+      let title = NSLocalizedString("PiceSet", comment: "") + "1"
       PiceSetOneButton.setTitle(title, for: .normal)
    }
    private func SetUpPiceSetTwoButton() {
-      let title = NSLocalizedString("ピースセット2", comment: "")
+      let title = NSLocalizedString("PiceSet", comment: "") + "2"
       PiceSetTwoButton.setTitle(title, for: .normal)
    }
    private func SetUpPiceSetThreeButton() {
-      let title = NSLocalizedString("ピースセット3", comment: "")
+      let title = NSLocalizedString("PiceSet", comment: "") + "3"
       PiceSetThreeButton.setTitle(title, for: .normal)
    }
    private func SetUpPiceSetFourButton() {
-      let title = NSLocalizedString("ピースセット4", comment: "")
+      let title = NSLocalizedString("PiceSet", comment: "") + "4"
       PiceSetFourButton.setTitle(title, for: .normal)
       
    }
