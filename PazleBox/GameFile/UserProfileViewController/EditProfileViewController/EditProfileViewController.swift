@@ -110,6 +110,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
    //MARK:- NaviBarでバツボタン押されたときの処理
    @objc func TapStopEditProfileButton() {
       print("キャンセルボタンタップされた")
+      Analytics.logEvent("CancelChangeProfile", parameters: nil)
       DismissEditProfileVC()
    }
    
@@ -124,6 +125,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
       
       if (UserNameWhenDismissThisVC == UserNameWhenShowThisVC) && !isChangeUsersImage {
          print("名前も画像も変更されていない!")
+         Analytics.logEvent("DontChangeProfile", parameters: nil)
          DismissEditProfileVC()
          return
       }
@@ -134,18 +136,21 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
       
       if (UserNameWhenDismissThisVC != UserNameWhenShowThisVC) && !isChangeUsersImage {
          print("名前だけが変更されている")
+         Analytics.logEvent("ChangeUserName", parameters: nil)
          SaveNewUserNameFireStore(onlyName: true)
          return
       }
       
       if (UserNameWhenDismissThisVC == UserNameWhenShowThisVC) && isChangeUsersImage {
          print("画像だけが変更されている")
+         Analytics.logEvent("ChangeUserProfileImage", parameters: nil)
          SaveNewProfileImageCloudFunction(onlyImage: true)
          return
       }
       
       if (UserNameWhenDismissThisVC != UserNameWhenShowThisVC) && isChangeUsersImage {
          print("両方変更されている")
+         Analytics.logEvent("ChangeUserNameAndProfileImage", parameters: nil)
          SaveNewUserNameFireStore(onlyName: false)
          SaveNewProfileImageCloudFunction(onlyImage: false)
          return

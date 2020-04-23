@@ -235,6 +235,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
          self.RefleshControl.endRefreshing()
          return
       }
+      Analytics.logEvent("ReloadDataUserProfileVC", parameters: nil)
       GetMyStageDataFromDataBase()
    }
    
@@ -254,21 +255,25 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
    //MARK:- Labelがタップされたときの処理
    @objc func TapFollowingLabel(_ sender: UITapGestureRecognizer) {
       print("フォローのラベルがタップされました")
+      Analytics.logEvent("TapFollowButtonUsersProfileVC", parameters: nil)
       PresentSomeUsersListVC(ListType: .Follow)
    }
    
    @objc func TapFollowerLabel(_ sender: UITapGestureRecognizer) {
       print("フォロワーのラベルがタップされました")
+      Analytics.logEvent("TapFollowerButtonUsersProfileVC", parameters: nil)
       PresentSomeUsersListVC(ListType: .Follower)
    }
    
    @objc func TapFollowingCountLabel(_ sender: UITapGestureRecognizer) {
       print("フォロー数のラベルがタップされました")
+      Analytics.logEvent("TapFollowButtonUsersProfileVC", parameters: nil)
       PresentSomeUsersListVC(ListType: .Follow)
    }
    
    @objc func TapFollowerCountLabel(_ sender: UITapGestureRecognizer) {
       print("フォロワー数のラベルがタップされました")
+      Analytics.logEvent("TapFollowerButtonUsersProfileVC", parameters: nil)
       PresentSomeUsersListVC(ListType: .Follower)
    }
    

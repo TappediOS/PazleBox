@@ -307,8 +307,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
          return
       }
       
-      print("新しいFCM TokenをUserDefaultsに保存します")
-      UserDefaults.standard.set(FcmToken, forKey: "UserDefaultFcmToken")
       
       if let uid = UserUID {
          let db = Firestore.firestore()
@@ -318,6 +316,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
                print("------ FcmTokenのUpdate(user/に対し)エラー発生し失敗------\n")
             } else {
                print("------ FcmTokenのUpdate(user/に対し)成功しました ------\n")
+               print("新しいFCM TokenをUserDefaultsに保存します")
+               UserDefaults.standard.set(FcmToken, forKey: "UserDefaultFcmToken")
             }
          }
          
