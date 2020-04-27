@@ -71,13 +71,14 @@ extension UserProfileTapCellViewController {
             } else {
                // Data for "images/island.jpg" is returned
                self.UsingCommentedStageDatas[tmp].updateValue(data!, forKey: "CommentedUsersProfileImage")
-               self.Play3DtouchSuccess()
+               
             }
             
             self.DownLoadProfileCounter += 1
                
             if self.DownLoadProfileCounter == self.UsingCommentedStageDatas.count {
                print("---- 自分のステージのコメントデータの取得完了 ----\n")
+               self.Play3DtouchSuccess()
                //初めて開いた時はUsingにLatestを設定するから単に代入するのみ。
                //Segmentタップした時に別の関数でCollecti onVie をリロードする。
                self.UsersStageCommentTableView.reloadData()
