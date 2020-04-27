@@ -304,7 +304,6 @@ class PiceShopEachViewController: UIViewController {
                } else {
                   print("何かの課金をしているけど\(proID)は課金していません")
                   print("もしくはこのタイミングではリストアしません\n")
-                  self.Play3DtouchError()
                }
             }
             

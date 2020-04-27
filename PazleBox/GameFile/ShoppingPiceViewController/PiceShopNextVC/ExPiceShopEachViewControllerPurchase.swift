@@ -20,7 +20,7 @@ extension PiceShopEachViewController {
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
       let ComleateView = SCLAlertView(appearance: Appearanse)
       ComleateView.addButton("OK"){
-         print("tap")
+         print("tap リストア完了")
       }
       ComleateView.showSuccess(NSLocalizedString("Passed.", comment: ""), subTitle: "Restore successful")
    }
@@ -31,7 +31,7 @@ extension PiceShopEachViewController {
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
       let ComleateView = SCLAlertView(appearance: Appearanse)
       ComleateView.addButton("OK"){
-         print("tap")
+         print("tap 課金が完了")
          self.LockPurchasButton = false
       }
       ComleateView.showSuccess(NSLocalizedString("Passed.", comment: ""), subTitle: "Purchase complete")
