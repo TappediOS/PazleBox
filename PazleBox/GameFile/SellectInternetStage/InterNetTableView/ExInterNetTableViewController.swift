@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import DZNEmptyDataSet
+import Firebase
+import FirebaseAnalytics
 
 extension InterNetTableViewController {
    //セクションの数を返す
@@ -105,6 +107,7 @@ extension InterNetTableViewController {
       InterNetCellTappedVC.setStageArray(StageArray)
       InterNetCellTappedVC.setPlayStageData(PlayStageData)
       
+      Analytics.logEvent("pushInterNetCellTappedVC", parameters: nil)
       self.navigationController?.pushViewController(InterNetCellTappedVC, animated: true)
    }
 }

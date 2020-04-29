@@ -213,6 +213,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    //MARK:- プレイボタン押されたときの処理
    @IBAction func TapPostUsersStagePlayButton(_ sender: Any) {
       print("ユーザステージのプレイボタンタップされた")
+      Analytics.logEvent("TapPlayBytton", parameters: nil)
       PostUsersStagePlayBuutton.isEnabled = false //2度押し禁止する処理
       isLoadingGameVC = true
       PresentGameViewController()
@@ -509,6 +510,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
    //MARK:- ユーザステージの報告ボタンタップされた処理
    @IBAction func TapPostUsersStageReportButton(_ sender: UIButton) {
       print("ユーザステージの報告ボタンタップされた")
+      Analytics.logEvent("TapPostUsersStageReportButton", parameters: nil)
       
       let tag = sender.tag
       print("\(tag)番目のcellの報告ボタンがタップされました")
@@ -553,6 +555,7 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
          print("コメントしたユーザの報告タップされたけど，ローディング中やから何もしない.")
          return
       }
+      Analytics.logEvent("TapReportCommentedUserTableViewCell", parameters: nil)
       let rowNum = sender.tag
       print("\(rowNum)番目のcellのユーザの報告ボタンがタップされました")
       
@@ -607,12 +610,14 @@ class InterNetCellTappedViewController: UIViewController, UITableViewDelegate, U
       //本人をタップしてたら，
       if TapedCommentedUserIsSelf(rowNum: rowNum) == true {
          print("本人をタップしたので，UesrsProfileVCを表示します")
+         Analytics.logEvent("pushUserProfileVC", parameters: nil)
          let UsersProfileSB = UIStoryboard(name: "UserProfileViewControllerSB", bundle: nil)
          let UsersProfileVC = UsersProfileSB.instantiateViewController(withIdentifier: "UserProfileVC") as! UserProfileViewController
          self.navigationController?.pushViewController(UsersProfileVC, animated: true)
          return
       }
       //本人以外をタップしてたら
+      Analytics.logEvent("pushOtherUserProfileVC", parameters: nil)
       print("他人をタップしたので，OtherUesrsProfileVCを表示します")
       let OtherUsersProfileSB = UIStoryboard(name: "OtherUsersProfileViewControllerSB", bundle: nil)
       let OtherUsersProfileVC = OtherUsersProfileSB.instantiateViewController(withIdentifier: "OtherUsersProfileVC") as! OtherUsersProfileViewController

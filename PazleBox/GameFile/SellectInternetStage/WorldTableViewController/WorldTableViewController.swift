@@ -199,6 +199,7 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       
       //本人をタップしてたら，
       if TapedUserIsSelf(rowNum: rowNum) == true {
+         Analytics.logEvent("pushUserProfileVC", parameters: nil)
          print("本人をタップしたので，UesrsProfileVCを表示します")
          let UsersProfileSB = UIStoryboard(name: "UserProfileViewControllerSB", bundle: nil)
          let UsersProfileVC = UsersProfileSB.instantiateViewController(withIdentifier: "UserProfileVC") as! UserProfileViewController
@@ -206,6 +207,7 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
          return
       }
       //本人以外をタップしてたら
+      Analytics.logEvent("pushOtherUserProfileVC", parameters: nil)
       print("他人をタップしたので，OtherUesrsProfileVCを表示します")
       let OtherUsersProfileSB = UIStoryboard(name: "OtherUsersProfileViewControllerSB", bundle: nil)
       let OtherUsersProfileVC = OtherUsersProfileSB.instantiateViewController(withIdentifier: "OtherUsersProfileVC") as! OtherUsersProfileViewController

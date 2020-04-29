@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Firebase
+import FirebaseAnalytics
 
 extension WorldTableViewController {
    //セクションの数を返す
@@ -102,6 +104,8 @@ extension WorldTableViewController {
       InterNetCellTappedVC.setStageArray(StageArray)
       InterNetCellTappedVC.setPlayStageData(PlayStageData)
       
+      
+      Analytics.logEvent("pushInterNetCellTappedVC", parameters: nil)
       self.navigationController?.pushViewController(InterNetCellTappedVC, animated: true)
    }
    

@@ -113,6 +113,7 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
          RefleshControl.endRefreshing()
          return
       }
+      Analytics.logEvent("ReloadTimeLine", parameters: nil)
       print("TimeLineの更新をします。")
       GetTimeLineDataFromDataBase()
       
@@ -124,6 +125,7 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
       
       //本人をタップしてたら，
       if TapedUserIsSelfInTimeLine(rowNum: rowNum) == true {
+         Analytics.logEvent("pushUserProfileVC", parameters: nil)
          print("本人をタップしたので，UesrsProfileVCを表示します")
          let UsersProfileSB = UIStoryboard(name: "UserProfileViewControllerSB", bundle: nil)
          let UsersProfileVC = UsersProfileSB.instantiateViewController(withIdentifier: "UserProfileVC") as! UserProfileViewController
@@ -131,6 +133,7 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
          return
       }
       
+      Analytics.logEvent("pushOtherUserProfileVC", parameters: nil)
       let OtherUsersProfileSB = UIStoryboard(name: "OtherUsersProfileViewControllerSB", bundle: nil)
       let OtherUsersProfileVC = OtherUsersProfileSB.instantiateViewController(withIdentifier: "OtherUsersProfileVC") as! OtherUsersProfileViewController
       

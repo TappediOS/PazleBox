@@ -248,6 +248,7 @@ class UserProfileTapCellViewController: UIViewController {
    //MARK:- プレイボタン押されたときの処理
    @IBAction func TapUsersStagePlayButton(_ sender: Any) {
       print("Play Buttonタップされたよ")
+      Analytics.logEvent("TapPlayBytton_Users", parameters: nil)
       UsersPostedStagePlayButton.isEnabled = false //2度押し禁止する処理
       UsersPostedStageDeleteButton.isEnabled = false
       isAbleToTapPlayDeleteButton = false
@@ -282,6 +283,7 @@ class UserProfileTapCellViewController: UIViewController {
    //MARK:- 削除ボタン押されたときの処理
    @IBAction func TapUsersStageDeleteButton(_ sender: Any) {
       print("Delete Buttonタップされたよ")
+      Analytics.logEvent("TapDeleteBytton_Users", parameters: nil)
       GameSound.PlaySoundsTapButton()
       UsersPostedStagePlayButton.isEnabled = false //2度押し禁止する処理
       UsersPostedStageDeleteButton.isEnabled = false

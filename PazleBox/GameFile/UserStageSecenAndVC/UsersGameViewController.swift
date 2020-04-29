@@ -522,6 +522,7 @@ class UsersGameViewController: UIViewController, GADInterstitialDelegate {
             print("Error writing document: \(err.localizedDescription)")
          } else {
             print("---------- コメントをFireStoreに保存成功  ----------\n")
+            Analytics.logEvent("SentComment", parameters: nil)
          }
       }
    }
