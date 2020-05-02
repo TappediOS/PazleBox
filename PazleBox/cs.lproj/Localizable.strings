@@ -7,259 +7,259 @@
 */
 
 
-"Ranking" = " Hodnocení";
-"No Ads" = " Žádné reklamy";
-"Restore" = " Obnovit";
+"Ranking" = "Hodnocení";
+"No Ads" = "Žádné reklamy";
+"Restore" = "Obnovit";
 
-"Contact us" = " Kontaktujte nás";
+"Contact us" = "Kontaktujte nás";
 
-"Pouse" = " Pouse";
-"Continue" = " Pokračovat";
-"Home" = " Domov";
+"Pouse" = "Pouse";
+"Continue" = "Pokračovat";
+"Home" = "Domov";
 
-"WathcAdAnd" = " Sledujte reklamy a získejte tipy";
+"WathcAdAnd" = "Sledujte reklamy a získejte tipy";
 
-"AdNotFlow" = " Ad NOT Flow";
-"Ad Flow" = " Tok reklam";
+"AdNotFlow" = "Ad NOT Flow";
+"Ad Flow" = "Tok reklam";
 
-"Stage review" = " Přezkum fáze";
+"Stage review" = "Přezkum fáze";
 
-"UntilNextAd" = " Až do další reklamy:";
+"UntilNextAd" = "Až do další reklamy:";
 
-"Next" = " další";
+"Next" = "další";
 
-"PlayAgain" = " Hrát znovu";
+"PlayAgain" = "Hrát znovu";
 
-"Clear10Stage" = " Vyčistili jste 10 etap.";
-"Clear100Stage" = " Vyčistili jste 100 etap.";
+"Clear10Stage" = "Vyčistili jste 10 etap.";
+"Clear100Stage" = "Vyčistili jste 100 etap.";
 
-"Congrats" = " Gratulujeme!";
+"Congrats" = "Gratulujeme!";
 
-"ThankYou" = " Děkuju!";
-"Ohthankyou" = " OH díky...";
+"ThankYou" = "Děkuju!";
+"Ohthankyou" = "OH díky...";
 
-"SelectPice" = " Vyberte kousky a umístěte je";
-"PutOneMorePice" = " Vložte prosím alespoň jeden kus";
-"DecideInitPosi" = " Pojďme se rozhodnout počáteční pozici";
-"ShiftPice" = " Posuňte prosím polohu jednoho nebo více kusů!";
-"TrashPice" = " Nepoužité kousky přetáhněte do koše";
+"SelectPice" = "Vyberte kousky a umístěte je";
+"PutOneMorePice" = "Vložte prosím alespoň jeden kus";
+"DecideInitPosi" = "Pojďme se rozhodnout počáteční pozici";
+"ShiftPice" = "Posuňte prosím polohu jednoho nebo více kusů!";
+"TrashPice" = "Nepoužité kousky přetáhněte do koše";
 
-"OK" = " Konec";
-"Done" = " Kompletní";
-
-
-"IfGoHome" = " Pokud se vrátíte na domovskou stránku, nebude obsah uložen.";
-
-"Saved" = " Uložené";
+"OK" = "Konec";
+"Done" = "Kompletní";
 
 
-"Play" = " Hrát si";
-"Create" = " Vytvořit";
-"Setting" = " Nastavení";
+"IfGoHome" = "Pokud se vrátíte na domovskou stránku, nebude obsah uložen.";
 
-"Close" = " Zavřít";
-"Delete" = " Odstranit";
-"Cancel" = " zrušení";
-
-"StageYouMade" = " Fáze, kterou jste vytvořili";
-"StageInTheWorld" = " Fáze ve světě";
-
-"CreatedDate" = " Datum vytvoření:";
+"Saved" = "Uložené";
 
 
-"StageCreate" = " Tvorba jeviště";
+"Play" = "Hrát si";
+"Create" = "Vytvořit";
+"Setting" = "Nastavení";
 
-"StageCreatormade" = " Stage Author Made";
+"Close" = "Zavřít";
+"Delete" = "Odstranit";
+"Cancel" = "zrušení";
+
+"StageYouMade" = "Fáze, kterou jste vytvořili";
+"StageInTheWorld" = "Fáze ve světě";
+
+"CreatedDate" = "Datum vytvoření:";
+
+
+"StageCreate" = "Tvorba jeviště";
+
+"StageCreatormade" = "Stage Author Made";
 
 
 //セグメントのやつ
-"Latest" = " Nejnovější";
-"PlayCount" = " Hrát hrabě";
-"Rating" = " Hodnocení";
+"Latest" = "Nejnovější";
+"PlayCount" = "Hrát hrabě";
+"Rating" = "Hodnocení";
 
 
 //active viewで表示するやつ。
-"err" = " Chyba";
-"suc" = " Úspěch";
+"err" = "Chyba";
+"suc" = "Úspěch";
 
-"sucSave" = " Úspěšně uloženo";
-"errSave" = " Uložení se nezdařilo";
+"sucSave" = "Úspěšně uloženo";
+"errSave" = "Uložení se nezdařilo";
 
-"sucDele" = " Úspěšně smazáno";
-"errDele" = " Smazání se nezdařilo";
+"sucDele" = "Úspěšně smazáno";
+"errDele" = "Smazání se nezdařilo";
 
-"errGetDoc" = " Nepodařilo se získat data";
+"errGetDoc" = "Nepodařilo se získat data";
 
 //NOTE:- こいつ呼び出す際は\n入れて改行すべし
-"checkNet" = " Zkontrolujte stav sítě.";
+"checkNet" = "Zkontrolujte stav sítě.";
 
 //Worningで出すやつ。
-"delStage" = " Odstranění fáze";
-"cantBack" = " Smazanou fázi nelze obnovit";
+"delStage" = "Odstranění fáze";
+"cantBack" = "Smazanou fázi nelze obnovit";
 
 
 //InfoLabelにつけるやつ
-"CreateUpToFirst" = " Až do";
-"CreateUpToLast" = " Fáze lze vytvořit.";
+"CreateUpToFirst" = "Až do";
+"CreateUpToLast" = "Fáze lze vytvořit.";
 //RemaingLabelにつけるやつ
-"RemaingFirst" = " Zbývající";
-"RemaingLast" = " Fáze.";
+"RemaingFirst" = "Zbývající";
+"RemaingLast" = "Fáze.";
 
 
 
-"UserInfo" = " Uživatelské informace";
+"UserInfo" = "Uživatelské informace";
 
-"Credit" = " Licence";
+"Credit" = "Licence";
 
-"AppReview" = " Recenze aplikace";
+"AppReview" = "Recenze aplikace";
 
 
-"Guest" = " Host";
-"Number Played" = " Počet hraných";
-"NumberOfStagesPlayed" = " Počet hraných scén";
+"Guest" = "Host";
+"Number Played" = "Počet hraných";
+"NumberOfStagesPlayed" = "Počet hraných scén";
 
-"Creator" = " Tvůrce";
+"Creator" = "Tvůrce";
 
-"UserAgreement" = " Uživatelská dohoda";
-"PrivacyPolicy" = " Zásady ochrany osobních údajů";
-"AgreementInfo" = " Souhlasíte s Uživatelskou smlouvou a Zásadami ochrany osobních údajů?";
-"DontAccept" = " Nepřijímej";
-"Accept" = " Akceptovat";
-"YouCantContinue" = " Nemůžete pokračovat, dokud nebudete souhlasit s Uživatelskou smlouvou a Zásadami ochrany osobních údajů.";
+"UserAgreement" = "Uživatelská dohoda";
+"PrivacyPolicy" = "Zásady ochrany osobních údajů";
+"AgreementInfo" = "Souhlasíte s Uživatelskou smlouvou a Zásadami ochrany osobních údajů?";
+"DontAccept" = "Nepřijímej";
+"Accept" = "Akceptovat";
+"YouCantContinue" = "Nemůžete pokračovat, dokud nebudete souhlasit s Uživatelskou smlouvou a Zásadami ochrany osobních údajů.";
 
 //-------------------- チュートリアル --------------------//
-"Tutorial1" = " Tato aplikace slouží k vytvoření jeviště a ke sdílení se všemi";
-"Tutorial2" = " ★★★ tutoriál ★★★ \ n \ nUdělejme to ve skutečnosti!";
+"Tutorial1" = "Tato aplikace slouží k vytvoření jeviště a ke sdílení se všemi";
+"Tutorial2" = "★★★ tutoriál ★★★ \ n \ nUdělejme to ve skutečnosti!";
 
-"Tutorial3" = " Nejprve klepněte na svůj oblíbený kousek";
-"Tutorial4" = " Dobré 👍";
-"Tutorial5" = " Klepněte na něj a uvidíte tři barevné kousky";
-"Tutorial6" = " Pojďme přetáhnout jeden kus a položit ho na tabuli!";
+"Tutorial3" = "Nejprve klepněte na svůj oblíbený kousek";
+"Tutorial4" = "Dobré 👍";
+"Tutorial5" = "Klepněte na něj a uvidíte tři barevné kousky";
+"Tutorial6" = "Pojďme přetáhnout jeden kus a položit ho na tabuli!";
 
-"Tutorial7" = " ☆ výborný ☆";
-"Tutorial8" = " Pojďme na jiný kousek stejně jako předtím!";
-"Tutorial9" = " Přetáhněte ji tak, aby se nepřilepila k jiným kusům.";
+"Tutorial7" = "☆ výborný ☆";
+"Tutorial8" = "Pojďme na jiný kousek stejně jako předtím!";
+"Tutorial9" = "Přetáhněte ji tak, aby se nepřilepila k jiným kusům.";
 
-"Tutorial10" = " Po dokončení fáze klepněte na toto tlačítko";
+"Tutorial10" = "Po dokončení fáze klepněte na toto tlačítko";
 
-"Tutorial11" = " Nakonec rozhodněte o počáteční pozici díla!";
-"Tutorial12" = " Pojďme přesunout kus, který jsme vložili přetažením!";
+"Tutorial11" = "Nakonec rozhodněte o počáteční pozici díla!";
+"Tutorial12" = "Pojďme přesunout kus, který jsme vložili přetažením!";
 
-"Tutorial13" = " Jakmile určíte počáteční polohu, poklepejte na toto tlačítko";
+"Tutorial13" = "Jakmile určíte počáteční polohu, poklepejte na toto tlačítko";
 
-"Tutorial14" = " Fáze je nyní kompletní! 🎉";
-"Tutorial15" = " Vytvořte si hodně své vlastní scény!";
+"Tutorial14" = "Fáze je nyní kompletní! 🎉";
+"Tutorial15" = "Vytvořte si hodně své vlastní scény!";
 
-"Tutorial16" = " Scénu, kterou jste vytvořili, mohou hrát všichni na celém světě!";
-"Tutorial17" = " Můžete také hrát na jevišti vytvořeném každým na světě !!";
+"Tutorial16" = "Scénu, kterou jste vytvořili, mohou hrát všichni na celém světě!";
+"Tutorial17" = "Můžete také hrát na jevišti vytvořeném každým na světě !!";
 //-------------------- チュートリアル --------------------//
 
 
 //TODO:- 他のファイルにもここ以下追加すること
 //-------------------- コメント書く --------------------//
-"SendAComment" = " Pošlete komentář";
-"AlreadyWritten" = " Již napsáno";
+"SendAComment" = "Pošlete komentář";
+"AlreadyWritten" = "Již napsáno";
 //-------------------- コメント書く --------------------//
 
 
 
 //-------------------- Follow --------------------//
-"Follow" = " Následovat";
-"Following" = " Následující";
-"Followers" = " Následovníci";
-"BlockedAccounts" = " Blokované účty";
-"UnFollow" = " UnFollow";
-"UnBlock" = " Odblokovat";
-"Block" = " Blok";
+"Follow" = "Následovat";
+"Following" = "Následující";
+"Followers" = "Následovníci";
+"BlockedAccounts" = "Blokované účty";
+"UnFollow" = "UnFollow";
+"UnBlock" = "Odblokovat";
+"Block" = "Blok";
 //-------------------- Follow --------------------//
 
 //User SetUp
-"Register" = " Registrovat";
+"Register" = "Registrovat";
 
 
 //-------------------- TabBar --------------------//
-"TimeLine" = " Časová osa";
-"PiceShop" = " Pice Shop";
-"MyPage" = " Moje stránka";
-"EditProfile" = " Upravit profil";
+"TimeLine" = "Časová osa";
+"PiceShop" = "Pice Shop";
+"MyPage" = "Moje stránka";
+"EditProfile" = "Upravit profil";
 //-------------------- TabBar --------------------//
 
 //-------------------- No Table View --------------------//
-"NoStagePosts" = " Žádné příspěvky na jevišti";
-"StageShowIf" = " Zobrazí se, jakmile bude scéna zveřejněna";
-"IfYouFollow" = " Pokud sledujete jiného uživatele, zobrazí se jeho příspěvky";
+"NoStagePosts" = "Žádné příspěvky na jevišti";
+"StageShowIf" = "Zobrazí se, jakmile bude scéna zveřejněna";
+"IfYouFollow" = "Pokud sledujete jiného uživatele, zobrazí se jeho příspěvky";
 
-"NoComments" = " Bez komentáře";
-"NoCommentYet" = " Zatím žádný komentář";
+"NoComments" = "Bez komentáře";
+"NoCommentYet" = "Zatím žádný komentář";
 
-"NoUser" = " Žádný uživatel";
-"NoUserYet" = " Žádní uživatelé k zobrazení";
+"NoUser" = "Žádný uživatel";
+"NoUserYet" = "Žádní uživatelé k zobrazení";
 //-------------------- No Table View --------------------//
 
 //-------------------- navigationItem.title --------------------//
-"WorldStage" = " Světové fáze";
-"Stage" = " Etapa";
-"PiceSet" = " Pice Set";
+"WorldStage" = "Světové fáze";
+"Stage" = "Etapa";
+"PiceSet" = "Pice Set";
 //-------------------- navigationItem.title --------------------//
 
-"errBlock" = " Blokování se nezdařilo";
+"errBlock" = "Blokování se nezdařilo";
 
 
 //-------------------- Action Sheet --------------------//
-"Report" = " Zpráva";
-"InapCharacters" = " Obsahuje nevhodné znaky";
-"InapImages" = " Obsahuje nevhodné obrázky";
-"Other" = " jiný";
+"Report" = "Zpráva";
+"InapCharacters" = "Obsahuje nevhodné znaky";
+"InapImages" = "Obsahuje nevhodné obrázky";
+"Other" = "jiný";
 //-------------------- Action Sheet --------------------//
 
 
 
-"IfYouBuyPice" = " Při tvorbě scény budete moci použít následující sadu kusů";
+"IfYouBuyPice" = "Při tvorbě scény budete moci použít následující sadu kusů";
 
-"Purchase" = " Nákup";
+"Purchase" = "Nákup";
 
-"Account" = " Účet";
+"Account" = "Účet";
 
-"AboutPuzzleMaker" = " O společnosti Puzzle Maker";
+"AboutPuzzleMaker" = "O společnosti Puzzle Maker";
 
 //-------------------- Tutorial Alert View --------------------//
-"ShowTutorial" = " Zobrazit výuku";
-"HowToCreateAStage" = " Jak vytvořit jeviště";
-"DoYouWantToShowTutorial" = " Chcete udělat návod na vytvoření pódia?";
-"FirstTimeStageMaking" = " První uvedení pódia 🎉";
-"FinishTheTutorial" = " Dokončete kurz";
-"DoYouWantToFinishTutorial" = " Chcete kurz dokončit?";
+"ShowTutorial" = "Zobrazit výuku";
+"HowToCreateAStage" = "Jak vytvořit jeviště";
+"DoYouWantToShowTutorial" = "Chcete udělat návod na vytvoření pódia?";
+"FirstTimeStageMaking" = "První uvedení pódia 🎉";
+"FinishTheTutorial" = "Dokončete kurz";
+"DoYouWantToFinishTutorial" = "Chcete kurz dokončit?";
 //-------------------- Tutorial Alert View --------------------//
 
 
-"StageName" = " Pseudonym";
-"EnterStageName" = " Je čas pojmenovat jeviště!";
+"StageName" = "Pseudonym";
+"EnterStageName" = "Je čas pojmenovat jeviště!";
 
 
 
 //-------------------- Notification Localize --------------------//
-"STAGE_COMMENTED_NOTIFICATION" = " % @ okomentoval jeviště";
-"FOLLOWED_NOTIFICATION" = " % @ vás následoval";
+"STAGE_COMMENTED_NOTIFICATION" = "% @ okomentoval jeviště";
+"FOLLOWED_NOTIFICATION" = "% @ vás následoval";
 //-------------------- Notification Localize --------------------//
 
 
 //-------------------- User SetUp VC --------------------//
-"RegiUserInfo" = " Registrace informací o uživateli";
-"SetUpProfilePicture" = " Nastavte si profilový obrázek";
-"Name" = " název";
+"RegiUserInfo" = "Registrace informací o uživateli";
+"SetUpProfilePicture" = "Nastavte si profilový obrázek";
+"Name" = "název";
 //-------------------- User SetUp VC --------------------//
 
 
 //-------------------- Delete Account --------------------//
-"DeleteAccount" = " Smazat účet";
+"DeleteAccount" = "Smazat účet";
 
-"DeleteInfo" = " Chcete smazat svůj účet?";
+"DeleteInfo" = "Chcete smazat svůj účet?";
 
-"Warning" = " Varování!!";
-"WarningInfo" = " Smazáním účtu odstraníte všechny vytvořené fáze a komentáře. Tato akce je neodvolatelná.";
+"Warning" = "Varování!!";
+"WarningInfo" = "Smazáním účtu odstraníte všechny vytvořené fáze a komentáře. Tato akce je neodvolatelná.";
 
-"AccountDeleteFailure" = " Selhání vymazání účtu";
-"AccountDeleteComplete" = " Smazání účtu bylo dokončeno";
-"ThankYouUsingThisApp" = " Děkujeme vám za používání aplikace! 🙂";
-"SeeYou" = " Uvidíme se";
+"AccountDeleteFailure" = "Selhání vymazání účtu";
+"AccountDeleteComplete" = "Smazání účtu bylo dokončeno";
+"ThankYouUsingThisApp" = "Děkujeme vám za používání aplikace! 🙂";
+"SeeYou" = "Uvidíme se";
 //-------------------- Delete Account --------------------//
