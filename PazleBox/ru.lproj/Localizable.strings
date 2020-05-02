@@ -7,259 +7,259 @@
 */
 
 
-"Ranking" = "Ranking";
-"No Ads" = "No Ads";
-"Restore" = "Restore";
+"Ranking" = " Рейтинг";
+"No Ads" = " Без рекламы";
+"Restore" = " Восстановление";
 
-"Contact us" = "Contact Us";
+"Contact us" = " Свяжитесь с Нами";
 
-"Pouse" = "Pouse";
-"Continue" = "Continue";
-"Home" = "Home";
+"Pouse" = " Дом";
+"Continue" = " Продолжить работу по адресу .";
+"Home" = " Главная страница";
 
-"WathcAdAnd" = "Watch the ads and get the tips";
+"WathcAdAnd" = " Смотрите объявления и получайте советы";
 
-"AdNotFlow" = "Ad NOT Flow";
-"Ad Flow" = "Ad Flow";
+"AdNotFlow" = " Ad NOT Flow";
+"Ad Flow" = " Поток рекламы";
 
-"Stage review" = "Stage review";
+"Stage review" = " Поэтапный обзор";
 
-"UntilNextAd" = "Until Next Ad :";
+"UntilNextAd" = " До следующего объявления :";
 
-"Next" = "Next";
+"Next" = " Следующий";
 
-"PlayAgain" = "Play Again";
+"PlayAgain" = " Играть снова";
 
-"Clear10Stage" = "You've cleared 10 stages.";
-"Clear100Stage" = "You've cleared 100 stages.";
+"Clear10Stage" = " Ты прошел 10 стадий.";
+"Clear100Stage" = " Ты пропустил 100 ста стадий.";
 
-"Congrats" = "Congratulations!";
+"Congrats" = " Поздравляю!";
 
-"ThankYou" = "Thank You!";
-"Ohthankyou" = "Oh, thanks...";
+"ThankYou" = " Спасибо!";
+"Ohthankyou" = " О, спасибо...";
 
-"SelectPice" = "Select the pieces and place them";
-"PutOneMorePice" = "Please place at least one piece";
-"DecideInitPosi" = "Let's decide the initial position";
-"ShiftPice" = "Please shift the position of one or more pieces!";
-"TrashPice" = "Drag and drop unused pieces to the trash";
+"SelectPice" = " Выберите кусочки и поместите их";
+"PutOneMorePice" = " Пожалуйста, поставьте хотя бы один экземпляр";
+"DecideInitPosi" = " Давайте определимся с начальной позицией";
+"ShiftPice" = " Пожалуйста, измените положение одной или нескольких частей!";
+"TrashPice" = " Перетащите неиспользованные куски в мусорный бак.";
 
-"OK" = "End";
-"Done" = "Complete";
-
-
-"IfGoHome" = "If you return to Home, the contents will not be saved.";
-
-"Saved" = "Saved";
+"OK" = " Конец";
+"Done" = " Полный";
 
 
-"Play" = "Play";
-"Create" = "Create";
-"Setting" = "Setting";
+"IfGoHome" = " Если вы вернетесь домой, содержимое не будет сохранено.";
 
-"Close" = "Close";
-"Delete" = "Delete";
-"Cancel" = "Cancel";
-
-"StageYouMade" = "Stage You Made";
-"StageInTheWorld" = "Stage in the World";
-
-"CreatedDate" = "Created Date: ";
+"Saved" = " Сохранен";
 
 
-"StageCreate" = "Stage Making";
+"Play" = " Играть";
+"Create" = " Создать";
+"Setting" = " Настройка";
 
-"StageCreatormade" = "Stage Author Made";
+"Close" = " Закрыть";
+"Delete" = " Удалить";
+"Cancel" = " Отменить";
+
+"StageYouMade" = " Сцена, которую ты сделал";
+"StageInTheWorld" = " Стадия в мире";
+
+"CreatedDate" = " Созданная дата:";
+
+
+"StageCreate" = " Сценическое искусство";
+
+"StageCreatormade" = " Сделано автором сцены";
 
 
 //セグメントのやつ
-"Latest" = "Latest";
-"PlayCount" = "Play Count";
-"Rating" = "Rating";
+"Latest" = " Последний сайт";
+"PlayCount" = " Играть в граф";
+"Rating" = " Рейтинг";
 
 
 //active viewで表示するやつ。
-"err" = "Error";
-"suc" = "Success";
+"err" = " Ошибка";
+"suc" = " Успех";
 
-"sucSave" = "Saved successfully";
-"errSave" = "Failed to save";
+"sucSave" = " Успешно спасённый";
+"errSave" = " Не удалось сохранить";
 
-"sucDele" = "Successfully deleted";
-"errDele" = "Failed to delete";
+"sucDele" = " Успешно удалён";
+"errDele" = " Не удалось удалить";
 
-"errGetDoc" = "Failed to get data";
+"errGetDoc" = " Не удалось получить данные";
 
 //NOTE:- こいつ呼び出す際は\n入れて改行すべし
-"checkNet" = "Please check the network status.";
+"checkNet" = " Пожалуйста, проверьте состояние сети.";
 
 //Worningで出すやつ。
-"delStage" = "Deleting a stage";
-"cantBack" = "Deleted stage cannot be recovered";
+"delStage" = " Удаление стадии";
+"cantBack" = " Удаленная стадия не может быть восстановлена";
 
 
 //InfoLabelにつけるやつ
-"CreateUpToFirst" = "Up To";
-"CreateUpToLast" = "Stages Can Be Created.";
+"CreateUpToFirst" = " До";
+"CreateUpToLast" = " Сцены могут быть созданы.";
 //RemaingLabelにつけるやつ
-"RemaingFirst" = "The remaining";
-"RemaingLast" = "Stages.";
+"RemaingFirst" = " Остальные";
+"RemaingLast" = " Этапы.";
 
 
 
-"UserInfo" = "User Info";
+"UserInfo" = " Информация пользователя";
 
-"Credit" = "Licenses";
+"Credit" = " Лицензии";
 
-"AppReview" = "App Review";
+"AppReview" = " Обзор приложений";
 
 
-"Guest" = "Guest";
-"Number Played" = "Number Played";
-"NumberOfStagesPlayed" = "Number Of Stages Played";
+"Guest" = " Гость";
+"Number Played" = " Номер Проигранный";
+"NumberOfStagesPlayed" = " Количество сыгранных стадий";
 
-"Creator" = "Creator";
+"Creator" = " Создатель";
 
-"UserAgreement" = "User Agreement";
-"PrivacyPolicy" = "Privacy Policy";
-"AgreementInfo" = "Do you agree with the User Agreement and Privacy Policy?";
-"DontAccept" = "Dont Accept";
-"Accept" = "Accept";
-"YouCantContinue" = "You cant continue until you have agreed with the User Agreement and the Privacy Policy.";
+"UserAgreement" = " Пользовательское соглашение";
+"PrivacyPolicy" = " Политика конфиденциальности";
+"AgreementInfo" = " Согласны ли Вы с Пользовательским соглашением и Политикой конфиденциальности?";
+"DontAccept" = " Не принимать";
+"Accept" = " Принять";
+"YouCantContinue" = " Вы не можете продолжать до тех пор, пока не согласитесь с Пользовательским соглашением и Политикой конфиденциальности.";
 
 //-------------------- チュートリアル --------------------//
-"Tutorial1" = "This app is for creating a stage and sharing it with everyone";
-"Tutorial2" = "★★★ Tutorial ★★★\n\nLet's actually make a stage!";
+"Tutorial1" = " Это приложение предназначено для создания сцены и обмена ею со всеми.";
+"Tutorial2" = " ★ Учебник ★★\n\nLet на самом деле делают сцену!";
 
-"Tutorial3" = "First, tap your favorite piece";
-"Tutorial4" = "Good 👍";
-"Tutorial5" = "Tap it and you'll see three colored pieces";
-"Tutorial6" = "Let's drag one piece and place it on the board!";
+"Tutorial3" = " Сначала коснитесь своего любимого произведения";
+"Tutorial4" = " Хороший сайт 👍";
+"Tutorial5" = " Нажмите его и вы увидите три цветных кусочка.";
+"Tutorial6" = " Давайте перетащим один кусок и поместим его на доску!";
 
-"Tutorial7" = "☆ Excellent ☆";
-"Tutorial8" = "Let's tap on a different Piece just like before!";
-"Tutorial9" = "Drag and drop it so that it doesn't stick to other pieces.";
+"Tutorial7" = " ☆ Отлично ☆";
+"Tutorial8" = " Давайте постучим по другому кусочку, как раньше!";
+"Tutorial9" = " Перетащите его, чтобы он не прилип к другим кусочкам.";
 
-"Tutorial10" = "Tap this button when the stage is complete";
+"Tutorial10" = " Нажмите эту кнопку, когда стадия будет завершена.";
 
-"Tutorial11" = "Finally decide the initial position of the piece!";
-"Tutorial12" = "Let's move the piece that we put by dragging it!";
+"Tutorial11" = " Окончательно определите начальное положение детали!";
+"Tutorial12" = " Давайте передвинем ту часть, которую мы положили, перетащив ее!";
 
-"Tutorial13" = "Tap this button once you have determined the initial position";
+"Tutorial13" = " Нажмите эту кнопку после того, как определите начальную позицию.";
 
-"Tutorial14" = "The stage is now complete!🎉";
-"Tutorial15" = "Make a lot of your own stage!";
+"Tutorial14" = " Сцена завершена!🎉";
+"Tutorial15" = " Сделай свою собственную сцену!";
 
-"Tutorial16" = "The stage you created can be played by everyone around the world!";
-"Tutorial17" = "You can also play the stage created by everyone in the world!!";
+"Tutorial16" = " На созданной вами сцене могут играть все желающие!";
+"Tutorial17" = " Вы также можете сыграть сцену, созданную всеми в мире!!!";
 //-------------------- チュートリアル --------------------//
 
 
 //TODO:- 他のファイルにもここ以下追加すること
 //-------------------- コメント書く --------------------//
-"SendAComment" = "Send a comment";
-"AlreadyWritten" = "Already written";
+"SendAComment" = " Отправить комментарий";
+"AlreadyWritten" = " Уже написанное";
 //-------------------- コメント書く --------------------//
 
 
 
 //-------------------- Follow --------------------//
-"Follow" = "Follow";
-"Following" = "Following";
-"Followers" = "Followers";
-"BlockedAccounts" = "Blocked Accounts";
-"UnFollow" = "UnFollow";
-"UnBlock" = "UnBlock";
-"Block" = "Block";
+"Follow" = " Следите за";
+"Following" = " Следующий сайт";
+"Followers" = " Писатели";
+"BlockedAccounts" = " Блокированные счета";
+"UnFollow" = " UnFollow";
+"UnBlock" = " Разблокировать";
+"Block" = " Блок";
 //-------------------- Follow --------------------//
 
 //User SetUp
-"Register" = "Register";
+"Register" = " Зарегистрироваться";
 
 
 //-------------------- TabBar --------------------//
-"TimeLine" = "Time Line";
-"PiceShop" = "Pice Shop";
-"MyPage" = "My Page";
-"EditProfile" = "Edit Profile";
+"TimeLine" = " Временная линия";
+"PiceShop" = " Магазин кустов";
+"MyPage" = " Моя страница";
+"EditProfile" = " Редактировать профиль";
 //-------------------- TabBar --------------------//
 
 //-------------------- No Table View --------------------//
-"NoStagePosts" = "No stage posts";
-"StageShowIf" = "It will be shown when the stage has been posted";
-"IfYouFollow" = "If you follow another user, their posts will be displayed";
+"NoStagePosts" = " Нет сценических постов";
+"StageShowIf" = " Он будет показан, когда сцена будет опубликована.";
+"IfYouFollow" = " Если вы следуете за другим пользователем, его сообщения будут отображаться на экране";
 
-"NoComments" = "No Comments";
-"NoCommentYet" = "No Comment Yet";
+"NoComments" = " Без комментариев";
+"NoCommentYet" = " Комментариев пока нет";
 
-"NoUser" = "No User";
-"NoUserYet" = "No users to display";
+"NoUser" = " Нет пользователя";
+"NoUserYet" = " Нет пользователей для отображения";
 //-------------------- No Table View --------------------//
 
 //-------------------- navigationItem.title --------------------//
-"WorldStage" = "World Stages";
-"Stage" = "Stage";
-"PiceSet" = "Pice Set";
+"WorldStage" = " Мировые сцены";
+"Stage" = " Этап";
+"PiceSet" = " Набор кубиков";
 //-------------------- navigationItem.title --------------------//
 
-"errBlock" = "Failed to block";
+"errBlock" = " Не удалось заблокировать";
 
 
 //-------------------- Action Sheet --------------------//
-"Report" = "Report";
-"InapCharacters" = "Contains inappropriate characters";
-"InapImages" = "Contains inappropriate images";
-"Other" = "Other";
+"Report" = " Сообщить";
+"InapCharacters" = " Содержит неподходящие символы";
+"InapImages" = " Содержит неподходящие изображения";
+"Other" = " Другое";
 //-------------------- Action Sheet --------------------//
 
 
 
-"IfYouBuyPice" = "You'll be able to use the following set of pieces in your stage making";
+"IfYouBuyPice" = " Вы сможете использовать следующий набор пьес на сцене.";
 
-"Purchase" = "Purchase";
+"Purchase" = " Покупка";
 
-"Account" = "Account";
+"Account" = " аккаунт";
 
-"AboutPuzzleMaker" = "About Puzzle Maker";
+"AboutPuzzleMaker" = " О создателе головоломок";
 
 //-------------------- Tutorial Alert View --------------------//
-"ShowTutorial" = "Show Tutorial";
-"HowToCreateAStage" = "How to create a stage";
-"DoYouWantToShowTutorial" = "Do you want to do a tutorial on creating a stage?";
-"FirstTimeStageMaking" = "Making the stage for the first time 🎉";
-"FinishTheTutorial" = "Finish the tutorial";
-"DoYouWantToFinishTutorial" = "Do you want to finish the tutorial?";
+"ShowTutorial" = "Показать учебник";
+"HowToCreateAStage" = "Как создать сцену";
+"DoYouWantToShowTutorial" = "Ты хочешь сделать учебник по созданию сцены?";
+"FirstTimeStageMaking" = "Создание сцены в первый раз 🎉.";
+"FinishTheTutorial" = "Закончить учебное пособие";
+"DoYouWantToFinishTutorial" = "Хочешь закончить урок?";
 //-------------------- Tutorial Alert View --------------------//
 
 
-"StageName" = "Stage Name";
-"EnterStageName" = "It's time to name the stage!";
+"StageName" = "Название сцены";
+"EnterStageName" = "Пришло время назвать сцену!";
 
 
 
 //-------------------- Notification Localize --------------------//
-"STAGE_COMMENTED_NOTIFICATION" = "%@ commented on the stage";
-"FOLLOWED_NOTIFICATION" = "%@ followed you";
+"STAGE_COMMENTED_NOTIFICATION" = "%@ прокомментировал на сцене";
+"FOLLOWED_NOTIFICATION" = "%@ последовал за тобой";
 //-------------------- Notification Localize --------------------//
 
 
 //-------------------- User SetUp VC --------------------//
-"RegiUserInfo" = "Registering User Information";
-"SetUpProfilePicture" = "Set up your profile picture";
-"Name" = "Name";
+"RegiUserInfo" = "Регистрационная информация пользователя";
+"SetUpProfilePicture" = "Настройте изображение вашего профиля";
+"Name" = "Имя";
 //-------------------- User SetUp VC --------------------//
 
 
 //-------------------- Delete Account --------------------//
-"DeleteAccount" = "Delete Account";
+"DeleteAccount" = "Удалить учетную запись";
 
-"DeleteInfo" = "Do you want to delete your account?";
+"DeleteInfo" = "Вы хотите удалить свой аккаунт?";
 
-"Warning" = "Warning!!";
-"WarningInfo" = "Deleting your account will delete all stages and comments you've created. This action is irrevocable.";
+"Warning" = "Внимание!";
+"WarningInfo" = "При удалении аккаунта будут удалены все созданные вами этапы и комментарии. Это действие является необратимым.";
 
-"AccountDeleteFailure" = "Account deletion failure";
-"AccountDeleteComplete" = "Account deletion complete";
-"ThankYouUsingThisApp" = "Thank you for using the app!🙂";
-"SeeYou" = "See you";
+"AccountDeleteFailure" = "Сбой при удалении аккаунта";
+"AccountDeleteComplete" = "Удаление учетной записи завершено";
+"ThankYouUsingThisApp" = "Спасибо, что воспользовались приложением!🙂.";
+"SeeYou" = "До встречи";
 //-------------------- Delete Account --------------------//
