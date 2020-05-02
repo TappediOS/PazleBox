@@ -7,259 +7,259 @@
 */
 
 
-"Ranking" = "Ranking";
-"No Ads" = "No Ads";
-"Restore" = "Restore";
+"Ranking" = " Classifica";
+"No Ads" = " Nessun annuncio";
+"Restore" = " Ripristina";
 
-"Contact us" = "Contact Us";
+"Contact us" = " Contattaci";
 
-"Pouse" = "Pouse";
-"Continue" = "Continue";
-"Home" = "Home";
+"Pouse" = " Pouse";
+"Continue" = " Continua";
+"Home" = " Home";
 
-"WathcAdAnd" = "Watch the ads and get the tips";
+"WathcAdAnd" = " Guarda gli annunci e ricevi i consigli";
 
-"AdNotFlow" = "Ad NOT Flow";
-"Ad Flow" = "Ad Flow";
+"AdNotFlow" = " Ad NOT Flow";
+"Ad Flow" = " Flusso dell'annuncio";
 
-"Stage review" = "Stage review";
+"Stage review" = " Revisione del palcoscenico";
 
-"UntilNextAd" = "Until Next Ad :";
+"UntilNextAd" = " Fino al prossimo annuncio :";
 
-"Next" = "Next";
+"Next" = " Prossimo";
 
-"PlayAgain" = "Play Again";
+"PlayAgain" = " Gioca di nuovo";
 
-"Clear10Stage" = "You've cleared 10 stages.";
-"Clear100Stage" = "You've cleared 100 stages.";
+"Clear10Stage" = " Hai superato 10 tappe.";
+"Clear100Stage" = " Hai superato 100 tappe.";
 
-"Congrats" = "Congratulations!";
+"Congrats" = " Congratulazioni!";
 
-"ThankYou" = "Thank You!";
-"Ohthankyou" = "Oh, thanks...";
+"ThankYou" = " Grazie!";
+"Ohthankyou" = " Oh, grazie...";
 
-"SelectPice" = "Select the pieces and place them";
-"PutOneMorePice" = "Please place at least one piece";
-"DecideInitPosi" = "Let's decide the initial position";
-"ShiftPice" = "Please shift the position of one or more pieces!";
-"TrashPice" = "Drag and drop unused pieces to the trash";
+"SelectPice" = " Seleziona i pezzi e mettili";
+"PutOneMorePice" = " Si prega di inserire almeno un pezzo";
+"DecideInitPosi" = " Decidiamo la posizione iniziale";
+"ShiftPice" = " Si prega di spostare la posizione di uno o più pezzi!";
+"TrashPice" = " Trascinare i pezzi inutilizzati nella spazzatura";
 
-"OK" = "End";
-"Done" = "Complete";
-
-
-"IfGoHome" = "If you return to Home, the contents will not be saved.";
-
-"Saved" = "Saved";
+"OK" = " Fine";
+"Done" = " Completare";
 
 
-"Play" = "Play";
-"Create" = "Create";
-"Setting" = "Setting";
+"IfGoHome" = " Se si torna a casa, il contenuto non verrà salvato.";
 
-"Close" = "Close";
-"Delete" = "Delete";
-"Cancel" = "Cancel";
-
-"StageYouMade" = "Stage You Made";
-"StageInTheWorld" = "Stage in the World";
-
-"CreatedDate" = "Created Date: ";
+"Saved" = " Salvato";
 
 
-"StageCreate" = "Stage Making";
+"Play" = " Gioca";
+"Create" = " Crea";
+"Setting" = " Impostazione";
 
-"StageCreatormade" = "Stage Author Made";
+"Close" = " Chiudere";
+"Delete" = " Cancellare";
+"Cancel" = " Annulla";
+
+"StageYouMade" = " Il palcoscenico che hai fatto";
+"StageInTheWorld" = " Il palcoscenico nel mondo";
+
+"CreatedDate" = " Data di creazione:";
+
+
+"StageCreate" = " Realizzazione del palcoscenico";
+
+"StageCreatormade" = " Autore scenico realizzato";
 
 
 //セグメントのやつ
-"Latest" = "Latest";
-"PlayCount" = "Play Count";
-"Rating" = "Rating";
+"Latest" = " Ultime notizie";
+"PlayCount" = " Gioca a contare";
+"Rating" = " Valutazione";
 
 
 //active viewで表示するやつ。
-"err" = "Error";
-"suc" = "Success";
+"err" = " Errore";
+"suc" = " Successo";
 
-"sucSave" = "Saved successfully";
-"errSave" = "Failed to save";
+"sucSave" = " Salvato con successo";
+"errSave" = " Non è riuscito a salvare";
 
-"sucDele" = "Successfully deleted";
-"errDele" = "Failed to delete";
+"sucDele" = " Cancellato con successo";
+"errDele" = " Non è riuscito a cancellare";
 
-"errGetDoc" = "Failed to get data";
+"errGetDoc" = " Impossibile ottenere i dati";
 
 //NOTE:- こいつ呼び出す際は\n入れて改行すべし
-"checkNet" = "Please check the network status.";
+"checkNet" = " Si prega di controllare lo stato della rete.";
 
 //Worningで出すやつ。
-"delStage" = "Deleting a stage";
-"cantBack" = "Deleted stage cannot be recovered";
+"delStage" = " Cancellare un palco";
+"cantBack" = " Lo stadio eliminato non può essere recuperato";
 
 
 //InfoLabelにつけるやつ
-"CreateUpToFirst" = "Up To";
-"CreateUpToLast" = "Stages Can Be Created.";
+"CreateUpToFirst" = " Fino a";
+"CreateUpToLast" = " Le tappe possono essere create.";
 //RemaingLabelにつけるやつ
-"RemaingFirst" = "The remaining";
-"RemaingLast" = "Stages.";
+"RemaingFirst" = " Il rimanente";
+"RemaingLast" = " Fasi.";
 
 
 
-"UserInfo" = "User Info";
+"UserInfo" = " Informazioni per l'utente";
 
-"Credit" = "Licenses";
+"Credit" = " Licenze";
 
-"AppReview" = "App Review";
+"AppReview" = " Recensione dell'applicazione";
 
 
-"Guest" = "Guest";
-"Number Played" = "Number Played";
-"NumberOfStagesPlayed" = "Number Of Stages Played";
+"Guest" = " Ospite";
+"Number Played" = " Numero Giocato";
+"NumberOfStagesPlayed" = " Numero di stadi riprodotti";
 
-"Creator" = "Creator";
+"Creator" = " Creatore";
 
-"UserAgreement" = "User Agreement";
-"PrivacyPolicy" = "Privacy Policy";
-"AgreementInfo" = "Do you agree with the User Agreement and Privacy Policy?";
-"DontAccept" = "Dont Accept";
-"Accept" = "Accept";
-"YouCantContinue" = "You cant continue until you have agreed with the User Agreement and the Privacy Policy.";
+"UserAgreement" = " Accordo con l'utente";
+"PrivacyPolicy" = " Informativa sulla privacy";
+"AgreementInfo" = " Accetti l'Accordo per gli utenti e l'Informativa sulla privacy?";
+"DontAccept" = " Non Accetto";
+"Accept" = " Accetta";
+"YouCantContinue" = " Non è possibile continuare fino a quando non si è d'accordo con l'Accordo per gli utenti e l'Informativa sulla privacy.";
 
 //-------------------- チュートリアル --------------------//
-"Tutorial1" = "This app is for creating a stage and sharing it with everyone";
-"Tutorial2" = "★★★ Tutorial ★★★\n\nLet's actually make a stage!";
+"Tutorial1" = " Questa app serve per creare un palco e condividerlo con tutti";
+"Tutorial2" = " Facciamo un vero e proprio palcoscenico!";
 
-"Tutorial3" = "First, tap your favorite piece";
-"Tutorial4" = "Good 👍";
-"Tutorial5" = "Tap it and you'll see three colored pieces";
-"Tutorial6" = "Let's drag one piece and place it on the board!";
+"Tutorial3" = " Per prima cosa, tocca il tuo pezzo preferito";
+"Tutorial4" = " Buono 👍";
+"Tutorial5" = " Toccalo e vedrai tre pezzi colorati";
+"Tutorial6" = " Trasciniamo un pezzo e mettiamolo sulla tavola!";
 
-"Tutorial7" = "☆ Excellent ☆";
-"Tutorial8" = "Let's tap on a different Piece just like before!";
-"Tutorial9" = "Drag and drop it so that it doesn't stick to other pieces.";
+"Tutorial7" = " ☆ Eccellente ☆";
+"Tutorial8" = " Battiamo su un pezzo diverso, proprio come prima!";
+"Tutorial9" = " Trascinatelo e lasciatelo cadere in modo che non si attacchi ad altri pezzi.";
 
-"Tutorial10" = "Tap this button when the stage is complete";
+"Tutorial10" = " Toccate questo pulsante quando il palco è completo";
 
-"Tutorial11" = "Finally decide the initial position of the piece!";
-"Tutorial12" = "Let's move the piece that we put by dragging it!";
+"Tutorial11" = " Finalmente decidere la posizione iniziale del pezzo!";
+"Tutorial12" = " Spostiamo il pezzo che abbiamo messo trascinandolo!";
 
-"Tutorial13" = "Tap this button once you have determined the initial position";
+"Tutorial13" = " Toccate questo pulsante una volta determinata la posizione iniziale";
 
-"Tutorial14" = "The stage is now complete!🎉";
-"Tutorial15" = "Make a lot of your own stage!";
+"Tutorial14" = " La fase è ora completa! 🎉";
+"Tutorial15" = " Fai molto del tuo palcoscenico!";
 
-"Tutorial16" = "The stage you created can be played by everyone around the world!";
-"Tutorial17" = "You can also play the stage created by everyone in the world!!";
+"Tutorial16" = " Il palco che hai creato può essere interpretato da tutti in tutto il mondo!";
+"Tutorial17" = " Puoi anche suonare il palcoscenico creato da tutti nel mondo!";
 //-------------------- チュートリアル --------------------//
 
 
 //TODO:- 他のファイルにもここ以下追加すること
 //-------------------- コメント書く --------------------//
-"SendAComment" = "Send a comment";
-"AlreadyWritten" = "Already written";
+"SendAComment" = " Invia un commento";
+"AlreadyWritten" = " Già scritto";
 //-------------------- コメント書く --------------------//
 
 
 
 //-------------------- Follow --------------------//
-"Follow" = "Follow";
-"Following" = "Following";
-"Followers" = "Followers";
-"BlockedAccounts" = "Blocked Accounts";
-"UnFollow" = "UnFollow";
-"UnBlock" = "UnBlock";
-"Block" = "Block";
+"Follow" = " Seguite";
+"Following" = " Di seguito";
+"Followers" = " Seguaci";
+"BlockedAccounts" = " Conti bloccati";
+"UnFollow" = " UnFollow";
+"UnBlock" = " Sblocca";
+"Block" = " Blocco";
 //-------------------- Follow --------------------//
 
 //User SetUp
-"Register" = "Register";
+"Register" = " Registrati";
 
 
 //-------------------- TabBar --------------------//
-"TimeLine" = "Time Line";
-"PiceShop" = "Pice Shop";
-"MyPage" = "My Page";
-"EditProfile" = "Edit Profile";
+"TimeLine" = " Linea temporale";
+"PiceShop" = " Negozio di pice";
+"MyPage" = " La mia pagina";
+"EditProfile" = " Modifica profilo";
 //-------------------- TabBar --------------------//
 
 //-------------------- No Table View --------------------//
-"NoStagePosts" = "No stage posts";
-"StageShowIf" = "It will be shown when the stage has been posted";
-"IfYouFollow" = "If you follow another user, their posts will be displayed";
+"NoStagePosts" = " Nessun palcoscenico";
+"StageShowIf" = " Verrà mostrato quando la tappa sarà stata affissa";
+"IfYouFollow" = " Se si segue un altro utente, i suoi messaggi saranno visualizzati";
 
-"NoComments" = "No Comments";
-"NoCommentYet" = "No Comment Yet";
+"NoComments" = " Nessun commento";
+"NoCommentYet" = " Nessun commento ancora";
 
-"NoUser" = "No User";
-"NoUserYet" = "No users to display";
+"NoUser" = " Nessun utente";
+"NoUserYet" = " Nessun utente da visualizzare";
 //-------------------- No Table View --------------------//
 
 //-------------------- navigationItem.title --------------------//
-"WorldStage" = "World Stages";
-"Stage" = "Stage";
-"PiceSet" = "Pice Set";
+"WorldStage" = " Tappe del mondo";
+"Stage" = " Fase";
+"PiceSet" = " Set di pice";
 //-------------------- navigationItem.title --------------------//
 
-"errBlock" = "Failed to block";
+"errBlock" = " Fallito il blocco";
 
 
 //-------------------- Action Sheet --------------------//
-"Report" = "Report";
-"InapCharacters" = "Contains inappropriate characters";
-"InapImages" = "Contains inappropriate images";
-"Other" = "Other";
+"Report" = " Segnala";
+"InapCharacters" = " Contiene caratteri inappropriati";
+"InapImages" = " Contiene immagini inappropriate";
+"Other" = " Altro";
 //-------------------- Action Sheet --------------------//
 
 
 
-"IfYouBuyPice" = "You'll be able to use the following set of pieces in your stage making";
+"IfYouBuyPice" = " Potrete utilizzare la seguente serie di pezzi per la realizzazione del vostro palcoscenico";
 
-"Purchase" = "Purchase";
+"Purchase" = " Acquisto";
 
-"Account" = "Account";
+"Account" = " Conto";
 
-"AboutPuzzleMaker" = "About Puzzle Maker";
+"AboutPuzzleMaker" = " Informazioni su Puzzle Maker";
 
 //-------------------- Tutorial Alert View --------------------//
-"ShowTutorial" = "Show Tutorial";
-"HowToCreateAStage" = "How to create a stage";
-"DoYouWantToShowTutorial" = "Do you want to do a tutorial on creating a stage?";
-"FirstTimeStageMaking" = "Making the stage for the first time 🎉";
-"FinishTheTutorial" = "Finish the tutorial";
-"DoYouWantToFinishTutorial" = "Do you want to finish the tutorial?";
+"ShowTutorial" = " Mostra il tutorial";
+"HowToCreateAStage" = " Come creare un palcoscenico";
+"DoYouWantToShowTutorial" = " Vuoi fare un tutorial sulla creazione di un palco?";
+"FirstTimeStageMaking" = " Fare lo stage per la prima volta 🎉";
+"FinishTheTutorial" = " Finisci il tutorial";
+"DoYouWantToFinishTutorial" = " Vuoi finire il tutorial?";
 //-------------------- Tutorial Alert View --------------------//
 
 
-"StageName" = "Stage Name";
-"EnterStageName" = "It's time to name the stage!";
+"StageName" = " Nome di tappa";
+"EnterStageName" = " È ora di dare un nome al palco!";
 
 
 
 //-------------------- Notification Localize --------------------//
-"STAGE_COMMENTED_NOTIFICATION" = "%@ commented on the stage";
-"FOLLOWED_NOTIFICATION" = "%@ followed you";
+"STAGE_COMMENTED_NOTIFICATION" = " %@ ha commentato il palco";
+"FOLLOWED_NOTIFICATION" = " %@ ti ha seguito";
 //-------------------- Notification Localize --------------------//
 
 
 //-------------------- User SetUp VC --------------------//
-"RegiUserInfo" = "Registering User Information";
-"SetUpProfilePicture" = "Set up your profile picture";
-"Name" = "Name";
+"RegiUserInfo" = " Registrazione delle informazioni dell'utente";
+"SetUpProfilePicture" = " Imposta l'immagine del tuo profilo";
+"Name" = " Nome";
 //-------------------- User SetUp VC --------------------//
 
 
 //-------------------- Delete Account --------------------//
-"DeleteAccount" = "Delete Account";
+"DeleteAccount" = " Cancellare il conto";
 
-"DeleteInfo" = "Do you want to delete your account?";
+"DeleteInfo" = " Vuoi cancellare il tuo account?";
 
-"Warning" = "Warning!!";
-"WarningInfo" = "Deleting your account will delete all stages and comments you've created. This action is irrevocable.";
+"Warning" = " Attenzione!";
+"WarningInfo" = " Cancellando il tuo account cancellerai tutte le tappe e i commenti che hai creato. Questa azione è irrevocabile.";
 
-"AccountDeleteFailure" = "Account deletion failure";
-"AccountDeleteComplete" = "Account deletion complete";
-"ThankYouUsingThisApp" = "Thank you for using the app!🙂";
-"SeeYou" = "See you";
+"AccountDeleteFailure" = " Fallimento della cancellazione dell'account";
+"AccountDeleteComplete" = " Cancellazione del conto completata";
+"ThankYouUsingThisApp" = " Grazie per aver utilizzato l'app! 🙂";
+"SeeYou" = " Ci vediamo";
 //-------------------- Delete Account --------------------//
