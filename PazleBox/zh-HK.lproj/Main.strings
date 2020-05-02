@@ -1,0 +1,48 @@
+
+/* Class = "UILabel"; text = "購入の復元"; ObjectID = "0v3-iN-UNe"; */
+"0v3-iN-UNe.text" = "購入の復元";
+
+/* Class = "UIButton"; normalTitle = "Create"; ObjectID = "1Z4-rY-8ae"; */
+"1Z4-rY-8ae.normalTitle" = "Create";
+
+/* Class = "UITableViewSection"; headerTitle = "その他"; ObjectID = "3Ef-9w-wV7"; */
+"3Ef-9w-wV7.headerTitle" = "その他";
+
+/* Class = "UILabel"; text = "ユーザ情報"; ObjectID = "5d2-el-bud"; */
+"5d2-el-bud.text" = "ユーザ情報";
+
+/* Class = "UIButton"; normalTitle = "Play"; ObjectID = "6Go-1k-dK8"; */
+"6Go-1k-dK8.normalTitle" = "Play";
+
+/* Class = "UILabel"; text = "アプリの評価"; ObjectID = "7Ga-Jz-Obn"; */
+"7Ga-Jz-Obn.text" = "アプリの評価";
+
+/* Class = "UITableViewSection"; headerTitle = "アカウント"; ObjectID = "9W2-NP-ml9"; */
+"9W2-NP-ml9.headerTitle" = "アカウント";
+
+/* Class = "UIButton"; normalTitle = "Easy"; ObjectID = "B1r-pK-hHC"; */
+"B1r-pK-hHC.normalTitle" = "Easy";
+
+/* Class = "UITableViewSection"; headerTitle = "広告の削除"; ObjectID = "CRz-Q2-4RW"; */
+"CRz-Q2-4RW.headerTitle" = "広告の削除";
+
+/* Class = "UIButton"; normalTitle = "Normal"; ObjectID = "Ff9-dL-ofO"; */
+"Ff9-dL-ofO.normalTitle" = "Normal";
+
+/* Class = "UILabel"; text = "Game Center"; ObjectID = "NCy-k2-3C8"; */
+"NCy-k2-3C8.text" = "Game Center";
+
+/* Class = "UILabel"; text = "お問い合わせ"; ObjectID = "Ohi-EA-ICP"; */
+"Ohi-EA-ICP.text" = "お問い合わせ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ZN5-Nt-QPh"; */
+"ZN5-Nt-QPh.text" = "Label";
+
+/* Class = "UILabel"; text = "広告の削除："; ObjectID = "oGe-jd-Ty0"; */
+"oGe-jd-Ty0.text" = "広告の削除：";
+
+/* Class = "UILabel"; text = "このアプリについて"; ObjectID = "rQk-Rt-9nC"; */
+"rQk-Rt-9nC.text" = "このアプリについて";
+
+/* Class = "UIButton"; normalTitle = "Hard"; ObjectID = "sp0-vN-R4x"; */
+"sp0-vN-R4x.normalTitle" = "Hard";

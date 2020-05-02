@@ -1,0 +1,266 @@
+/* 
+  Localizable.strings
+  PazleBox
+
+  Created by jun on 2019/06/04.
+  Copyright © 2019 jun. All rights reserved.
+*/
+
+
+"Ranking" = "Rangliste";
+"No Ads" = "Keine Anzeigen";
+"Restore" = "wiederherstellen";
+
+"Contact us" = "Kontakt";
+
+"Pouse" = "Halt";
+"Continue" = "Weiter";
+"Home" = "Startseite";
+
+"WathcAdAnd" = "Schauen Sie sich die Anzeigen an und holen Sie sich die Tipps";
+
+"AdNotFlow" = "Die Anzeige wird nicht laufen.";
+"Ad Flow" = "Die Anzeige wird laufen.";
+
+"Stage review" = "Überprüfung der Etappe";
+
+"UntilNextAd" = "Bis zur nächsten Anzeige:";
+
+"Next" = "Nächste";
+
+"PlayAgain" = "noch einmal";
+
+"Clear10Stage" = "Sie haben 10 Stufen überwunden.";
+"Clear100Stage" = "Sie haben 100 Stufen überwunden.";
+
+"Congrats" = "Herzlichen Glückwunsch!";
+
+"ThankYou" = "Ich danke Ihnen!";
+"Ohthankyou" = "Oh, danke...";
+
+"SelectPice" = "Wählen Sie die Stücke aus und platzieren Sie sie";
+"PutOneMorePice" = "Bitte platzieren Sie mindestens ein Stück";
+"DecideInitPosi" = "Entscheiden wir die Ausgangslage";
+"ShiftPice" = "Bitte verschieben Sie die Position eines oder mehrerer Stücke!";
+"TrashPice" = "Ziehen Sie unbenutzte Stücke in den Papierkorb";
+
+"OK" = "Ende";
+"Done" = "Vollständige";
+
+
+"IfGoHome" = "Wenn Sie zu Home zurückkehren, wird der Inhalt nicht gespeichert.";
+
+"Saved" = "Gespeichert";
+
+
+"Play" = "spielen";
+"Create" = "erstellen";
+"Setting" = "Einstellung";
+
+"Close" = "schließen";
+"Delete" = "löschen";
+"Cancel" = "Abbrechen";
+
+"StageYouMade" = "Die gebaute Bühne I";
+"StageInTheWorld" = "Weltbühne";
+
+"CreatedDate" = "Datum: ";
+
+
+"StageCreate" = "Inszenierung";
+
+"StageCreatormade" = "Etappe Autor gemacht";
+
+
+//セグメントのやつ
+"Latest" = "Aktuellste";
+"PlayCount" = "Anzahl der Spiele";
+"Rating" = "Bewertung";
+
+
+//active viewで表示するやつ。
+"err" = "Fehler";
+"suc" = "Erfolg";
+
+"sucSave" = "Erfolgreich gerettet";
+"errSave" = "Speichern fehlgeschlagen";
+
+"sucDele" = "Erfolgreich gelöscht";
+"errDele" = "Löschen fehlgeschlagen";
+
+"errGetDoc" = "Daten nicht erhalten";
+
+//NOTE:- こいつ呼び出す際は\n入れて改行すべし
+"checkNet" = "Bitte überprüfen Sie den Netzwerkstatus.";
+
+//Worningで出すやつ。
+"delStage" = "Löschen einer Stufe";
+"cantBack" = "Gelöschte Stufe kann nicht wiederhergestellt werden";
+
+
+//InfoLabelにつけるやつ
+"CreateUpToFirst" = "Bis zu";
+"CreateUpToLast" = "Stufen können erstellt werden.";
+//RemaingLabelにつけるやつ
+"RemaingFirst" = "Die übrigen";
+"RemaingLast" = "Etappen.";
+
+
+
+"UserInfo" = "Benutzer-Info";
+
+"Credit" = "Lizenzen";
+
+"AppReview" = "App-Review";
+
+
+"Guest" = "Gast";
+"Number Played" = "Gespielte Zahl";
+"NumberOfStagesPlayed" = "Anzahl der gespielten Etappen";
+
+"Creator" = "Schöpfer";
+
+"UserAgreement" = "Benutzer-Vereinbarung";
+"PrivacyPolicy" = "Datenschutzerklärung";
+"AgreementInfo" = "Sind Sie mit der Nutzungsvereinbarung und der Datenschutzrichtlinie einverstanden?";
+"DontAccept" = "Nicht akzeptieren";
+"Accept" = "Akzeptieren Sie";
+"YouCantContinue" = "Sie können erst fortfahren, wenn Sie der Nutzungsvereinbarung und den Datenschutzbestimmungen zugestimmt haben.";
+
+//-------------------- チュートリアル --------------------//
+"Tutorial1" = "Diese App dient dazu, eine Bühne zu schaffen und sie mit allen zu teilen";
+"Tutorial2" = "★★★ Tutorial ★★★\n\nLasst uns tatsächlich eine Bühne schaffen!";
+
+"Tutorial3" = "Zuerst tippen Sie Ihr Lieblingsstück an";
+"Tutorial4" = "Gut 👍";
+"Tutorial5" = "Tippen Sie darauf und Sie sehen drei farbige Stücke";
+"Tutorial6" = "Ziehen wir eine Figur und legen sie auf das Brett!";
+
+"Tutorial7" = "☆ Ausgezeichnet ☆";
+"Tutorial8" = "Klopfen wir wie bisher auf ein anderes Stück!";
+"Tutorial9" = "Ziehen Sie es per Drag & Drop, damit es nicht an anderen Stücken hängen bleibt.";
+
+"Tutorial10" = "Tippen Sie auf diese Schaltfläche, wenn die Phase abgeschlossen ist.";
+
+"Tutorial11" = "Entscheiden Sie schließlich die Ausgangsposition des Stücks!";
+"Tutorial12" = "Bewegen wir die Figur, die wir setzen, indem wir sie ziehen!";
+
+"Tutorial13" = "Tippen Sie auf diese Schaltfläche, wenn Sie die Ausgangsposition bestimmt haben";
+
+"Tutorial14" = "Die Etappe ist nun abgeschlossen!🎉";
+"Tutorial15" = "Machen Sie viel aus Ihrer eigenen Bühne!";
+
+"Tutorial16" = "Die Bühne, die Sie geschaffen haben, kann von jedem auf der ganzen Welt gespielt werden!";
+"Tutorial17" = "Du kannst auch die Bühne spielen, die von jedem auf der Welt geschaffen wurde!!";
+//-------------------- チュートリアル --------------------//
+
+
+//TODO:- 他のファイルにもここ以下追加すること
+//-------------------- コメント書く --------------------//
+"SendAComment" = "Einen Kommentar senden";
+"AlreadyWritten" = "Bereits geschrieben";
+//-------------------- コメント書く --------------------//
+
+
+
+//-------------------- Follow --------------------//
+"Follow" = "Folgen Sie";
+"Following" = "Folgend";
+"Followers" = "Anhänger";
+"BlockedAccounts" = "Gesperrte Konten";
+"UnFollow" = "UnFollow";
+"UnBlock" = "Sperre aufheben";
+"Block" = "Block";
+//-------------------- Follow --------------------//
+
+//User SetUp
+"Register" = "Registrieren";
+
+
+//-------------------- TabBar --------------------//
+"TimeLine" = "Zeitleiste";
+"PiceShop" = "Puzzle-Teile";
+"MyPage" = "Meine Seite";
+"EditProfile" = "Profil";
+//-------------------- TabBar --------------------//
+
+//-------------------- No Table View --------------------//
+"NoStagePosts" = "Keine Bühnenposten";
+"StageShowIf" = "Sie erscheint, wenn die Etappe gebucht wird.";
+"IfYouFollow" = "Wenn Sie einem anderen Benutzer folgen, werden dessen Beiträge angezeigt";
+
+"NoComments" = "Keine Kommentare";
+"NoCommentYet" = "Noch kein Kommentar";
+
+"NoUser" = "Kein Benutzer";
+"NoUserYet" = "Keine anzuzeigenden Benutzer";
+//-------------------- No Table View --------------------//
+
+//-------------------- navigationItem.title --------------------//
+"WorldStage" = "Weltweite Etappen";
+"Stage" = "Bühne";
+"PiceSet" = "Würfel-Set";
+//-------------------- navigationItem.title --------------------//
+
+"errBlock" = "Blockierung fehlgeschlagen";
+
+
+//-------------------- Action Sheet --------------------//
+"Report" = "Bericht";
+"InapCharacters" = "Enthält unangemessene Zeichen";
+"InapImages" = "Enthält unangemessene Bilder";
+"Other" = "Andere";
+//-------------------- Action Sheet --------------------//
+
+
+
+"IfYouBuyPice" = "Sie können die folgenden Stücke in Ihrem Bühnenbild verwenden";
+
+"Purchase" = "Kaufen";
+
+"Account" = "Konto";
+
+"AboutPuzzleMaker" = "Über Puzzle Maker";
+
+//-------------------- Tutorial Alert View --------------------//
+"ShowTutorial" = "Tutorial anzeigen";
+"HowToCreateAStage" = "Wie man eine Bühne erstellt";
+"DoYouWantToShowTutorial" = "Wollen Sie ein Tutorium über das Erstellen einer Bühne machen?";
+"FirstTimeStageMaking" = "Zum ersten Mal eine Bühne erstellen 🎉";
+"FinishTheTutorial" = "Beenden Sie das Tutorial";
+"DoYouWantToFinishTutorial" = "Wollen Sie das Tutorium beenden?";
+//-------------------- Tutorial Alert View --------------------//
+
+
+"StageName" = "Name der Etappe";
+"EnterStageName" = "Es ist an der Zeit, die Bühne zu benennen!";
+
+
+
+
+//-------------------- Notification Localize --------------------//
+"STAGE_COMMENTED_NOTIFICATION" = "%@ kommentierte die Bühne!
+"FOLLOWED_NOTIFICATION" = "%@ folgte Ihnen";
+//-------------------- Notification Localize --------------------//
+
+
+//-------------------- User SetUp VC --------------------//
+"RegiUserInfo" = "Registrieren von Benutzerinformationen";
+"SetUpProfilePicture" = "Richten Sie Ihr Profilbild ein";
+"Name" = "Name";
+//-------------------- User SetUp VC --------------------//
+
+
+//-------------------- Delete Account --------------------//
+"DeleteAccount" = "Konto löschen";
+
+"DeleteInfo" = "Möchten Sie Ihr Konto löschen?";
+
+"Warning" = "Warnung!!";
+"WarningInfo" = "Wenn Sie Ihr Konto löschen, werden alle von Ihnen erstellten Etappen und Kommentare gelöscht. Diese Aktion ist unwiderruflich.";
+
+"AccountDeleteFailure" = "Fehler bei der Kontolöschung";
+"AccountDeleteComplete" = "Kontolöschung abgeschlossen";
+"ThankYouUsingThisApp" = "Vielen Dank für die Nutzung der App! 🙂";
+"SeeYou" = "Auf Wiedersehen";
+//-------------------- Delete Account --------------------//

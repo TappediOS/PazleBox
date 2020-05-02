@@ -11,6 +11,7 @@ import UIKit
 import Hero
 import SwiftyStoreKit
 import Firebase
+import FirebaseAnalytics
 import TapticEngine
 
 class PiceShopEachViewController: UIViewController {

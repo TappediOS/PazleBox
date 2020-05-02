@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import SnapKit
+import Firebase
+import FirebaseAnalytics
 
 
 enum PiceSetNum {
@@ -251,6 +253,9 @@ class ShoppingPiceViewController: UIViewController {
    @IBAction func TapShoppingPiceButton(_ sender: UIButton) {
       let tag = sender.tag
       print("タップされたボタンは\(tag)番目のボタンです")
+      
+      let tagStr = String(tag)
+      Analytics.logEvent("TapShoppingPiceButton_" + tagStr, parameters: nil)
       
       let PiceShopEachVCSB = UIStoryboard(name: "PiceShopEachViewControllerSB", bundle: nil)
       let PiceShopEachCV = PiceShopEachVCSB.instantiateViewController(withIdentifier: "PiceShopEachVC") as! PiceShopEachViewController
