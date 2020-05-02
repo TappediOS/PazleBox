@@ -7,259 +7,259 @@
 */
 
 
-"Ranking" = "Ranking";
-"No Ads" = "No Ads";
-"Restore" = "Restore";
+"Ranking" = " Xếp hạng";
+"No Ads" = " Không quảng cáo";
+"Restore" = " Khôi phục";
 
-"Contact us" = "Contact Us";
+"Contact us" = " Liên hệ chúng tôi";
 
-"Pouse" = "Pouse";
-"Continue" = "Continue";
-"Home" = "Home";
+"Pouse" = " Vợ";
+"Continue" = " Tiếp tục";
+"Home" = " Trang Chủ";
 
-"WathcAdAnd" = "Watch the ads and get the tips";
+"WathcAdAnd" = " Xem quảng cáo và nhận được lời khuyên";
 
-"AdNotFlow" = "Ad NOT Flow";
-"Ad Flow" = "Ad Flow";
+"AdNotFlow" = " Quảng cáo KHÔNG chảy";
+"Ad Flow" = " Lưu lượng quảng cáo";
 
-"Stage review" = "Stage review";
+"Stage review" = " Đánh giá giai đoạn";
 
-"UntilNextAd" = "Until Next Ad :";
+"UntilNextAd" = " Cho đến quảng cáo tiếp theo:";
 
-"Next" = "Next";
+"Next" = " Kế tiếp";
 
-"PlayAgain" = "Play Again";
+"PlayAgain" = " Chơi lại";
 
-"Clear10Stage" = "You've cleared 10 stages.";
-"Clear100Stage" = "You've cleared 100 stages.";
+"Clear10Stage" = " Bạn đã xóa 10 giai đoạn.";
+"Clear100Stage" = " Bạn đã xóa 100 giai đoạn.";
 
-"Congrats" = "Congratulations!";
+"Congrats" = " Xin chúc mừng!";
 
-"ThankYou" = "Thank You!";
-"Ohthankyou" = "Oh, thanks...";
+"ThankYou" = " Cảm ơn bạn!";
+"Ohthankyou" = " Ồ cảm ơn...";
 
-"SelectPice" = "Select the pieces and place them";
-"PutOneMorePice" = "Please place at least one piece";
-"DecideInitPosi" = "Let's decide the initial position";
-"ShiftPice" = "Please shift the position of one or more pieces!";
-"TrashPice" = "Drag and drop unused pieces to the trash";
+"SelectPice" = " Chọn các mảnh và đặt chúng";
+"PutOneMorePice" = " Vui lòng đặt ít nhất một mảnh";
+"DecideInitPosi" = " Hãy quyết định vị trí ban đầu";
+"ShiftPice" = " Hãy thay đổi vị trí của một hoặc nhiều mảnh!";
+"TrashPice" = " Kéo và thả các mảnh không sử dụng vào thùng rác";
 
-"OK" = "End";
-"Done" = "Complete";
-
-
-"IfGoHome" = "If you return to Home, the contents will not be saved.";
-
-"Saved" = "Saved";
+"OK" = " Kết thúc";
+"Done" = " Hoàn thành";
 
 
-"Play" = "Play";
-"Create" = "Create";
-"Setting" = "Setting";
+"IfGoHome" = " Nếu bạn trở về Trang chủ, nội dung sẽ không được lưu.";
 
-"Close" = "Close";
-"Delete" = "Delete";
-"Cancel" = "Cancel";
-
-"StageYouMade" = "Stage You Made";
-"StageInTheWorld" = "Stage in the World";
-
-"CreatedDate" = "Created Date: ";
+"Saved" = " Đã lưu";
 
 
-"StageCreate" = "Stage Making";
+"Play" = " Chơi";
+"Create" = " Tạo nên";
+"Setting" = " Cài đặt";
 
-"StageCreatormade" = "Stage Author Made";
+"Close" = " Đóng";
+"Delete" = " Xóa bỏ";
+"Cancel" = " Hủy bỏ";
+
+"StageYouMade" = " Giai đoạn bạn thực hiện";
+"StageInTheWorld" = " Sân khấu trên thế giới";
+
+"CreatedDate" = " Ngày tạo ra:";
+
+
+"StageCreate" = " Giai đoạn làm";
+
+"StageCreatormade" = " Tác giả sân khấu";
 
 
 //セグメントのやつ
-"Latest" = "Latest";
-"PlayCount" = "Play Count";
-"Rating" = "Rating";
+"Latest" = " Muộn nhất";
+"PlayCount" = " Chơi đếm";
+"Rating" = " Xếp hạng";
 
 
 //active viewで表示するやつ。
-"err" = "Error";
-"suc" = "Success";
+"err" = " lỗi";
+"suc" = " Sự thành công";
 
-"sucSave" = "Saved successfully";
-"errSave" = "Failed to save";
+"sucSave" = " đã lưu thành công";
+"errSave" = " Lưu thất bại";
 
-"sucDele" = "Successfully deleted";
-"errDele" = "Failed to delete";
+"sucDele" = " Xóa thành công";
+"errDele" = " Không thể xóa";
 
-"errGetDoc" = "Failed to get data";
+"errGetDoc" = " Không thể lấy dữ liệu";
 
 //NOTE:- こいつ呼び出す際は\n入れて改行すべし
-"checkNet" = "Please check the network status.";
+"checkNet" = " Vui lòng kiểm tra trạng thái mạng.";
 
 //Worningで出すやつ。
-"delStage" = "Deleting a stage";
-"cantBack" = "Deleted stage cannot be recovered";
+"delStage" = " Xóa một giai đoạn";
+"cantBack" = " Giai đoạn đã xóa không thể được phục hồi";
 
 
 //InfoLabelにつけるやつ
-"CreateUpToFirst" = "Up To";
-"CreateUpToLast" = "Stages Can Be Created.";
+"CreateUpToFirst" = " Lên đến";
+"CreateUpToLast" = " Các giai đoạn có thể được tạo ra.";
 //RemaingLabelにつけるやつ
-"RemaingFirst" = "The remaining";
-"RemaingLast" = "Stages.";
+"RemaingFirst" = " Phần còn lại";
+"RemaingLast" = " Các giai đoạn.";
 
 
 
-"UserInfo" = "User Info";
+"UserInfo" = " thông tin người dùng";
 
-"Credit" = "Licenses";
+"Credit" = " Giấy phép";
 
-"AppReview" = "App Review";
+"AppReview" = " Đánh giá ứng dụng";
 
 
-"Guest" = "Guest";
-"Number Played" = "Number Played";
-"NumberOfStagesPlayed" = "Number Of Stages Played";
+"Guest" = " Khách mời";
+"Number Played" = " Số đã chơi";
+"NumberOfStagesPlayed" = " Số lượng giai đoạn đã chơi";
 
-"Creator" = "Creator";
+"Creator" = " Người sáng tạo";
 
-"UserAgreement" = "User Agreement";
-"PrivacyPolicy" = "Privacy Policy";
-"AgreementInfo" = "Do you agree with the User Agreement and Privacy Policy?";
-"DontAccept" = "Dont Accept";
-"Accept" = "Accept";
-"YouCantContinue" = "You cant continue until you have agreed with the User Agreement and the Privacy Policy.";
+"UserAgreement" = " sự thỏa thuận của người dùng";
+"PrivacyPolicy" = " Chính sách bảo mật";
+"AgreementInfo" = " Bạn có đồng ý với Thỏa thuận người dùng và Chính sách quyền riêng tư không?";
+"DontAccept" = " Không chấp nhận";
+"Accept" = " Chấp nhận";
+"YouCantContinue" = " Bạn không thể tiếp tục cho đến khi bạn đồng ý với Thỏa thuận người dùng và Chính sách quyền riêng tư.";
 
 //-------------------- チュートリアル --------------------//
-"Tutorial1" = "This app is for creating a stage and sharing it with everyone";
-"Tutorial2" = "★★★ Tutorial ★★★\n\nLet's actually make a stage!";
+"Tutorial1" = " Ứng dụng này là để tạo một sân khấu và chia sẻ nó với mọi người";
+"Tutorial2" = " Hướng dẫn ★★★ ★★★ \ n \ nHãy thực sự tạo nên một sân khấu!";
 
-"Tutorial3" = "First, tap your favorite piece";
-"Tutorial4" = "Good 👍";
-"Tutorial5" = "Tap it and you'll see three colored pieces";
-"Tutorial6" = "Let's drag one piece and place it on the board!";
+"Tutorial3" = " Đầu tiên, nhấn vào mảnh yêu thích của bạn";
+"Tutorial4" = " Tốt";
+"Tutorial5" = " Nhấn vào nó và bạn sẽ thấy ba mảnh màu";
+"Tutorial6" = " Hãy kéo một mảnh và đặt nó lên bảng!";
 
-"Tutorial7" = "☆ Excellent ☆";
-"Tutorial8" = "Let's tap on a different Piece just like before!";
-"Tutorial9" = "Drag and drop it so that it doesn't stick to other pieces.";
+"Tutorial7" = " Tuyệt vời";
+"Tutorial8" = " Hãy chạm vào một mảnh khác nhau như trước đây!";
+"Tutorial9" = " Kéo và thả nó để nó không dính vào các mảnh khác.";
 
-"Tutorial10" = "Tap this button when the stage is complete";
+"Tutorial10" = " Chạm vào nút này khi giai đoạn hoàn tất";
 
-"Tutorial11" = "Finally decide the initial position of the piece!";
-"Tutorial12" = "Let's move the piece that we put by dragging it!";
+"Tutorial11" = " Cuối cùng quyết định vị trí ban đầu của mảnh!";
+"Tutorial12" = " Hãy di chuyển mảnh mà chúng ta đặt bằng cách kéo nó!";
 
-"Tutorial13" = "Tap this button once you have determined the initial position";
+"Tutorial13" = " Nhấn vào nút này khi bạn đã xác định được vị trí ban đầu";
 
-"Tutorial14" = "The stage is now complete!🎉";
-"Tutorial15" = "Make a lot of your own stage!";
+"Tutorial14" = " Sân khấu đã hoàn tất!";
+"Tutorial15" = " Làm cho rất nhiều giai đoạn của riêng bạn!";
 
-"Tutorial16" = "The stage you created can be played by everyone around the world!";
-"Tutorial17" = "You can also play the stage created by everyone in the world!!";
+"Tutorial16" = " Sân khấu bạn tạo ra có thể được chơi bởi tất cả mọi người trên khắp thế giới!";
+"Tutorial17" = " Bạn cũng có thể chơi sân khấu được tạo bởi tất cả mọi người trên thế giới !!";
 //-------------------- チュートリアル --------------------//
 
 
 //TODO:- 他のファイルにもここ以下追加すること
 //-------------------- コメント書く --------------------//
-"SendAComment" = "Send a comment";
-"AlreadyWritten" = "Already written";
+"SendAComment" = " Gửi bình luận";
+"AlreadyWritten" = " Đã viết";
 //-------------------- コメント書く --------------------//
 
 
 
 //-------------------- Follow --------------------//
-"Follow" = "Follow";
-"Following" = "Following";
-"Followers" = "Followers";
-"BlockedAccounts" = "Blocked Accounts";
-"UnFollow" = "UnFollow";
-"UnBlock" = "UnBlock";
-"Block" = "Block";
+"Follow" = " Theo";
+"Following" = " Tiếp theo";
+"Followers" = " Người theo dõi";
+"BlockedAccounts" = " Tài khoản bị chặn";
+"UnFollow" = " Hủy theo dõi";
+"UnBlock" = " Mở khóa";
+"Block" = " Khối";
 //-------------------- Follow --------------------//
 
 //User SetUp
-"Register" = "Register";
+"Register" = " Đăng ký";
 
 
 //-------------------- TabBar --------------------//
-"TimeLine" = "Time Line";
-"PiceShop" = "Pice Shop";
-"MyPage" = "My Page";
-"EditProfile" = "Edit Profile";
+"TimeLine" = " Mốc thời gian";
+"PiceShop" = " Cửa hàng Pice";
+"MyPage" = " Trang của tôi";
+"EditProfile" = " Chỉnh sửa hồ sơ";
 //-------------------- TabBar --------------------//
 
 //-------------------- No Table View --------------------//
-"NoStagePosts" = "No stage posts";
-"StageShowIf" = "It will be shown when the stage has been posted";
-"IfYouFollow" = "If you follow another user, their posts will be displayed";
+"NoStagePosts" = " Không có bài viết trên sân khấu";
+"StageShowIf" = " Nó sẽ được hiển thị khi sân khấu đã được đăng";
+"IfYouFollow" = " Nếu bạn theo dõi người dùng khác, bài đăng của họ sẽ được hiển thị";
 
-"NoComments" = "No Comments";
-"NoCommentYet" = "No Comment Yet";
+"NoComments" = " Miễn bình luận";
+"NoCommentYet" = " Chưa có bình luận nào";
 
-"NoUser" = "No User";
-"NoUserYet" = "No users to display";
+"NoUser" = " Không có người dùng";
+"NoUserYet" = " Không có người dùng để hiển thị";
 //-------------------- No Table View --------------------//
 
 //-------------------- navigationItem.title --------------------//
-"WorldStage" = "World Stages";
-"Stage" = "Stage";
-"PiceSet" = "Pice Set";
+"WorldStage" = " Giai đoạn thế giới";
+"Stage" = " Sân khấu";
+"PiceSet" = " Pice Set";
 //-------------------- navigationItem.title --------------------//
 
-"errBlock" = "Failed to block";
+"errBlock" = " Không thể chặn";
 
 
 //-------------------- Action Sheet --------------------//
-"Report" = "Report";
-"InapCharacters" = "Contains inappropriate characters";
-"InapImages" = "Contains inappropriate images";
-"Other" = "Other";
+"Report" = " Báo cáo";
+"InapCharacters" = " Chứa các ký tự không phù hợp";
+"InapImages" = " Chứa hình ảnh không phù hợp";
+"Other" = " Khác";
 //-------------------- Action Sheet --------------------//
 
 
 
-"IfYouBuyPice" = "You'll be able to use the following set of pieces in your stage making";
+"IfYouBuyPice" = " Bạn sẽ có thể sử dụng bộ mảnh sau đây trong quá trình tạo sân khấu của bạn";
 
-"Purchase" = "Purchase";
+"Purchase" = " Mua, tựa vào, bám vào";
 
-"Account" = "Account";
+"Account" = " Tài khoản";
 
-"AboutPuzzleMaker" = "About Puzzle Maker";
+"AboutPuzzleMaker" = " Giới thiệu về Puzzle Maker";
 
 //-------------------- Tutorial Alert View --------------------//
-"ShowTutorial" = "Show Tutorial";
-"HowToCreateAStage" = "How to create a stage";
-"DoYouWantToShowTutorial" = "Do you want to do a tutorial on creating a stage?";
-"FirstTimeStageMaking" = "Making the stage for the first time 🎉";
-"FinishTheTutorial" = "Finish the tutorial";
-"DoYouWantToFinishTutorial" = "Do you want to finish the tutorial?";
+"ShowTutorial" = " Chương trình hướng dẫn";
+"HowToCreateAStage" = " Cách tạo sân khấu";
+"DoYouWantToShowTutorial" = " Bạn có muốn làm một hướng dẫn về việc tạo ra một sân khấu?";
+"FirstTimeStageMaking" = " Làm sân khấu lần đầu tiên";
+"FinishTheTutorial" = " Kết thúc bài hướng dẫn";
+"DoYouWantToFinishTutorial" = " Bạn có muốn hoàn thành hướng dẫn?";
 //-------------------- Tutorial Alert View --------------------//
 
 
-"StageName" = "Stage Name";
-"EnterStageName" = "It's time to name the stage!";
+"StageName" = " Tên giai đoạn";
+"EnterStageName" = " Đã đến lúc đặt tên cho sân khấu!";
 
 
 
 //-------------------- Notification Localize --------------------//
-"STAGE_COMMENTED_NOTIFICATION" = "%@ commented on the stage";
-"FOLLOWED_NOTIFICATION" = "%@ followed you";
+"STAGE_COMMENTED_NOTIFICATION" = " % @ nhận xét trên sân khấu";
+"FOLLOWED_NOTIFICATION" = " %@ đã theo bạn";
 //-------------------- Notification Localize --------------------//
 
 
 //-------------------- User SetUp VC --------------------//
-"RegiUserInfo" = "Registering User Information";
-"SetUpProfilePicture" = "Set up your profile picture";
-"Name" = "Name";
+"RegiUserInfo" = " Đăng ký thông tin người dùng";
+"SetUpProfilePicture" = " Thiết lập ảnh hồ sơ của bạn";
+"Name" = " Tên";
 //-------------------- User SetUp VC --------------------//
 
 
 //-------------------- Delete Account --------------------//
-"DeleteAccount" = "Delete Account";
+"DeleteAccount" = " Xóa tài khoản";
 
-"DeleteInfo" = "Do you want to delete your account?";
+"DeleteInfo" = " Bạn có muốn xóa tài khoản của bạn?";
 
-"Warning" = "Warning!!";
-"WarningInfo" = "Deleting your account will delete all stages and comments you've created. This action is irrevocable.";
+"Warning" = " Cảnh báo!!";
+"WarningInfo" = " Xóa tài khoản của bạn sẽ xóa tất cả các giai đoạn và nhận xét bạn đã tạo. Hành động này là không thể chối bỏ.";
 
-"AccountDeleteFailure" = "Account deletion failure";
-"AccountDeleteComplete" = "Account deletion complete";
-"ThankYouUsingThisApp" = "Thank you for using the app!🙂";
-"SeeYou" = "See you";
+"AccountDeleteFailure" = " Lỗi xóa tài khoản";
+"AccountDeleteComplete" = " Xóa tài khoản hoàn tất";
+"ThankYouUsingThisApp" = " Cảm ơn bạn đã sử dụng ứng dụng!";
+"SeeYou" = " Hẹn gặp lại";
 //-------------------- Delete Account --------------------//
