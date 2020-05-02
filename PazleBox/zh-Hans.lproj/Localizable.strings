@@ -7,259 +7,259 @@
 */
 
 
-"Ranking" = "Ranking";
-"No Ads" = "No Ads";
-"Restore" = "Restore";
+"Ranking" = " 排名";
+"No Ads" = " 无广告";
+"Restore" = " 恢复";
 
-"Contact us" = "Contact Us";
+"Contact us" = " 联系我们";
 
-"Pouse" = "Pouse";
-"Continue" = "Continue";
-"Home" = "Home";
+"Pouse" = " Pouse";
+"Continue" = " 继续";
+"Home" = " 首页";
 
-"WathcAdAnd" = "Watch the ads and get the tips";
+"WathcAdAnd" = " 观看广告，获得提示";
 
-"AdNotFlow" = "Ad NOT Flow";
-"Ad Flow" = "Ad Flow";
+"AdNotFlow" = " 广告不流动";
+"Ad Flow" = " 广告流程";
 
-"Stage review" = "Stage review";
+"Stage review" = " 阶段性审查";
 
-"UntilNextAd" = "Until Next Ad :";
+"UntilNextAd" = " 直到下一个广告。";
 
-"Next" = "Next";
+"Next" = " 下一个广告";
 
-"PlayAgain" = "Play Again";
+"PlayAgain" = " 再玩一次";
 
-"Clear10Stage" = "You've cleared 10 stages.";
-"Clear100Stage" = "You've cleared 100 stages.";
+"Clear10Stage" = " 你已经过了10个阶段了";
+"Clear100Stage" = " 你已经通关了100个阶段";
 
-"Congrats" = "Congratulations!";
+"Congrats" = " 恭喜你！";
 
-"ThankYou" = "Thank You!";
-"Ohthankyou" = "Oh, thanks...";
+"ThankYou" = " 谢谢你！";
+"Ohthankyou" = " 哦，谢谢你.....";
 
-"SelectPice" = "Select the pieces and place them";
-"PutOneMorePice" = "Please place at least one piece";
-"DecideInitPosi" = "Let's decide the initial position";
-"ShiftPice" = "Please shift the position of one or more pieces!";
-"TrashPice" = "Drag and drop unused pieces to the trash";
+"SelectPice" = " 选好了，把它们放好";
+"PutOneMorePice" = " 请至少放置一块";
+"DecideInitPosi" = " 让我们来决定最初的位置";
+"ShiftPice" = " 请转移一个或多个棋子的位置!";
+"TrashPice" = " 将未使用的棋子拖到垃圾桶中。";
 
-"OK" = "End";
-"Done" = "Complete";
-
-
-"IfGoHome" = "If you return to Home, the contents will not be saved.";
-
-"Saved" = "Saved";
+"OK" = " 末端";
+"Done" = " 完整的";
 
 
-"Play" = "Play";
-"Create" = "Create";
-"Setting" = "Setting";
+"IfGoHome" = " 如果您返回 "首页"，内容将无法保存。";
 
-"Close" = "Close";
-"Delete" = "Delete";
-"Cancel" = "Cancel";
-
-"StageYouMade" = "Stage You Made";
-"StageInTheWorld" = "Stage in the World";
-
-"CreatedDate" = "Created Date: ";
+"Saved" = " 已保存";
 
 
-"StageCreate" = "Stage Making";
+"Play" = " 玩法";
+"Create" = " 创建";
+"Setting" = " 场景设置";
 
-"StageCreatormade" = "Stage Author Made";
+"Close" = " 关闭";
+"Delete" = " 删除";
+"Cancel" = " 取消";
+
+"StageYouMade" = " 你做的舞台";
+"StageInTheWorld" = " 世界上的舞台";
+
+"CreatedDate" = " 创建日期。";
+
+
+"StageCreate" = " 舞台制作";
+
+"StageCreatormade" = " 阶段性作者制造";
 
 
 //セグメントのやつ
-"Latest" = "Latest";
-"PlayCount" = "Play Count";
-"Rating" = "Rating";
+"Latest" = " 最新的";
+"PlayCount" = " 播放次数";
+"Rating" = " 评级";
 
 
 //active viewで表示するやつ。
-"err" = "Error";
-"suc" = "Success";
+"err" = " 错误";
+"suc" = " 成功案例";
 
-"sucSave" = "Saved successfully";
-"errSave" = "Failed to save";
+"sucSave" = " 保存成功";
+"errSave" = " 拯救失败";
 
-"sucDele" = "Successfully deleted";
-"errDele" = "Failed to delete";
+"sucDele" = " 成功删除";
+"errDele" = " 删除失败";
 
-"errGetDoc" = "Failed to get data";
+"errGetDoc" = " 获取数据失败";
 
 //NOTE:- こいつ呼び出す際は\n入れて改行すべし
-"checkNet" = "Please check the network status.";
+"checkNet" = " 请确认网络状态。";
 
 //Worningで出すやつ。
-"delStage" = "Deleting a stage";
-"cantBack" = "Deleted stage cannot be recovered";
+"delStage" = " 删除一个舞台";
+"cantBack" = " 已删除的阶段无法恢复";
 
 
 //InfoLabelにつけるやつ
-"CreateUpToFirst" = "Up To";
-"CreateUpToLast" = "Stages Can Be Created.";
+"CreateUpToFirst" = " 最高可至";
+"CreateUpToLast" = " 可以创建阶段。";
 //RemaingLabelにつけるやつ
-"RemaingFirst" = "The remaining";
-"RemaingLast" = "Stages.";
+"RemaingFirst" = " 剩余的";
+"RemaingLast" = " 阶段。";
 
 
 
-"UserInfo" = "User Info";
+"UserInfo" = " 用户信息";
 
-"Credit" = "Licenses";
+"Credit" = " 许可证";
 
-"AppReview" = "App Review";
+"AppReview" = " 應用程式評論";
 
 
-"Guest" = "Guest";
-"Number Played" = "Number Played";
-"NumberOfStagesPlayed" = "Number Of Stages Played";
+"Guest" = " 访客";
+"Number Played" = " 播放次数";
+"NumberOfStagesPlayed" = " 播放的舞台数量";
 
-"Creator" = "Creator";
+"Creator" = " 创造者";
 
-"UserAgreement" = "User Agreement";
-"PrivacyPolicy" = "Privacy Policy";
-"AgreementInfo" = "Do you agree with the User Agreement and Privacy Policy?";
-"DontAccept" = "Dont Accept";
-"Accept" = "Accept";
-"YouCantContinue" = "You cant continue until you have agreed with the User Agreement and the Privacy Policy.";
+"UserAgreement" = " 用户协议";
+"PrivacyPolicy" = " 隐私政策";
+"AgreementInfo" = " 您是否同意用户协议和隐私政策？";
+"DontAccept" = " 不接受";
+"Accept" = " 接受";
+"YouCantContinue" = " 在您同意用户协议和隐私政策之前，您不能继续使用。";
 
 //-------------------- チュートリアル --------------------//
-"Tutorial1" = "This app is for creating a stage and sharing it with everyone";
-"Tutorial2" = "★★★ Tutorial ★★★\n\nLet's actually make a stage!";
+"Tutorial1" = " 这款应用是为了创建一个舞台，并与大家分享。";
+"Tutorial2" = " ★★★★★★教程★★★★让我们来实际做一个舞台吧!";
 
-"Tutorial3" = "First, tap your favorite piece";
-"Tutorial4" = "Good 👍";
-"Tutorial5" = "Tap it and you'll see three colored pieces";
-"Tutorial6" = "Let's drag one piece and place it on the board!";
+"Tutorial3" = " 首先，点击你喜欢的作品";
+"Tutorial4" = " 好👍";
+"Tutorial5" = " 点开它，你就会看到三件彩色的作品。";
+"Tutorial6" = " 让我们拖动一块，把它放在黑板上!";
 
-"Tutorial7" = "☆ Excellent ☆";
-"Tutorial8" = "Let's tap on a different Piece just like before!";
-"Tutorial9" = "Drag and drop it so that it doesn't stick to other pieces.";
+"Tutorial7" = " ☆优秀☆";
+"Tutorial8" = " 让我们像以前一样，点击不同的Piece!";
+"Tutorial9" = " 拖放它，这样它就不会粘在其他碎片上了。";
 
-"Tutorial10" = "Tap this button when the stage is complete";
+"Tutorial10" = " 完成后，点击这个按钮";
 
-"Tutorial11" = "Finally decide the initial position of the piece!";
-"Tutorial12" = "Let's move the piece that we put by dragging it!";
+"Tutorial11" = " 终于决定了棋子的初始位置了!";
+"Tutorial12" = " 让我们用拖动的方式来移动放置的棋子吧!";
 
-"Tutorial13" = "Tap this button once you have determined the initial position";
+"Tutorial13" = " 确定好初始位置后，点击这个按钮。";
 
-"Tutorial14" = "The stage is now complete!🎉";
-"Tutorial15" = "Make a lot of your own stage!";
+"Tutorial14" = " 现在的舞台已经完成了！🎉🎉";
+"Tutorial15" = " 打造出很多属于自己的舞台!";
 
-"Tutorial16" = "The stage you created can be played by everyone around the world!";
-"Tutorial17" = "You can also play the stage created by everyone in the world!!";
+"Tutorial16" = " 你所创造的舞台，可以让全世界的人都能玩到你所创造的舞台!";
+"Tutorial17" = " 你所创造的舞台，也可以让全世界的人都来玩!";
 //-------------------- チュートリアル --------------------//
 
 
 //TODO:- 他のファイルにもここ以下追加すること
 //-------------------- コメント書く --------------------//
-"SendAComment" = "Send a comment";
-"AlreadyWritten" = "Already written";
+"SendAComment" = " 发送评论";
+"AlreadyWritten" = " 已经写好了";
 //-------------------- コメント書く --------------------//
 
 
 
 //-------------------- Follow --------------------//
-"Follow" = "Follow";
-"Following" = "Following";
-"Followers" = "Followers";
-"BlockedAccounts" = "Blocked Accounts";
-"UnFollow" = "UnFollow";
-"UnBlock" = "UnBlock";
-"Block" = "Block";
+"Follow" = " 跟随";
+"Following" = " 以下是";
+"Followers" = " 追随者";
+"BlockedAccounts" = " 被封锁的账户";
+"UnFollow" = " 解除追随者";
+"UnBlock" = " 解锁";
+"Block" = " 块";
 //-------------------- Follow --------------------//
 
 //User SetUp
-"Register" = "Register";
+"Register" = " 注册";
 
 
 //-------------------- TabBar --------------------//
-"TimeLine" = "Time Line";
-"PiceShop" = "Pice Shop";
-"MyPage" = "My Page";
-"EditProfile" = "Edit Profile";
+"TimeLine" = " 时间线";
+"PiceShop" = " 皮斯店";
+"MyPage" = " 我的页面";
+"EditProfile" = " 编辑资料";
 //-------------------- TabBar --------------------//
 
 //-------------------- No Table View --------------------//
-"NoStagePosts" = "No stage posts";
-"StageShowIf" = "It will be shown when the stage has been posted";
-"IfYouFollow" = "If you follow another user, their posts will be displayed";
+"NoStagePosts" = " 无舞台员额";
+"StageShowIf" = " 舞台贴好了就会显示出来";
+"IfYouFollow" = " 如果你关注了其他用户，他们的帖子将被显示出来。";
 
-"NoComments" = "No Comments";
-"NoCommentYet" = "No Comment Yet";
+"NoComments" = " 没有评论";
+"NoCommentYet" = " 还没有评论";
 
-"NoUser" = "No User";
-"NoUserYet" = "No users to display";
+"NoUser" = " 无用户";
+"NoUserYet" = " 没有用户显示";
 //-------------------- No Table View --------------------//
 
 //-------------------- navigationItem.title --------------------//
-"WorldStage" = "World Stages";
-"Stage" = "Stage";
-"PiceSet" = "Pice Set";
+"WorldStage" = " 世界舞台";
+"Stage" = " 舞台";
+"PiceSet" = " 套餐";
 //-------------------- navigationItem.title --------------------//
 
-"errBlock" = "Failed to block";
+"errBlock" = " 未能阻止";
 
 
 //-------------------- Action Sheet --------------------//
-"Report" = "Report";
-"InapCharacters" = "Contains inappropriate characters";
-"InapImages" = "Contains inappropriate images";
-"Other" = "Other";
+"Report" = " 报告";
+"InapCharacters" = " 含有不恰当的字符";
+"InapImages" = " 含有不恰当的图像";
+"Other" = " 其他";
 //-------------------- Action Sheet --------------------//
 
 
 
-"IfYouBuyPice" = "You'll be able to use the following set of pieces in your stage making";
+"IfYouBuyPice" = " 在舞台制作中，你可以用下面这套小品来做。";
 
-"Purchase" = "Purchase";
+"Purchase" = " 购买";
 
-"Account" = "Account";
+"Account" = " 帐户";
 
-"AboutPuzzleMaker" = "About Puzzle Maker";
+"AboutPuzzleMaker" = " 关于Puzzle Maker";
 
 //-------------------- Tutorial Alert View --------------------//
-"ShowTutorial" = "Show Tutorial";
-"HowToCreateAStage" = "How to create a stage";
-"DoYouWantToShowTutorial" = "Do you want to do a tutorial on creating a stage?";
-"FirstTimeStageMaking" = "Making the stage for the first time 🎉";
-"FinishTheTutorial" = "Finish the tutorial";
-"DoYouWantToFinishTutorial" = "Do you want to finish the tutorial?";
+"ShowTutorial" = " 显示教程";
+"HowToCreateAStage" = " 如何打造一个舞台";
+"DoYouWantToShowTutorial" = " 要不要做一个舞台制作教程？";
+"FirstTimeStageMaking" = " 第一次做舞台的制作🎉🎉";
+"FinishTheTutorial" = " 完成教程";
+"DoYouWantToFinishTutorial" = " 教程要不要完成？";
 //-------------------- Tutorial Alert View --------------------//
 
 
-"StageName" = "Stage Name";
-"EnterStageName" = "It's time to name the stage!";
+"StageName" = " 舞台名称";
+"EnterStageName" = " 是时候给舞台起名字了!";
 
 
 
 //-------------------- Notification Localize --------------------//
-"STAGE_COMMENTED_NOTIFICATION" = "%@ commented on the stage";
-"FOLLOWED_NOTIFICATION" = "%@ followed you";
+"STAGE_COMMENTED_NOTIFICATION" = " 舞台上的%@评论";
+"FOLLOWED_NOTIFICATION" = " %@跟着你";
 //-------------------- Notification Localize --------------------//
 
 
 //-------------------- User SetUp VC --------------------//
-"RegiUserInfo" = "Registering User Information";
-"SetUpProfilePicture" = "Set up your profile picture";
-"Name" = "Name";
+"RegiUserInfo" = " 注册用户信息";
+"SetUpProfilePicture" = " 设置好你的个人资料图片";
+"Name" = " 名称";
 //-------------------- User SetUp VC --------------------//
 
 
 //-------------------- Delete Account --------------------//
-"DeleteAccount" = "Delete Account";
+"DeleteAccount" = " 刪除帳戶";
 
-"DeleteInfo" = "Do you want to delete your account?";
+"DeleteInfo" = " 你想删除你的账户吗？";
 
-"Warning" = "Warning!!";
-"WarningInfo" = "Deleting your account will delete all stages and comments you've created. This action is irrevocable.";
+"Warning" = " 警告！！";
+"WarningInfo" = " 删除您的帐户将删除您创建的所有阶段和评论。这个操作是不可撤销的。";
 
-"AccountDeleteFailure" = "Account deletion failure";
-"AccountDeleteComplete" = "Account deletion complete";
-"ThankYouUsingThisApp" = "Thank you for using the app!🙂";
-"SeeYou" = "See you";
+"AccountDeleteFailure" = " 帐户删除失败";
+"AccountDeleteComplete" = " 完成账户删除工作";
+"ThankYouUsingThisApp" = " 谢谢你使用这款应用！ 🙂";
+"SeeYou" = " 再见";
 //-------------------- Delete Account --------------------//

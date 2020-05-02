@@ -1269,12 +1269,6 @@
 		BF7BB746245A87E800BFCB05 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		BF7BB747245A87E800BFCB05 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		BF7BB748245A87E900BFCB05 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		BF7BB749245A87FC00BFCB05 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/UsersSetting.strings"; sourceTree = "<group>"; };
-		BF7BB74A245A87FC00BFCB05 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/AboutPazzleMakerTableviewSB.strings"; sourceTree = "<group>"; };
-		BF7BB74B245A87FD00BFCB05 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Main.strings"; sourceTree = "<group>"; };
-		BF7BB74C245A87FD00BFCB05 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		BF7BB74D245A87FE00BFCB05 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		BF7BB74E245A87FE00BFCB05 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		BF7BB74F245A881300BFCB05 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/UsersSetting.strings; sourceTree = "<group>"; };
 		BF7BB750245A881500BFCB05 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/AboutPazzleMakerTableviewSB.strings; sourceTree = "<group>"; };
 		BF7BB751245A881500BFCB05 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
@@ -3461,7 +3455,6 @@
 				pl,
 				ru,
 				"zh-Hans",
-				"zh-HK",
 				vi,
 				cs,
 			);
@@ -4539,7 +4532,6 @@
 				BF7BB739245A87CC00BFCB05 /* pl */,
 				BF7BB73F245A87D800BFCB05 /* ru */,
 				BF7BB745245A87E700BFCB05 /* zh-Hans */,
-				BF7BB74B245A87FD00BFCB05 /* zh-HK */,
 				BF7BB751245A881500BFCB05 /* vi */,
 				BF7BB757245A8AD900BFCB05 /* cs */,
 			);
@@ -4563,7 +4555,6 @@
 				BF7BB73A245A87CD00BFCB05 /* pl */,
 				BF7BB740245A87D900BFCB05 /* ru */,
 				BF7BB746245A87E800BFCB05 /* zh-Hans */,
-				BF7BB74C245A87FD00BFCB05 /* zh-HK */,
 				BF7BB752245A881600BFCB05 /* vi */,
 				BF7BB758245A8ADA00BFCB05 /* cs */,
 			);
@@ -4587,7 +4578,6 @@
 				BF7BB73C245A87CE00BFCB05 /* pl */,
 				BF7BB742245A87DA00BFCB05 /* ru */,
 				BF7BB748245A87E900BFCB05 /* zh-Hans */,
-				BF7BB74E245A87FE00BFCB05 /* zh-HK */,
 				BF7BB754245A881700BFCB05 /* vi */,
 				BF7BB75A245A8ADB00BFCB05 /* cs */,
 			);
@@ -4612,7 +4602,6 @@
 				BF7BB737245A87CB00BFCB05 /* pl */,
 				BF7BB73D245A87D700BFCB05 /* ru */,
 				BF7BB743245A87E500BFCB05 /* zh-Hans */,
-				BF7BB749245A87FC00BFCB05 /* zh-HK */,
 				BF7BB74F245A881300BFCB05 /* vi */,
 				BF7BB755245A8AD700BFCB05 /* cs */,
 			);
@@ -4636,7 +4625,6 @@
 				BF7BB73B245A87CD00BFCB05 /* pl */,
 				BF7BB741245A87D900BFCB05 /* ru */,
 				BF7BB747245A87E800BFCB05 /* zh-Hans */,
-				BF7BB74D245A87FE00BFCB05 /* zh-HK */,
 				BF7BB753245A881600BFCB05 /* vi */,
 				BF7BB759245A8ADB00BFCB05 /* cs */,
 			);
@@ -4661,7 +4649,6 @@
 				BF7BB738245A87CC00BFCB05 /* pl */,
 				BF7BB73E245A87D700BFCB05 /* ru */,
 				BF7BB744245A87E600BFCB05 /* zh-Hans */,
-				BF7BB74A245A87FC00BFCB05 /* zh-HK */,
 				BF7BB750245A881500BFCB05 /* vi */,
 				BF7BB756245A8AD800BFCB05 /* cs */,
 			);
