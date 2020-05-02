@@ -7,259 +7,259 @@
 */
 
 
-"Ranking" = "Ranking";
-"No Ads" = "No Ads";
-"Restore" = "Restore";
+"Ranking" = " Rangschikking";
+"No Ads" = " Geen advertenties";
+"Restore" = " Herstel";
 
-"Contact us" = "Contact Us";
+"Contact us" = " Contacteer ons";
 
-"Pouse" = "Pouse";
-"Continue" = "Continue";
-"Home" = "Home";
+"Pouse" = " Pouse";
+"Continue" = " Ga verder met";
+"Home" = " Home";
 
-"WathcAdAnd" = "Watch the ads and get the tips";
+"WathcAdAnd" = " Bekijk de advertenties en krijg de tips";
 
-"AdNotFlow" = "Ad NOT Flow";
-"Ad Flow" = "Ad Flow";
+"AdNotFlow" = " Advertentie NOT Flow";
+"Ad Flow" = " Advertentiestroom";
 
-"Stage review" = "Stage review";
+"Stage review" = " Faseoverzicht";
 
-"UntilNextAd" = "Until Next Ad :";
+"UntilNextAd" = " Tot de volgende advertentie:";
 
-"Next" = "Next";
+"Next" = " Volgende";
 
-"PlayAgain" = "Play Again";
+"PlayAgain" = " Opnieuw spelen";
 
-"Clear10Stage" = "You've cleared 10 stages.";
-"Clear100Stage" = "You've cleared 100 stages.";
+"Clear10Stage" = " Je hebt 10 stadia doorlopen.";
+"Clear100Stage" = " Je hebt 100 stadia doorlopen.";
 
-"Congrats" = "Congratulations!";
+"Congrats" = " Gefeliciteerd!";
 
-"ThankYou" = "Thank You!";
-"Ohthankyou" = "Oh, thanks...";
+"ThankYou" = " Dank u wel!";
+"Ohthankyou" = " Oh, bedankt...";
 
-"SelectPice" = "Select the pieces and place them";
-"PutOneMorePice" = "Please place at least one piece";
-"DecideInitPosi" = "Let's decide the initial position";
-"ShiftPice" = "Please shift the position of one or more pieces!";
-"TrashPice" = "Drag and drop unused pieces to the trash";
+"SelectPice" = " Selecteer de stukken en plaats ze";
+"PutOneMorePice" = " Gelieve minstens één stuk te plaatsen";
+"DecideInitPosi" = " Laten we het beginpunt bepalen";
+"ShiftPice" = " Verplaats a.u.b. de positie van een of meer stukken!";
+"TrashPice" = " Sleep ongebruikte stukken naar de vuilnisbak";
 
-"OK" = "End";
-"Done" = "Complete";
-
-
-"IfGoHome" = "If you return to Home, the contents will not be saved.";
-
-"Saved" = "Saved";
+"OK" = " Einde";
+"Done" = " Vul aan:";
 
 
-"Play" = "Play";
-"Create" = "Create";
-"Setting" = "Setting";
+"IfGoHome" = " Als u terugkeert naar Home, wordt de inhoud niet opgeslagen.";
 
-"Close" = "Close";
-"Delete" = "Delete";
-"Cancel" = "Cancel";
-
-"StageYouMade" = "Stage You Made";
-"StageInTheWorld" = "Stage in the World";
-
-"CreatedDate" = "Created Date: ";
+"Saved" = " Opgeslagen";
 
 
-"StageCreate" = "Stage Making";
+"Play" = " Speel";
+"Create" = " Creëer";
+"Setting" = " Instelling";
 
-"StageCreatormade" = "Stage Author Made";
+"Close" = " Sluit";
+"Delete" = " Verwijder";
+"Cancel" = " Annuleer";
+
+"StageYouMade" = " Stadium dat je hebt gemaakt";
+"StageInTheWorld" = " Stadium in de wereld";
+
+"CreatedDate" = " Gecreëerde datum:";
+
+
+"StageCreate" = " Fase maken";
+
+"StageCreatormade" = " Fase Auteur Gemaakt";
 
 
 //セグメントのやつ
-"Latest" = "Latest";
-"PlayCount" = "Play Count";
-"Rating" = "Rating";
+"Latest" = " Laatste";
+"PlayCount" = " Spelen Tellen";
+"Rating" = " Beoordeling";
 
 
 //active viewで表示するやつ。
-"err" = "Error";
-"suc" = "Success";
+"err" = " Fout";
+"suc" = " Succes";
 
-"sucSave" = "Saved successfully";
-"errSave" = "Failed to save";
+"sucSave" = " Met succes gered";
+"errSave" = " Niet gered.";
 
-"sucDele" = "Successfully deleted";
-"errDele" = "Failed to delete";
+"sucDele" = " Succesvol verwijderd";
+"errDele" = " Niet gewist";
 
-"errGetDoc" = "Failed to get data";
+"errGetDoc" = " Mislukt om gegevens te krijgen";
 
 //NOTE:- こいつ呼び出す際は\n入れて改行すべし
-"checkNet" = "Please check the network status.";
+"checkNet" = " Controleer de netwerkstatus.";
 
 //Worningで出すやつ。
-"delStage" = "Deleting a stage";
-"cantBack" = "Deleted stage cannot be recovered";
+"delStage" = " Het verwijderen van een podium";
+"cantBack" = " Verwijderde fase kan niet worden gerecupereerd";
 
 
 //InfoLabelにつけるやつ
-"CreateUpToFirst" = "Up To";
-"CreateUpToLast" = "Stages Can Be Created.";
+"CreateUpToFirst" = " Tot";
+"CreateUpToLast" = " Stadia kunnen worden gecreëerd.";
 //RemaingLabelにつけるやつ
-"RemaingFirst" = "The remaining";
-"RemaingLast" = "Stages.";
+"RemaingFirst" = " De overige";
+"RemaingLast" = " Stadia.";
 
 
 
-"UserInfo" = "User Info";
+"UserInfo" = " Info voor de gebruiker";
 
-"Credit" = "Licenses";
+"Credit" = " Licenties";
 
-"AppReview" = "App Review";
+"AppReview" = " App Review";
 
 
-"Guest" = "Guest";
-"Number Played" = "Number Played";
-"NumberOfStagesPlayed" = "Number Of Stages Played";
+"Guest" = " Gast";
+"Number Played" = " Gespeeld aantal";
+"NumberOfStagesPlayed" = " Aantal gespeelde fasen";
 
-"Creator" = "Creator";
+"Creator" = " Schepper";
 
-"UserAgreement" = "User Agreement";
-"PrivacyPolicy" = "Privacy Policy";
-"AgreementInfo" = "Do you agree with the User Agreement and Privacy Policy?";
-"DontAccept" = "Dont Accept";
-"Accept" = "Accept";
-"YouCantContinue" = "You cant continue until you have agreed with the User Agreement and the Privacy Policy.";
+"UserAgreement" = " Gebruikersovereenkomst";
+"PrivacyPolicy" = " Privacybeleid";
+"AgreementInfo" = " Gaat u akkoord met de Gebruikersovereenkomst en het Privacybeleid?";
+"DontAccept" = " Accepteer niet";
+"Accept" = " Accepteer";
+"YouCantContinue" = " U kunt niet doorgaan totdat u akkoord bent gegaan met de Gebruikersovereenkomst en het Privacybeleid.";
 
 //-------------------- チュートリアル --------------------//
-"Tutorial1" = "This app is for creating a stage and sharing it with everyone";
-"Tutorial2" = "★★★ Tutorial ★★★\n\nLet's actually make a stage!";
+"Tutorial1" = " Deze app is voor het creëren van een podium en het delen ervan met iedereen.";
+"Tutorial2" = " ★ Tutorial ★ \nLet's eigenlijk maken een podium!";
 
-"Tutorial3" = "First, tap your favorite piece";
-"Tutorial4" = "Good 👍";
-"Tutorial5" = "Tap it and you'll see three colored pieces";
-"Tutorial6" = "Let's drag one piece and place it on the board!";
+"Tutorial3" = " Ten eerste, tik op uw favoriete stuk";
+"Tutorial4" = " Goed 👍";
+"Tutorial5" = " Tik erop en je ziet drie gekleurde stukken...";
+"Tutorial6" = " Laten we een stuk slepen en het op het bord plaatsen!";
 
-"Tutorial7" = "☆ Excellent ☆";
-"Tutorial8" = "Let's tap on a different Piece just like before!";
-"Tutorial9" = "Drag and drop it so that it doesn't stick to other pieces.";
+"Tutorial7" = " ☆ Uitstekend ☆";
+"Tutorial8" = " Laten we op een ander stuk tikken, net als vroeger!";
+"Tutorial9" = " Sleep het zodat het niet aan andere stukken blijft plakken.";
 
-"Tutorial10" = "Tap this button when the stage is complete";
+"Tutorial10" = " Tik op deze knop als het podium klaar is";
 
-"Tutorial11" = "Finally decide the initial position of the piece!";
-"Tutorial12" = "Let's move the piece that we put by dragging it!";
+"Tutorial11" = " Bepaal eindelijk de uitgangspositie van het stuk!";
+"Tutorial12" = " Laten we het stuk verplaatsen door het te slepen!";
 
-"Tutorial13" = "Tap this button once you have determined the initial position";
+"Tutorial13" = " Tik op deze knop zodra je de beginpositie hebt bepaald";
 
-"Tutorial14" = "The stage is now complete!🎉";
-"Tutorial15" = "Make a lot of your own stage!";
+"Tutorial14" = " Het podium is nu compleet! 🎉";
+"Tutorial15" = " Maak veel van je eigen podium!";
 
-"Tutorial16" = "The stage you created can be played by everyone around the world!";
-"Tutorial17" = "You can also play the stage created by everyone in the world!!";
+"Tutorial16" = " Het podium dat je hebt gemaakt kan door iedereen over de hele wereld worden gespeeld!";
+"Tutorial17" = " Je kunt ook het podium spelen dat door iedereen in de wereld is gemaakt!";
 //-------------------- チュートリアル --------------------//
 
 
 //TODO:- 他のファイルにもここ以下追加すること
 //-------------------- コメント書く --------------------//
-"SendAComment" = "Send a comment";
-"AlreadyWritten" = "Already written";
+"SendAComment" = " Stuur een reactie";
+"AlreadyWritten" = " Reeds geschreven";
 //-------------------- コメント書く --------------------//
 
 
 
 //-------------------- Follow --------------------//
-"Follow" = "Follow";
-"Following" = "Following";
-"Followers" = "Followers";
-"BlockedAccounts" = "Blocked Accounts";
-"UnFollow" = "UnFollow";
-"UnBlock" = "UnBlock";
-"Block" = "Block";
+"Follow" = " Volg";
+"Following" = " Volgende";
+"Followers" = " Volgelingen";
+"BlockedAccounts" = " Geblokkeerde rekeningen";
+"UnFollow" = " UnFollow";
+"UnBlock" = " Ontgrendel";
+"Block" = " Blok";
 //-------------------- Follow --------------------//
 
 //User SetUp
-"Register" = "Register";
+"Register" = " Registreer";
 
 
 //-------------------- TabBar --------------------//
-"TimeLine" = "Time Line";
-"PiceShop" = "Pice Shop";
-"MyPage" = "My Page";
-"EditProfile" = "Edit Profile";
+"TimeLine" = " Tijdlijn";
+"PiceShop" = " Pice Shop";
+"MyPage" = " Mijn pagina";
+"EditProfile" = " Profiel bewerken";
 //-------------------- TabBar --------------------//
 
 //-------------------- No Table View --------------------//
-"NoStagePosts" = "No stage posts";
-"StageShowIf" = "It will be shown when the stage has been posted";
-"IfYouFollow" = "If you follow another user, their posts will be displayed";
+"NoStagePosts" = " Geen podiumpalen";
+"StageShowIf" = " Het zal worden getoond wanneer het podium is gepost...";
+"IfYouFollow" = " Als u een andere gebruiker volgt, zullen hun berichten worden weergegeven";
 
-"NoComments" = "No Comments";
-"NoCommentYet" = "No Comment Yet";
+"NoComments" = " Geen commentaar";
+"NoCommentYet" = " Nog geen commentaar";
 
-"NoUser" = "No User";
-"NoUserYet" = "No users to display";
+"NoUser" = " Geen gebruiker";
+"NoUserYet" = " Geen gebruikers om weer te geven";
 //-------------------- No Table View --------------------//
 
 //-------------------- navigationItem.title --------------------//
-"WorldStage" = "World Stages";
-"Stage" = "Stage";
-"PiceSet" = "Pice Set";
+"WorldStage" = " Wereldtrappen";
+"Stage" = " Stadium";
+"PiceSet" = " Pice Set";
 //-------------------- navigationItem.title --------------------//
 
-"errBlock" = "Failed to block";
+"errBlock" = " Niet geblokkeerd";
 
 
 //-------------------- Action Sheet --------------------//
-"Report" = "Report";
-"InapCharacters" = "Contains inappropriate characters";
-"InapImages" = "Contains inappropriate images";
-"Other" = "Other";
+"Report" = " Rapport";
+"InapCharacters" = " Bevat ongepaste karakters";
+"InapImages" = " Bevat ongepaste beelden";
+"Other" = " Andere";
 //-------------------- Action Sheet --------------------//
 
 
 
-"IfYouBuyPice" = "You'll be able to use the following set of pieces in your stage making";
+"IfYouBuyPice" = " Je kunt de volgende stukken gebruiken in je podiumbouw";
 
-"Purchase" = "Purchase";
+"Purchase" = " Aankoop";
 
-"Account" = "Account";
+"Account" = " Rekening";
 
-"AboutPuzzleMaker" = "About Puzzle Maker";
+"AboutPuzzleMaker" = " Over Puzzelmaker";
 
 //-------------------- Tutorial Alert View --------------------//
-"ShowTutorial" = "Show Tutorial";
-"HowToCreateAStage" = "How to create a stage";
-"DoYouWantToShowTutorial" = "Do you want to do a tutorial on creating a stage?";
-"FirstTimeStageMaking" = "Making the stage for the first time 🎉";
-"FinishTheTutorial" = "Finish the tutorial";
-"DoYouWantToFinishTutorial" = "Do you want to finish the tutorial?";
+"ShowTutorial" = " Toon Tutorial";
+"HowToCreateAStage" = " Hoe maak je een podium";
+"DoYouWantToShowTutorial" = " Wil je een tutorial doen over het creëren van een podium?";
+"FirstTimeStageMaking" = " Maak dan voor het eerst een podium 🎉";
+"FinishTheTutorial" = " Maak de tutorial af";
+"DoYouWantToFinishTutorial" = " Wil je de tutorial afmaken?";
 //-------------------- Tutorial Alert View --------------------//
 
 
-"StageName" = "Stage Name";
-"EnterStageName" = "It's time to name the stage!";
+"StageName" = " Fase naam";
+"EnterStageName" = " Het is tijd om het podium een naam te geven!";
 
 
 
 //-------------------- Notification Localize --------------------//
-"STAGE_COMMENTED_NOTIFICATION" = "%@ commented on the stage";
-"FOLLOWED_NOTIFICATION" = "%@ followed you";
+"STAGE_COMMENTED_NOTIFICATION" = " %@ commentaar op het podium";
+"FOLLOWED_NOTIFICATION" = " %@ gevolgd door u";
 //-------------------- Notification Localize --------------------//
 
 
 //-------------------- User SetUp VC --------------------//
-"RegiUserInfo" = "Registering User Information";
-"SetUpProfilePicture" = "Set up your profile picture";
-"Name" = "Name";
+"RegiUserInfo" = " Registratie van gebruikersinformatie";
+"SetUpProfilePicture" = " Stel uw profielfoto in";
+"Name" = " Naam";
 //-------------------- User SetUp VC --------------------//
 
 
 //-------------------- Delete Account --------------------//
-"DeleteAccount" = "Delete Account";
+"DeleteAccount" = " Account verwijderen";
 
-"DeleteInfo" = "Do you want to delete your account?";
+"DeleteInfo" = " Wilt u uw account verwijderen?";
 
-"Warning" = "Warning!!";
-"WarningInfo" = "Deleting your account will delete all stages and comments you've created. This action is irrevocable.";
+"Warning" = " Waarschuwing!";
+"WarningInfo" = " Als u uw account verwijdert, worden alle fasen en opmerkingen die u hebt gemaakt, verwijderd. Deze actie is onherroepelijk.";
 
-"AccountDeleteFailure" = "Account deletion failure";
-"AccountDeleteComplete" = "Account deletion complete";
-"ThankYouUsingThisApp" = "Thank you for using the app!🙂";
-"SeeYou" = "See you";
+"AccountDeleteFailure" = " Fout bij het verwijderen van een account";
+"AccountDeleteComplete" = " Accountverwijdering voltooid";
+"ThankYouUsingThisApp" = " Bedankt voor het gebruik van de app! 🙂";
+"SeeYou" = " Tot ziens";
 //-------------------- Delete Account --------------------//
