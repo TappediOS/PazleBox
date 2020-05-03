@@ -8,5 +8,5 @@
 
 CFBundleDisplayName = "谜题制作者";
 
-NSCameraUsageDescription = "Take a profile picture.";
-NSPhotoLibraryUsageDescription = "Select your profile picture.";
+NSCameraUsageDescription = "拍一张个人资料照片。";
+NSPhotoLibraryUsageDescription = "选择你的个人资料照片。";

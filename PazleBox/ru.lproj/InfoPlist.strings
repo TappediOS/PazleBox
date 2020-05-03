@@ -8,5 +8,5 @@
 
 CFBundleDisplayName = "Создатель пазлов";
 
-NSCameraUsageDescription = "Take a profile picture.";
-NSPhotoLibraryUsageDescription = "Select your profile picture.";
+NSCameraUsageDescription = "Сфотографируй профиль.";
+NSPhotoLibraryUsageDescription = "выберите фотографию своего профиля.";

@@ -8,5 +8,5 @@
 
 CFBundleDisplayName = "Puzzelmaker";
 
-NSCameraUsageDescription = "Take a profile picture.";
-NSPhotoLibraryUsageDescription = "Select your profile picture.";
+NSCameraUsageDescription = "Scatta una foto del profilo.";
+NSPhotoLibraryUsageDescription = "Scegliete la vostra foto del profilo.";

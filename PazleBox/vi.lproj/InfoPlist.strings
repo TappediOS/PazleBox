@@ -8,5 +8,5 @@
 
 CFBundleDisplayName = "Trình tạo câu đố";
 
-NSCameraUsageDescription = "Take a profile picture.";
-NSPhotoLibraryUsageDescription = "Select your profile picture.";
+NSCameraUsageDescription = "Chụp ảnh hồ sơ.";
+NSPhotoLibraryUsageDescription = "bầu ảnh hồ sơ của bạn.";

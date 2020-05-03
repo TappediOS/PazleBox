@@ -8,5 +8,5 @@
 
 CFBundleDisplayName = "Quebra-cabeça";
 
-NSCameraUsageDescription = "Take a profile picture.";
-NSPhotoLibraryUsageDescription = "Select your profile picture.";
+NSCameraUsageDescription = "Tire uma foto de perfil.";
+NSPhotoLibraryUsageDescription = "eleja a sua foto de perfil.";

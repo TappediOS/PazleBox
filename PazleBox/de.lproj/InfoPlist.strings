@@ -8,5 +8,5 @@
 
 CFBundleDisplayName = "Rätsel-Ersteller";
 
-NSCameraUsageDescription = "Take a profile picture.";
-NSPhotoLibraryUsageDescription = "Select your profile picture.";
+NSCameraUsageDescription = "Machen Sie ein Profilbild.";
+NSPhotoLibraryUsageDescription = "Wählen Sie Ihr Profilbild.";

@@ -8,5 +8,5 @@
 
 CFBundleDisplayName = "Puzzle Maker";
 
-NSCameraUsageDescription = "Take a profile picture.";
-NSPhotoLibraryUsageDescription = "Select your profile picture.";
+NSCameraUsageDescription = "Maak een profielfoto.";
+NSPhotoLibraryUsageDescription = "Kies je profielfoto.";
