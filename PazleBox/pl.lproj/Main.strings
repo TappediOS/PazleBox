@@ -1,12 +1,12 @@
 
 
 /* Class = "UITableViewSection"; headerTitle = "その他"; ObjectID = "3Ef-9w-wV7"; */
-"3Ef-9w-wV7.headerTitle" = "Other";
+"3Ef-9w-wV7.headerTitle" = "Inne";
 
 
 /* Class = "UITableViewSection"; headerTitle = "アカウント"; ObjectID = "9W2-NP-ml9"; */
-"9W2-NP-ml9.headerTitle" = "Account";
+"9W2-NP-ml9.headerTitle" = "Konto";
 
 
 /* Class = "UITableViewSection"; headerTitle = "広告の削除"; ObjectID = "CRz-Q2-4RW"; */
-"CRz-Q2-4RW.headerTitle" = "Remove Ads";
+"CRz-Q2-4RW.headerTitle" = "Usuń reklamy";
