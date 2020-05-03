@@ -19,6 +19,7 @@ import UserNotifications
 import COSTouchVisualizer
 import ChameleonFramework
 import AuthenticationServices
+import FirebaseAnalytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowDelegate {

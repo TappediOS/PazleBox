@@ -6,7 +6,7 @@
   Copyright © 2019 jun. All rights reserved.
 */
 
-CFBundleDisplayName = "Puzzle Maker";
+CFBundleDisplayName = "拼圖製作者";
 
 NSCameraUsageDescription = "拍攝個人資料照片";
 NSPhotoLibraryUsageDescription = "選擇您的個人資料圖片。";

@@ -61,10 +61,10 @@
 "Delete" = "löschen";
 "Cancel" = "Abbrechen";
 
-"StageYouMade" = "Die gebaute Bühne I";
-"StageInTheWorld" = "Weltbühne";
+"StageYouMade" = "Stufe, die Sie gemacht haben";
+"StageInTheWorld" = "Bühne in der Welt";
 
-"CreatedDate" = "Datum: ";
+"CreatedDate" = "Erstellungsdatum:";
 
 
 "StageCreate" = "Inszenierung";
@@ -179,14 +179,14 @@
 
 //-------------------- TabBar --------------------//
 "TimeLine" = "Zeitleiste";
-"PiceShop" = "Puzzle-Teile";
+"PiceShop" = "Pice Shop";
 "MyPage" = "Meine Seite";
-"EditProfile" = "Profil";
+"EditProfile" = "Profil bearbeiten";
 //-------------------- TabBar --------------------//
 
 //-------------------- No Table View --------------------//
 "NoStagePosts" = "Keine Bühnenposten";
-"StageShowIf" = "Sie erscheint, wenn die Etappe gebucht wird.";
+"StageShowIf" = "Es wird angezeigt, sobald die Etappe gebucht wurde.";
 "IfYouFollow" = "Wenn Sie einem anderen Benutzer folgen, werden dessen Beiträge angezeigt";
 
 "NoComments" = "Keine Kommentare";
@@ -237,9 +237,8 @@
 
 
 
-
 //-------------------- Notification Localize --------------------//
-"STAGE_COMMENTED_NOTIFICATION" = "%@ kommentierte die Bühne!
+"STAGE_COMMENTED_NOTIFICATION" = "%@ kommentierte die Bühne";
 "FOLLOWED_NOTIFICATION" = "%@ folgte Ihnen";
 //-------------------- Notification Localize --------------------//
 

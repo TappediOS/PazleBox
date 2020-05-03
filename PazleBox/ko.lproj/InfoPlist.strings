@@ -6,7 +6,7 @@
   Copyright © 2019 jun. All rights reserved.
 */
 
-CFBundleDisplayName = "Puzzle Maker";
+CFBundleDisplayName = "퍼즐 메이커";
 
 NSCameraUsageDescription = "프로필 사진을 찍습니다.";
 NSPhotoLibraryUsageDescription = "프로필 사진을 선택하십시오.";
