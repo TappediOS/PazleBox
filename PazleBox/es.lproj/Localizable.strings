@@ -7,7 +7,7 @@
 */
 
 
-"Ranking" = "Clasificación";
+"Ranking" = "Ranking";
 "No Ads" = "No hay anuncios";
 "Restore" = "Restaurar";
 
@@ -20,7 +20,7 @@
 "WathcAdAnd" = "Mira los anuncios y recibe los consejos";
 
 "AdNotFlow" = "Anuncio NO Flujo";
-"Ad Flow" = "Flujo de anuncios";
+"Ad Flow" = "El anuncio fluirá";
 
 "Stage review" = "Revisión de la etapa";
 
@@ -67,15 +67,15 @@
 "CreatedDate" = "Fecha de creación:";
 
 
-"StageCreate" = "Creación de escenarios";
+"StageCreate" = "Hacer escenario";
 
 "StageCreatormade" = "El autor del escenario hizo";
 
 
 //セグメントのやつ
-"Latest" = "Lo último";
-"PlayCount" = "Juega a contar";
-"Rating" = "Clasificación";
+"Latest" = "último";
+"PlayCount" = "Vistas";
+"Rating" = "Evaluación";
 
 
 //active viewで表示するやつ。
@@ -99,15 +99,15 @@
 
 
 //InfoLabelにつけるやつ
-"CreateUpToFirst" = "Hasta";
-"CreateUpToLast" = "Se pueden crear etapas.";
+"CreateUpToFirst" = "Se pueden crear hasta";
+"CreateUpToLast" = "etapas.";
 //RemaingLabelにつけるやつ
-"RemaingFirst" = "El resto";
-"RemaingLast" = "Etapas.";
+"RemaingFirst" = "Quedan";
+"RemaingLast" = "etapas.";
 
 
 
-"UserInfo" = "Información para el usuario";
+"UserInfo" = "Sobre el usuario";
 
 "Credit" = "Licencias";
 
@@ -128,12 +128,12 @@
 "YouCantContinue" = "No puede continuar hasta que haya aceptado el Acuerdo de Usuario y la Política de Privacidad.";
 
 //-------------------- チュートリアル --------------------//
-"Tutorial1" = "Esta aplicación es para crear un escenario y compartirlo con todos";
-"Tutorial2" = "★★★ Tutorial ★★★★ ¡Hagamos un escenario de verdad!";
+"Tutorial1" = "¡Esta es una aplicación para hacer un escenario y compartirlo con todos!";
+"Tutorial2" = "★★★ Tutorial ★★★★ \n\n¡¡Construyamos un escenario!";
 
-"Tutorial3" = "Primero, toca tu pieza favorita";
+"Tutorial3" = "Primero, toca la pieza del rompecabezas que te gusta";
 "Tutorial4" = "Bien 👍";
-"Tutorial5" = "Golpéalo y verás tres piezas de color";
+"Tutorial5" = "Si lo tocas, saldrán tres piezas de colores.";
 "Tutorial6" = "¡Arrastremos una pieza y coloquémosla en el tablero!";
 
 "Tutorial7" = "☆ Excelente ☆";
@@ -178,15 +178,15 @@
 
 
 //-------------------- TabBar --------------------//
-"TimeLine" = "Línea del tiempo";
-"PiceShop" = "La tienda de picardías";
+"TimeLine" = "Cronograma";
+"PiceShop" = "Piezas";
 "MyPage" = "Mi página";
-"EditProfile" = "Editar el perfil";
+"EditProfile" = "Perfil";
 //-------------------- TabBar --------------------//
 
 //-------------------- No Table View --------------------//
-"NoStagePosts" = "No hay postes de escenario";
-"StageShowIf" = "Se mostrará cuando el escenario se haya publicado";
+"NoStagePosts" = "Sin publicación en el escenario";
+"StageShowIf" = "Aparece cuando se publica un escenario";
 "IfYouFollow" = "Si sigue a otro usuario, sus mensajes serán mostrados";
 
 "NoComments" = "No hay comentarios";
@@ -199,7 +199,7 @@
 //-------------------- navigationItem.title --------------------//
 "WorldStage" = "Etapas del mundo";
 "Stage" = "Escenario";
-"PiceSet" = "Juego de picos";
+"PiceSet" = "Piezas";
 //-------------------- navigationItem.title --------------------//
 
 "errBlock" = "No se ha podido bloquear";
@@ -220,7 +220,7 @@
 
 "Account" = "Cuenta";
 
-"AboutPuzzleMaker" = "Acerca de Puzzle Maker";
+"AboutPuzzleMaker" = "Acerca de esta aplicación";
 
 //-------------------- Tutorial Alert View --------------------//
 "ShowTutorial" = "Mostrar Tutorial";
