@@ -13,14 +13,14 @@
 
 "Contact us" = "Contacte-nos";
 
-"Pouse" = "Pouse";
+"Pouse" = "Pause";
 "Continue" = "Continuar";
-"Home" = "Início";
+"Home" = "Home";
 
 "WathcAdAnd" = "Veja os anúncios e receba as dicas";
 
 "AdNotFlow" = "Anúncio NÃO Fluxo";
-"Ad Flow" = "Fluxo de anúncios";
+"Ad Flow" = "Os anúncios fluirão";
 
 "Stage review" = "Revisão da fase";
 
@@ -73,9 +73,9 @@
 
 
 //セグメントのやつ
-"Latest" = "Mais recente";
-"PlayCount" = "Contagem de jogos";
-"Rating" = "Classificação";
+"Latest" = "Novo";
+"PlayCount" = "Vistas";
+"Rating" = "Reveja";
 
 
 //active viewで表示するやつ。
@@ -99,15 +99,15 @@
 
 
 //InfoLabelにつけるやつ
-"CreateUpToFirst" = "Até";
-"CreateUpToLast" = "As etapas podem ser criadas.";
+"CreateUpToFirst" = "Podem ser criadas até ";
+"CreateUpToLast" = "fases.";
 //RemaingLabelにつけるやつ
-"RemaingFirst" = "Os restantes";
-"RemaingLast" = "Etapas.";
+"RemaingFirst" = "As restantes";
+"RemaingLast" = "ases.";
 
 
 
-"UserInfo" = "Informação do Utilizador";
+"UserInfo" = "Sobre o Utilizador";
 
 "Credit" = "Licenças";
 
@@ -178,15 +178,15 @@
 
 
 //-------------------- TabBar --------------------//
-"TimeLine" = "Linha do tempo";
-"PiceShop" = "Pice Shop";
-"MyPage" = "A minha página";
-"EditProfile" = "Editar Perfil";
+"TimeLine" = "início";
+"PiceShop" = "Peças";
+"MyPage" = "Minhas";
+"EditProfile" = "Perfil";
 //-------------------- TabBar --------------------//
 
 //-------------------- No Table View --------------------//
-"NoStagePosts" = "Sem postos de estágio";
-"StageShowIf" = "Será mostrado quando a fase tiver sido lançada";
+"NoStagePosts" = "Nenhuma postagem no palco";
+"StageShowIf" = "Será exibido assim que o Palco for publicado";
 "IfYouFollow" = "Se seguir outro utilizador, os seus postos serão exibidos";
 
 "NoComments" = "Sem comentários";
@@ -199,7 +199,7 @@
 //-------------------- navigationItem.title --------------------//
 "WorldStage" = "Fases do Mundo";
 "Stage" = "Palco";
-"PiceSet" = "Conjunto de dados";
+"PiceSet" = "Peças";
 //-------------------- navigationItem.title --------------------//
 
 "errBlock" = "Falha no bloqueio";
@@ -214,13 +214,13 @@
 
 
 
-"IfYouBuyPice" = "Poderá utilizar o seguinte conjunto de peças no seu palco fazendo";
+"IfYouBuyPice" = "Você poderá usar o seguinte conjunto de peças em sua montagem de palco.";
 
 "Purchase" = "Compra";
 
 "Account" = "Conta";
 
-"AboutPuzzleMaker" = "Sobre o Puzzle Maker";
+"AboutPuzzleMaker" = "Sobre esta aplicação";
 
 //-------------------- Tutorial Alert View --------------------//
 "ShowTutorial" = "Mostrar Tutorial";
@@ -261,5 +261,5 @@
 "AccountDeleteFailure" = "Falha na eliminação da conta";
 "AccountDeleteComplete" = "Eliminação de conta completa";
 "ThankYouUsingThisApp" = "Obrigado por utilizar a app!🙂";
-"SeeYou" = "Até à próxima";
+"SeeYou" = "Até mais";
 //-------------------- Delete Account --------------------//
