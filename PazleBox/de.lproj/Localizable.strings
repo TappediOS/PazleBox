@@ -8,8 +8,8 @@
 
 
 "Ranking" = "Rangliste";
-"No Ads" = "Keine Anzeigen";
-"Restore" = "wiederherstellen";
+"No Ads" = "Anzeigen-Entfernung";
+"Restore" = "Restore";
 
 "Contact us" = "Kontakt";
 
@@ -45,7 +45,7 @@
 "TrashPice" = "Ziehen Sie unbenutzte Stücke in den Papierkorb";
 
 "OK" = "Ende";
-"Done" = "Vollständige";
+"Done" = "Erledigt";
 
 
 "IfGoHome" = "Wenn Sie zu Home zurückkehren, wird der Inhalt nicht gespeichert.";
@@ -67,14 +67,14 @@
 "CreatedDate" = "Erstellungsdatum:";
 
 
-"StageCreate" = "Inszenierung";
+"StageCreate" = "Schaffung einer Bühne";
 
 "StageCreatormade" = "Etappe Autor gemacht";
 
 
 //セグメントのやつ
 "Latest" = "Aktuellste";
-"PlayCount" = "Anzahl der Spiele";
+"PlayCount" = "Nummer";
 "Rating" = "Bewertung";
 
 
@@ -164,9 +164,9 @@
 
 
 //-------------------- Follow --------------------//
-"Follow" = "Folgen Sie";
+"Follow" = "Follow-up";
 "Following" = "Folgend";
-"Followers" = "Anhänger";
+"Followers" = "Anhängerin";
 "BlockedAccounts" = "Gesperrte Konten";
 "UnFollow" = "UnFollow";
 "UnBlock" = "Sperre aufheben";
@@ -178,10 +178,10 @@
 
 
 //-------------------- TabBar --------------------//
-"TimeLine" = "Zeitleiste";
-"PiceShop" = "Pice Shop";
-"MyPage" = "Meine Seite";
-"EditProfile" = "Profil bearbeiten";
+"TimeLine" = "Startseite";
+"PiceShop" = "Puzzle-Teile";
+"MyPage" = "Profil";
+"EditProfile" = "Profil";
 //-------------------- TabBar --------------------//
 
 //-------------------- No Table View --------------------//
@@ -199,7 +199,7 @@
 //-------------------- navigationItem.title --------------------//
 "WorldStage" = "Weltweite Etappen";
 "Stage" = "Bühne";
-"PiceSet" = "Würfel-Set";
+"PiceSet" = "Puzzle-Teile";
 //-------------------- navigationItem.title --------------------//
 
 "errBlock" = "Blockierung fehlgeschlagen";
@@ -214,13 +214,13 @@
 
 
 
-"IfYouBuyPice" = "Sie können die folgenden Stücke in Ihrem Bühnenbild verwenden";
+"IfYouBuyPice" = "Die folgenden Stücke können im Bühnenbau verwendet werden";
 
 "Purchase" = "Kaufen";
 
 "Account" = "Konto";
 
-"AboutPuzzleMaker" = "Über Puzzle Maker";
+"AboutPuzzleMaker" = "Über diese App";
 
 //-------------------- Tutorial Alert View --------------------//
 "ShowTutorial" = "Tutorial anzeigen";
