@@ -19,8 +19,8 @@
 
 "WathcAdAnd" = "Veja os anúncios e receba as dicas";
 
-"AdNotFlow" = "Fluxo de anúncios NÃO";
-"Ad Flow" = "Fluxo de anúncios";
+"AdNotFlow" = "Sem anúncios.";
+"Ad Flow" = "O anúncio fluirá";
 
 "Stage review" = "Revisão de palco";
 
@@ -74,7 +74,7 @@
 
 //セグメントのやつ
 "Latest" = "Último";
-"PlayCount" = "Contagem de jogos";
+"PlayCount" = "Número";
 "Rating" = "Avaliação";
 
 
@@ -107,7 +107,7 @@
 
 
 
-"UserInfo" = "Informações do Usuário";
+"UserInfo" = "Sobre o Usuário";
 
 "Credit" = "Licenças";
 
@@ -178,14 +178,14 @@
 
 
 //-------------------- TabBar --------------------//
-"TimeLine" = "Linha do Tempo";
-"PiceShop" = "Pice Shop";
-"MyPage" = "Minha Página";
-"EditProfile" = "Editar Perfil";
+"TimeLine" = "Home";
+"PiceShop" = "Peças";
+"MyPage" = "Minha";
+"EditProfile" = "Perfil";
 //-------------------- TabBar --------------------//
 
 //-------------------- No Table View --------------------//
-"NoStagePosts" = "Não há postos de estágio";
+"NoStagePosts" = "Não há postes.";
 "StageShowIf" = "Será exibido quando o palco tiver sido afixado";
 "IfYouFollow" = "Se você seguir outro usuário, suas postagens serão exibidas";
 
@@ -199,7 +199,7 @@
 //-------------------- navigationItem.title --------------------//
 "WorldStage" = "Fases do Mundo";
 "Stage" = "Palco";
-"PiceSet" = "Jogo de Dados";
+"PiceSet" = "Peças";
 //-------------------- navigationItem.title --------------------//
 
 "errBlock" = "Falha no bloqueio";
@@ -220,7 +220,7 @@
 
 "Account" = "Conta";
 
-"AboutPuzzleMaker" = "Sobre o Puzzle Maker";
+"AboutPuzzleMaker" = "Sobre este aplicativo";
 
 //-------------------- Tutorial Alert View --------------------//
 "ShowTutorial" = "Mostrar Tutorial";
@@ -261,6 +261,6 @@
 "AccountDeleteFailure" = "Falha na exclusão da conta";
 "AccountDeleteComplete" = "Eliminação de conta completa";
 "ThankYouUsingThisApp" = "Obrigado por utilizar o aplicativo! 🙂";
-"SeeYou" = "Até a próxima";
+"SeeYou" = "Até mais";
 //-------------------- Delete Account --------------------//
 
