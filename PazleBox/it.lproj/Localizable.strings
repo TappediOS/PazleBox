@@ -20,9 +20,9 @@
 "WathcAdAnd" = "Guarda gli annunci e ricevi i consigli";
 
 "AdNotFlow" = "Ad NOT Flow";
-"Ad Flow" = "Flusso dell'annuncio";
+"Ad Flow" = "L'annuncio scorrerà.";
 
-"Stage review" = "Revisione del palcoscenico";
+"Stage review" = "Recensione";
 
 "UntilNextAd" = "Fino al prossimo annuncio :";
 
@@ -67,14 +67,14 @@
 "CreatedDate" = "Data di creazione:";
 
 
-"StageCreate" = "Realizzazione del palcoscenico";
+"StageCreate" = "Make";
 
 "StageCreatormade" = "Autore scenico realizzato";
 
 
 //セグメントのやつ
-"Latest" = "Ultime notizie";
-"PlayCount" = "Gioca a contare";
+"Latest" = "Ultima";
+"PlayCount" = "numero";
 "Rating" = "Valutazione";
 
 
@@ -99,19 +99,19 @@
 
 
 //InfoLabelにつけるやつ
-"CreateUpToFirst" = "Fino a";
-"CreateUpToLast" = "Le tappe possono essere create.";
+"CreateUpToFirst" = "Possono essere create fino a";
+"CreateUpToLast" = "fasi.";
 //RemaingLabelにつけるやつ
-"RemaingFirst" = "Il rimanente";
-"RemaingLast" = "Fasi.";
+"RemaingFirst" = "Le rimanenti";
+"RemaingLast" = "tappe";
 
 
 
-"UserInfo" = "Informazioni per l'utente";
+"UserInfo" = "L'utente";
 
 "Credit" = "Licenze";
 
-"AppReview" = "Recensione dell'applicazione";
+"AppReview" = "App Rating";
 
 
 "Guest" = "Ospite";
@@ -178,10 +178,10 @@
 
 
 //-------------------- TabBar --------------------//
-"TimeLine" = "Linea temporale";
-"PiceShop" = "Negozio di pice";
-"MyPage" = "La mia pagina";
-"EditProfile" = "Modifica profilo";
+"TimeLine" = "Home";
+"PiceShop" = "Pezzi";
+"MyPage" = "pagine";
+"EditProfile" = "profilo";
 //-------------------- TabBar --------------------//
 
 //-------------------- No Table View --------------------//
@@ -214,13 +214,13 @@
 
 
 
-"IfYouBuyPice" = "Potrete utilizzare la seguente serie di pezzi per la realizzazione del vostro palcoscenico";
+"IfYouBuyPice" = "Sarai in grado di utilizzare il seguente set di pezzi nella tua realizzazione scenica";
 
 "Purchase" = "Acquisto";
 
 "Account" = "Conto";
 
-"AboutPuzzleMaker" = "Informazioni su Puzzle Maker";
+"AboutPuzzleMaker" = "A proposito di questa app";
 
 //-------------------- Tutorial Alert View --------------------//
 "ShowTutorial" = "Mostra il tutorial";
