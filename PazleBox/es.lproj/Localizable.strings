@@ -13,7 +13,7 @@
 
 "Contact us" = "Contáctenos";
 
-"Pouse" = "Pouse";
+"Pouse" = "Pause";
 "Continue" = "Continúa";
 "Home" = "Inicio";
 
@@ -244,7 +244,7 @@
 
 
 //-------------------- User SetUp VC --------------------//
-"RegiUserInfo" = "Registro de la información del usuario";
+"RegiUserInfo" = "Registro de usuario";
 "SetUpProfilePicture" = "Configura tu foto de perfil";
 "Name" = "Nombre";
 //-------------------- User SetUp VC --------------------//
