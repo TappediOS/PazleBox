@@ -374,10 +374,10 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate, UITextFi
    
    
    private func InitCountOfNextADLabel() {
-      let StartX = FoundViewW * 2
+      let StartX = FoundViewW * 1
       let StartY = FoundViewH * 5
       
-      let LabelW = FoundViewW * 4
+      let LabelW = FoundViewW * 6
       let LabelH = FoundViewH / 2
       
       let Frame = CGRect(x: StartX, y: StartY, width: LabelW, height: LabelH)
