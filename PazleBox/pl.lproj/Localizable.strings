@@ -8,27 +8,27 @@
 
 
 "Ranking" = "Ranking";
-"No Ads" = "Nie ma reklam";
+"No Ads" = "No Ads";
 "Restore" = "Przywrócenie";
 
 "Contact us" = "Skontaktuj się z nami";
 
 "Pouse" = "Pouse";
 "Continue" = "Kontynuuj";
-"Home" = "Strona główna";
+"Home" = "Dom";
 
 "WathcAdAnd" = "Oglądajcie reklamy i otrzymujcie wskazówki";
 
-"AdNotFlow" = "Ad NOT Flow";
-"Ad Flow" = "Ad Flow";
+"AdNotFlow" = "Żadna reklama nie popłynie";
+"Ad Flow" = "Reklama działa.";
 
-"Stage review" = "Przegląd sceniczny";
+"Stage review" = "Ocena";
 
 "UntilNextAd" = "Do następnej reklamy:";
 
 "Next" = "Dalej";
 
-"PlayAgain" = "Zagraj jeszcze raz";
+"PlayAgain" = "jeszcze raz";
 
 "Clear10Stage" = "Załatwiłeś 10 etapów.";
 "Clear100Stage" = "Załatwiłeś 100 etapów.";
@@ -67,14 +67,14 @@
 "CreatedDate" = "Stworzony Data:";
 
 
-"StageCreate" = "Etapizacja";
+"StageCreate" = "Stwórz";
 
 "StageCreatormade" = "Autor sceniczny wykonany";
 
 
 //セグメントのやつ
 "Latest" = "Ostatnio";
-"PlayCount" = "Graj na liczniku";
+"PlayCount" = "Numer";
 "Rating" = "Ocena";
 
 
@@ -99,19 +99,19 @@
 
 
 //InfoLabelにつけるやつ
-"CreateUpToFirst" = "Do";
-"CreateUpToLast" = "Sceny mogą być tworzone.";
+"CreateUpToFirst" = "Można utworzyć do";
+"CreateUpToLast" = "etapów.";
 //RemaingLabelにつけるやつ
 "RemaingFirst" = "Pozostałe";
 "RemaingLast" = "Sceny.";
 
 
 
-"UserInfo" = "Informacje dla użytkowników";
+"UserInfo" = "Użytkownik";
 
 "Credit" = "Licencje";
 
-"AppReview" = "Przegląd aplikacji";
+"AppReview" = "App Rating";
 
 
 "Guest" = "Gość";
@@ -178,10 +178,10 @@
 
 
 //-------------------- TabBar --------------------//
-"TimeLine" = "Linia czasowa";
-"PiceShop" = "Pice Shop";
+"TimeLine" = "Dom";
+"PiceShop" = "Kawałki";
 "MyPage" = "Moja strona";
-"EditProfile" = "Edycja profilu";
+"EditProfile" = "Profil";
 //-------------------- TabBar --------------------//
 
 //-------------------- No Table View --------------------//
@@ -199,7 +199,7 @@
 //-------------------- navigationItem.title --------------------//
 "WorldStage" = "Sceny światowe";
 "Stage" = "Scena";
-"PiceSet" = "Zestaw do ryżu";
+"PiceSet" = "Kawałki";
 //-------------------- navigationItem.title --------------------//
 
 "errBlock" = "Nie udało się zablokować";
@@ -238,13 +238,13 @@
 
 
 //-------------------- Notification Localize --------------------//
-"STAGE_COMMENTED_NOTIFICATION" = "%@ skomentowane na scenie";
-"FOLLOWED_NOTIFICATION" = "%@ za tobą";
+"STAGE_COMMENTED_NOTIFICATION" = "%@ wypowiedziała się na scenie.";
+"FOLLOWED_NOTIFICATION" = "Za nim %@";
 //-------------------- Notification Localize --------------------//
 
 
 //-------------------- User SetUp VC --------------------//
-"RegiUserInfo" = "Rejestracja informacji o użytkowniku";
+"RegiUserInfo" = "rejestracja użytkownika";
 "SetUpProfilePicture" = "Skonfiguruj swoje zdjęcie profilowe";
 "Name" = "Nazwa";
 //-------------------- User SetUp VC --------------------//
