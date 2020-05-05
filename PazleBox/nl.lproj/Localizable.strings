@@ -8,23 +8,23 @@
 
 
 "Ranking" = "Rangschikking";
-"No Ads" = "Geen advertenties";
+"No Ads" = "Geen Ads";
 "Restore" = "Herstel";
 
 "Contact us" = "Contacteer ons";
 
 "Pouse" = "Pouse";
-"Continue" = "Ga verder met";
+"Continue" = "doorlopend";
 "Home" = "Home";
 
 "WathcAdAnd" = "Bekijk de advertenties en krijg de tips";
 
-"AdNotFlow" = "Advertentie NOT Flow";
-"Ad Flow" = "Advertentiestroom";
+"AdNotFlow" = "Er zullen geen Ads komen.";
+"Ad Flow" = "De Ads loopt.";
 
-"Stage review" = "Faseoverzicht";
+"Stage review" = "Beoordeling";
 
-"UntilNextAd" = "Tot de volgende advertentie:";
+"UntilNextAd" = "Tot de volgende Ads:";
 
 "Next" = "Volgende";
 
@@ -45,7 +45,7 @@
 "TrashPice" = "Sleep ongebruikte stukken naar de vuilnisbak";
 
 "OK" = "Einde";
-"Done" = "Vul aan:";
+"Done" = "compleet";
 
 
 "IfGoHome" = "Als u terugkeert naar Home, wordt de inhoud niet opgeslagen.";
@@ -55,7 +55,7 @@
 
 "Play" = "Speel";
 "Create" = "Creëer";
-"Setting" = "Instelling";
+"Setting" = "instelling";
 
 "Close" = "Sluit";
 "Delete" = "Verwijder";
@@ -67,15 +67,15 @@
 "CreatedDate" = "Gecreëerde datum:";
 
 
-"StageCreate" = "Fase maken";
+"StageCreate" = "Creëer";
 
 "StageCreatormade" = "Fase Auteur Gemaakt";
 
 
 //セグメントのやつ
 "Latest" = "Laatste";
-"PlayCount" = "Spelen Tellen";
-"Rating" = "Beoordeling";
+"PlayCount" = "nummer";
+"Rating" = "Rating";
 
 
 //active viewで表示するやつ。
@@ -107,7 +107,7 @@
 
 
 
-"UserInfo" = "Info voor de gebruiker";
+"UserInfo" = "gebruiker";
 
 "Credit" = "Licenties";
 
@@ -179,9 +179,9 @@
 
 //-------------------- TabBar --------------------//
 "TimeLine" = "Tijdlijn";
-"PiceShop" = "Pice Shop";
-"MyPage" = "Mijn pagina";
-"EditProfile" = "Profiel bewerken";
+"PiceShop" = "Winkel";
+"MyPage" = "Pagina";
+"EditProfile" = "Profiel";
 //-------------------- TabBar --------------------//
 
 //-------------------- No Table View --------------------//
@@ -199,7 +199,7 @@
 //-------------------- navigationItem.title --------------------//
 "WorldStage" = "Wereldtrappen";
 "Stage" = "Stadium";
-"PiceSet" = "Pice Set";
+"PiceSet" = "Stukjes";
 //-------------------- navigationItem.title --------------------//
 
 "errBlock" = "Niet geblokkeerd";
@@ -220,7 +220,7 @@
 
 "Account" = "Rekening";
 
-"AboutPuzzleMaker" = "Over Puzzelmaker";
+"AboutPuzzleMaker" = "Over deze app";
 
 //-------------------- Tutorial Alert View --------------------//
 "ShowTutorial" = "Toon Tutorial";
@@ -238,13 +238,13 @@
 
 
 //-------------------- Notification Localize --------------------//
-"STAGE_COMMENTED_NOTIFICATION" = "%@ commentaar op het podium";
-"FOLLOWED_NOTIFICATION" = "%@ gevolgd door u";
+"STAGE_COMMENTED_NOTIFICATION" = "%@ gaf commentaar op het podium.";
+"FOLLOWED_NOTIFICATION" = "Gevolgd door %@";
 //-------------------- Notification Localize --------------------//
 
 
 //-------------------- User SetUp VC --------------------//
-"RegiUserInfo" = "Registratie van gebruikersinformatie";
+"RegiUserInfo" = "gebruikersregistratie";
 "SetUpProfilePicture" = "Stel uw profielfoto in";
 "Name" = "Naam";
 //-------------------- User SetUp VC --------------------//
