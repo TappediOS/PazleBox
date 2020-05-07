@@ -6,7 +6,7 @@
   Copyright © 2019 jun. All rights reserved.
 */
 
-CFBundleDisplayName = "Quebra-cabeça";
+CFBundleDisplayName = "Criador de puzzles";
 
 NSCameraUsageDescription = "Tire uma foto de perfil.";
 NSPhotoLibraryUsageDescription = "eleja a sua foto de perfil.";

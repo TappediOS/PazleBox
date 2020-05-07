@@ -6,7 +6,7 @@
   Copyright © 2019 jun. All rights reserved.
 */
 
-CFBundleDisplayName = "Puzzle Maker";
+CFBundleDisplayName = "Tvůrce puzzle";
 
 NSCameraUsageDescription = "Pořiďte si profilový obrázek.";
 NSPhotoLibraryUsageDescription = "zvolte si profilový obrázek.";

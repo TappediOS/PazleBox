@@ -6,7 +6,7 @@
   Copyright © 2019 jun. All rights reserved.
 */
 
-CFBundleDisplayName = "Puzzelmaker";
+CFBundleDisplayName = "Puzze lmaker";
 
 NSCameraUsageDescription = "Scatta una foto del profilo.";
 NSPhotoLibraryUsageDescription = "Scegliete la vostra foto del profilo.";
