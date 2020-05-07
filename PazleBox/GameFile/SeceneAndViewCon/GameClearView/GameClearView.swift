@@ -400,7 +400,7 @@ class GameClearView: UIView, GADBannerViewDelegate, UITextViewDelegate, UITextFi
    public func SetCountOfNextADLabel(NextCount: Int) {
       
       if NextCount == 0 {
-         self.CountOfNextADLabel?.text = NSLocalizedString("Ad Flo", comment: "")
+         self.CountOfNextADLabel?.text = NSLocalizedString("Ad Flow", comment: "")
          return
       }
       
