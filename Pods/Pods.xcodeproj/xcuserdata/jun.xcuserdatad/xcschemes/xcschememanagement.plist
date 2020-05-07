@@ -139,12 +139,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>FirebaseInstanceID-framework.xcscheme</key>
+		<key>FirebaseInstallations-framework.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>FirebaseInstanceID-library.xcscheme</key>
+		<key>FirebaseInstallations-library.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FirebaseInstanceID.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -319,6 +324,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PromisesObjC-framework.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PromisesObjC-library.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Protobuf.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -430,6 +445,11 @@
 			<false/>
 		</dict>
 		<key>ViewAnimator-library.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>abseil.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

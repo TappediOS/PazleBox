@@ -10,7 +10,7 @@ import QuartzCore
 
 // MARK: - Renderer
 
-class GradientStrokeRenderer: PassThroughOutputNode, Renderable {
+final class GradientStrokeRenderer: PassThroughOutputNode, Renderable {
   
   override func hasOutputUpdates(_ forFrame: CGFloat) -> Bool {
     let updates = super.hasOutputUpdates(forFrame)
@@ -18,8 +18,6 @@ class GradientStrokeRenderer: PassThroughOutputNode, Renderable {
   }
   
   var shouldRenderInContext: Bool = true
-  
-  var isEnabled: Bool = true
   
   func updateShapeLayer(layer: CAShapeLayer) {
     /// Not Applicable

@@ -8,7 +8,7 @@
 import Foundation
 import CoreGraphics
 
-class ShapeNodeProperties: NodePropertyMap, KeypathSearchable {
+final class ShapeNodeProperties: NodePropertyMap, KeypathSearchable {
   
   var keypathName: String
   
@@ -27,7 +27,7 @@ class ShapeNodeProperties: NodePropertyMap, KeypathSearchable {
   
 }
 
-class ShapeNode: AnimatorNode, PathNode {
+final class ShapeNode: AnimatorNode, PathNode {
   
   let properties: ShapeNodeProperties
 
@@ -50,10 +50,7 @@ class ShapeNode: AnimatorNode, PathNode {
   var lastUpdateFrame: CGFloat? = nil
   var isEnabled: Bool = true {
     didSet{
-      if !isEnabled {
-        // Clear the path output.
-        self.pathOutput.removePaths(updateFrame: nil)
-      }
+      self.pathOutput.isEnabled = self.isEnabled
     }
   }
   

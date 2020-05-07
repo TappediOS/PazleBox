@@ -9,11 +9,9 @@ import Foundation
 import QuartzCore
 
 /// A rendered for a Path Fill
-class GradientFillRenderer: PassThroughOutputNode, Renderable {
+final class GradientFillRenderer: PassThroughOutputNode, Renderable {
   
   var shouldRenderInContext: Bool = true
-  
-  var isEnabled: Bool = true
   
   func updateShapeLayer(layer: CAShapeLayer) {
     // Not applicable
@@ -33,7 +31,7 @@ class GradientFillRenderer: PassThroughOutputNode, Renderable {
     let maskColorSpace = CGColorSpaceCreateDeviceGray()
     for i in 0..<numberOfColors {
       let ix = i * 4
-      if let color = CGColor(colorSpace: colorSpace, components: [colors[ix + 1], colors[ix + 2], colors[ix + 3], 1]) {
+        if colors.count > ix, let color = CGColor(colorSpace: colorSpace, components: [colors[ix + 1], colors[ix + 2], colors[ix + 3], 1]) {
         gradientColors.append(color)
         colorLocations.append(colors[ix])
       }

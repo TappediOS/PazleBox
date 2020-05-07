@@ -373,6 +373,7 @@ final public class AnimationView: LottieView {
   public func stop() {
     removeCurrentAnimation()
     currentFrame = 0
+    CATransaction.flush()
   }
   
   /**
@@ -618,10 +619,6 @@ final public class AnimationView: LottieView {
     commonInit()
   }
   
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-  
   // MARK: - Public (UIView Overrides)
   
   override public var intrinsicContentSize: CGSize {
@@ -718,38 +715,48 @@ final public class AnimationView: LottieView {
      UIView Animation does not implicitly set CAAnimation time or timing fuctions.
      If layout is changed in an animation we must get the current animation duration
      and timing function and then manually create a CAAnimation to match the UIView animation.
+     If layout is changed without animation, explicitly set animation duration to 0.0
+     inside CATransaction to avoid unwanted artifacts.
      */
-
-    /// Check if any animation exist on the view's layer, and grab the duration and timing functions of the animation.
+    /// Check if any animation exist on the view's layer, and match it.
     if let key = viewLayer?.animationKeys()?.first, let animation = viewLayer?.animation(forKey: key) {
       // The layout is happening within an animation block. Grab the animation data.
       
-      let animationKey = "LayoutAnimation"
-      animationLayer.removeAnimation(forKey: animationKey)
+      let positionKey = "LayoutPositionAnimation"
+      let transformKey = "LayoutTransformAnimation"
+      animationLayer.removeAnimation(forKey: positionKey)
+      animationLayer.removeAnimation(forKey: transformKey)
       
-      let positionAnimation = CABasicAnimation(keyPath: "position")
+      let positionAnimation = animation.copy() as? CABasicAnimation ?? CABasicAnimation(keyPath: "position")
+      positionAnimation.keyPath = "position"
+      positionAnimation.isAdditive = false
       positionAnimation.fromValue = animationLayer.position
       positionAnimation.toValue = position
-      let xformAnimation = CABasicAnimation(keyPath: "transform")
+      positionAnimation.isRemovedOnCompletion = true
+      
+      let xformAnimation = animation.copy() as? CABasicAnimation ?? CABasicAnimation(keyPath: "transform")
+      xformAnimation.keyPath = "transform"
+      xformAnimation.isAdditive = false
       xformAnimation.fromValue = animationLayer.transform
       xformAnimation.toValue = xform
-      
-      let group = CAAnimationGroup()
-      group.animations = [positionAnimation, xformAnimation]
-      group.duration = animation.duration
-      group.fillMode = .both
-      group.timingFunction = animation.timingFunction
-      if animation.beginTime > 0 {
-        group.beginTime = CACurrentMediaTime() + animation.beginTime
-      }
-      group.isRemovedOnCompletion = true
+      xformAnimation.isRemovedOnCompletion = true
       
       animationLayer.position = position
       animationLayer.transform = xform
-      animationLayer.add(group, forKey: animationKey)
+      #if os(OSX)
+      animationLayer.anchorPoint = layer?.anchorPoint ?? CGPoint.zero
+      #else
+      animationLayer.anchorPoint = layer.anchorPoint
+      #endif
+      animationLayer.add(positionAnimation, forKey: positionKey)
+      animationLayer.add(xformAnimation, forKey: transformKey)
     } else {
+      CATransaction.begin()
+      CATransaction.setAnimationDuration(0.0)
+      CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: .linear))
       animationLayer.position = position
       animationLayer.transform = xform
+      CATransaction.commit()
     }
     
     if shouldForceUpdates {
@@ -807,12 +814,12 @@ final public class AnimationView: LottieView {
   /// Updates the animation frame. Does not affect any current animations
   func updateAnimationFrame(_ newFrame: CGFloat) {
     CATransaction.begin()
-    CATransaction.setDisableActions(true)
-    animationLayer?.currentFrame = newFrame
-    CATransaction.commit()
     CATransaction.setCompletionBlock {
         self.animationLayer?.forceDisplayUpdate()
     }
+    CATransaction.setDisableActions(true)
+    animationLayer?.currentFrame = newFrame
+    CATransaction.commit()
   }
   
   @objc override func animationWillMoveToBackground() {
@@ -824,6 +831,10 @@ final public class AnimationView: LottieView {
   }
   
   override func animationMovedToWindow() {
+    /// Don't update any state if the `superview`  is `nil`
+    /// When A viewA owns superViewB, it removes the superViewB from the window. At this point, viewA still owns superViewB and triggers the viewA method: -didmovetowindow
+    guard superview != nil else { return }
+
     if window != nil {
       updateAnimationForForegroundState()
     } else {
@@ -851,11 +862,11 @@ final public class AnimationView: LottieView {
     }
   }
   
-  fileprivate var waitingToPlayAimation: Bool = false
+  fileprivate var waitingToPlayAnimation: Bool = false
   fileprivate func updateAnimationForForegroundState() {
     if let currentContext = animationContext {
-      if waitingToPlayAimation {
-        waitingToPlayAimation = false
+      if waitingToPlayAnimation {
+        waitingToPlayAnimation = false
         self.addNewAnimationForContext(currentContext)
       } else if backgroundBehavior == .pauseAndRestore {
         /// Restore animation from saved state
@@ -907,7 +918,7 @@ final public class AnimationView: LottieView {
     
     self.animationContext = animationContext
     
-    guard self.window != nil else { waitingToPlayAimation = true; return }
+    guard self.window != nil else { waitingToPlayAnimation = true; return }
     
     animationID = animationID + 1
     activeAnimationName = AnimationView.animationName + String(animationID)
@@ -959,7 +970,7 @@ final public class AnimationView: LottieView {
     layerAnimation.isRemovedOnCompletion = false
     if timeOffset != 0 {
       let currentLayerTime = viewLayer?.convertTime(CACurrentMediaTime(), from: nil) ?? 0
-      layerAnimation.beginTime = currentLayerTime - (timeOffset * 1 / Double(animationSpeed))
+      layerAnimation.beginTime = currentLayerTime - (timeOffset * 1 / Double(abs(animationSpeed)))
     }
     layerAnimation.delegate = animationContext.closure
     animationContext.closure.animationLayer = animationlayer

@@ -20,6 +20,7 @@ import COSTouchVisualizer
 import ChameleonFramework
 import AuthenticationServices
 import FirebaseAnalytics
+import FirebaseInstanceID
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowDelegate {

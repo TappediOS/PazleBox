@@ -249,7 +249,7 @@ static bool pb_check_proto3_default_value(const pb_field_t *field, const void *p
         /* Repeated fields inside proto3 submessage: present if count != 0 */
         if (field->size_offset != 0)
             return *(const pb_size_t*)pSize == 0;
-        else
+        else if (PB_ATYPE(type) == PB_ATYPE_STATIC)
             return false; /* Fixed length array */
     }
     else if (PB_HTYPE(type) == PB_HTYPE_ONEOF)
@@ -759,7 +759,7 @@ bool checkreturn pb_encode_submessage(pb_ostream_t *stream, const pb_field_t fie
 
 static bool checkreturn pb_enc_bool(pb_ostream_t *stream, const pb_field_t *field, const void *src)
 {
-    uint32_t value = (uint32_t)safe_read_bool(src);
+    uint32_t value = safe_read_bool(src) ? 1 : 0;
     PB_UNUSED(field);
     return pb_encode_varint(stream, value);
 }
