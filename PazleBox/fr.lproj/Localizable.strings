@@ -19,14 +19,14 @@
 
 "WathcAdAnd" = "Regarder les annonces et obtenir les conseils";
 
-"AdNotFlow" = "Publicité NON diffusée";
-"Ad Flow" = "Flux publicitaire";
+"AdNotFlow" = "Aucune publicité";
+"Ad Flow" = "Flux de publicité";
 
 "Stage review" = "Révision de l'étape";
 
-"UntilNextAd" = "Jusqu'à la prochaine annonce :";
+"UntilNextAd" = "Jusqu'à la prochaine annonce:";
 
-"Next" = "Prochaine annonce :";
+"Next" = "Suivant";
 
 "PlayAgain" = "Jouer à nouveau";
 
@@ -55,7 +55,7 @@
 
 "Play" = "Jouer à";
 "Create" = "Créer";
-"Setting" = "Cadre";
+"Setting" = "Setting";
 
 "Close" = "Fermer";
 "Delete" = "Supprimer";
@@ -67,15 +67,15 @@
 "CreatedDate" = "Date de création :";
 
 
-"StageCreate" = "Mise en scène";
+"StageCreate" = "Faire";
 
 "StageCreatormade" = "Auteur de la scène";
 
 
 //セグメントのやつ
-"Latest" = "Dernières nouvelles";
-"PlayCount" = "Compte de jeu";
-"Rating" = "Classement";
+"Latest" = "Dernier";
+"PlayCount" = "Numéro";
+"Rating" = "Revue";
 
 
 //active viewで表示するやつ。
@@ -99,15 +99,15 @@
 
 
 //InfoLabelにつけるやつ
-"CreateUpToFirst" = "Jusqu'à";
-"CreateUpToLast" = "Les étapes peuvent être créées.";
+"CreateUpToFirst" = "Vous pouvez créer jusqu'à ";
+"CreateUpToLast" = "étapes.";
 //RemaingLabelにつけるやつ
-"RemaingFirst" = "Les autres";
+"RemaingFirst" = "Il reste";
 "RemaingLast" = "Étapes.";
 
 
 
-"UserInfo" = "Informations sur l'utilisateur";
+"UserInfo" = "Utilisateur";
 
 "Credit" = "Licences";
 
@@ -128,60 +128,60 @@
 "YouCantContinue" = "Vous ne pouvez pas continuer tant que vous n'avez pas accepté l'accord d'utilisation et la politique de confidentialité.";
 
 //-------------------- チュートリアル --------------------//
-"Tutorial1" = "//-------------------- チュートリアル --------------------//";
-"Tutorial2" = "Cette application permet de créer une scène et de la partager avec tout le monde";
+"Tutorial1" = "Cette application est une application pour faire une scène et la partager avec tout le monde.";
+"Tutorial2" = "★★★ Tutoriel ★★★\n\nFaisons une scène!";
 
-"Tutorial3" = "";
-"Tutorial4" = "Tout d'abord, tapez votre morceau préféré";
-"Tutorial5" = "Bon 👍";
-"Tutorial6" = "Tapez dessus et vous verrez trois pièces colorées";
+"Tutorial3" = "Tout d'abord, appuyez sur la pièce que vous aimez";
+"Tutorial4" = "Bon 👍";
+"Tutorial5" = "Si vous appuyez dessus, trois pièces colorées sortiront";
+"Tutorial6" = "Faisons glisser une pièce et voyons-la au tableau!";
 
-"Tutorial7" = "";
-"Tutorial8" = "☆ Excellent ☆";
-"Tutorial9" = "Taillons sur un autre morceau comme avant !";
+"Tutorial7" = "☆ Excellent ☆";
+"Tutorial8" = "Tapons sur une pièce différente comme la même!";
+"Tutorial9" = "Lorsque vous le mettez, faites glisser et déposez-le pour qu'il ne couvre pas d'autres pièces";
 
-"Tutorial10" = "";
+"Tutorial10" = "Touchez ce bouton lorsque l'étape est terminée";
 
-"Tutorial11" = "";
-"Tutorial12" = "Décidez enfin de la position initiale de la pièce !";
+"Tutorial11" = "Décidez enfin de la position initiale de la pièce!";
+"Tutorial12" = "Déplaçons la pièce que vous avez placée en la faisant glisser!";
 
-"Tutorial13" = "";
+"Tutorial13" = "Une fois que vous avez décidé de la position initiale, appuyez sur ce bouton.";
 
-"Tutorial14" = "";
-"Tutorial15" = "L'étape est maintenant terminée ! 🎉";
+"Tutorial14" = "Ceci termine l'étape! 🎉";
+"Tutorial15" = "Faites beaucoup de votre propre scène!";
 
-"Tutorial16" = "";
-"Tutorial17" = "La scène que vous avez créée peut être jouée par tout le monde dans le monde entier !";
+"Tutorial16" = "Tout le monde à travers le monde peut jouer la scène créée!";
+"Tutorial17" = "Vous pouvez également jouer la scène créée par tout le monde dans le monde !!";
 //-------------------- チュートリアル --------------------//
 
 
 //TODO:- 他のファイルにもここ以下追加すること
 //-------------------- コメント書く --------------------//
-"SendAComment" = "//-------------------- コメント書く --------------------//";
-"AlreadyWritten" = "Envoyer un commentaire";
+"SendAComment" = "Envoyer un commentaire";
+"AlreadyWritten" = "Déjà écrit";
 //-------------------- コメント書く --------------------//
 
 
 
 //-------------------- Follow --------------------//
-"Follow" = "Suivez";
-"Following" = "Suivant";
-"Followers" = "Suivants";
+"Follow" = "Follow";
+"Following" = "Following";
+"Followers" = "Followers";
 "BlockedAccounts" = "Comptes bloqués";
 "UnFollow" = "UnFollow";
-"UnBlock" = "Débloquer";
+"UnBlock" = "UnBlock";
 "Block" = "Bloc";
 //-------------------- Follow --------------------//
 
 //User SetUp
-"Register" = "S'inscrire";
+"Register" = "Inscription";
 
 
 //-------------------- TabBar --------------------//
-"TimeLine" = "Ligne de temps";
-"PiceShop" = "Magasin de police";
+"TimeLine" = "La maison";
+"PiceShop" = "Puzzle";
 "MyPage" = "Ma page";
-"EditProfile" = "Modifier le profil";
+"EditProfile" = "Le profil";
 //-------------------- TabBar --------------------//
 
 //-------------------- No Table View --------------------//
@@ -220,7 +220,7 @@
 
 "Account" = "Compte";
 
-"AboutPuzzleMaker" = "À propos de Puzzle Maker";
+"AboutPuzzleMaker" = "À propos de cette appli";
 
 //-------------------- Tutorial Alert View --------------------//
 "ShowTutorial" = "Afficher le tutoriel";
