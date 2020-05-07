@@ -9,18 +9,18 @@
 
 "Ranking" = "Xếp hạng";
 "No Ads" = "Không quảng cáo";
-"Restore" = "Khôi phục";
+"Restore" = "Tu bổ";
 
 "Contact us" = "Liên hệ chúng tôi";
 
 "Pouse" = "Pause";
 "Continue" = "Tiếp tục";
-"Home" = "Trang Chủ";
+"Home" = "Home";
 
 "WathcAdAnd" = "Xem quảng cáo và nhận được lời khuyên";
 
-"AdNotFlow" = "Quảng cáo KHÔNG chảy";
-"Ad Flow" = "Lưu lượng quảng cáo";
+"AdNotFlow" = "Dòng quảng cáo";
+"Ad Flow" = "Không có quảng cáo";
 
 "Stage review" = "Đánh giá giai đoạn";
 
@@ -44,8 +44,8 @@
 "ShiftPice" = "Hãy thay đổi vị trí của một hoặc nhiều mảnh!";
 "TrashPice" = "Kéo và thả các mảnh không sử dụng vào thùng rác";
 
-"OK" = "Kết thúc";
-"Done" = "Hoàn thành";
+"OK" = "OK";
+"Done" = "Fin";
 
 
 "IfGoHome" = "Nếu bạn trở về Trang chủ, nội dung sẽ không được lưu.";
@@ -54,7 +54,7 @@
 
 
 "Play" = "Chơi";
-"Create" = "Tạo nên";
+"Create" = "Làm";
 "Setting" = "Cài đặt";
 
 "Close" = "Đóng";
@@ -73,9 +73,9 @@
 
 
 //セグメントのやつ
-"Latest" = "Muộn nhất";
-"PlayCount" = "Chơi đếm";
-"Rating" = "Xếp hạng";
+"Latest" = "Mới";
+"PlayCount" = "Số lần";
+"Rating" = "Đánh giá";
 
 
 //active viewで表示するやつ。
@@ -99,15 +99,15 @@
 
 
 //InfoLabelにつけるやつ
-"CreateUpToFirst" = "Lên đến";
-"CreateUpToLast" = "Các giai đoạn có thể được tạo ra.";
+"CreateUpToFirst" = "Bạn có thể tạo tối đa 4";
+"CreateUpToLast" = " giai đoạn.";
 //RemaingLabelにつけるやつ
-"RemaingFirst" = "Phần còn lại";
-"RemaingLast" = "Các giai đoạn.";
+"RemaingFirst" = "Có";
+"RemaingLast" = "giai đoạn còn lại.";
 
 
 
-"UserInfo" = "thông tin người dùng";
+"UserInfo" = "Người dùng";
 
 "Credit" = "Giấy phép";
 
@@ -164,13 +164,13 @@
 
 
 //-------------------- Follow --------------------//
-"Follow" = "Theo";
-"Following" = "Tiếp theo";
-"Followers" = "Người theo dõi";
+"Follow" = "Follow";
+"Following" = "Following";
+"Followers" = "Followers";
 "BlockedAccounts" = "Tài khoản bị chặn";
-"UnFollow" = "Hủy theo dõi";
-"UnBlock" = "Mở khóa";
-"Block" = "Khối";
+"UnFollow" = "UnFollow";
+"UnBlock" = "UnBlock";
+"Block" = "Block";
 //-------------------- Follow --------------------//
 
 //User SetUp
@@ -178,10 +178,10 @@
 
 
 //-------------------- TabBar --------------------//
-"TimeLine" = "Mốc thời gian";
-"PiceShop" = "Cửa hàng Pice";
-"MyPage" = "Trang của tôi";
-"EditProfile" = "Chỉnh sửa hồ sơ";
+"TimeLine" = "Nhà";
+"PiceShop" = "Mảnh ghép";
+"MyPage" = "Bạn";
+"EditProfile" = "Hồ sơ";
 //-------------------- TabBar --------------------//
 
 //-------------------- No Table View --------------------//
@@ -216,11 +216,11 @@
 
 "IfYouBuyPice" = "Bạn sẽ có thể sử dụng bộ mảnh sau đây trong quá trình tạo sân khấu của bạn";
 
-"Purchase" = "Mua, tựa vào, bám vào";
+"Purchase" = "Mua";
 
 "Account" = "Tài khoản";
 
-"AboutPuzzleMaker" = "Giới thiệu về Puzzle Maker";
+"AboutPuzzleMaker" = "Về ứng dụng này";
 
 //-------------------- Tutorial Alert View --------------------//
 "ShowTutorial" = "Chương trình hướng dẫn";
@@ -238,14 +238,14 @@
 
 
 //-------------------- Notification Localize --------------------//
-"STAGE_COMMENTED_NOTIFICATION" = "% @ nhận xét trên sân khấu";
+"STAGE_COMMENTED_NOTIFICATION" = "%@ nhận xét trên sân khấu.";
 "FOLLOWED_NOTIFICATION" = "%@ đã theo bạn";
 //-------------------- Notification Localize --------------------//
 
 
 //-------------------- User SetUp VC --------------------//
-"RegiUserInfo" = "Đăng ký thông tin người dùng";
-"SetUpProfilePicture" = "Thiết lập ảnh hồ sơ của bạn";
+"RegiUserInfo" = "Đăng ký người dùng";
+"SetUpProfilePicture" = "Chọn ảnh hồ sơ";
 "Name" = "Tên";
 //-------------------- User SetUp VC --------------------//
 
