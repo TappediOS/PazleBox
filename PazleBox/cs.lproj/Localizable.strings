@@ -19,10 +19,10 @@
 
 "WathcAdAnd" = "Sledujte reklamy a získejte tipy";
 
-"AdNotFlow" = "Ad NOT Flow";
-"Ad Flow" = "Tok reklam";
+"AdNotFlow" = "Žádné reklamy";
+"Ad Flow" = "Tok reklamy";
 
-"Stage review" = "Přezkum fáze";
+"Stage review" = "Recenze";
 
 "UntilNextAd" = "Až do další reklamy:";
 
@@ -54,7 +54,7 @@
 
 
 "Play" = "Hrát si";
-"Create" = "Vytvořit";
+"Create" = "Značka";
 "Setting" = "Nastavení";
 
 "Close" = "Zavřít";
@@ -67,14 +67,14 @@
 "CreatedDate" = "Datum vytvoření:";
 
 
-"StageCreate" = "Tvorba jeviště";
+"StageCreate" = "Značka";
 
 "StageCreatormade" = "Stage Author Made";
 
 
 //セグメントのやつ
-"Latest" = "Nejnovější";
-"PlayCount" = "Hrát hrabě";
+"Latest" = "Nové";
+"PlayCount" = "Číslo";
 "Rating" = "Hodnocení";
 
 
@@ -114,7 +114,7 @@
 "AppReview" = "Recenze aplikace";
 
 
-"Guest" = "Host";
+"Guest" = "Guest";
 "Number Played" = "Počet hraných";
 "NumberOfStagesPlayed" = "Počet hraných scén";
 
@@ -164,9 +164,9 @@
 
 
 //-------------------- Follow --------------------//
-"Follow" = "Následovat";
-"Following" = "Následující";
-"Followers" = "Následovníci";
+"Follow" = "Follow";
+"Following" = "Following";
+"Followers" = "Followers";
 "BlockedAccounts" = "Blokované účty";
 "UnFollow" = "UnFollow";
 "UnBlock" = "Odblokovat";
@@ -178,10 +178,10 @@
 
 
 //-------------------- TabBar --------------------//
-"TimeLine" = "Časová osa";
+"TimeLine" = "Dílky";
 "PiceShop" = "Pice Shop";
-"MyPage" = "Moje stránka";
-"EditProfile" = "Upravit profil";
+"MyPage" = "Vy";
+"EditProfile" = "Profil";
 //-------------------- TabBar --------------------//
 
 //-------------------- No Table View --------------------//
@@ -199,7 +199,7 @@
 //-------------------- navigationItem.title --------------------//
 "WorldStage" = "Světové fáze";
 "Stage" = "Etapa";
-"PiceSet" = "Pice Set";
+"PiceSet" = "Dílky";
 //-------------------- navigationItem.title --------------------//
 
 "errBlock" = "Blokování se nezdařilo";
@@ -220,7 +220,7 @@
 
 "Account" = "Účet";
 
-"AboutPuzzleMaker" = "O společnosti Puzzle Maker";
+"AboutPuzzleMaker" = "O této aplikaci";
 
 //-------------------- Tutorial Alert View --------------------//
 "ShowTutorial" = "Zobrazit výuku";
@@ -238,13 +238,13 @@
 
 
 //-------------------- Notification Localize --------------------//
-"STAGE_COMMENTED_NOTIFICATION" = "% @ okomentoval jeviště";
-"FOLLOWED_NOTIFICATION" = "% @ vás následoval";
+"STAGE_COMMENTED_NOTIFICATION" = "% @ komentovala jeviště.";
+"FOLLOWED_NOTIFICATION" = "% @ tě následovala.";
 //-------------------- Notification Localize --------------------//
 
 
 //-------------------- User SetUp VC --------------------//
-"RegiUserInfo" = "Registrace informací o uživateli";
+"RegiUserInfo" = "Registrace uživatele";
 "SetUpProfilePicture" = "Nastavte si profilový obrázek";
 "Name" = "název";
 //-------------------- User SetUp VC --------------------//
