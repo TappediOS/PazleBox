@@ -99,7 +99,7 @@
 
 
 //InfoLabelにつけるやつ
-"CreateUpToFirst" = "Bạn có thể tạo tối đa 4";
+"CreateUpToFirst" = "Bạn có thể tạo tối đa";
 "CreateUpToLast" = " giai đoạn.";
 //RemaingLabelにつけるやつ
 "RemaingFirst" = "Có";
