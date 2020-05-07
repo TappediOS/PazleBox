@@ -15,18 +15,18 @@
 
 "Pouse" = "Pause";
 "Continue" = "继续";
-"Home" = "首页";
+"Home" = "Home";
 
 "WathcAdAnd" = "观看广告，获得提示";
 
 "AdNotFlow" = "广告不流动";
-"Ad Flow" = "广告流程";
+"Ad Flow" = "广告将运行";
 
-"Stage review" = "阶段性审查";
+"Stage review" = "审视";
 
 "UntilNextAd" = "直到下一个广告。";
 
-"Next" = "下一个广告";
+"Next" = "下一个";
 
 "PlayAgain" = "再玩一次";
 
@@ -38,24 +38,24 @@
 "ThankYou" = "谢谢你！";
 "Ohthankyou" = "哦，谢谢你.....";
 
-"SelectPice" = "选好了，把它们放好";
+"SelectPice" = "选择和排列拼图";
 "PutOneMorePice" = "请至少放置一块";
 "DecideInitPosi" = "让我们来决定最初的位置";
 "ShiftPice" = "请转移一个或多个棋子的位置!";
 "TrashPice" = "将未使用的棋子拖到垃圾桶中。";
 
 "OK" = "末端";
-"Done" = "完整的";
+"Done" = "竣工";
 
 
-"IfGoHome" = "如果您返回 ";
+"IfGoHome" = "返回首页将无法保存您的内容。";
 
 "Saved" = "已保存";
 
 
 "Play" = "玩法";
 "Create" = "创建";
-"Setting" = "场景设置";
+"Setting" = "设定";
 
 "Close" = "关闭";
 "Delete" = "删除";
@@ -80,7 +80,7 @@
 
 //active viewで表示するやつ。
 "err" = "错误";
-"suc" = "成功案例";
+"suc" = "成功";
 
 "sucSave" = "保存成功";
 "errSave" = "拯救失败";
@@ -99,11 +99,11 @@
 
 
 //InfoLabelにつけるやつ
-"CreateUpToFirst" = "最高可至";
-"CreateUpToLast" = "可以创建阶段。";
+"CreateUpToFirst" = "最多可以创建";
+"CreateUpToLast" = "个阶段。";
 //RemaingLabelにつけるやつ
 "RemaingFirst" = "剩余的";
-"RemaingLast" = "阶段。";
+"RemaingLast" = "个阶段。。";
 
 
 
@@ -164,22 +164,22 @@
 
 
 //-------------------- Follow --------------------//
-"Follow" = "跟随";
-"Following" = "以下是";
-"Followers" = "追随者";
+"Follow" = "Follow";
+"Following" = "Following";
+"Followers" = "Followers";
 "BlockedAccounts" = "被封锁的账户";
-"UnFollow" = "解除追随者";
-"UnBlock" = "解锁";
-"Block" = "块";
+"UnFollow" = "UnFollow";
+"UnBlock" = "UnBlock";
+"Block" = "Block";
 //-------------------- Follow --------------------//
 
 //User SetUp
-"Register" = "注册";
+"Register" = "登记";
 
 
 //-------------------- TabBar --------------------//
 "TimeLine" = "时间线";
-"PiceShop" = "皮斯店";
+"PiceShop" = "拼图的碎片";
 "MyPage" = "我的页面";
 "EditProfile" = "编辑资料";
 //-------------------- TabBar --------------------//
@@ -199,7 +199,7 @@
 //-------------------- navigationItem.title --------------------//
 "WorldStage" = "世界舞台";
 "Stage" = "舞台";
-"PiceSet" = "套餐";
+"PiceSet" = "拼图的碎片";
 //-------------------- navigationItem.title --------------------//
 
 "errBlock" = "未能阻止";
@@ -220,7 +220,7 @@
 
 "Account" = "帐户";
 
-"AboutPuzzleMaker" = "关于Puzzle Maker";
+"AboutPuzzleMaker" = "关于此应用";
 
 //-------------------- Tutorial Alert View --------------------//
 "ShowTutorial" = "显示教程";
@@ -238,7 +238,7 @@
 
 
 //-------------------- Notification Localize --------------------//
-"STAGE_COMMENTED_NOTIFICATION" = "舞台上的%@评论";
+"STAGE_COMMENTED_NOTIFICATION" = "紧随其后的是%@";
 "FOLLOWED_NOTIFICATION" = "%@跟着你";
 //-------------------- Notification Localize --------------------//
 
