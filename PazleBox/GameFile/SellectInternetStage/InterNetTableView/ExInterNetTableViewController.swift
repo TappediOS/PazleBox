@@ -112,6 +112,28 @@ extension InterNetTableViewController {
    }
 }
 
+extension InterNetTableViewController {
+//   func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//      guard self.RefleshControl.isRefreshing == false else {
+//         return
+//      }
+//      guard isLoadingDataFirestoreWhenDownTabelview == false else {
+//         return
+//      }
+//
+//      let height = scrollView.frame.size.height
+//      let contentYoffset = scrollView.contentOffset.y
+//      let distanceFromBottom = scrollView.contentSize.height - contentYoffset
+//      if distanceFromBottom >= height {
+//         return
+//      }
+//
+//      print("データをダウンロードします。")
+//      self.isLoadingDataFirestoreWhenDownTabelview = true
+//
+//   }
+}
+
 
 extension InterNetTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {

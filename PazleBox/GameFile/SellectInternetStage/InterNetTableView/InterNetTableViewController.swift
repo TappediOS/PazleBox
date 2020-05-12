@@ -34,6 +34,8 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
    var DownLoadProfileCounter = 0
    var isFetchDataWhenDidLoadThisVC = true
    
+   var isLoadingDataFirestoreWhenDownTabelview = false
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
