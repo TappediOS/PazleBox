@@ -27,7 +27,7 @@ class PuzzleTabBarController: ESTabBarController, GADBannerViewDelegate {
    let BannerViewReqest = GADRequest()
    let BANNER_VIEW_TEST_ID: String = "ca-app-pub-3940256099942544/2934735716"
    let BANNER_VIEW_ID: String = "ca-app-pub-1460017825820383/4639498022"
-   let BANNER_VIEW_HIGHT: CGFloat = 50
+   var BANNER_VIEW_HIGHT: CGFloat = 50
    
    //viewWillAppearで初期化しているから，dismissしたときに複数回初期化することになるのを防ぐ.
    var firstOpenForBGM = true
@@ -232,8 +232,16 @@ class PuzzleTabBarController: ESTabBarController, GADBannerViewDelegate {
       self.view.bringSubviewToFront(PuzzleMakerTabBarBannerView)
       
       PuzzleMakerTabBarBannerView.rootViewController = self
-      PuzzleMakerTabBarBannerView.load(BannerViewReqest)
       PuzzleMakerTabBarBannerView.delegate = self
+      
+      let frame = { () -> CGRect in
+         return view.frame.inset(by: view.safeAreaInsets)
+      }()
+      let viewWidth = frame.size.width
+      let adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
+      BANNER_VIEW_HIGHT = adSize.size.height
+      PuzzleMakerTabBarBannerView.adSize = adSize
+      PuzzleMakerTabBarBannerView.load(BannerViewReqest)
    }
    
    private func InitBGM() {
@@ -363,6 +371,10 @@ class PuzzleTabBarController: ESTabBarController, GADBannerViewDelegate {
    /// Tells the delegate an ad request loaded an ad.
    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
       print("広告(banner)のロードが完了しました。")
+      self.PuzzleMakerTabBarBannerView.alpha = 0
+      UIView.animate(withDuration: 1, animations: {
+         self.PuzzleMakerTabBarBannerView.alpha = 1
+      })
    }
    
    /// Tells the delegate an ad request failed.
