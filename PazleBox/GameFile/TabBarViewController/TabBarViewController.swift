@@ -235,7 +235,7 @@ class PuzzleTabBarController: ESTabBarController, GADBannerViewDelegate {
       PuzzleMakerTabBarBannerView.delegate = self
       
       let frame = { () -> CGRect in
-         return view.frame.inset(by: view.safeAreaInsets)
+         return view.frame.inset( by: view.safeAreaInsets)
       }()
       let viewWidth = frame.size.width
       let adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
