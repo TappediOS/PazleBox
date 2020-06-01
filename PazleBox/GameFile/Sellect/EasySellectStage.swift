@@ -102,7 +102,7 @@ class SellectStageEasy: UIScrollView {
       self.addSubview(BackB)
    }
    
-   //ボタンをそれぞれ作成するよ
+   //MARK:- ボタンをそれぞれ作成するよ
    private func InitEachButton(tmp: Int, PlayerCanPlayMaxStageNum: Int, ButtonColor: UIColor, ButtonShadowColor: UIColor) {
       let x = (tmp - 1) % 4
       let y = (tmp - 1) / 4

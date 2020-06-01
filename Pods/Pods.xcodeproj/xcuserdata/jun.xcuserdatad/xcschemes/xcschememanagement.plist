@@ -59,7 +59,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Firebase-337c98d6.xcscheme</key>
+		<key>Firebase-565d65d7.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -134,7 +134,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FirebaseDynamicLinks.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FirebaseFirestore.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FirebaseInAppMessaging-InAppMessagingDisplayResources.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FirebaseInAppMessaging.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

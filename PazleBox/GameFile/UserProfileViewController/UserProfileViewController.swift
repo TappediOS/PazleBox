@@ -150,6 +150,18 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
          return
       }
       print("tap setting")
+      
+      //FIXME:- とりあえずGameViewに飛ばしているから終わったらこれを消す
+      let StoryBoard = UIStoryboard(name: "Main", bundle: nil)
+      let vc2 = StoryBoard.instantiateViewController(withIdentifier: "GameView") as! GameViewController
+      vc2.StageLevel = .Hard
+      vc2.modalPresentationStyle = .fullScreen
+      Play3DtouchLight()
+      GameSound.PlaySoundsTapButton()
+      self.present(vc2, animated: true, completion: { print("プレゼント終わった") })
+      return
+      //FIXME:- とりあえずGameViewに飛ばしているから終わったらこれを消す
+      
       let MainStorybord = UIStoryboard(name: "Main", bundle: nil)
       let SettingVC = MainStorybord.instantiateViewController(withIdentifier: "SettingNavigationVC")
       SettingVC.modalPresentationStyle = .fullScreen

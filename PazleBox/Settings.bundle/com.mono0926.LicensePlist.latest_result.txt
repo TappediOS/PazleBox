@@ -51,12 +51,12 @@ version: 5.15.1
 name: Firebase, nameSpecified: 
 body: 
                    …
-version: 6.24.0
+version: 6.25.0
 
 name: Firebase, nameSpecified: 
 body: 
                    …
-version: 6.24.0
+version: 6.25.0
 
 name: FirebaseABTesting, nameSpecified: 
 body: 
@@ -65,11 +65,11 @@ version: 3.2.0
 
 name: FirebaseAnalytics, nameSpecified: 
 body: Copyright 2020 Googl…
-version: 6.5.0
+version: 6.5.1
 
 name: FirebaseAnalytics, nameSpecified: 
 body: Copyright 2020 Googl…
-version: 6.5.0
+version: 6.5.1
 
 name: FirebaseAnalyticsInterop, nameSpecified: 
 body: 
@@ -89,12 +89,12 @@ version: 1.1.0
 name: FirebaseCore, nameSpecified: 
 body: 
                    …
-version: 6.7.0
+version: 6.7.1
 
 name: FirebaseCore, nameSpecified: 
 body: 
                    …
-version: 6.7.0
+version: 6.7.1
 
 name: FirebaseCoreDiagnostics, nameSpecified: 
 body: 
@@ -121,10 +121,20 @@ body:
                    …
 version: 6.2.1
 
+name: FirebaseDynamicLinks, nameSpecified: 
+body: 
+                   …
+version: 4.0.8
+
 name: FirebaseFirestore, nameSpecified: 
 body: 
                    …
-version: 1.13.0
+version: 1.14.0
+
+name: FirebaseInAppMessaging, nameSpecified: 
+body: 
+                   …
+version: 0.20.1
 
 name: FirebaseInstallations, nameSpecified: 
 body: 
@@ -144,7 +154,7 @@ version: 4.3.4
 name: FirebaseMessaging, nameSpecified: 
 body: 
                    …
-version: 4.4.0
+version: 4.4.1
 
 name: FirebasePerformance, nameSpecified: 
 body: Copyright 2020 Googl…
@@ -153,7 +163,7 @@ version: 3.1.11
 name: FirebaseRemoteConfig, nameSpecified: 
 body: 
                    …
-version: 4.4.10
+version: 4.4.11
 
 name: FirebaseStorage, nameSpecified: 
 body: 
@@ -179,25 +189,25 @@ version: 1.6.2
 
 name: Google-Mobile-Ads-SDK, nameSpecified: 
 body: Copyright 2020 Googl…
-version: 7.59.0
+version: 7.60.0
 
 name: GoogleAppMeasurement, nameSpecified: 
 body: Copyright 2020 Googl…
-version: 6.5.0
+version: 6.5.1
 
 name: GoogleAppMeasurement, nameSpecified: 
 body: Copyright 2020 Googl…
-version: 6.5.0
+version: 6.5.1
 
 name: GoogleDataTransport, nameSpecified: 
 body: 
                    …
-version: 6.1.0
+version: 6.1.1
 
 name: GoogleDataTransport, nameSpecified: 
 body: 
                    …
-version: 6.1.0
+version: 6.1.1
 
 name: GoogleDataTransportCCTSupport, nameSpecified: 
 body: 
@@ -236,7 +246,7 @@ version:
 name: gRPC-Core, nameSpecified: 
 body: 
                    …
-version: 1.28.0
+version: 1.28.2
 
 name: GTMAppAuth, nameSpecified: 
 body: 
@@ -312,7 +322,7 @@ version: 1.2.8
 
 name: Protobuf, nameSpecified: 
 body: Copyright 2008 Googl…
-version: 3.11.4
+version: 3.12.0
 
 name: ReachabilitySwift, nameSpecified: 
 body: Copyright (c) 2016 A…

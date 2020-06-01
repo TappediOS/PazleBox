@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import FlatUIKit
 
-class StageSellectButton: FUIButton {
+class StageSellectButton: UIButton {
    
    var CanPlay: Bool = true
    
@@ -22,35 +22,24 @@ class StageSellectButton: FUIButton {
    
    public func Init(Tag: Int, PlayerCanPlayMaxStageNum: Int, ButtonColor: UIColor, ButtonShadowColor: UIColor) {
       self.tag = Tag
+      self.setTitle("\(Tag)", for: .normal)
+      self.titleLabel?.font = UIFont(name: "Helvetica", size: 28)
+      self.titleLabel?.adjustsFontSizeToFitWidth = true
+      self.layer.cornerRadius = 6.0
       
+      //プレイが可能なステージのボタンの処理
       if Tag <= PlayerCanPlayMaxStageNum  {
-         setTitle("Stage\(Tag)", for: UIControl.State.normal)
-         buttonColor = ButtonColor
-         shadowColor = ButtonShadowColor
-         shadowHeight = 3.0
-         cornerRadius = 6.0
-         titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
-         setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
-         setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
-         
-         CanPlay = true
+         self.setTitle("\(Tag)", for: .normal)
+         self.backgroundColor = ButtonColor
+         self.CanPlay = true
          return
       }
       
-      setTitle("Stage\(Tag)", for: UIControl.State.normal)
-      buttonColor = ButtonShadowColor
-      shadowColor = ButtonShadowColor
-      titleLabel?.adjustsFontSizeToFitWidth = true
-      shadowHeight = 3.0
-      cornerRadius = 6.0
-      titleLabel?.font = UIFont.boldFlatFont (ofSize: 16)
-      setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
-      setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
-      
-      CanPlay = false
+      //クリアしてないステージの処理
+      self.setTitle("\(Tag)", for: .normal)
+      self.backgroundColor = ButtonShadowColor
+      self.CanPlay = false
       return
-      
-       
    }
    
    public func GetCanPlay() -> Bool {
