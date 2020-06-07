@@ -397,6 +397,7 @@
 		BF95C63722B79C540037E063 /* GameCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C63622B79C540037E063 /* GameCoin.swift */; };
 		BF9F80AA236010A6003512B0 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F80A9236010A6003512B0 /* TopViewController.swift */; };
 		BF9F80AC236013F6003512B0 /* TopViewIAP.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F80AB236013F6003512B0 /* TopViewIAP.swift */; };
+		BFABDB7F248B477A00A7D41D /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFABDB7E248B477A00A7D41D /* RemoteConfigDefaults.plist */; };
 		BFADC63E23A4866200AC6768 /* ExSellectForSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFADC63D23A4866200AC6768 /* ExSellectForSegmentedControl.swift */; };
 		BFADC64023A4A10A00AC6768 /* InternetSellect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFADC63F23A4A10A00AC6768 /* InternetSellect.swift */; };
 		BFADC64223A4A11700AC6768 /* InterNetSellect.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFADC64123A4A11700AC6768 /* InterNetSellect.xib */; };
@@ -1353,6 +1354,7 @@
 		BF9F80A9236010A6003512B0 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		BF9F80AB236013F6003512B0 /* TopViewIAP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewIAP.swift; sourceTree = "<group>"; };
 		BFA61D0522B5040D002C8EDD /* PazleBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PazleBox.entitlements; sourceTree = "<group>"; };
+		BFABDB7E248B477A00A7D41D /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		BFADC63D23A4866200AC6768 /* ExSellectForSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExSellectForSegmentedControl.swift; sourceTree = "<group>"; };
 		BFADC63F23A4A10A00AC6768 /* InternetSellect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetSellect.swift; sourceTree = "<group>"; };
 		BFADC64123A4A11700AC6768 /* InterNetSellect.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterNetSellect.xib; sourceTree = "<group>"; };
@@ -2035,6 +2037,7 @@
 				BF2674F22227B6A4003D370F /* LaunchScreen.storyboard */,
 				BF3EF63A2250988700D5534A /* GoogleService-Info.plist */,
 				BF2674F52227B6A4003D370F /* Info.plist */,
+				BFABDB7E248B477A00A7D41D /* RemoteConfigDefaults.plist */,
 			);
 			path = PazleBox;
 			sourceTree = "<group>";
@@ -3857,6 +3860,7 @@
 				BF849E0322C0CAA1003E34CB /* BackGroundImageForIphone8Plus.png in Resources */,
 				BFCE2640224A58A60099A775 /* 32p11Green.png in Resources */,
 				BFCE25DA224A466B0099A775 /* 33p11Green.png in Resources */,
+				BFABDB7F248B477A00A7D41D /* RemoteConfigDefaults.plist in Resources */,
 				BFF6D78222896610000253A2 /* 43p26Blue.png in Resources */,
 				BFF6D6482284152F000253A2 /* 32p13Blue.png in Resources */,
 				BFF6D73722896610000253A2 /* 43p17Green.png in Resources */,

@@ -147,9 +147,80 @@ extension InterNetTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDel
        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
        return NSAttributedString(string: str, attributes: attrs)
    }
+   
+   func spaceHeight(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+      let isPlayingOurStages = self.remoteConfig[self.PlayOurStagesKey].boolValue
+      guard isPlayingOurStages else {
+         return 0
+      }
+      return 36
+   }
+   
+   func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+      let isPlayingOurStages = self.remoteConfig[self.PlayOurStagesKey].boolValue
+      guard isPlayingOurStages else {
+         return 0
+      }
+      return -20
+   }
+   
+   
+   func buttonTitle(forEmptyDataSet scrollView: UIScrollView, for state: UIControl.State) -> NSAttributedString? {
+      let isPlayingOurStages = self.remoteConfig[self.PlayOurStagesKey].boolValue
+      guard isPlayingOurStages else {
+         return nil
+      }
+      let str = "Play Stage!!!"
+
+      return NSAttributedString(
+         string: str,
+         attributes: [
+            NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .title3),
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+         ]
+      )
+   }
+   
+   
+   
+   func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+      //FIXME:- とりあえずGameViewに飛ばしているから終わったらこれを消す
+      let StoryBoard = UIStoryboard(name: "Main", bundle: nil)
+      let vc = StoryBoard.instantiateViewController(withIdentifier: "HomeView") as! HomeViewController
+      vc.modalPresentationStyle = .fullScreen
+      Play3DtouchLight()
+      //GameSound.PlaySoundsTapButton()
+      self.navigationController?.pushViewController(vc, animated: true)
+      //FIXME:- とりあえずGameViewに飛ばしているから終わったらこれを消す
+   }
+   
+   
+   func buttonBackgroundImage(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> UIImage! {
+      let isPlayingOurStages = self.remoteConfig[self.PlayOurStagesKey].boolValue
+      guard isPlayingOurStages else {
+         return nil
+      }
+      let defaultSize = view.bounds.size.width * 0.88
+      let afterSize = view.bounds.size.width * 0.4
+      let padding: CGFloat = 14
+      return UIImage(color: .systemPink, cornerRadius: 8).ReduceImageWidthAndHight(before: defaultSize, objectSize: afterSize, padding: padding)
+   }
+   
+
 
    //スクロールできるようにする
    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
       return true
    }
+}
+
+extension UIImage {
+   func ReduceImageWidthAndHight(before imageSize: CGFloat, objectSize: CGFloat, padding: CGFloat) -> UIImage {
+      var rectInsets = UIEdgeInsets.zero
+      let widthBetweenBackgroundAndLabel = (imageSize - objectSize)/2
+      let shrinkWidth = widthBetweenBackgroundAndLabel - padding
+      rectInsets = UIEdgeInsets(top: 15.5, left: -shrinkWidth, bottom: 15.5, right: -shrinkWidth)
+      return withAlignmentRectInsets(rectInsets)
+   }
+
 }
