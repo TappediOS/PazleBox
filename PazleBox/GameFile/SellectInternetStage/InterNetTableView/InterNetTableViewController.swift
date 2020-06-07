@@ -43,6 +43,7 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      InitRemocon()
       SetUpInterNetTableView()
       SetUpNavigationController()
       
@@ -52,6 +53,11 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
       
       GetTimeLineDataFromDataBase()
       
+      
+      fetchConfigFromFirebase()
+   }
+   
+   func InitRemocon() {
       self.remoteConfig = RemoteConfig.remoteConfig()
       let remoconSetting = RemoteConfigSettings()
       #if DEBUG
@@ -59,11 +65,8 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
       #else
       remoconSetting.minimumFetchInterval = 3600
       #endif
-      
       self.remoteConfig.configSettings = remoconSetting
       self.remoteConfig.setDefaults(fromPlist: "RemoteConfigDefaults")
-      fetchConfigFromFirebase()
-      
    }
    
    func fetchConfigFromFirebase() {

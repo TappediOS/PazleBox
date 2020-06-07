@@ -4951,8 +4951,8 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/InterNetTableView/InterNetTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "fetchConfigFromFirebase()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4967,8 +4967,8 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/InterNetTableView/InterNetTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "fetchConfigFromFirebase()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4983,8 +4983,8 @@
             filePath = "PazleBox/GameFile/SellectInternetStage/InterNetTableView/InterNetTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "fetchConfigFromFirebase()"
             landmarkType = "7">
          </BreakpointContent>
