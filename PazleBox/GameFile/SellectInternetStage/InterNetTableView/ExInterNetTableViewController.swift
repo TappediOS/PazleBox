@@ -153,7 +153,7 @@ extension InterNetTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDel
       guard isPlayingOurStages else {
          return 0
       }
-      return 36
+      return 36.5
    }
    
    func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
@@ -161,7 +161,7 @@ extension InterNetTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDel
       guard isPlayingOurStages else {
          return 0
       }
-      return -20
+      return -19
    }
    
    
@@ -170,7 +170,7 @@ extension InterNetTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDel
       guard isPlayingOurStages else {
          return nil
       }
-      let str = "Play Stage!!!"
+      let str = NSLocalizedString("Play", comment: "")
 
       return NSAttributedString(
          string: str,
@@ -217,9 +217,9 @@ extension InterNetTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDel
 extension UIImage {
    func ReduceImageWidthAndHight(before imageSize: CGFloat, objectSize: CGFloat, padding: CGFloat) -> UIImage {
       var rectInsets = UIEdgeInsets.zero
-      let widthBetweenBackgroundAndLabel = (imageSize - objectSize)/2
+      let widthBetweenBackgroundAndLabel = (imageSize - objectSize) / 2
       let shrinkWidth = widthBetweenBackgroundAndLabel - padding
-      rectInsets = UIEdgeInsets(top: 15.5, left: -shrinkWidth, bottom: 15.5, right: -shrinkWidth)
+      rectInsets = UIEdgeInsets(top: 15.1, left: -shrinkWidth, bottom: 15.1, right: -shrinkWidth)
       return withAlignmentRectInsets(rectInsets)
    }
 
