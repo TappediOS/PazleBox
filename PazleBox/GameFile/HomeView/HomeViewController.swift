@@ -17,6 +17,7 @@ import Crashlytics
 import GameKit
 import FirebaseRemoteConfig
 import Firebase
+import FirebaseAnalytics
 import FlatUIKit
 import Hero
 
@@ -70,6 +71,8 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       super.viewDidLoad()
       self.view.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
       self.hero.isEnabled = true
+      
+      Analytics.logEvent("showOurStageSellectVC", parameters: nil)
       
       InitViewSize()
       

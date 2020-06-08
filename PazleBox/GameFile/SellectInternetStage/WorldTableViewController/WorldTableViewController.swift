@@ -60,6 +60,8 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+      Analytics.logEvent("showWorldStageVC", parameters: nil)
 
       InitRemocon()
       SetUpWorldTableView()
@@ -142,6 +144,7 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       let vc = StoryBoard.instantiateViewController(withIdentifier: "HomeView") as! HomeViewController
       vc.modalPresentationStyle = .fullScreen
       Play3DtouchLight()
+      Analytics.logEvent("showOurStageVCTapNaviItemWorldS", parameters: nil)
       self.navigationController?.pushViewController(vc, animated: true)
    }
    

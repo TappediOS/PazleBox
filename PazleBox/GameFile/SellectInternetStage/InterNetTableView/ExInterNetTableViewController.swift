@@ -184,14 +184,13 @@ extension InterNetTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDel
    
    
    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
-      //FIXME:- とりあえずGameViewに飛ばしているから終わったらこれを消す
       let StoryBoard = UIStoryboard(name: "Main", bundle: nil)
       let vc = StoryBoard.instantiateViewController(withIdentifier: "HomeView") as! HomeViewController
       vc.modalPresentationStyle = .fullScreen
       Play3DtouchLight()
       //GameSound.PlaySoundsTapButton()
       self.navigationController?.pushViewController(vc, animated: true)
-      //FIXME:- とりあえずGameViewに飛ばしているから終わったらこれを消す
+      Analytics.logEvent("showOurStageVCTapEmptyDataSet", parameters: nil)
    }
    
    

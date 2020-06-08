@@ -131,7 +131,7 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
       let vc = StoryBoard.instantiateViewController(withIdentifier: "HomeView") as! HomeViewController
       vc.modalPresentationStyle = .fullScreen
       Play3DtouchLight()
-      //GameSound.PlaySoundsTapButton()
+      Analytics.logEvent("showOurStageVCTapNaviItemTimeLine", parameters: nil)
       self.navigationController?.pushViewController(vc, animated: true)
    }
    
