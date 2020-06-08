@@ -208,7 +208,8 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       sender.titleLabel?.adjustsFontSizeToFitWidth = true
       sender.titleLabel?.adjustsFontForContentSizeCategory = true
       sender.layer.cornerRadius = 8.0
-      sender.titleLabel?.font = UIFont(name: "Helvetica", size: 16)
+      sender.titleLabel?.font = UIFont(name: "HiraMaruProN-W4", size: 16)
+      sender.contentVerticalAlignment = .fill
       sender.setTitleColor(.white, for: .normal)
    }
    
@@ -282,7 +283,8 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       sender.titleLabel?.adjustsFontSizeToFitWidth = true
       sender.titleLabel?.adjustsFontForContentSizeCategory = true
       sender.layer.cornerRadius = 8.0
-      sender.titleLabel?.font = UIFont(name: "Helvetica", size: 20)
+      sender.titleLabel?.font = UIFont(name: "HiraMaruProN-W4", size: 20)
+      sender.contentVerticalAlignment = .fill
       sender.setTitleColor(.white, for: .normal)
 
    }
