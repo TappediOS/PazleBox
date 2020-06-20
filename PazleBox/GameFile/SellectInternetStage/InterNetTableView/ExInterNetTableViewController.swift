@@ -195,10 +195,6 @@ extension InterNetTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDel
    
    
    func buttonBackgroundImage(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> UIImage! {
-      let isPlayingOurStages = self.remoteConfig[self.PlayOurStagesKey].boolValue
-      guard isPlayingOurStages else {
-         return nil
-      }
       let defaultSize = view.bounds.size.width * 0.88
       let afterSize = view.bounds.size.width * 0.4
       let padding: CGFloat = 14
