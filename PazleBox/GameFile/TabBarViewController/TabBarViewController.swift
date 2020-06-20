@@ -25,7 +25,7 @@ class PuzzleTabBarController: ESTabBarController, GADBannerViewDelegate {
    
    let PuzzleMakerTabBarBannerView = GADBannerView()
    let BannerViewReqest = GADRequest()
-   let BANNER_VIEW_TEST_ID: String = "ca-app-pub-3940256099942544/2934735716"
+   let BANNER_VIEW_TEST_ID: String = "ca-app-pub-3940256099942544/2934735716"zz
    let BANNER_VIEW_ID: String = "ca-app-pub-1460017825820383/4639498022"
    var BANNER_VIEW_HIGHT: CGFloat = 50
    
