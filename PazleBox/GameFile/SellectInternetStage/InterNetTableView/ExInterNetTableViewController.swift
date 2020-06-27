@@ -149,10 +149,10 @@ extension InterNetTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDel
    }
    
    func spaceHeight(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
-      let isPlayingOurStages = self.remoteConfig[self.PlayOurStagesKey].boolValue
-      guard isPlayingOurStages else {
-         return 0
-      }
+//      let isPlayingOurStages = self.remoteConfig[self.PlayOurStagesKey].boolValue
+//      guard isPlayingOurStages else {
+//         return 0
+//      }
       return 36
    }
    
@@ -166,10 +166,10 @@ extension InterNetTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDel
    
    
    func buttonTitle(forEmptyDataSet scrollView: UIScrollView, for state: UIControl.State) -> NSAttributedString? {
-      let isPlayingOurStages = self.remoteConfig[self.PlayOurStagesKey].boolValue
-      guard isPlayingOurStages else {
-         return nil
-      }
+//      let isPlayingOurStages = self.remoteConfig[self.PlayOurStagesKey].boolValue
+//      guard isPlayingOurStages else {
+//         return nil
+//      }
       let str = NSLocalizedString("Play", comment: "")
 
       return NSAttributedString(
