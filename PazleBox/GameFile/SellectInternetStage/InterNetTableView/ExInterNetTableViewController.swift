@@ -153,7 +153,7 @@ extension InterNetTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDel
       guard isPlayingOurStages else {
          return 0
       }
-      return 36.5
+      return 36
    }
    
    func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
