@@ -75,11 +75,12 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       CheckIAPInfomation()
       
       InitBackgroundImageView()
-      InitButton()
-      Inittestbutton()
+      InitStageSelectButton()
+      InitRestoreButton()
+      InitPurchaseButton()
       InitContactusButton()
       InitShowRankingViewButton()
-      //InitGoPiceStoreButton()
+      SetEachButtonColor()
       SetUpHeroModifiersForEachSmallButton()
       InitAccessibilityIdentifires()
    }
@@ -98,7 +99,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       FViewH = ViewH / 32
    }
    
-
    private func InitBackgroundImageView() {
       BackGroundImageView = BackGroundImageViews(frame: self.view.frame)
       self.view.addSubview(BackGroundImageView!)
@@ -135,21 +135,22 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       sender.setTitleColor(.white, for: .normal)
    }
    
-   //ボタンの初期化
-   func Inittestbutton() {
-      PurchasButton = FUIButton(frame: CGRect(x: FViewW * 13, y: FViewH * 22, width: FViewW * 5, height: FViewH * 3))
-      PurchasButton.setTitle(NSLocalizedString("No Ads", comment: ""), for: .normal)
-      PurchasButton.addTarget(self, action: #selector(self.tapparchas), for: .touchUpInside)
-      PurchasButton.hero.id = HeroID.ClearHart3ToHomeView
-      SetUpHomeEachSmallButton(sender: PurchasButton)
-      self.view.addSubview(PurchasButton)
-      
+   private func InitRestoreButton() {
       RestoreButton = FUIButton(frame: CGRect(x: FViewW * 19, y: FViewH * 22, width: FViewW * 5, height: FViewH * 3))
       RestoreButton.setTitle(NSLocalizedString("Restore", comment: ""), for: .normal)
       RestoreButton.addTarget(self, action: #selector(self.restore), for: .touchUpInside)
       RestoreButton.hero.id = HeroID.ClearHart2ToHomeView
       SetUpHomeEachSmallButton(sender: RestoreButton)
       self.view.addSubview(RestoreButton)
+   }
+    
+   private func InitPurchaseButton() {
+      PurchasButton = FUIButton(frame: CGRect(x: FViewW * 13, y: FViewH * 22, width: FViewW * 5, height: FViewH * 3))
+      PurchasButton.setTitle(NSLocalizedString("No Ads", comment: ""), for: .normal)
+      PurchasButton.addTarget(self, action: #selector(self.tapparchas), for: .touchUpInside)
+      PurchasButton.hero.id = HeroID.ClearHart3ToHomeView
+      SetUpHomeEachSmallButton(sender: PurchasButton)
+      self.view.addSubview(PurchasButton)
    }
    
    private func InitShowRankingViewButton() {
@@ -203,7 +204,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    }
    
    //MARK:- ステージボタン3つを初期化
-   private func InitButton() {
+   private func InitStageSelectButton() {
       SetUpSellectStageButtons(sender: EasyButton)
       SetUpSellectStageButtons(sender: NormalButton)
       SetUpSellectStageButtons(sender: HardButton)
@@ -211,7 +212,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       SetUpStageButtonHeroID()
       SetUpHeroModifiersForEachStageButton()
       SetUpStageButtonPosition()
-      SetEachButtonColor()
    }
    
    //MARK: ステージボタンのHEROIDつける -
