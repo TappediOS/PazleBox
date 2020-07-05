@@ -112,28 +112,6 @@ extension InterNetTableViewController {
    }
 }
 
-extension InterNetTableViewController {
-//   func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//      guard self.RefleshControl.isRefreshing == false else {
-//         return
-//      }
-//      guard isLoadingDataFirestoreWhenDownTabelview == false else {
-//         return
-//      }
-//
-//      let height = scrollView.frame.size.height
-//      let contentYoffset = scrollView.contentOffset.y
-//      let distanceFromBottom = scrollView.contentSize.height - contentYoffset
-//      if distanceFromBottom >= height {
-//         return
-//      }
-//
-//      print("データをダウンロードします。")
-//      self.isLoadingDataFirestoreWhenDownTabelview = true
-//
-//   }
-}
-
 
 extension InterNetTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
@@ -149,27 +127,10 @@ extension InterNetTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDel
    }
    
    func spaceHeight(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
-//      let isPlayingOurStages = self.remoteConfig[self.PlayOurStagesKey].boolValue
-//      guard isPlayingOurStages else {
-//         return 0
-//      }
       return 36
    }
    
-   func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
-      let isPlayingOurStages = self.remoteConfig[self.PlayOurStagesKey].boolValue
-      guard isPlayingOurStages else {
-         return 0
-      }
-      return -19
-   }
-   
-   
    func buttonTitle(forEmptyDataSet scrollView: UIScrollView, for state: UIControl.State) -> NSAttributedString? {
-//      let isPlayingOurStages = self.remoteConfig[self.PlayOurStagesKey].boolValue
-//      guard isPlayingOurStages else {
-//         return nil
-//      }
       let str = NSLocalizedString("Play", comment: "")
 
       return NSAttributedString(
@@ -180,9 +141,7 @@ extension InterNetTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDel
          ]
       )
    }
-   
-   
-   
+
    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
       let StoryBoard = UIStoryboard(name: "Main", bundle: nil)
       let vc = StoryBoard.instantiateViewController(withIdentifier: "HomeView") as! HomeViewController

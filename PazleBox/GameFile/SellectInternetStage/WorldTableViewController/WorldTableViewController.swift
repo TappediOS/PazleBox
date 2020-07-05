@@ -55,7 +55,6 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
    var BlockList = Array<String>()
    var BlockedList = Array<String>()
    
-   var remoteConfig: RemoteConfig!
    let PlayOurStagesKey = "can_play_ourStages"
    
    override func viewDidLoad() {
@@ -63,7 +62,6 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       
       Analytics.logEvent("showWorldStageVC", parameters: nil)
 
-      InitRemocon()
       SetUpWorldTableView()
       SetUpNavigationController()
       InitLoadActivityView()
@@ -73,8 +71,6 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
       FetchBlockListAndBlockedListFromFireStore(FetchType: .all)
       
       InitSegmentedControl()
-      
-      fetchConfigFromFirebase()
    }
    
    //MARK:- segmentのオートレイアウトをしている
@@ -89,54 +85,6 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
             make.height.equalTo(40)
          }
       }
-   }
-   
-   func InitRemocon() {
-      self.remoteConfig = RemoteConfig.remoteConfig()
-      let remoconSetting = RemoteConfigSettings()
-      #if DEBUG
-      remoconSetting.minimumFetchInterval = 0
-      #else
-      remoconSetting.minimumFetchInterval = 3600
-      #endif
-      self.remoteConfig.configSettings = remoconSetting
-      self.remoteConfig.setDefaults(fromPlist: "RemoteConfigDefaults")
-   }
-   
-   func fetchConfigFromFirebase() {
-      let expirationDuration: TimeInterval
-      #if DEBUG
-      expirationDuration = 0
-      #else
-      expirationDuration = 3600
-      #endif
-      self.remoteConfig.fetch(withExpirationDuration: expirationDuration) { (status, error) -> Void in
-         if status != .success {
-            print("Config Not Fetched!!")
-            print("Error: \(error?.localizedDescription ?? "No error availble.")")
-            return
-         }
-         print("Config Fetch Success!!")
-         print("\(self.remoteConfig[self.PlayOurStagesKey].boolValue)")
-         self.remoteConfig.activate(completionHandler: { (error) in
-            if let error = error {
-               print("config active error.")
-               print("Error: \(error.localizedDescription)")
-            }
-         })
-         self.showNavigationLeftItemForPlayOurStage()
-      }
-      
-   }
-   
-   func showNavigationLeftItemForPlayOurStage() {
-      guard self.remoteConfig[self.PlayOurStagesKey].boolValue else { return }
-      var image = UIImage()
-      image = UIImage(systemName: "gamecontroller.fill")!
-      
-      let SettingButtonItems = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(TapShowOurPuzzleStage(sender:)))
-      SettingButtonItems.tintColor = .systemPink
-      self.navigationItem.setLeftBarButton(SettingButtonItems, animated: true)
    }
    
    @objc func TapShowOurPuzzleStage(sender: UIBarButtonItem) {
@@ -159,6 +107,13 @@ class WorldTableViewController: UIViewController, UITableViewDelegate, UITableVi
    
    func SetUpNavigationController() {
       self.navigationItem.title = NSLocalizedString("WorldStage", comment: "")
+    
+      var image = UIImage()
+      image = UIImage(systemName: "gamecontroller.fill")!
+    
+      let SettingButtonItems = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(TapShowOurPuzzleStage(sender:)))
+      SettingButtonItems.tintColor = .systemPink
+      self.navigationItem.setLeftBarButton(SettingButtonItems, animated: true)
    }
    
    private func SetUpFireStoreSetting() {

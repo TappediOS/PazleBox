@@ -37,13 +37,11 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
    
    var isLoadingDataFirestoreWhenDownTabelview = false
    
-   var remoteConfig: RemoteConfig!
    let PlayOurStagesKey = "can_play_ourStages"
    
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      InitRemocon()
       SetUpInterNetTableView()
       SetUpNavigationController()
       
@@ -53,57 +51,6 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
       
       GetTimeLineDataFromDataBase()
       
-      
-      fetchConfigFromFirebase()
-   }
-   
-   func InitRemocon() {
-      self.remoteConfig = RemoteConfig.remoteConfig()
-      let remoconSetting = RemoteConfigSettings()
-      #if DEBUG
-      remoconSetting.minimumFetchInterval = 0
-      #else
-      remoconSetting.minimumFetchInterval = 3600
-      #endif
-      self.remoteConfig.configSettings = remoconSetting
-      self.remoteConfig.setDefaults(fromPlist: "RemoteConfigDefaults")
-   }
-   
-   func fetchConfigFromFirebase() {
-      let expirationDuration: TimeInterval
-      #if DEBUG
-      expirationDuration = 0
-      #else
-      expirationDuration = 3600
-      #endif
-      self.remoteConfig.fetch(withExpirationDuration: expirationDuration) { (status, error) -> Void in
-         if status != .success {
-            print("Config Not Fetched!!")
-            print("Error: \(error?.localizedDescription ?? "No error availble.")")
-            return
-         }
-         print("Config Fetch Success!!")
-         print("\(self.remoteConfig[self.PlayOurStagesKey].boolValue)")
-         self.remoteConfig.activate(completionHandler: { (error) in
-            if let error = error {
-               print("config active error.")
-               print("Error: \(error.localizedDescription)")
-            }
-         })
-         self.showPlayStageButtonForPlayOurStages()
-      }
-      
-   }
-   
-   func showPlayStageButtonForPlayOurStages() {
-      let isPlayingOurStages = self.remoteConfig[self.PlayOurStagesKey].boolValue
-      print("isPlaying = \(isPlayingOurStages)")
-      
-      
-      
-      guard isPlayingOurStages else { return }
-      self.InterNetTableView.reloadData()
-      self.showNavigationLeftItemForPlayOurStage()
    }
    
    func SetUpInterNetTableView() {
@@ -115,16 +62,15 @@ class InterNetTableViewController: UIViewController, UITableViewDelegate, UITabl
    
    func SetUpNavigationController() {
       self.navigationItem.title = NSLocalizedString("TimeLine", comment: "")
-   }
-   
-   func showNavigationLeftItemForPlayOurStage() {
+    
       var image = UIImage()
       image = UIImage(systemName: "gamecontroller.fill")!
-      
+    
       let SettingButtonItems = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(TapShowOurPuzzleStage(sender:)))
       SettingButtonItems.tintColor = .systemPink
       self.navigationItem.setLeftBarButton(SettingButtonItems, animated: true)
    }
+
    
    @objc func TapShowOurPuzzleStage(sender: UIBarButtonItem) {
       let StoryBoard = UIStoryboard(name: "Main", bundle: nil)
