@@ -72,7 +72,7 @@ class UsersSetUpViewCobtroller: UIViewController, UITextFieldDelegate {
       DisableChangeProfileButtonAndTextField()
       
       self.StartLoadingAnimation()
-      DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 3.45) {
          self.CheckUserFirstLoginOrReDownloadApp()
       }
    }
@@ -617,8 +617,6 @@ extension UsersSetUpViewCobtroller: UINavigationControllerDelegate, UIImagePicke
       cropController.cropView.cropBoxResizeEnabled = false
       
       cropController.delegate = self
-      
-      //cropController.modalPresentationStyle = .fullScreen
 
       //pickerを閉じたら、cropControllerを表示する。
       picker.dismiss(animated: true) {

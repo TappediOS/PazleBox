@@ -39,15 +39,11 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
    //MARK: リーダボードID
    let LEADERBOARD_ID = "ClearStageNumLeaderBoard"
    
-   //リモートコンフィグろとるやつ
-   var RemorteConfigs: RemoteConfig!
    
    let EasyStageNameKey = "Easy"
    let NormalStageNameKey = "Normal"
    let HardStageNameKey = "Hard"
 
-   let RemoConName = RemoteConfgName()
-   let ButtonClorMane = ButtonColorManager()
    
    var ViewW: CGFloat = 0
    var ViewH: CGFloat = 0
@@ -86,12 +82,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       //InitGoPiceStoreButton()
       SetUpHeroModifiersForEachSmallButton()
       InitAccessibilityIdentifires()
-      
-      InitConfig()
-      SetUpRemoteConfigDefaults()
-      SetEachStageButtonName()
-      SetEachButtonColor()
-      FetchConfig()
    }
    
    override func viewWillAppear(_ animated: Bool) {
@@ -115,7 +105,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       self.view.sendSubviewToBack(BackGroundImageView!)
    }
    
-   
    private func  InitAccessibilityIdentifires() {
       EasyButton?.accessibilityIdentifier = "HomeVC_EasyButton"
       NormalButton?.accessibilityIdentifier = "HomeVC_NormalButton"
@@ -125,75 +114,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       ShowRankingViewButton.accessibilityIdentifier = "HomeVC_ShowRankingViewButton"
       RestoreButton.accessibilityIdentifier = "HomeVC_RestoreButton"
    }
-   
-   
-   //MARK:- Remote ConfigのInitするよ-
-   //MARK: RemoteConfigのdefaultをセットする
-   private func SetUpRemoteConfigDefaults() {
-      let defaultsValues = [
-         RemoConName.EasyStageButtonName : "Easy Stage" as NSObject,
-         RemoConName.NormalStageButtonName : "Normal Stage" as NSObject,
-         RemoConName.HardStageButtonName : "Hard Stage" as NSObject,
-         
-         RemoConName.EasyStageButtonColor : "FlatMint" as NSObject,
-         RemoConName.NormalStageButtonColor : "FlatPowerBlue" as NSObject,
-         RemoConName.HardStageButtonColor : "FlatWatermelon" as NSObject,
-         RemoConName.PurchasStageButtonColor : "FlatCoffee" as NSObject,
-         RemoConName.RestoreStageButtonColor : "FlatCoffee" as NSObject,
-         RemoConName.ShowRankStageButtonColor : "FlatCoffee" as NSObject,
-         RemoConName.ContactUsButtonColor : "FlatCoffee" as NSObject,
-         
-         RemoConName.TitileLabelText: "Relaxing puzzle" as NSObject
-      ]
-      
-      self.RemorteConfigs.setDefaults(defaultsValues)
-   }
-   
-   //MARK: InitConfigする
-   private func InitConfig() {
-      self.RemorteConfigs = RemoteConfig.remoteConfig()
-      //MARK: デベロッパモード　出すときはやめろ
-      #if DEBUG
-      print("RemoConデバッグモードでいくとよ。")
-      let RemortConfigSetting = RemoteConfigSettings(developerModeEnabled: true)
-      self.RemorteConfigs.configSettings = RemortConfigSetting
-      #else
-      print("RemoConリリースモードでいくとよ。")
-      let RemortConfigSetting = RemoteConfigSettings(developerModeEnabled: false)
-      self.RemorteConfigs.configSettings = RemortConfigSetting
-      #endif
-   }
-   
-   func FetchConfig() {
-      // ディベロッパーモードの時、expirationDurationを0にして随時更新できるようにする。
-      let expirationDuration = RemorteConfigs.configSettings.isDeveloperModeEnabled ? 0 : 3600
-      print("RemoteConfigのフェッチする間隔： \(expirationDuration)")
-      RemorteConfigs.fetch(withExpirationDuration: TimeInterval(expirationDuration)) { [unowned self] (status, error) -> Void in
-         guard error == nil else {
-            print("Firebase Config フェッチあかん買った")
-            print("Error: \(error?.localizedDescription ?? "No error available.")")
-            return
-         }
-         
-         print("フェッチできたよ　クラウドからーー")
-         self.RemorteConfigs.activateFetched()
-         self.SetEachStageButtonName()
-         self.SetEachButtonColor()
-      }
-   }
-   
-   //ステージボタンのtextsを変更する
-   func SetEachStageButtonName() {
-      print("れもこん1 \(String(describing: RemorteConfigs[RemoConName.EasyStageButtonName].stringValue))")
-      print("れもこん2 \(String(describing: RemorteConfigs[RemoConName.NormalStageButtonName].stringValue))")
-      print("れもこん3 \(String(describing: RemorteConfigs[RemoConName.HardStageButtonName].stringValue))")
-      
-      EasyButton.setTitle(RemorteConfigs[RemoConName.EasyStageButtonName].stringValue, for: .normal)
-      NormalButton.setTitle(RemorteConfigs[RemoConName.NormalStageButtonName].stringValue, for: .normal)
-      HardButton.setTitle(RemorteConfigs[RemoConName.HardStageButtonName].stringValue, for: .normal)
-   }
-   
-   //した4個のボタンの色を変更するん
+
    private func SetEachButtonColor() {
       EasyButton.backgroundColor = .systemGreen
       NormalButton.backgroundColor = .systemTeal
@@ -204,8 +125,6 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       ShowRankingViewButton.backgroundColor = UIColor.flatCoffee()
       ContactusButton.backgroundColor = UIColor.flatCoffee()
    }
-   
-
    
    private func SetUpHomeEachSmallButton(sender: UIButton) {
       sender.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -252,16 +171,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       self.view.addSubview(ContactusButton)
    }
    
-   
-   //MARK:- Store Buttton Init
-//   private func InitGoPiceStoreButton() {
-//      GoPiceStoreButton = FUIButton(frame: CGRect(x: FViewW * 1, y: FViewH * 25 - FViewH * 3 - 10, width: FViewW * 5, height: FViewH * 3))
-//      GoPiceStoreButton?.setTitle(NSLocalizedString("Store", comment: ""), for: .normal)
-//      GoPiceStoreButton?.addTarget(self, action: #selector(self.GoPiceStore), for: .touchUpInside)
-//      SetUpHomeEachSmallButton(sender: GoPiceStoreButton!)
-//      self.view.addSubview(GoPiceStoreButton!)
-//   }
-   
+
    //MARK:- コンタクトアスボタン押された時の処理
    @objc func ContactUs() {
       ContactusButton.hero.id = "BackButton"
@@ -281,7 +191,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       }
    }
    
-   //MARK:= UIButtonのセットアップ
+   //MARK:- UIButtonのセットアップ
    private func SetUpSellectStageButtons(sender: UIButton) {
       sender.titleLabel?.adjustsFontSizeToFitWidth = true
       sender.titleLabel?.adjustsFontForContentSizeCategory = true
@@ -301,6 +211,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
       SetUpStageButtonHeroID()
       SetUpHeroModifiersForEachStageButton()
       SetUpStageButtonPosition()
+      SetEachButtonColor()
    }
    
    //MARK: ステージボタンのHEROIDつける -
